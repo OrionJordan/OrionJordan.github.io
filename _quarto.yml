@@ -1,0 +1,35 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: OOMN
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: "Basics"
+        file: "./qmd/basics/sets.qmd"
+      - text: "Graph Theory"
+        file: "./qmd/graph/GraphTheory.qmd"
+
+  sidebar:
+    - title: "basics"
+      style: "floating"
+      background: light
+      contents:
+      - section: "Basics"
+        contents:
+         - "./qmd/basics/sets.qmd"
+         - "./qmd/basics/sets1.qmd"
+         - "./qmd/basics/sets2.qmd"
+
+    - title: "graph"
+      contents:
+      - "./qmd/graph/GraphTheory.qmd"
+      - section: "**Introduction**"
+        contents:
+        - "./qmd/graph/intro/graphs.qmd"
+
+
+

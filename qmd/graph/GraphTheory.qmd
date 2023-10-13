@@ -1,0 +1,13 @@
+---
+title: "Graph Theory"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Graph Theory is the study of Graphs (Shocking) and their applications. The subject doesn't require any real prerequisites, except some basic knowledge of naive set theory. Many problems in math and computer science can be modeled with graphs, despite seeming on the surface entirely unrelated. In fact, even chemist have begun to use graphs as a way to model molecules!
+
+# §1. Introduction
+
+This chapter begins with a history of and motivation for graph theory, and then introduces fundamental concepts and definitions.
