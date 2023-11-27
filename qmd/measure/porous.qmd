@@ -1,0 +1,62 @@
+---
+title: "Porous sets"
+format:
+  html:
+    css: ../../../styles.css
+    echo: false
+    toc: true
+    html-math-method: katex
+---
+
+There are several ways to define a *small* set, like Meager and Measure-zero. Porous sets are an alternate way to measure how *small* a set is.
+
+## Definition 
+
+A set is porous if every interval $I$ in $\mathbb{R}$ contains an interval $I_2$ completly missing the set, such that $|I_2| = \alpha |I|$ where $0 < \alpha < 1$.
+
+Formalizing this definition requires a few steps.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $E$ be a set in $\mathbb{R}$, and $x \in \mathbb{R}$. The [**right porosity**]{style="color: blue"} of $E$ at $x$ is denoted $p^+(E,x)$ and is given by
+
+$$
+p^+(E,x) = \limsup_{\varepsilon \to 0^+} \frac{k}{k+h}
+$$
+
+where $(x + h, x + h + k) \cap E = \varnothing, h + k < \varepsilon$ and $h,k > 0$, and $\sup$ refers to the lowest greater bound. Similary, the [**left porosity**]{style="color: blue"} of $E$, denoted $p^-(E,x)$ is defined by $(x - h - k, x - h) \cap E = \varnothing$
+
+Then the [**porosity**]{style="color: blue"} of $E$ at $x$ is defined by 
+
+$$
+p(E,x) = \max\{p^-(E,x),p^+(E,x)\}
+$$
+
+It is clear the value of $p$ is inbetween $[0,1]$. We say that $E$ is [**porous at $\bf x$**]{style="color: blue"} if $p(E,x) > 0$, and that $E$ is [**porous**]{style="color: blue"} if $p(E,x) > 0$ for all $x \in E$.
+
+:::
+
+::: {.callout-caution icon="false"}
+## Example
+
+Are the following sets porous at $x$?
+
+1. Is the set $E = [0,1]$ porous at $x = \frac{1}{2}$?
+
+Let's start by trying to find the left porosity of $E$ at $x$. It's clear that when $\varepsilon < \frac{1}{2}$, no values of $h,k$ satisfy $(x + h, x + h + k) \cap E = \varnothing, h + k < \varepsilon$. Therefore, the set does not have a defined left porosity. Similary the set does not have a defined right porosity, so the set is not porous at $x = \frac{1}{2}$.
+
+
+2. Is the set $E = C$ porous at $x = \frac{1}{3}$?
+
+In this case $C$ refers to the Cantor ternary set. At $x = \frac{1}{3}$, it is clear that $p^+(C,\frac{1}{3}) = 1$, because $h$ can get arbitrarily small while completly avoiding $C$. Because $p^-$ can't possibly be greater than $1$, $p(C,\frac{1}{3}) =  1$, and the Cantor ternary set is porous at $x = \frac{1}{3}$.
+:::
+
+## Beta-porous
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subseteq \mathbb{R}$, $\beta \in (0,1)$. Then $A$ is $\beta$-porous iff for every $(a,b) \in \mathbb{R}$, $\exists(a^\prime,b^\prime) \subseteq (a,b)$ such that $(b^\prime - a^\prime) = \beta(b-a)$
+
+:::

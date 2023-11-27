@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -111,6 +77,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -194,7 +161,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a>
+  <ul class="collapse">
+  <li><a href="#alternate-definition" id="toc-alternate-definition" class="nav-link" data-scroll-target="#alternate-definition">Alternate definition</a></li>
+  </ul></li>
   <li><a href="#common-families-of-graphs" id="toc-common-families-of-graphs" class="nav-link" data-scroll-target="#common-families-of-graphs">Common Families of Graphs</a>
   <ul class="collapse">
   <li><a href="#complete-graphs" id="toc-complete-graphs" class="nav-link" data-scroll-target="#complete-graphs">Complete Graphs</a></li>
@@ -224,22 +194,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode tikz code-with-copy"><code class="sourceCode latex"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">\begin</span>{<span class="ex">tikzpicture</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\draw</span> (0,0) circle (1cm);</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">\draw</span> (0,0) circle (2cm);</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">\end</span>{<span class="ex">tikzpicture</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<p><img src="graphs_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>This section covers the definition of a graph, and common families of graphs.</p>
+<section id="definition" class="level1">
+<h1>Definition</h1>
 <p>A <span style="color: blue"><strong>graph</strong></span> is a set of points called <span style="color: blue"><strong>vertices</strong></span> connected by <span style="color:blue"><strong>edges</strong></span>.</p>
-<p>(Insert graph example)</p>
+<div style="text-align:center;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="graphs_files/figure-html/example-graph-1.png" class="img-fluid figure-img" width="192"></p>
+<figcaption class="figure-caption">The <em>Petersen Graph</em>, a notable graph in Graph Theory</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -254,7 +224,7 @@ Definition
 </div>
 </div>
 <p>An edge is said to <span style="color: blue"><strong>join</strong></span> its endpoints. Say an edge <span class="math inline">e</span> connects two vertices <span class="math inline">u</span> and <span class="math inline">v</span>. <span class="math inline">u</span> is said to be <span style="color: blue"><strong>adjacent</strong></span> and a <span style="color: blue"><strong>neighbor</strong></span> of <span class="math inline">v</span>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -264,7 +234,16 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The vertex and edge sets of the graph in Figure 1.1.1 are</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="graphs_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="96"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The vertex and edge sets of the graph <span class="math inline">G</span> above are</p>
 <p><span class="math display">
 V(G) = \{a,b,c,d\} \quad\quad\quad\quad E(G) = \{ab,ac,ad,bc,bd,cd\}
 </span></p>
@@ -290,11 +269,58 @@ Definition
 </div>
 </div>
 <p>There are many instances in graph theory where our graphs are both loopless and devoid of multi-edges. In these cases we call the graph <span style="color: blue"><strong>simple</strong></span>. If our graph is empty, we call it a <span style="color: blue"><strong>null graph</strong></span>. If our graph contains one vertex and no edges, the graph is <span style="color: blue"><strong>trivial</strong></span>.</p>
+<section id="alternate-definition" class="level2">
+<h2 class="anchored" data-anchor-id="alternate-definition">Alternate definition</h2>
+<p>A more rigourous definition of a graph <span class="math inline">G</span> will include an <strong>incidence function</strong> <span class="math inline">\psi_G</span> that connects vertices to edges.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <em>graph</em> <span class="math inline">G</span> is an ordered pair <span class="math inline">(V(G),E(G))</span> where <span class="math inline">V(G)</span> is a set of vertices and <span class="math inline">E(G)</span> is a set, disjoint from <span class="math inline">V(G)</span>, of edges, along with an <em>incidence function</em> <span class="math inline">\psi_G</span> that associates each edge in <span class="math inline">E(G)</span> an unordered pair of vertices in <span class="math inline">V(G)</span>.</p>
+</div>
+</div>
+<p>An edge <span class="math inline">e</span> is said to <em>join</em> its endpoints <span class="math inline">u,v</span> if <span class="math inline">\psi_G(e) = \{u,v\}</span>.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example (Rigourous Graph)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>An example of a rigourous graph <span class="math inline">G</span> is</p>
+<p><span class="math display">
+G = (V(G),E(G))
+</span></p>
+<p>where</p>
+<p><span class="math display">
+V(G) = \{a,b,c,d,e\}\\
+E(G) = \{e_1,e_2,e_3,e_4,e_5,e_6,e_7,e_8\}
+</span></p>
+<p>and <span class="math inline">\psi_G</span> conncects</p>
+<p><span class="math display">
+\psi_G(e_1) = \{a,b\}, \psi_G(e_2) = \{a,a\}, \psi_G(e_3) = \{a,c\}, \psi_G(e_4) = \{b,e\}\\
+\psi_G(e_5) = \{b,a\}, \psi_G(e_6) = \{c,b\}, \psi_G(e_7) = \{d,d\}, \psi_G(e_8) = \{c,e\}
+</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="common-families-of-graphs" class="level2">
-<h2 class="anchored" data-anchor-id="common-families-of-graphs">Common Families of Graphs</h2>
-<section id="complete-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="complete-graphs">Complete Graphs</h3>
+</section>
+<section id="common-families-of-graphs" class="level1">
+<h1>Common Families of Graphs</h1>
+<section id="complete-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="complete-graphs">Complete Graphs</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -322,22 +348,25 @@ Theorem
 <p>A complete graph <span class="math inline">K_n</span> contains <span class="math inline">\binom{n}{2}</span> edges.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proof
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The graph <span class="math inline">K_n</span> has an edge between every pair of distinct vertices. Because order doesn’t affect edges (<span class="math inline">e = uv</span> is equivalent to <span class="math inline">e = vu</span>), the number of edges is analougous to <span class="math inline">n</span> choose <span class="math inline">2</span>, <span class="math inline">\binom{n}{2}</span>.</p>
 </div>
 </div>
+</div>
 </section>
-<section id="bipartite-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="bipartite-graphs">Bipartite Graphs</h3>
+<section id="bipartite-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="bipartite-graphs">Bipartite Graphs</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -365,17 +394,20 @@ Proposition
 <p>A bipartite graph cannot contain any loops.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proof
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>If an edge was loop, it would connect the same vertex to both endpoints, which contradicts our definition of a bipartite graph.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -393,9 +425,57 @@ Definition
 </div>
 <p>(Example of a complete bipartite graph)</p>
 </section>
-<section id="regular-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="regular-graphs">Regular Graphs</h3>
-<p>To look at regular graphs, we first have to look at</p>
+<section id="regular-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="regular-graphs">Regular Graphs</h2>
+<p>To look at regular graphs, we first have to establish the <em>degree</em> of a vertex.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span style="color: blue"><strong>degree</strong></span> of a vertex <span class="math inline">v</span> is a positive integer equal to the number of vertices in the neighborhood of <span class="math inline">v</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>k-regular graph</strong></span> is a graph where each vertex has <span class="math inline">k</span> other vertices in it’s neighborhood.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="graphs_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="144"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>For example, the Petersen graph is <span class="math inline">3</span>-regular, as each vertex in the graph has three other vertices in it’s neighborhood.</p>
+</div>
+</div>
 
 
 </section>

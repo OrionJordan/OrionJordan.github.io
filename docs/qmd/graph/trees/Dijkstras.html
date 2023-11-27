@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Sets</title>
+<title>OOMN - Dijkstra’s algorithm</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,14 +79,14 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">OOMN</span>
     </a>
   </div>
@@ -97,11 +97,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../qmd/basics/sets.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../qmd/basics/sets.html" rel="" target="">
  <span class="menu-text">Basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmd/graph/GraphTheory.html" rel="" target="">
+    <a class="nav-link" href="../../.././qmd/graph/GraphTheory.qmd" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
 </ul>
@@ -110,56 +110,10 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/basics/sets.html">Basics</a></li><li class="breadcrumb-item"><a href="../../qmd/basics/sets1.html">Sets</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Sets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -169,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sets</h1>
+<h1 class="title">Dijkstra’s algorithm</h1>
 </div>
 
 
@@ -184,44 +138,25 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A <span style="color: blue"><strong>set</strong></span> is a collection of <span style="color: blue"><strong>elements</strong></span>, usually denoted with a capital letter <span class="math inline">A,B,\cdots,Z</span>. Important groups of numbers are denoted in Blackboard bold font; for example the set <span class="math inline">\mathbb{N}</span>, which refers to the <span style="color: blue"><strong>natural numbers</strong></span>. Sets are given the following notation</p>
-<ul>
-<li><p>If <span class="math inline">a</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">a \in A</span></p></li>
-<li><p>If every element in <span class="math inline">A</span> is in <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, and <span class="math inline">B \subseteq A</span>, then <span class="math inline">A</span> and <span class="math inline">B</span> are equal, <span class="math inline">A = B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, but <span class="math inline">A \not= B</span>, <span class="math inline">A</span> is a proper subset of <span class="math inline">B</span>, denoted <span class="math inline">A \subsetneq B</span></p></li>
-</ul>
-<p>A set <span class="math inline">S</span> containing the numbers <span class="math inline">1,2</span> and <span class="math inline">3</span> as elements is wrote <span class="math inline">S = \{1,2,3\}</span>. The order in which the elements are listed is irrelevant, <span class="math inline">S = \{1,2,3\} = \{3,2,1\}</span>. This notation becomes tedious however when attempting to write a set with a large amount of elements. This is where set builder notation comes in. Set builder notation defines a set in the form</p>
-<p><span class="math display">
-S = \{\text{A function of}\: x \:|\: \text{A predicate of}\: x\}
-</span></p>
-<p>For example, the set of all square numbers would be</p>
-<p><span class="math display">
-S = \{ x^2 \:|\: x \in \mathbb{N}\} = \{1,4,9,\ldots\}
-</span></p>
-<p>There are very commonly used sets we assume the existence of, and denote with special characters to save time</p>
-<ul>
-<li><p>The empty set <span class="math inline">\varnothing = \{\}</span> is simply a set with no elements</p></li>
-<li><p>The natural numbers <span class="math inline">\mathbb{N} = \{1,2,3,\ldots\}</span></p></li>
-<li><p>The integers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="math inline">\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \dots\}</span></p></li>
-<li><p>The rational numbers <span class="math inline">\mathbb{Q} = \{\frac{a}{b}\:|\: a,b \in \mathbb{Z}\}</span></p></li>
-<li><p>And the real numbers <span class="math inline">\mathbb{R}</span></p></li>
-</ul>
-<p><strong>Definition:</strong> Given any set <span class="math inline">A</span>, the of <span class="math inline">A</span>, denoted <span class="math inline">\mathcal{P}(\mathbb{A})</span> is the set of all subsets of <span class="math inline">A</span>; i.e.</p>
-<p><span class="math display">
-        \mathcal{P}(A) = \{B | B \subseteq A\}
-</span></p>
-<p>For example, if <span class="math inline">A = \{a,b\}</span>, then <span class="math inline">\mathcal{P}(A) = \{\{\},\{a\},\{b\},\{a,b\}\}</span> Notice that <span class="math inline">\varnothing</span> and <span class="math inline">A</span> are always elements of <span class="math inline">\mathcal{P}(A)</span>. Also note <span class="math inline">a \not\in \mathcal{P}(A)</span>, but <span class="math inline">\{a\} \in \mathcal{P}(A)</span>.</p>
+<p>Let <span class="math inline">G</span> be a weighted connected graph <span class="math inline">G</span>. Given two vertices <span class="math inline">u,v</span>, by the least weight path from <span class="math inline">u</span> to <span class="math inline">v</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithm
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Start with a vertex <span class="math inline">u_0</span>. At the end of step <span class="math inline">k-1</span>, will have a set <span class="math inline">S_{k-1} \subseteq V(G)</span>, and a function <span class="math inline">t</span> defined on <span class="math inline">S_{k-1} \cup N(S_{k-1})</span>. We want to define our function <span class="math inline">t</span> to tell us the minimum distance to <span class="math inline">u</span> on <span class="math inline">S_{k-1}</span>. On <span class="math inline">N(S_{k-1})</span>, <span class="math inline">t</span> will tell us the tentative distance to <span class="math inline">u</span>.</p>
+<p>At step <span class="math inline">k</span>: Take a vertex <span class="math inline">w</span> in <span class="math inline">N(S_{k-1}) \backslash S_{k-1}</span></p>
+</div>
+</div>
 
 
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>The notation <span class="math inline">\mathbb{Z}</span> for integers comes from the German word <em>Zahlen</em>, which means integer.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

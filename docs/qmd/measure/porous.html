@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Sets</title>
+<title>OOMN - Porous sets</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,9 +77,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -97,11 +98,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../qmd/basics/sets.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../qmd/basics/sets.html" rel="" target="">
  <span class="menu-text">Basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmd/graph/GraphTheory.html" rel="" target="">
+    <a class="nav-link" href="../.././qmd/graph/GraphTheory.qmd" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
 </ul>
@@ -110,66 +111,27 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/basics/sets.html">Basics</a></li><li class="breadcrumb-item"><a href="../../qmd/basics/sets1.html">Sets</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Sets</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#beta-porous" id="toc-beta-porous" class="nav-link" data-scroll-target="#beta-porous">Beta-porous</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sets</h1>
+<h1 class="title">Porous sets</h1>
 </div>
 
 
@@ -184,44 +146,75 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A <span style="color: blue"><strong>set</strong></span> is a collection of <span style="color: blue"><strong>elements</strong></span>, usually denoted with a capital letter <span class="math inline">A,B,\cdots,Z</span>. Important groups of numbers are denoted in Blackboard bold font; for example the set <span class="math inline">\mathbb{N}</span>, which refers to the <span style="color: blue"><strong>natural numbers</strong></span>. Sets are given the following notation</p>
-<ul>
-<li><p>If <span class="math inline">a</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">a \in A</span></p></li>
-<li><p>If every element in <span class="math inline">A</span> is in <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, and <span class="math inline">B \subseteq A</span>, then <span class="math inline">A</span> and <span class="math inline">B</span> are equal, <span class="math inline">A = B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, but <span class="math inline">A \not= B</span>, <span class="math inline">A</span> is a proper subset of <span class="math inline">B</span>, denoted <span class="math inline">A \subsetneq B</span></p></li>
-</ul>
-<p>A set <span class="math inline">S</span> containing the numbers <span class="math inline">1,2</span> and <span class="math inline">3</span> as elements is wrote <span class="math inline">S = \{1,2,3\}</span>. The order in which the elements are listed is irrelevant, <span class="math inline">S = \{1,2,3\} = \{3,2,1\}</span>. This notation becomes tedious however when attempting to write a set with a large amount of elements. This is where set builder notation comes in. Set builder notation defines a set in the form</p>
+<p>There are several ways to define a <em>small</em> set, like Meager and Measure-zero. Porous sets are an alternate way to measure how <em>small</em> a set is.</p>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>A set is porous if every interval <span class="math inline">I</span> in <span class="math inline">\mathbb{R}</span> contains an interval <span class="math inline">I_2</span> completly missing the set, such that <span class="math inline">|I_2| = \alpha |I|</span> where <span class="math inline">0 &lt; \alpha &lt; 1</span>.</p>
+<p>Formalizing this definition requires a few steps.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">E</span> be a set in <span class="math inline">\mathbb{R}</span>, and <span class="math inline">x \in \mathbb{R}</span>. The <span style="color: blue"><strong>right porosity</strong></span> of <span class="math inline">E</span> at <span class="math inline">x</span> is denoted <span class="math inline">p^+(E,x)</span> and is given by</p>
 <p><span class="math display">
-S = \{\text{A function of}\: x \:|\: \text{A predicate of}\: x\}
+p^+(E,x) = \limsup_{\varepsilon \to 0^+} \frac{k}{k+h}
 </span></p>
-<p>For example, the set of all square numbers would be</p>
+<p>where <span class="math inline">(x + h, x + h + k) \cap E = \varnothing, h + k &lt; \varepsilon</span> and <span class="math inline">h,k &gt; 0</span>, and <span class="math inline">\sup</span> refers to the lowest greater bound. Similary, the <span style="color: blue"><strong>left porosity</strong></span> of <span class="math inline">E</span>, denoted <span class="math inline">p^-(E,x)</span> is defined by <span class="math inline">(x - h - k, x - h) \cap E = \varnothing</span></p>
+<p>Then the <span style="color: blue"><strong>porosity</strong></span> of <span class="math inline">E</span> at <span class="math inline">x</span> is defined by</p>
 <p><span class="math display">
-S = \{ x^2 \:|\: x \in \mathbb{N}\} = \{1,4,9,\ldots\}
+p(E,x) = \max\{p^-(E,x),p^+(E,x)\}
 </span></p>
-<p>There are very commonly used sets we assume the existence of, and denote with special characters to save time</p>
-<ul>
-<li><p>The empty set <span class="math inline">\varnothing = \{\}</span> is simply a set with no elements</p></li>
-<li><p>The natural numbers <span class="math inline">\mathbb{N} = \{1,2,3,\ldots\}</span></p></li>
-<li><p>The integers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="math inline">\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \dots\}</span></p></li>
-<li><p>The rational numbers <span class="math inline">\mathbb{Q} = \{\frac{a}{b}\:|\: a,b \in \mathbb{Z}\}</span></p></li>
-<li><p>And the real numbers <span class="math inline">\mathbb{R}</span></p></li>
-</ul>
-<p><strong>Definition:</strong> Given any set <span class="math inline">A</span>, the of <span class="math inline">A</span>, denoted <span class="math inline">\mathcal{P}(\mathbb{A})</span> is the set of all subsets of <span class="math inline">A</span>; i.e.</p>
-<p><span class="math display">
-        \mathcal{P}(A) = \{B | B \subseteq A\}
-</span></p>
-<p>For example, if <span class="math inline">A = \{a,b\}</span>, then <span class="math inline">\mathcal{P}(A) = \{\{\},\{a\},\{b\},\{a,b\}\}</span> Notice that <span class="math inline">\varnothing</span> and <span class="math inline">A</span> are always elements of <span class="math inline">\mathcal{P}(A)</span>. Also note <span class="math inline">a \not\in \mathcal{P}(A)</span>, but <span class="math inline">\{a\} \in \mathcal{P}(A)</span>.</p>
-
-
-
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>The notation <span class="math inline">\mathbb{Z}</span> for integers comes from the German word <em>Zahlen</em>, which means integer.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<p>It is clear the value of <span class="math inline">p</span> is inbetween <span class="math inline">[0,1]</span>. We say that <span class="math inline">E</span> is <span style="color: blue"><strong>porous at <span class="math inline">\bf x</span></strong></span> if <span class="math inline">p(E,x) &gt; 0</span>, and that <span class="math inline">E</span> is <span style="color: blue"><strong>porous</strong></span> if <span class="math inline">p(E,x) &gt; 0</span> for all <span class="math inline">x \in E</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Are the following sets porous at <span class="math inline">x</span>?</p>
+<ol type="1">
+<li>Is the set <span class="math inline">E = [0,1]</span> porous at <span class="math inline">x = \frac{1}{2}</span>?</li>
 </ol>
-</section></div></main> <!-- /main -->
+<p>Let’s start by trying to find the left porosity of <span class="math inline">E</span> at <span class="math inline">x</span>. It’s clear that when <span class="math inline">\varepsilon &lt; \frac{1}{2}</span>, no values of <span class="math inline">h,k</span> satisfy <span class="math inline">(x + h, x + h + k) \cap E = \varnothing, h + k &lt; \varepsilon</span>. Therefore, the set does not have a defined left porosity. Similary the set does not have a defined right porosity, so the set is not porous at <span class="math inline">x = \frac{1}{2}</span>.</p>
+<ol start="2" type="1">
+<li>Is the set <span class="math inline">E = C</span> porous at <span class="math inline">x = \frac{1}{3}</span>?</li>
+</ol>
+<p>In this case <span class="math inline">C</span> refers to the Cantor ternary set. At <span class="math inline">x = \frac{1}{3}</span>, it is clear that <span class="math inline">p^+(C,\frac{1}{3}) = 1</span>, because <span class="math inline">h</span> can get arbitrarily small while completly avoiding <span class="math inline">C</span>. Because <span class="math inline">p^-</span> can’t possibly be greater than <span class="math inline">1</span>, <span class="math inline">p(C,\frac{1}{3}) = 1</span>, and the Cantor ternary set is porous at <span class="math inline">x = \frac{1}{3}</span>.</p>
+</div>
+</div>
+</section>
+<section id="beta-porous" class="level2">
+<h2 class="anchored" data-anchor-id="beta-porous">Beta-porous</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A \subseteq \mathbb{R}</span>, <span class="math inline">\beta \in (0,1)</span>. Then <span class="math inline">A</span> is <span class="math inline">\beta</span>-porous iff for every <span class="math inline">(a,b) \in \mathbb{R}</span>, <span class="math inline">\exists(a^\prime,b^\prime) \subseteq (a,b)</span> such that <span class="math inline">(b^\prime - a^\prime) = \beta(b-a)</span></p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

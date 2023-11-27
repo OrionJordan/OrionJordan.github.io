@@ -1,5 +1,4 @@
 ---
 title: "Orions Online Math Notes"
+css: styles.css
 ---
-
-A work in progress website documenting my varius math and lecture notes.

@@ -31,5 +31,15 @@ website:
         contents:
         - "./qmd/graph/intro/graphs.qmd"
 
+    - title: "integral"
+      contents:
+      - "./qmd/integral/intro.qmd"
+      - section: "**Simple Techniques**"
+        contents:
+        - "./qmd/graph/intro/simple/trivial.qmd"
+      - section: "**Tricky Techniques**"
+        contents:
+        - "./qmd/graph/intro/simple/hyperbolic.qmd"
+
 
 

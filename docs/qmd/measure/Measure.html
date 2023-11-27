@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - graph</title>
+<title>OOMN - Lebesgue Measure</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -79,7 +79,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar docked nav-fixed">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -101,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="../../qmd/graph/GraphTheory.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../.././qmd/graph/GraphTheory.qmd" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
 </ul>
@@ -110,56 +110,10 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/graph/intro/definition.html"><strong>Introduction</strong></a></li><li class="breadcrumb-item"><a href="../../qmd/graph/graph2.html">graph</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/graph/GraphTheory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Graph Theory</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text"><strong>Introduction</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/graph/intro/definition.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Definitions</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../qmd/graph/graph2.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">graph</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
@@ -169,7 +123,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">graph</h1>
+<h1 class="title">Lebesgue Measure</h1>
 </div>
 
 
@@ -184,44 +138,87 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A <span style="color: blue"><strong>set</strong></span> is a collection of <span style="color: blue"><strong>elements</strong></span>, usually denoted with a capital letter <span class="math inline">A,B,\cdots,Z</span>. Important groups of numbers are denoted in Blackboard bold font; for example the set <span class="math inline">\mathbb{N}</span>, which refers to the <span style="color: blue"><strong>natural numbers</strong></span>. Sets are given the following notation</p>
+<p>Measures are used to formalize notions of length, area, and volume and expand the notions into more cases. There are many ways to define a measure functions, but they each satisfy the following properties.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We will define <span class="math inline">\ell(I_k)</span> to be the <em>length</em> of the interval. For example <span class="math inline">\ell([a,b]) = b - a</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A measure is a function from the measurable sets <span class="math inline">\mathscr{M}</span> to the non-negative real numbers <span class="math inline">m \colon \mathscr{M} \to \mathbb{R}_{\geq 0}</span> such that the following hold.</p>
 <ul>
-<li><p>If <span class="math inline">a</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">a \in A</span></p></li>
-<li><p>If every element in <span class="math inline">A</span> is in <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, and <span class="math inline">B \subseteq A</span>, then <span class="math inline">A</span> and <span class="math inline">B</span> are equal, <span class="math inline">A = B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, but <span class="math inline">A \not= B</span>, <span class="math inline">A</span> is a proper subset of <span class="math inline">B</span>, denoted <span class="math inline">A \subsetneq B</span></p></li>
+<li><p><strong>The measure of an interval is its length</strong>. Meaning the measure of every nonempty interval <span class="math inline">I</span> is <span class="math display">
+m(I) = \ell(I)
+</span></p></li>
+<li><p><strong>Measure is translation invariant</strong>. Meaning that if <span class="math inline">E</span> is a measurable set, than <span class="math inline">E + y = \{x+y | x \in E\}</span> is also measurable and</p></li>
 </ul>
-<p>A set <span class="math inline">S</span> containing the numbers <span class="math inline">1,2</span> and <span class="math inline">3</span> as elements is wrote <span class="math inline">S = \{1,2,3\}</span>. The order in which the elements are listed is irrelevant, <span class="math inline">S = \{1,2,3\} = \{3,2,1\}</span>. This notation becomes tedious however when attempting to write a set with a large amount of elements. This is where set builder notation comes in. Set builder notation defines a set in the form</p>
 <p><span class="math display">
-S = \{\text{A function of}\: x \:|\: \text{A predicate of}\: x\}
+m(E) = m(E + y)
 </span></p>
-<p>For example, the set of all square numbers would be</p>
-<p><span class="math display">
-S = \{ x^2 \:|\: x \in \mathbb{N}\} = \{1,4,9,\ldots\}
-</span></p>
-<p>There are very commonly used sets we assume the existence of, and denote with special characters to save time</p>
 <ul>
-<li><p>The empty set <span class="math inline">\varnothing = \{\}</span> is simply a set with no elements</p></li>
-<li><p>The natural numbers <span class="math inline">\mathbb{N} = \{1,2,3,\ldots\}</span></p></li>
-<li><p>The integers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="math inline">\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \dots\}</span></p></li>
-<li><p>The rational numbers <span class="math inline">\mathbb{Q} = \{\frac{a}{b}\:|\: a,b \in \mathbb{Z}\}</span></p></li>
-<li><p>And the real numbers <span class="math inline">\mathbb{R}</span></p></li>
+<li><strong>Measure is countably additive over a disjoint union of sets</strong>. Meaning that if <span class="math inline">\{E_k\}_{k=1}^\infty</span> if a collection of disjoint measurable sets, then</li>
 </ul>
-<p><strong>Definition:</strong> Given any set <span class="math inline">A</span>, the of <span class="math inline">A</span>, denoted <span class="math inline">\mathcal{P}(\mathbb{A})</span> is the set of all subsets of <span class="math inline">A</span>; i.e.</p>
 <p><span class="math display">
-        \mathcal{P}(A) = \{B | B \subseteq A\}
+m\left(\bigcup_{k=1}^\infty E_k \right) = \sum_{k=1}^{\infty}m(E_k)
 </span></p>
-<p>For example, if <span class="math inline">A = \{a,b\}</span>, then <span class="math inline">\mathcal{P}(A) = \{\{\},\{a\},\{b\},\{a,b\}\}</span> Notice that <span class="math inline">\varnothing</span> and <span class="math inline">A</span> are always elements of <span class="math inline">\mathcal{P}(A)</span>. Also note <span class="math inline">a \not\in \mathcal{P}(A)</span>, but <span class="math inline">\{a\} \in \mathcal{P}(A)</span>.</p>
+</div>
+</div>
+<p>In order to construct the Lebesgue measure can, we define a function <span class="math inline">m^* \colon \mathcal{P}(\mathbb{R}) \to \mathbb{R}</span> called the <em>outer measure</em>. We then define a collection <span class="math inline">\mathcal{M}</span> such that <span class="math inline">m^*</span> restricted to <span class="math inline">\mathscr{M}</span> fufills our requirements of being measure as defined above.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any subset <span class="math inline">E \subseteq \mathbb{R}</span> A <span style="color: blue"><strong>Lebesgue outer measure</strong></span> on <span class="math inline">E</span> is defined</p>
+<p><span class="math display">
+m^*(E) = inf\left\{ \sum_{k=1}^{\infty} \ell(I_k) \right\}
+</span></p>
+<p>Where <span class="math inline">E \subseteq \bigcup_{k=1}^\infty I_k</span></p>
+</div>
+</div>
+<p>In English, the Lebesgue Outer Measure is composed of the least collection of intervals which cover <span class="math inline">E</span> without overlapping. The total of the outer measure may overestimate <span class="math inline">E</span> however, as the intervals may contain points that aren’t in <span class="math inline">E</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">E \subseteq \mathbb{R}</span> is measurable if and only if for any <span class="math inline">A \subseteq \mathbb{R}</span></p>
+<p><span class="math display">
+m^*(A) = m^*(A \cap E) + m^*(A \cap E^c)
+</span></p>
+</div>
+</div>
 
 
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>The notation <span class="math inline">\mathbb{Z}</span> for integers comes from the German word <em>Zahlen</em>, which means integer.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Definitions</title>
+<title>OOMN - Measure and Category on the Line</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -77,6 +77,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -86,7 +87,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../../index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">OOMN</span>
     </a>
   </div>
@@ -97,11 +98,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../qmd/basics/sets.html" rel="" target="">
+    <a class="nav-link" href="../../qmd/basics/sets.html" rel="" target="">
  <span class="menu-text">Basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../.././qmd/graph/GraphTheory.qmd" rel="" target="">
+    <a class="nav-link" href="../.././qmd/graph/GraphTheory.qmd" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
 </ul>
@@ -116,25 +117,14 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#what-is-a-graph" id="toc-what-is-a-graph" class="nav-link active" data-scroll-target="#what-is-a-graph">What is a graph?</a></li>
-  <li><a href="#common-families-of-graphs" id="toc-common-families-of-graphs" class="nav-link" data-scroll-target="#common-families-of-graphs">Common Families of Graphs</a>
-  <ul class="collapse">
-  <li><a href="#complete-graphs" id="toc-complete-graphs" class="nav-link" data-scroll-target="#complete-graphs">Complete Graphs</a></li>
-  <li><a href="#bipartite-graphs" id="toc-bipartite-graphs" class="nav-link" data-scroll-target="#bipartite-graphs">Bipartite Graphs</a></li>
-  </ul></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Definitions</h1>
+<h1 class="title">Measure and Category on the Line</h1>
 </div>
 
 
@@ -149,10 +139,36 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="what-is-a-graph" class="level2">
-<h2 class="anchored" data-anchor-id="what-is-a-graph">What is a graph?</h2>
-<p>A <span style="color: blue"><strong>graph</strong></span> is a set of points called <span style="color: blue"><strong>vertices</strong></span> connected by <span style="color:blue"><strong>edges</strong></span>.</p>
-<p>(Insert graph example)</p>
+<p>This section covers measure and category on <span class="math inline">\mathbb{R}</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.1 (Cantor)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any sequence <span class="math inline">\{a_n\}</span> of real numbers and for any interval <span class="math inline">I</span> there exists a point <span class="math inline">p</span> in <span class="math inline">I</span> such that <span class="math inline">p \not = a_n</span> for every <span class="math inline">n</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">I_1</span> be a closed subinterval of <span class="math inline">I</span> such that <span class="math inline">a_1 \not \in I_1</span>. Let <span class="math inline">I_2</span> be a closed subinterval of <span class="math inline">I_1</span> such that <span class="math inline">a_2 \not \in I_2</span>. We can continue this pattern inductively, where <span class="math inline">I_n</span> is a closed interval of <span class="math inline">I_{n-1}</span> such that <span class="math inline">a_n \not \in I_n</span>. The nested sequence of closed intervals <span class="math inline">I_n</span> has a non-empty intersection. If <span class="math inline">p \in \bigcap I_n</span>, then <span class="math inline">p \in I</span> and <span class="math inline">p \not = a_n</span> for every <span class="math inline">n</span>.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -163,11 +179,68 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A graph <span class="math inline">G = (V,E)</span> is a mathematical structure consisting of a <span style="color: blue"><strong>vertex set</strong></span> <span class="math inline">V(G)</span> and an <span style="color: blue"><strong>edge set</strong></span> <span class="math inline">E(G)</span>. Each edge <span class="math inline">e</span> in the edge set connects two (not necessarily distinct) vertices known as the <span style="color: blue"><strong>endpoints</strong></span> of <span class="math inline">e</span>.</p>
+<p>A set <span class="math inline">A</span> is <span style="color: blue"><strong>nowhere dense</strong></span> if it is dense in no interval on <span class="math inline">\mathbb{R}</span>. This is equivalent to saying that every interval on <span class="math inline">\mathbb{R}</span> has a subinterval entirely contained in the compliment of <span class="math inline">A</span>. An equivalent definition is that <span class="math inline">A</span> is <em>nowhere dense</em> if and only if <span class="math inline">Int(Clos(A)) = \varnothing</span></p>
 </div>
 </div>
-<p>An edge is said to <span style="color: blue"><strong>join</strong></span> its endpoints. Say an edge <span class="math inline">e</span> connects two vertices <span class="math inline">u</span> and <span class="math inline">v</span>. <span class="math inline">u</span> is said to be <span style="color: blue"><strong>adjacent</strong></span> and a <span style="color: blue"><strong>neighbor</strong></span> of <span class="math inline">v</span>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Nowhere dense sets are closed under certain options, namely:</p>
+<ol type="1">
+<li><p>Any subset of nowhere dense sets is nowhere dense.</p></li>
+<li><p>The union of finitely many nowhere dense sets is nowhere dense.</p></li>
+<li><p>The closure of a nowhere dense set is nowhere dense.</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><strong>Any subset of nowhere dense sets is nowhere dense.</strong></li>
+</ol>
+<p>Let <span class="math inline">A</span> be a nowhere dense set. If <span class="math inline">B \subseteq A</span> is dense in some interval on <span class="math inline">\mathbb{R}</span>, than <span class="math inline">A</span> must be too, which contradicts our assumption <span class="math inline">A</span> is nowhere dense. Therefore <span class="math inline">B</span> is also nowhere dense.</p>
+<ol start="2" type="1">
+<li><strong>The union of finitely many nowhere dense sets is nowhere dense.</strong></li>
+</ol>
+<p>If <span class="math inline">A_1</span> and <span class="math inline">A_2</span> are nowhere dense, than for each interval <span class="math inline">I</span> there exist subintervals <span class="math inline">I_1</span> such that <span class="math inline">I_1 \cap A_1 = \varnothing</span> and a subinterval <span class="math inline">I_2 \subseteq I_1</span> such that <span class="math inline">I_2 \cap A_2 = \varnothing</span>. Hence <span class="math inline">I_2 \cap (A_1 \cap A_2) = \varnothing</span>. Thus <span class="math inline">A_1 \cup A_2</span> is nowhere dense.</p>
+<ol start="3" type="1">
+<li><strong>The closure of a nowhere dense set is nowhere dense.</strong></li>
+</ol>
+<p>For this proof we use the second definition of a nowhere dense set, <span class="math inline">A</span> is nowhere dense if and only iff <span class="math inline">Int(Clos(A)) = \varnothing</span>. Note that <span class="math inline">Clos(A) = Clos(Clos(A))</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">A</span> is <span style="color: blue"><strong>meagre</strong></span> if it is a countable union of nowhere dense sets. A set is <span style="color: blue"><strong>comeagre</strong></span> if its complement is <em>meagre</em>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -177,11 +250,10 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The vertex and edge sets of the graph in Figure 1.1.1 are</p>
+<p><span class="math inline">\mathbb{Q}</span> is a meagre set, because it is composed of a countable union of singletons, i.e.</p>
 <p><span class="math display">
-V(G) = \{a,b,c,d\} \quad\quad\quad\quad E(G) = \{ab,ac,ad,bc,bd,cd\}
+\mathbb{Q} = \bigcup_{q \in \mathbb{Q}} q
 </span></p>
-<p>Notice how we can denote an edge by concatenating its endpoints. This is only possible in cases where exclusively one edge exist between two vertices.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -190,67 +262,72 @@ V(G) = \{a,b,c,d\} \quad\quad\quad\quad E(G) = \{ab,ac,ad,bc,bd,cd\}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition
+Theorem 1.3 (Baire)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An edge <span class="math inline">e</span> can be called</p>
-<ul>
-<li><p>A <span style="color: blue"><strong>proper edge</strong></span> when the edge joins two distinct vertices</p></li>
-<li><p>A <span style="color: blue"><strong>loop</strong></span> when <span class="math inline">e</span> joins a vertex to itself</p></li>
-<li><p>A <span style="color: blue"><strong>multi-edge</strong></span> when two or more edges connect the same two vertices</p></li>
-</ul>
+<p>All comeagre sets are dense.</p>
 </div>
 </div>
-<p>There are many instances in graph theory where our graphs are both loopless and devoid of multi-edges. In these cases we call the graph <span style="color: blue"><strong>simple</strong></span>. If our graph is empty, we call it a <span style="color: blue"><strong>null graph</strong></span>. If our graph contains one vertex and no edges, the graph is <span style="color: blue"><strong>trivial</strong></span>.</p>
-</section>
-<section id="common-families-of-graphs" class="level2">
-<h2 class="anchored" data-anchor-id="common-families-of-graphs">Common Families of Graphs</h2>
-<section id="complete-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="complete-graphs">Complete Graphs</h3>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <span style="color: blue"><strong>complete graph</strong></span> is a simple graph where there exist an edge between every pair of distinct vertices. A complete graph with <span class="math inline">n</span> vertices is notated <span class="math inline">K_n</span>.</p>
-</div>
-</div>
-<p>(Insert picture of graphs K1 through K5)</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A complete graph <span class="math inline">K_n</span> contains <span class="math inline">\binom{n}{2}</span> edges.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
 Proof
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a meagre set and <span class="math inline">A = \bigcup A_n</span> be the representation of <span class="math inline">A</span> as a countable union of nowhere dense sets. Let <span class="math inline">I</span> be any interval on <span class="math inline">\mathbb{R}</span>. Let <span class="math inline">I_1 = I - A_1</span>, <span class="math inline">I_2 = I_1 - A_2</span>, <span class="math inline">I_n = I_{n-1} - A_n</span>. The interval <span class="math inline">\bigcup I_n</span> is a non-empty subset of <span class="math inline">I - A</span>. So any interval on <span class="math inline">\mathbb{R}</span> contains points in <span class="math inline">A^c</span>, therefore <span class="math inline">A^c</span> is dense in <span class="math inline">\mathbb{R}</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary
+</div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The graph <span class="math inline">K_n</span> has an edge between every pair of distinct vertices. Because order doesn’t affect edges (<span class="math inline">e = uv</span> is equivalent to <span class="math inline">e = vu</span>), the number of edges is analougous to <span class="math inline">n</span> choose <span class="math inline">2</span>, <span class="math inline">\binom{n}{2}</span>.</p>
+<p>No interval in <span class="math inline">\mathbb{R}</span> is meagre</p>
 </div>
 </div>
-</section>
-<section id="bipartite-graphs" class="level3">
-<h3 class="anchored" data-anchor-id="bipartite-graphs">Bipartite Graphs</h3>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a meagre set. Because every interval contains points in <span class="math inline">A^c</span>, there is no interval fully contained in <span class="math inline">A</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Any subset of a meagre set is meagre. The union of any countable family of meagre sets is meagre.</p>
+</div>
+</div>
+<p>The properties above are obvious for meagre sets. However, the closure of a set <span class="math inline">A</span> is meagre if and only if <span class="math inline">A</span> is nowhere dense. Therefore the closure of a meagre set may not be meagre.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -261,21 +338,21 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <span style="color: blue"><strong>bipartite graph</strong></span> <span class="math inline">G</span> is a simple graph whose vertex set can be partitioned into two subsets <span class="math inline">U</span> and <span class="math inline">V</span>, such that every edge in <span class="math inline">G</span> has one endpoint in <span class="math inline">U</span>, and one edpoint in <span class="math inline">V</span>.</p>
+<p>A class (informal collection) of sets that contains countable unions and arbitrary subsets of its members is called a <span style="color: blue"><span class="math inline">\pmb\sigma</span>-ideal</span>.</p>
 </div>
 </div>
-<p>(Insert picture of a few bipartite graphs)</p>
+<p>The class of meagre sets is a <span class="math inline">\sigma</span>-ideal, along with the class of countable sets. The class of <span style="color: blue"><strong>nullsets</strong></span> (sets of <em>measure zero</em>) also forms a <span class="math inline">\sigma</span>-ideal</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proposition
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A bipartite graph cannot contain any loops.</p>
+<p>Let the length of an interval <span class="math inline">I</span> be given by <span class="math inline">|I|</span>. A set <span class="math inline">A \subseteq R</span> is called a <em>nullset</em> if for all <span class="math inline">\varepsilon &gt; 0</span>, there exist a sequence of intervals <span class="math inline">I_n</span> such that <span class="math inline">A \subset \bigcup I_n</span> and <span class="math inline">\Sigma |I_n| &lt; \varepsilon</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -284,17 +361,34 @@ Proposition
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Theorem 1.5 (Borel)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If an edge was loop, it would connect the same vertex to both endpoints, which contradicts our definition of a bipartite graph.</p>
+<p>If a finite or infinite sequence of intervals <span class="math inline">I_n</span> covers an interval <span class="math inline">I</span>, <span class="math inline">\Sigma |I_n| \geq |I|</span></p>
+</div>
+</div>
+<p>The proof is too long for me to want to write down. The theorem implies that no interval is a nullset.</p>
+<p>Every countable set is both meagre and of measure zero. However, some uncountable sets also have these two properties.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The Cantor set <span class="math inline">C</span> is both meagre and a nullset.</p>
+<p><strong>Meagre</strong></p>
+<p>The Cantor set is nowhere dense, because for any <span class="math inline">C_n</span>, the largest interval is of length <span class="math inline">\frac{1}{3^n}</span>. For any interval <span class="math inline">I \subset R</span>, there exist a sufficiently large <span class="math inline">n</span> such that a <em>hole</em> can be found in <span class="math inline">I</span>.</p>
+<p><strong>Nullset</strong></p>
+<p>The sum of the lengths of all closed intervals for any step <span class="math inline">C_n</span> is exactly <span class="math inline">\frac{2}{3^n}</span>. There exist a sufficiently large <span class="math inline">n</span> such that for any <span class="math inline">\varepsilon &gt; 0</span>, the sum of the interval length is below <span class="math inline">\varepsilon</span>.</p>
 </div>
 </div>
 
 
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
