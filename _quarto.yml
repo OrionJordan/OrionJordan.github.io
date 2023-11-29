@@ -12,6 +12,8 @@ website:
         file: "./qmd/basics/sets.qmd"
       - text: "Graph Theory"
         file: "./qmd/graph/GraphTheory.qmd"
+      - text: "Integral"
+        file: "./qmd/integral/intro.qmd"
 
   sidebar:
     - title: "basics"
@@ -36,10 +38,12 @@ website:
       - "./qmd/integral/intro.qmd"
       - section: "**Simple Techniques**"
         contents:
-        - "./qmd/graph/intro/simple/trivial.qmd"
+        - "./qmd/integral/simple/basics.qmd"
+        - "./qmd/integral/simple/substitution.qmd"
+        - "./qmd/integral/simple/intpart.qmd"
       - section: "**Tricky Techniques**"
         contents:
-        - "./qmd/graph/intro/simple/hyperbolic.qmd"
+        - "./qmd/integral/tricky/hyperbolic.qmd"
 
 
 

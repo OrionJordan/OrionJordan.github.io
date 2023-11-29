@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN – hyperbolic</title>
+<title>OOMN - Integration by parts</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,10 +60,26 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html"><strong>Tricky Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html">hyperbolic.html</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/intpart.html">Integration by parts</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -144,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/intpart.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../qmd/integral/simple/intpart.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Integration by parts</span></a>
   </div>
 </li>
@@ -161,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyperbolic.html</span></a>
   </div>
 </li>
@@ -172,14 +188,212 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#tabular-method" id="toc-tabular-method" class="nav-link active" data-scroll-target="#tabular-method">Tabular method</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Integration by parts</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>There will often be integrals where substitution cannot simplify the integrand into one term. We can use the following as our motivating example</p>
+<p><span class="math display">
+\int x e^{6x} dx
+</span></p>
+<p>Attempting to use a substitution, such as <span class="math inline">u = 6x</span> gives us</p>
+<p><span class="math display">
+\int ue^u\,du
+</span></p>
+<p>which while technically simpler gets us nowhere. We need a new technique to be able to properly separate functions where substitution fails. This is where integration by parts comes in.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof (Integration by parts)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>It is well known that the derivative of a product <span class="math inline">f(x)g(x)</span> is</p>
+<p><span class="math display">
+\frac{d}{dx} f(x)g(x) = f(x)\frac{d}{dx}g(x) + g(x)\frac{d}{dx} f(x)
+</span></p>
+<p>Integrating both sides</p>
+<p><span class="math display">
+f(x)g(x) = \int f(x) g^\prime(x) dx + \int g(x) f^\prime(x) dx
+</span></p>
+<p>Rearrange</p>
+<p><span class="math display">
+\int f(x) g^\prime(x) dx = f(x)g(x) - \int g(x) f^\prime(x) dx
+</span></p>
+<p>This gives us a formula to rewrite certain integrals into forms we know how to solve. This formula can be simplified however, with the substitution <span class="math inline">u = f(x), v = g(x)</span></p>
+<p><span class="math display">
+\int u dv  = uv - \int v du
+</span></p>
+<p>Note that when deriving <span class="math inline">v</span> from <span class="math inline">dv</span>, we do not include a constant, as it will cancel itself out by the end of the final</p>
+</div>
+</div>
+</div>
+<p>Lets try to use the formula to solve our example. We can choose <span class="math inline">u</span> to be either term in our example.</p>
+<span class="math display">\begin{array}{ll}
+u = x \hspace{0.5in} &amp; dv = e^{6x}\,dx\\
+du = dx \hspace{0.5in}  &amp; v = \int e^{6x} = \frac{1}{6}e^{6x}
+\end{array}</span>
+<span class="math display">\begin{array}{ll}
+\displaystyle\int x e^{6x} dx &amp; = \displaystyle\frac{x}{6}e^{6x} - \displaystyle\frac{1}{6}\displaystyle\int e^{6x} dx\\
+&amp;\\
+&amp; = \displaystyle\frac{x}{6}e^{6x} - \displaystyle\frac{1}{36}e^{6x} + C
+\end{array}</span>
+<p>And voila, our integral is solved.</p>
+<section id="tabular-method" class="level2">
+<h2 class="anchored" data-anchor-id="tabular-method">Tabular method</h2>
+<p>An easier (faster) way to do integration by parts is known as the Tabular method. The tabular method can quickly calculate repeated integration by parts.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example (Stop 1)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The following example will show the first ‘stop’ used in tabular integration.</p>
+<p>Find the solution to the following integral</p>
+<p><span class="math display">
+\int x^2 \sin(3x) \, dx
+</span></p>
+<p>This could be solved using our formula for integration by parts, but this results in a messy calculation using repeated integration by parts. In order to solve these problems faster, we will use the Tabular method.</p>
+<p>First, choose two terms to work with in the integral. We will choose <span class="math inline">x^2</span> and <span class="math inline">\sin(3x)</span>. We want to choose a term that will eventually default to <span class="math inline">0</span> after repeated differention. Place this term under the <span class="math inline">D</span> in your table, and the other term under the <span class="math inline">I</span>. Draw a plus to the left of your terms.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} x^2 \hspace{0.25in} &amp; \sin(3x)
+\end{array}</span>
+<p>To begin, we will differentiate the term under our <span class="math inline">D</span>, and integrate the term under our <span class="math inline">I</span>, then flip the sign.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} x^2 \hspace{0.25in} &amp; \sin(3x)\\
+- &amp; \hspace{0.25in} 2x \hspace{0.25in} &amp; \frac{1}{3}\cos(3x)
+\end{array}</span>
+<p>Repeating this process eventually gives us a <span class="math inline">0</span> in our <span class="math inline">D</span> column. This is our first stop, meaning we don’t need any more steps.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} x^2 \hspace{0.25in} &amp; \sin(3x)\\
+- &amp; \hspace{0.25in} 2x \hspace{0.25in} &amp; -(1/3)\cos(3x)\\
++ &amp; \hspace{0.25in} 2 \hspace{0.25in} &amp; -(1/9)\sin(3x)\\
+- &amp; \hspace{0.25in} 0 \hspace{0.25in} &amp; (1/27)\cos(3x)\\
+\end{array}</span>
+<p>Multiply the <span class="math inline">n^{th}</span> under the <span class="math inline">D</span> by the <span class="math inline">(n+1)^{th}</span> term under the <span class="math inline">I</span>. Then add or subtract the product by the sign the the left of the <span class="math inline">D</span> column. This is the answer to our integral.</p>
+<p><span class="math display">
+\int x^2 \sin (3x) \,dx = -\frac{1}{3}x^2\cos(3x) + \frac{2}{9}x\sin(3x) - \frac{2}{27}\cos(3x) + C
+</span></p>
+<p>And we’re done!</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example (Stop 2)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The following example will show the second ‘stop’ used in tabular integration.</p>
+<p><span class="math display">
+\int x^4 \ln x \,dx
+</span></p>
+<p>Although it seems obvious we should put <span class="math inline">x^4</span> under the <span class="math inline">D</span> column, we quickly realize that we cannot integrate <span class="math inline">\ln x</span> without integration by parts. Because of this, we have no choice but to but <span class="math inline">\ln x</span> under the <span class="math inline">D</span> column. Carrying on with our calculations</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} \ln x \hspace{0.25in} &amp; x^4\\
+- &amp; \hspace{0.25in} x^{-1} \hspace{0.25in} &amp; (1/5)x^5
+\end{array}</span>
+<p>We can quickly notice that <span class="math inline">0</span> will never appear under the <span class="math inline">D</span> column. This is where our second stop comes in. If we can easily calculate the integral of a rows product (That is, the product of terms under the <span class="math inline">D</span> and <span class="math inline">I</span> columns for a singular row) than we stop, and add the integral of that row to our diagonal solution.</p>
+<p><span class="math display">
+\int x^4 \ln x \,dx = \frac{1}{5}x^5\ln x  - \frac{1}{5} \int x^{-1}x^5
+</span></p>
+<p>This is formula for regular integration by parts, so unfortunately this didn’t save us any time, but we still got the right answer!</p>
+<p><span class="math display">
+\int x^4 \ln x \,dx = \frac{1}{5}x^5\ln x  - \frac{1}{25} x^5
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example (Stop 3)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The following example will show the third ‘stop’ used in tabular integration.</p>
+<p><span class="math display">
+\int e^x \sin x \,dx
+</span></p>
+<p>Integrating <span class="math inline">e^x</span> and <span class="math inline">\sin x</span> are both easy. I’ll choose to integrate <span class="math inline">e^x</span> for simplicity sake.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} \sin x \hspace{0.25in} &amp; e^x\\
+- &amp; \hspace{0.25in} \cos x \hspace{0.25in} &amp; e^x\\
++ &amp; \hspace{0.25in} -\sin x \hspace{0.25in} &amp; e^x\\
+- &amp; \hspace{0.25in} -\cos x \hspace{0.25in} &amp; e^x
+\end{array}</span>
+<p>Clearly this will go on forever without a <span class="math inline">0</span> under our <span class="math inline">D</span> column, or an easily integrable row. This introduces our third stop. Notice that our first and third rows only differ by a constant coefficient. When this happens, we write our diagonalization and our integral, stopping at the repeated row.</p>
+<p><span class="math display">
+\int e^x \sin x \,dx = e^x \sin x - e^x \cos(x) - \int e^x \sin x \, dx
+</span></p>
+<p>Notice how this is the same integral on the left and right hand of the equation. Moving the integral over gives us</p>
+<p><span class="math display">
+2\int e^x \sin x \,dx = e^x \sin x - e^x \cos(x)
+</span></p>
+<p>Diving by <span class="math inline">2</span></p>
+<p><span class="math display">
+\int e^x \sin x \,dx = \frac{e^x \sin x - e^x \cos(x)}{2}
+</span></p>
+<p>And we have our answer.</p>
+</div>
+</div>
+</div>
+<p>Clearly the tabular method is a huge time saver for repeated integration by parts.</p>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

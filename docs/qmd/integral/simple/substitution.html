@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN – hyperbolic</title>
+<title>OOMN - Substitution</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,10 +60,26 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -103,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html"><strong>Tricky Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html">hyperbolic.html</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/substitution.html">Substitution</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -138,7 +154,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Substitution</span></a>
   </div>
 </li>
@@ -161,7 +177,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">hyperbolic.html</span></a>
   </div>
 </li>
@@ -172,14 +188,334 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Substitution</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The motivating example for this section will be the integral shown below.</p>
+<p><span class="math display">
+\int \sec^2(x)e^{1 + \tan{x}} \, dx
+</span></p>
+<p>The techniques shown in the last section don’t work here. Linearity does not allow for separation of products, and we don’t have an identity which gets us a solution. In order to solve these types of integrals, we’ll need a new rule.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example (Substitution)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The integral can be rewrote if one makes the following substitution.</p>
+<p><span class="math display">
+u = 1 + \tan^2x
+</span></p>
+<p>Then computing the differential</p>
+<p><span class="math display">
+du = \sec^2x \,dx
+</span></p>
+<p>We can put these terms into the integral and obtain</p>
+<p><span class="math display">
+\int e^{u} \, du
+</span></p>
+<p>Which clearly evaluates to</p>
+<p><span class="math display">
+\int e^{u} \, du = e^u + C
+</span></p>
+<p>And then undoing the substitution</p>
+<p><span class="math display">
+\int \sec^2(x)e^{1 + \tan{x}} \, dx = e^{1+\tan x} + C
+</span></p>
+</div>
+</div>
+<p>Substitution for integrals is often in the form</p>
+<p><span class="math display">
+\int f(g(x))g^\prime(x)\, dx = \int f(u)\, du, \text{where } u = g(x).
+</span></p>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.3.1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int   {{\left( {8x - 12} \right){{\left( {4{x^2} - 12x} \right)}^4}\,dx}}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using the substitution</p>
+<p><span class="math display">
+u = 4x^2 - 12x
+</span></p>
+<p>We get <span class="math display">
+\int   {{\left( {8x - 12} \right){{\left( {4{x^2} - 12x} \right)}^4}\,dx}} = \frac{1}{5}(4x^2 - 12x)^5 + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.3.2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int{{3{t^{ - 4}}{{\left( {2 + 4{t^{ - 3}}} \right)}^{ - 7}}\,dt}}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using the substitution</p>
+<p><span class="math display">
+u = 2 - 4t^{-3}
+</span></p>
+<p>We get <span class="math display">
+\int{{3{t^{ - 4}}{{\left( {2 + 4{t^{ - 3}}} \right)}^{ - 7}}\,dt}} = \frac{1}{24}(2+4t^{-3})^{-6} + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.3.14)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{\csc x \cot c}{2- \csc x} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>First notice how <span class="math inline">\csc x \cot x</span> is clearly the derivative of <span class="math inline">-\csc x</span>. This leads us to try some form of <span class="math inline">\csc x</span> for <span class="math inline">u</span>. I use</p>
+<p><span class="math display">
+u = \csc x
+</span></p>
+<p>Leading too <span class="math display">
+\int \frac{\csc x \cot c}{2- \csc x} \, dx = - \int \frac{1}{2 - u} \, du
+</span></p>
+<p>Which is clearly</p>
+<p><span class="math display">
+\int \frac{\csc x \cot c}{2- \csc x} \, dx = \ln |2 - u| + C = \ln |2 - \csc x| + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.3.13)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int{{10\sin \left( {2x} \right)\cos \left( {2x} \right)\sqrt {{{\cos }^2}\left( {2x} \right) - 5} \,dx}}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>While the integral looks incredibly complex, if we substitute the term inside the radical (the usual choice) we can start to break it down.</p>
+<p><span class="math display">
+u = \cos^2(2x) - 5
+</span></p>
+<p>Thus <span class="math display">
+\int{{10\sin \left( {2x} \right)\cos \left( {2x} \right)\sqrt {{{\cos }^2}\left( {2x} \right) - 5} \,dx}} = -\frac{5}{2} \int \sqrt{u} \, du
+</span></p>
+<p>Which leads too</p>
+<p><span class="math display">
+\int{{10\sin \left( {2x} \right)\cos \left( {2x} \right)\sqrt {{{\cos }^2}\left( {2x} \right) - 5} \,dx}} = -\frac{5}{3}(\cos^2(2x) - 5)^\frac{3}{2} + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.3.15)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{6}{7 + y^2} \,dy
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This does not follow our usual <span class="math inline">f(g(x))g^\prime(x)</span> example. For this case, we’ll try to convert into an identity we know. It is clear we can’t have <span class="math inline">y^2</span> be a term in <span class="math inline">u</span>, as this would only make the integral more complicated (as thers no <span class="math inline">y</span> to be consumed in the <span class="math inline">du</span>). The integrand sorta resembles the derivative of <span class="math inline">\arctan y</span>, so we can try to rewrite it</p>
+<p><span class="math display">
+\int \frac{6}{7 + y^2} \,dy = \frac{6}{7} \int \frac{1}{1 + \frac{y^2}{7}} \, dy
+</span></p>
+<p>Notice that if we make the substitution <span class="math display">
+u = \frac{y}{\sqrt{7}}
+</span></p>
+<p>We get</p>
+<p><span class="math display">
+\int \frac{6}{7 + y^2} \,dy = \frac{6\sqrt{7}}{7} \int \frac{1}{1 + u^2} \, du
+</span></p>
+<p>Which gives us</p>
+<p><span class="math display">
+\int \frac{6}{7 + y^2} \,dy = \frac{6\sqrt{7}}{7} \arctan \left(\frac{y}{\sqrt{7}}\right) + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.4.6)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int{{20{{e}^{2 - 8w}}\sqrt {1 + {{e}}^{2 - 8w}}} \, + 7{w^3} - 6\,\,\sqrt[3]{w}\,dw}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using linearity on the integral allows us to do different substitutions. Seeing as the last two terms can be integrated with the inverse power rule, we only need to a substitution on the first term. Luckily this is an easy case.</p>
+<p><span class="math display">
+u = 1 + e^{2-8w}
+</span></p>
+<p>Gives</p>
+<p><span class="math display">
+\int{{20{{e}^{2 - 8w}}\sqrt {1 + {{e}}^{2 - 8w}}} \,dw} = -\frac{5}{2}\int \sqrt{u}\, du
+</span></p>
+<p>Which is</p>
+<p><span class="math display">
+\int{{20{{e}^{2 - 8w}}\sqrt {1 + {{e}}^{2 - 8w}}} \,dw} = -\frac{5}{3}(1 + e^{2-8w})^\frac{3}{2} + C
+</span></p>
+<p>Then solving the other terms gives us our solution.</p>
+<p><span class="math display">
+= -\frac{5}{3}(1 + e^{2-8w})^\frac{3}{2} + \frac{7}{4}w^4 - \frac{9}{2}w^\frac{4}{3} + C
+</span></p>
+</div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

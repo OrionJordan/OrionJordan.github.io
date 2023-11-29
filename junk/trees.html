@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN – hyperbolic</title>
+<title>OOMN - Trees</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,10 +60,26 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -88,98 +104,126 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../qmd/graph/GraphTheory.html" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../../../qmd/integral/intro.html" rel="" target="" aria-current="page">
- <span class="menu-text">Integral</span></a>
-  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html"><strong>Tricky Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html">hyperbolic.html</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration Bee</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text"><strong>Simple Techniques</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Substitution</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/intpart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration by parts</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text"><strong>Tricky Techniques</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">hyperbolic.html</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#cayleys-theorem" id="toc-cayleys-theorem" class="nav-link active" data-scroll-target="#cayleys-theorem">Cayley’s Theorem</a>
+  <ul class="collapse">
+  <li><a href="#prüfer-codes" id="toc-prüfer-codes" class="nav-link" data-scroll-target="#prüfer-codes">Prüfer codes</a></li>
+  </ul></li>
+  <li><a href="#theorem-cayleys-theorem" id="toc-theorem-cayleys-theorem" class="nav-link" data-scroll-target="#theorem-cayleys-theorem">Theorem (Cayley’s Theorem)</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Trees</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="cayleys-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="cayleys-theorem">Cayley’s Theorem</h2>
+<p>Recall that there are <span class="math inline">\binom{n}{2}^2</span> graphs on <span class="math inline">n</span> vertices.</p>
+<p><strong>Question:</strong> How many trees are there on <span class="math inline">n</span> vertices?</p>
+<p>This question is not at all obvious, and has a suprisingly simple solution! We’ll count trees as distinct if their graphs are distinct, i.e.&nbsp;two isomorphic trees will be counted as distinct.</p>
+<p>(Give example on <span class="math inline">K_3</span>)</p>
+<p>In order to solve this question, we’ll first establish the concept of a <em>prüfer code</em></p>
+<section id="prüfer-codes" class="level3">
+<h3 class="anchored" data-anchor-id="prüfer-codes">Prüfer codes</h3>
+<p>Take any tree <span class="math inline">T</span>. The need may occasionally arise where we wish to represent <span class="math inline">T</span> as a sequence of integers, similar to degree sequences for graphs.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition (Cayley’s Theorem)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>prüfer code</strong></span> is a sequence of length <span class="math inline">n-2</span> of integers in <span class="math inline">\{1,2,\ldots,n\}</span> that corresponds to a tree of <span class="math inline">n</span>.</p>
+</div>
+</div>
+<p>We’re claiming that any tree can be represented by a prüfer code. In order to find the prüfer code for a tree, we use the following algorithm.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithm
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a tree <span class="math inline">T</span> on <span class="math inline">n</span> vertices, delete the <em>least leaf</em> of <span class="math inline">T</span> and record the vertex that this leaf was adjacent to in <span class="math inline">T</span>. Continue until the tree has <span class="math inline">2</span> vertices.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>(Give two examples of the algorithm)</p>
+</div>
+</div>
+<p>We can now represent every tree as a prüfer code. What makes prüfer code so useful is that unlike degree sequences, every distinct tree has a <em>unique</em> prüfer code.</p>
+</section>
+</section>
+<section id="theorem-cayleys-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="theorem-cayleys-theorem">Theorem (Cayley’s Theorem)</h2>
+<p>There are exactly <span class="math inline">n^{n-2}</span> many trees on <span class="math inline">n</span> vertices</p>
+<p>:::</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>prüfer code</strong></span> is a sequence of length <span class="math inline">n-2</span> of integers in <span class="math inline">\{1,2,\ldots,n\}</span>.</p>
+<p>Given a tree <span class="math inline">T</span> on <span class="math inline">n</span> vertices, we will associate to <span class="math inline">T</span> a prüfer code according to the following algorithm.</p>
+<p><strong>Algorithm:</strong> Given a tree <span class="math inline">T</span> on <span class="math inline">n</span> vertices, delete the <em>least leaf</em> of <span class="math inline">T</span> and record the vertex that this leaf was adjacent to in <span class="math inline">T</span>. Continue until the tree has <span class="math inline">2</span> vertices.</p>
+<p>(Give example of the algorithm.)</p>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN – hyperbolic</title>
+<title>OOMN - Definitions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -60,10 +60,26 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
-<body class="nav-sidebar floating nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -88,98 +104,197 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../qmd/graph/GraphTheory.html" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="../../../qmd/integral/intro.html" rel="" target="" aria-current="page">
- <span class="menu-text">Integral</span></a>
-  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav">
-    <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-        <i class="bi bi-layout-text-sidebar-reverse"></i>
-      </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html"><strong>Tricky Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/tricky/hyperbolic.html">hyperbolic.html</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-    </div>
-  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
-    <div class="sidebar-menu-container"> 
-    <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration Bee</span></a>
-  </div>
-</li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text"><strong>Simple Techniques</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Substitution</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/intpart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration by parts</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text"><strong>Tricky Techniques</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">hyperbolic.html</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-    </ul>
-    </div>
-</nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#what-is-a-graph" id="toc-what-is-a-graph" class="nav-link active" data-scroll-target="#what-is-a-graph">What is a graph?</a></li>
+  <li><a href="#common-families-of-graphs" id="toc-common-families-of-graphs" class="nav-link" data-scroll-target="#common-families-of-graphs">Common Families of Graphs</a>
+  <ul class="collapse">
+  <li><a href="#complete-graphs" id="toc-complete-graphs" class="nav-link" data-scroll-target="#complete-graphs">Complete Graphs</a></li>
+  <li><a href="#bipartite-graphs" id="toc-bipartite-graphs" class="nav-link" data-scroll-target="#bipartite-graphs">Bipartite Graphs</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Definitions</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
 
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<section id="what-is-a-graph" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-a-graph">What is a graph?</h2>
+<p>A <span style="color: blue"><strong>graph</strong></span> is a set of points called <span style="color: blue"><strong>vertices</strong></span> connected by <span style="color:blue"><strong>edges</strong></span>.</p>
+<p>(Insert graph example)</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A graph <span class="math inline">G = (V,E)</span> is a mathematical structure consisting of a <span style="color: blue"><strong>vertex set</strong></span> <span class="math inline">V(G)</span> and an <span style="color: blue"><strong>edge set</strong></span> <span class="math inline">E(G)</span>. Each edge <span class="math inline">e</span> in the edge set connects two (not necessarily distinct) vertices known as the <span style="color: blue"><strong>endpoints</strong></span> of <span class="math inline">e</span>.</p>
+</div>
+</div>
+<p>An edge is said to <span style="color: blue"><strong>join</strong></span> its endpoints. Say an edge <span class="math inline">e</span> connects two vertices <span class="math inline">u</span> and <span class="math inline">v</span>. <span class="math inline">u</span> is said to be <span style="color: blue"><strong>adjacent</strong></span> and a <span style="color: blue"><strong>neighbor</strong></span> of <span class="math inline">v</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The vertex and edge sets of the graph in Figure 1.1.1 are</p>
+<p><span class="math display">
+V(G) = \{a,b,c,d\} \quad\quad\quad\quad E(G) = \{ab,ac,ad,bc,bd,cd\}
+</span></p>
+<p>Notice how we can denote an edge by concatenating its endpoints. This is only possible in cases where exclusively one edge exist between two vertices.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An edge <span class="math inline">e</span> can be called</p>
+<ul>
+<li><p>A <span style="color: blue"><strong>proper edge</strong></span> when the edge joins two distinct vertices</p></li>
+<li><p>A <span style="color: blue"><strong>loop</strong></span> when <span class="math inline">e</span> joins a vertex to itself</p></li>
+<li><p>A <span style="color: blue"><strong>multi-edge</strong></span> when two or more edges connect the same two vertices</p></li>
+</ul>
+</div>
+</div>
+<p>There are many instances in graph theory where our graphs are both loopless and devoid of multi-edges. In these cases we call the graph <span style="color: blue"><strong>simple</strong></span>. If our graph is empty, we call it a <span style="color: blue"><strong>null graph</strong></span>. If our graph contains one vertex and no edges, the graph is <span style="color: blue"><strong>trivial</strong></span>.</p>
+</section>
+<section id="common-families-of-graphs" class="level2">
+<h2 class="anchored" data-anchor-id="common-families-of-graphs">Common Families of Graphs</h2>
+<section id="complete-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="complete-graphs">Complete Graphs</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>complete graph</strong></span> is a simple graph where there exist an edge between every pair of distinct vertices. A complete graph with <span class="math inline">n</span> vertices is notated <span class="math inline">K_n</span>.</p>
+</div>
+</div>
+<p>(Insert picture of graphs K1 through K5)</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A complete graph <span class="math inline">K_n</span> contains <span class="math inline">\binom{n}{2}</span> edges.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The graph <span class="math inline">K_n</span> has an edge between every pair of distinct vertices. Because order doesn’t affect edges (<span class="math inline">e = uv</span> is equivalent to <span class="math inline">e = vu</span>), the number of edges is analougous to <span class="math inline">n</span> choose <span class="math inline">2</span>, <span class="math inline">\binom{n}{2}</span>.</p>
+</div>
+</div>
+</section>
+<section id="bipartite-graphs" class="level3">
+<h3 class="anchored" data-anchor-id="bipartite-graphs">Bipartite Graphs</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>bipartite graph</strong></span> <span class="math inline">G</span> is a simple graph whose vertex set can be partitioned into two subsets <span class="math inline">U</span> and <span class="math inline">V</span>, such that every edge in <span class="math inline">G</span> has one endpoint in <span class="math inline">U</span>, and one edpoint in <span class="math inline">V</span>.</p>
+</div>
+</div>
+<p>(Insert picture of a few bipartite graphs)</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A bipartite graph cannot contain any loops.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If an edge was loop, it would connect the same vertex to both endpoints, which contradicts our definition of a bipartite graph.</p>
+</div>
+</div>
+
+
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
