@@ -164,6 +164,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Integration by parts</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/integral/simple/decomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Partial fraction decomposition</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -194,6 +200,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#tabular-method" id="toc-tabular-method" class="nav-link active" data-scroll-target="#tabular-method">Tabular method</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul>
 </nav>
     </div>
@@ -391,6 +398,191 @@ Example (Stop 3)
 </div>
 </div>
 <p>Clearly the tabular method is a huge time saver for repeated integration by parts.</p>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \ln x \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Solving this is a little counter intuitive seeing as it only has one term. If we let <span class="math inline">1</span> be the second term however, we can evaluate with the tabular method. We pretty cleary have the integrate <span class="math inline">1</span>, as we can’t integrate <span class="math inline">\ln x</span>.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} \ln x \hspace{0.25in} &amp; 1\\
+- &amp; \hspace{0.25in} \frac{1}{x} \hspace{0.25in} &amp; x
+\end{array}</span>
+<p>Because the product of the second row is easy to integrate, we stop using the tabular method and compute.</p>
+<p><span class="math display">
+\int \ln x \, dx = x \ln x - \int 1 \, dx = x \ln x - x + C
+</span></p>
+<p>Which solves our integral.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus II - 7.1.1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int 4x \cos \left( {2 - 3x} \right)\,dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have two terms, <span class="math inline">4x</span> and <span class="math inline">\cos (2-3x)</span>. Its clear that differentiaing <span class="math inline">4x</span> will give us <span class="math inline">0</span> quickly, so we begin with the tabular method.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} 4x \hspace{0.25in} &amp; \cos (2-3x)\\
+- &amp; \hspace{0.25in} 4 \hspace{0.25in} &amp; -(1/3)\sin (2-3x)\\
++ &amp; \hspace{0.25in} 0 \hspace{0.25in} &amp; -(1/9)\cos (2-3x)\\
+\end{array}</span>
+<p>We use the first stop, and get the following solution to the integral</p>
+<p><span class="math display">
+\int 4x \cos \left( {2 - 3x} \right)\,dx = -\frac{4x}{3}\sin (2-3x) - \frac{4}{9} \cos (2-3x) + C
+</span></p>
+<p>Which solves our integral.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus II - 7.1.5)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Without any leads on which term to integrate, I choose to integrate <span class="math inline">cos(\frac{1}{4}x)</span> on a whim. You may integrate either term however, and the answer will be the same.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} e^{2x} \hspace{0.25in} &amp; \cos ((1/4)x)\\
+- &amp; \hspace{0.25in} 2e^{2x} \hspace{0.25in} &amp; 4\sin ((1/4)x)\\
++ &amp; \hspace{0.25in} 4e^{2x} \hspace{0.25in} &amp; -16\cos ((1/4)x)\\
+\end{array}</span>
+<p>Notice how the product of row three is a multiple of our initial integral. This is the third stop, so we evaluate our table to get.</p>
+<p><span class="math display">
+\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = 4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x) - 64\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx
+</span></p>
+<p><span class="math display">
+65 \int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = 4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x)
+</span></p>
+<p><span class="math display">
+\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = \frac{4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x)}{65}
+</span></p>
+<p>Which solves our integral.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus II - A7.1.12)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int 8\arctan\left( 2x \right)\,dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Because integrating <span class="math inline">\arctan</span> is the question, we will derive it instead, and integrate the <span class="math inline">8</span>.</p>
+<span class="math display">\begin{array}{ll}
+&amp; \hspace{0.25in} D \hspace{0.25in} &amp; I\\
++ &amp; \hspace{0.25in} \arctan(2x) \hspace{0.25in} &amp; 8\\
+- &amp; \hspace{0.25in} 2/(1+4x^2) \hspace{0.25in} &amp; 8x\\
+\end{array}</span>
+<p>Using our third stop and integrating the second row, we get</p>
+<p><span class="math display">
+\int 8\arctan\left(2x\right)\,dx = 8x\arctan(2x) - \int \frac{8x}{1+4x^2}
+</span></p>
+<p>Applying a substitution <span class="math display">
+u = 4x^2
+</span></p>
+<p>We get <span class="math display">
+\int 8\arctan\left(2x \right)\,dx = 8x\arctan(2x) - \ln |1+4x^2| + C
+</span></p>
+<p>Solving our integral.</p>
+</div>
+</div>
+</div>
 
 
 </section>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Sets</title>
+<title>OOMN - Partial fraction decomposition</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,22 +23,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
-<script src="../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../">
-<script src="../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -86,7 +86,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
-    <a class="navbar-brand" href="../../index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">OOMN</span>
     </a>
   </div>
@@ -97,15 +97,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="../../qmd/basics/sets.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="../../../qmd/basics/sets.html" rel="" target="">
  <span class="menu-text">Basics</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmd/graph/GraphTheory.html" rel="" target="">
+    <a class="nav-link" href="../../../qmd/graph/GraphTheory.html" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../qmd/integral/intro.html" rel="" target="">
+    <a class="nav-link active" href="../../../qmd/integral/intro.html" rel="" target="" aria-current="page">
  <span class="menu-text">Integral</span></a>
   </li>  
 </ul>
@@ -119,7 +119,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/basics/sets.html">Basics</a></li><li class="breadcrumb-item"><a href="../../qmd/basics/sets1.html">Sets</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/decomp.html">Partial fraction decomposition</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -131,10 +131,16 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Integration Bee</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Basics</span></a>
+ <span class="menu-text"><strong>Simple Techniques</strong></span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -142,20 +148,43 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets</span></a>
+  <a href="../../../qmd/integral/simple/basics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basics</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Sets</span></a>
+  <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Substitution</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../qmd/basics/sets2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Sets</span></a>
+  <a href="../../../qmd/integral/simple/intpart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Integration by parts</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/integral/simple/decomp.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Partial fraction decomposition</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text"><strong>Tricky Techniques</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">hyperbolic.html</span></a>
   </div>
 </li>
       </ul>
@@ -166,14 +195,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#method" id="toc-method" class="nav-link active" data-scroll-target="#method">Method</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sets</h1>
+<h1 class="title">Partial fraction decomposition</h1>
 </div>
 
 
@@ -188,44 +223,135 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>A <span style="color: blue"><strong>set</strong></span> is a collection of <span style="color: blue"><strong>elements</strong></span>, usually denoted with a capital letter <span class="math inline">A,B,\cdots,Z</span>. Important groups of numbers are denoted in Blackboard bold font; for example the set <span class="math inline">\mathbb{N}</span>, which refers to the <span style="color: blue"><strong>natural numbers</strong></span>. Sets are given the following notation</p>
-<ul>
-<li><p>If <span class="math inline">a</span> is an element of <span class="math inline">A</span>, we write <span class="math inline">a \in A</span></p></li>
-<li><p>If every element in <span class="math inline">A</span> is in <span class="math inline">B</span>, we write <span class="math inline">A \subseteq B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, and <span class="math inline">B \subseteq A</span>, then <span class="math inline">A</span> and <span class="math inline">B</span> are equal, <span class="math inline">A = B</span></p></li>
-<li><p>If <span class="math inline">A \subseteq B</span>, but <span class="math inline">A \not= B</span>, <span class="math inline">A</span> is a proper subset of <span class="math inline">B</span>, denoted <span class="math inline">A \subsetneq B</span></p></li>
-</ul>
-<p>A set <span class="math inline">S</span> containing the numbers <span class="math inline">1,2</span> and <span class="math inline">3</span> as elements is wrote <span class="math inline">S = \{1,2,3\}</span>. The order in which the elements are listed is irrelevant, <span class="math inline">S = \{1,2,3\} = \{3,2,1\}</span>. This notation becomes tedious however when attempting to write a set with a large amount of elements. This is where set builder notation comes in. Set builder notation defines a set in the form</p>
+<p>Consider the integral shown below.</p>
 <p><span class="math display">
-S = \{\text{A function of}\: x \:|\: \text{A predicate of}\: x\}
+\int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}}
 </span></p>
-<p>For example, the set of all square numbers would be</p>
+<p>Our current methods will not work to evaluate the integral. There is no simple way to apply a substitution or the tabular method. However, if we break up the fraction</p>
 <p><span class="math display">
-S = \{ x^2 \:|\: x \in \mathbb{N}\} = \{1,4,9,\ldots\}
+\frac{{3x + 11}}{{{x^2} - x - 6}} = \frac{4}{x - 3} - \frac{1}{x + 2}
 </span></p>
-<p>There are very commonly used sets we assume the existence of, and denote with special characters to save time</p>
-<ul>
-<li><p>The empty set <span class="math inline">\varnothing = \{\}</span> is simply a set with no elements</p></li>
-<li><p>The natural numbers <span class="math inline">\mathbb{N} = \{1,2,3,\ldots\}</span></p></li>
-<li><p>The integers<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> <span class="math inline">\mathbb{Z} = \{\ldots, -2, -1, 0, 1, 2, \dots\}</span></p></li>
-<li><p>The rational numbers <span class="math inline">\mathbb{Q} = \{\frac{a}{b}\:|\: a,b \in \mathbb{Z}\}</span></p></li>
-<li><p>And the real numbers <span class="math inline">\mathbb{R}</span></p></li>
-</ul>
-<p><strong>Definition:</strong> Given any set <span class="math inline">A</span>, the of <span class="math inline">A</span>, denoted <span class="math inline">\mathcal{P}(\mathbb{A})</span> is the set of all subsets of <span class="math inline">A</span>; i.e.</p>
+<p>The solution becomes trivial</p>
 <p><span class="math display">
-        \mathcal{P}(A) = \{B | B \subseteq A\}
+\int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
 </span></p>
-<p>For example, if <span class="math inline">A = \{a,b\}</span>, then <span class="math inline">\mathcal{P}(A) = \{\{\},\{a\},\{b\},\{a,b\}\}</span> Notice that <span class="math inline">\varnothing</span> and <span class="math inline">A</span> are always elements of <span class="math inline">\mathcal{P}(A)</span>. Also note <span class="math inline">a \not\in \mathcal{P}(A)</span>, but <span class="math inline">\{a\} \in \mathcal{P}(A)</span>.</p>
+<p>Finding ways to break up the fractions is known as <span style="color: blue"><strong>partial fraction decomposition</strong></span>.</p>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>When given an integral in the form</p>
+<p><span class="math display">
+\int \frac{P(X)}{Q(X)} \, dx
+</span></p>
+<p>Where <span class="math inline">P(x)</span> and <span class="math inline">Q(x)</span> are polynomials such that the degree of <span class="math inline">Q(x)</span> is higher than the degree of <span class="math inline">P(x)</span>. We can decompose the fraction based on the factors of <span class="math inline">Q(x)</span>. There are four cases for the factors of <span class="math inline">Q(x)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Decomposition cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Case I: Distinct linear factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has distinct linear factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a_1 x + b_1)(a_2 x + b_2)
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A}{a_1x + b_1} + \frac{B}{a_2x + b_2}
+</span></p>
+<p><strong>Case 2: Repeated linear factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has repeated linear factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a x + b)^k
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A_1}{ax + b} + \frac{A_2}{(ax + b)^2} + \cdots + \frac{A_k}{(a x + b)^k}
+</span></p>
+<p><strong>Case 3: Distinct quadratic factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has distinct quadratic factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A}{a_1 x^2 + b_1x + c_1} + \frac{B}{a_2 x^2 + b_2x + c_2}
+</span></p>
+<p><strong>Case 4: Repeated quadratic factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has repeated quadratic factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a x^2 + bx + c)^k
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A_1}{a x^2 + bx + c} + \cdots + \frac{A_k}{(a x^2 + bx + c)^k}
+</span></p>
+</div>
+</div>
+</div>
+<p>Note that <span class="math inline">Q(x)</span> does not have one case of factors exculsivly. For example</p>
+<p><span class="math display">
+Q(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2
+</span></p>
+<p>Will decompose into</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A}{a_1x + b_1} + \frac{B}{a_2 x^2 + b_2x + c_2} + \frac{C}{(a_2 x^2 + b_2x + c_2)^2}
+</span></p>
+<p>Next we need a method for finding the value of the constants in the numerator.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Evaluating constants
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Consider the integral from the beginning</p>
+<p><span class="math display">
+\int \frac{3x + 11}{x^2 - x - 6} \,dx
+</span></p>
+<p>We can now decompose the integrand to obtain</p>
+<p><span class="math display">
+\frac{3x + 11}{x^2 - x - 6} = \frac{A}{x - 3} + \frac{B}{x + 2}
+</span></p>
+<p>The problem is now finding values for the constants <span class="math inline">A,B</span> which make the relation true. By cross multiplying the right side of the equation we get</p>
+<p><span class="math display">
+\frac{3x + 11}{x^2 - x - 6} = \frac{A(x + 2) + B(x - 3)}{(x - 3)(x + 2)}
+</span></p>
+<p>Which simplifies to</p>
+<p><span class="math display">
+3x + 11 = A(x + 2) + B(x - 3).
+</span></p>
+<p>We can then create a system of equations such that the above expression is always true. This method is long but will always work. The faster method (that isn’t always possible) is to find values of <span class="math inline">x</span> such that the equation reduces. Using the faster method, we obtain</p>
+<p><span class="math display">
+x = 3 \: : \: 3(3) + 11 = A(3 + 2) + B(3 - 3) \implies A = 4\\
+x = -2 \: : \: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \implies B = -1
+</span></p>
+<p>Which gives us our final expression</p>
+<p><span class="math display">
+\frac{3x + 11}{x^2 - x - 6} = \frac{4}{x - 3} - \frac{1}{x + 2}
+</span></p>
+<p>Which as shown above, makes the integral trivial to solve.</p>
+<p><span class="math display">
+\int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
+</span></p>
+</div>
+</div>
+</div>
 
 
+</section>
 
-
-<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
-
-<ol>
-<li id="fn1"><p>The notation <span class="math inline">\mathbb{Z}</span> for integers comes from the German word <em>Zahlen</em>, which means integer.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section></div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

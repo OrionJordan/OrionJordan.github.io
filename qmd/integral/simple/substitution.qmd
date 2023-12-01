@@ -216,6 +216,45 @@ $$
 :::
 
 ::: {.callout-warning icon="false"}
+## Problem - Arctan generalization
+
+Evaluate the previous integral in it's general form
+
+$$
+\int \frac{1}{a^2 + x^2} \,dx
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Like last time, we'll factor out $a^2$ from the bottom and then use a substitution.
+
+$$
+\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a^2} \int \frac{1}{1 + (x^2/a^2)} \, dy
+$$
+
+Makeing the substitution
+$$
+u = \frac{x}{a}
+$$
+
+We get
+
+$$
+\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \int \frac{1}{1 + u^2} \, dx
+$$
+
+Which gives us
+
+$$
+\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \arctan \left(\frac{x}{a}\right) + C 
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
 ## Pauls Online Notes (Calculus - 5.4.6)
 
 Evaluate the following integral
@@ -251,6 +290,40 @@ Then solving the other terms gives us our solution.
 
 $$
  = -\frac{5}{3}(1 + e^{2-8w})^\frac{3}{2} + \frac{7}{4}w^4 - \frac{9}{2}w^\frac{4}{3} + C
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Pauls Online Notes (Calculus II - A7.1.18)
+
+Evaluate the following integral
+
+$$
+\int{{\frac{{{x^7}}}{{\sqrt {{x^4} + 1} }}\,dx}}
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Using the substitution
+
+$$
+u = x^4 + 1
+$$
+
+We get
+
+$$
+\int{{\frac{{{x^7}}}{{\sqrt {{x^4} + 1} }}\,dx}} = \frac{1}{4}\int \frac{u - 1}{\sqrt{u}}
+$$
+
+Which we can then apply linearity and inverse power rule to, giving us
+
+$$
+\int{{\frac{{{x^7}}}{{\sqrt {{x^4} + 1} }}\,dx}} = \frac{1}{4}\left( \frac{2}{3}(x^4 + 1)^\frac{3}{2} + 2(x^4 + 1)^\frac{1}{2}\right) + C
 $$
 
 :::

@@ -41,6 +41,7 @@ website:
         - "./qmd/integral/simple/basics.qmd"
         - "./qmd/integral/simple/substitution.qmd"
         - "./qmd/integral/simple/intpart.qmd"
+        - "./qmd/integral/simple/decomp.qmd"
       - section: "**Tricky Techniques**"
         contents:
         - "./qmd/integral/tricky/hyperbolic.qmd"

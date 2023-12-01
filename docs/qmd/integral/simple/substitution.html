@@ -164,6 +164,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Integration by parts</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/integral/simple/decomp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Partial fraction decomposition</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -472,13 +478,13 @@ u = \frac{y}{\sqrt{7}}
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Pauls Online Notes (Calculus - 5.4.6)
+Problem - Arctan generalization
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Evaluate the following integral</p>
+<p>Evaluate the previous integral in it’s general form</p>
 <p><span class="math display">
-\int{{20{{e}^{2 - 8w}}\sqrt {1 + {{e}}^{2 - 8w}}} \, + 7{w^3} - 6\,\,\sqrt[3]{w}\,dw}
+\int \frac{1}{a^2 + x^2} \,dx
 </span></p>
 </div>
 </div>
@@ -493,6 +499,52 @@ Solution
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Like last time, we’ll factor out <span class="math inline">a^2</span> from the bottom and then use a substitution.</p>
+<p><span class="math display">
+\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a^2} \int \frac{1}{1 + (x^2/a^2)} \, dy
+</span></p>
+<p>Makeing the substitution <span class="math display">
+u = \frac{x}{a}
+</span></p>
+<p>We get</p>
+<p><span class="math display">
+\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \int \frac{1}{1 + u^2} \, dx
+</span></p>
+<p>Which gives us</p>
+<p><span class="math display">
+\int \frac{1}{a^2 + x^2} \,dx = \frac{1}{a} \arctan \left(\frac{x}{a}\right) + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus - 5.4.6)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int{{20{{e}^{2 - 8w}}\sqrt {1 + {{e}}^{2 - 8w}}} \, + 7{w^3} - 6\,\,\sqrt[3]{w}\,dw}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using linearity on the integral allows us to do different substitutions. Seeing as the last two terms can be integrated with the inverse power rule, we only need to a substitution on the first term. Luckily this is an easy case.</p>
 <p><span class="math display">
@@ -509,6 +561,49 @@ u = 1 + e^{2-8w}
 <p>Then solving the other terms gives us our solution.</p>
 <p><span class="math display">
 = -\frac{5}{3}(1 + e^{2-8w})^\frac{3}{2} + \frac{7}{4}w^4 - \frac{9}{2}w^\frac{4}{3} + C
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Pauls Online Notes (Calculus II - A7.1.18)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int{{\frac{{{x^7}}}{{\sqrt {{x^4} + 1} }}\,dx}}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Using the substitution</p>
+<p><span class="math display">
+u = x^4 + 1
+</span></p>
+<p>We get</p>
+<p><span class="math display">
+\int{{\frac{{{x^7}}}{{\sqrt {{x^4} + 1} }}\,dx}} = \frac{1}{4}\int \frac{u - 1}{\sqrt{u}}
+</span></p>
+<p>Which we can then apply linearity and inverse power rule to, giving us</p>
+<p><span class="math display">
+\int{{\frac{{{x^7}}}{{\sqrt {{x^4} + 1} }}\,dx}} = \frac{1}{4}\left( \frac{2}{3}(x^4 + 1)^\frac{3}{2} + 2(x^4 + 1)^\frac{1}{2}\right) + C
 </span></p>
 </div>
 </div>

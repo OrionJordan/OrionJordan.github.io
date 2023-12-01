@@ -194,3 +194,157 @@ And we have our answer.
 :::
 
 Clearly the tabular method is a huge time saver for repeated integration by parts.
+
+## Examples
+
+::: {.callout-warning icon="false"}
+## Problem
+
+Evaluate the following integral
+
+$$
+\int \ln x \, dx
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Solving this is a little counter intuitive seeing as it only has one term. If we let $1$ be the second term however, we can evaluate with the tabular method. We pretty cleary have the integrate $1$, as we can't integrate $\ln x$.
+
+```{=tex}
+\begin{array}{ll}
+ & \hspace{0.25in} D \hspace{0.25in} & I\\
+ + & \hspace{0.25in} \ln x \hspace{0.25in} & 1\\
+ - & \hspace{0.25in} \frac{1}{x} \hspace{0.25in} & x
+\end{array}
+```
+
+Because the product of the second row is easy to integrate, we stop using the tabular method and compute.
+
+$$
+\int \ln x \, dx = x \ln x - \int 1 \, dx = x \ln x - x + C
+$$
+
+Which solves our integral.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Pauls Online Notes (Calculus II - 7.1.1)
+
+Evaluate the following integral
+
+$$
+\int 4x \cos \left( {2 - 3x} \right)\,dx
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+We have two terms, $4x$ and $\cos (2-3x)$. Its clear that differentiaing $4x$ will give us $0$ quickly, so we begin with the tabular method.
+
+```{=tex}
+\begin{array}{ll}
+ & \hspace{0.25in} D \hspace{0.25in} & I\\
+ + & \hspace{0.25in} 4x \hspace{0.25in} & \cos (2-3x)\\
+ - & \hspace{0.25in} 4 \hspace{0.25in} & -(1/3)\sin (2-3x)\\
+ + & \hspace{0.25in} 0 \hspace{0.25in} & -(1/9)\cos (2-3x)\\
+\end{array}
+```
+
+We use the first stop, and get the following solution to the integral
+
+$$
+\int 4x \cos \left( {2 - 3x} \right)\,dx = -\frac{4x}{3}\sin (2-3x) - \frac{4}{9} \cos (2-3x) + C
+$$
+
+Which solves our integral.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Pauls Online Notes (Calculus II - 7.1.5)
+
+Evaluate the following integral
+
+$$
+\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Without any leads on which term to integrate, I choose to integrate $cos(\frac{1}{4}x)$ on a whim. You may integrate either term however, and the answer will be the same.
+
+```{=tex}
+\begin{array}{ll}
+ & \hspace{0.25in} D \hspace{0.25in} & I\\
+ + & \hspace{0.25in} e^{2x} \hspace{0.25in} & \cos ((1/4)x)\\
+ - & \hspace{0.25in} 2e^{2x} \hspace{0.25in} & 4\sin ((1/4)x)\\
+ + & \hspace{0.25in} 4e^{2x} \hspace{0.25in} & -16\cos ((1/4)x)\\
+\end{array}
+```
+
+Notice how the product of row three is a multiple of our initial integral. This is the third stop, so we evaluate our table to get.
+
+$$
+\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = 4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x) - 64\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx
+$$
+
+$$
+65 \int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = 4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x)
+$$
+
+$$
+\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = \frac{4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x)}{65}
+$$
+
+Which solves our integral.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Pauls Online Notes (Calculus II - A7.1.12)
+
+Evaluate the following integral
+
+$$
+\int 8\arctan\left( 2x \right)\,dx
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Because integrating $\arctan$ is the question, we will derive it instead, and integrate the $8$.
+
+```{=tex}
+\begin{array}{ll}
+ & \hspace{0.25in} D \hspace{0.25in} & I\\
+ + & \hspace{0.25in} \arctan(2x) \hspace{0.25in} & 8\\
+ - & \hspace{0.25in} 2/(1+4x^2) \hspace{0.25in} & 8x\\
+\end{array}
+```
+
+Using our third stop and integrating the second row, we get
+
+$$
+\int 8\arctan\left(2x\right)\,dx = 8x\arctan(2x) - \int \frac{8x}{1+4x^2}
+$$
+
+Applying a substitution
+$$
+u = 4x^2
+$$
+
+We get
+$$
+\int 8\arctan\left(2x \right)\,dx = 8x\arctan(2x) - \ln |1+4x^2| + C
+$$
+
+Solving our integral.
+
+:::
