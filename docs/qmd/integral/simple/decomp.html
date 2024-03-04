@@ -97,15 +97,15 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../../qmd/basics/sets.html" rel="" target="">
- <span class="menu-text">Basics</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../../qmd/graph/GraphTheory.html" rel="" target="">
  <span class="menu-text">Graph Theory</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="../../../qmd/integral/intro.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Integral</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/logic/formalsystem.html" rel="" target="">
  <span class="menu-text">Integral</span></a>
   </li>  
 </ul>
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration Bee</span></a>
+ <span class="menu-text">Integration</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -170,6 +170,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Partial fraction decomposition</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/integral/simple/trigsub.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Trig substitutions</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
@@ -184,7 +190,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/tricky/hyperbolic.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">hyperbolic.html</span></a>
+ <span class="menu-text">Hyperbolic trigonometry</span></a>
   </div>
 </li>
       </ul>
@@ -200,6 +206,7 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#method" id="toc-method" class="nav-link active" data-scroll-target="#method">Method</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a></li>
   </ul>
 </nav>
     </div>
@@ -280,7 +287,7 @@ Q(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)
 </span></p>
 <p>We decompose into the following terms</p>
 <p><span class="math display">
-\frac{P(x)}{Q(x)} = \frac{A}{a_1 x^2 + b_1x + c_1} + \frac{B}{a_2 x^2 + b_2x + c_2}
+\frac{P(x)}{Q(x)} = \frac{A_1 + B_1}{a_1 x^2 + b_1x + c_1} + \frac{A_2 + B_2}{a_2 x^2 + b_2x + c_2}
 </span></p>
 <p><strong>Case 4: Repeated quadratic factors</strong></p>
 <p>When <span class="math inline">Q(x)</span> has repeated quadratic factors, i.e.</p>
@@ -289,7 +296,7 @@ Q(x) = (a x^2 + bx + c)^k
 </span></p>
 <p>We decompose into the following terms</p>
 <p><span class="math display">
-\frac{P(x)}{Q(x)} = \frac{A_1}{a x^2 + bx + c} + \cdots + \frac{A_k}{(a x^2 + bx + c)^k}
+\frac{P(x)}{Q(x)} = \frac{A_1x + B_1}{a x^2 + bx + c} + \cdots + \frac{A_kx + B_k}{(a x^2 + bx + c)^k}
 </span></p>
 </div>
 </div>
@@ -300,7 +307,7 @@ Q(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2
 </span></p>
 <p>Will decompose into</p>
 <p><span class="math display">
-\frac{P(x)}{Q(x)} = \frac{A}{a_1x + b_1} + \frac{B}{a_2 x^2 + b_2x + c_2} + \frac{C}{(a_2 x^2 + b_2x + c_2)^2}
+\frac{P(x)}{Q(x)} = \frac{A}{a_1x + b_1} + \frac{Bx + C}{a_2 x^2 + b_2x + c_2} + \frac{Dx + E}{(a_2 x^2 + b_2x + c_2)^2}
 </span></p>
 <p>Next we need a method for finding the value of the constants in the numerator.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -343,6 +350,67 @@ x = -2 \: : \: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \implies B = -1
 <p>Which as shown above, makes the integral trivial to solve.</p>
 <p><span class="math display">
 \int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
+</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Joe Foster (Integration by parts - C3)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can break up the integral as it contains distinct quadratic factors.</p>
+<p><span class="math display">
+\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} =  \frac{Ax + B}{x^2 + 1} + \frac{Cx + D}{x^2 + 2}
+</span></p>
+<p>Cross multiplying <span class="math display">
+x^3 + x^2 + 2x + 1 = (Ax + B)(x^2 + 2) + (Cx + D)(x^2 + 1)
+</span></p>
+<p>Gives us the following system of equations</p>
+<span class="math display">\begin{array}{ll}
+x^3  &amp; = (A + C)x^3\\
+x^2 &amp; = (B + D)x^2\\
+2x &amp; = (2A + C)x \\
+1 &amp; = (2B + D)
+\end{array}</span>
+<p>Solving the system yields</p>
+<span class="math display">\begin{array}{ll}
+A = 1  &amp; B = 0\\
+C = 0 &amp; D = 1
+\end{array}</span>
+<p>This solves our decomposition. We now have to integrate</p>
+<p><span class="math display">
+\int \frac{x}{x^2 + 1} + \frac{1}{x^2 + 2} \, dx
+</span></p>
+<p>The first term can be solved by the substitution <span class="math inline">u = x^2</span>, and the second term can be evaluated with an <span class="math inline">\arctan x</span>. This gives us</p>
+<p><span class="math display">
+\int \frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \, dx = \frac{1}{2}\ln |x^2 + 1| + \frac{1}{\sqrt{2}} \arctan \left( \frac{x}{\sqrt{2}} \right) + C
 </span></p>
 </div>
 </div>

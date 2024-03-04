@@ -98,12 +98,16 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../qmd/basics/sets.html" rel="" target="">
- <span class="menu-text">Basics</span></a>
+    <a class="nav-link" href="../../qmd/graph/GraphTheory.html" rel="" target="">
+ <span class="menu-text">Graph Theory</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../.././qmd/graph/GraphTheory.qmd" rel="" target="">
- <span class="menu-text">Graph Theory</span></a>
+    <a class="nav-link" href="../../qmd/integral/intro.html" rel="" target="">
+ <span class="menu-text">Integral</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../qmd/logic/intro.html" rel="" target="">
+ <span class="menu-text">Mathematical Logic</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -123,6 +127,7 @@ ul.task-list li input[type="checkbox"] {
   <ul>
   <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
   <li><a href="#beta-porous" id="toc-beta-porous" class="nav-link" data-scroll-target="#beta-porous">Beta-porous</a></li>
+  <li><a href="#f-porous" id="toc-f-porous" class="nav-link" data-scroll-target="#f-porous">f-porous</a></li>
   </ul>
 </nav>
     </div>
@@ -207,7 +212,91 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A \subseteq \mathbb{R}</span>, <span class="math inline">\beta \in (0,1)</span>. Then <span class="math inline">A</span> is <span class="math inline">\beta</span>-porous iff for every <span class="math inline">(a,b) \in \mathbb{R}</span>, <span class="math inline">\exists(a^\prime,b^\prime) \subseteq (a,b)</span> such that <span class="math inline">(b^\prime - a^\prime) = \beta(b-a)</span></p>
+<p>Let <span class="math inline">A \subseteq \mathbb{R}</span>, <span class="math inline">\beta \in (0,1)</span>. Then <span class="math inline">A</span> is <span class="math inline">\beta</span>-porous iff for every <span class="math inline">(a,b) \  in \mathbb{R}</span>, <span class="math inline">\exists(a^\prime,b^\prime) \subseteq (a,b)</span> such that <span class="math inline">(b^\prime - a^\prime) = \beta(b-a)</span></p>
+</div>
+</div>
+</section>
+<section id="f-porous" class="level2">
+<h2 class="anchored" data-anchor-id="f-porous">f-porous</h2>
+<p>A set <span class="math inline">A</span> is <span class="math inline">f</span>-porous if for some <span class="math inline">f</span>, there exists an <span class="math inline">\varepsilon_n</span> such that for all intervals <span class="math inline">|J| \subset |I|</span>, there exists an interval <span class="math inline">|K| \subset |J|</span> such that $$</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">A</span> is <span class="math inline">f</span>-porous <span class="math inline">\forall f</span> iff <span class="math inline">A</span> is discrete</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a set is discrete, then we can</p>
+<p>By way of contradition, assume <span class="math inline">A</span> is not discrete, and <span class="math inline">f</span>-porous for every <span class="math inline">f</span>. Then</p>
+<p><span class="math display">
+\exists x \in A \mid \forall \varepsilon &gt; 0,\quad \mathcal{B}(x,\varepsilon) - \{x\} \cap A \not = \varnothing
+</span></p>
+<p>Without loss of generality, let</p>
+<p><span class="math display">
+\lvert x - x_{n-1} \rvert &lt; \lvert x - {x_n}\rvert
+</span></p>
+<p>and</p>
+<p><span class="math display">
+|x_{n-1} - x_n| &lt; \frac{x_n - x}{2}
+</span></p>
+<p>For each <span class="math inline">n \in \mathbb{N}</span>, let <span class="math inline">f_n</span> be such that</p>
+<p><span class="math display">
+f_n(|x_n - x|) &gt; |x_n - x_{n+1}|
+</span></p>
+<p>We choose a random interval <span class="math inline">x \in I \subset \mathbb{R}</span>, and let <span class="math inline">\varepsilon_{I,n} &gt; 0</span> be this intervals associated epsilon for any <span class="math inline">f_n</span>.</p>
+<p>Let <span class="math inline">J \subset I</span> such that <span class="math inline">|J| &lt; \varepsilon_{I,n}</span> and <span class="math inline">n \in \mathbb{N}</span>.</p>
+<p>Need to show that <span class="math inline">|x_n - x_{n-1}| &lt; |x_n - x|/2</span>. Can’t prove.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose <span class="math inline">A</span> is uncountable. Uncountable sets have the property that there exists some point <span class="math inline">x</span> that is a limit point from both sides, symbollically.</p>
+<p><span class="math display">
+\exists x \in A \mid \forall \varepsilon &gt; 0
+</span></p>
+<p><span class="math display">
+(x-\varepsilon,x) \cap A \not = \varnothing \land (x, x + \varepsilon) \cap A \not = \varnothing
+</span></p>
+<p>We can now construct a continually decreasing sequence. Let <span class="math inline">\{x_n\} \to x</span>. Without loss of generality, let</p>
+<p><span class="math display">
+|x - x_n{+1}| &lt; |x_{n+1} - x_n|
+</span></p>
+<p>Repeating for <span class="math inline">y</span>. approaching from the oppsite side.</p>
+<p>Let <span class="math inline">\ell n = |x_n - y_n|</span>, <span class="math inline">c_n = |y_n - y_{n+1}|</span> and <span class="math inline">m_n = |x_n - x_{n+1}|</span>.</p>
+<p>Let <span class="math inline">I \subseteq \mathbb{R}</span>, <span class="math inline">x \in I</span>. For each <span class="math inline">n \in \mathbb{N}</span>, let</p>
+<p><span class="math display">
+f_n = \mathbb{R}^+ \to \mathbb{R}^+ \mid f_n(\ell n) &gt; \max\{c_n,m_n\}
+</span></p>
+<p>And let <span class="math inline">\varepsilon_{I_n}</span> be the associated value of epsilon. Let <span class="math inline">J \subset I</span> and <span class="math inline">n \in \mathbb{N}</span> such that <span class="math inline">|J| &lt; \varepsilon_{I,n}</span>.</p>
+<p>Let <span class="math inline">J</span> be such that <span class="math inline">x_n,y_n \in J</span>. Since <span class="math inline">f_n</span> is a decreasing function,</p>
+<p><span class="math display">
+f_n(|J|) &gt; f_n(\ell n) &gt; \max\{c_n,m_n\}
+</span></p>
+<p>Because either <span class="math inline">c_n</span> or <span class="math inline">m_n</span> is the biggest hole in <span class="math inline">(y_n,x_n)</span>, there is clearly no hole bigger than <span class="math inline">\max\{c_n,m_n\}</span>. Thus a contradiction, and if a set is <span class="math inline">f</span>-porous for every <span class="math inline">f</span>, then <span class="math inline">A</span> is not uncountable.</p>
 </div>
 </div>
 
