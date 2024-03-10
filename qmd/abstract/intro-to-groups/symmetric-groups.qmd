@@ -102,97 +102,101 @@ $$
 rs = \{6,5,4,3,2,1\} = sr^5 \quad sr = \{2,1,6,5,4,3\}
 $$
 
-## Cyclic groups
-
-::: {.callout-note icon="false"}
-## Definition
-
-A [**cyclic group**]{style="color: blue"} 
-:::
-
 ## Symmetric Groups
 
-Lets define a new symmetric group $\Omega$.
+We may expand our notion of symmetry to include all permutations of the same collection of elements. This creates the more general *symmetric group* $S_\Omega$
 
 ::: {.callout-note icon="false"}
 ## Definition
 
-We define a set $\Omega$ by the following rules
+Let $\Omega$ is a non-empty set. $S_\Omega$ is the set of all bijections from
+$$
+\Omega \to \Omega
+$$
 
-Let $\Omega \not = \varnothing$.
-
-Let $S_\Omega$ be the set of all bijections from $\Omega \to \Omega$, called a [**permutation**]{style="color: blue"}.
-
-Let $\sigma,\tau$ be permutations of $\Omega$.
-
+These bijections are called [**permutations**]{style="color: blue"} any typically notated $\sigma$ or $\tau$
 :::
 
-This gives $\Omega$, and more precisly $S_\Omega$ some interesting properties. 
+Note the following properties of $S_\Omega$
 
-- The identity of $S_\Omega$ is the permutation $1$ where $1(a) = a\, \forall a \in \Omega$.
+- The identity of $S_\Omega$ is the permutation $e$ where 
 
-- Since function composition is associative, the operation is associative.
+$$
+e(a) = a\quad \forall a \in \Omega
+$$
 
-- Every permutation has an inverse since it's a bijection. Take $\sigma\colon \Omega \to \Omega$, then $\sigma^{-1} \colon \Omega \to \Omega$ and $\sigma \circ \sigma^{-1} = 1$
+- Every permutation $\sigma \colon \Omega \to \Omega$ neccessarily has an inverse $\sigma^{-1}$, because $\sigma$ is a bijection.
 
-Therefore, $(S_\Omega, \circ)$ is a group and its called the [**symmetric group**]{style="color: blue"} on $\Omega$. Usually we take $\Omega$ as the first $n$ natural numbers. 
+- The composition of any two bijections $\sigma \circ \tau$ is itself a bijection, and therefore in $S_\Omega$
+
+Therefore $(S_\Omega, \circ)$ is a group and its called the [**symmetric group**]{style="color: blue"} on $\Omega$. Usually we take $\Omega$ as the first $n$ natural numbers, and denote the symmetric group $S_n$.
 
 ::: {.callout-warning icon="false"}
 ## Example
 
 Lets examine $\Omega = \{1,2,3\}$. 
 
-We have $\sigma \in S_3$, which we define by 
+Let $\sigma,\tau \in S_3$ be
 
 $$
-\sigma \colon \{1,2,3\} \to \{2,3,1\}.
+\sigma \colon \{1,2,3\} \to \{2,3,1\}
 $$
-
-This is represented in shorthand by
-
-$$
-\sigma \colon (1\,2\,3)
-$$
-
-We can also define a permutation $\tau \in S_3$ By
-
 $$
 \tau \colon \{1,2,3\} \to \{2,1,3\}
 $$
 
-Which is represented in shorthand by
-
+We can find $\sigma \circ \tau$
 $$
-\tau \colon (1\,2)(3) \text{ or } \tau \colon (1\,2)
+\sigma \circ \tau \colon \{1,2,3\} \to \{3,2,1\}
 $$
 
+Which is clearly in $S_3$
 ::: 
+
+This notation is obtrusive and can be simplified using [**cycle decomposition**]{style="color: blue"}.
 
 ::: {.callout-note icon="false"}
 ## Definition
 
-A [**cycle**]{style="color: blue"} is a string of integers representing an element of $S_n$ which cyclicly permutes the integers. 
+A [**cycle**]{style="color: blue"} is a string of integers representing a permutation in $S_n$, denoted $(a_1\,a_2\,\ldots\,a_n)$.
+::: 
 
-Eg. $(1\,2\,3), (1\,2)(3)$::: {.callout-note icon="false"}
-## Definition
+A cycle represents the permutation
 
-$D_{2n}$ with these operations is called the [**dihedral group of order**]{style="color: blue"} $2n$.
-:::
+$$
+\{a_1,a_2,\ldots,a_n\} \to \{a_2,a_3,\ldots,a_1\}
+$$
+
+Cycles can be concatenated to greatly reduce the amount of space needed to represent a permutation. For example the permutation
+
+$$
+\{1,2,3,4,5,6\} \to \{2,3,1,5,4,6\}
+$$
+
+Can be represented as three cycles,
+
+$$
+(1\,2\,3)(4\,5)(6)
+$$
+
+Often times cycles of length one are omitted. 
+
 ::: {.callout-warning icon="false"}
 ## Example
 
-Continuing to examine $S_3$, we know that there exist $3! = 6$ total permutations of the set. We can denote the identity permutation
+Given $S_3$, we know there exist $3! = 6$ total permutations of the set.
 
+The identity permutation
 $$
 (1)(2)(3)
 $$
 
-We have three example where we leave one number untouched
+Three examples where one number is left untouched
 $$
 (1)(2\,3), (2)(1\,3), (3)(1\,2)
 $$
 
-And two examples where we permute every number
+And two examples where every number is permuted
 
 $$
 (1\,2\,3), (1\,3\,2)
@@ -200,23 +204,16 @@ $$
 
 ::: 
 
-For any $\sigma \in S_n$, the cycle decomposition of $\sigma^{-1}$ is obtained by writing the numbers in cycle of the cycle decomposition of $\sigma$ is in reverse order. For example, given
+For any $\sigma \in S_n$, the cycle decomposition of $\sigma^{-1}$ is obtained by writing the numbers in cycle of the cycle decomposition of $\sigma$ is in reverse order. For example
 
 $$
-\sigma \colon (1\,2\,3),\quad \sigma^{-1} \colon (3\,2\,1)
+\sigma \colon (1\,2\,3),\quad \sigma^{-1} \colon (3\,2\,1).
 $$
 
-When composing in $S_n$, we read from right to left, for example, if we were in $S^4$, and given
-$$
-\sigma \colon (1\,2\,3)(4),\quad \tau \colon (1\,2)(3\,4)
-$$
-
-We can get $\sigma \circ \tau$ by combining the two. Rather tedious, but we eventually get 
+Note that $S_n$ is non-abelian for all $n\geq3$. That being said, disjoint cycles will commute. The order of an element $\sigma \in S_n$ is the least common multiple of the lengths in it's cycle decomposition. For example, the order of 
 
 $$
-\sigma \circ \tau \colon (1\to 3)(2\to 2)(3\to4)(4\to1) = (1\,3\,4)(2)
+\sigma = (1\,2\,3)(4\,5)(6)
 $$
 
-Note that $S_n$ is non-abelian for all $n\geq3$. That being said, disjoint cycles will commute. The order of an element $\sigma \in S_n$ is the l.c.m of the lengths in it's cycle decomposition.
-
-A trasposition is an element of length $2$.
+Would be $\text{lcm}(3,2)$, thus $|\sigma| = 6$.

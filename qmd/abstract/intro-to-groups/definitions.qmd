@@ -153,7 +153,7 @@ As always, we start with a definition.
 For a group $G$ and $x \in G$, the [**order**]{style="color: blue"} of $x$ is the smallest positive integer $n$ such that $x \star x \star \cdots \star x$ ($n$ times) is equal to the identity element $e$.
 :::
 
-Note that we notate $x \star x \star x \cdots$ as $x^n$. We also denote the order of $x$ as $|x|$. This is an abuse of notation with both cardinailty and absolute value. So that sucks.
+Note that we notate $x \star x \star x \cdots$ as $x^n$. We also denote the order of $x$ as $|x|$. This is an abuse of notation with both cardinailty and absolute value, so it is often neccessary to clarify the meaning of the bars.
 
 For any group $G$, it's clear that $|e| = 1$. If $x^n \not = e$ for any $n$, we say that $x$ has order infinity. For example, given the group $(\mathbb{Z}/15\mathbb{Z},\times)$, the element $2$ has an order of $4$.
 
