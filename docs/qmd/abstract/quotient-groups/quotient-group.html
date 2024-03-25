@@ -108,6 +108,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../../qmd/logic/intro.html" rel="" target="">
  <span class="menu-text">Mathematical Logic</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../../../qmd/abstract/intro.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Abstract Algebra</span></a>
+  </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -132,8 +136,11 @@ ul.task-list li input[type="checkbox"] {
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
- <span class="menu-text">./qmd/abstract/intro.qmd</span>
-  </li>
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/abstract/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Intro</span></a>
+  </div>
+</li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
@@ -197,6 +204,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a></li>
+  <li><a href="#orbit-stabalizers" id="toc-orbit-stabalizers" class="nav-link" data-scroll-target="#orbit-stabalizers">Orbit stabalizers</a></li>
+  <li><a href="#sylow-theorem" id="toc-sylow-theorem" class="nav-link" data-scroll-target="#sylow-theorem">Sylow theorem</a></li>
   </ul>
 </nav>
     </div>
@@ -220,9 +229,55 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Quotient groups</p>
+<p>Quotient groups work like subgroups to obtain a “smaller” group from some base group <span class="math inline">G</span>.</p>
 <section id="definitions" class="level2">
 <h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varphi</span> be a homomorphism from <span class="math inline">G</span> to <span class="math inline">H</span>. The <span style="color: blue"><strong>fibers</strong></span> of <span class="math inline">\varphi</span> are the sets of elements of <span class="math inline">G</span> that map to single elements of <span class="math inline">H</span>.</p>
+</div>
+</div>
+<p>For example, given the mapping</p>
+<p><span class="math display">
+\varphi \colon \mathbb{Z}^+ \to \mathbb{Z}^+/2
+</span></p>
+<p><span class="math display">
+x \rightarrowtail [x]
+</span></p>
+<p>The homomorphism <span class="math inline">\varphi</span> has two fibers, we will notate <span class="math inline">X_{[1]}</span> as the fiber over <span class="math inline">[1]</span>, and <span class="math inline">X_{[0]}</span> as the fiber over <span class="math inline">[0]</span>. Then</p>
+<p><span class="math display">
+X_{[1]} = \{1,3,5,\cdots\} \quad X_{[0]} = \{0,2,4,\cdots\}
+</span></p>
+<p>The set of fibers of <span class="math inline">\varphi</span> forms a group. We define our group operation as follows</p>
+<p><span class="math display">
+X_{a}X_{b} = X_{ab}
+</span></p>
+<p>Where <span class="math inline">X_{ab}</span> is the fiber over the product <span class="math inline">ab</span>. This is called the <em>quotient group</em> of <span class="math inline">\varphi</span>. Below is a formal proof the collection of fibers forms a group.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof [Finish]
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Prove the set of fibers of <span class="math inline">\varphi</span> is a group.</p>
+</div>
+</div>
+</div>
+<p>We can now look at some properties of homomorphisms</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -239,6 +294,7 @@ Definition
 </span></p>
 </div>
 </div>
+<p>The kernal is therefore the fiber over <span class="math inline">e_H</span>, the identity element of <span class="math inline">H</span>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -255,6 +311,7 @@ Definition
 </span></p>
 </div>
 </div>
+<p>The kernal and image of <span class="math inline">\varphi</span> are subgroups of <span class="math inline">G</span> and <span class="math inline">H</span> respectivly.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -265,14 +322,14 @@ Proposition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">H,G</span> are groups, <span class="math inline">\varphi \colon G \to H</span> is a homomorphism, then</p>
+<p>If <span class="math inline">G,H</span> are groups, and <span class="math inline">\varphi \colon G \to H</span> is a homomorphism, then</p>
 <p><span class="math display">
-\ker \varphi \leq G \: \text{ and } \: \text{im} \leq H
+\ker \varphi \leq G \: \text{ and } \: \text{im} \varphi \leq H
 </span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -281,17 +338,18 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Since <span class="math inline">e_G</span> is such that <span class="math inline">\varphi(e_G) = e_H</span>, we know <span class="math inline">\ker \varphi \not = \varnothing</span>. If <span class="math inline">x,y</span> are in the <span class="math inline">\ker \varphi</span>, then <span class="math inline">xy^{-1}</span> is in the kernal, thus <span class="math inline">\ker \varphi</span> is a subgroup of <span class="math inline">G</span>.</p>
 <p>Now take the image of <span class="math inline">\varphi</span>. Note</p>
 <p><span class="math display">
-\varphi(e_G) = e_H \in \text{im} \varphi \implies \text{im} \varphi \not = \varnothing
+\varphi(e_G) = e_H \in \text{im } \varphi \implies \text{im } \varphi \not = \varnothing
 </span></p>
-<p>Given <span class="math inline">x,y \in \text{im} \varphi</span>, we know that <span class="math inline">xy^{-1}</span> is in <span class="math inline">\text{im} \varphi</span>. Thus <span class="math inline">\text{im} \varphi \leq H</span>.</p>
+<p>Given <span class="math inline">x,y \in \text{im } \varphi</span>, we know that <span class="math inline">xy^{-1}</span> is in <span class="math inline">\text{im } \varphi</span>. Thus <span class="math inline">\text{im } \varphi \leq H</span>.</p>
 </div>
 </div>
 </div>
+<p>And we can now provide a formal definition for a quotient group</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -454,6 +512,229 @@ Proof
 </div>
 <div class="callout-body-container callout-body">
 <p>If <span class="math inline">x_1N = x_2N, y_1N=y_2N</span> then <span class="math inline">x_1^{-1}x_2 \in N</span> and <span class="math inline">y_1^{-1}y_2 \in N</span></p>
+</div>
+</div>
+</section>
+<section id="orbit-stabalizers" class="level2">
+<h2 class="anchored" data-anchor-id="orbit-stabalizers">Orbit stabalizers</h2>
+<p>Define <span class="math display">
+b = g \cdot a \rightarrowtail gG_a
+</span></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The action of <span class="math inline">G</span> on <span class="math inline">a</span> is called <span style="color: blue"><strong>transitive</strong></span> if there is only one orbit</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">D_8</span> acts transitivly on each of it’s <span class="math inline">4</span> vertices.</p>
+</div>
+</div>
+<p>If <span class="math inline">G</span> acts trivially on <span class="math inline">A</span>, then <span class="math inline">G_a = G,\, \forall a \in A</span>. Then the orbits</p>
+<p><span class="math display">
+orb(a) = \{b \mid b = g \cdot a \text{ for } g \in G\} = a.
+</span></p>
+<p>This is an example of a non-transitive action. If however</p>
+<p><span class="math display">
+G = S_n
+</span></p>
+<p>Then there always exists a <span class="math inline">g \in G</span> such that <span class="math inline">a = g \cdot b</span>.</p>
+<p>Let <span class="math inline">(G,\diamond)</span> be a group, and <span class="math inline">A = G</span>. Define</p>
+<p><span class="math display">
+g \cdot a = g \diamond a
+</span></p>
+<p>then</p>
+<p><span class="math display">
+(1) g_2 \cdot (g_1 \cdot a) = g_2 g_1 a
+</span></p>
+<p><span class="math display">
+e\cdot a = ea = a
+</span></p>
+<p>Let <span class="math inline">G</span> be a group such that <span class="math inline">H \leq G</span></p>
+<p><span class="math display">
+A = \{gH\mid g\in G\}
+</span></p>
+<p>Define <span class="math inline">g \cdot aH = gaH</span>.</p>
+<p>Suppose <span class="math inline">A</span> has <span class="math inline">n</span> elements</p>
+<p><span class="math display">
+a_1H \dots a_nH
+</span></p>
+<p>We can describe <span class="math inline">\sigma_g</span> as <span class="math inline">\sigma_g(i) = j</span> iff <span class="math inline">ga_i = a_j</span></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G = D_8</span>, and <span class="math inline">H = \langle s \rangle</span>. Then</p>
+<p><span class="math display">
+A = \{eH,rH,r^2H,r^3H\}
+</span></p>
+<p>Label the four elements <span class="math inline">1,2,3,4</span> respectivly. We can compute <span class="math inline">\sigma_s</span></p>
+<p><span class="math display">\begin{align*}
+&amp;s\cdot eH = sH = H\quad &amp;\sigma_s(1) = 1\\
+&amp;s\cdot rH = srH = r^3H\quad &amp;\sigma_s(2) = 4\\
+&amp;s\cdot r^2H = sr^2H = r^2H\quad &amp;\sigma_s(3) = 3\\
+&amp;s\cdot r^3H = sr^3H = rH\quad &amp;\sigma_s(4) = 2
+\end{align*}</span></p>
+<p>Thus <span class="math inline">\sigma_s = (24)</span>. Similarly <span class="math inline">\sigma_r(1234)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G</span> be a group <span class="math inline">H \leq G</span>, <span class="math inline">A = \{gh\mid g \in G\}</span>. Let <span class="math inline">G</span> act on <span class="math inline">A</span> by left multiplication.</p>
+<ul>
+<li><span class="math inline">G</span> acts transitivly on <span class="math inline">A</span></li>
+<li>The stabalizer of <span class="math inline">1H \in A</span> in <span class="math inline">G</span> is <span class="math inline">H</span></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(1)</span> Let <span class="math inline">aH,bH</span> be elements of <span class="math inline">A</span>. Let <span class="math inline">g = ba^{-1}</span>.</p>
+<p><span class="math display">
+g\cdot aH = gaH = ba^{-1}aH = bH
+</span></p>
+<p>Thus <span class="math inline">orb(aH) = A</span> so the group action is transitive.</p>
+<p><span class="math inline">(2)</span> The stabalizer of <span class="math inline">1H</span> is</p>
+<p><span class="math display">
+\{g\in G \mid g \cdot 1H = 1H\} = \{g \in G \mid gH = H\} = H
+</span></p>
+<p><span class="math inline">(3)</span> The kernal of the action</p>
+<p><span class="math display">\begin{align*}
+\ker(A) &amp;=\{g \in G \mid gxH = xH \quad \forall x \in G\}\\
+&amp;= \{g \in G \mid x^{-1}gxH = H\quad \forall x \in G\}\\
+&amp;= \{g \in G \mid x^{-1}gx \in H \quad \forall x \in G\}\\
+&amp;= \{g \in G \mid g \in xHx^{-1} \quad x \in G\}\\
+&amp;= \bigcap_{x\in G} xHx^{-1}
+\end{align*}</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every group is isomorphic to a subgroup of some symmetric group. If <span class="math inline">|G| = n</span> then <span class="math inline">G</span> is isomorphic to a subgroup of <span class="math inline">S_n</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">H = 1</span>. Take the permutation representatives</p>
+<p><span class="math display">
+\varphi \colon G \to S_g
+</span></p>
+<p>By the previous theorem, <span class="math inline">\ker(\varphi)</span> is contained in <span class="math inline">H</span>, meaning <span class="math inline">\ker(\varphi) = e</span>. By the first isomorphism theorem,</p>
+<p><span class="math display">
+g \cong G/\ker(\varphi) \cong \text{im}(\varphi) \leq S_G
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G</span> is a finite group of order <span class="math inline">n</span>, and <span class="math inline">p</span> is the smallest prime dividing <span class="math inline">n</span>, then any subgroup of index <span class="math inline">p</span> is normal.</p>
+</div>
+</div>
+</section>
+<section id="sylow-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="sylow-theorem">Sylow theorem</h2>
+<p>Recall that Lagranges theorem tells you that the order of a subgroup divides the order of a group. This does not guarentee the existance of a subgroup <span class="math inline">H_d</span> for every divisor <span class="math inline">d</span> of a group.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G</span> is a finite abelian group, and <span class="math inline">p</span> is a prime dividing <span class="math inline">|G|</span> then <span class="math inline">G</span> contains an element of order <span class="math inline">p</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G</span> is a finite abelian group, and <span class="math inline">p</span> is a prime dividing <span class="math inline">|G|</span> then <span class="math inline">G</span> contains an element of order <span class="math inline">p</span>.</p>
+<p>Use induction on <span class="math inline">|G|</span>. We know that <span class="math inline">x \not = e</span>. We have the base case <span class="math inline">p = |G|</span>. Thus <span class="math inline">\exists x, x^p = e</span> by Lagranges theorem. Now suppose <span class="math inline">p &lt; |G|</span>.</p>
+<p>If <span class="math inline">p \mid |x|</span>, then <span class="math inline">|x| = pn</span> for some <span class="math inline">n \in \mathbb{Z}</span></p>
+<p><span class="math display">
+|x^n| = \frac{pn}{\gcd(n,pn)} = \frac{pn}{n} = p
+</span></p>
+<p>Thus <span class="math inline">x</span> has order <span class="math inline">p</span>. If <span class="math inline">p \not \mid |x|</span>, then let <span class="math inline">\langle x \rangle = N</span>. Because <span class="math inline">G</span> is an abelian group, <span class="math inline">N \trianglelefteq G</span> since <span class="math inline">N \not = \{e\}</span>,</p>
+<p><span class="math display">
+p \mid |G/N|
+</span></p>
+<p>Thus <span class="math inline">G/N</span> contains an element of order <span class="math inline">p</span>. Using the induction hypothesis <span class="math display">
+|y^p| = \frac{|y|}{p}
+</span></p>
+</div>
 </div>
 </div>
 

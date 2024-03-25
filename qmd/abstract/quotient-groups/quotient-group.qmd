@@ -6,9 +6,47 @@ format:
     html-math-method: katex
 ---
 
-Quotient groups
+Quotient groups work like subgroups to obtain a "smaller" group from some base group $G$.
 
 ## Definitions 
+
+::: {.callout-note icon="false"}
+## Definition 
+
+Let $\varphi$ be a homomorphism from $G$ to $H$. The [**fibers**]{style="color: blue"} of $\varphi$ are the sets of elements of $G$ that map to single elements of $H$.
+:::
+
+For example, given the mapping
+
+$$
+\varphi \colon \mathbb{Z}^+ \to \mathbb{Z}^+/2
+$$
+
+$$
+x \rightarrowtail [x]
+$$
+
+The homomorphism $\varphi$ has two fibers, we will notate $X_{[1]}$ as the fiber over $[1]$, and $X_{[0]}$ as the fiber over $[0]$. Then
+
+$$
+X_{[1]} = \{1,3,5,\cdots\} \quad X_{[0]} = \{0,2,4,\cdots\}
+$$
+
+The set of fibers of $\varphi$ forms a group. We define our group operation as follows
+
+$$
+X_{a}X_{b} = X_{ab}
+$$
+
+Where $X_{ab}$ is the fiber over the product $ab$. This is called the *quotient group* of $\varphi$. Below is a formal proof the collection of fibers forms a group.
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof [Finish]
+
+Prove the set of fibers of $\varphi$ is a group.
+:::
+
+We can now look at some properties of homomorphisms
 
 ::: {.callout-note icon="false"}
 ## Definition 
@@ -21,6 +59,8 @@ $$
 
 :::
 
+The kernal is therefore the fiber over $e_H$, the identity element of $H$.
+
 ::: {.callout-note icon="false"}
 ## Definition 
 
@@ -32,13 +72,15 @@ $$
 
 :::
 
+The kernal and image of $\varphi$ are subgroups of $G$ and $H$ respectivly.
+
 ::: {.callout-note icon="false"}
 ## Proposition 
 
-If $H,G$ are groups, $\varphi \colon G \to H$ is a homomorphism, then  
+If $G,H$ are groups, and $\varphi \colon G \to H$ is a homomorphism, then  
 
 $$
-\ker \varphi \leq G \: \text{ and } \: \text{im} \leq H
+\ker \varphi \leq G \: \text{ and } \: \text{im} \varphi \leq H
 $$
 
 :::
@@ -51,12 +93,14 @@ Since $e_G$ is such that $\varphi(e_G) = e_H$, we know $\ker \varphi \not = \var
 Now take the image of $\varphi$. Note 
 
 $$
-\varphi(e_G) = e_H \in \text{im} \varphi \implies \text{im} \varphi \not = \varnothing
+\varphi(e_G) = e_H \in \text{im } \varphi \implies \text{im } \varphi \not = \varnothing
 $$
 
-Given $x,y \in \text{im} \varphi$, we know that $xy^{-1}$ is in $\text{im} \varphi$. Thus $\text{im} \varphi \leq H$. 
+Given $x,y \in \text{im } \varphi$, we know that $xy^{-1}$ is in $\text{im } \varphi$. Thus $\text{im } \varphi \leq H$. 
 
 :::
+
+And we can now provide a formal definition for a quotient group
 
 ::: {.callout-note icon="false"}
 ## Definition
@@ -176,3 +220,193 @@ $$
 If $x_1N = x_2N, y_1N=y_2N$ then $x_1^{-1}x_2 \in N$ and $y_1^{-1}y_2 \in N$
 :::
 
+## Orbit stabalizers
+
+Define
+$$
+b = g \cdot a \rightarrowtail gG_a
+$$
+
+
+::: {.callout-note icon="false"}
+## Definition
+
+The action of $G$ on $a$ is called [**transitive**]{style="color: blue"} if there is only one orbit
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+$D_8$ acts transitivly on each of it's $4$ vertices.
+:::
+
+If $G$ acts trivially on $A$, then $G_a = G,\, \forall a \in A$. Then the orbits 
+
+$$
+orb(a) = \{b \mid b = g \cdot a \text{ for } g \in G\} = a.
+$$ 
+
+This is an example of a non-transitive action. If however
+
+$$
+G = S_n
+$$
+
+Then there always exists a $g \in G$ such that $a = g \cdot b$.
+
+Let $(G,\diamond)$ be a group, and $A = G$. Define
+
+$$
+g \cdot a = g \diamond a
+$$
+
+then
+
+$$
+(1) g_2 \cdot (g_1 \cdot a) = g_2 g_1 a
+$$
+
+$$
+e\cdot a = ea = a
+$$
+
+Let $G$ be a group such that $H \leq G$
+
+$$
+A = \{gH\mid g\in G\}
+$$
+
+Define $g \cdot aH = gaH$.
+
+Suppose $A$ has $n$ elements
+
+$$
+a_1H \dots a_nH
+$$
+
+We can describe $\sigma_g$ as $\sigma_g(i) = j$ iff $ga_i = a_j$
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $G = D_8$, and $H = \langle s \rangle$. Then
+
+$$
+A = \{eH,rH,r^2H,r^3H\}
+$$
+
+Label the four elements $1,2,3,4$ respectivly. We can compute $\sigma_s$
+
+\begin{align*}
+&s\cdot eH = sH = H\quad &\sigma_s(1) = 1\\
+&s\cdot rH = srH = r^3H\quad &\sigma_s(2) = 4\\
+&s\cdot r^2H = sr^2H = r^2H\quad &\sigma_s(3) = 3\\
+&s\cdot r^3H = sr^3H = rH\quad &\sigma_s(4) = 2
+\end{align*}
+
+Thus $\sigma_s = (24)$. Similarly $\sigma_r(1234)$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $G$ be a group $H \leq G$, $A = \{gh\mid g \in G\}$. Let $G$ act on $A$ by left multiplication.
+
+- $G$ acts transitivly on $A$
+- The stabalizer of $1H \in A$ in $G$ is $H$
+
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+$(1)$ Let $aH,bH$ be elements of $A$. Let $g = ba^{-1}$.
+
+$$
+g\cdot aH = gaH = ba^{-1}aH = bH
+$$
+
+Thus $orb(aH) = A$ so the group action is transitive. 
+
+$(2)$ The stabalizer of $1H$ is
+
+$$
+\{g\in G \mid g \cdot 1H = 1H\} = \{g \in G \mid gH = H\} = H
+$$
+
+$(3)$ The kernal of the action
+
+\begin{align*}
+\ker(A) &=\{g \in G \mid gxH = xH \quad \forall x \in G\}\\
+&= \{g \in G \mid x^{-1}gxH = H\quad \forall x \in G\}\\
+&= \{g \in G \mid x^{-1}gx \in H \quad \forall x \in G\}\\
+&= \{g \in G \mid g \in xHx^{-1} \quad x \in G\}\\
+&= \bigcap_{x\in G} xHx^{-1}
+\end{align*}
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary
+
+Every group is isomorphic to a subgroup of some symmetric group. If $|G| = n$ then $G$ is isomorphic to a subgroup of $S_n$.
+
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $H = 1$. Take the permutation representatives
+
+$$
+\varphi \colon G \to S_g
+$$
+
+By the previous theorem, $\ker(\varphi)$ is contained in $H$, meaning $\ker(\varphi) = e$. By the first isomorphism theorem, 
+
+$$
+g \cong G/\ker(\varphi) \cong \text{im}(\varphi) \leq S_G
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Corollary
+
+If $G$ is a finite group of order $n$, and $p$ is the smallest prime dividing $n$, then any subgroup of index $p$ is normal.
+
+:::
+
+## Sylow theorem
+
+Recall that Lagranges theorem tells you that the order of a subgroup divides the order of a group. This does not guarentee the existance of a subgroup $H_d$ for every divisor $d$ of a group.
+
+::: {.callout-note icon="false"}
+## Lemma
+
+If $G$ is a finite abelian group, and $p$ is a prime dividing $|G|$ then $G$ contains an element of order $p$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $G$ is a finite abelian group, and $p$ is a prime dividing $|G|$ then $G$ contains an element of order $p$.
+
+Use induction on $|G|$. We know that $x \not = e$. We have the base case $p = |G|$. Thus $\exists x, x^p = e$ by Lagranges theorem. Now suppose $p < |G|$.
+
+If $p \mid |x|$, then $|x| = pn$ for some $n \in \mathbb{Z}$
+
+$$
+|x^n| = \frac{pn}{\gcd(n,pn)} = \frac{pn}{n} = p
+$$
+
+Thus $x$ has order $p$. If $p \not \mid |x|$, then let $\langle x \rangle = N$. Because $G$ is an abelian group, $N \trianglelefteq G$ since $N \not = \{e\}$,
+
+$$
+p \mid |G/N|
+$$
+
+Thus $G/N$ contains an element of order $p$. Using the induction hypothesis
+$$
+|y^p| = \frac{|y|}{p}
+$$
+:::

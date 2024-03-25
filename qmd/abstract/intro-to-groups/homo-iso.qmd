@@ -21,7 +21,7 @@ $$
 \forall x,y \in G,\, \varphi (x \star y) = \varphi (x) \diamond \varphi(y)
 $$
 
-The $\varphi$ is a [**homomorphism**]{style="color: blue"}
+Then $\varphi$ is a [**homomorphism**]{style="color: blue"}
 :::
 
 One can think of a homomorphism as a map of sets that respect the group operations. When group operations are not specified, we often abbreviate
@@ -41,14 +41,14 @@ $$
 \varphi \colon G \to H
 $$
 
-is an [**Isomorphisms**]{style="color: blue"} if $\varphi$ is both a homomorphism, and a bijection. If two groups are isomorphic, they are denoted
+is an [**Isomorphisms**]{style="color: blue"} if $\varphi$ is both a homomorphism, and a bijection. 
+:::
+
+If two groups are isomorphic, they are essentially the same. Every property satisfied by $G$ will be satisifed by $H$. If two groups are isomorphic, they are denoted
 
 $$
 G \cong H
 $$
-:::
-
-If two groups are isomorphic, they are essentially the same. Every property satisfied by $G$ will be satisifed by $H$.
 
 A homomorphism from a group to itself is called an [**endomorphism**]{style="color: blue"}, and an isomorphism from a group to itself is called an [**automorphism**]{style="color: blue"}.
 
@@ -74,6 +74,8 @@ $$
 $$
 \varphi (x) + \varphi (y) = [x] + [y] = [x + y]
 $$
+
+But not an isomorphism, as the function is not injective.
 :::
 
 ::: {.callout-warning icon="false"}
@@ -89,7 +91,7 @@ $$
 x \rightarrowtail x
 $$
 
-is an isomorphism, and an automorphism. Therefore for any group $G$, there exists some $\varphi$ such that $G$ is isomorphic to itself.
+is an isomorphism, and an automorphism.
 :::
 
 ::: {.callout-warning icon="false"}
@@ -123,18 +125,18 @@ Now we can be to look at some of the properties of homomorphisms and Isomorphism
 ::: {.callout-note icon="false"}
 ## Proposition 1.2.1
 
-Let
+Let the following be groups
 $$
 (G, \star) \quad (H, \diamond) \quad (M, \square).
 $$
 
-Also let
+And the following maps be homomorphisms
 
 $$
 f \colon G \rightarrow H,\quad g \colon H \rightarrow M
 $$
 
-be homomorphisms. Then
+Then
 
 $$
 g \circ f \colon G \rightarrow M
@@ -184,7 +186,7 @@ e_G &= e_Ge_G\\
 \varphi(e_G) = \varphi&(e_Ge_G) = \varphi(e_G)\varphi(e_G)\\
 (\varphi(e_G))^{-1}\varphi(e_G) &= (\varphi(e_G))^{-1}\varphi(e_G)\varphi(e_G)\\
 e_H &= e_H\varphi(e_G)\\
-e_H &= \varphi(e_G) \quad\square
+e_H &= \varphi(e_G)
 \end{align*}
 :::
 
@@ -194,11 +196,11 @@ e_H &= \varphi(e_G) \quad\square
 If $\varphi \colon G \rightarrow H$ is an isomorphism, then
 
 - The cardinality of $G$ and $H$ are equivalent
-- If $G$ is abelian, then $H$ is abelian
+- $H$ is abelian if and only if $G$ is abelian
 - For all $x$ in $G$, the order of $x$ is the order of $\varphi(x)$
 :::
 
-This proposition essentially states that Isomorphisms preserve group structure. The proof will make use of the following lemma
+This porposition lists some of the properties preserved under isomorphism. The proof requires the use of the following Lemma
 
 ::: {.callout-note icon="false"}
 ## Lemma 1.2.4
@@ -211,7 +213,21 @@ $$
 :::
 
 ::: {.callout-tip icon="false" collapse="true"}
-## Proof (FINISH)
+## Proof
+
+We use a proof by induction. When $n = 1$
+
+\begin{align*}
+\varphi(x^1) = \varphi(x)^1
+\end{align*}
+
+When $n > 1$
+
+\begin{align*}
+\varphi(x^{n-1}x) &= \varphi(x)^{n-1}\varphi(x)\\
+\varphi(x^{n}) &= \varphi(x)^{n}
+\end{align*}
+
 :::
 
 Now to prove Proposition $1.2.3$.
@@ -219,32 +235,45 @@ Now to prove Proposition $1.2.3$.
 ::: {.callout-tip icon="false" collapse="true"}
 ## Proof (FINISH)
 
-We have three cases for this proposition
+$(1)$ Isomorphisms are bijections, and by the Schröder–Bernstein theorem, bijections preserve cardinailty.
+
+$(2)$ Let $(G,\star)$ and $(H, \diamond)$ be groups. If $(G,\star)$ is abelian, and ${\varphi(a)=x},{\varphi(b)=y}$, then
+
+\begin{align*}
+x \diamond y &= \varphi(a) \diamond \varphi(b)\\
+&= \varphi(a \star b)\\
+&= \varphi(b \star a)\\
+&= \varphi(b) \diamond \varphi(a)\\
+&= y \diamond x
+\end{align*}
+
+$(3)$ We have three cases for this proposition
 
 **Case 1:**
 
+Suppose $|x| = n$ is finite and $|\varphi(x)|$ is infinite. Then
+
+$$
+\varphi(x)^n = \varphi(x^n) = \varphi(e_G) = e_H
+$$
+
+Thus $\varphi(x)$ has finite order $n$, a contradiction.
+
 **Case 2:**
 
-Suppose the order $|x| = \infty$, $|\phi(x)| = n < \infty$
-
-Note that 
-$$
-\varphi (x^n) = \varphi (x)^n = e_H
-$$
-
-Because
+Suppose $|x|$ is infinite and $|\varphi(x)| = n$ is finite. Then
 
 $$
-\varphi (e_G) = e_H
+\varphi (x^n) = \varphi (x)^n = e_H = \varphi(e_G)
 $$
 
-By the injective property (which we can use because we have a bijection), we have
+Because we have an isomorphism, $\varphi$ is injective, meaning
 
 $$
-x^n = e_G
+x^n = e_G.
 $$
 
-Thus $|x| \leq n < \infty$. Thus $|x|$ and $|\varphi(x)|$ must either both be finite or infinite.
+Thus $|x|$ has finite order $n$, a contradiction.
 
 **Case 3:**
 
@@ -267,7 +296,7 @@ m = n
 $$
 :::
 
-Determining if two groups are isomorphic is an NP problem, so it can take a while to prove.    
+Determining if two groups are isomorphic is an $NP$ problem, so it can take a while to prove.    
 
 
 ::: {.callout-tip icon="false" collapse="true"}

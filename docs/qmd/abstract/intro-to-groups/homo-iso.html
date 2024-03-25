@@ -246,7 +246,7 @@ Definition
 <p><span class="math display">
 \forall x,y \in G,\, \varphi (x \star y) = \varphi (x) \diamond \varphi(y)
 </span></p>
-<p>The <span class="math inline">\varphi</span> is a <span style="color: blue"><strong>homomorphism</strong></span></p>
+<p>Then <span class="math inline">\varphi</span> is a <span style="color: blue"><strong>homomorphism</strong></span></p>
 </div>
 </div>
 <p>One can think of a homomorphism as a map of sets that respect the group operations. When group operations are not specified, we often abbreviate</p>
@@ -268,13 +268,13 @@ Definition
 <p><span class="math display">
 \varphi \colon G \to H
 </span></p>
-<p>is an <span style="color: blue"><strong>Isomorphisms</strong></span> if <span class="math inline">\varphi</span> is both a homomorphism, and a bijection. If two groups are isomorphic, they are denoted</p>
+<p>is an <span style="color: blue"><strong>Isomorphisms</strong></span> if <span class="math inline">\varphi</span> is both a homomorphism, and a bijection.</p>
+</div>
+</div>
+<p>If two groups are isomorphic, they are essentially the same. Every property satisfied by <span class="math inline">G</span> will be satisifed by <span class="math inline">H</span>. If two groups are isomorphic, they are denoted</p>
 <p><span class="math display">
 G \cong H
 </span></p>
-</div>
-</div>
-<p>If two groups are isomorphic, they are essentially the same. Every property satisfied by <span class="math inline">G</span> will be satisifed by <span class="math inline">H</span>.</p>
 <p>A homomorphism from a group to itself is called an <span style="color: blue"><strong>endomorphism</strong></span>, and an isomorphism from a group to itself is called an <span style="color: blue"><strong>automorphism</strong></span>.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -300,6 +300,7 @@ x \rightarrowtail [x]
 <p><span class="math display">
 \varphi (x) + \varphi (y) = [x] + [y] = [x + y]
 </span></p>
+<p>But not an isomorphism, as the function is not injective.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -319,7 +320,7 @@ G \rightarrow G
 <p><span class="math display">
 x \rightarrowtail x
 </span></p>
-<p>is an isomorphism, and an automorphism. Therefore for any group <span class="math inline">G</span>, there exists some <span class="math inline">\varphi</span> such that <span class="math inline">G</span> is isomorphic to itself.</p>
+<p>is an isomorphism, and an automorphism.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -362,14 +363,14 @@ Proposition 1.2.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math display">
+<p>Let the following be groups <span class="math display">
 (G, \star) \quad (H, \diamond) \quad (M, \square).
 </span></p>
-<p>Also let</p>
+<p>And the following maps be homomorphisms</p>
 <p><span class="math display">
 f \colon G \rightarrow H,\quad g \colon H \rightarrow M
 </span></p>
-<p>be homomorphisms. Then</p>
+<p>Then</p>
 <p><span class="math display">
 g \circ f \colon G \rightarrow M
 </span></p>
@@ -435,7 +436,7 @@ e_G &amp;= e_Ge_G\\
 \varphi(e_G) = \varphi&amp;(e_Ge_G) = \varphi(e_G)\varphi(e_G)\\
 (\varphi(e_G))^{-1}\varphi(e_G) &amp;= (\varphi(e_G))^{-1}\varphi(e_G)\varphi(e_G)\\
 e_H &amp;= e_H\varphi(e_G)\\
-e_H &amp;= \varphi(e_G) \quad\square
+e_H &amp;= \varphi(e_G)
 \end{align*}</span></p>
 </div>
 </div>
@@ -453,12 +454,12 @@ Proposition 1.2.3
 <p>If <span class="math inline">\varphi \colon G \rightarrow H</span> is an isomorphism, then</p>
 <ul>
 <li>The cardinality of <span class="math inline">G</span> and <span class="math inline">H</span> are equivalent</li>
-<li>If <span class="math inline">G</span> is abelian, then <span class="math inline">H</span> is abelian</li>
+<li><span class="math inline">H</span> is abelian if and only if <span class="math inline">G</span> is abelian</li>
 <li>For all <span class="math inline">x</span> in <span class="math inline">G</span>, the order of <span class="math inline">x</span> is the order of <span class="math inline">\varphi(x)</span></li>
 </ul>
 </div>
 </div>
-<p>This proposition essentially states that Isomorphisms preserve group structure. The proof will make use of the following lemma</p>
+<p>This porposition lists some of the properties preserved under isomorphism. The proof requires the use of the following Lemma</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -481,13 +482,21 @@ Lemma 1.2.4
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof (FINISH)
+Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-
+<p>We use a proof by induction. When <span class="math inline">n = 1</span></p>
+<p><span class="math display">\begin{align*}
+\varphi(x^1) = \varphi(x)^1
+\end{align*}</span></p>
+<p>When <span class="math inline">n &gt; 1</span></p>
+<p><span class="math display">\begin{align*}
+\varphi(x^{n-1}x) &amp;= \varphi(x)^{n-1}\varphi(x)\\
+\varphi(x^{n}) &amp;= \varphi(x)^{n}
+\end{align*}</span></p>
 </div>
 </div>
 </div>
@@ -504,22 +513,32 @@ Proof (FINISH)
 </div>
 <div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>We have three cases for this proposition</p>
+<p><span class="math inline">(1)</span> Isomorphisms are bijections, and by the Schröder–Bernstein theorem, bijections preserve cardinailty.</p>
+<p><span class="math inline">(2)</span> Let <span class="math inline">(G,\star)</span> and <span class="math inline">(H, \diamond)</span> be groups. If <span class="math inline">(G,\star)</span> is abelian, and <span class="math inline">{\varphi(a)=x},{\varphi(b)=y}</span>, then</p>
+<p><span class="math display">\begin{align*}
+x \diamond y &amp;= \varphi(a) \diamond \varphi(b)\\
+&amp;= \varphi(a \star b)\\
+&amp;= \varphi(b \star a)\\
+&amp;= \varphi(b) \diamond \varphi(a)\\
+&amp;= y \diamond x
+\end{align*}</span></p>
+<p><span class="math inline">(3)</span> We have three cases for this proposition</p>
 <p><strong>Case 1:</strong></p>
+<p>Suppose <span class="math inline">|x| = n</span> is finite and <span class="math inline">|\varphi(x)|</span> is infinite. Then</p>
+<p><span class="math display">
+\varphi(x)^n = \varphi(x^n) = \varphi(e_G) = e_H
+</span></p>
+<p>Thus <span class="math inline">\varphi(x)</span> has finite order <span class="math inline">n</span>, a contradiction.</p>
 <p><strong>Case 2:</strong></p>
-<p>Suppose the order <span class="math inline">|x| = \infty</span>, <span class="math inline">|\phi(x)| = n &lt; \infty</span></p>
-<p>Note that <span class="math display">
-\varphi (x^n) = \varphi (x)^n = e_H
-</span></p>
-<p>Because</p>
+<p>Suppose <span class="math inline">|x|</span> is infinite and <span class="math inline">|\varphi(x)| = n</span> is finite. Then</p>
 <p><span class="math display">
-\varphi (e_G) = e_H
+\varphi (x^n) = \varphi (x)^n = e_H = \varphi(e_G)
 </span></p>
-<p>By the injective property (which we can use because we have a bijection), we have</p>
+<p>Because we have an isomorphism, <span class="math inline">\varphi</span> is injective, meaning</p>
 <p><span class="math display">
-x^n = e_G
+x^n = e_G.
 </span></p>
-<p>Thus <span class="math inline">|x| \leq n &lt; \infty</span>. Thus <span class="math inline">|x|</span> and <span class="math inline">|\varphi(x)|</span> must either both be finite or infinite.</p>
+<p>Thus <span class="math inline">|x|</span> has finite order <span class="math inline">n</span>, a contradiction.</p>
 <p><strong>Case 3:</strong></p>
 <p>Suppose <span class="math inline">|x| = n</span>, <span class="math inline">|\varphi(x)| = m</span>. Then</p>
 <p><span class="math display">
@@ -536,7 +555,7 @@ m = n
 </div>
 </div>
 </div>
-<p>Determining if two groups are isomorphic is an NP problem, so it can take a while to prove.</p>
+<p>Determining if two groups are isomorphic is an <span class="math inline">NP</span> problem, so it can take a while to prove.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
