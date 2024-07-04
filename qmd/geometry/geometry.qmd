@@ -189,3 +189,6 @@ $$
 We also want that if $P_1$ is a subset of $P_2$, is a subset of $P_3$, ect.
 
 Then the maximum distance between points as $n \to \infty$ goes to $0$.
+
+## Wednesday April 3rd
+

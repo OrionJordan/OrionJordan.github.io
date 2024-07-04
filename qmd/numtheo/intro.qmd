@@ -1,0 +1,29 @@
+---
+title: "Introduction"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+This section is largely based on the book "Introduction to Number Theory" by Mathew Crawford, and uses problems from 'Alcumus', by the Art of Problem Solving.
+
+As such, the topics in this section will have a special emphasis on competitional mathematics. 
+
+# Table of Contents
+
+| **1 - Primes and Composites**
+| **2 - Multiples and Divisors**
+| **3 - Prime Factorization**
+| **4 - Divisor Problems**
+| **5 - Special Numbers**
+| **6 - Algebra With Integers**
+| **7 - Base Numbers**
+| **8 - Base Number Arithmetic** - _In progress_
+| **9 - Units Digits**
+| **10 - Decimals and Fractions**
+| **11 - Introduction to.Modular Arithmetic**
+| **12 - Divisibility Rules**
+| **13 - Linear Congruences**
+| **14 - Number Sense**
+

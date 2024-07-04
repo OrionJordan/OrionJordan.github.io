@@ -3,7 +3,11 @@ project:
   output-dir: docs
 
 website:
+  page-navigation: true
   title: OOMN
+  description: "A college project"
+  site-url: "https://orionjordan.github.io/"
+
   navbar:
     background: primary
     search: true
@@ -59,6 +63,10 @@ website:
         contents:
         - "./qmd/abstract/quotient-groups/quotient-group.qmd"
 
+theme:
+  light: flatly
+  dark: darkly
 
-
-
+format:
+  html:
+    mainfont: "system-ui"

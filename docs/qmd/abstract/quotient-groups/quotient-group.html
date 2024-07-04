@@ -245,12 +245,16 @@ Definition
 <p>Let <span class="math inline">\varphi</span> be a homomorphism from <span class="math inline">G</span> to <span class="math inline">H</span>. The <span style="color: blue"><strong>fibers</strong></span> of <span class="math inline">\varphi</span> are the sets of elements of <span class="math inline">G</span> that map to single elements of <span class="math inline">H</span>.</p>
 </div>
 </div>
-<p>For example, given the mapping</p>
+<p>For example, given the groups <span class="math inline">G = (\mathbb{Z},+)</span> and <span class="math inline">H = Z_n</span> be the cyclic group of order <span class="math inline">n</span> under multiplication. We can then define the map</p>
 <p><span class="math display">
-\varphi \colon \mathbb{Z}^+ \to \mathbb{Z}^+/2
+\varphi \colon \mathbb{Z} \to Z_n
 </span></p>
 <p><span class="math display">
-x \rightarrowtail [x]
+a \rightarrowtail x^a
+</span></p>
+<p>The <em>fiber</em> of <span class="math inline">\varphi</span> over <span class="math inline">x^a</span> is therefore</p>
+<p><span class="math display">
+Put fiber
 </span></p>
 <p>The homomorphism <span class="math inline">\varphi</span> has two fibers, we will notate <span class="math inline">X_{[1]}</span> as the fiber over <span class="math inline">[1]</span>, and <span class="math inline">X_{[0]}</span> as the fiber over <span class="math inline">[0]</span>. Then</p>
 <p><span class="math display">
@@ -324,7 +328,7 @@ Proposition
 <div class="callout-body-container callout-body">
 <p>If <span class="math inline">G,H</span> are groups, and <span class="math inline">\varphi \colon G \to H</span> is a homomorphism, then</p>
 <p><span class="math display">
-\ker \varphi \leq G \: \text{ and } \: \text{im} \varphi \leq H
+\ker \varphi \leq G \: \text{ and } \: \text{im} \,\varphi \leq H
 </span></p>
 </div>
 </div>
@@ -360,7 +364,7 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\varphi \colon G \to H</span> be a surjective homomorphism with <span class="math inline">\ker k</span>. The <span style="color: blue"><strong>quotient group</strong></span> <span class="math inline">G/K</span> is the group whose elements are the fibers of <span class="math inline">\varphi</span> with group operation inherited from <span class="math inline">H</span>.</p>
+<p>Let <span class="math inline">\varphi \colon G \to H</span> be a surjective homomorphism with <span class="math inline">\ker K</span>. The <span style="color: blue"><strong>quotient group</strong></span> <span class="math inline">G/K</span> is the group whose elements are the fibers of <span class="math inline">\varphi</span> with group operation inherited from <span class="math inline">H</span>.</p>
 </div>
 </div>
 <p>This definition requires knowing <span class="math inline">\varphi</span> explictly. You can however define the group operation on fibers in terms of representatives.</p>
@@ -696,6 +700,7 @@ Corollary
 <section id="sylow-theorem" class="level2">
 <h2 class="anchored" data-anchor-id="sylow-theorem">Sylow theorem</h2>
 <p>Recall that Lagranges theorem tells you that the order of a subgroup divides the order of a group. This does not guarentee the existance of a subgroup <span class="math inline">H_d</span> for every divisor <span class="math inline">d</span> of a group.</p>
+<p>We start with the following Lemma.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -734,6 +739,117 @@ p \mid |G/N|
 <p>Thus <span class="math inline">G/N</span> contains an element of order <span class="math inline">p</span>. Using the induction hypothesis <span class="math display">
 |y^p| = \frac{|y|}{p}
 </span></p>
+</div>
+</div>
+</div>
+<p>Now we get some tricky Definitions</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G</span> be a group and <span class="math inline">p</span> be a prime. A group of order <span class="math inline">p^\alpha</span> for <span class="math inline">\alpha \geq 0</span> is called a <span style="color: blue"><strong>p-group</strong></span>.</p>
+<p>A subgroup of a <span class="math inline">p</span>-group is called a <span style="color: blue"><strong>p-subgroup</strong></span>.</p>
+<p>If <span class="math inline">G</span> is a group of order <span class="math inline">mp^\alpha</span> where <span class="math inline">p \nmid m</span>, then a subgroup of order <span class="math inline">p^\alpha</span> is called a <span style="color: blue"><strong>Sylow p-subgroup</strong></span></p>
+</div>
+</div>
+<p>Let <span class="math inline">G</span> be a group. The set of Sylow <span class="math inline">p</span>-subgroups is denoted</p>
+<p><span class="math display">
+Syl_p(G)
+</span></p>
+<p>And the number of Sylow <span class="math inline">p</span>-subgroups</p>
+<p><span class="math display">
+n_p(G)
+</span></p>
+<p>Sylow had three major theorems in Abstract Algebra relating to these Sylow <span class="math inline">p</span>-subgroups</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Sylow 1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G</span> be a group of order <span class="math inline">mp^\alpha</span> where <span class="math inline">p</span> is a prime not dividing <span class="math inline">m</span>, then there exists a Sylow <span class="math inline">p</span>-subgroup.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Sylow 2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">P</span> is a Sylow <span class="math inline">p</span>-subgroup of <span class="math inline">G</span> and <span class="math inline">Q</span> is any <span class="math inline">p</span>-subgroup of <span class="math inline">G</span></p>
+<p><span class="math display">
+\exists g \in G \mid Q \leq gPg^{-1}
+</span></p>
+<p>In particular, any two Sylow <span class="math inline">p</span>-subgroups are conjugate if <span class="math inline">Q</span> is a Sylow <span class="math inline">p</span>-subgroup <span class="math inline">\exists g</span> such that <span class="math inline">Q = gPg^{-1}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Sylow 3)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The number of Sylow <span class="math inline">p</span>-subgroups of <span class="math inline">G</span> is of the form <span class="math inline">1 + kp</span>, i.e.</p>
+<p><span class="math display">
+n_p(G) = 1 \mod p
+</span></p>
+<p>Futhermore, <span class="math inline">n_p(G) = [G \colon N_g(p)]</span> and <span class="math inline">n_p(G) \mid m</span>.</p>
+</div>
+</div>
+<p>We need only prove the first theorem however.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof (Sylow 1)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We start our proof using induction on <span class="math inline">|G|</span>.</p>
+<p>For our base case, if <span class="math inline">|G| = 1</span>, there is nothing to prove. Assume (for the induction hypothesis), Sylow subgroups exist for all groups smaller than <span class="math inline">|G|</span>.</p>
+<p>If <span class="math inline">p \mid |Z(G)|</span>, by lemma <span class="math inline">Z(G)</span> has an element of order <span class="math inline">p</span> and thus a subgroup of order <span class="math inline">p</span>. Call this subgroup <span class="math inline">N</span>.</p>
+<p>Let <span class="math inline">\overline{G} = G/N</span>. Note</p>
+<p><span class="math display">
+\frac{|G|}{|N|} = \frac{p^{\alpha}m}{p} = \frac{p^{\alpha - 1}}{m}.
+</span></p>
+<p>So <span class="math inline">|\overline{G}| = p^{\alpha - 1}m</span>. By the induction hypothesis, <span class="math inline">\overline{G}</span> has a subgroup of order <span class="math inline">p^{\alpha + 1}</span>. Call this subgroup <span class="math inline">\overline{P}</span>. By the correspondence isomorphism theorem, let <span class="math inline">P</span> be such that <span class="math inline">P / N = \overline{P}</span>. Note</p>
+<p><span class="math display">
+|P| = |P/N| |N| = p^{\alpha - 1}p = p^{\alpha}
+</span></p>
+<p>So <span class="math inline">P</span> is a Sylow p-subgroup of <span class="math inline">G</span>.</p>
+<p>If <span class="math inline">p\nmid{}|Z(G)|</span>, let <span class="math inline">g_1\dots{}g_r</span> be representatives of distinct, non-central congruancy classes of <span class="math inline">G</span>. Then</p>
+<p><span class="math display">
+|G| = |Z(G)| + \sum\limits^r_{i=1}[G \colon C_G(g_i)]
+</span></p>
+<p>Note that</p>
+<p><span class="math inline">\forall i,\,p \mid [G \colon C_G(g_i)] \implies p \mid \sum\limits^r_{i=1}[G \colon C_G(g_i)]</span></p>
+<p>Would imply <span class="math inline">p \mid Z(G)</span> which we know is false. So therefore there exists some <span class="math inline">i</span> such that <span class="math inline">p \nmid [G \colon C_G(g_i)]</span>. For this <span class="math inline">i</span>, let <span class="math inline">H = C_g(g_i)</span>.</p>
+<p><span class="math display">
+[G \colon C_G(g_i)] = \frac{|G|}{|C_G(g_i)|} = \frac{|G|}{|H|}
+</span></p>
+<p>So <span class="math inline">H = p^{\alpha}k</span> for some <span class="math inline">k</span> such that <span class="math inline">p \nmid k</span>. Since <span class="math inline">g_i \not = Z(G)</span>, <span class="math inline">C_G(g_i) \not = G</span>. Therefore <span class="math inline">k &lt; m</span>. Because <span class="math inline">|H| &lt; |G|</span> by induction <span class="math inline">H</span> has a sylow <span class="math inline">p</span>-subgroup <span class="math inline">|p| = p^{\alpha}</span>, so <span class="math inline">P</span> is a Sylow <span class="math inline">p</span>-subgroup of <span class="math inline">G</span>.</p>
 </div>
 </div>
 </div>

@@ -16,14 +16,20 @@ Quotient groups work like subgroups to obtain a "smaller" group from some base g
 Let $\varphi$ be a homomorphism from $G$ to $H$. The [**fibers**]{style="color: blue"} of $\varphi$ are the sets of elements of $G$ that map to single elements of $H$.
 :::
 
-For example, given the mapping
+For example, given the groups $G = (\mathbb{Z},+)$ and $H = Z_n$ be the cyclic group of order $n$ under multiplication. We can then define the map
 
 $$
-\varphi \colon \mathbb{Z}^+ \to \mathbb{Z}^+/2
+\varphi \colon \mathbb{Z} \to Z_n
 $$
 
 $$
-x \rightarrowtail [x]
+a \rightarrowtail x^a
+$$
+
+The *fiber* of $\varphi$ over $x^a$ is therefore
+
+$$
+Put fiber 
 $$
 
 The homomorphism $\varphi$ has two fibers, we will notate $X_{[1]}$ as the fiber over $[1]$, and $X_{[0]}$ as the fiber over $[0]$. Then
@@ -80,7 +86,7 @@ The kernal and image of $\varphi$ are subgroups of $G$ and $H$ respectivly.
 If $G,H$ are groups, and $\varphi \colon G \to H$ is a homomorphism, then  
 
 $$
-\ker \varphi \leq G \: \text{ and } \: \text{im} \varphi \leq H
+\ker \varphi \leq G \: \text{ and } \: \text{im} \,\varphi \leq H
 $$
 
 :::
@@ -105,7 +111,7 @@ And we can now provide a formal definition for a quotient group
 ::: {.callout-note icon="false"}
 ## Definition
 
-Let $\varphi \colon G \to H$ be a surjective homomorphism with $\ker k$. The [**quotient group**]{style="color: blue"} $G/K$ is the group whose elements are the fibers of $\varphi$ with group operation inherited from $H$.
+Let $\varphi \colon G \to H$ be a surjective homomorphism with $\ker K$. The [**quotient group**]{style="color: blue"} $G/K$ is the group whose elements are the fibers of $\varphi$ with group operation inherited from $H$.
 :::
 
 This definition requires knowing $\varphi$ explictly. You can however define the group operation on fibers in terms of representatives. 
@@ -378,7 +384,9 @@ If $G$ is a finite group of order $n$, and $p$ is the smallest prime dividing $n
 
 ## Sylow theorem
 
-Recall that Lagranges theorem tells you that the order of a subgroup divides the order of a group. This does not guarentee the existance of a subgroup $H_d$ for every divisor $d$ of a group.
+Recall that Lagranges theorem tells you that the order of a subgroup divides the order of a group. This does not guarentee the existance of a subgroup $H_d$ for every divisor $d$ of a group. 
+
+We start with the following Lemma.
 
 ::: {.callout-note icon="false"}
 ## Lemma
@@ -409,4 +417,104 @@ Thus $G/N$ contains an element of order $p$. Using the induction hypothesis
 $$
 |y^p| = \frac{|y|}{p}
 $$
+:::
+
+Now we get some tricky Definitions
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $G$ be a group and $p$ be a prime. A group of order $p^\alpha$ for $\alpha \geq 0$ is called a [**p-group**]{style="color: blue"}. 
+
+A subgroup of a $p$-group is called a [**p-subgroup**]{style="color: blue"}.
+
+If $G$ is a group of order $mp^\alpha$ where $p \nmid m$, then a subgroup of order $p^\alpha$ is called a [**Sylow p-subgroup**]{style="color: blue"}
+:::
+
+Let $G$ be a group. The set of Sylow $p$-subgroups is denoted
+
+$$
+Syl_p(G)
+$$
+
+And the number of Sylow $p$-subgroups 
+
+$$
+n_p(G)
+$$
+
+Sylow had three major theorems in Abstract Algebra relating to these Sylow $p$-subgroups
+
+::: {.callout-note icon="false"}
+## Theorem (Sylow 1)
+
+Let $G$ be a group of order $mp^\alpha$ where $p$ is a prime not dividing $m$, then there exists a Sylow $p$-subgroup.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Sylow 2)
+
+If $P$ is a Sylow $p$-subgroup  of $G$ and $Q$ is any $p$-subgroup of $G$
+
+$$
+\exists g \in G \mid Q \leq gPg^{-1}
+$$
+
+In particular, any two Sylow $p$-subgroups are conjugate if $Q$ is a Sylow $p$-subgroup $\exists g$ such that $Q = gPg^{-1}$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Sylow 3)
+
+The number of Sylow $p$-subgroups of $G$ is of the form $1 + kp$, i.e.
+
+$$
+n_p(G) = 1 \mod p
+$$
+
+Futhermore, $n_p(G) = [G \colon N_g(p)]$ and $n_p(G) \mid m$.
+:::
+
+We need only prove the first theorem however.
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Sylow 1)
+
+We start our proof using induction on $|G|$.
+
+For our base case, if $|G| = 1$, there is nothing to prove. Assume (for the induction hypothesis), Sylow subgroups exist for all groups smaller than $|G|$. 
+
+If $p \mid |Z(G)|$, by lemma $Z(G)$ has an element of order $p$ and thus a subgroup of order $p$. Call this subgroup $N$.
+
+Let $\overline{G} = G/N$. Note
+
+$$
+\frac{|G|}{|N|} = \frac{p^{\alpha}m}{p} = \frac{p^{\alpha - 1}}{m}.
+$$
+
+So $|\overline{G}| = p^{\alpha - 1}m$. By the induction hypothesis, $\overline{G}$ has a subgroup of order $p^{\alpha + 1}$. Call this subgroup $\overline{P}$. By the correspondence isomorphism theorem, let $P$ be such that $P / N = \overline{P}$. Note
+
+$$
+|P| = |P/N| |N| = p^{\alpha - 1}p = p^{\alpha}
+$$
+
+So $P$ is a Sylow p-subgroup of $G$.
+
+If $p\nmid{}|Z(G)|$, let $g_1\dots{}g_r$ be representatives of distinct, non-central congruancy classes of $G$. Then
+
+$$
+|G| = |Z(G)| + \sum\limits^r_{i=1}[G \colon C_G(g_i)]
+$$
+
+Note that 
+
+$\forall i,\,p \mid [G \colon C_G(g_i)] \implies  p \mid \sum\limits^r_{i=1}[G \colon C_G(g_i)]$
+
+Would imply $p \mid Z(G)$ which we know is false. So therefore there exists some $i$ such that $p \nmid [G \colon C_G(g_i)]$. For this $i$, let $H = C_g(g_i)$.
+
+$$
+[G \colon C_G(g_i)] = \frac{|G|}{|C_G(g_i)|} = \frac{|G|}{|H|}
+$$
+
+So $H = p^{\alpha}k$ for some $k$ such that $p \nmid k$. Since $g_i \not = Z(G)$, $C_G(g_i) \not = G$. Therefore $k < m$. Because $|H| < |G|$ by induction $H$ has a sylow $p$-subgroup $|p| = p^{\alpha}$, so $P$ is a Sylow $p$-subgroup of $G$.
 :::

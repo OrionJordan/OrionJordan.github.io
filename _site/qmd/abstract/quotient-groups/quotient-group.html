@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>STA 210 - Spring 2022 - Quotient groups</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<meta property="og:title" content="STA 210 - Spring 2022 - Quotient groups">
+<meta property="og:description" content="">
+<meta property="og:site-name" content="STA 210 - Spring 2022">
+<meta name="twitter:title" content="STA 210 - Spring 2022 - Quotient groups">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://sta210-s22.github.io/website/qmd/abstract/quotient-groups/images/twitter-card.png">
+<meta name="twitter:creator" content="@minebocek">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Quotient groups</li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-center sidebar-header">
+      <a href="../../../index.html" class="sidebar-logo-link">
+      <img src="../../../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+      <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/sta210-s22" rel="" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
+    <a href="https://cmgr.oit.duke.edu/containers" rel="" title="RStudio Containers" class="quarto-navigation-tool px-1" aria-label="RStudio Containers"><i class="bi bi-code-square"></i></a>
+    <div class="dropdown">
+      <a href="" title="Sakai" id="quarto-navigation-tool-dropdown-0" class="quarto-navigation-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Sakai"><i class="bi bi-person-fill"></i></a>
+      <ul class="dropdown-menu" aria-labelledby="quarto-navigation-tool-dropdown-0">
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/13b6446a-a6c6-4222-8cfb-c36d1f70802b">
+            Discussion forum
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/page/aec742dc-2972-4f02-a35b-1dd3315af889">
+            Gradescope
+            </a>
+          </li>
+          <li>
+            <a class="dropdown-item sidebar-tools-main-item" href="https://sakai.duke.edu/portal/site/779c3ebe-3b88-4bcc-bd01-1813e8396a23/tool/69078433-67a6-4054-a2e7-9e6c202ecdc3/">
+            Gradebook
+            </a>
+          </li>
+      </ul>
+    </div>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
+ <span class="menu-text">Course information</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course-overview.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course-syllabus.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Syllabus</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course-support.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Support</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course-team.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Teaching team</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Schedule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course-links.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Useful links</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../course-faq.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">FAQ</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Computing</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../computing-access.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Access</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../computing-troubleshooting.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Troubleshooting</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../project-description.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Description</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../project-tips-resources.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tips + resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text">Weekly materials</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-1.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-2.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-3.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-4.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-5.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 5</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-6.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 6</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-7.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 7</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-8.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 8</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-9.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 9</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-10.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 10</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-11.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 11</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-12.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 12</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-13.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 13</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-14.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 14</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../weeks/week-15.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 15</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text">Supplemental notes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../supplemental/slr-derivations.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SLR derivations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../supplemental/model-diagnostics-matrix.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model diagnostics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../supplemental/mlr-matrix.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">MLR matrix notation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../supplemental/log-transformations.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Log transformations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../supplemental/model-selection-criteria.qmd" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Model selection criteria</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#definitions" id="toc-definitions" class="nav-link active" data-scroll-target="#definitions">Definitions</a></li>
+  <li><a href="#orbit-stabalizers" id="toc-orbit-stabalizers" class="nav-link" data-scroll-target="#orbit-stabalizers">Orbit stabalizers</a></li>
+  <li><a href="#sylow-theorem" id="toc-sylow-theorem" class="nav-link" data-scroll-target="#sylow-theorem">Sylow theorem</a></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/sta210-s22/website/edit/main/qmd/abstract/quotient-groups/quotient-group.qmd" class="toc-action">Edit this page</a></p><p><a href="https://github.com/sta210-s22/website/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Quotient groups</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>Quotient groups work like subgroups to obtain a “smaller” group from some base group <span class="math inline">G</span>.</p>
+<section id="definitions" class="level2">
+<h2 class="anchored" data-anchor-id="definitions">Definitions</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varphi</span> be a homomorphism from <span class="math inline">G</span> to <span class="math inline">H</span>. The <span style="color: blue"><strong>fibers</strong></span> of <span class="math inline">\varphi</span> are the sets of elements of <span class="math inline">G</span> that map to single elements of <span class="math inline">H</span>.</p>
+</div>
+</div>
+<p>For example, given the groups <span class="math inline">G = (\mathbb{Z},+)</span> and <span class="math inline">H = Z_n</span> be the cyclic group of order <span class="math inline">n</span> under multiplication. We can then define the map</p>
+<p><span class="math display">
+\varphi \colon \mathbb{Z} \to Z_n
+</span></p>
+<p><span class="math display">
+a \rightarrowtail x^a
+</span></p>
+<p>The <em>fiber</em> of <span class="math inline">\varphi</span> over <span class="math inline">x^a</span> is therefore</p>
+<p><span class="math display">
+Put fiber
+</span></p>
+<p>The homomorphism <span class="math inline">\varphi</span> has two fibers, we will notate <span class="math inline">X_{[1]}</span> as the fiber over <span class="math inline">[1]</span>, and <span class="math inline">X_{[0]}</span> as the fiber over <span class="math inline">[0]</span>. Then</p>
+<p><span class="math display">
+X_{[1]} = \{1,3,5,\cdots\} \quad X_{[0]} = \{0,2,4,\cdots\}
+</span></p>
+<p>The set of fibers of <span class="math inline">\varphi</span> forms a group. We define our group operation as follows</p>
+<p><span class="math display">
+X_{a}X_{b} = X_{ab}
+</span></p>
+<p>Where <span class="math inline">X_{ab}</span> is the fiber over the product <span class="math inline">ab</span>. This is called the <em>quotient group</em> of <span class="math inline">\varphi</span>. Below is a formal proof the collection of fibers forms a group.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof [Finish]
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Prove the set of fibers of <span class="math inline">\varphi</span> is a group.</p>
+</div>
+</div>
+</div>
+<p>We can now look at some properties of homomorphisms</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\varphi \colon G \to H</span> is a homomorphism, the <span style="color: blue"><strong>kernal</strong></span> of <span class="math inline">\varphi</span> is the set</p>
+<p><span class="math display">
+\ker\varphi = \{g \in G \mid \varphi(g) = e_H\}
+</span></p>
+</div>
+</div>
+<p>The kernal is therefore the fiber over <span class="math inline">e_H</span>, the identity element of <span class="math inline">H</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\varphi \colon G \to H</span> is a homomorphism, the <span style="color: blue"><strong>image</strong></span> of <span class="math inline">\varphi</span> is the set</p>
+<p><span class="math display">
+\text{im}\,\varphi = \{\varphi(g) \mid g \in G\}
+</span></p>
+</div>
+</div>
+<p>The kernal and image of <span class="math inline">\varphi</span> are subgroups of <span class="math inline">G</span> and <span class="math inline">H</span> respectivly.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G,H</span> are groups, and <span class="math inline">\varphi \colon G \to H</span> is a homomorphism, then</p>
+<p><span class="math display">
+\ker \varphi \leq G \: \text{ and } \: \text{im} \,\varphi \leq H
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Since <span class="math inline">e_G</span> is such that <span class="math inline">\varphi(e_G) = e_H</span>, we know <span class="math inline">\ker \varphi \not = \varnothing</span>. If <span class="math inline">x,y</span> are in the <span class="math inline">\ker \varphi</span>, then <span class="math inline">xy^{-1}</span> is in the kernal, thus <span class="math inline">\ker \varphi</span> is a subgroup of <span class="math inline">G</span>.</p>
+<p>Now take the image of <span class="math inline">\varphi</span>. Note</p>
+<p><span class="math display">
+\varphi(e_G) = e_H \in \text{im } \varphi \implies \text{im } \varphi \not = \varnothing
+</span></p>
+<p>Given <span class="math inline">x,y \in \text{im } \varphi</span>, we know that <span class="math inline">xy^{-1}</span> is in <span class="math inline">\text{im } \varphi</span>. Thus <span class="math inline">\text{im } \varphi \leq H</span>.</p>
+</div>
+</div>
+</div>
+<p>And we can now provide a formal definition for a quotient group</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varphi \colon G \to H</span> be a surjective homomorphism with <span class="math inline">\ker K</span>. The <span style="color: blue"><strong>quotient group</strong></span> <span class="math inline">G/K</span> is the group whose elements are the fibers of <span class="math inline">\varphi</span> with group operation inherited from <span class="math inline">H</span>.</p>
+</div>
+</div>
+<p>This definition requires knowing <span class="math inline">\varphi</span> explictly. You can however define the group operation on fibers in terms of representatives.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varphi \colon G \to H</span> be a homomorphism with <span class="math inline">\ker k</span>. Let <span class="math inline">X \in G/K</span> be the fiber above <span class="math inline">a \in H</span>. <span class="math inline">X = \varphi^{-1}(a)</span>. Then for any <span class="math inline">u \in X</span>,</p>
+<p><span class="math display">
+X = \{uk\mid k \in K\}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">u \in X</span>, then <span class="math inline">\varphi(u) = a</span>. Let</p>
+<p><span class="math display">
+uK = \{uk \mid k \in K\}
+</span></p>
+<p>We want to show that <span class="math inline">X</span> is equal to <span class="math inline">uK</span>. We will first show that <span class="math inline">uK</span> is a subset of <span class="math inline">X</span>. For <span class="math inline">k \in K</span> <span class="math display">
+\varphi(uk) = \varphi(u)\varphi(k) = \varphi(u) = a
+</span></p>
+<p>Thus <span class="math inline">uK \subseteq X</span>. Now to show that <span class="math inline">X \subseteq uK</span>, let <span class="math inline">g \in X</span> and <span class="math inline">k = u^{-1}g</span>. <span class="math display">
+\varphi(k) = \varphi(u^{-1})\varphi(g) = a^{-1}a = e_H
+</span></p>
+<p>Thus <span class="math inline">k \in \ker \varphi</span> since <span class="math inline">k = u^{-1}g</span>. Thus <span class="math inline">X \subseteq uK</span></p>
+</div>
+</div>
+<p>Thus we can write any elements of the quoitent group as the set <span class="math inline">uk</span> for all <span class="math inline">k \in K</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any <span class="math inline">N \leq G</span> and <span class="math inline">g \in G</span>,</p>
+<p><span class="math display">
+gN = \{gn\mid n \in N\}
+</span></p>
+<p>This is a (left) <span style="color: blue"><strong>coset</strong></span> of <span class="math inline">N</span> in <span class="math inline">G</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varphi \colon G \to H</span> homomorphism with a kernal <span class="math inline">K</span>. The set of cosets of <span class="math inline">K</span> in <span class="math inline">G</span> with operation <span class="math inline">uK \star vK = (uv)K</span> forms a group.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">X,Y \in G/K</span>, and <span class="math inline">Z = XY \in G/K</span>. Then for some <span class="math inline">a,b \in H</span>, <span class="math display">
+X = \varphi^{-1}(a)\: Y = \varphi^{-1}(b)
+</span></p>
+<p>This implies <span class="math inline">Z = \varphi^{-1}(ab)</span>. Let <span class="math inline">u,v</span> be representations of <span class="math inline">X,Y</span> respectivly. We want to show that <span class="math inline">uv \in Z</span>. Which is only true If</p>
+<p><span class="math display">
+\varphi(uv) \in ab \leftrightarrow \varphi(u)\varphi(v) = ab
+</span></p>
+<p>Which is true! Thus by our previous proposition <span class="math inline">Z = uvK</span>.</p>
+</div>
+</div>
+<p>You cannot define <span class="math inline">G/N</span> for any <span class="math inline">N \leq G</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You cannot define <span class="math inline">G/N</span> for any <span class="math inline">N \leq G</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varphi \colon G \to H</span> be a homomorphism with Kernal <span class="math inline">K</span>. Then</p>
+<p><span class="math display">
+gKg^{-1} \subseteq K \; \forall g \in G
+</span></p>
+<p><span class="math inline">\varphi(gkg^{-1}) = e</span></p>
+</div>
+</div>
+<p>If we have a subgroup <span class="math inline">N</span> of $G such that <span class="math inline">gNg^{-1} \subseteq N</span> for all <span class="math inline">g \in G</span>, then multiplication in <span class="math inline">G/N</span> is well defined.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math display">G/N \times G/N \rightarrow G/N
+</span> <span class="math display">(xN, xG)
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">x_1N = x_2N, y_1N=y_2N</span> then <span class="math inline">x_1^{-1}x_2 \in N</span> and <span class="math inline">y_1^{-1}y_2 \in N</span></p>
+</div>
+</div>
+</section>
+<section id="orbit-stabalizers" class="level2">
+<h2 class="anchored" data-anchor-id="orbit-stabalizers">Orbit stabalizers</h2>
+<p>Define <span class="math display">
+b = g \cdot a \rightarrowtail gG_a
+</span></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The action of <span class="math inline">G</span> on <span class="math inline">a</span> is called <span style="color: blue"><strong>transitive</strong></span> if there is only one orbit</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">D_8</span> acts transitivly on each of it’s <span class="math inline">4</span> vertices.</p>
+</div>
+</div>
+<p>If <span class="math inline">G</span> acts trivially on <span class="math inline">A</span>, then <span class="math inline">G_a = G,\, \forall a \in A</span>. Then the orbits</p>
+<p><span class="math display">
+orb(a) = \{b \mid b = g \cdot a \text{ for } g \in G\} = a.
+</span></p>
+<p>This is an example of a non-transitive action. If however</p>
+<p><span class="math display">
+G = S_n
+</span></p>
+<p>Then there always exists a <span class="math inline">g \in G</span> such that <span class="math inline">a = g \cdot b</span>.</p>
+<p>Let <span class="math inline">(G,\diamond)</span> be a group, and <span class="math inline">A = G</span>. Define</p>
+<p><span class="math display">
+g \cdot a = g \diamond a
+</span></p>
+<p>then</p>
+<p><span class="math display">
+(1) g_2 \cdot (g_1 \cdot a) = g_2 g_1 a
+</span></p>
+<p><span class="math display">
+e\cdot a = ea = a
+</span></p>
+<p>Let <span class="math inline">G</span> be a group such that <span class="math inline">H \leq G</span></p>
+<p><span class="math display">
+A = \{gH\mid g\in G\}
+</span></p>
+<p>Define <span class="math inline">g \cdot aH = gaH</span>.</p>
+<p>Suppose <span class="math inline">A</span> has <span class="math inline">n</span> elements</p>
+<p><span class="math display">
+a_1H \dots a_nH
+</span></p>
+<p>We can describe <span class="math inline">\sigma_g</span> as <span class="math inline">\sigma_g(i) = j</span> iff <span class="math inline">ga_i = a_j</span></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G = D_8</span>, and <span class="math inline">H = \langle s \rangle</span>. Then</p>
+<p><span class="math display">
+A = \{eH,rH,r^2H,r^3H\}
+</span></p>
+<p>Label the four elements <span class="math inline">1,2,3,4</span> respectivly. We can compute <span class="math inline">\sigma_s</span></p>
+<p><span class="math display">\begin{align*}
+&amp;s\cdot eH = sH = H\quad &amp;\sigma_s(1) = 1\\
+&amp;s\cdot rH = srH = r^3H\quad &amp;\sigma_s(2) = 4\\
+&amp;s\cdot r^2H = sr^2H = r^2H\quad &amp;\sigma_s(3) = 3\\
+&amp;s\cdot r^3H = sr^3H = rH\quad &amp;\sigma_s(4) = 2
+\end{align*}</span></p>
+<p>Thus <span class="math inline">\sigma_s = (24)</span>. Similarly <span class="math inline">\sigma_r(1234)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G</span> be a group <span class="math inline">H \leq G</span>, <span class="math inline">A = \{gh\mid g \in G\}</span>. Let <span class="math inline">G</span> act on <span class="math inline">A</span> by left multiplication.</p>
+<ul>
+<li><span class="math inline">G</span> acts transitivly on <span class="math inline">A</span></li>
+<li>The stabalizer of <span class="math inline">1H \in A</span> in <span class="math inline">G</span> is <span class="math inline">H</span></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(1)</span> Let <span class="math inline">aH,bH</span> be elements of <span class="math inline">A</span>. Let <span class="math inline">g = ba^{-1}</span>.</p>
+<p><span class="math display">
+g\cdot aH = gaH = ba^{-1}aH = bH
+</span></p>
+<p>Thus <span class="math inline">orb(aH) = A</span> so the group action is transitive.</p>
+<p><span class="math inline">(2)</span> The stabalizer of <span class="math inline">1H</span> is</p>
+<p><span class="math display">
+\{g\in G \mid g \cdot 1H = 1H\} = \{g \in G \mid gH = H\} = H
+</span></p>
+<p><span class="math inline">(3)</span> The kernal of the action</p>
+<p><span class="math display">\begin{align*}
+\ker(A) &amp;=\{g \in G \mid gxH = xH \quad \forall x \in G\}\\
+&amp;= \{g \in G \mid x^{-1}gxH = H\quad \forall x \in G\}\\
+&amp;= \{g \in G \mid x^{-1}gx \in H \quad \forall x \in G\}\\
+&amp;= \{g \in G \mid g \in xHx^{-1} \quad x \in G\}\\
+&amp;= \bigcap_{x\in G} xHx^{-1}
+\end{align*}</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every group is isomorphic to a subgroup of some symmetric group. If <span class="math inline">|G| = n</span> then <span class="math inline">G</span> is isomorphic to a subgroup of <span class="math inline">S_n</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">H = 1</span>. Take the permutation representatives</p>
+<p><span class="math display">
+\varphi \colon G \to S_g
+</span></p>
+<p>By the previous theorem, <span class="math inline">\ker(\varphi)</span> is contained in <span class="math inline">H</span>, meaning <span class="math inline">\ker(\varphi) = e</span>. By the first isomorphism theorem,</p>
+<p><span class="math display">
+g \cong G/\ker(\varphi) \cong \text{im}(\varphi) \leq S_G
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G</span> is a finite group of order <span class="math inline">n</span>, and <span class="math inline">p</span> is the smallest prime dividing <span class="math inline">n</span>, then any subgroup of index <span class="math inline">p</span> is normal.</p>
+</div>
+</div>
+</section>
+<section id="sylow-theorem" class="level2">
+<h2 class="anchored" data-anchor-id="sylow-theorem">Sylow theorem</h2>
+<p>Recall that Lagranges theorem tells you that the order of a subgroup divides the order of a group. This does not guarentee the existance of a subgroup <span class="math inline">H_d</span> for every divisor <span class="math inline">d</span> of a group.</p>
+<p>We start with the following Lemma.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G</span> is a finite abelian group, and <span class="math inline">p</span> is a prime dividing <span class="math inline">|G|</span> then <span class="math inline">G</span> contains an element of order <span class="math inline">p</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">G</span> is a finite abelian group, and <span class="math inline">p</span> is a prime dividing <span class="math inline">|G|</span> then <span class="math inline">G</span> contains an element of order <span class="math inline">p</span>.</p>
+<p>Use induction on <span class="math inline">|G|</span>. We know that <span class="math inline">x \not = e</span>. We have the base case <span class="math inline">p = |G|</span>. Thus <span class="math inline">\exists x, x^p = e</span> by Lagranges theorem. Now suppose <span class="math inline">p &lt; |G|</span>.</p>
+<p>If <span class="math inline">p \mid |x|</span>, then <span class="math inline">|x| = pn</span> for some <span class="math inline">n \in \mathbb{Z}</span></p>
+<p><span class="math display">
+|x^n| = \frac{pn}{\gcd(n,pn)} = \frac{pn}{n} = p
+</span></p>
+<p>Thus <span class="math inline">x</span> has order <span class="math inline">p</span>. If <span class="math inline">p \not \mid |x|</span>, then let <span class="math inline">\langle x \rangle = N</span>. Because <span class="math inline">G</span> is an abelian group, <span class="math inline">N \trianglelefteq G</span> since <span class="math inline">N \not = \{e\}</span>,</p>
+<p><span class="math display">
+p \mid |G/N|
+</span></p>
+<p>Thus <span class="math inline">G/N</span> contains an element of order <span class="math inline">p</span>. Using the induction hypothesis <span class="math display">
+|y^p| = \frac{|y|}{p}
+</span></p>
+</div>
+</div>
+</div>
+<p>Now we get some tricky Definitions</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G</span> be a group and <span class="math inline">p</span> be a prime. A group of order <span class="math inline">p^\alpha</span> for <span class="math inline">\alpha \geq 0</span> is called a <span style="color: blue"><strong>p-group</strong></span>.</p>
+<p>A subgroup of a <span class="math inline">p</span>-group is called a <span style="color: blue"><strong>p-subgroup</strong></span>.</p>
+<p>If <span class="math inline">G</span> is a group of order <span class="math inline">mp^\alpha</span> where <span class="math inline">p \nmid m</span>, then a subgroup of order <span class="math inline">p^\alpha</span> is called a <span style="color: blue"><strong>Sylow p-subgroup</strong></span></p>
+</div>
+</div>
+<p>Let <span class="math inline">G</span> be a group. The set of Sylow <span class="math inline">p</span>-subgroups is denoted</p>
+<p><span class="math display">
+Syl_p(G)
+</span></p>
+<p>And the number of Sylow <span class="math inline">p</span>-subgroups</p>
+<p><span class="math display">
+n_p(G)
+</span></p>
+<p>Sylow had three major theorems in Abstract Algebra relating to these Sylow <span class="math inline">p</span>-subgroups</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Sylow 1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">G</span> be a group of order <span class="math inline">mp^\alpha</span> where <span class="math inline">p</span> is a prime not dividing <span class="math inline">m</span>, then there exists a Sylow <span class="math inline">p</span>-subgroup.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Sylow 2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">P</span> is a Sylow <span class="math inline">p</span>-subgroup of <span class="math inline">G</span> and <span class="math inline">Q</span> is any <span class="math inline">p</span>-subgroup of <span class="math inline">G</span></p>
+<p><span class="math display">
+\exists g \in G \mid Q \leq gPg^{-1}
+</span></p>
+<p>In particular, any two Sylow <span class="math inline">p</span>-subgroups are conjugate if <span class="math inline">Q</span> is a Sylow <span class="math inline">p</span>-subgroup <span class="math inline">\exists g</span> such that <span class="math inline">Q = gPg^{-1}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Sylow 3)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The number of Sylow <span class="math inline">p</span>-subgroups of <span class="math inline">G</span> is of the form <span class="math inline">1 + kp</span>, i.e.</p>
+<p><span class="math display">
+n_p(G) = 1 \mod p
+</span></p>
+<p>Futhermore, <span class="math inline">n_p(G) = [G \colon N_g(p)]</span> and <span class="math inline">n_p(G) \mid m</span>.</p>
+</div>
+</div>
+<p>We need only prove the first theorem however.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-31-contents" aria-controls="callout-31" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof (Sylow 1)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-31" class="callout-31-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We start our proof using induction on <span class="math inline">|G|</span>.</p>
+<p>For our base case, if <span class="math inline">|G| = 1</span>, there is nothing to prove. Assume (for the induction hypothesis), Sylow subgroups exist for all groups smaller than <span class="math inline">|G|</span>.</p>
+<p>If <span class="math inline">p \mid |Z(G)|</span>, by lemma <span class="math inline">Z(G)</span> has an element of order <span class="math inline">p</span> and thus a subgroup of order <span class="math inline">p</span>. Call this subgroup <span class="math inline">N</span>.</p>
+<p>Let <span class="math inline">\overline{G} = G/N</span>. Note</p>
+<p><span class="math display">
+\frac{|G|}{|N|} = \frac{p^{\alpha}m}{p} = \frac{p^{\alpha - 1}}{m}.
+</span></p>
+<p>So <span class="math inline">|\overline{G}| = p^{\alpha - 1}m</span>. By the induction hypothesis, <span class="math inline">\overline{G}</span> has a subgroup of order <span class="math inline">p^{\alpha + 1}</span>. Call this subgroup <span class="math inline">\overline{P}</span>. By the correspondence isomorphism theorem, let <span class="math inline">P</span> be such that <span class="math inline">P / N = \overline{P}</span>. Note</p>
+<p><span class="math display">
+|P| = |P/N| |N| = p^{\alpha - 1}p = p^{\alpha}
+</span></p>
+<p>So <span class="math inline">P</span> is a Sylow p-subgroup of <span class="math inline">G</span>.</p>
+<p>If <span class="math inline">p\nmid{}|Z(G)|</span>, let <span class="math inline">g_1\dots{}g_r</span> be representatives of distinct, non-central congruancy classes of <span class="math inline">G</span>. Then</p>
+<p><span class="math display">
+|G| = |Z(G)| + \sum\limits^r_{i=1}[G \colon C_G(g_i)]
+</span></p>
+<p>Note that</p>
+<p><span class="math inline">\forall i,\,p \mid [G \colon C_G(g_i)] \implies p \mid \sum\limits^r_{i=1}[G \colon C_G(g_i)]</span></p>
+<p>Would imply <span class="math inline">p \mid Z(G)</span> which we know is false. So therefore there exists some <span class="math inline">i</span> such that <span class="math inline">p \nmid [G \colon C_G(g_i)]</span>. For this <span class="math inline">i</span>, let <span class="math inline">H = C_g(g_i)</span>.</p>
+<p><span class="math display">
+[G \colon C_G(g_i)] = \frac{|G|}{|C_G(g_i)|} = \frac{|G|}{|H|}
+</span></p>
+<p>So <span class="math inline">H = p^{\alpha}k</span> for some <span class="math inline">k</span> such that <span class="math inline">p \nmid k</span>. Since <span class="math inline">g_i \not = Z(G)</span>, <span class="math inline">C_G(g_i) \not = G</span>. Therefore <span class="math inline">k &lt; m</span>. Because <span class="math inline">|H| &lt; |G|</span> by induction <span class="math inline">H</span> has a sylow <span class="math inline">p</span>-subgroup <span class="math inline">|p| = p^{\alpha}</span>, so <span class="math inline">P</span> is a Sylow <span class="math inline">p</span>-subgroup of <span class="math inline">G</span>.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">© Copyright 2022, Mine Çetinkaya-Rundel</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">This page is built with ❤️ and <a href="https://quarto.org/">Quarto</a>.</div>
+  </div>
+</footer>
+
+
+
+</body></html>

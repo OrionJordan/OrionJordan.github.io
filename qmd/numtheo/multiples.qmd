@@ -1,0 +1,31 @@
+---
+title: "Multiples and Divisors"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Multiples are important in number theory
+
+## Information
+
+# Problems
+
+## Essential
+
+## Difficult
+
+::: {.callout-warning icon="false"}
+## Alcumus - Level 16 (#33994)
+
+How many positive and negative integers are factors of $12$?
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+The number $12$ can be factored $2^2*3^1$. This gives a total of $6$ factors. Including negative factors gives a total of $12$ integers.
+
+:::
