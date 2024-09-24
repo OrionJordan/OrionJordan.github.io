@@ -131,11 +131,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#information" id="toc-information" class="nav-link active" data-scroll-target="#information">Information</a></li>
+  <li><a href="#multiples" id="toc-multiples" class="nav-link active" data-scroll-target="#multiples">Multiples</a></li>
+  <li><a href="#divisors" id="toc-divisors" class="nav-link" data-scroll-target="#divisors">Divisors</a>
+  <ul class="collapse">
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a>
+  <ul class="collapse">
+  <li><a href="#total-factors" id="toc-total-factors" class="nav-link" data-scroll-target="#total-factors">Total factors</a></li>
+  </ul></li>
+  </ul></li>
   <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a>
   <ul class="collapse">
   <li><a href="#essential" id="toc-essential" class="nav-link" data-scroll-target="#essential">Essential</a></li>
-  <li><a href="#difficult" id="toc-difficult" class="nav-link" data-scroll-target="#difficult">Difficult</a></li>
+  <li><a href="#challenge" id="toc-challenge" class="nav-link" data-scroll-target="#challenge">Challenge</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -160,17 +167,122 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Multiples are important in number theory</p>
-<section id="information" class="level2">
-<h2 class="anchored" data-anchor-id="information">Information</h2>
+<p>Multiples and divisors are the most essential concepts in number theory and come up in nearly every problem.</p>
+<section id="multiples" class="level1">
+<h1>Multiples</h1>
+<p>It seems natural to start with some definitions</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>multiple</strong></span> of an integer is the product of said integer with any other integer</p>
+</div>
+</div>
+<p>Given the number <span class="math inline">4</span>, we have multiples <span class="math inline">\dots,-4,0,4,8,\dots</span></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The greatest common divisor between two integers <span class="math inline">m</span> and <span class="math inline">n</span> is notated</p>
+<p><span class="math display">
+\gcd(m,n)
+</span></p>
+</div>
+</div>
+</section>
+<section id="divisors" class="level1">
+<h1>Divisors</h1>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span style="color: blue"><strong>divisor</strong></span> or <span style="color: blue"><strong>factor</strong></span> of an integer <span class="math inline">n</span> is any other integer <span class="math inline">d</span> such that <span class="math inline">d\mid n</span></p>
+</div>
+</div>
+<p>Note that every integer <span class="math inline">n</span> has divisors <span class="math inline">1</span> and <span class="math inline">n</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span style="color: blue"><strong>least common multiple</strong></span> between two integers <span class="math inline">n</span> and <span class="math inline">m</span> is notated</p>
+<p><span class="math display">
+\text{lcm}(m,n)
+</span></p>
+</div>
+</div>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<section id="total-factors" class="level3">
+<h3 class="anchored" data-anchor-id="total-factors">Total factors</h3>
+<p>Say you want to find the total number of factors for an integer. Instead of hashing it out manually, there exist an easier method.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find the total number of factors to the integer <span class="math inline">72</span>.</p>
+<hr>
+<p>We begin by finding the prime factorization of <span class="math inline">72</span>, in this case</p>
+<p><span class="math display">
+72 = 2^3 * 3^2.
+</span></p>
+<p>Notice that each factor of <span class="math inline">72</span> contains between zero and three <span class="math inline">2</span>’s, and between zero and two <span class="math inline">3</span>’s. This gives us a total of <span class="math inline">4 \times 3 = 12</span> factors for <span class="math inline">72</span>.</p>
+</div>
+</div>
+<p>We use this trick to quickly calculate the total number of factors for an integer!</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The total factors of an integer</p>
+<p><span class="math display">
+n = p_1^{k_1} \cdot p_2^{k_2} \cdots p_m^{k_m}
+</span></p>
+<p>is the product <span class="math inline">(k_1 + 1)(k_2 + 1)\cdots(k_m + 1)</span></p>
+</div>
+</div>
+</section>
+</section>
 </section>
 <section id="problems" class="level1">
 <h1>Problems</h1>
 <section id="essential" class="level2">
 <h2 class="anchored" data-anchor-id="essential">Essential</h2>
-</section>
-<section id="difficult" class="level2">
-<h2 class="anchored" data-anchor-id="difficult">Difficult</h2>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -185,7 +297,7 @@ Alcumus - Level 16 (#33994)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -194,12 +306,15 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>The number <span class="math inline">12</span> can be factored <span class="math inline">2^2*3^1</span>. This gives a total of <span class="math inline">6</span> factors. Including negative factors gives a total of <span class="math inline">12</span> integers.</p>
 </div>
 </div>
 </div>
+</section>
+<section id="challenge" class="level2">
+<h2 class="anchored" data-anchor-id="challenge">Challenge</h2>
 
 
 </section>

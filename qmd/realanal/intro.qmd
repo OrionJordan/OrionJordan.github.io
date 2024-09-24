@@ -1,0 +1,15 @@
+---
+title: "Real Analysis"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Real analysis is the study of the behaviour of real numbers, sequences, functions, and provides a more rigourous framework for Calculus.
+
+------------------------------------------------------------------------
+
+![Dedekind cut at square root of two[^1]](images/Dedekind.svg)
+
+[^1]: Melikamp, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons

@@ -1,0 +1,102 @@
+---
+title: "Heat Equation with zero temperature at endpoints"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Consider the problem
+
+\begin{cases}
+\frac{\partial u}{\partial t} = k \frac{\partial^2 u}{\partial x^2}\\
+u(0,t) = 0\\
+u(L,t) = 0\\
+u(x,0) = f(x)
+\end{cases}
+
+We want to find $u(x,t)$ where $0 < x < L, t> 0$. Here we use the method of seperation of variables.
+
+We assume the function is of the form $u(x,t) = A(x)G(t)$ where $A$ is a function depending only on $x$ and $G$ only on $t$. We call solutions in this form [**product solutions**]{.definition}.
+
+Plugging our product solution into the partial differential equation, we get
+
+$$
+\frac{\partial u}{\partial t} = k \frac{\partial^2 u}{\partial x^2} \iff \frac{\partial (A(x)G(t))}{\partial t} = k \frac{\partial^2 (A(x)G(t))}{\partial x^2}
+$$
+
+Which simplifies too
+
+$$
+A(x)\frac{dG(t)}{dt} = kG(t)\frac{d^2A(x)}{dx^2} \iff \frac{1}{kG(t)}\frac{dG(t)}{dt} = \frac{1}{A(x)}\frac{d^2A(x)}{dx^2}
+$$
+
+We set both of these terms equal to a constant, $-\lambda$. We then have
+
+$$
+\frac{dG}{dt} = -\lambda kG(t) \qquad \frac{d^2A}{dx^2} = -\lambda A(x)
+$$
+
+We now must satisfy our boundary conditions.
+
+$$
+u(0,t) = A(0)G(t) = 0 \qquad u(L,t) = A(L)G(t)
+$$
+
+Thus either $G(t) = 0$ for all times $t$, or $A(0) = A(L) = 0$. We call the case where $G(t) = 0$ the trivial case, and only focus on the case where $A(0) = A(L) = 0$ We have
+
+$$
+\frac{dG}{dt} = -\lambda kG(t) \implies G(t) = Ce^{-\lambda k t}
+$$
+
+If $\lambda > 0$, then the solution exponentially decays as $t \to \infty$. If $\lambda = 0$, then the solution is constant for some $c$. If $\lambda < 0$, then the solution increases to infinity. We want too find the values of lambda for $A$ such that non-trivial solutions exist. We must introduce eigenvalues and eigenfunctions in order to do this. For each eigenvalue we have one corresponding eigenfunction.
+
+We use the characteristic equation
+
+$$
+r^2 = -\lambda \implies r = \pm \sqrt{-\lambda}
+$$
+
+When $\lambda > 0$
+
+$$
+r = \pm i \sqrt{\lambda} \implies A(x) = c_1 \cos (\sqrt{\lambda}x) + c_2\sin (\sqrt{\lambda}x)
+$$
+
+Working this into our boundary conditions, we have
+
+$$
+A(0) = c_1\cos(0) + c_2\sin(0) = c_1 \implies c_1 = 0
+$$
+
+Thus
+
+$$
+A(x) = c_2 \sin(\sqrt{\lambda}x)
+$$
+
+Using the second boundary conditions
+
+$$
+A(L) = c_2\sin(\sqrt{\lambda}L) \implies \lambda = (\frac{\pi n}{L})^2
+$$
+
+So $\lambda > 0$ gives us
+
+$$
+A(x) = c_2\sin\left(\frac{nx\pi}{L}\right)
+$$
+
+Next we have to consider the case where $\lambda = 0$.
+
+$$
+\frac{d^2 A}{dA^2} = 0 \implies c_3x + c_4
+$$
+
+This immeditally implies that $A(0) = c_4 = 0$. Thus we have $A(x) = c_3 x$. But $A(L) = Lc_3 = 0 \implies c_3 = 0$. Thus we have no solutions. Thus $\lambda = 0$ is not an eigenvalue. 
+
+Next we consider $\lambda < 0$. This gives us $r = \pm\sqrt{+ \lambda}$
+
+$$
+A(x) = c_1e^{\sqrt{-\lambda}x} + c_2e^{-\sqrt{-\lambda}x}
+$$

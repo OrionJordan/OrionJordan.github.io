@@ -1,0 +1,9 @@
+---
+title: "Sequences"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Real analysis is the study of real numbers

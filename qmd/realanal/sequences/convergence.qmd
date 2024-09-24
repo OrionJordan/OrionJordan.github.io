@@ -1,0 +1,313 @@
+---
+title: "Convergence"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [**sequence**]{.definition} $S$ is a function whose domain is the set of natural numbers, $\mathbb{N}$.
+:::
+
+A sequence $S$ is usually notated $(s_n)$ or as a list of elements 
+
+$$
+(s_1,s_2,s_3,\ldots)
+$$
+
+::: {.callout-warning icon="false"}
+## Example
+
+The function $S \colon \mathbb{N} \to \mathbb{Q}$ such that $n \rightarrowtail \frac{1}{n}$ is a sequence. We use the notation $(1/n)$ as an abbreviation for
+
+$$
+ \left(1,\frac{1}{2},\frac{1}{3},\ldots\right)
+$$
+
+Similarly, the sequence $S \colon \mathbb{N} \to \mathbb{N}$ where $n \rightarrowtail 2n$ is denoted $(2n)$, abbreviating
+
+$$
+(2,4,6,\ldots)
+$$
+:::
+
+Normally we will consider sequences where the codomain is $\mathbb{R}$.
+
+## Definition and properties
+
+::: {.callout-note icon="false"}
+## Definition
+
+A sequence $(s_n)$ of real numbers [**converges**]{.definition} to a real number $s$ if
+
+$$
+\forall \varepsilon > 0, \exists N \in \mathbb{N} \;s.t.\; \forall n \geq N, |s_n - s| < \varepsilon
+$$
+:::
+
+Where $|s_n - s|$ is the distance between the points $s_n$ and $s$. Essentially, a sequence is convergent if the elements of $(s_n)$ get arbitrarily close to a point $s$ as the sequence progresses.
+
+If a sequence does not converge, than we say it is [**divergent**]{.definition}
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $(s_n)$ converges to $s$, then we say that $s$ is the [**limit**]{.definition} of $(s_n)$ and we write
+
+$$
+\lim_{n \to \infty} s_n = s
+$$
+:::
+
+We use $(s_n)$ to denote the sequence as a whole, where as $s_n$ refers to an indivual element of the sequence. We also typically abbreviate $\lim_{n\to\infty}s_n = s$ as $\lim s_n = s$
+
+Suppose we have a sequence $(s_n)$ which appears to converge to a number $s$. How would we go about proving the sequence fufills the definition of convergence?
+
+```{=html}
+<!--
+::: {.callout-note icon="false"}
+## Theorem (Archimedean property)
+
+The Archimedean property states that the natural numbers are unbounded in $\mathbb{R}$, meaning for every $x \in \mathbb{R}$, there exists an integer $n_x \in \mathbb{N}$ such that $x < n_x$.
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+**WTS:** $\forall x \in \mathbb{R}$, $\exists n_x \in \mathbb{N}$ such that $x < n_x$
+
+**Proof:**   
+
+:::
+-->
+```
+::: {.callout-warning icon="false"}
+## Example
+
+**Claim:** Given the sequence $s_n = 1/n$, we have 
+
+$$
+\lim_{n \to \infty} \frac{1}{n} = 0.
+$$
+
+In order to show this sequence converges, we need to prove that for all $\varepsilon > 0$ there exists some $N \in \mathbb{N}$ such that for all $n \geq N$, we have
+
+$$
+|s_n - s| = \left|\frac{1}{n} - 0\right| = \left|\frac{1}{n}\right| = \frac{1}{n} < \varepsilon.
+$$
+
+By the Archimedean property, we know there always exists some $N_\varepsilon \in \mathbb{N}$ such that $0 < \frac{1}{N_\varepsilon} < \varepsilon$.
+
+Therefore for any $\varepsilon > 0$, we simply choose $N$ such that $0 < \frac{1}{N} < \varepsilon$. Then for any $n \geq N$, we have $|1/n - 0| = 1/n \leq 1/N < \varepsilon$. Thus our sequence converges, and $\lim s_n = 0$.
+:::
+
+```{=html}
+<!--
+::: {.callout-note icon="false"}
+## Definition
+
+Let $s \in \mathbb{R}$ and let $S_n = s$ for all $n \in \mathbb{N}$. Then, 
+
+$$
+\lim_{n \to \infty} S_n = s.
+$$
+
+We call this the [**constant sequence**]{style="color: blue"}.
+
+:::
+-->
+```
+See [Practice](http://localhost:3311/qmd/realanal/sequences/convergence.html#sec-practice) for more examples.
+
+::: {.callout-note icon="false"}
+## Theorem 1.1.1
+
+Let $(s_n)$ and $(a_n)$ be sequences of real numbers and let $s \in \mathbb{R}$. If for some $k > 0$ and some $m \in \mathbb{N}$ we have
+
+$$
+|s_n - s| \leq k|a_n|, \forall n \geq m
+$$
+
+and if $a_n = 0$, then it follows that $\lim s_n = s$.
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Given any $\varepsilon > 0$, since $\lim a_n = 0$ there exists $N_1 \in \mathbb{N}$ such that $n \geq N_1$ implies $|a_n| < \varepsilon/k$. Let $N = \max\{m,N_1\}$. Then for $n \geq \mathbb{N}$ we have $n \geq m$ and $n \geq N_1$, so
+
+$$
+|s_n - s| \leq k|a_n| < k\left(\frac{\varepsilon}{k}\right) = \varepsilon.
+$$
+
+Thus $\lim s_n = s$.
+
+:::
+
+The above theorem may not seem useful now, but will come in handy in the future. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+A sequence $(s_n)$ is [**bounded**]{.definition} if there exists $M \geq 0$ such that $|s_n| \leq M$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.1.2
+
+Every convergent sequence is bounded.
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Let $(s_n)$ be a convergent sequence and let $\lim s_n = s$. Choose $\varepsilon = 1.$ Because $(s_n)$ is convergent, there exists some $N \in \mathbb{N}$ such that for all $n \geq N,\;|s_n - s| < 1$.
+
+Through the triangle inequality, we have that, for all $n \geq N$
+
+$$
+|s_n| - |s| \leq |s_n - s| < 1 \iff |s_n| < |s| + 1.
+$$
+
+Let $M = \sup\{|s_1|,|s_2|,\ldots,|s_N|,|s| + 1\}$. Thus for all $n \in \mathbb{N}$, $|s_n| \leq M$ and $(s_n)$ is bounded.
+:::
+
+The contrapositive is of course also true, any unbounded sequence is divergent. However, not all divergent sequences are unbounded.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $(s_n) = (-1)^n$. This sequence is clearly bounded by $M = 1$, but not convergent.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.1.3
+
+If a sequence converges, its limit is unique.
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Let $(s_n)$ be a convergent sequence and suppose $\lim s_n = s$ and $\lim s_n = t$. We want to show that $s$ and $t$ are arbitrarily close and therefore $s = t$.
+
+By the definition of convergence we have
+
+$$
+\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| < \frac{\varepsilon}{2}.
+$$
+
+and
+
+$$
+\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |s_n - t| < \frac{\varepsilon}{2}.
+$$
+
+Let $N = \max\{N_1,N_2\}$. From the triangle inequality we have
+
+```{=tex}
+\begin{align*}
+|s-t| &= |s - s_n + s_n - t|\\
+&\leq |s-s_n|+|s_n-t|\\
+&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\end{align*}
+```
+Since this holds for all $\varepsilon > 0$, we have $s = t$.
+:::
+
+## Practice {#sec-practice}
+
+::: {.callout-tip icon="false"}
+## Problem $\star$
+
+Prove if $|x| < 1$, then $\lim_{n\to\infty} x^n = 0$ using Bernoulii's inequality,
+
+$$
+(1 + y)^n \geq 1 + ny.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+If $x = 0$, the proof is trivial, so we need to prove the case where $0 < |x| < 1$. Bernoulii's inequality states
+
+$$
+(1 + y)^n \geq 1 + ny.
+$$
+
+If we let $x = 1/(1+y)$ for some $y > 0$, we get
+
+$$
+(1 + \frac{1}{x} - 1)^n \geq 1 + n\left(\frac{1}{x} - 1\right) \implies \frac{1}{x^n} \geq 1 + \frac{n}{x} - n
+$$
+
+Flipping both sides of the inequality gets us
+
+$$
+x^n \leq \frac{1}{1 + \frac{n}{x} - n}.
+$$
+
+Taking the right hand side of the equation, and using our substitution for $y$, we obtain
+
+$$
+\frac{1}{1 + \frac{n}{x} + n} = \frac{1}{1 + yn + 2n}.
+$$
+
+Let $1 + yn + 2n = k$ For any $\varepsilon > 0$, there exists $N \in \mathbb{N}$ such that for all $n \geq N$,
+
+$$
+\left|\frac{1}{1 + yn + 2n} - 0\right| = \left|\frac{1}{k} - 0 \right| \leq \frac{1}{k} \leq \varepsilon
+$$
+
+We know by the Archimedian property there exists some $n$ giving us a suffienct value of $k$. Thus $\lim 1/(1 + n/x + n) = 0$. We have
+
+$$
+|x^n - 0| = x^n \leq \frac{1}{1 + \frac{n}{x} - n}
+$$
+
+Which by Theorem $1.1.1$, gives us $\lim x^n = 0$. \square
+:::
+
+## Recap
+
+In this section we proved the following theorems and results.
+
+::: {.callout-note icon="false"}
+## Theorem 1.1.1
+
+Let $(s_n)$ and $(a_n)$ be sequences of real numbers and let $s \in \mathbb{R}$. If for some $k > 0$ and some $m \in \mathbb{N}$ we have
+
+$$
+|s_n - s| \leq k|a_n|, \forall n \geq m
+$$
+
+and if $a_n = 0$, then it follows that $\lim s_n = s$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.1.2
+
+Every convergent sequence is bounded.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.1.3
+
+If a sequence converges, its limit is unique.
+:::
+
+::: {.callout-tip icon="false"}
+## Result
+
+If $|x| < 1$, then $\lim_{n\to\infty} x^n = 0$.
+
+:::

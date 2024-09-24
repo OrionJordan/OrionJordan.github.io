@@ -1,0 +1,9 @@
+---
+title: "Sequences"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Sequences play a large role throughout analysis, and will help us to define properties of functions. This section will define limits and how sequences converge, useful properties that follow from that, and end with an analysis on monotonic and Cauchy sequences.

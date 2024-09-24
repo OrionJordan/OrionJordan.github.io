@@ -6,6 +6,76 @@ format:
     html-math-method: katex
 ---
 
-## Table of contents
+Let $f \colon \mathbb{R} \to \mathbb{R}$. The derivative is denoted
 
+$$
+\frac{df}{dt} = f^\prime(t) = \lim_{h\to 0} \frac{f(t+h)-f(t)}{h}
+$$
 
+And denotes the rate of change of $f$ with respect to $t$. Graphically this would be the slope of the tangent line to $f$ at $t$.
+
+Algebraic equations have numerical solutions, if they exists. Differential equations have functions as solutions, where derivatives are involved in the equation. For example, the differential equation
+
+$$
+\frac{df}{dx} = \sin(x)
+$$
+
+ has solutions 
+
+ $$
+ f(x) = -\cos(x) + C
+ $$
+
+ There are mainly two groups of differential equations, those being ordinary differnetial equations (ODEs) and partial differential equations (PDEs). 
+
+ Ordinary differential equations are equations such that the unknown function depends only on one variable, whereas partial differential equations depend on more than one variable.
+
+ The order of a differential equation is simply the highest derivative that appears in the equation.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Find the order of the following PDEs
+
+$$
+(a) \quad \frac{\partial f(x,y,z)}{\partial x} + \frac{\partial f(x,y,z)}{\partial z} = -\left(\frac{\partial f(x,y,z)}{\partial y}\right)^7
+$$
+
+$$
+(b) \quad \frac{\partial u(x,y)}{\partial x} - \frac{\partial^2 f(x,y,z)}{\partial y^2} = u(1-u)
+$$
+$$
+(c) \quad \sin(u(x_1,x_2)) + \left(e^{\frac{\partial^2u(x_1,x_2)}
+{\partial x_1^2}}\right)^3 + \frac{\partial^4 u(x_1,x_2)}{\partial x_1^3 \partial x_2} = 2
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+**Laplace Equation**
+
+$$
+\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = 0
+$$
+
+**Heat Equation**
+
+$$
+\frac{\partial f}{\partial t} - \left(\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}\right) = u(x,y,t)
+$$
+
+**Wave Equation**
+
+$$
+\frac{\partial^2 f}{\partial t^2} - c^2\left(\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2}\right) = 0
+$$
+:::
+
+These have massive applications in physics, predicting fluid motion, the deformation of solids, and signaling. They also have applications in biology and ecology studying tumor growth, populations of bacteria, and blood clotting. There are also aplications in economics, weather, and most other fields. Any effect can be modeled with a PDE.
+
+PDEs are useful in representing many interesting problems, but also incredibly difficult to solve.
+
+Second order homogenous linear equations with constant coefficents can be solved with a charateristic equation.
+
+Brush up on ODEs soecifically second order. 

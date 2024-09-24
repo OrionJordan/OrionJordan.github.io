@@ -1,0 +1,131 @@
+---
+title: "Uniform Continuity"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Continuity is defined on each point $c \in D$, we want to define a notion of continuity that is not pointwise, and is instead defined on the whole domain $D$.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon D \to \mathbb{R}$ is uniformly continuous on $D$ if for all $\varepsilon > 0$, there exists $\delta > 0$ such that for all $x,y \in D$, $|x-y| < \delta \implies |f(x) - f(y)| < \varepsilon$. Symbolically
+
+$$
+\forall \varepsilon < 0, \exists \delta > 0 | \forall x,y \in D |x-y| < \delta \implies |f(x) - f(y)| < \varepsilon
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example (A uniformly continuous function)
+
+**Claim:** The function $f(x) = 2x$ is uniformly continuous on $\mathbb{R}$.
+
+Given $\varepsilon > 0$, we want to find some $\delta > 0$ such that
+
+$$
+\forall x,y \in D, |x-y| < \delta \implies |f(x) - f(y)| = |2x - 2y| = 2|x - y| < \varepsilon.
+$$
+
+Seeing this its clear we should choose $\delta = \varepsilon/2$, as that gives us the relation
+
+$$
+\forall x,y \in D, |x-y| < \frac{\varepsilon}{2} \implies 2|x-y| < 2\frac{\varepsilon}{2} = \varepsilon.
+$$
+
+Thus we have $f(x) = 2x$ is uniformly continuous. 
+
+:::
+
+A uniformly continuous function has a single $\delta$ that works on the whole domain, whereas a continous function has a seperate $\delta$ for each point $c \in D$.
+
+::: {.callout-warning icon="false"}
+## Example (A non uniformly continuous function)
+
+**Claim:** The function $f(x) = x^2$ is not uniformly continuous on $\mathbb{R}$.
+
+To prove a function is not uniformly continuous is equivalent to saying there exists some $\varepsilon > 0$ such that for all $\delta > 0$, there exist some pair $x,y \in D$ such that $|x-y| < \delta \implies |f(x) - f(y)| \geq \varepsilon$.
+
+We first notice that
+
+$$
+|f(x) - f(y)| = |x^2 - y^2| = |x + y| \cdot |x - y|.
+$$
+
+Let $\varepsilon = 1$. We need to show that given any $\delta > 0$, there exists some pair $x,y \in D$ such that 
+
+$$
+|x-y| < \delta \implies |x + y| \cdot |x - y| \geq 1.
+$$
+
+Because we only need to find one pair $x,y$ for each $\delta$, it makes sense to have our pair depend on $\delta$. For any $x$, let $y = x + \delta/2$. This gives us $|x - y| = \delta/2$, and $|x + y| \cdot |x - y| = |x + y| \cdot \delta/2$. 
+
+In order for $|x + y| \cdot \delta/2$ to be greater than $1$, we need $|x  + y| \geq 2/\delta$. We choose $x = 1/\delta$, as this gives $y = 1/\delta + \delta/2$. We now have enough information to construct our proof.
+
+---------
+
+Let $\varepsilon = 1$. Given any $\delta > 0$, let $x = 1/\delta, y = 1/\delta + \delta/2$. Then $|x-y| = \delta/2 < \delta$, and $|f(x) - f(y)| = |x+y| \cdot |x-y| = |2/\delta + \delta/2| \cdot |\delta/2| \geq 1$. Thus our function $f$ is not continuous on $\mathbb{R}$.
+
+:::
+
+Insert graphical pictures later.
+
+::: {.callout-warning icon="false"}
+## Example (A bounded uniformly continuous function)
+
+**Claim:** The function $f(x) = x^2$ is uniformly continuous on $D = [-5,5]$.
+
+Note that for any $x,y \in D$, we have $|x + y| \leq 10$. For any $\varepsilon > 0$, let $\delta = \varepsilon/10$. Then
+
+$$
+|x-y| < \delta \implies |x + y|\cdot|x - y| < 10 \cdot \delta = 10\frac{\varepsilon}{10} = \varepsilon
+$$
+
+:::
+
+By bounding our domain, we were able to show the function is uniformly continuous on said domain. This leads us to believe (correctly!) that a continuous function on a compact domain is automatically uniformly continuous.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $D$ is compact, and $f \colon D \to \mathbb{R}$ is continuous, then $f$ is uniformly continuous.
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Let $\varepsilon > 0$. Since $f$ is continuous on $D$, it is continuous at each $x \in D$. For each $x \in D$, there exists some $\delta_x > 0$ such that
+
+$$
+|x-y| < \delta_x \implies |f(x) - f(y)| < \frac{\varepsilon}{2}.
+$$
+
+The collection 
+
+$$
+F = \left\{ N\left(x,\frac{\delta_x}{2}\right) \mid x \in D \right\}
+$$
+
+is an open cover of $D$. Since $D$ is compact, $F$ contains a finite subcover. Thus there exists $x_1,\dots,x_n \in D$ such that $D \subset N(x_1,\delta_{x_1}/2) \cup \cdots \cup N(x_n,\delta_{x_n}/2)$.
+
+Let $\delta = \min\left\{\frac{\delta_{x_1}}{2},\cdots,\frac{\delta_{x_n}}{2}\right\}$. We want to show that this $\delta$ fufills the conditions for uniform continuity. Suppose $x,y \in D$ and $|x - y| < \delta$. Since $\bigcup_{i=1}^nN(x_i,\delta_{x_i}/2)$ covers $D$, there exists some $i$ such that $x \in N(x_i,\delta_{x_i}/2)$.
+
+Since $|x-y| < \delta \leq \delta_{x_i}/2$, we have 
+
+$$
+|y - x_i| = |y-x + x - x_i| \leq |y-x| + |x - x_i| < \frac{\delta_{x_i}}{2} + \frac{\delta_{x_i}}{2} = \delta_{x_i}.
+$$
+
+Thus $|f(y) - f(x_i)| < \varepsilon/2$. We also have $|x - x_i| < \delta_{x_i}$, so $|f(x) - f(x_i)| < \varepsilon/2$. Thus
+
+$$
+|f(x) - f(y)| \leq |f(x) - f(x_i)|+|f(x_i) - f(y)| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
+$$
+
+Therefore our function is uniformly continuous. $\square$.
+:::
+

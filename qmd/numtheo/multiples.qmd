@@ -6,15 +6,94 @@ format:
     html-math-method: katex
 ---
 
-Multiples are important in number theory
+Multiples and divisors are the most essential concepts in number theory and come up in nearly every problem.
 
-## Information
+# Multiples
+
+It seems natural to start with some definitions
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [**multiple**]{style="color: blue"} of an integer is the product of said integer with any other integer
+:::
+
+Given the number $4$, we have multiples $\dots,-4,0,4,8,\dots$ 
+
+::: {.callout-note icon="false"}
+## Notation
+
+The greatest common divisor between two integers $m$ and $n$ is notated 
+
+$$
+\gcd(m,n)
+$$ 
+:::
+
+
+
+# Divisors
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [**divisor**]{style="color: blue"} or [**factor**]{style="color: blue"} of an integer $n$ is any other integer $d$ such that $d\mid n$
+:::
+
+Note that every integer $n$ has divisors $1$ and $n$.
+
+::: {.callout-note icon="false"}
+## Notation
+
+The [**least common multiple**]{style="color: blue"} between two integers $n$ and $m$ is notated 
+
+$$
+\text{lcm}(m,n)
+$$
+
+:::
+
+## Properties
+
+### Total factors 
+
+Say you want to find the total number of factors for an integer. Instead of hashing it out manually, there exist an easier method.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Find the total number of factors to the integer $72$.
+
+----------
+
+We begin by finding the prime factorization of $72$, in this case
+
+$$
+72 = 2^3 * 3^2.
+$$
+
+Notice that each factor of $72$ contains between zero and three $2$'s, and between zero and two $3$'s. This gives us a total of $4 \times 3 = 12$ factors for $72$.  
+
+:::
+
+We use this trick to quickly calculate the total number of factors for an integer!
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The total factors of an integer
+
+$$
+n = p_1^{k_1} \cdot p_2^{k_2} \cdots p_m^{k_m}
+$$
+
+is the product $(k_1 + 1)(k_2 + 1)\cdots(k_m + 1)$
+
+:::
 
 # Problems
 
 ## Essential
-
-## Difficult
 
 ::: {.callout-warning icon="false"}
 ## Alcumus - Level 16 (#33994)
@@ -29,3 +108,6 @@ How many positive and negative integers are factors of $12$?
 The number $12$ can be factored $2^2*3^1$. This gives a total of $6$ factors. Including negative factors gives a total of $12$ integers.
 
 :::
+
+## Challenge
+

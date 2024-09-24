@@ -1,1 +1,10 @@
 /* css styles */
+body 
+  
+  .definition {
+    color: blue;
+  }
+
+  .quarto-dark .definition {
+    color: cyan;
+  }

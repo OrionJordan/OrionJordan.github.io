@@ -1,0 +1,60 @@
+---
+title: "Method of seperation of variables"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+A function has input scalars/vectors, and output scalars/vectors. Similarly operators input functions and output functions.
+
+An operator is linear if and only if it is satisifed that 
+
+$$
+L(c_1u_1 + c_2u_2) = c_1L(u_1) + c_2L(u_2)
+$$
+
+Where $u_1,u_2$ are arbitrary functions and $c_1,c_2$ are arbitrary constants.
+
+The heat operator is 
+
+$$
+L(u) = \frac{\partial u}{\partial t} - k\frac{\partial^2 u}{\partial x^2}
+$$
+
+A linear equation for the unknown $u$ is of the format
+
+$$
+L(u) = f(x,t)
+$$
+
+Where $L$ is a linear operator and $f(x,t)$ does not depend on $u$.
+
+Moreover if in the linear equation $L(u) = f(x,t)$ we have $f(x,t) = 0$ we say the equation is linear and homogeneous. If $f(x,t) \not = 0$, we say the equation is nonhomogeneous.
+
+## Principle of Superposition
+
+The fundemental property of linear operators allows solutions to be added together as such:
+
+::: {.callout-note icon="false"}
+## Theorem (Principle of Superposition)
+
+If $u_1$ and $u_2$ satsify a linear homogeneous equation, then an arbitrary linear combination of them $c_1u_1 + c_2u_2$ also satisfies the same linear homogeneous equation. 
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Given a linear homogeneous operator $L$, if $u_1,u_2$ satisfy this equation, then $L(u_1) = L(u_2) = 0$. Thus
+
+$$
+L(c_1u_1 + c_2u_2) = c_1L(u_1) + c_2L(u_2) = 0
+$$
+
+by the definition of linearity. 
+
+:::
+
+The concept of linearity and homogeneity also apply to boundary conditions.
+

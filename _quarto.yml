@@ -4,7 +4,7 @@ project:
 
 website:
   page-navigation: true
-  title: OOMN
+  title: "OOMN"
   description: "A college project"
   site-url: "https://orionjordan.github.io/"
 
@@ -12,14 +12,9 @@ website:
     background: primary
     search: true
     left:
-      - text: "Graph Theory"
-        file: "./qmd/graph/GraphTheory.qmd"
-      - text: "Integral"
-        file: "./qmd/integral/intro.qmd"
-      - text: "Mathematical Logic"
-        file: "./qmd/logic/intro.qmd"
-      - text: "Abstract Algebra"
-        file: "./qmd/abstract/intro.qmd"
+      - text: "Content"
+        href: "./qmd/content/index.qmd"
+
 
   sidebar:
     - title: "graph"
@@ -63,10 +58,29 @@ website:
         contents:
         - "./qmd/abstract/quotient-groups/quotient-group.qmd"
 
+    - title: "Real Analysis"
+      contents:
+      - "./qmd/realanal/intro.qmd"
+      - section: "Sequences"
+        href: "./qmd/realanal/sequences.qmd"
+        contents:
+        - "./qmd/realanal/sequences/convergence.qmd"
+        - "./qmd/realanal/sequences/limittheo.qmd"
+        - "./qmd/realanal/sequences/mono-cauchy.qmd"
+      - section: "Limits and Continuity"
+        href: "./qmd/realanal/limits-cont.qmd"
+      - section: "Differentiation"
+        href: "./qmd/realanal/differentiation.qmd"
+      - section: "Integration"
+        href: "./qmd/realanal/integration.qmd"
+      - section: "Infinite Series"
+        href: "./qmd/realanal/infinite-series.qmd"
+
 theme:
   light: flatly
   dark: darkly
 
 format:
   html:
+    css: styles.css
     mainfont: "system-ui"

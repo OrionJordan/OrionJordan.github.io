@@ -1,0 +1,300 @@
+---
+title: "Derivation of the conduction of heat in a one-dimensional rod"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We will need the following unknowns:
+
+::: {.callout-tip icon="false"}
+## Definition 
+
+[**Thermal energy density**]{style="color: blue"} is the amount of thermal energy per unit volume. 
+
+$$
+e(x,t) = \text{ Thermal energy density}
+$$
+
+[**Heat flux**]{style="color: blue"} is the amount of thermal energy per unit time flowing to the right per unit surface area 
+
+$$
+\phi(x,t) = \text{ Heat flux}
+$$
+
+[**Heat sources**]{style="color: blue"} are internal sources of thermal energy.
+
+$$
+Q(x,t) = \text{ Heat energy per unit volume}
+$$
+:::
+
+## Consevation of heat energy (susbections)
+
+We want to derive an equation to see how heat energy in a rod changes overtime.
+
+We first consider a rod of length $L$, stretching from $x = 0$ to ${x=L.}$ Consider a subsection of the rod $x = x^\prime$ to $x = x^\prime + \Delta x$.
+
+The total thermal energy in this subsection of the rod is the product of the thermal energy density and the volume of the subsection. This is given by the equation
+
+$$
+\text{Heat Energy } = e(x,t)A\Delta x
+$$
+
+where $A$ is the cross sectional area of the rod.
+
+To find the rate of change of heat energy in time in the subsection, we have to find the heat energy entering the subsection, the heat energy leaving the subsection, and the heat energy generated inside the subsection per unit time. This is given by the equation
+
+$$
+\text{Change in Heat Energy } = \frac{\partial}{\partial t}\left[e(x,t)A\Delta x\right]
+$$
+
+Clearly then
+
+$$
+\frac{\partial}{\partial t}\left[e(x,t)A\Delta x\right] = \phi(x,t)A - \phi(x + \Delta x)A + Q(x,t)A\Delta x
+$$
+
+From here we can divide both sides by $A \Delta x$ to get
+
+$$
+\frac{\partial}{\partial t}e(x,t) = \frac{\phi(x,t) - \phi(x + \Delta x)}{\Delta x} + Q(x,t)
+$$
+
+As $\Delta x \to 0$ we have 
+
+$$
+\frac{\partial}{\partial t}e(x,t) = -\lim_{\Delta x \to 0}\frac{\phi(x + \Delta x) - \phi(x,t)}{\Delta x} + Q(x,t)
+$$
+
+This is the limit definition of a derivative. We can simplify to obtain
+
+$$
+\frac{\partial}{\partial t}e(x,t) = -\frac{\partial \phi}{\partial x} + Q
+$$
+
+Which we call the formula for [**conservation of heat energy**]{style="color: blue"}.
+
+## Consevation of heat energy (exact)
+
+An alternate derivation for conservation of heat energy which does not use any approximations is as follows.
+
+Given a rod from $x = 0$ to $x = L$, we can calculate the total energy in the rod from $[a,b]$ (where $0 \leq a < b \leq L$) as the contribution of all infinitisimal slices. We do this with
+
+$$
+\text{Total heat energy between } [a,b] = \int^b_a e(x,t)A\;dx
+$$
+
+The rate of change of energy between $a$ and $b$ will be the heat energy flowing across the boundaries per unit time, in addition to the heat energy generated inside per unit time. This is given with the equation
+
+$$
+\frac{d}{dt}\left(\int^b_a e(x,t)A\;dx\right) = \phi(a,t)A - \phi(b,t)A + \int^b_a Q(x,t)A\;dx
+$$
+
+This can be simplified
+
+$$
+\int^b_a \frac{\partial}{\partial t} e(x,t)\;dx = -\int^b_a \frac{\partial \phi(x,t)}{\partial x}\; dx + \int^b_a Q(x,t)\;dx
+$$
+
+This equation is called [**integral conservation law**]{style="color: blue"}, and is more generally useful. We will use the equation to derive the conservation of heat energy formula we got earlier. We simplify the integral conservation law into
+
+$$
+\int^b_a \left[\frac{\partial}{\partial t} e(x,t)+ \frac{\partial \phi}{\partial x} -  Q\right] dx = 0
+$$
+
+This integral must be zero for arbitrary values of $a$ and $b$. This is possible only if the integrand itself is zero. Thus we have
+
+$$
+\frac{\partial}{\partial t} e(x,t) + \frac{\partial \phi}{\partial x} -  Q = 0
+$$
+
+Which can be rewrote to be identical to our first derivation
+
+$$
+\frac{\partial}{\partial t}e(x,t) = -\frac{\partial \phi}{\partial x} + Q
+$$
+
+## Tempature and specific heat
+
+We describe materials by their [**tempature**]{style="color: blue"}, instead of their thermal energy.
+
+$$
+u(x,t) = \text{ Tempature}
+$$
+
+It may take different levels of thermal energy to raise two different materials from one tempature to another. We introduce the quantity called [**specific heat**]{style="color: blue"} or [**heat capacity**]{style="color: blue"}. The specific heat is the heat energy that must be supplied to a unit of mass of a substance to raise its tempature one unit
+
+$$
+c = \text{ Specific heat}
+$$
+
+In general, the specific heat depends on the tempature of the material. That is to say it may require less energy to go from $0^\circ$ to $10^\circ$ then it does to go from $10^\circ$ to $20^\circ$. In our case, we will consider just $c(x)$, and in many cases let $c$ be constant.
+
+The [**mass density**]{style="color: blue"} of a material is mass per unit volume.
+
+$$
+\rho(x) = \text{ Mass density}
+$$
+
+Given a subsection of a one-dimensional rod, the rotal mass of the subsection is $\rho(x) A \Delta x$, and the total thermal energy in any given slice is thus $c(x)u(x,t)\rho(x) A \Delta x$. This gives us the relation
+
+$$
+e(x,t)A\Delta x = c(x)u(x,t)\rho(x) A \Delta x
+$$
+
+Which can be simplified
+
+$$
+e(x,t) = c(x)u(x,t)\rho(x)
+$$
+
+This also changes our conservation of heat energy equation into
+
+$$
+c(x)\rho(x)\frac{\partial u}{\partial t} = -\frac{\partial \phi}{\partial x} + Q.
+$$
+
+## Fouriers law
+
+What is the relation between $\phi(x,t)$ and $u(x,t)$? Fourier experimented and realized four main relations between the two quantities
+
+1. If the tempature of the rod is constant, the energy does not flow.
+
+2. If tempature is not constant, the heat energy flows from the hotter region towards the colder region.
+
+3. The greater the tempature differences (for the same material), the greater the flow of heat energy.
+
+4. The flow of heat energy will vary for different materials, even with the same tempature differences.
+
+Fourier wanted to create an equation to summarize these properties, and used the formula 
+
+$$
+\phi = -K_0 \frac{\partial u}{\partial x}
+$$
+
+Known as [**Fouriers law of heat conduction**]{style="color: blue"}. But does this formula accuratly model our results? 
+
+Starting with the first observation, if tempature is constant then no heat energy flows. When tempature is constant, our formula gives us
+
+$$
+\phi = -K_0 \frac{\partial u}{\partial x} = -K_0 (0) = 0
+$$
+
+Matching our observations. The second property states if tempature differences are present, the heat energy flows from the hotter to colder regions. If the tempature with respect to position of the rod is increasing, we have $\partial u / \partial x > 0$, and therefore $\phi = -K_0 (\partial u / \partial x) < 0$. Because $\phi$ is less than zero, energy is flowing to the left, from the hotter to colder region. When $\partial u / \partial x < 0$, we have $\phi > 0$, as expected. This explains the minus sign present in the formula.
+
+When the tempature differences are greater, $\partial u / \partial x$ is greater, and the flow of heat energy $\phi$ is also greater. 
+
+The [**thermal conductivity**]{style="color: blue"} of the material $K_0$. Experiments indicate that different materials conduct heat differently, where $K_0$ depends on a specific material. This is how we satisfy our fourth property.
+
+## Heat equation
+
+If Fouriers law is substituted into the conservation of heat energy equation, we get the following
+
+$$
+cp\frac{\partial u}{\partial t} = \frac{\partial}{\partial x}\left(K_0\frac{\partial u}{\partial x}\right) + Q.
+$$
+
+In particular, if $c,p,K_0$ are all constants, the partial differential equation becomes
+
+$$
+cp\frac{\partial u}{\partial t} = K_0 \frac{\partial^2 u}{\partial x^2} + Q.
+$$
+
+In addition, there are no sources of energy, $Q = 0$, then dividing by the constant $c\rho$, we have
+
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}
+$$
+
+where the constant $k$,
+
+$$
+k = \frac{K_0}{c\rho}
+$$
+
+is called the [**thermal diffusivity**]{style="color: blue"}. We call this the [**heat equation**]{style="color: blue"}; it corresponds to no sources and constant thermal properties.
+
+## Diffusion of a chemical pollutant
+
+Consdier a one-dimensional region between $x=a$ and $x=b$. Let $u(x,t)$ be the density of a chemical per unit volume, and $\phi(x,t)$ be the amount of chemical flowing per unit surface. These behave similary to our equations for heat.
+
+We apply the conservation law to our model, meaning the rate of change of the chemical in $[a,b]$ is equal to the amount of chemical flowing in, subtracted by the amount of chemical flowing out. We use the folowing formula to model this
+
+$$
+\frac{d}{dt} \int_a^b u(x,t) dx = \phi(a,t) - \phi(b,t). 
+$$
+
+We simplify the equation to obtain 
+
+$$
+\frac{\partial u}{\partial t} + \frac{\partial \phi}{\partial x} = 0
+$$
+
+This is called the [**conservation law**]{style="color: blue"} for chemical concentration.
+
+Adolf Fick studied the relationship between $\phi$ and $u$ and derived the following formula
+
+$$
+\phi = -k \frac{\partial u}{\partial x}
+$$
+
+This is known as [**Fick's law of diffusion**]{style="color: blue"}, where $k$ is called the chemicals [**diffusivity**]{style="color: blue"} and can be measured experimentally. When combining our equations we get
+
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}
+$$
+
+Which is known as the [**diffusion equation**]{style="color: blue"}. Notice the similarities between chemical diffusion and heat diffusion. We therefore call this formula the diffusion equation, as it can model many different types of diffusion.
+
+
+## Diffusion of gas filling a tube
+
+Given a one-dimensional tube between $x = a$ and $x=b$, let $c$ be the number of particles of gas in the tube. We assume particles behave randomly (Brownian motion) such that they move to the left or right each with probability $\frac{1}{2}$.
+
+We denote the discrete derivative
+
+$$
+\int_t c_i = \frac{c_i(t_1)-c_i(t_0)}{\Delta t}
+$$
+
+The change in particles in a subsection $[t_0,t_1]$ is equa to the particles entering from either side, minus the particles leaving from either side. 
+
+Take the change in the number of particles in the middle subsection. We have
+
+$$
+\phi_{II} = c_{II}(t_1) - c_{II}(t_0) = \frac{1}{2}c_{I}(t_0) + \frac{1}{2}c_{III}(t_0) - \frac{1}{2}c_{II}(t_0) - \frac{1}{2}c_{II}(t_0)
+$$
+
+We use our notation to model this
+
+$$
+\Delta t \int_t c_{II} = \frac{1}{2}[c_{III}(t_0)- c_{II}(t_0)] - \frac{1}{2}[c_{II}(t_0) - c_{I}(t_0)]
+$$
+
+$$
+\Delta t \int_t c_{II} = \frac{1}{2}\Delta x \int_x c_{III}(t_0) - \frac{1}{2} \Delta x c_{II}
+$$
+
+$$
+\Delta t \int_t c_{II} = \frac{1}{2} \Delta x\left[\int_x c_{III}(t_0) - \int_x c_{II}(t_0)\right]
+$$
+
+$$
+\Delta t \int_t c_{II} = \frac{1}{2} \Delta x\left[\Delta x\int_x\left(\int_x c_{II}(t_0)\right)\right]
+$$
+
+$$
+\int_t c_{II} =\frac{(\Delta x)^2}{2\Delta t}\int_x\left(\int_x c_{II}(t_0)\right)
+$$
+
+As the length of our slices and the time between measuring the particles goes to zero, our function becomes
+
+$$
+\frac{\partial c}{\partial t} = D\frac{\partial^2 x}{\partial x^2}
+$$
+
+## Conclusion
+
+The heat equation we have derived is essentially identical to an abstracted diffusion process, and can therefore be used to model many different applications.

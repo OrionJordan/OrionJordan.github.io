@@ -1,0 +1,366 @@
+---
+title: "Limit Theorems"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We begin the section by showing that algebraic operations are compatible with limits.
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.1 (Algebraic Relations for limits)
+
+Let $\lim s_n = s$ and $\lim t_n = t$. Then
+
+$(a) \; \lim (s_n + t_n) = s + t. \newline$
+$(b) \; \lim(ks_n) = ks$ and $\lim(k + s_n) = k + s. \newline$
+$(c) \; \lim(s_nt_n) = st. \newline$
+$(d) \; \lim(s_n/t_n) = s/t$ provided $\forall n,t_n \not = 0$
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+$(a)$ We must show that $|(s_n + t_n) - (s + t)|$ is arbitrarily close to any $\varepsilon$. Using the triangle inequality, we have
+
+\begin{align*}
+\left|(s_n + t_n) - (s + t)\right| &= |(s_n - s) + (t_n - t)|\\
+&\leq |s_n - s| + |t_n - t|.
+\end{align*}
+
+By the definition of convergence we have 
+
+$$
+\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| < \frac{\varepsilon}{2}.
+$$
+
+
+and
+
+$$
+\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| < \frac{\varepsilon}{2}.
+$$
+
+Let $N = \max\{N_1,N_2\}$. Then for all $n \geq N$, we have
+$$
+|(s_n + t_n) - (s + t)| \leq |s_n - s| + |t_n - t| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+$$
+
+Since this holds for all $\varepsilon > 0$, we have $\lim (s_n + t_n) = s + t$.
+
+----------
+
+$(b)$ First, we need to show $\lim(ks_n) = ks$. Since $\lim s_n = s$, there exists $N \in \mathbb{N}$ such that for all $n \geq N$
+
+$$
+|s_n - s| \leq \frac{\varepsilon}{|k|}.
+$$
+
+Therefore
+
+$$
+|k||s_n - s| \leq |k|\frac{\varepsilon}{|k|} \implies |ks_n - s_n| \leq \varepsilon
+$$
+
+When $k \not = 0$. When $k = 0$, our statement is trivially true. Next we need to show $\lim s_n + k = s + k$. This is almost trivial since we are given $\lim s_n = s$, and
+
+$$
+|(k + s_n) - (k + s)| = |s_n - s| < \varepsilon.
+$$
+
+----------
+
+$(c)$ We must show that $|s_nt_n - st| < \varepsilon$. We can rewrite our inequality
+
+$$
+|s_nt_s - st| = | s_nt_n + (s_nt - s_n t) - st|
+$$
+
+We can now use the triangle inequality to show
+
+\begin{align*}
+|(s_nt_n - s_nt) + (s_n t - st)| &\leq |s_nt_n - s_nt| + | s_nt - st| \\
+&= |s_n||t_n - t| + |t||s_n - s|
+\end{align*}
+
+Since $(s_n)$ is bounded, $\exists M_1 > 0$ such that $\forall n, |s_n| \leq M_1$. 
+
+Let $M = \max\{M_1,|t|\}$. Then we have
+
+$$
+|s_nt_n - st| \leq M|t_n - t| + M|s_n - s|.
+$$
+
+Because $\lim s_n = s$ and $\lim t_n = t$, for any $\varepsilon > 0$ there exists $N_1,N_2 \in \mathbb{N}$ such that when $n \geq N_1$ and $n \geq N_2$
+
+$$
+|t_n - t| \leq \frac{\varepsilon}{2M} \text{ and } |s_n - s| < \frac{\varepsilon}{2M}
+$$
+
+respectively. Let $N = \max\{N_1,N_2\}$. Then $n \geq N$ implies
+
+$$
+|s_nt_n - st| \leq M|t_n - t| + M|s_n - s| < M\left(\frac{\varepsilon}{2M}\right) + M\left(\frac{\varepsilon}{2M}\right) = \varepsilon.
+$$
+
+Thus we have shown $\lim(s_nt_n) = st$.
+
+------
+
+$(d)$ Since $s_n/t_n = s_n(1/t_n)$, if we can prove $\lim 1/t_n = 1/t$ we can use part $(c)$ to complete the proof. We need to show that for any $\varepsilon > 0$
+
+$$
+\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| < \varepsilon
+$$
+
+For all sufficently large $n$. We want to get a lower bound on the denominator, $t_nt$. Because $t \not = 0$, there exists some $N_1 \in \mathbb{N}$ such that $n \geq N_1$ implies $|t_n - t| < |t|/2 < \varepsilon_t$. Thus for $n \geq N_1$ we have
+
+$$
+|t_n| = |t - (t - t_n)| \geq |t| - |t - t_n| > |t| - \frac{|t|}{2} = \frac{|t|}{2}
+$$
+
+There also exists $N_2 \in \mathbb{N}$ such that $n \geq N_2$ implies $|t_n - t| < \frac{\varepsilon}{2}|t|^2$. Let $N = \max\{N_1,N_2\}$. Then $n \geq N$ implies
+
+$$
+\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| = \frac{1}{|t_n|}\left|\frac{t - t_n}{t}\right| < \frac{2}{|t|}\left|\frac{t-t_n}{t}\right|<\varepsilon.
+$$
+
+Thus $\lim 1/t_n = 1/t$.
+
+:::
+
+Another useful property of limits is that they are preserved under inequality operations.
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.2 (Inequality operations on limits)
+
+Let $(s_n) \to s$ and $(t_n) \to t$. If $\forall n \in \mathbb{N},\;s_n \leq t_n$. Then $s \leq t$.
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Towards a contradiction, suppose that $t < s$. Let $\varepsilon = \frac{s-t}{2}.$ 
+
+By the definition of convergence we have 
+
+$$
+\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| < \varepsilon.
+$$
+
+
+Similarly we have
+
+$$
+\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| < \varepsilon.
+$$
+
+Let $N = \max\{N_1,N_2\}$. For $n \geq N, \; t_n < t + \varepsilon = s - \varepsilon < s_n$. But this contradicts our inital assumption that $s_n \leq t_n$ for all $n$. Thus we conclude $s \leq t$.  
+:::
+
+This leads to a the following corollary
+
+::: {.callout-note icon="false"}
+## Corollary 1.2.3
+
+If $(t_n)$ converges to $t$ and $t_n \geq 0$ for all $n \in \mathbb{N}$, then $t \geq 0$
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Let $(s_n)$ be a constant sequence converging to $s$, such that for all $n \in \mathbb{N}$, $s_n = 0$. We are given for all $n$, $t_n \geq 0$, thus $t_n \geq s_n$. By Theorem $1.2.2$, we have that $t \geq s$. Because $s = 0$, $t \geq 0$. 
+
+:::
+
+These results lead us to the [**Ratio test**]{.definition}. This test is used to show that certain sequences converge to zero.
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.4 (Ratio test)
+
+Suppose that $(s_n)$ is a sequence of _positive_ terms and that the sequence of ratios $(s_{n+1}/s_n)$ converges to $L$. If $L > 1$, then $\lim_{s_n} = 0$
+
+:::
+
+In simple english, if $s_n$ is a sequence of positive terms, where each subsequent term is smaller than the last, the sequence must converge to zero.
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+By our previous Corollary, we know that $L \geq 0$. If $L < 1$, then there exists a real number $c$ such that $0 \leq L < c < 1$. Let $\varepsilon = c - L$, so that $\varepsilon > 0$.
+
+Since $(s_{n+1}/s_n)$ converges to $L$, there exists some $N \in \mathbb{N}$ such that for all $n \geq N$,
+
+$$
+\left|\frac{s_{n+1}}{s_n} - L\right| < \varepsilon
+$$
+
+Let $k = N + 1$. Then for all $n \geq k$ we have $n - 1 \geq N$ such that
+
+$$
+\frac{s_n}{s_{n+1}} < L + \varepsilon = L + (c - L) = c.
+$$
+
+We drop the absolute value signs as, positive or negative, $s_{n+1}/s_n - L < \varepsilon$. For all $n \geq k$,
+
+$$
+0 < s_n < s_{n-1}c
+$$
+
+We can repeat this inequality
+$$
+0 < s_{n-1} < s_{n-2}c
+$$
+
+Thus
+
+$$
+0 < s_n < s_{n-1}c < s_{n-2}c^2 < \cdots < s_kc^{n-k}.
+$$
+
+Let $M = s_k/c^k$, we have $0 < s_n < Mc^n$ for all $n \geq k$. Since $0 < c < 1$, we have $\lim c^n = 0$ by a previous result. Thus $\lim s_n = 0$ by Theorem 1.1.1.
+:::
+
+## Infinite Limits
+
+Certain sequences like $s_n = n$ are clearly not convergent, but behave predictably; growing without bounds towards infinity. We introduce the notion of _divergence_ for these sequences.
+
+::: {.callout-note icon="false" collapse="true"}
+## Definition
+
+A sequence $(s_n)$ is said to [diverge]{.definition} to $+\infty$, notated
+
+$$
+\lim s_n = +\infty
+$$
+
+If for every $M \in \mathbb{R}$, there exists a natural number $N$ such that $n \geq N$ implies that $s_n > M$.
+
+Similarly a sequence $(s_n)$ is said to diverge to $-\infty$, notated
+
+$$
+\lim s_n = -\infty
+$$
+
+If for every $M \in \mathbb{R}$ there exists a natural number $N$ such that $n \geq N$ implies that $s_n < M$.
+:::
+
+A divergent sequence is _**NOT**_ convergent, and our limit notation is only used for simplicity. Theorems which require a convergent sequence do not apply to divergent sequences.
+
+::: {.callout-warning icon="false"}
+## Example
+
+**Claim:** $\lim n^2 = + \infty$
+
+To show the sequence $(s_n)$ where $s_n = n^2$ diverges to positive infinity, we must show for every $M \in \mathbb{R}$, there exists a natural number $N$ such that $n \geq N$ implies $s_n > M$.
+
+Let $N$ be equal to the smallest integer greater than $|M|$. For all integers $N^2 \geq N$. Thus for all $n \geq N$, $s_n = n^2 > n > M$. Thus our sequence $(s_n)$ diverges to positive infinity. 
+:::
+
+The above example is very simple, and gives a general idea for how infinite limit proofs are done. More technical examples can be found in the practice.
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.5 
+
+Suppose that $(s_n)$ and $(t_n)$ are sequences such that $s_n \leq t_n$ for all $n \in \mathbb{N}$. 
+
+$(a)$ If $\lim s_n = + \infty$ then $\lim t_n = + \infty$.
+
+$(b)$ If $\lim t_n = - \infty$ then $\lim s_n = - \infty$.
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+$(a)$ We are given that $(s_n)$ diverges to posiitve infinity. Then for every $M$ there exists a naturaul number $N$ such that $n \geq N$ implies $s_n > M$. Because $s_n \leq t_n$ for all $n$, we have $t_n \geq s_n > M$. Thus for any $M$, there exists some natural number $N$ such that $n \geq N$ implies $t_n > M$, and we have that $\lim t_n = + \infty$.
+
+-----------
+
+$(b)$ We are given that $(t_n)$ diverges to negative infinity. Then for every $M$ there exists a natural number $N$ such that $n \geq N$ implies $t_n < M$. Because $s_n \leq t_n$ for all $n$, we have $s_n \leq t_n < M$. Thus for every $M$, there exists some natural number $N$ such that $n \geq N$ implies $s_n < M$, and we have that $\lim s_n = - \infty$ 
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.6 
+
+Let $(s_n)$ be a sequence of positive numbers. Then $\lim s_n = + \infty$ if and only if $\lim 1/s_n = 0$.
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Suppose that $\lim s_n = + \infty$. Given any $\varepsilon > 0$, let $M = 1/\varepsilon$. There exists a natural number $N$ such that $n \geq N$ implies $s_n > M = 1/\varepsilon$. Since $s_n$ is positive, we have
+
+$$
+\left|\frac{1}{s_n} - 0\right| < \varepsilon = \frac{1}{M}
+$$
+
+Thus $\lim 1/s_n = 0$. For the converse, assume $\lim 1/s_n = 0$. Then there exists a natural number $N$ such that for all $n \geq N$, we have
+
+$$
+\left|\frac{1}{s_n} - 0\right|  = \frac{1}{s_n} < \varepsilon.
+$$
+
+Let $M = 1/\varepsilon$. Flipping both sides of the inequality gives us $s_n > 1/\varepsilon = M$. Thus for some natural number $N$, for all $n \geq N$ we have $s_n > M$. Thus $\lim s_n = + \infty$.
+
+
+:::
+
+## Practice
+
+## Recap
+
+In this section we proved the following theorems and results.
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.1 (Algebraic Relations for limits)
+
+Let $\lim s_n = s$ and $\lim t_n = t$. Then
+
+$(a) \; \lim (s_n + t_n) = s + t. \newline$
+$(b) \; \lim(ks_n) = ks$ and $\lim(k + s_n) = k + s. \newline$
+$(c) \; \lim(s_nt_n) = st. \newline$
+$(d) \; \lim(s_n/t_n) = s/t$ provided $\forall n,t_n \not = 0$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.2 (Inequality operations on limits)
+
+Let $(s_n) \to s$ and $(t_n) \to t$. If $\forall n \in \mathbb{N},\;s_n \leq t_n$. Then $s \leq t$.
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 1.2.3
+
+If $(t_n)$ converges to $t$ and $t_n \geq 0$ for all $n \in \mathbb{N}$, then $t \geq 0$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.4 (Ratio test)
+
+Suppose that $(s_n)$ is a sequence of _positive_ terms and that the sequence of ratios $(s_{n+1}/s_n)$ converges to $L$. If $L > 1$, then $\lim_{s_n} = 0$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.5 
+
+Suppose that $(s_n)$ and $(t_n)$ are sequences such that $s_n \leq t_n$ for all $n \in \mathbb{N}$. 
+
+$(a)$ If $\lim s_n = + \infty$ then $\lim t_n = + \infty$.
+
+$(b)$ If $\lim t_n = - \infty$ then $\lim s_n = - \infty$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2.6 
+
+Let $(s_n)$ be a sequence of positive numbers. Then $\lim s_n = + \infty$ if and only if $\lim 1/s_n = 0$.
+
+:::

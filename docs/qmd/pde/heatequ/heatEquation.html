@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OOMN - Derivation of the conduction of heat in a one-dimensional rod</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">OOMN</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/graph/GraphTheory.html" rel="" target="">
+ <span class="menu-text">Graph Theory</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/integral/intro.html" rel="" target="">
+ <span class="menu-text">Integral</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/logic/intro.html" rel="" target="">
+ <span class="menu-text">Mathematical Logic</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/abstract/intro.html" rel="" target="">
+ <span class="menu-text">Abstract Algebra</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#consevation-of-heat-energy-susbections" id="toc-consevation-of-heat-energy-susbections" class="nav-link active" data-scroll-target="#consevation-of-heat-energy-susbections">Consevation of heat energy (susbections)</a></li>
+  <li><a href="#consevation-of-heat-energy-exact" id="toc-consevation-of-heat-energy-exact" class="nav-link" data-scroll-target="#consevation-of-heat-energy-exact">Consevation of heat energy (exact)</a></li>
+  <li><a href="#tempature-and-specific-heat" id="toc-tempature-and-specific-heat" class="nav-link" data-scroll-target="#tempature-and-specific-heat">Tempature and specific heat</a></li>
+  <li><a href="#fouriers-law" id="toc-fouriers-law" class="nav-link" data-scroll-target="#fouriers-law">Fouriers law</a></li>
+  <li><a href="#heat-equation" id="toc-heat-equation" class="nav-link" data-scroll-target="#heat-equation">Heat equation</a></li>
+  <li><a href="#diffusion-of-a-chemical-pollutant" id="toc-diffusion-of-a-chemical-pollutant" class="nav-link" data-scroll-target="#diffusion-of-a-chemical-pollutant">Diffusion of a chemical pollutant</a></li>
+  <li><a href="#diffusion-of-gas-filling-a-tube" id="toc-diffusion-of-gas-filling-a-tube" class="nav-link" data-scroll-target="#diffusion-of-gas-filling-a-tube">Diffusion of gas filling a tube</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Derivation of the conduction of heat in a one-dimensional rod</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>We will need the following unknowns:</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span style="color: blue"><strong>Thermal energy density</strong></span> is the amount of thermal energy per unit volume.</p>
+<p><span class="math display">
+e(x,t) = \text{ Thermal energy density}
+</span></p>
+<p><span style="color: blue"><strong>Heat flux</strong></span> is the amount of thermal energy per unit time flowing to the right per unit surface area</p>
+<p><span class="math display">
+\phi(x,t) = \text{ Heat flux}
+</span></p>
+<p><span style="color: blue"><strong>Heat sources</strong></span> are internal sources of thermal energy.</p>
+<p><span class="math display">
+Q(x,t) = \text{ Heat energy per unit volume}
+</span></p>
+</div>
+</div>
+<section id="consevation-of-heat-energy-susbections" class="level2">
+<h2 class="anchored" data-anchor-id="consevation-of-heat-energy-susbections">Consevation of heat energy (susbections)</h2>
+<p>We want to derive an equation to see how heat energy in a rod changes overtime.</p>
+<p>We first consider a rod of length <span class="math inline">L</span>, stretching from <span class="math inline">x = 0</span> to <span class="math inline">{x=L.}</span> Consider a subsection of the rod <span class="math inline">x = x^\prime</span> to <span class="math inline">x = x^\prime + \Delta x</span>.</p>
+<p>The total thermal energy in this subsection of the rod is the product of the thermal energy density and the volume of the subsection. This is given by the equation</p>
+<p><span class="math display">
+\text{Heat Energy } = e(x,t)A\Delta x
+</span></p>
+<p>where <span class="math inline">A</span> is the cross sectional area of the rod.</p>
+<p>To find the rate of change of heat energy in time in the subsection, we have to find the heat energy entering the subsection, the heat energy leaving the subsection, and the heat energy generated inside the subsection per unit time. This is given by the equation</p>
+<p><span class="math display">
+\text{Change in Heat Energy } = \frac{\partial}{\partial t}\left[e(x,t)A\Delta x\right]
+</span></p>
+<p>Clearly then</p>
+<p><span class="math display">
+\frac{\partial}{\partial t}\left[e(x,t)A\Delta x\right] = \phi(x,t)A - \phi(x + \Delta x)A + Q(x,t)A\Delta x
+</span></p>
+<p>From here we can divide both sides by <span class="math inline">A \Delta x</span> to get</p>
+<p><span class="math display">
+\frac{\partial}{\partial t}e(x,t) = \frac{\phi(x,t) - \phi(x + \Delta x)}{\Delta x} + Q(x,t)
+</span></p>
+<p>As <span class="math inline">\Delta x \to 0</span> we have</p>
+<p><span class="math display">
+\frac{\partial}{\partial t}e(x,t) = -\lim_{\Delta x \to 0}\frac{\phi(x + \Delta x) - \phi(x,t)}{\Delta x} + Q(x,t)
+</span></p>
+<p>This is the limit definition of a derivative. We can simplify to obtain</p>
+<p><span class="math display">
+\frac{\partial}{\partial t}e(x,t) = -\frac{\partial \phi}{\partial x} + Q
+</span></p>
+<p>Which we call the formula for <span style="color: blue"><strong>conservation of heat energy</strong></span>.</p>
+</section>
+<section id="consevation-of-heat-energy-exact" class="level2">
+<h2 class="anchored" data-anchor-id="consevation-of-heat-energy-exact">Consevation of heat energy (exact)</h2>
+<p>An alternate derivation for conservation of heat energy which does not use any approximations is as follows.</p>
+<p>Given a rod from <span class="math inline">x = 0</span> to <span class="math inline">x = L</span>, we can calculate the total energy in the rod from <span class="math inline">[a,b]</span> (where <span class="math inline">0 \leq a &lt; b \leq L</span>) as the contribution of all infinitisimal slices. We do this with</p>
+<p><span class="math display">
+\text{Total heat energy between } [a,b] = \int^b_a e(x,t)A\;dx
+</span></p>
+<p>The rate of change of energy between <span class="math inline">a</span> and <span class="math inline">b</span> will be the heat energy flowing across the boundaries per unit time, in addition to the heat energy generated inside per unit time. This is given with the equation</p>
+<p><span class="math display">
+\frac{d}{dt}\left(\int^b_a e(x,t)A\;dx\right) = \phi(a,t)A - \phi(b,t)A + \int^b_a Q(x,t)A\;dx
+</span></p>
+<p>This can be simplified</p>
+<p><span class="math display">
+\int^b_a \frac{\partial}{\partial t} e(x,t)\;dx = -\int^b_a \frac{\partial \phi(x,t)}{\partial x}\; dx + \int^b_a Q(x,t)\;dx
+</span></p>
+<p>This equation is called <span style="color: blue"><strong>integral conservation law</strong></span>, and is more generally useful. We will use the equation to derive the conservation of heat energy formula we got earlier. We simplify the integral conservation law into</p>
+<p><span class="math display">
+\int^b_a \left[\frac{\partial}{\partial t} e(x,t)+ \frac{\partial \phi}{\partial x} -  Q\right] dx = 0
+</span></p>
+<p>This integral must be zero for arbitrary values of <span class="math inline">a</span> and <span class="math inline">b</span>. This is possible only if the integrand itself is zero. Thus we have</p>
+<p><span class="math display">
+\frac{\partial}{\partial t} e(x,t) + \frac{\partial \phi}{\partial x} -  Q = 0
+</span></p>
+<p>Which can be rewrote to be identical to our first derivation</p>
+<p><span class="math display">
+\frac{\partial}{\partial t}e(x,t) = -\frac{\partial \phi}{\partial x} + Q
+</span></p>
+</section>
+<section id="tempature-and-specific-heat" class="level2">
+<h2 class="anchored" data-anchor-id="tempature-and-specific-heat">Tempature and specific heat</h2>
+<p>We describe materials by their <span style="color: blue"><strong>tempature</strong></span>, instead of their thermal energy.</p>
+<p><span class="math display">
+u(x,t) = \text{ Tempature}
+</span></p>
+<p>It may take different levels of thermal energy to raise two different materials from one tempature to another. We introduce the quantity called <span style="color: blue"><strong>specific heat</strong></span> or <span style="color: blue"><strong>heat capacity</strong></span>. The specific heat is the heat energy that must be supplied to a unit of mass of a substance to raise its tempature one unit</p>
+<p><span class="math display">
+c = \text{ Specific heat}
+</span></p>
+<p>In general, the specific heat depends on the tempature of the material. That is to say it may require less energy to go from <span class="math inline">0^\circ</span> to <span class="math inline">10^\circ</span> then it does to go from <span class="math inline">10^\circ</span> to <span class="math inline">20^\circ</span>. In our case, we will consider just <span class="math inline">c(x)</span>, and in many cases let <span class="math inline">c</span> be constant.</p>
+<p>The <span style="color: blue"><strong>mass density</strong></span> of a material is mass per unit volume.</p>
+<p><span class="math display">
+\rho(x) = \text{ Mass density}
+</span></p>
+<p>Given a subsection of a one-dimensional rod, the rotal mass of the subsection is <span class="math inline">\rho(x) A \Delta x</span>, and the total thermal energy in any given slice is thus <span class="math inline">c(x)u(x,t)\rho(x) A \Delta x</span>. This gives us the relation</p>
+<p><span class="math display">
+e(x,t)A\Delta x = c(x)u(x,t)\rho(x) A \Delta x
+</span></p>
+<p>Which can be simplified</p>
+<p><span class="math display">
+e(x,t) = c(x)u(x,t)\rho(x)
+</span></p>
+<p>This also changes our conservation of heat energy equation into</p>
+<p><span class="math display">
+c(x)\rho(x)\frac{\partial u}{\partial t} = -\frac{\partial \phi}{\partial x} + Q.
+</span></p>
+</section>
+<section id="fouriers-law" class="level2">
+<h2 class="anchored" data-anchor-id="fouriers-law">Fouriers law</h2>
+<p>What is the relation between <span class="math inline">\phi(x,t)</span> and <span class="math inline">u(x,t)</span>? Fourier experimented and realized four main relations between the two quantities</p>
+<ol type="1">
+<li><p>If the tempature of the rod is constant, the energy does not flow.</p></li>
+<li><p>If tempature is not constant, the heat energy flows from the hotter region towards the colder region.</p></li>
+<li><p>The greater the tempature differences (for the same material), the greater the flow of heat energy.</p></li>
+<li><p>The flow of heat energy will vary for different materials, even with the same tempature differences.</p></li>
+</ol>
+<p>Fourier wanted to create an equation to summarize these properties, and used the formula</p>
+<p><span class="math display">
+\phi = -K_0 \frac{\partial u}{\partial x}
+</span></p>
+<p>Known as <span style="color: blue"><strong>Fouriers law of heat conduction</strong></span>. But does this formula accuratly model our results?</p>
+<p>Starting with the first observation, if tempature is constant then no heat energy flows. When tempature is constant, our formula gives us</p>
+<p><span class="math display">
+\phi = -K_0 \frac{\partial u}{\partial x} = -K_0 (0) = 0
+</span></p>
+<p>Matching our observations. The second property states if tempature differences are present, the heat energy flows from the hotter to colder regions. If the tempature with respect to position of the rod is increasing, we have <span class="math inline">\partial u / \partial x &gt; 0</span>, and therefore <span class="math inline">\phi = -K_0 (\partial u / \partial x) &lt; 0</span>. Because <span class="math inline">\phi</span> is less than zero, energy is flowing to the left, from the hotter to colder region. When <span class="math inline">\partial u / \partial x &lt; 0</span>, we have <span class="math inline">\phi &gt; 0</span>, as expected. This explains the minus sign present in the formula.</p>
+<p>When the tempature differences are greater, <span class="math inline">\partial u / \partial x</span> is greater, and the flow of heat energy <span class="math inline">\phi</span> is also greater.</p>
+<p>The <span style="color: blue"><strong>thermal conductivity</strong></span> of the material <span class="math inline">K_0</span>. Experiments indicate that different materials conduct heat differently, where <span class="math inline">K_0</span> depends on a specific material. This is how we satisfy our fourth property.</p>
+</section>
+<section id="heat-equation" class="level2">
+<h2 class="anchored" data-anchor-id="heat-equation">Heat equation</h2>
+<p>If Fouriers law is substituted into the conservation of heat energy equation, we get the following</p>
+<p><span class="math display">
+cp\frac{\partial u}{\partial t} = \frac{\partial}{\partial x}\left(K_0\frac{\partial u}{\partial x}\right) + Q.
+</span></p>
+<p>In particular, if <span class="math inline">c,p,K_0</span> are all constants, the partial differential equation becomes</p>
+<p><span class="math display">
+cp\frac{\partial u}{\partial t} = K_0 \frac{\partial^2 u}{\partial x^2} + Q.
+</span></p>
+<p>In addition, there are no sources of energy, <span class="math inline">Q = 0</span>, then dividing by the constant <span class="math inline">c\rho</span>, we have</p>
+<p><span class="math display">
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}
+</span></p>
+<p>where the constant <span class="math inline">k</span>,</p>
+<p><span class="math display">
+k = \frac{K_0}{c\rho}
+</span></p>
+<p>is called the <span style="color: blue"><strong>thermal diffusivity</strong></span>. We call this the <span style="color: blue"><strong>heat equation</strong></span>; it corresponds to no sources and constant thermal properties.</p>
+</section>
+<section id="diffusion-of-a-chemical-pollutant" class="level2">
+<h2 class="anchored" data-anchor-id="diffusion-of-a-chemical-pollutant">Diffusion of a chemical pollutant</h2>
+<p>Consdier a one-dimensional region between <span class="math inline">x=a</span> and <span class="math inline">x=b</span>. Let <span class="math inline">u(x,t)</span> be the density of a chemical per unit volume, and <span class="math inline">\phi(x,t)</span> be the amount of chemical flowing per unit surface. These behave similary to our equations for heat.</p>
+<p>We apply the conservation law to our model, meaning the rate of change of the chemical in <span class="math inline">[a,b]</span> is equal to the amount of chemical flowing in, subtracted by the amount of chemical flowing out. We use the folowing formula to model this</p>
+<p><span class="math display">
+\frac{d}{dt} \int_a^b u(x,t) dx = \phi(a,t) - \phi(b,t).
+</span></p>
+<p>We simplify the equation to obtain</p>
+<p><span class="math display">
+\frac{\partial u}{\partial t} + \frac{\partial \phi}{\partial x} = 0
+</span></p>
+<p>This is called the <span style="color: blue"><strong>conservation law</strong></span> for chemical concentration.</p>
+<p>Adolf Fick studied the relationship between <span class="math inline">\phi</span> and <span class="math inline">u</span> and derived the following formula</p>
+<p><span class="math display">
+\phi = -k \frac{\partial u}{\partial x}
+</span></p>
+<p>This is known as <span style="color: blue"><strong>Fick’s law of diffusion</strong></span>, where <span class="math inline">k</span> is called the chemicals <span style="color: blue"><strong>diffusivity</strong></span> and can be measured experimentally. When combining our equations we get</p>
+<p><span class="math display">
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}
+</span></p>
+<p>Which is known as the <span style="color: blue"><strong>diffusion equation</strong></span>. Notice the similarities between chemical diffusion and heat diffusion. We therefore call this formula the diffusion equation, as it can model many different types of diffusion.</p>
+</section>
+<section id="diffusion-of-gas-filling-a-tube" class="level2">
+<h2 class="anchored" data-anchor-id="diffusion-of-gas-filling-a-tube">Diffusion of gas filling a tube</h2>
+<p>Given a one-dimensional tube between <span class="math inline">x = a</span> and <span class="math inline">x=b</span>, let <span class="math inline">c</span> be the number of particles of gas in the tube. We assume particles behave randomly (Brownian motion) such that they move to the left or right each with probability <span class="math inline">\frac{1}{2}</span>.</p>
+<p>We denote the discrete derivative</p>
+<p><span class="math display">
+\int_t c_i = \frac{c_i(t_1)-c_i(t_0)}{\Delta t}
+</span></p>
+<p>The change in particles in a subsection <span class="math inline">[t_0,t_1]</span> is equa to the particles entering from either side, minus the particles leaving from either side.</p>
+<p>Take the change in the number of particles in the middle subsection. We have</p>
+<p><span class="math display">
+\phi_{II} = c_{II}(t_1) - c_{II}(t_0) = \frac{1}{2}c_{I}(t_0) + \frac{1}{2}c_{III}(t_0) - \frac{1}{2}c_{II}(t_0) - \frac{1}{2}c_{II}(t_0)
+</span></p>
+<p>We use our notation to model this</p>
+<p><span class="math display">
+\Delta t \int_t c_{II} = \frac{1}{2}[c_{III}(t_0)- c_{II}(t_0)] - \frac{1}{2}[c_{II}(t_0) - c_{I}(t_0)]
+</span></p>
+<p><span class="math display">
+\Delta t \int_t c_{II} = \frac{1}{2}\Delta x \int_x c_{III}(t_0) - \frac{1}{2} \Delta x c_{II}
+</span></p>
+<p><span class="math display">
+\Delta t \int_t c_{II} = \frac{1}{2} \Delta x\left[\int_x c_{III}(t_0) - \int_x c_{II}(t_0)\right]
+</span></p>
+<p><span class="math display">
+\Delta t \int_t c_{II} = \frac{1}{2} \Delta x\left[\Delta x\int_x\left(\int_x c_{II}(t_0)\right)\right]
+</span></p>
+<p><span class="math display">
+\int_t c_{II} =\frac{(\Delta x)^2}{2\Delta t}\int_x\left(\int_x c_{II}(t_0)\right)
+</span></p>
+<p>As the length of our slices and the time between measuring the particles goes to zero, our function becomes</p>
+<p><span class="math display">
+\frac{\partial c}{\partial t} = D\frac{\partial^2 x}{\partial x^2}
+</span></p>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>The heat equation we have derived is essentially identical to an abstracted diffusion process, and can therefore be used to model many different applications.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

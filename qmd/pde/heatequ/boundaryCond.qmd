@@ -1,0 +1,100 @@
+---
+title: "Boundary Conditions"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+When solving the heat equation from the last section, we require two [**boundary conditions**]{style="color: blue"}, each end of the rod.
+
+## Boundary conditions
+
+There are many types of boundary conditions
+
+::: {.callout-tip icon="false"}
+## Definition 
+
+[**Prescribed tempature**]{style="color: blue"}. If the ends of the rod are in contact with a material, we may approximate the tempature at the end of the rod with the tempature of the material.
+
+$$
+u(0,t) = u_L(t)
+$$
+
+Where $u_L(t)$ is the tempature of the material. This is also called the [**Dirichlet boundary condition**]{style="color: blue"}.
+
+[**Prescribed flux**]{style="color: blue"}. In other cases, it is possible to prescribe the heat flux rather than the tempature.
+
+$$
+-K_0(0)\frac{\partial u}{\partial x}(0,t) = \phi_L(t)
+$$
+
+This is also known as [**Neumann boundary condition**]{style="color: blue"}.
+
+[**Newtons law of cooling**]{style="color: blue"}. When a one-dimensional rod is losing heat to it's enviorment, the air near the end of the rod is hotter than the air further away. We model this approximately with
+
+$$
+-K_0(0)\frac{\partial u}{\partial x}(0,t) = -H[u(0,t) - u_B(t)]
+$$
+
+Where $H$ is known as the [**heat transfer coefficient**]{style="color: blue"}. This is also known as the [**Robin boundary condition**]{style="color: blue"}.
+
+:::
+
+You can mix and match boundary conditions however you please.
+
+## Equilibruim temperature distribution
+
+An equilibruim tempature distribution would or steady-state solution is a solution independent of time.
+
+A very typical problem in heat flow is one where the thermal coefficients are constant and there are no sources of thermal energy. In this case, the tempature in a one-dimensional rod $0 \leq x \leq L$ satisfies
+
+$$
+\frac{\partial u}{\partial t} = k\frac{\partial^2 u}{\partial x^2}
+$$
+
+With the initial conditions
+
+\begin{align*}
+u(0,t) &= T_1\\
+u(L,t) &= T_2\\
+u(x,0) &= f(x)\\
+\end{align*}
+
+We know that if our desired function $u_{eq}(x)$ is not dependent on time, then
+
+$$
+\frac{\partial u}{\partial t} = 0 = k\frac{\partial^2 u}{\partial x^2}
+$$
+
+Integrating twice gives us
+
+$$
+u_{eq}(x) = C_1x + C_2
+$$
+
+Using our boundaries, we have that $u_{eq}(0) = T_1$ and $u_{eq}(L) = T_2$. Thus $T_1 = C_2$ and $T_2 = C_1L + C_2$. Solving for the constants we have
+
+$$
+u_{eq}(x) = \frac{T_2 - T_1}{L}x + T_1.
+$$
+
+Lets try the same problem with an insulated rod. That is
+
+\begin{align*}
+\frac{\partial u}{\partial t} &= k\frac{\partial^2 u}{\partial x^2}\\
+\phi(0,t) &= 0\\
+\phi(L,t) &= 0\\
+u(x,0) &= f(x)
+\end{align*}.
+
+$$
+\frac{d}{dt} \int_0^L e(x,t)= c \int_0^L u(x,t \;dx)  = 0
+$$.
+
+-------
+
+If $f(x) \geq 0$ and $Q(x,t) \geq 0$, then $u(x,t) \geq 0$ for all $t$.
+
+If $f(x) \leq M$ and $Q(x,t) \leq 0$, then $u(x,t) \leq M$.
+

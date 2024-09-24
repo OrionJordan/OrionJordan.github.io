@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OOMN - Limit Theorems</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../qmd/realanal/sequences/mono-cauchy.html" rel="next">
+<link href="../../../qmd/realanal/sequences/convergence.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">OOMN</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/content/index.html" rel="" target="">
+ <span class="menu-text">Content</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences.html">Sequences</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences/limittheo.html">Limit Theorems</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Limits and Continuity</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Differentiation</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Integration</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Infinite Series</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#infinite-limits" id="toc-infinite-limits" class="nav-link active" data-scroll-target="#infinite-limits">Infinite Limits</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Limit Theorems</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>We begin the section by showing that algebraic operations are compatible with limits.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.1 (Algebraic Relations for limits)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
+<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(a)</span> We must show that <span class="math inline">|(s_n + t_n) - (s + t)|</span> is arbitrarily close to any <span class="math inline">\varepsilon</span>. Using the triangle inequality, we have</p>
+<p><span class="math display">\begin{align*}
+\left|(s_n + t_n) - (s + t)\right| &amp;= |(s_n - s) + (t_n - t)|\\
+&amp;\leq |s_n - s| + |t_n - t|.
+\end{align*}</span></p>
+<p>By the definition of convergence we have</p>
+<p><span class="math display">
+\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \frac{\varepsilon}{2}.
+</span></p>
+<p>and</p>
+<p><span class="math display">
+\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \frac{\varepsilon}{2}.
+</span></p>
+<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then for all <span class="math inline">n \geq N</span>, we have <span class="math display">
+|(s_n + t_n) - (s + t)| \leq |s_n - s| + |t_n - t| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+</span></p>
+<p>Since this holds for all <span class="math inline">\varepsilon &gt; 0</span>, we have <span class="math inline">\lim (s_n + t_n) = s + t</span>.</p>
+<hr>
+<p><span class="math inline">(b)</span> First, we need to show <span class="math inline">\lim(ks_n) = ks</span>. Since <span class="math inline">\lim s_n = s</span>, there exists <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span></p>
+<p><span class="math display">
+|s_n - s| \leq \frac{\varepsilon}{|k|}.
+</span></p>
+<p>Therefore</p>
+<p><span class="math display">
+|k||s_n - s| \leq |k|\frac{\varepsilon}{|k|} \implies |ks_n - s_n| \leq \varepsilon
+</span></p>
+<p>When <span class="math inline">k \not = 0</span>. When <span class="math inline">k = 0</span>, our statement is trivially true. Next we need to show <span class="math inline">\lim s_n + k = s + k</span>. This is almost trivial since we are given <span class="math inline">\lim s_n = s</span>, and</p>
+<p><span class="math display">
+|(k + s_n) - (k + s)| = |s_n - s| &lt; \varepsilon.
+</span></p>
+<hr>
+<p><span class="math inline">(c)</span> We must show that <span class="math inline">|s_nt_n - st| &lt; \varepsilon</span>. We can rewrite our inequality</p>
+<p><span class="math display">
+|s_nt_s - st| = | s_nt_n + (s_nt - s_n t) - st|
+</span></p>
+<p>We can now use the triangle inequality to show</p>
+<p><span class="math display">\begin{align*}
+|(s_nt_n - s_nt) + (s_n t - st)| &amp;\leq |s_nt_n - s_nt| + | s_nt - st| \\
+&amp;= |s_n||t_n - t| + |t||s_n - s|
+\end{align*}</span></p>
+<p>Since <span class="math inline">(s_n)</span> is bounded, <span class="math inline">\exists M_1 &gt; 0</span> such that <span class="math inline">\forall n, |s_n| \leq M_1</span>.</p>
+<p>Let <span class="math inline">M = \max\{M_1,|t|\}</span>. Then we have</p>
+<p><span class="math display">
+|s_nt_n - st| \leq M|t_n - t| + M|s_n - s|.
+</span></p>
+<p>Because <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>, for any <span class="math inline">\varepsilon &gt; 0</span> there exists <span class="math inline">N_1,N_2 \in \mathbb{N}</span> such that when <span class="math inline">n \geq N_1</span> and <span class="math inline">n \geq N_2</span></p>
+<p><span class="math display">
+|t_n - t| \leq \frac{\varepsilon}{2M} \text{ and } |s_n - s| &lt; \frac{\varepsilon}{2M}
+</span></p>
+<p>respectively. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
+<p><span class="math display">
+|s_nt_n - st| \leq M|t_n - t| + M|s_n - s| &lt; M\left(\frac{\varepsilon}{2M}\right) + M\left(\frac{\varepsilon}{2M}\right) = \varepsilon.
+</span></p>
+<p>Thus we have shown <span class="math inline">\lim(s_nt_n) = st</span>.</p>
+<hr>
+<p><span class="math inline">(d)</span> Since <span class="math inline">s_n/t_n = s_n(1/t_n)</span>, if we can prove <span class="math inline">\lim 1/t_n = 1/t</span> we can use part <span class="math inline">(c)</span> to complete the proof. We need to show that for any <span class="math inline">\varepsilon &gt; 0</span></p>
+<p><span class="math display">
+\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| &lt; \varepsilon
+</span></p>
+<p>For all sufficently large <span class="math inline">n</span>. We want to get a lower bound on the denominator, <span class="math inline">t_nt</span>. Because <span class="math inline">t \not = 0</span>, there exists some <span class="math inline">N_1 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_1</span> implies <span class="math inline">|t_n - t| &lt; |t|/2 &lt; \varepsilon_t</span>. Thus for <span class="math inline">n \geq N_1</span> we have</p>
+<p><span class="math display">
+|t_n| = |t - (t - t_n)| \geq |t| - |t - t_n| &gt; |t| - \frac{|t|}{2} = \frac{|t|}{2}
+</span></p>
+<p>There also exists <span class="math inline">N_2 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_2</span> implies <span class="math inline">|t_n - t| &lt; \frac{\varepsilon}{2}|t|^2</span>. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
+<p><span class="math display">
+\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| = \frac{1}{|t_n|}\left|\frac{t - t_n}{t}\right| &lt; \frac{2}{|t|}\left|\frac{t-t_n}{t}\right|&lt;\varepsilon.
+</span></p>
+<p>Thus <span class="math inline">\lim 1/t_n = 1/t</span>.</p>
+</div>
+</div>
+</div>
+<p>Another useful property of limits is that they are preserved under inequality operations.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.2 (Inequality operations on limits)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Towards a contradiction, suppose that <span class="math inline">t &lt; s</span>. Let <span class="math inline">\varepsilon = \frac{s-t}{2}.</span></p>
+<p>By the definition of convergence we have</p>
+<p><span class="math display">
+\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \varepsilon.
+</span></p>
+<p>Similarly we have</p>
+<p><span class="math display">
+\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \varepsilon.
+</span></p>
+<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. For <span class="math inline">n \geq N, \; t_n &lt; t + \varepsilon = s - \varepsilon &lt; s_n</span>. But this contradicts our inital assumption that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>. Thus we conclude <span class="math inline">s \leq t</span>.</p>
+</div>
+</div>
+</div>
+<p>This leads to a the following corollary</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 1.2.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n)</span> be a constant sequence converging to <span class="math inline">s</span>, such that for all <span class="math inline">n \in \mathbb{N}</span>, <span class="math inline">s_n = 0</span>. We are given for all <span class="math inline">n</span>, <span class="math inline">t_n \geq 0</span>, thus <span class="math inline">t_n \geq s_n</span>. By Theorem <span class="math inline">1.2.2</span>, we have that <span class="math inline">t \geq s</span>. Because <span class="math inline">s = 0</span>, <span class="math inline">t \geq 0</span>.</p>
+</div>
+</div>
+</div>
+<p>These results lead us to the <span class="definition"><strong>Ratio test</strong></span>. This test is used to show that certain sequences converge to zero.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.4 (Ratio test)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
+</div>
+</div>
+<p>In simple english, if <span class="math inline">s_n</span> is a sequence of positive terms, where each subsequent term is smaller than the last, the sequence must converge to zero.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By our previous Corollary, we know that <span class="math inline">L \geq 0</span>. If <span class="math inline">L &lt; 1</span>, then there exists a real number <span class="math inline">c</span> such that <span class="math inline">0 \leq L &lt; c &lt; 1</span>. Let <span class="math inline">\varepsilon = c - L</span>, so that <span class="math inline">\varepsilon &gt; 0</span>.</p>
+<p>Since <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>, there exists some <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span>,</p>
+<p><span class="math display">
+\left|\frac{s_{n+1}}{s_n} - L\right| &lt; \varepsilon
+</span></p>
+<p>Let <span class="math inline">k = N + 1</span>. Then for all <span class="math inline">n \geq k</span> we have <span class="math inline">n - 1 \geq N</span> such that</p>
+<p><span class="math display">
+\frac{s_n}{s_{n+1}} &lt; L + \varepsilon = L + (c - L) = c.
+</span></p>
+<p>We drop the absolute value signs as, positive or negative, <span class="math inline">s_{n+1}/s_n - L &lt; \varepsilon</span>. For all <span class="math inline">n \geq k</span>,</p>
+<p><span class="math display">
+0 &lt; s_n &lt; s_{n-1}c
+</span></p>
+<p>We can repeat this inequality <span class="math display">
+0 &lt; s_{n-1} &lt; s_{n-2}c
+</span></p>
+<p>Thus</p>
+<p><span class="math display">
+0 &lt; s_n &lt; s_{n-1}c &lt; s_{n-2}c^2 &lt; \cdots &lt; s_kc^{n-k}.
+</span></p>
+<p>Let <span class="math inline">M = s_k/c^k</span>, we have <span class="math inline">0 &lt; s_n &lt; Mc^n</span> for all <span class="math inline">n \geq k</span>. Since <span class="math inline">0 &lt; c &lt; 1</span>, we have <span class="math inline">\lim c^n = 0</span> by a previous result. Thus <span class="math inline">\lim s_n = 0</span> by Theorem 1.1.1.</p>
+</div>
+</div>
+</div>
+<section id="infinite-limits" class="level2">
+<h2 class="anchored" data-anchor-id="infinite-limits">Infinite Limits</h2>
+<p>Certain sequences like <span class="math inline">s_n = n</span> are clearly not convergent, but behave predictably; growing without bounds towards infinity. We introduce the notion of <em>divergence</em> for these sequences.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">(s_n)</span> is said to <span class="definition">diverge</span> to <span class="math inline">+\infty</span>, notated</p>
+<p><span class="math display">
+\lim s_n = +\infty
+</span></p>
+<p>If for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &gt; M</span>.</p>
+<p>Similarly a sequence <span class="math inline">(s_n)</span> is said to diverge to <span class="math inline">-\infty</span>, notated</p>
+<p><span class="math display">
+\lim s_n = -\infty
+</span></p>
+<p>If for every <span class="math inline">M \in \mathbb{R}</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &lt; M</span>.</p>
+</div>
+</div>
+</div>
+<p>A divergent sequence is <em><strong>NOT</strong></em> convergent, and our limit notation is only used for simplicity. Theorems which require a convergent sequence do not apply to divergent sequences.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Claim:</strong> <span class="math inline">\lim n^2 = + \infty</span></p>
+<p>To show the sequence <span class="math inline">(s_n)</span> where <span class="math inline">s_n = n^2</span> diverges to positive infinity, we must show for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>.</p>
+<p>Let <span class="math inline">N</span> be equal to the smallest integer greater than <span class="math inline">|M|</span>. For all integers <span class="math inline">N^2 \geq N</span>. Thus for all <span class="math inline">n \geq N</span>, <span class="math inline">s_n = n^2 &gt; n &gt; M</span>. Thus our sequence <span class="math inline">(s_n)</span> diverges to positive infinity.</p>
+</div>
+</div>
+<p>The above example is very simple, and gives a general idea for how infinite limit proofs are done. More technical examples can be found in the practice.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
+<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
+<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(a)</span> We are given that <span class="math inline">(s_n)</span> diverges to posiitve infinity. Then for every <span class="math inline">M</span> there exists a naturaul number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">t_n \geq s_n &gt; M</span>. Thus for any <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &gt; M</span>, and we have that <span class="math inline">\lim t_n = + \infty</span>.</p>
+<hr>
+<p><span class="math inline">(b)</span> We are given that <span class="math inline">(t_n)</span> diverges to negative infinity. Then for every <span class="math inline">M</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &lt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">s_n \leq t_n &lt; M</span>. Thus for every <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &lt; M</span>, and we have that <span class="math inline">\lim s_n = - \infty</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">\lim s_n = + \infty</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, let <span class="math inline">M = 1/\varepsilon</span>. There exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M = 1/\varepsilon</span>. Since <span class="math inline">s_n</span> is positive, we have</p>
+<p><span class="math display">
+\left|\frac{1}{s_n} - 0\right| &lt; \varepsilon = \frac{1}{M}
+</span></p>
+<p>Thus <span class="math inline">\lim 1/s_n = 0</span>. For the converse, assume <span class="math inline">\lim 1/s_n = 0</span>. Then there exists a natural number <span class="math inline">N</span> such that for all <span class="math inline">n \geq N</span>, we have</p>
+<p><span class="math display">
+\left|\frac{1}{s_n} - 0\right|  = \frac{1}{s_n} &lt; \varepsilon.
+</span></p>
+<p>Let <span class="math inline">M = 1/\varepsilon</span>. Flipping both sides of the inequality gives us <span class="math inline">s_n &gt; 1/\varepsilon = M</span>. Thus for some natural number <span class="math inline">N</span>, for all <span class="math inline">n \geq N</span> we have <span class="math inline">s_n &gt; M</span>. Thus <span class="math inline">\lim s_n = + \infty</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<p>In this section we proved the following theorems and results.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.1 (Algebraic Relations for limits)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
+<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.2 (Inequality operations on limits)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 1.2.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.4 (Ratio test)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
+<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
+<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.2.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../qmd/realanal/sequences/convergence.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Convergence</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="pagination-link">
+        <span class="nav-page-text">Limit Theorems</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

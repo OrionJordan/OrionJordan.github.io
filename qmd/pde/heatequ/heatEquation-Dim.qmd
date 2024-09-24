@@ -1,0 +1,134 @@
+---
+title: "Derivation of the conduction of heat in mutliple dimensions"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Let $R$ be some three dimensional region, and $S$ be the surface area of said region.
+
+Using the conservation law we have that the rate of change of energy in $R$ is the sum of the energy entering the boundary, with the energy generated inside the region, minus the energy leaving the boundary.
+
+We have 
+
+$$
+\text{Flux} = \vec{\phi}(x,t)
+$$
+
+And the energy across the border is the normal component to the boundary with the flux. 
+
+$$
+\frac{d}{dt}\left(\iiint_R c(x)\rho(x)u(x,t) dx\right) = - \oiint_S(\phi \cdot n) dn + \iiint_R Q(x,t) dx
+$$
+
+The divergence theorem states that if $\vec{A}$ is a continously differentiable vector, $\vec{A} = (A_x,A_y,A_z)$. Thus
+
+$$
+\iiint_R (\nabla \cdot \vec{A}) dx = \oiint_S (\vec{A} \cdot n)dn
+$$
+
+Where
+
+$$
+\nabla \cdot \vec{A} = \frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z} 
+$$
+
+Using the Divergence theorem, we can rewrite our equation for heat as
+
+$$
+\iiint_R c(x)\rho(x)\frac{\partial u}{\partial t}(x,t) + \nabla \cdot \phi(x,t) - Q(x,t)\; dx = 0
+$$
+
+Therefore
+
+$$
+c(x)\rho(x)\frac{\partial u}{\partial t}(x,t) + \nabla \cdot \phi(x,t) - Q(x,t)\; = 0
+$$
+
+We can convert flux into tempature using Fouriers law from our one dimensional case, 
+
+$$
+\bar\phi(\bar x,t) = -k_0(\bar x)\nabla u
+$$
+
+Thus we get for our multiple dimensional heat equation
+
+$$
+c(x)\rho(x)\frac{\partial u}{\partial t}(x,t) = \nabla \cdot (k_0(\bar x)\nabla u) + Q(x,t)\; 
+$$
+
+If $\rho, k_0$ are both constants we achieve
+
+$$
+\frac{\partial u}{\partial t}(\bar x,t) = k\nabla \cdot (\nabla u) + \frac{1}{c\rho}Q(\bar x,t)
+$$
+
+Where $k = k_0/c\rho$ and is our thermal diffusitivy. We sometimes write
+
+$$
+\nabla \cdot (\nabla u) = \nabla^2 u = \Delta u
+$$
+
+Where
+
+$$
+\Delta u = \nabla(\frac{\partial U_x}{\partial x}, \frac{\partial U_y}{\partial y},\frac{\partial U_z}{\partial z}) = \frac{\partial^2 U_x}{\partial x^2} + \frac{\partial^2 U_y}{\partial y^2} + \frac{\partial^2 U_z}{\partial z^2}
+$$
+
+If $Q = 0$, then the heat equation becomes
+
+$$
+\frac{\partial u}{\partial t} = k\Delta u
+$$
+
+We now must complement the system with initial conditions and boundary conditions.
+
+## Boundary conditions
+
+We have prescribed tempature
+
+$$
+u(\bar x,t) = T(\bar x, t) \quad \forall \bar x \in S
+$$
+
+Prescribed Flux
+
+$$
+\bar \phi (\bar x, t) \cdot \bar n(\bar x) = g(\bar x,t)\quad \forall \bar x \in S
+$$
+
+In the case of an insulated surface, you would have $\bar \phi \cdot \bar n = 0 = \nabla u \cdot \bar n$.
+
+We also have Newtons law of cooling
+
+$$
+-k_0(\bar x) \nabla u \cdot \bar n = H(u(\bar x,t)- U(\bar x,t)) \quad \forall \bar x \in S
+$$
+
+Where $U(\bar x,t)$ is the tempature of the surrounding material.
+
+Boundary conditions can be different in different parts of the domain.
+
+If the boundary conditions and sources of heat ($Q$) are independent of time, there will exist a steady state solution such that
+
+$$
+u_{eq}(\bar x) \implies \frac{\partial u_{eq}}{\partial t} = 0
+$$
+
+If $c,\rho,k_0$ are constants, then
+
+$$
+- k\Delta u = \frac{Q}{c\rho} \iff - \Delta u = \frac{Q}{k_0}
+$$
+
+This is called the Poisson equation. In the particular case that $Q$ is zero, then $\Delta u = 0$. This is called the Laplace equation.
+
+Harmonic functions satisfy the equation
+
+$$
+-\Delta u (\bar x) = 0\quad \bar x \in \mathbb{R}
+$$
+
+------------
+

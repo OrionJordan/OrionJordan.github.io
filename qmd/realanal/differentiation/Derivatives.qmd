@@ -1,0 +1,275 @@
+---
+title: "The Derivative"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Next we talk about differentialbility
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f \colon I \to \mathbb{R}$ and let $c \in I$. We say that $f$ is [**differentiable**]{.definition} at $c$ if the limit $\lim_{x \to c}(f(x)-f(c))/x-c$ exists and is finite.
+
+:::
+
+This is of course a pointwise notion of differentiability. To construct a more global definition of differentiability, we have
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $f$ is differentiable at every point in a subset $S \subseteq I$, we say that $f$ is differentiable on $S$.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f \colon \mathbb{R} \to \mathbb{R}$ be a constant function. That is $f(x) = d$ for some $d \in \mathbb{R}$.
+
+**Claim:** The derivative of $f$ is zero at every point $c \in \mathbb{R}$.
+
+We use out formula for differentiability
+
+$$
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{d - d}{x - c} = 0
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f \colon \mathbb{R} \to \mathbb{R}$ be the identity function. That is $f(x) = x$ for all $x \in \mathbb{R}$.
+
+**Claim:** The derivative of $f$ is one at every point $c \in \mathbb{R}$.
+
+We use out formula for differentiability
+
+$$
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{x - c}{x - c} = 1
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f \colon \mathbb{R} \to \mathbb{R}$ where $f(x) = x^2$.
+
+**Claim:** The derivative of $f$ is $2c$ at every point $c \in \mathbb{R}$.
+
+We use our formula for differentiability
+
+$$
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{x^2 - c^2}{x - c}
+$$
+
+Using the formula $x^2 - y^2 = (x-y)(x+y)$, we get
+
+$$
+f^\prime(c) = \lim_{x \to c} \frac{(x-c)(x+c)}{x - c} = \lim_{x \to c} x + c = 2c
+$$
+
+:::
+
+We introduce another theorem
+
+::: {.callout-note icon="false"}
+## Theorem (Sequential criterion for differentiability)
+
+A function $f \colon I \to \mathbb{R}$ is differentiable at $c$ if and only if for all sequences $(x_n)$ in $I$ we have
+
+$$
+\frac{f(x_n)-f(c)}{x_n - c}
+$$
+
+converges, given $\forall n, x_n \not = c$ and $x_n \to c$. Furthermore, if $f$ is differentiable at $c$, then the above sequence of quotients will converge to $f^\prime(c)$.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f \colon \mathbb{R} \to \mathbb{R}$ where $f(x) = |x|$.
+
+**Claim:** The function $f$ is non-differentiable on $\mathbb{R}$.
+
+We claim there exists some $c \in \mathbb{R}$ such that $f$ is not differentiabile at $c$. Using our sequence criterion, we consider the sequence $(x_n) = (-1)^n/n$.
+
+We have that $x_n \to 0$ and $\forall n,x_n \not = 0$. If we assume that this sequence converges, then any subsequence must also converge and converge to the same value. However, when $n$ is even
+
+$$
+\frac{f(x_n) - f(0)}{x_n - 0} = \frac{1/n - 0}{1/n -0} = 1
+$$
+
+and when $n$ is odd,
+
+$$
+\frac{f(x_n) - f(0)}{x_n - 0} = \frac{1/n - 0}{-1/n -0} = -1.
+$$
+
+Our subsequences converge to different values, so the original sequence does not converge. Thus $f$ is not differentiable at $0$.
+:::
+
+The above is an example of a function that is continous everywhere, but not differentiabile everywhere. Below is another example of this phenomonea
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f \colon \mathbb{R} \to \mathbb{R}$ where
+
+$$
+f(x)=\begin{cases}
+			x\sin(1/x), & x \not = 0\\
+            0, & x = 0
+		 \end{cases}
+$$
+
+**Claim:** The function $f$ is non-differentiable at $x = 0$.
+
+For $x \not = 0$, we have that
+
+$$
+\frac{f(x) - f(0)}{x - 0} = \frac{x\sin(1/x) - 0}{x -0} = \sin(1/x)
+$$
+
+But $\lim_{x\to 0}\sin(1/x)$ does not exists. Thus
+$$
+\lim_{x\to 0}\frac{f(x) - f(0)}{x - 0}
+$$
+
+does not exists, and $f$ is not differentiable at $x = 0$.
+:::
+
+Thus continuity does not apply differentiability. Does differentiability imply continuity? Yes!
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+If $f \colon I \to \mathbb{R}$ is differentiable at $c$, then $f$ is continous at $c$.
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof 
+
+We want to show that $\lim_{x\to c} f(x) = f(c)$. We do this by adding zero in a clever way. Note that
+
+$$
+f(x) =\left(\frac{f(x)-f(c)}{x-c}\right)(x-c) + f(c)
+$$
+
+When $x \not = c$. Since the derivative $f^\prime(c)$ exists and is finite, we know that the $\lim_{x\to c} (f(x)-f(c))/x-c$ exists and is a real number. Taking the limit of the above equation
+
+$$
+\lim_{x \to c}f(x) = \lim{x\to c}\left(\frac{f(x)-f(c)}{x-c}\right)(x-c) + f(c)
+$$
+
+Which gives 
+
+$$
+\lim_{x \to c}f(x) = 0 + f(c) = f(c).
+$$
+
+Thus we have shown our desired equation.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Algebraic Properties of Derivatives)
+
+Let $f,g \colon I \to \mathbb{R}$ be differentiable at $c \in I$. Then
+
+$(a)$ $(kf)^\prime(c) = kf^\prime(c)$, for all $k \in \mathbb{R}$
+
+$(b)$ $(f + g)^\prime(c) = f^\prime(c) + g^\prime(c)$.
+
+$(c)$ $(fg)^\prime(c) = f(c)g^\prime(c) + f^\prime(c)g(c)$.
+
+$(d)$ $(f/g)^\prime(c) = (f(c)g^\prime(c) - f^\prime(c)g(c))/g^2(c)$, provided $g(c) \not = 0$
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof 
+
+$(c)$ For $x \in I$, $x \not = c$, we have
+$$
+\frac{f(x)g(x) - f(c)g(c)}{x-c} = f(x)\left(\frac{g(x) - g(c)}{x-c}\right) + g(c)\left(\frac{f(x)-f(c)}{x-c}\right)
+$$
+
+We want to evaluate the limit of the right hand side as $x$ approaches $c$. Using our limit rules we have
+
+$$
+\lim_{x\to c} (fg)^\prime(x) = \lim_{x \to c}f(x)\left(\frac{g(x) - g(c)}{x-c}\right) + \lim_{x \to c} g(c)\left(\frac{f(x)-f(c)}{x-c}\right)
+$$
+
+Because $f$ is differentiable at $c$, $f$ is continous at $c$, thus
+
+$$
+\lim_{x \to c}f(x)\left(\frac{g(x) - g(c)}{x-c}\right) = f(c)g^\prime(c)
+$$
+
+And similarly, 
+
+
+$$
+\lim_{x \to c} g(c)\left(\frac{f(x)-f(c)}{x-c}\right) = f^\prime(c)g(c)
+$$
+
+Thus
+
+$$
+\lim_{x\to c} (fg)^\prime(x) = f(c)g^\prime(c) + f^\prime(c)g(c).
+$$
+
+---------
+
+$(d)$ 
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Chain Rule)
+
+Let $I,J$ be intervals in $\mathbb{R}$ and $f \colon I \to \mathbb{R}$, $g \colon J \to \mathbb{R}$, where $f(I)\subseteq J$ and $c \in I$. If $f$ is differentiable at $c$ and $g$ is differentiable at $f(c)$, then the composite function $g \circ f$ is differentiable at $c$ and
+
+$$
+(g \circ f)^\prime(c) = g^\prime(f(c))f^\prime(c).
+$$
+
+:::
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Since $g$ is differentiable at $f(c)$, we have
+
+$$
+\lim_{y \to f(c)} \frac{g(y)-g(f(c))}{y - f(c)} = g^\prime(f(c)).
+$$
+
+Define $h \colon J \to \mathbb{R}$, where
+
+$$
+h(y) = \begin{cases}
+\frac{g(y)-g(f(c))}{y-f(c)} & \text{if } y \not =  f(c)\\
+g^\prime(f(c)) & \text{if } y = f(c)
+\end{cases}
+$$
+
+By the first statement, we know that $h$ is continous at $f(c)$. Since $f$ is differentiable at $c$, $f$ is continous at $c$, and thus
+
+$$
+\lim_{x\to c} (h \circ f)(x) = h(f(c)) = g^\prime(f(c)).
+$$
+
+Skipped some steps
+
+$$
+g(f(c)) - g(f(c)) = h(f(x))(f(x)-f(c))
+$$
+
+:::
