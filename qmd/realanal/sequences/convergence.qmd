@@ -50,7 +50,7 @@ $$
 
 Where $|s_n - s|$ is the distance between the points $s_n$ and $s$. Essentially, a sequence is convergent if the elements of $(s_n)$ get arbitrarily close to a point $s$ as the sequence progresses.
 
-If a sequence does not converge, than we say it is [**divergent**]{.definition}
+If a sequence does not converge, than we say it is [**divergent**]{.definition}.
 
 ::: {.callout-note icon="false"}
 ## Definition
@@ -75,7 +75,7 @@ The Archimedean property states that the natural numbers are unbounded in $\math
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 **WTS:** $\forall x \in \mathbb{R}$, $\exists n_x \in \mathbb{N}$ such that $x < n_x$
@@ -100,7 +100,7 @@ $$
 |s_n - s| = \left|\frac{1}{n} - 0\right| = \left|\frac{1}{n}\right| = \frac{1}{n} < \varepsilon.
 $$
 
-By the Archimedean property, we know there always exists some $N_\varepsilon \in \mathbb{N}$ such that $0 < \frac{1}{N_\varepsilon} < \varepsilon$.
+By the Archimedean property, we know there always exists some $n \in \mathbb{N}$ such that $xn > y$ for any positive $x,y \in \mathbb{R}$. It is then clear there exists some $n$ such that $1/n < y/x$.
 
 Therefore for any $\varepsilon > 0$, we simply choose $N$ such that $0 < \frac{1}{N} < \varepsilon$. Then for any $n \geq N$, we have $|1/n - 0| = 1/n \leq 1/N < \varepsilon$. Thus our sequence converges, and $\lim s_n = 0$.
 :::
@@ -132,11 +132,11 @@ $$
 |s_n - s| \leq k|a_n|, \forall n \geq m
 $$
 
-and if $a_n = 0$, then it follows that $\lim s_n = s$.
+and if $\lim a_n = 0$, then it follows that $\lim s_n = s$.
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Given any $\varepsilon > 0$, since $\lim a_n = 0$ there exists $N_1 \in \mathbb{N}$ such that $n \geq N_1$ implies $|a_n| < \varepsilon/k$. Let $N = \max\{m,N_1\}$. Then for $n \geq \mathbb{N}$ we have $n \geq m$ and $n \geq N_1$, so
@@ -149,7 +149,44 @@ Thus $\lim s_n = s$.
 
 :::
 
-The above theorem may not seem useful now, but will come in handy in the future. 
+This Theorem can be applied quite liberally to help with a great variety of limit problems. 
+
+::: {.callout-warning icon="false"}
+## Example
+
+**Claim:** The $\lim(4n^2 - 3)/(5^2 -2n) = 4/5$.
+
+We start with some algebraic manipulation
+
+$$
+\left|\frac{4n^2 - 3}{5n^2 - 2n} - \frac{4}{5}\right| = \left| \frac{8n-15}{5(5n^2-2n)}\right|
+$$
+
+We aim to find an upper bound to simplify the fraction. For the numerator, $|8n - 15| < 8n$ for all $n \in \mathbb{N}$ (Note $0 \not \in \mathbb{N}$). For the denominator, we want some relation in the form $5n^2 - 2n \geq kn^2$ for some $k > 0$. We use $k = 4$ to obtain
+
+$$
+5n^2 - 2n \geq 4n^2 \implies n^2 \geq 2n \implies n \geq 2.
+$$
+
+When $n \geq 2$, we now have the relation 
+
+$$
+\left| \frac{8n-15}{5(5n^2-2n)}\right| < \frac{8n}{5(4n^2)} = \frac{2}{5}\left(\frac{1}{n}\right).
+$$
+
+We can turn this into a formal proof. If $n \geq 2$, then $n^2 \geq 2n$ and $5n^2 -2n\geq 4n^2$ such that
+
+$$
+\left|\frac{4n^2 - 3}{5n^2 - 2n} - \frac{4}{5}\right| = \left| \frac{8n-15}{5(5n^2-2n)}\right| < \frac{8n}{5(4n^2)} = \frac{2}{5}\left(\frac{1}{n}\right)
+$$
+
+Since $\lim (1/n) = 0$ as shown in our last example, Theorem $1.1.1$ states that
+
+$$
+\lim \frac{4n^2-3}{5n^2 - 2n} = \frac{4}{5}.
+$$
+
+:::
 
 ::: {.callout-note icon="false"}
 ## Definition
@@ -163,10 +200,10 @@ A sequence $(s_n)$ is [**bounded**]{.definition} if there exists $M \geq 0$ such
 Every convergent sequence is bounded.
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
-Let $(s_n)$ be a convergent sequence and let $\lim s_n = s$. Choose $\varepsilon = 1.$ Because $(s_n)$ is convergent, there exists some $N \in \mathbb{N}$ such that for all $n \geq N,\;|s_n - s| < 1$.
+Let $(s_n)$ be a convergent sequence and let $\lim s_n = s$. Choose $\varepsilon = 1.$ Because $(s_n)$ is convergent, there exists some $N \in \mathbb{N}$ such that for all $n \geq N$, $|s_n - s| < 1$.
 
 Through the triangle inequality, we have that, for all $n \geq N$
 
@@ -174,7 +211,7 @@ $$
 |s_n| - |s| \leq |s_n - s| < 1 \iff |s_n| < |s| + 1.
 $$
 
-Let $M = \sup\{|s_1|,|s_2|,\ldots,|s_N|,|s| + 1\}$. Thus for all $n \in \mathbb{N}$, $|s_n| \leq M$ and $(s_n)$ is bounded.
+Let $M = \max\{|s_1|,|s_2|,\ldots,|s_N|,|s| + 1\}$. Thus for all $n \in \mathbb{N}$, $|s_n| \leq M$ and $(s_n)$ is bounded.
 :::
 
 The contrapositive is of course also true, any unbounded sequence is divergent. However, not all divergent sequences are unbounded.
@@ -191,7 +228,7 @@ Let $(s_n) = (-1)^n$. This sequence is clearly bounded by $M = 1$, but not conve
 If a sequence converges, its limit is unique.
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Let $(s_n)$ be a convergent sequence and suppose $\lim s_n = s$ and $\lim s_n = t$. We want to show that $s$ and $t$ are arbitrarily close and therefore $s = t$.

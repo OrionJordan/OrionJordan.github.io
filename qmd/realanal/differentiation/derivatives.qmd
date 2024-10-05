@@ -11,18 +11,17 @@ Next we talk about differentialbility
 ::: {.callout-note icon="false"}
 ## Definition
 
-Let $f \colon I \to \mathbb{R}$ and let $c \in I$. We say that $f$ is [**differentiable**]{.definition} at $c$ if the limit $\lim_{x \to c}(f(x)-f(c))/x-c$ exists and is finite.
+Let $I$ be any interval on $\mathbb{R}$, and let $c \in I$. We say that $f \colon I \to \mathbb{R}$ is [**differentiable**]{.definition} at $c$ if 
+
+$$
+\lim_{x \to c} \frac{f(x)-f(c)}{x-c}
+$$ 
+
+exists and is finite.
 
 :::
 
-This is of course a pointwise notion of differentiability. To construct a more global definition of differentiability, we have
-
-::: {.callout-note icon="false"}
-## Definition
-
-If $f$ is differentiable at every point in a subset $S \subseteq I$, we say that $f$ is differentiable on $S$.
-
-:::
+If $f$ is differentiable at every point in a subset $S \subseteq I$, we say that $f$ is differentiable on $S$. If $f$ has a derivative at $c$, we notate $f^\prime(c)$.
 
 ::: {.callout-warning icon="false"}
 ## Example
@@ -78,15 +77,15 @@ $$
 We introduce another theorem
 
 ::: {.callout-note icon="false"}
-## Theorem (Sequential criterion for differentiability)
+## Theorem 3.1.1 (Sequential criterion for differentiability)
 
-A function $f \colon I \to \mathbb{R}$ is differentiable at $c$ if and only if for all sequences $(x_n)$ in $I$ we have
+Let $I$ be an interval containing $c$ and $f\colon I \to \mathbb{R}$. Then $f$ is differentiable at $c$ if and only if for all sequences $(x_n)$ in $I$ such that $\lim (x_n) = c$ we have
 
 $$
-\frac{f(x_n)-f(c)}{x_n - c}
+\left(\frac{f(x_n)-f(c)}{x_n - c}\right)
 $$
 
-converges, given $\forall n, x_n \not = c$ and $x_n \to c$. Furthermore, if $f$ is differentiable at $c$, then the above sequence of quotients will converge to $f^\prime(c)$.
+converges, given $x_n \not = c$ for all $n$. Furthermore, if $f$ is differentiable at $c$, then the above sequence of quotients will converge to $f^\prime(c)$.
 :::
 
 ::: {.callout-warning icon="false"}
@@ -94,7 +93,7 @@ converges, given $\forall n, x_n \not = c$ and $x_n \to c$. Furthermore, if $f$ 
 
 Let $f \colon \mathbb{R} \to \mathbb{R}$ where $f(x) = |x|$.
 
-**Claim:** The function $f$ is non-differentiable on $\mathbb{R}$.
+**Claim:** The function $f$ is non-differentiable at $x = 0$.
 
 We claim there exists some $c \in \mathbb{R}$ such that $f$ is not differentiabile at $c$. Using our sequence criterion, we consider the sequence $(x_n) = (-1)^n/n$.
 
@@ -113,7 +112,7 @@ $$
 Our subsequences converge to different values, so the original sequence does not converge. Thus $f$ is not differentiable at $0$.
 :::
 
-The above is an example of a function that is continous everywhere, but not differentiabile everywhere. Below is another example of this phenomonea
+The above is an example of a function that is continuous everywhere, but not differentiable everywhere. Below is another example of this phenomonea
 
 ::: {.callout-warning icon="false"}
 ## Example
@@ -143,16 +142,16 @@ $$
 does not exists, and $f$ is not differentiable at $x = 0$.
 :::
 
-Thus continuity does not apply differentiability. Does differentiability imply continuity? Yes!
+In the above example, we have a function that is continuous at $x = 0$, but not differentiable. We can conclude continuity does not imply differentiability.
 
 ::: {.callout-note icon="false"}
-## Theorem 
+## Theorem 3.1.2
 
-If $f \colon I \to \mathbb{R}$ is differentiable at $c$, then $f$ is continous at $c$.
+If $f \colon I \to \mathbb{R}$ is differentiable at $c$, then $f$ is continuous at $c$.
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof 
 
 We want to show that $\lim_{x\to c} f(x) = f(c)$. We do this by adding zero in a clever way. Note that
@@ -164,7 +163,7 @@ $$
 When $x \not = c$. Since the derivative $f^\prime(c)$ exists and is finite, we know that the $\lim_{x\to c} (f(x)-f(c))/x-c$ exists and is a real number. Taking the limit of the above equation
 
 $$
-\lim_{x \to c}f(x) = \lim{x\to c}\left(\frac{f(x)-f(c)}{x-c}\right)(x-c) + f(c)
+\lim_{x \to c}f(x) = \lim_{x\to c}\left(\frac{f(x)-f(c)}{x-c}\right)\lim_{x\to c}(x-c) + \lim_{x \to c}f(c)
 $$
 
 Which gives 
@@ -173,12 +172,12 @@ $$
 \lim_{x \to c}f(x) = 0 + f(c) = f(c).
 $$
 
-Thus we have shown our desired equation.
+Hence $f$ is continuous at $c$.
 
 :::
 
 ::: {.callout-note icon="false"}
-## Theorem (Algebraic Properties of Derivatives)
+## Theorem 3.1.3 (Algebraic Properties of Derivatives)
 
 Let $f,g \colon I \to \mathbb{R}$ be differentiable at $c \in I$. Then
 
@@ -192,7 +191,7 @@ $(d)$ $(f/g)^\prime(c) = (f(c)g^\prime(c) - f^\prime(c)g(c))/g^2(c)$, provided $
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof 
 
 $(c)$ For $x \in I$, $x \not = c$, we have
@@ -206,7 +205,7 @@ $$
 \lim_{x\to c} (fg)^\prime(x) = \lim_{x \to c}f(x)\left(\frac{g(x) - g(c)}{x-c}\right) + \lim_{x \to c} g(c)\left(\frac{f(x)-f(c)}{x-c}\right)
 $$
 
-Because $f$ is differentiable at $c$, $f$ is continous at $c$, thus
+Because $f$ is differentiable at $c$, $f$ is continuous at $c$, thus
 
 $$
 \lim_{x \to c}f(x)\left(\frac{g(x) - g(c)}{x-c}\right) = f(c)g^\prime(c)
@@ -232,7 +231,7 @@ $(d)$
 :::
 
 ::: {.callout-note icon="false"}
-## Theorem (Chain Rule)
+## Theorem 3.1.4 (Chain Rule)
 
 Let $I,J$ be intervals in $\mathbb{R}$ and $f \colon I \to \mathbb{R}$, $g \colon J \to \mathbb{R}$, where $f(I)\subseteq J$ and $c \in I$. If $f$ is differentiable at $c$ and $g$ is differentiable at $f(c)$, then the composite function $g \circ f$ is differentiable at $c$ and
 
@@ -242,7 +241,7 @@ $$
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Since $g$ is differentiable at $f(c)$, we have
@@ -260,7 +259,7 @@ g^\prime(f(c)) & \text{if } y = f(c)
 \end{cases}
 $$
 
-By the first statement, we know that $h$ is continous at $f(c)$. Since $f$ is differentiable at $c$, $f$ is continous at $c$, and thus
+By the first statement, we know that $h$ is continuous at $f(c)$. Since $f$ is differentiable at $c$, $f$ is continuous at $c$, and thus
 
 $$
 \lim_{x\to c} (h \circ f)(x) = h(f(c)) = g^\prime(f(c)).

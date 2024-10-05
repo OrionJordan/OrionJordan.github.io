@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Limit Theorems</title>
+<title>OOMN - Subsequences</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../qmd/realanal/sequences/mono-cauchy.html" rel="next">
-<link href="../../../qmd/realanal/sequences/convergence.html" rel="prev">
+<link href="../../../qmd/realanal/limits-cont.html" rel="next">
+<link href="../../../qmd/realanal/sequences/mono-cauchy.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences.html">Sequences</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences/limittheo.html">Limit Theorems</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences.html">Sequences</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences/subsequences.html">Subsequences</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limit Theorems</span></a>
   </div>
 </li>
@@ -164,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Subsequences</span></a>
   </div>
 </li>
@@ -240,7 +240,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#infinite-limits" id="toc-infinite-limits" class="nav-link active" data-scroll-target="#infinite-limits">Infinite Limits</a></li>
+  <li><a href="#limit-superior-and-limit-inferior" id="toc-limit-superior-and-limit-inferior" class="nav-link active" data-scroll-target="#limit-superior-and-limit-inferior">Limit Superior and Limit Inferior</a></li>
   <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
   <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Limit Theorems</h1>
+<h1 class="title">Subsequences</h1>
 </div>
 
 
@@ -266,23 +266,35 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>We begin the section by showing that algebraic operations are compatible with limits.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.1 (Algebraic Relations for limits)
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
-<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
+<p>Let <span class="math inline">(s_n)^\infty_{n=1}</span> be a sequence and let <span class="math inline">(n_k)^\infty_{k=1}</span> be any increasing sequence of natural numbers. The sequence <span class="math inline">(s_{n_k})^\infty_{k=1}</span> is called a <span class="definition"><strong>subsequence</strong></span> of <span class="math inline">(s_n)</span>.</p>
+</div>
+</div>
+<p>A subsequence is any sequence formed by deleting and renumbering terms of some original sequence. A subsequence must preserve the order of the terms of the original sequence, and consist of an infinite amount of terms.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If a sequence <span class="math inline">(s_n)</span> converges to a real number <span class="math inline">s</span>, then every subsequence of <span class="math inline">(s_n)</span> also converges to <span class="math inline">s</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -291,130 +303,37 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> We must show that <span class="math inline">|(s_n + t_n) - (s + t)|</span> is arbitrarily close to any <span class="math inline">\varepsilon</span>. Using the triangle inequality, we have</p>
-<p><span class="math display">\begin{align*}
-\left|(s_n + t_n) - (s + t)\right| &amp;= |(s_n - s) + (t_n - t)|\\
-&amp;\leq |s_n - s| + |t_n - t|.
-\end{align*}</span></p>
-<p>By the definition of convergence we have</p>
-<p><span class="math display">
-\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \frac{\varepsilon}{2}.
-</span></p>
-<p>and</p>
-<p><span class="math display">
-\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \frac{\varepsilon}{2}.
-</span></p>
-<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then for all <span class="math inline">n \geq N</span>, we have <span class="math display">
-|(s_n + t_n) - (s + t)| \leq |s_n - s| + |t_n - t| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
-</span></p>
-<p>Since this holds for all <span class="math inline">\varepsilon &gt; 0</span>, we have <span class="math inline">\lim (s_n + t_n) = s + t</span>.</p>
-<hr>
-<p><span class="math inline">(b)</span> First, we need to show <span class="math inline">\lim(ks_n) = ks</span>. Since <span class="math inline">\lim s_n = s</span>, there exists <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span></p>
-<p><span class="math display">
-|s_n - s| \leq \frac{\varepsilon}{|k|}.
-</span></p>
-<p>Therefore</p>
-<p><span class="math display">
-|k||s_n - s| \leq |k|\frac{\varepsilon}{|k|} \implies |ks_n - s_n| \leq \varepsilon
-</span></p>
-<p>When <span class="math inline">k \not = 0</span>. When <span class="math inline">k = 0</span>, our statement is trivially true. Next we need to show <span class="math inline">\lim s_n + k = s + k</span>. This is almost trivial since we are given <span class="math inline">\lim s_n = s</span>, and</p>
-<p><span class="math display">
-|(k + s_n) - (k + s)| = |s_n - s| &lt; \varepsilon.
-</span></p>
-<hr>
-<p><span class="math inline">(c)</span> We must show that <span class="math inline">|s_nt_n - st| &lt; \varepsilon</span>. We can rewrite our inequality</p>
-<p><span class="math display">
-|s_nt_s - st| = | s_nt_n + (s_nt - s_n t) - st|
-</span></p>
-<p>We can now use the triangle inequality to show</p>
-<p><span class="math display">\begin{align*}
-|(s_nt_n - s_nt) + (s_n t - st)| &amp;\leq |s_nt_n - s_nt| + | s_nt - st| \\
-&amp;= |s_n||t_n - t| + |t||s_n - s|
-\end{align*}</span></p>
-<p>Since <span class="math inline">(s_n)</span> is bounded, <span class="math inline">\exists M_1 &gt; 0</span> such that <span class="math inline">\forall n, |s_n| \leq M_1</span>.</p>
-<p>Let <span class="math inline">M = \max\{M_1,|t|\}</span>. Then we have</p>
-<p><span class="math display">
-|s_nt_n - st| \leq M|t_n - t| + M|s_n - s|.
-</span></p>
-<p>Because <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>, for any <span class="math inline">\varepsilon &gt; 0</span> there exists <span class="math inline">N_1,N_2 \in \mathbb{N}</span> such that when <span class="math inline">n \geq N_1</span> and <span class="math inline">n \geq N_2</span></p>
-<p><span class="math display">
-|t_n - t| \leq \frac{\varepsilon}{2M} \text{ and } |s_n - s| &lt; \frac{\varepsilon}{2M}
-</span></p>
-<p>respectively. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
-<p><span class="math display">
-|s_nt_n - st| \leq M|t_n - t| + M|s_n - s| &lt; M\left(\frac{\varepsilon}{2M}\right) + M\left(\frac{\varepsilon}{2M}\right) = \varepsilon.
-</span></p>
-<p>Thus we have shown <span class="math inline">\lim(s_nt_n) = st</span>.</p>
-<hr>
-<p><span class="math inline">(d)</span> Since <span class="math inline">s_n/t_n = s_n(1/t_n)</span>, if we can prove <span class="math inline">\lim 1/t_n = 1/t</span> we can use part <span class="math inline">(c)</span> to complete the proof. We need to show that for any <span class="math inline">\varepsilon &gt; 0</span></p>
-<p><span class="math display">
-\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| &lt; \varepsilon
-</span></p>
-<p>For all sufficently large <span class="math inline">n</span>. We want to get a lower bound on the denominator, <span class="math inline">t_nt</span>. Because <span class="math inline">t \not = 0</span>, there exists some <span class="math inline">N_1 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_1</span> implies <span class="math inline">|t_n - t| &lt; |t|/2 &lt; \varepsilon_t</span>. Thus for <span class="math inline">n \geq N_1</span> we have</p>
-<p><span class="math display">
-|t_n| = |t - (t - t_n)| \geq |t| - |t - t_n| &gt; |t| - \frac{|t|}{2} = \frac{|t|}{2}
-</span></p>
-<p>There also exists <span class="math inline">N_2 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_2</span> implies <span class="math inline">|t_n - t| &lt; \frac{\varepsilon}{2}|t|^2</span>. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
-<p><span class="math display">
-\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| = \frac{1}{|t_n|}\left|\frac{t - t_n}{t}\right| &lt; \frac{2}{|t|}\left|\frac{t-t_n}{t}\right|&lt;\varepsilon.
-</span></p>
-<p>Thus <span class="math inline">\lim 1/t_n = 1/t</span>.</p>
+<p>Let <span class="math inline">(s_{n_k})</span> be any subsequence of <span class="math inline">(s_n)</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">|s_n - s| &lt; \varepsilon</span>. When <span class="math inline">k \geq N</span>, <span class="math inline">n_k \geq k \geq N</span>, so that <span class="math inline">|s_{n_k} - s| &lt; \varepsilon</span>. Thus <span class="math inline">\lim s_{n_k} = s</span>.</p>
 </div>
 </div>
 </div>
-<p>Another useful property of limits is that they are preserved under inequality operations.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Claim:</strong> <span class="math inline">s_n = (-1)^n</span> is not a convergent sequence.</p>
+<p>Using the previous theorem, if <span class="math inline">(s_n)</span> converged to <span class="math inline">s</span>, then every subsequence of <span class="math inline">(s_n)</span> would also converge to <span class="math inline">s</span>. But <span class="math inline">(s_{2n})</span> converges to <span class="math inline">1</span>, and <span class="math inline">(s_{2n+1})</span> converges to <span class="math inline">-1</span>. Because the subsequences converge to different values, the original sequence does not converge.</p>
+</div>
+</div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.2 (Inequality operations on limits)
+Theorem 1.4.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Towards a contradiction, suppose that <span class="math inline">t &lt; s</span>. Let <span class="math inline">\varepsilon = \frac{s-t}{2}.</span></p>
-<p>By the definition of convergence we have</p>
-<p><span class="math display">
-\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \varepsilon.
-</span></p>
-<p>Similarly we have</p>
-<p><span class="math display">
-\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \varepsilon.
-</span></p>
-<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. For <span class="math inline">n \geq N, \; t_n &lt; t + \varepsilon = s - \varepsilon &lt; s_n</span>. But this contradicts our inital assumption that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>. Thus we conclude <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-</div>
-<p>This leads to a the following corollary</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Corollary 1.2.3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
+<p>Every bounded sequence has a convergent subsequence.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -429,25 +348,26 @@ Proof
 </div>
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a constant sequence converging to <span class="math inline">s</span>, such that for all <span class="math inline">n \in \mathbb{N}</span>, <span class="math inline">s_n = 0</span>. We are given for all <span class="math inline">n</span>, <span class="math inline">t_n \geq 0</span>, thus <span class="math inline">t_n \geq s_n</span>. By Theorem <span class="math inline">1.2.2</span>, we have that <span class="math inline">t \geq s</span>. Because <span class="math inline">s = 0</span>, <span class="math inline">t \geq 0</span>.</p>
+<p>Let <span class="math inline">(s_n)</span> be a sequence whose range <span class="math inline">T = \{s_n \colon n \in \mathbb{N}\}</span> is bounded.</p>
+<p>Suppose that <span class="math inline">T</span> is finite. Then there is some number <span class="math inline">x \in T</span> that is equal to <span class="math inline">s_n</span> for infinitely many values of <span class="math inline">n</span>. That is there exists <span class="math inline">n_1 &lt; n_2 &lt; \cdots &lt; n_k &lt; \cdots</span> such that <span class="math inline">s_{n_k} = x</span> for all <span class="math inline">k \in \mathbb{N}</span>. It follows that the subsequence <span class="math inline">(s_{n_k})</span> converges to <span class="math inline">x</span>.</p>
+<p>Next, suppose <span class="math inline">T</span> is infinite. Then the Bolzano-Weierstrass theorem implies that <span class="math inline">T</span> has an accumulation point, <span class="math inline">y</span>, in <span class="math inline">\mathbb{R}</span>. We can construct a subsequence <span class="math inline">(s_n)</span> that converges to <span class="math inline">y</span>. For each <span class="math inline">k \in \mathbb{N}</span>, let <span class="math inline">A_k = (y - 1/k,y+ 1/k)</span> be the neighborhood about <span class="math inline">y</span> of radius <span class="math inline">1/k</span>. Since <span class="math inline">y</span> is an accumulation point of <span class="math inline">T</span>, given any <span class="math inline">k \in \mathbb{N}</span>, there are infinitely many values of <span class="math inline">n</span> such that <span class="math inline">s_n \in A_k</span>. In general we choose <span class="math inline">s_{n_k} \in A_k</span> with <span class="math inline">n_k &gt; n_{k-1}</span>. By doing so we obtain a subsequence <span class="math inline">(s_{n_k})</span> of <span class="math inline">(s_n)</span> for which <span class="math inline">|s_{n_k} - y| &lt; 1/k</span> for all <span class="math inline">k \in \mathbb{N}</span>. Theorem <span class="math inline">1.1.1</span> implies <span class="math inline">\lim s_{n_k} = y</span>.</p>
 </div>
 </div>
 </div>
-<p>These results lead us to the <span class="definition"><strong>Ratio test</strong></span>. This test is used to show that certain sequences converge to zero.</p>
+<p>And for unbounded sequences</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.4 (Ratio test)
+Theorem 1.4.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
+<p>Every unbounded sequence contains a monotone subsequence that diverges to <span class="math inline">\pm \infty</span>.</p>
 </div>
 </div>
-<p>In simple english, if <span class="math inline">s_n</span> is a sequence of positive terms, where each subsequent term is smaller than the last, the sequence must converge to zero.</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -460,33 +380,13 @@ Proof
 </div>
 <div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>By our previous Corollary, we know that <span class="math inline">L \geq 0</span>. If <span class="math inline">L &lt; 1</span>, then there exists a real number <span class="math inline">c</span> such that <span class="math inline">0 \leq L &lt; c &lt; 1</span>. Let <span class="math inline">\varepsilon = c - L</span>, so that <span class="math inline">\varepsilon &gt; 0</span>.</p>
-<p>Since <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>, there exists some <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span>,</p>
-<p><span class="math display">
-\left|\frac{s_{n+1}}{s_n} - L\right| &lt; \varepsilon
-</span></p>
-<p>Let <span class="math inline">k = N + 1</span>. Then for all <span class="math inline">n \geq k</span> we have <span class="math inline">n - 1 \geq N</span> such that</p>
-<p><span class="math display">
-\frac{s_n}{s_{n+1}} &lt; L + \varepsilon = L + (c - L) = c.
-</span></p>
-<p>We drop the absolute value signs as, positive or negative, <span class="math inline">s_{n+1}/s_n - L &lt; \varepsilon</span>. For all <span class="math inline">n \geq k</span>,</p>
-<p><span class="math display">
-0 &lt; s_n &lt; s_{n-1}c
-</span></p>
-<p>We can repeat this inequality <span class="math display">
-0 &lt; s_{n-1} &lt; s_{n-2}c
-</span></p>
-<p>Thus</p>
-<p><span class="math display">
-0 &lt; s_n &lt; s_{n-1}c &lt; s_{n-2}c^2 &lt; \cdots &lt; s_kc^{n-k}.
-</span></p>
-<p>Let <span class="math inline">M = s_k/c^k</span>, we have <span class="math inline">0 &lt; s_n &lt; Mc^n</span> for all <span class="math inline">n \geq k</span>. Since <span class="math inline">0 &lt; c &lt; 1</span>, we have <span class="math inline">\lim c^n = 0</span> by a previous result. Thus <span class="math inline">\lim s_n = 0</span> by Theorem 1.1.1.</p>
+<p>Suppose <span class="math inline">(s_n)</span> is unbounded above. Given any <span class="math inline">M \in \mathbb{R}</span>, there must be infinitely many terms of <span class="math inline">(s_n)</span> larger than <span class="math inline">M</span>. There exists <span class="math inline">n_1 \in \mathbb{N}</span> such that <span class="math inline">s_{n_1} &gt; 1</span>. There must also exists <span class="math inline">n_2 &gt; n_1</span> such that <span class="math inline">s_{n_2} &gt; \max \{2,s_{n_1}\}</span>. In general, given <span class="math inline">n_1,\dots,n_k</span> there exists <span class="math inline">n_{k+1} &gt; n_{k}</span> such that <span class="math inline">s_{n_{k+1}} &gt; \max \{k,s_{n_k}\}</span>. It follows that the subsequence <span class="math inline">(s_{n_k})</span> is unbounded and increasing. By Theorem <span class="math inline">1.3.2</span>, <span class="math inline">\lim s_{n_k} = + \infty</span>.</p>
+<p>Finally if <span class="math inline">(s_n)</span> is not unbounded above, it must be unbounded below, and a similar argument produces an unbounded decreasing subsequence having <span class="math inline">\lim s_{n_k} = -\infty</span>.</p>
 </div>
 </div>
 </div>
-<section id="infinite-limits" class="level2">
-<h2 class="anchored" data-anchor-id="infinite-limits">Infinite Limits</h2>
-<p>Certain sequences like <span class="math inline">s_n = n</span> are clearly not convergent, but behave predictably; growing without bounds towards infinity. We introduce the notion of <em>divergence</em> for these sequences.</p>
+<section id="limit-superior-and-limit-inferior" class="level2">
+<h2 class="anchored" data-anchor-id="limit-superior-and-limit-inferior">Limit Superior and Limit Inferior</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -497,65 +397,46 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A sequence <span class="math inline">(s_n)</span> is said to <span class="definition"><strong>diverge</strong></span> to <span class="math inline">+\infty</span>, notated</p>
+<p>Let <span class="math inline">(s_n)</span> be a bounded sequence. A <span class="definition">subsequential limit</span> of <span class="math inline">(s_n)</span> is any real number that is the limit of some subsequence of <span class="math inline">(s_n)</span>. If <span class="math inline">S</span> is the set of all subsequential limits of <span class="math inline">(s_n)</span>, then we define the <span class="definition">limit superior</span> of <span class="math inline">(s_n)</span> to be</p>
 <p><span class="math display">
-\lim s_n = +\infty
+\lim \sup s_n = \sup S
 </span></p>
-<p>If for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &gt; M</span>.</p>
-<p>Similarly a sequence <span class="math inline">(s_n)</span> is said to diverge to <span class="math inline">-\infty</span>, notated</p>
+<p>And the <span class="definition">limit inferior</span> of <span class="math inline">(s_n)</span> to be</p>
 <p><span class="math display">
-\lim s_n = -\infty
+\lim \inf s_n = \inf S
 </span></p>
-<p>If for every <span class="math inline">M \in \mathbb{R}</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &lt; M</span>.</p>
 </div>
 </div>
-<p>A divergent sequence is <em><strong>NOT</strong></em> convergent, and our limit notation is only used for simplicity. Theorems which require a convergent sequence do not apply to divergent sequences.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Claim:</strong> <span class="math inline">\lim n^2 = + \infty</span></p>
-<p>To show the sequence <span class="math inline">(s_n)</span> where <span class="math inline">s_n = n^2</span> diverges to positive infinity, we must show for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>.</p>
-<p>Let <span class="math inline">N</span> be equal to the smallest integer greater than <span class="math inline">|M|</span>. For all integers <span class="math inline">N^2 \geq N</span>. Thus for all <span class="math inline">n \geq N</span>, <span class="math inline">s_n = n^2 &gt; n &gt; M</span>. Thus our sequence <span class="math inline">(s_n)</span> diverges to positive infinity.</p>
-</div>
-</div>
-<p>The above example is very simple, and gives a general idea for how infinite limit proofs are done. More technical examples can be found in the practice.</p>
+<p>This defintion requires <span class="math inline">(s_n)</span> to be bounded. When <span class="math inline">(s_n)</span> is a convergent sequence, <span class="math inline">\lim \inf s_n = \lim \sup s_n = \lim s_n</span>. If it happens that <span class="math inline">\lim \inf s_n &lt; \lim \sup s_n</span>, we say that <span class="math inline">(s_n)</span> <span class="definition">oscillates</span>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.5
+Theorem 1.4.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
-<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
-<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+<p>Let <span class="math inline">(s_n)</span> be a bounded sequence and let <span class="math inline">m = \lim \sup s_n</span>. Then the following properties hold:</p>
+<p><span class="math inline">(a)</span> For every <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &lt; m + \varepsilon</span>.</p>
+<p><span class="math inline">(b)</span> For every <span class="math inline">\varepsilon &gt; 0</span>, and for every <span class="math inline">i \in \mathbb{N}</span> there exists an integer <span class="math inline">k &gt; i</span> such that <span class="math inline">s_k &gt; m - \varepsilon</span>.</p>
+<p>Furthermore, if <span class="math inline">m</span> is a real number satisfying these properties, <span class="math inline">m = \lim \sup s_n</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (TO-DO)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> We are given that <span class="math inline">(s_n)</span> diverges to posiitve infinity. Then for every <span class="math inline">M</span> there exists a naturaul number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">t_n \geq s_n &gt; M</span>. Thus for any <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &gt; M</span>, and we have that <span class="math inline">\lim t_n = + \infty</span>.</p>
-<hr>
-<p><span class="math inline">(b)</span> We are given that <span class="math inline">(t_n)</span> diverges to negative infinity. Then for every <span class="math inline">M</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &lt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">s_n \leq t_n &lt; M</span>. Thus for every <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &lt; M</span>, and we have that <span class="math inline">\lim s_n = - \infty</span></p>
+
 </div>
 </div>
 </div>
@@ -565,15 +446,15 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.6
+Corollary 1.4.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+<p>Let <span class="math inline">(s_n)</span> be a bounded sequence and let <span class="math inline">m = \lim \sup s_n</span>. Then <span class="math inline">m \in S</span>, where <span class="math inline">S</span> is the set of subsequential limits of <span class="math inline">(s_n)</span>. That is, there exists a subsequence of <span class="math inline">(s_n)</span> that converges to <span class="math inline">m</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -582,17 +463,51 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">\lim s_n = + \infty</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, let <span class="math inline">M = 1/\varepsilon</span>. There exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M = 1/\varepsilon</span>. Since <span class="math inline">s_n</span> is positive, we have</p>
+<p>Combining both parts of Theorem <span class="math inline">1.3.4</span>, we have the existence of some subsequence <span class="math inline">(s_{n_k})</span> of <span class="math inline">(s_n)</span> such that</p>
 <p><span class="math display">
-\left|\frac{1}{s_n} - 0\right| &lt; \varepsilon = \frac{1}{M}
+m - \frac{1}{k} &lt; s_{n_k} &lt; m + \frac{1}{k}
 </span></p>
-<p>Thus <span class="math inline">\lim 1/s_n = 0</span>. For the converse, assume <span class="math inline">\lim 1/s_n = 0</span>. Then there exists a natural number <span class="math inline">N</span> such that for all <span class="math inline">n \geq N</span>, we have</p>
+<p>Clearly then <span class="math inline">(s_{n_k})</span> converges to <span class="math inline">m</span>.</p>
+</div>
+</div>
+</div>
+<p>For a bounded sequence <span class="math inline">(s_n)</span>, Corollary <span class="math inline">1.3.5</span> says the set <span class="math inline">S</span> of subsequential limits of <span class="math inline">(s_n)</span> contains its supremum <span class="math inline">m</span>. That means <span class="math inline">m</span> is actually the maximum of <span class="math inline">S</span>. Likewise, <span class="math inline">\lim \inf s_n = \min S</span>. While this defintion is more correct, it is not readily generalized to unbounded sequences.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(r_n)</span> converges to a positive number <span class="math inline">r</span> and <span class="math inline">(s_n)</span> is a bounded sequence. Then</p>
 <p><span class="math display">
-\left|\frac{1}{s_n} - 0\right|  = \frac{1}{s_n} &lt; \varepsilon.
+\lim \sup r_n s_n = r\lim \sup s_n
 </span></p>
-<p>Let <span class="math inline">M = 1/\varepsilon</span>. Flipping both sides of the inequality gives us <span class="math inline">s_n &gt; 1/\varepsilon = M</span>. Thus for some natural number <span class="math inline">N</span>, for all <span class="math inline">n \geq N</span> we have <span class="math inline">s_n &gt; M</span>. Thus <span class="math inline">\lim s_n = + \infty</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Les <span class="math inline">s = \lim \sup s_n</span> and <span class="math inline">t = \lim \sup r_ns_n</span>. By the Corollary <span class="math inline">1.3.5</span>, there exists a subsequence <span class="math inline">(s_{n_k})</span> of <span class="math inline">(s_n)</span> such that <span class="math inline">\lim s_{n_k} = s</span>. We know <span class="math inline">\lim r_{n_k} = r</span> by Theorem <span class="math inline">1.4.1</span>. Thus <span class="math inline">\lim r_{n_k}s_{n_k} = rs</span>. Thus <span class="math inline">rs \leq \lim \sup r_n s_n = t</span> (Why).</p>
+<p>Similarly, let <span class="math inline">(r_{n_k}s_{n_k})</span> be a subsequence of <span class="math inline">(r_ns_n)</span> that converges to <span class="math inline">t</span>. Then since <span class="math inline">r &gt; 0</span>,</p>
+<p><span class="math display">
+\lim s_{n_k} = \lim \frac{r_{n_k}s_{n_k}}{r_{n_k}} = \frac{t}{r},
+</span></p>
+<p>so that <span class="math inline">t/r \leq s</span>. Thus <span class="math inline">t \leq rs</span>. Since <span class="math inline">rs \leq t</span> and <span class="math inline">t \leq rs</span>, we have <span class="math inline">t = rs</span>.</p>
 </div>
 </div>
 </div>
@@ -602,32 +517,17 @@ Proof
 </section>
 <section id="recap" class="level2">
 <h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<p>In this section we proved the following theorems and results.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.1 (Algebraic Relations for limits)
+Theorem 1.4.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
-<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.2 (Inequality operations on limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
+<p>If a sequence <span class="math inline">(s_n)</span> converges to a real number <span class="math inline">s</span>, then every subsequence of <span class="math inline">(s_n)</span> also converges to <span class="math inline">s</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -636,11 +536,11 @@ Theorem 1.2.2 (Inequality operations on limits)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Corollary 1.2.3
+Theorem 1.4.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
+<p>Every bounded sequence has a convergent subsequence.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -649,11 +549,11 @@ Corollary 1.2.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.4 (Ratio test)
+Theorem 1.4.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
+<p>Every unbounded sequence contains a monotone subsequence that diverges to <span class="math inline">\pm \infty</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -662,13 +562,14 @@ Theorem 1.2.4 (Ratio test)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.5
+Theorem 1.4.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
-<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
-<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+<p>Let <span class="math inline">(s_n)</span> be a bounded sequence and let <span class="math inline">m = \lim \sup s_n</span>. Then the following properties hold:</p>
+<p><span class="math inline">(a)</span> For every <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &lt; m + \varepsilon</span>.</p>
+<p><span class="math inline">(b)</span> For every <span class="math inline">\varepsilon &gt; 0</span>, and for every <span class="math inline">i \in \mathbb{N}</span> there exists an integer <span class="math inline">k &gt; i</span> such that <span class="math inline">s_k &gt; m - \varepsilon</span>.</p>
+<p>Furthermore, if <span class="math inline">m</span> is a real number satisfying these properties, <span class="math inline">m = \lim \sup s_n</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -677,11 +578,27 @@ Theorem 1.2.5
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.6
+Corollary 1.4.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+<p>Let <span class="math inline">(s_n)</span> be a bounded sequence and let <span class="math inline">m = \lim \sup s_n</span>. Then <span class="math inline">m \in S</span>, where <span class="math inline">S</span> is the set of subsequential limits of <span class="math inline">(s_n)</span>. That is, there exists a subsequence of <span class="math inline">(s_n)</span> that converges to <span class="math inline">m</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.4.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(r_n)</span> converges to a positive number <span class="math inline">r</span> and <span class="math inline">(s_n)</span> is a bounded sequence. Then</p>
+<p><span class="math display">
+\lim \sup r_n s_n = r\lim \sup s_n
+</span></p>
 </div>
 </div>
 
@@ -1039,13 +956,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../qmd/realanal/sequences/convergence.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Convergence</span>
+      <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Monotone sequences and Cauchy sequences</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="pagination-link">
-        <span class="nav-page-text">Monotone sequences and Cauchy sequences</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../qmd/realanal/limits-cont.html" class="pagination-link">
+        <span class="nav-page-text">Limits and Continuity</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

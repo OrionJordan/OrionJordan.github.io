@@ -1,9 +1,9 @@
 ---
-title: "Sequences"
+title: "Differentiation"
 format:
   html:
     toc: true
     html-math-method: katex
 ---
 
-Real analysis is the study of real numbers
+In calculus we learned about derivatives, being the instantanious rate of change of a function. We formalize that notion in this section.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Limit Theorems</title>
+<title>OOMN - Properties of Continuous Functions</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../qmd/realanal/sequences/mono-cauchy.html" rel="next">
-<link href="../../../qmd/realanal/sequences/convergence.html" rel="prev">
+<link href="../../../qmd/realanal/limits-cont/uniform-continuity.html" rel="next">
+<link href="../../../qmd/realanal/limits-cont/cont-func.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences.html">Sequences</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences/limittheo.html">Limit Theorems</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont.html">Limits and Continuity</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont/cont-func-prop.html">Properties of Continuous Functions</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limit Theorems</span></a>
   </div>
 </li>
@@ -193,7 +193,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Properties of Continuous Functions</span></a>
   </div>
 </li>
@@ -240,9 +240,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#infinite-limits" id="toc-infinite-limits" class="nav-link active" data-scroll-target="#infinite-limits">Infinite Limits</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review">Review</a></li>
   </ul>
 </nav>
     </div>
@@ -251,7 +249,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Limit Theorems</h1>
+<h1 class="title">Properties of Continuous Functions</h1>
 </div>
 
 
@@ -266,227 +264,6 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>We begin the section by showing that algebraic operations are compatible with limits.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.1 (Algebraic Relations for limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
-<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> We must show that <span class="math inline">|(s_n + t_n) - (s + t)|</span> is arbitrarily close to any <span class="math inline">\varepsilon</span>. Using the triangle inequality, we have</p>
-<p><span class="math display">\begin{align*}
-\left|(s_n + t_n) - (s + t)\right| &amp;= |(s_n - s) + (t_n - t)|\\
-&amp;\leq |s_n - s| + |t_n - t|.
-\end{align*}</span></p>
-<p>By the definition of convergence we have</p>
-<p><span class="math display">
-\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \frac{\varepsilon}{2}.
-</span></p>
-<p>and</p>
-<p><span class="math display">
-\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \frac{\varepsilon}{2}.
-</span></p>
-<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then for all <span class="math inline">n \geq N</span>, we have <span class="math display">
-|(s_n + t_n) - (s + t)| \leq |s_n - s| + |t_n - t| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
-</span></p>
-<p>Since this holds for all <span class="math inline">\varepsilon &gt; 0</span>, we have <span class="math inline">\lim (s_n + t_n) = s + t</span>.</p>
-<hr>
-<p><span class="math inline">(b)</span> First, we need to show <span class="math inline">\lim(ks_n) = ks</span>. Since <span class="math inline">\lim s_n = s</span>, there exists <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span></p>
-<p><span class="math display">
-|s_n - s| \leq \frac{\varepsilon}{|k|}.
-</span></p>
-<p>Therefore</p>
-<p><span class="math display">
-|k||s_n - s| \leq |k|\frac{\varepsilon}{|k|} \implies |ks_n - s_n| \leq \varepsilon
-</span></p>
-<p>When <span class="math inline">k \not = 0</span>. When <span class="math inline">k = 0</span>, our statement is trivially true. Next we need to show <span class="math inline">\lim s_n + k = s + k</span>. This is almost trivial since we are given <span class="math inline">\lim s_n = s</span>, and</p>
-<p><span class="math display">
-|(k + s_n) - (k + s)| = |s_n - s| &lt; \varepsilon.
-</span></p>
-<hr>
-<p><span class="math inline">(c)</span> We must show that <span class="math inline">|s_nt_n - st| &lt; \varepsilon</span>. We can rewrite our inequality</p>
-<p><span class="math display">
-|s_nt_s - st| = | s_nt_n + (s_nt - s_n t) - st|
-</span></p>
-<p>We can now use the triangle inequality to show</p>
-<p><span class="math display">\begin{align*}
-|(s_nt_n - s_nt) + (s_n t - st)| &amp;\leq |s_nt_n - s_nt| + | s_nt - st| \\
-&amp;= |s_n||t_n - t| + |t||s_n - s|
-\end{align*}</span></p>
-<p>Since <span class="math inline">(s_n)</span> is bounded, <span class="math inline">\exists M_1 &gt; 0</span> such that <span class="math inline">\forall n, |s_n| \leq M_1</span>.</p>
-<p>Let <span class="math inline">M = \max\{M_1,|t|\}</span>. Then we have</p>
-<p><span class="math display">
-|s_nt_n - st| \leq M|t_n - t| + M|s_n - s|.
-</span></p>
-<p>Because <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>, for any <span class="math inline">\varepsilon &gt; 0</span> there exists <span class="math inline">N_1,N_2 \in \mathbb{N}</span> such that when <span class="math inline">n \geq N_1</span> and <span class="math inline">n \geq N_2</span></p>
-<p><span class="math display">
-|t_n - t| \leq \frac{\varepsilon}{2M} \text{ and } |s_n - s| &lt; \frac{\varepsilon}{2M}
-</span></p>
-<p>respectively. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
-<p><span class="math display">
-|s_nt_n - st| \leq M|t_n - t| + M|s_n - s| &lt; M\left(\frac{\varepsilon}{2M}\right) + M\left(\frac{\varepsilon}{2M}\right) = \varepsilon.
-</span></p>
-<p>Thus we have shown <span class="math inline">\lim(s_nt_n) = st</span>.</p>
-<hr>
-<p><span class="math inline">(d)</span> Since <span class="math inline">s_n/t_n = s_n(1/t_n)</span>, if we can prove <span class="math inline">\lim 1/t_n = 1/t</span> we can use part <span class="math inline">(c)</span> to complete the proof. We need to show that for any <span class="math inline">\varepsilon &gt; 0</span></p>
-<p><span class="math display">
-\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| &lt; \varepsilon
-</span></p>
-<p>For all sufficently large <span class="math inline">n</span>. We want to get a lower bound on the denominator, <span class="math inline">t_nt</span>. Because <span class="math inline">t \not = 0</span>, there exists some <span class="math inline">N_1 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_1</span> implies <span class="math inline">|t_n - t| &lt; |t|/2 &lt; \varepsilon_t</span>. Thus for <span class="math inline">n \geq N_1</span> we have</p>
-<p><span class="math display">
-|t_n| = |t - (t - t_n)| \geq |t| - |t - t_n| &gt; |t| - \frac{|t|}{2} = \frac{|t|}{2}
-</span></p>
-<p>There also exists <span class="math inline">N_2 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_2</span> implies <span class="math inline">|t_n - t| &lt; \frac{\varepsilon}{2}|t|^2</span>. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
-<p><span class="math display">
-\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| = \frac{1}{|t_n|}\left|\frac{t - t_n}{t}\right| &lt; \frac{2}{|t|}\left|\frac{t-t_n}{t}\right|&lt;\varepsilon.
-</span></p>
-<p>Thus <span class="math inline">\lim 1/t_n = 1/t</span>.</p>
-</div>
-</div>
-</div>
-<p>Another useful property of limits is that they are preserved under inequality operations.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.2 (Inequality operations on limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Towards a contradiction, suppose that <span class="math inline">t &lt; s</span>. Let <span class="math inline">\varepsilon = \frac{s-t}{2}.</span></p>
-<p>By the definition of convergence we have</p>
-<p><span class="math display">
-\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \varepsilon.
-</span></p>
-<p>Similarly we have</p>
-<p><span class="math display">
-\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \varepsilon.
-</span></p>
-<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. For <span class="math inline">n \geq N, \; t_n &lt; t + \varepsilon = s - \varepsilon &lt; s_n</span>. But this contradicts our inital assumption that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>. Thus we conclude <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-</div>
-<p>This leads to a the following corollary</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Corollary 1.2.3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a constant sequence converging to <span class="math inline">s</span>, such that for all <span class="math inline">n \in \mathbb{N}</span>, <span class="math inline">s_n = 0</span>. We are given for all <span class="math inline">n</span>, <span class="math inline">t_n \geq 0</span>, thus <span class="math inline">t_n \geq s_n</span>. By Theorem <span class="math inline">1.2.2</span>, we have that <span class="math inline">t \geq s</span>. Because <span class="math inline">s = 0</span>, <span class="math inline">t \geq 0</span>.</p>
-</div>
-</div>
-</div>
-<p>These results lead us to the <span class="definition"><strong>Ratio test</strong></span>. This test is used to show that certain sequences converge to zero.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.4 (Ratio test)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
-</div>
-</div>
-<p>In simple english, if <span class="math inline">s_n</span> is a sequence of positive terms, where each subsequent term is smaller than the last, the sequence must converge to zero.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>By our previous Corollary, we know that <span class="math inline">L \geq 0</span>. If <span class="math inline">L &lt; 1</span>, then there exists a real number <span class="math inline">c</span> such that <span class="math inline">0 \leq L &lt; c &lt; 1</span>. Let <span class="math inline">\varepsilon = c - L</span>, so that <span class="math inline">\varepsilon &gt; 0</span>.</p>
-<p>Since <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>, there exists some <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span>,</p>
-<p><span class="math display">
-\left|\frac{s_{n+1}}{s_n} - L\right| &lt; \varepsilon
-</span></p>
-<p>Let <span class="math inline">k = N + 1</span>. Then for all <span class="math inline">n \geq k</span> we have <span class="math inline">n - 1 \geq N</span> such that</p>
-<p><span class="math display">
-\frac{s_n}{s_{n+1}} &lt; L + \varepsilon = L + (c - L) = c.
-</span></p>
-<p>We drop the absolute value signs as, positive or negative, <span class="math inline">s_{n+1}/s_n - L &lt; \varepsilon</span>. For all <span class="math inline">n \geq k</span>,</p>
-<p><span class="math display">
-0 &lt; s_n &lt; s_{n-1}c
-</span></p>
-<p>We can repeat this inequality <span class="math display">
-0 &lt; s_{n-1} &lt; s_{n-2}c
-</span></p>
-<p>Thus</p>
-<p><span class="math display">
-0 &lt; s_n &lt; s_{n-1}c &lt; s_{n-2}c^2 &lt; \cdots &lt; s_kc^{n-k}.
-</span></p>
-<p>Let <span class="math inline">M = s_k/c^k</span>, we have <span class="math inline">0 &lt; s_n &lt; Mc^n</span> for all <span class="math inline">n \geq k</span>. Since <span class="math inline">0 &lt; c &lt; 1</span>, we have <span class="math inline">\lim c^n = 0</span> by a previous result. Thus <span class="math inline">\lim s_n = 0</span> by Theorem 1.1.1.</p>
-</div>
-</div>
-</div>
-<section id="infinite-limits" class="level2">
-<h2 class="anchored" data-anchor-id="infinite-limits">Infinite Limits</h2>
-<p>Certain sequences like <span class="math inline">s_n = n</span> are clearly not convergent, but behave predictably; growing without bounds towards infinity. We introduce the notion of <em>divergence</em> for these sequences.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -497,52 +274,25 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A sequence <span class="math inline">(s_n)</span> is said to <span class="definition"><strong>diverge</strong></span> to <span class="math inline">+\infty</span>, notated</p>
-<p><span class="math display">
-\lim s_n = +\infty
-</span></p>
-<p>If for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &gt; M</span>.</p>
-<p>Similarly a sequence <span class="math inline">(s_n)</span> is said to diverge to <span class="math inline">-\infty</span>, notated</p>
-<p><span class="math display">
-\lim s_n = -\infty
-</span></p>
-<p>If for every <span class="math inline">M \in \mathbb{R}</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &lt; M</span>.</p>
+<p>A function <span class="math inline">f \colon D \to \mathbb{R}</span> is called <span class="definition">bounded</span> if its range <span class="math inline">f(D)</span> is a subset of <span class="math inline">\mathbb{R}</span> where there exists some <span class="math inline">M \in \mathbb{R}</span> such that <span class="math inline">|f(x)| \leq M</span> for all <span class="math inline">x \in D</span>.</p>
 </div>
 </div>
-<p>A divergent sequence is <em><strong>NOT</strong></em> convergent, and our limit notation is only used for simplicity. Theorems which require a convergent sequence do not apply to divergent sequences.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>Claim:</strong> <span class="math inline">\lim n^2 = + \infty</span></p>
-<p>To show the sequence <span class="math inline">(s_n)</span> where <span class="math inline">s_n = n^2</span> diverges to positive infinity, we must show for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>.</p>
-<p>Let <span class="math inline">N</span> be equal to the smallest integer greater than <span class="math inline">|M|</span>. For all integers <span class="math inline">N^2 \geq N</span>. Thus for all <span class="math inline">n \geq N</span>, <span class="math inline">s_n = n^2 &gt; n &gt; M</span>. Thus our sequence <span class="math inline">(s_n)</span> diverges to positive infinity.</p>
-</div>
-</div>
-<p>The above example is very simple, and gives a general idea for how infinite limit proofs are done. More technical examples can be found in the practice.</p>
+<p>A functions domain being bounded has no correlation</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.5
+Theorem 2.3.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
-<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
-<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+<p>If <span class="math inline">D</span> is a compact subset of <span class="math inline">\mathbb{R}</span> and <span class="math inline">f \colon D \to \mathbb{R}</span> is continuous, then <span class="math inline">f(D)</span> is compact.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -551,11 +301,10 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> We are given that <span class="math inline">(s_n)</span> diverges to posiitve infinity. Then for every <span class="math inline">M</span> there exists a naturaul number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">t_n \geq s_n &gt; M</span>. Thus for any <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &gt; M</span>, and we have that <span class="math inline">\lim t_n = + \infty</span>.</p>
-<hr>
-<p><span class="math inline">(b)</span> We are given that <span class="math inline">(t_n)</span> diverges to negative infinity. Then for every <span class="math inline">M</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &lt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">s_n \leq t_n &lt; M</span>. Thus for every <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &lt; M</span>, and we have that <span class="math inline">\lim s_n = - \infty</span></p>
+<p>Let <span class="math inline">U = \{U_i\}</span> be an open cover of <span class="math inline">f(D)</span>. Since <span class="math inline">f</span> is continuous on <span class="math inline">D</span>, by Theorem <span class="math inline">2.2.5</span>, there exists some <span class="math inline">V_i</span> such that <span class="math inline">V_i \cap D = f^{-1}(U_i)</span>. Since <span class="math inline">f(D) \subseteq \bigcup U_i</span>, we have <span class="math inline">D \subseteq \bigcup f^{-1}(U_i) \subseteq \bigcup V_i</span> so <span class="math inline">\{V_i\}</span> is an open cover of <span class="math inline">D</span>.</p>
+<p>Since <span class="math inline">D</span> is compact, there exists finitly many <span class="math inline">V_1,\dots,V_n</span> such that <span class="math inline">D \subseteq V_1 \cup \cdots \cup V_N</span> hence <span class="math inline">D \subseteq (V_1 \cap D) \cup \cdots \cup (V_N \cap D)</span> which implies <span class="math inline">f(D) \subseteq U_1 \cup \cdots \cup U_N</span>, thus <span class="math inline">\{U_1,\ldots,U_n\}</span> is a finite subcover of <span class="math inline">U</span>. Hence <span class="math inline">f(D)</span> is compact.</p>
 </div>
 </div>
 </div>
@@ -565,15 +314,15 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.6
+Corollary 2.3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+<p>Let <span class="math inline">D</span> a compact subset of <span class="math inline">\mathbb{R}</span> and <span class="math inline">f \colon D \to \mathbb{R}</span> be continuous. Then, <span class="math inline">f</span> attains a minimum and maximum on <span class="math inline">D</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -582,65 +331,47 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">\lim s_n = + \infty</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, let <span class="math inline">M = 1/\varepsilon</span>. There exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M = 1/\varepsilon</span>. Since <span class="math inline">s_n</span> is positive, we have</p>
-<p><span class="math display">
-\left|\frac{1}{s_n} - 0\right| &lt; \varepsilon = \frac{1}{M}
-</span></p>
-<p>Thus <span class="math inline">\lim 1/s_n = 0</span>. For the converse, assume <span class="math inline">\lim 1/s_n = 0</span>. Then there exists a natural number <span class="math inline">N</span> such that for all <span class="math inline">n \geq N</span>, we have</p>
-<p><span class="math display">
-\left|\frac{1}{s_n} - 0\right|  = \frac{1}{s_n} &lt; \varepsilon.
-</span></p>
-<p>Let <span class="math inline">M = 1/\varepsilon</span>. Flipping both sides of the inequality gives us <span class="math inline">s_n &gt; 1/\varepsilon = M</span>. Thus for some natural number <span class="math inline">N</span>, for all <span class="math inline">n \geq N</span> we have <span class="math inline">s_n &gt; M</span>. Thus <span class="math inline">\lim s_n = + \infty</span>.</p>
+<p>We know from Theorem <span class="math inline">2.3.1</span>, the image <span class="math inline">f(D)</span> is compact. All compact sets have both a minimum, <span class="math inline">y_1</span> and maximum <span class="math inline">y_2</span>. Since <span class="math inline">y_1,y_2 \in f(D)</span>, there exists <span class="math inline">x_1,x_2\in D</span> such that <span class="math inline">f(x_1) = y_1</span> and <span class="math inline">f(x_2) = y_2</span>. Thus <span class="math inline">f(x_1) \leq f(x) \leq f(x_2)</span> for all <span class="math inline">x \in D</span>.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-</section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<p>In this section we proved the following theorems and results.</p>
+<p>On the real number line, a set is compact if and only if it is closed and bounded. We use the definition of open subcovers as it applies to more generalized spaces.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.1 (Algebraic Relations for limits)
+Lemma 2.3.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
-<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
+<p>Let <span class="math inline">f \colon [a,b] \to \mathbb{R}</span> be continuous, and suppose <span class="math inline">f(a) &lt; 0 &lt; f(b)</span>. Then there exists <span class="math inline">c \in (a,b)</span> such that <span class="math inline">f(c) = 0</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.2 (Inequality operations on limits)
+Proof
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
+<p>Let <span class="math inline">S = \{x \in [a,b] \colon f(x) \leq 0\}</span>. Notice <span class="math inline">S</span> is bounded above by <span class="math inline">b</span>, and by our assumuption <span class="math inline">a \in S</span>. Since <span class="math inline">S</span> is not empty, and <span class="math inline">S</span> is bounded, We know <span class="math inline">c = \sup S</span> exists in <span class="math inline">[a,b]</span>. We want to show <span class="math inline">f(c) = 0</span>.</p>
+<p><strong>Case 1:</strong> Suppose <span class="math inline">f(c) &lt; 0</span>.</p>
+<p><strong>WTS:</strong> This assumption contradicts <span class="math inline">c</span> being a supremum of <span class="math inline">S</span>, because <span class="math inline">c</span> is not an upper bound of <span class="math inline">S</span>.</p>
+<p>Since <span class="math inline">f</span> is continuous, there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(x) &lt; 0</span> for all <span class="math inline">x \in U \cap [a,b]</span> (Prove). Since we’re assumming <span class="math inline">f(c) &lt; 0 &lt; f(b)</span>, we have that <span class="math inline">c \not = b</span>, and thus there exists some <span class="math inline">p \in U</span> such that <span class="math inline">c&lt;p&lt;b</span>. Since <span class="math inline">p \in U</span> we have <span class="math inline">f(p) &lt; 0</span>. This contradicts our assumption that <span class="math inline">c</span> is an upper bound for <span class="math inline">S</span>.</p>
+<p><strong>Case 2:</strong> Suppose <span class="math inline">f(c) &gt; 0</span>.</p>
+<p><strong>WTS:</strong> This assumption contradicts <span class="math inline">c</span> being a supremum of <span class="math inline">S</span>, because <span class="math inline">c</span> is not a least upper bound of <span class="math inline">S</span>.</p>
+<p>If <span class="math inline">f(c) &gt; 0</span>, there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(x) &gt; 0</span> for all <span class="math inline">x \cup [a,b]</span>, since <span class="math inline">f(a) &lt; 0 &lt; f(c)</span>. We have <span class="math inline">c \not = a</span> and thus <span class="math inline">U</span> contains some point, <span class="math inline">p</span>. We have <span class="math inline">a &lt; p &lt; c</span>. Since <span class="math inline">f(x) &gt; 0</span> for <span class="math inline">x \in U</span>, no points of <span class="math inline">S</span> are in <span class="math inline">[p,c]</span>. This implies <span class="math inline">p</span> is an upperbound for <span class="math inline">S</span> and contradicts <span class="math inline">c</span> being the least upper bound of <span class="math inline">s</span>.</p>
+<p>We conclude then that <span class="math inline">f(c) = 0</span>. Since <span class="math inline">f(a) &lt; 0 &lt; f(b)</span> and <span class="math inline">f(c) = 0</span>, it must be that <span class="math inline">c \in (a,b)</span></p>
 </div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Corollary 1.2.3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -649,11 +380,29 @@ Corollary 1.2.3
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.4 (Ratio test)
+Theorem 2.3.4 (Intermediate Value Theorem)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
+<p>Let <span class="math inline">f \colon [a,b] \to \mathbb{R}</span> be continuous. For any value <span class="math inline">k</span> between <span class="math inline">f(a)</span> and <span class="math inline">f(b)</span>, there exists <span class="math inline">c \in (a,b)</span> such that <span class="math inline">f(c) = k</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">k</span> be any real number between <span class="math inline">f(a)</span> and <span class="math inline">f(b)</span>. If <span class="math inline">f(a)</span> is less than <span class="math inline">f(b)</span>, we apply the previous lemma to a new function given by <span class="math inline">g(x) = f(x) - k</span>.</p>
+<p>Then <span class="math inline">g(a) = f(a) - k &lt; 0</span>. Then <span class="math inline">g(b) = f(b) - k &gt; 0</span>. We can then apply the lemma from before to guarentee the existence of <span class="math inline">c \in (a,b)</span> such that <span class="math inline">g(c) = 0</span>. This is equivalent to saying that <span class="math inline">f(c) = k</span>.</p>
+<p>In the reverse case, the same argument works where <span class="math inline">g(x) = k - f(x)</span>.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -662,13 +411,44 @@ Theorem 1.2.4 (Ratio test)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.5
+Theorem 2.3.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
-<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
-<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+<p>Let <span class="math inline">I</span> be a compact interval and suppose <span class="math inline">f \colon I \to \mathbb{R}</span> is a continuous function. Then the set <span class="math inline">f(I)</span> is a compact interval</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Corollary <span class="math inline">2.3.2</span> implies there exists <span class="math inline">x_1,x_2 \in I</span> such that <span class="math inline">f(x_1) &lt; f(x) &lt; f(x_2)</span> for all <span class="math inline">x \in I</span>. Let <span class="math inline">f(x_1) = m_1</span> and <span class="math inline">f(x_2) = m_2</span>. Then clearly <span class="math inline">f(I)\subseteq [m_1,m_2]</span>.</p>
+<p>Consider the case <span class="math inline">m_1 &lt; m_2</span>, as <span class="math inline">m_1 = m_2</span> is trivial. For each <span class="math inline">k \in [m_1,m_2]</span>, the Intermediate Value Theorem implies <span class="math inline">k \ f(c)</span> for some <span class="math inline">c</span> between <span class="math inline">x_1,x_2</span>. Thus <span class="math inline">(m_1,m_2) \subseteq f(I)</span>. Since <span class="math inline">m_1,m_2 \in f(I)</span>, we have <span class="math inline">[m_1,m_2] \subseteq f(I)</span>. Hence <span class="math inline">f(I)</span> is the compact interval <span class="math inline">[m_1,m_2]</span>.</p>
+</div>
+</div>
+</div>
+<section id="review" class="level2">
+<h2 class="anchored" data-anchor-id="review">Review</h2>
+<p>In this section we proved</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.3.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">D</span> is a compact subset of <span class="math inline">\mathbb{R}</span> and <span class="math inline">f \colon D \to \mathbb{R}</span> is continuous, then <span class="math inline">f(D)</span> is compact.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -677,11 +457,50 @@ Theorem 1.2.5
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.6
+Corollary 2.3.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+<p>Let <span class="math inline">D</span> a compact subset of <span class="math inline">\mathbb{R}</span> and <span class="math inline">f \colon D \to \mathbb{R}</span> be continuous. Then, <span class="math inline">f</span> attains a minimum and maximum on <span class="math inline">D</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma 2.3.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon [a,b] \to \mathbb{R}</span> be continuous, and suppose <span class="math inline">f(a) &lt; 0 &lt; f(b)</span>. Then there exists <span class="math inline">c \in (a,b)</span> such that <span class="math inline">f(c) = 0</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.3.4 (Intermediate Value Theorem)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon [a,b] \to \mathbb{R}</span> be continuous. For any value <span class="math inline">k</span> between <span class="math inline">f(a)</span> and <span class="math inline">f(b)</span>, there exists <span class="math inline">c \in (a,b)</span> such that <span class="math inline">f(c) = k</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.3.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">I</span> be a compact interval and suppose <span class="math inline">f \colon I \to \mathbb{R}</span> is a continuous function. Then the set <span class="math inline">f(I)</span> is a compact interval</p>
 </div>
 </div>
 
@@ -1039,13 +858,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../qmd/realanal/sequences/convergence.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Convergence</span>
+      <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Continuous Functions</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="pagination-link">
-        <span class="nav-page-text">Monotone sequences and Cauchy sequences</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../qmd/realanal/limits-cont/uniform-continuity.html" class="pagination-link">
+        <span class="nav-page-text">Uniform Continuity</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

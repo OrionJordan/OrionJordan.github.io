@@ -3,8 +3,74 @@ body
   
   .definition {
     color: blue;
+    font-weight: bold;
   }
 
   .quarto-dark .definition {
     color: cyan;
+    font-weight: bold;
+  }
+
+  .link-cards .card {
+    border-width: thin;
+    border-color: #000000;
+    padding: 0rem;
+  }
+
+  .link-cards .card-title {
+    border-bottom-width: thick;
+    border-color: #000000;
+    margin-top: 0;
+    padding: 1rem;
+    padding-bottom: 0.2rem;
+    background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2My40OTQgMzYuMTA3IiBoZWlnaHQ9IjEzNi40NjYiIHdpZHRoPSIyMzkuOTc5Ij48cGF0aCBjb2xvcj0iIzAwMCIgb3ZlcmZsb3c9InZpc2libGUiIG9wYWNpdHk9Ii41NDIiIGZpbGw9IiMwM2E5ZjQiIGZpbGwtb3BhY2l0eT0iLjI1IiBkPSJNNjMuNDk0IDBIMHYzNi4xMDdoNjMuNDk0eiIvPjxwYXRoIGQ9Ik0tMS40MzEgMTguMmwuMjA1LjAxLjE4LjAyOC4yLjA1LjIwMy4wNy4yMDEuMDg3Yy43NC4zNzMgMS4yMS44MjQgMS43NyAxLjIyNWwuMTguMTI4LjIxMi4xNDRjLjI1NC4xNTQuOTQuNjMzIDEuNzY4LjQ5NmwuMTgtLjAzNy4xOTctLjA2LjIwMS0uMDguMTk4LS4wOTZjLjcyNy0uNCAxLjE5MS0uODYgMS43NjYtMS4yODNsLjIwNC0uMTQ4LjE5NS0uMTMyYy4zMjUtLjE5OSAxLjA1NS0uNjkzIDEuOTctLjM4NmwuMTkuMDcyLjIwNy4wOTguMTguMS4yMDMuMTMuMTk3LjE0LjE5Ny4xNTJjLjYzNS40ODUgMS4xMjQgMS4wNTEgMS45NyAxLjUwNmwuMTg4LjA4NC4xOTMuMDY4Yy45NzkuMyAxLjczNC0uMzg2IDEuOTc5LS41NThsLjE5MS0uMTU3LjE5LS4xNjcuMjAzLS4xODhDMTUuODg0IDE4LjIyIDE2Ljk3IDE2LjY3IDE5IDE5LjAybC4yMDIuMjI1LjIwMi4yMy4xODcuMjEzLjE5My4yMi4yLjIyLjIuMjA4LjIwNS4xOThjLjE3My4xMzUuODkzLjkxNiAxLjc1MS41NjNsLjIwNC0uMS4xOTMtLjEyNmMuODQ0LS42OCAxLjI1MS0xLjQ3NiAxLjc2NC0yLjE4NmwuMjEyLS4zMS4xOS0uMjcuMjA0LS4yNzIuMTg1LS4yMy4yMDItLjIyNS4xOS0uMTg1LjE5OC0uMTYuMTk0LS4xMjEuMjAzLS4wODQuMDk4LS4wMjUuMDk4LS4wMTQuMS0uMDAyLjEuMDEuMDk5LjAyLjEuMDM0LjE4MS4wOTIuMjEuMTU1LjE4Ni4xODIuMi4yMzguMTkuMjY4LjIxMi4zNC4xODMuMzI3LjIwOC40MDIuMTkuMzkuMjA4LjQ0NS4xNzkuMzk1LjIwMy40NTQuMTk4LjQzNS4xOTYuNDI1LjE5Ni40MDYuMTg5LjM2NWMuMTIzLjE1Mi41OCAxLjI1NyAxLjIzNiAxLjM0bC4wNDguMDAyLjA1LS4wMDMuMDQ4LS4wMDcuMTAyLS4wMy4xMDItLjA1My4wOTQtLjA2Ny4wOTQtLjA4Ny4xOTItLjIzNi4yMTItLjM1Ni4xOTMtLjQwOC4xOTYtLjUwMS4yLS41OTYuMTg0LS42MjIuMTk2LS43MzYuMTk1LS44MDMuMjA4LS45M2MuNjc0LTMuMTcgMS4xOC02LjM0NCAxLjc1OS05LjUxNmwuMjA5LTEuMTMuMTgtLjk0NC4yMDgtMS4wMzMuMTk1LS45MS4xOTMtLjgzNi4xOTMtLjc2LjE5Ny0uNjkyLjIxLS42My4xOS0uNDguMTktLjM3Ny4yMDItLjI5LjEwMS0uMTAyLjEtLjA3MS4wNDktLjAyNC4wNDctLjAxNi4wNDgtLjAxLjA0Ny0uMDA0LjA1Mi4wMDQuMDUuMDExLjA1Mi4wMi4wNTIuMDI3LjA5LjA2Ni4wODkuMDkuMi4yODQuMjAzLjQwMi4yMDIuNTEuMTg3LjU2Ni4xOTMuNjc0LjIuNzg1LjIuODYyYy42MDggMi43ODUgMS4wNjIgNS41NzMgMS41NjIgOC4zNmwuMjA5IDEuMTY5LjE4NSAxLjAxLjIwNCAxLjA3NC4xOTQuOTc4Yy40MTMgMS44MzQuNzEzIDMuNzE5IDEuNTcyIDUuNTRsLjE5LjMyMi4yMTMuMjYzYy4xMDUuMTAyLjM4Ni4zNzguNzguMTYybC4wOTYtLjA1OS4wOTUtLjA3NC4xOTgtLjIwMi4xOTQtLjI1Mi4yMDMtLjMxNS4xOTYtLjM0NWMuNTktMS4xMTUgMS4wMTctMi4yMzcgMS41NzgtMy4zNTRsLjE4My0uMzU0LjIwOS0uMzdjLjE1LS4yMTIuNjQtMS4xOSAxLjM3LTEuMzFsLjA5NC0uMDEuMDk0LjAwMy4xMDIuMDEzLjEwMS4wMjUuMTk0LjA4LjIwNS4xMjYuMTg1LjE0OS4yMDQuMTk4LjE5Ni4yMi4xOTUuMjQyLjIwNC4yNzQuMTg4LjI2NS4xOTIuMjgxLjIxMy4zMTVjLjQ0LjYxNi44MiAxLjI5NiAxLjU1NSAxLjg4NmwuMjEyLjEzOS4xOS4wOTMuMTkuMDYuMjAzLjAzLjIwNS0uMDA1LjE4NS0uMDM3LjE5Ny0uMDY5LjE5My0uMDk3Yy45MDgtLjU4MyAxLjM2LTEuMzI2IDEuOTY1LTEuOTQ5bC4yMDItLjIxNS4yMDItLjIwM2MuMjIzLS4xNzYgMS4wNS0xLjE0NCAyLjE1LS42ODlsLjIuMDkzLjIuMTE0LjIwNC4xMzkuMTgxLjEzOGMuNzc2LjYxNyAxLjI2MiAxLjI5IDIuMTcgMS44OWwuMTg2LjEwNi4yLjA5NGMxLjAxOC40MzcgMS44MzYtLjIzMiAyLjE2OC0uNDU2bC4xOS0uMTQ0LjE5OS0uMTYuMTk0LS4xNjMuMzk4LS4zNC4yLS4xNjkuMTk5LS4xNmMuMjQ3LS4xNjggMS4xMDgtLjk3NiAyLjE0Ny0uNzQ1bC4yMDQuMDU0LjE5Ny4wNzJjLjk0NS40MyAxLjQ3MiAxLjAzNCAyLjE2OCAxLjUxMWwuMTg3LjEzLjE5My4xMjMuMjEyLjEyLjE5My4wOTNjLjkyNi40MTcgMS42MzEuMTAxIDIuMTU4LS4yMDNsLjIwNC0uMTI4LjE4Ni0uMTI1Yy42ODItLjQ1NiAxLjIyLTEuMDQ0IDIuMTY2LTEuNDVsLjE4OS0uMDY2LjIwMi0uMDUuMjAyLS4wMy4xOS0uMDEiIG9wYWNpdHk9Ii42MSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTk3NmQyIiBzdHJva2Utd2lkdGg9Ii40MjUiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIvPjwvc3ZnPg==");
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  .link-cards .card-title h4 {
+    margin-top: 0;
+  }
+  
+  .link-cards .card-title p {
+    margin-bottom: 0;
+  }
+  
+  .link-cards .card-subtitle {
+    margin-bottom: 0rem;
+  }
+  
+  .link-cards .card-body {
+    padding-bottom: 1rem;
+    padding-top: 0rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    background-color: #ffffff;
+  }
+
+  .quarto-dark .link-cards .card-body {
+    padding-bottom: 1rem;
+    padding-top: 0rem;
+    padding-right: 0rem;
+    padding-left: 0rem;
+    background-color: #252525;
+  }
+  
+  .link-cards .card-body ul {
+    margin-bottom: 0;
+    padding-left: em;
+    list-style-type: circle;
+  }
+  
+  .link-cards .card-body ul a {
+    text-decoration: none;
+  }
+  
+  .link-cards .card-body ul li {
+    padding-bottom: 0.2rem;
+  }
+  
+  
+  .card .source-code {
+    margin-top: 3px;
   }

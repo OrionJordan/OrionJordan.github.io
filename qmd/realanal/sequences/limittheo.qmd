@@ -19,7 +19,7 @@ $(c) \; \lim(s_nt_n) = st. \newline$
 $(d) \; \lim(s_n/t_n) = s/t$ provided $\forall n,t_n \not = 0$
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 $(a)$ We must show that $|(s_n + t_n) - (s + t)|$ is arbitrarily close to any $\varepsilon$. Using the triangle inequality, we have
@@ -138,7 +138,7 @@ Another useful property of limits is that they are preserved under inequality op
 Let $(s_n) \to s$ and $(t_n) \to t$. If $\forall n \in \mathbb{N},\;s_n \leq t_n$. Then $s \leq t$.
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Towards a contradiction, suppose that $t < s$. Let $\varepsilon = \frac{s-t}{2}.$ 
@@ -168,7 +168,7 @@ If $(t_n)$ converges to $t$ and $t_n \geq 0$ for all $n \in \mathbb{N}$, then $t
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Let $(s_n)$ be a constant sequence converging to $s$, such that for all $n \in \mathbb{N}$, $s_n = 0$. We are given for all $n$, $t_n \geq 0$, thus $t_n \geq s_n$. By Theorem $1.2.2$, we have that $t \geq s$. Because $s = 0$, $t \geq 0$. 
@@ -186,7 +186,7 @@ Suppose that $(s_n)$ is a sequence of _positive_ terms and that the sequence of 
 
 In simple english, if $s_n$ is a sequence of positive terms, where each subsequent term is smaller than the last, the sequence must converge to zero.
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 By our previous Corollary, we know that $L \geq 0$. If $L < 1$, then there exists a real number $c$ such that $0 \leq L < c < 1$. Let $\varepsilon = c - L$, so that $\varepsilon > 0$.
@@ -227,10 +227,10 @@ Let $M = s_k/c^k$, we have $0 < s_n < Mc^n$ for all $n \geq k$. Since $0 < c < 1
 
 Certain sequences like $s_n = n$ are clearly not convergent, but behave predictably; growing without bounds towards infinity. We introduce the notion of _divergence_ for these sequences.
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-note icon="false"}
 ## Definition
 
-A sequence $(s_n)$ is said to [diverge]{.definition} to $+\infty$, notated
+A sequence $(s_n)$ is said to [**diverge**]{.definition} to $+\infty$, notated
 
 $$
 \lim s_n = +\infty
@@ -272,7 +272,7 @@ $(b)$ If $\lim t_n = - \infty$ then $\lim s_n = - \infty$.
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 $(a)$ We are given that $(s_n)$ diverges to posiitve infinity. Then for every $M$ there exists a naturaul number $N$ such that $n \geq N$ implies $s_n > M$. Because $s_n \leq t_n$ for all $n$, we have $t_n \geq s_n > M$. Thus for any $M$, there exists some natural number $N$ such that $n \geq N$ implies $t_n > M$, and we have that $\lim t_n = + \infty$.
@@ -290,7 +290,7 @@ Let $(s_n)$ be a sequence of positive numbers. Then $\lim s_n = + \infty$ if and
 
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Suppose that $\lim s_n = + \infty$. Given any $\varepsilon > 0$, let $M = 1/\varepsilon$. There exists a natural number $N$ such that $n \geq N$ implies $s_n > M = 1/\varepsilon$. Since $s_n$ is positive, we have

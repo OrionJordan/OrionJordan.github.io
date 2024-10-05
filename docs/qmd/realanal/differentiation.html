@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Sequences</title>
+<title>OOMN - Differentiation</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/realanal/integration.html" rel="next">
-<link href="../../qmd/realanal/limits-cont.html" rel="prev">
+<link href="../../qmd/realanal/differentiation/derivatives.html" rel="next">
+<link href="../../qmd/realanal/limits-cont/uniform-continuity.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -140,15 +140,71 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Limit Theorems</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Limits and Continuity</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Differentiation</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -171,7 +227,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sequences</h1>
+<h1 class="title">Differentiation</h1>
 </div>
 
 
@@ -186,7 +242,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Real analysis is the study of real numbers</p>
+<p>In calculus we learned about derivatives, being the instantanious rate of change of a function. We formalize that notion in this section.</p>
 
 
 
@@ -541,13 +597,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../qmd/realanal/limits-cont.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Limits and Continuity</span>
+      <a href="../../qmd/realanal/limits-cont/uniform-continuity.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Uniform Continuity</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/realanal/integration.html" class="pagination-link">
-        <span class="nav-page-text">Integration</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/realanal/differentiation/derivatives.html" class="pagination-link">
+        <span class="nav-page-text">The Derivative</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

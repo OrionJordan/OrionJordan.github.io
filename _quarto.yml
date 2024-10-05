@@ -67,10 +67,18 @@ website:
         - "./qmd/realanal/sequences/convergence.qmd"
         - "./qmd/realanal/sequences/limittheo.qmd"
         - "./qmd/realanal/sequences/mono-cauchy.qmd"
+        - "./qmd/realanal/sequences/subsequences.qmd"
       - section: "Limits and Continuity"
         href: "./qmd/realanal/limits-cont.qmd"
+        contents:
+        - "./qmd/realanal/limits-cont/funclim.qmd"
+        - "./qmd/realanal/limits-cont/cont-func.qmd"
+        - "./qmd/realanal/limits-cont/cont-func-prop.qmd"
+        - "./qmd/realanal/limits-cont/uniform-continuity.qmd"
       - section: "Differentiation"
         href: "./qmd/realanal/differentiation.qmd"
+        contents:
+        - "./qmd/realanal/differentiation/derivatives.qmd"
       - section: "Integration"
         href: "./qmd/realanal/integration.qmd"
       - section: "Infinite Series"

@@ -1,0 +1,150 @@
+---
+title: "Properties of Continuous Functions"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon D \to \mathbb{R}$ is called [bounded]{.definition} if its range $f(D)$ is a subset of $\mathbb{R}$ where there exists some $M \in \mathbb{R}$ such that $|f(x)| \leq M$ for all $x \in D$.
+
+:::
+
+A functions domain being bounded has no correlation
+
+::: {.callout-note icon="false"}
+## Theorem 2.3.1
+
+If $D$ is a compact subset of $\mathbb{R}$ and $f \colon D \to \mathbb{R}$ is continuous, then $f(D)$ is compact.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $U = \{U_i\}$ be an open cover of $f(D)$. Since $f$ is continuous on $D$, by Theorem $2.2.5$, there exists some $V_i$ such that $V_i \cap D = f^{-1}(U_i)$. Since $f(D) \subseteq \bigcup U_i$, we have $D \subseteq \bigcup f^{-1}(U_i) \subseteq \bigcup V_i$ so $\{V_i\}$ is an open cover of $D$.
+
+Since $D$ is compact, there exists finitly many $V_1,\dots,V_n$ such that $D \subseteq V_1 \cup \cdots \cup V_N$ hence $D \subseteq (V_1 \cap D) \cup \cdots \cup (V_N \cap D)$ which implies $f(D) \subseteq U_1 \cup \cdots \cup U_N$, thus $\{U_1,\ldots,U_n\}$ is a finite subcover of $U$. Hence $f(D)$ is compact.
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 2.3.2
+
+Let $D$ a compact subset of $\mathbb{R}$ and $f \colon D \to \mathbb{R}$ be continuous. Then, $f$ attains a minimum and maximum on $D$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We know from Theorem $2.3.1$, the image $f(D)$ is compact. All compact sets have both a minimum, $y_1$ and maximum $y_2$. Since $y_1,y_2 \in f(D)$, there exists $x_1,x_2\in D$ such that $f(x_1) = y_1$ and $f(x_2) = y_2$. Thus $f(x_1) \leq f(x) \leq f(x_2)$ for all $x \in D$. 
+
+:::
+
+On the real number line, a set is compact if and only if it is closed and bounded. We use the definition of open subcovers as it applies to more generalized spaces.
+
+::: {.callout-note icon="false"}
+## Lemma 2.3.3
+
+Let $f \colon [a,b] \to \mathbb{R}$ be continuous, and suppose $f(a) < 0 < f(b)$. Then there exists $c \in (a,b)$ such that $f(c) = 0$.
+
+:::
+
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $S = \{x \in [a,b] \colon f(x) \leq 0\}$. Notice $S$ is bounded above by $b$, and by our assumuption $a \in S$. Since $S$ is not empty, and $S$ is bounded, We know $c = \sup S$ exists in $[a,b]$. We want to show $f(c) = 0$.
+
+**Case 1:** Suppose $f(c) < 0$. 
+
+ **WTS:** This assumption contradicts $c$ being a supremum of $S$, because $c$ is not an upper bound of $S$. 
+ 
+ Since $f$ is continuous, there exists a neighborhood $U$ of $c$ such that $f(x) < 0$ for all $x \in U \cap [a,b]$ (Prove). Since we're  assumming $f(c) < 0 < f(b)$, we have that $c \not = b$, and thus there exists some $p \in U$ such that $c<p<b$. Since $p \in U$ we have $f(p) < 0$. This contradicts our assumption that $c$ is an upper bound for $S$.
+
+**Case 2:** Suppose $f(c) > 0$. 
+
+**WTS:** This assumption contradicts $c$ being a supremum of $S$, because $c$ is not a least upper bound of $S$.
+
+If $f(c) > 0$, there exists a neighborhood $U$ of $c$ such that $f(x) > 0$ for all $x \cup [a,b]$, since $f(a) < 0 < f(c)$. We have $c \not = a$ and thus $U$ contains some point, $p$. We have $a < p < c$. Since $f(x) > 0$ for $x \in U$, no points of $S$ are in $[p,c]$. This implies $p$ is an upperbound for $S$ and contradicts $c$ being the least upper bound of $s$.
+
+We conclude then that $f(c) = 0$. Since $f(a) < 0 < f(b)$ and $f(c) = 0$, it must be that $c \in (a,b)$
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Theorem 2.3.4 (Intermediate Value Theorem)
+
+Let $f \colon [a,b] \to \mathbb{R}$ be continuous. For any value $k$ between $f(a)$ and $f(b)$, there exists $c \in (a,b)$ such that $f(c) = k$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $k$ be any real number between $f(a)$ and $f(b)$. If $f(a)$ is less than $f(b)$, we apply the previous lemma to a new function given by $g(x) = f(x) - k$. 
+
+Then $g(a) = f(a) - k < 0$. Then $g(b) = f(b) - k > 0$. We can then apply the lemma from before to guarentee the existence of $c \in (a,b)$ such that $g(c) = 0$. This is equivalent to saying that $f(c) = k$.
+
+In the reverse case, the same argument works where $g(x) = k - f(x)$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.3.5
+
+Let $I$ be a compact interval and suppose $f \colon I \to \mathbb{R}$ is a continuous function. Then the set $f(I)$ is a compact interval
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Corollary $2.3.2$ implies there exists $x_1,x_2 \in I$ such that $f(x_1) < f(x) < f(x_2)$ for all $x \in I$. Let $f(x_1) = m_1$ and $f(x_2) = m_2$. Then clearly $f(I)\subseteq [m_1,m_2]$. 
+
+Consider the case $m_1 < m_2$, as $m_1 = m_2$ is trivial. For each $k \in [m_1,m_2]$, the Intermediate Value Theorem implies $k \ f(c)$ for some $c$ between $x_1,x_2$. Thus $(m_1,m_2) \subseteq f(I)$. Since $m_1,m_2 \in f(I)$, we have $[m_1,m_2] \subseteq f(I)$. Hence $f(I)$ is the compact interval $[m_1,m_2]$.
+:::
+
+## Review
+
+In this section we proved
+
+::: {.callout-note icon="false"}
+## Theorem 2.3.1
+
+If $D$ is a compact subset of $\mathbb{R}$ and $f \colon D \to \mathbb{R}$ is continuous, then $f(D)$ is compact.
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 2.3.2
+
+Let $D$ a compact subset of $\mathbb{R}$ and $f \colon D \to \mathbb{R}$ be continuous. Then, $f$ attains a minimum and maximum on $D$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Lemma 2.3.3
+
+Let $f \colon [a,b] \to \mathbb{R}$ be continuous, and suppose $f(a) < 0 < f(b)$. Then there exists $c \in (a,b)$ such that $f(c) = 0$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.3.4 (Intermediate Value Theorem)
+
+Let $f \colon [a,b] \to \mathbb{R}$ be continuous. For any value $k$ between $f(a)$ and $f(b)$, there exists $c \in (a,b)$ such that $f(c) = k$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.3.5
+
+Let $I$ be a compact interval and suppose $f \colon I \to \mathbb{R}$ is a continuous function. Then the set $f(I)$ is a compact interval
+
+:::

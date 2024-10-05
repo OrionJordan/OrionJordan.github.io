@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../qmd/realanal/limits-cont/cont-func.html" rel="next">
+<link href="../../../qmd/realanal/limits-cont.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -79,9 +81,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,13 +112,140 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont.html">Limits and Continuity</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont/funclim.html">Limits of Functions</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Integration</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Infinite Series</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sequential-criterion-for-limits" id="toc-sequential-criterion-for-limits" class="nav-link active" data-scroll-target="#sequential-criterion-for-limits">Sequential Criterion for Limits</a></li>
+  <li><a href="#one-sided-limits" id="toc-one-sided-limits" class="nav-link" data-scroll-target="#one-sided-limits">One-Sided Limits</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -137,6 +267,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
+<p>The limits of a functions determine how close the values of <span class="math inline">f(x)</span> are to some real number <span class="math inline">L</span>, as <span class="math inline">x</span> approaches <span class="math inline">c</span>, although not neccessarily at <span class="math inline">c</span> itself.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -147,50 +278,53 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and let <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. We say that a real number <span class="math inline">L</span> is a <span style="color: blue"><strong>limit of</strong> <span class="math inline">f</span> at <span class="math inline">c</span></span> if</p>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and let <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. We say that a real number <span class="math inline">L</span> is a <span class="definition">limit of <span class="math inline">f</span> at <span class="math inline">c</span></span> if for every <span class="math inline">\varepsilon &gt; 0</span>, there exists <span class="math inline">\delta &gt; 0</span> such that</p>
 <p><span class="math display">
-\forall \varepsilon &gt; 0, \exists \delta &gt; 0\; s.t.\; 0 &lt; |x-c| &lt; \delta \implies |f(x) - L| &lt; \varepsilon
+|x-c| &lt; \delta \implies |f(x) - L| &lt; \varepsilon
 </span></p>
 </div>
 </div>
+<p>In English, a function has a limit <span class="math inline">L</span> at <span class="math inline">c</span> if, as <span class="math inline">x</span> gets arbitrarily close to <span class="math inline">c</span>, <span class="math inline">f(x)</span> gets arbitrarily close to <span class="math inline">L</span>.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.1.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. Then <span class="math inline">\lim_{x\to c}f(x) = L</span> if and only if for each neighborhood of <span class="math inline">V</span> of <span class="math inline">L</span> there exists a deleted neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Proof
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>TODO</p>
-<p>Let <span class="math inline">\varepsilon &gt; 0</span>. We have</p>
-<p><span class="math display">
-|f(x) - 1| = |(2x - 1) - 1| = |2(x-1)| = 2|x-1| &lt; 2(\varepsilon/2) = \varepsilon
-</span></p>
-<p>Thus we have the limit as not equal to the value of the function.</p>
+<p>We start with the forward direction. For all <span class="math inline">\varepsilon &gt; 0</span>, let <span class="math inline">V = N(L,\varepsilon)</span>. Because we have <span class="math inline">\lim_{x\to c}f(x) = L</span>, there exists some <span class="math inline">\delta</span> such that <span class="math inline">|x-c| &lt; \delta</span> implies <span class="math inline">|f(x) - L| &lt; \varepsilon</span>, or <span class="math inline">f(x) \subseteq V</span>. Let <span class="math inline">U = N(c,\delta)/c</span>. The neighborhood <span class="math inline">U</span> contains all points <span class="math inline">x \not = c</span> such that <span class="math inline">|x-c| &lt; \delta</span>. Thus <span class="math inline">|f(U \cap D) - L| &lt; \varepsilon</span>, and <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
+<p>Now we use the backwards direction. By letting <span class="math inline">V = N(L,\varepsilon)</span> for all <span class="math inline">\varepsilon &gt; 0</span>, we have that there exists a deleted neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> is such that <span class="math inline">f(U \cap D) \subseteq V</span>. We let <span class="math inline">\delta</span> represent the radius of <span class="math inline">U</span>. For each point <span class="math inline">|x-c| &lt; \delta</span>, we have that <span class="math inline">f(U \cup D) \subseteq V</span>. Thus <span class="math inline">|x -c| &lt; \delta</span> implies <span class="math inline">|f(x) - L| &lt; \varepsilon</span>.</p>
 </div>
 </div>
+</div>
+<section id="sequential-criterion-for-limits" class="level2">
+<h2 class="anchored" data-anchor-id="sequential-criterion-for-limits">Sequential Criterion for Limits</h2>
+<p>Limits of seqeunces and functions are closely related.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.1.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -203,16 +337,14 @@ Theorem
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (TO-DO Reverse Direction)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence in <span class="math inline">D</span> that converges to <span class="math inline">c</span> and <span class="math inline">s_n \not = c \forall n</span>, and <span class="math inline">\lim_{x\to c} f(x) = L</span>.</p>
-<p>We want to show that <span class="math inline">\lim_{n\to \infty} f(s_n) = L</span>.</p>
-<p>By assumption <span class="math inline">\lim_{x\to c} f(x) = L</span>, so given any <span class="math inline">\varepsilon &gt; 0, \exists \delta &gt; 0\;s.t.\; 0 &lt; |x-c| &lt; f \implies |f(x) - L| &lt; \varepsilon</span> by assumption.</p>
-<p>Since <span class="math inline">S_n \to c, \exists N \in \mathbb{N}\;s.t.\; \forall n \geq N</span>, we have that <span class="math inline">|s_n - c| &lt; \delta</span>. Now we have that <span class="math inline">\forall n \geq N, |f(s_n) - L| &lt; \varepsilon</span> thus <span class="math inline">(f(s_n)) \to L</span>.</p>
+<p>Let <span class="math inline">(s_n)</span> be a sequence in <span class="math inline">D</span> that converges to <span class="math inline">c</span> and <span class="math inline">s_n \not = c</span> for all <span class="math inline">n</span>, and <span class="math inline">\lim_{x\to c} f(x) = L</span>.</p>
+<p>We start with the forward direction. We want to show that <span class="math inline">\lim_{n\to \infty} f(s_n) = L</span>. By assumption <span class="math inline">\lim_{x\to c} f(x) = L</span>, so given any <span class="math inline">\varepsilon &gt; 0</span>, there exists <span class="math inline">\delta &gt; 0</span> such that <span class="math inline">0 &lt; |x-c| &lt; \delta \implies |f(x) - L| &lt; \varepsilon</span>. Since <span class="math inline">(s_n)</span> converges to <span class="math inline">c</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">|s_n - c| &lt; \delta</span>. Thus for <span class="math inline">n \geq N</span> we have <span class="math inline">0 &lt; |s_n - c| &lt; \delta</span> and <span class="math inline">s_n \in D</span> such that <span class="math inline">|f(s_n) - L| &lt; \varepsilon</span>. Thus <span class="math inline">\lim_{n \to\infty} = L</span>.</p>
 </div>
 </div>
 </div>
@@ -222,7 +354,7 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Corollary
+Corollary 2.1.3
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -241,7 +373,7 @@ Proof
 </div>
 <div id="callout-7" class="callout-7-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Follows from uniqueness of limits and sequences and previous theorem.</p>
+<p>Suppose that <span class="math inline">\lim_{x \to c}f(x) = L_1</span> and <span class="math inline">\lim_{x \to c} f(x) = L_2</span>. By Theorem <span class="math inline">2.1.2</span>, every sequence <span class="math inline">(f(s_n))</span> converges to <span class="math inline">L</span> (Granted that <span class="math inline">s_n \not = c</span> and <span class="math inline">s_n</span> converges to <span class="math inline">c</span>). By Theorem <span class="math inline">1.1.3</span>, If <span class="math inline">(f(s_n))</span> converges, then it’s limit is unique. Therefore if <span class="math inline">(f(s_n))</span> converges to both <span class="math inline">L_1</span> and <span class="math inline">L_2</span>, then <span class="math inline">L_1 = L_2</span>.</p>
 </div>
 </div>
 </div>
@@ -251,15 +383,29 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.1.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">f \colon D \to \mathbb{R}</span>, and <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. Then the following are equivalent</p>
-<ul>
-<li><p><span class="math inline">f</span> does not have a limit at <span class="math inline">c</span></p></li>
-<li><p>There exists a sequence <span class="math inline">(s_n)</span> in <span class="math inline">D</span> with each <span class="math inline">s_n \not = c</span> such that <span class="math inline">(s_n)</span> converges to <span class="math inline">c</span>, but <span class="math inline">(f(s_n))</span> is not convergent in <span class="math inline">\mathbb{R}</span>.</p></li>
-</ul>
+<p><span class="math inline">(a)</span> <span class="math inline">f</span> does not have a limit at <span class="math inline">c</span></p>
+<p><span class="math inline">(b)</span> There exists a sequence <span class="math inline">(s_n)</span> in <span class="math inline">D</span> with each <span class="math inline">s_n \not = c</span> such that <span class="math inline">(s_n)</span> converges to <span class="math inline">c</span>, but <span class="math inline">(f(s_n))</span> is not convergent in <span class="math inline">\mathbb{R}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">(a)</span> was false (If <span class="math inline">f</span> did have a limit at <span class="math inline">c</span>), <span class="math inline">(b)</span> would neccessarily be false by Theorem <span class="math inline">2.1.2</span>, and vice versa.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -272,8 +418,9 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f(x) = \sin(1/x)</span> for <span class="math inline">x &gt; 0</span>. We want to show that <span class="math inline">\lim_{x\to 0} \sin(1/x)</span> does not exists.</p>
-<p>We prove this by considering two sequences, <span class="math inline">s_n = \frac{2}{\pi n}</span>, then <span class="math inline">s_n \to 0</span> as <span class="math inline">\frac{1}{n} \to 0</span>.</p>
+<p>Let <span class="math inline">f(x) = \sin(1/x)</span> for <span class="math inline">x &gt; 0</span>.</p>
+<p><strong>Claim:</strong> <span class="math inline">\lim_{x\to 0} \sin(1/x)</span> does not exists.</p>
+<p>We prove this by considering the sequence, <span class="math inline">s_n = \frac{2}{\pi n}</span>. It is clear <span class="math inline">\lim s_n = 0</span>. But the sequence <span class="math inline">(f(s_n))</span> is constantly oscillating between <span class="math inline">1,0,-1,0,1,\dots</span>, and does not converge to any real number <span class="math inline">L</span>. Therefore by Theorem <span class="math inline">2.1.4</span>, <span class="math inline">\sin(1/x)</span> does not have a limit at <span class="math inline">0</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -286,41 +433,49 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">g \colon D \to \mathbb{R}</span>. We define the sum <span class="math inline">f + g</span> and the product <span class="math inline">fg</span> to be the functions from <span class="math inline">D</span> to <span class="math inline">\mathbb{R}</span> given By</p>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">g \colon D \to \mathbb{R}</span>. We define the <span class="definition">sum</span> <span class="math inline">f + g</span> and the <span class="definition">product</span> <span class="math inline">fg</span> to be the functions from <span class="math inline">D</span> to <span class="math inline">\mathbb{R}</span> given By</p>
 <p><span class="math display">
-(f+g)(x) = f(x) + g(x)
+(f+g)(x) = f(x) + g(x) \quad \text{ and } \quad (fg)(x) = f(x)\cdot g(x)
 </span></p>
-<p>and</p>
+<p>for all <span class="math inline">x \in D</span>. If <span class="math inline">k \in \mathbb{R}</span>, then the <span class="definition">multiple</span> <span class="math inline">kf \colon D \to \mathbb{R}</span> is the function defined by</p>
 <p><span class="math display">
-(fg)(x) = f(x)\cdot g(x)
+(kf)(x) = k \cdot f(x), \quad \forall x \in D.
 </span></p>
-<p>TODO</p>
+<p>If <span class="math inline">g(x) \not = 0</span> for all <span class="math inline">x \in D</span>, then the <span class="definition">quotient</span> <span class="math inline">f/g \colon D \to \mathbb{R}</span> is the function defined by</p>
+<p><span class="math display">
+\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}, \quad \forall x \in D.
+</span></p>
 </div>
 </div>
+<p>The above ‘definitions’ are mostly just clarity on notation.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.1.5 (Algebraic Relations for functions)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Function limits algebra</p>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">g \colon D \to \mathbb{R}</span>, and let <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. If <span class="math inline">\lim_{x\ to c} f(x) = L</span> and <span class="math inline">\lim_{x\to c}g(x) = M</span>, and <span class="math inline">k \in \mathbb{R}</span> then</p>
+<p><span class="math inline">(a)</span> <span class="math inline">\lim_{x\to c}(f + g)(x) = L + M</span>,</p>
+<p><span class="math inline">(b)</span> <span class="math inline">\lim_{x \to c}(fg)(x) = LM</span>,</p>
+<p><span class="math inline">(c)</span> <span class="math inline">\lim_{x\to c}(kf)(x) = kL</span>,</p>
+<p><span class="math inline">(d)</span> If <span class="math inline">g(x) \not = 0</span> for all <span class="math inline">x \in D</span> and <span class="math inline">M \not = 0</span>, <span class="math inline">\lim_{x\to c}(f/g)(x) = L/M</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (TO-DO)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Tedious proof</p>
 </div>
@@ -332,7 +487,7 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Corollary
+Corollary 2.1.6
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -340,7 +495,7 @@ Corollary
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -349,7 +504,7 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Apply previous theorem repeatadly</p>
 </div>
@@ -361,7 +516,7 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lemma
+Lemma 2.1.7
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -370,7 +525,7 @@ Lemma
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -379,10 +534,34 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">L = \lim_{x\to c} f(x) &gt; 0</span>. Consider the neighborhood <span class="math inline">N(L,L/2)</span>. By the first theorem today, <span class="math inline">\exists</span> a deleted neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(x)</span> is contained in this neighborhood for all <span class="math inline">x \in U \cap D</span>. Therefore if <span class="math inline">L</span> is positive, theres always a neighborhood of positive numbers.</p>
 </div>
+</div>
+</div>
+</section>
+<section id="one-sided-limits" class="level2">
+<h2 class="anchored" data-anchor-id="one-sided-limits">One-Sided Limits</h2>
+<p>TO-DO</p>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<p>In this section we proved the following theorems and results.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. Then <span class="math inline">\lim_{x\to c}f(x) = L</span> if and only if for each neighborhood of <span class="math inline">V</span> of <span class="math inline">L</span> there exists a deleted neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -391,19 +570,88 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition
+Theorem 2.1.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span>, where <span class="math inline">c \in D</span>. We say that <span class="math inline">f</span> is continous at <span class="math inline">c</span> if</p>
-<p><span class="math display">
-\forall \varepsilon &gt; 0, \exists \delta &gt; 0, s.t.\; x \in D and |x-c| &lt; \delta then $|f(x) - f(c)| &lt; \varepsilon$.
-</span></p>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span>, and <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. Then, <span class="math inline">\lim_{x\to c} f(x) = L</span> if and only if for every sequence <span class="math inline">(s_n)</span> in <span class="math inline">D</span> that converges to <span class="math inline">c</span> with <span class="math inline">s_n \not = c</span> for all <span class="math inline">n</span>, the sequence <span class="math inline">(f(s_n))</span> converges to <span class="math inline">L</span>.</p>
 </div>
 </div>
-<p>If <span class="math inline">f</span> is continous at all points <span class="math inline">x \in D</span>, we say that <span class="math inline">f</span> is continouos on <span class="math inline">D</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 2.1.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">f \colon D \to \mathbb{R}</span> and if <span class="math inline">c</span> is an accumulation point of <span class="math inline">D</span>, then <span class="math inline">f</span> can have only one limit at <span class="math inline">c</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.1.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span>, and <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. Then the following are equivalent</p>
+<p><span class="math inline">(a)</span> <span class="math inline">f</span> does not have a limit at <span class="math inline">c</span></p>
+<p><span class="math inline">(b)</span> There exists a sequence <span class="math inline">(s_n)</span> in <span class="math inline">D</span> with each <span class="math inline">s_n \not = c</span> such that <span class="math inline">(s_n)</span> converges to <span class="math inline">c</span>, but <span class="math inline">(f(s_n))</span> is not convergent in <span class="math inline">\mathbb{R}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.1.5 (Algebraic Relations for functions)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">g \colon D \to \mathbb{R}</span>, and let <span class="math inline">c</span> be an accumulation point of <span class="math inline">D</span>. If <span class="math inline">\lim_{x\ to c} f(x) = L</span> and <span class="math inline">\lim_{x\to c}g(x) = M</span>, and <span class="math inline">k \in \mathbb{R}</span> then</p>
+<p><span class="math inline">(a)</span> <span class="math inline">\lim_{x\to c}(f + g)(x) = L + M</span>,</p>
+<p><span class="math inline">(b)</span> <span class="math inline">\lim_{x \to c}(fg)(x) = LM</span>,</p>
+<p><span class="math inline">(c)</span> <span class="math inline">\lim_{x\to c}(kf)(x) = kL</span>,</p>
+<p><span class="math inline">(d)</span> If <span class="math inline">g(x) \not = 0</span> for all <span class="math inline">x \in D</span> and <span class="math inline">M \not = 0</span>, <span class="math inline">\lim_{x\to c}(f/g)(x) = L/M</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 2.1.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any polynomial <span class="math inline">P(x)</span>, we have that <span class="math inline">\lim_{x \to c} P(x) = P(c)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma 2.1.7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> where <span class="math inline">c</span> is an accumulation point of <span class="math inline">D</span>.</p>
+<p>Suppose <span class="math inline">\lim_{x\to c} f(x) &gt; 0</span>. There exists a deleted neighborhood <span class="math inline">U</span> of <span class="math inline">c</span>, s.t. <span class="math inline">f(x) &gt; 0, \forall x \in U \cap D</span>.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -754,6 +1002,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../qmd/realanal/limits-cont.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Limits and Continuity</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="pagination-link">
+        <span class="nav-page-text">Continuous Functions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

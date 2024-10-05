@@ -6,7 +6,7 @@ format:
     html-math-method: katex
 ---
 
-Most of the previous methods for proving the limit of a sequence require us to have some idea of the limit before we proceed. This section will cover techniques to prove that a limit exists, even if we don't know the precise value the sequence converges to. 
+Most of the previous methods for proving the limit of a sequence require us to have some idea of the limit before we proceed. This section will cover techniques to prove that a limit exists, even if we don't know the precise value the sequence converges to.
 
 ## Monotone Sequences
 
@@ -22,10 +22,10 @@ A sequence $(s_n)$ of real numbers is [**increasing**]{.definition} if $s_n \leq
 A monotone sequence is convergent if and only if it is bounded.
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
-Suppose $(s_n)$ is a bounded increasing sequence. Let $S$ denote the nonempty bounded set $\{s_n \colon n \in \mathbb{N}\}$. By the completness axiom, $S$ has a least upper bound, and we let $s = \sup S$. We claim that $\lim s_n = s$. Given any $\varepsilon > 0$, $s - \varepsilon$ is not an upper bound for $S$. Thus there exists a natural number $N$ such that $s_N > s - \varepsilon$. Since $(s_n)$ is increasing and $s$ is an upper bound for $S$, we have 
+Suppose $(s_n)$ is a bounded increasing sequence. Let $S$ denote the nonempty bounded set $\{s_n \colon n \in \mathbb{N}\}$. By the completness axiom, $S$ has a least upper bound, and we let $s = \sup S$. We claim that $\lim s_n = s$. Given any $\varepsilon > 0$, $s - \varepsilon$ is not an upper bound for $S$. Thus there exists a natural number $N$ such that $s_N > s - \varepsilon$. Since $(s_n)$ is increasing and $s$ is an upper bound for $S$, we have
 
 $$
 s - \varepsilon < s_N \leq s_n \leq s
@@ -41,8 +41,190 @@ $$
 
 for all $n \geq N$. Thus $(s_n)$ converges to $s$.
 
-The converse, that a convergent sequence is bounded, was proved in Theorem $1.1.3$. 
+The converse, that a convergent sequence is bounded, was proved in Theorem $1.1.3$.
 :::
 
+This allows us to prove sequences are convergent without using the defintion of convergence, and without knowledge of what the sequence converges to.
 
+::: {.callout-warning icon="false"}
+## Example
 
+Let $(s_n)$ be the sequence defined by $s_1 = 1$ and $s_{n+1} = \sqrt{1 + s_n}$ for $n \geq 1$.
+
+**Claim:** $(s_n)$ is a bounded increasing sequence.
+
+We can manually compute the first few terms of the sequences
+
+```{=tex}
+\begin{align*}
+s_1 &= 1\\
+s_2 &= \sqrt{1 + 1} &\approx 1.414\\
+s_3 &= \sqrt{1 + \sqrt{2}} &\approx 1.554\\
+s_4 &= \sqrt{1 + \sqrt{1 + \sqrt{2}}} &\approx 1.598
+\end{align*}
+```
+It appears that the sequence is bounded by $2$. We can prove this via induction. Suppose $s_k < 2$ for some $k \in \mathbb{N}$. Then
+
+$$
+s_{k+1} = \sqrt{1 + s_k} < \sqrt{1 + 2} = \sqrt{3} < 2.
+$$
+
+Because $s_1 = 1$, we can conclude via induction that $s_n < 2$ for all $n \in \mathbb{N}$. Thus we know $(s_n)$ is bounded. We now want to prove that it's increasing. We also use induction to prove this. Suppose $s_k < s_{k+1}$ for some natural number $k$. Then we have
+
+$$
+s_{k+1} = \sqrt{1 + s_k} < \sqrt{1 + s_{k+1}} = s_{k+2}
+$$
+
+Therefore our induction step is complete. Because $s_1 < s_2$, we have that $s_n < s_{n+1}$ for all $n \in \mathbb{N}$. Thus $(s_n)$ is an increasing sequence and is bounded by the interval $[1,2]$. By Theorem $1.3.1$, we can conclude that the sequence is convergent, even though we don't know the value $s$ the sequence converges to.
+
+Because $\lim s_{n+1} = \lim s_n$ (Proof needed), we know that the value of $s$ must satisfy the equation
+
+$$
+s = \sqrt{1 + s}.
+$$
+
+This can be reasoned intuitively, as the difference $s_{n+1} - s_n$ must shrink to zero as $n$ grows. Solving through algebra
+
+```{=tex}
+\begin{align*}
+s &= \sqrt{1 + s}\\
+s^2 - s - 1 &= 0\\
+s &= \frac{1 \pm \sqrt{5}}{2} = \phi
+\end{align*}
+```
+Where $\phi$ is the Golden ratio. We take the positive value since $s_n \geq 1$ for all $n$. Thus $\lim s_n = \phi$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.3.2
+
+$(a)$ If $(s_n)$ is an unbounded increasing sequence, then $\lim s_n = + \infty$
+
+$(b)$ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = - \infty$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$(a)$ Let $(s_n)$ be an increasing sequence and suppose that the set $S = \{s_n \colon n \in \mathbb{N}\}$ is unbounded. Since $(s_n)$ is increasing, $S$ is bounded below by $s_1$. Hence $S$ must be unbounded above. Given any $M \in \mathbb{R}$, there exists a natural number $N$ such that $s_N > M$. Since $(s_n)$ is increasing, we have $M < s_N \leq s_n$, so $\lim s_n = + \infty$.
+
+Identically
+
+$(b)$ Let $(s_n)$ be a decreasing sequence and suppose that the set $S = \{s_n \colon n \in \mathbb{N}\}$ is unbounded. Since $(s_n)$ is decreasing, $S$ is bounded above by $s_1$. Thus $S$ must be unbounded below. Given any $M \in \mathbb{R}$, there exists a natrual number $N$ such that $s_N < M$. Since $(s_n)$ is decreasing, we have $s_n < s_N < M$. Therefore $\lim s_n = - \infty$.
+:::
+
+## Cauchy sequences
+
+When a sequence converges, not only do the terms get closer to the limit, they get closer to each other for sufficient large $n$. It turns out that if the terms in a sequence get continually closer to each other, the sequence itself converges.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A sequence $(s_n)$ is said to be a [**Cauchy sequence**]{.definition} if for all $\varepsilon > 0$, there exists a natural number $N$ such that $m,n \geq N$ implies that $|s_n - s_m| < \varepsilon$.
+:::
+
+Essentially, a sequence is Cauchy if the terms get arbitrarily close to each other.
+
+::: {.callout-note icon="false"}
+## Lemma 1.3.3
+
+Every convergent sequence is a Cauchy sequence.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Suppose that $(s_n)$ converges to $s$. To show that $s_n$ is close to $s_m$ for sufficiently large $n,m$, we use the fact that they are both close to $s$. The triangle inequality gives
+
+$$
+|s_n - s_m| = |s_n - s + s - s_m| \leq |s_n - s| + |s - s_m|.
+$$
+
+For any $\varepsilon > 0$, choose some natural number $N$ such that $k \geq N$ implies $|s_k - s| < \varepsilon/2$. This $k$ exists, because $\lim s_n = s$. Then for $m,n \geq N$ we have
+
+$$
+|s_n - s_m| \leq |s_n - s| + |s - s_m| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+$$
+
+Therefore $(s_n)$ is a Cauchy sequence.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma 1.3.4
+
+Every Cauchy sequence is bounded.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $(s_n)$ be a Cauchy sequence. Then there exists a natural number $N$ such that for all $n,m \geq N$, $|s_n - s_m| < \varepsilon$. Let $\varepsilon = 1$. Let $m = N$. Through the triangle inequality we have
+
+$$
+|s_n| - |s_N| \leq |s_n - s_N| < 1 \implies |s_n| < 1 + |s_N|
+$$
+
+Let $M = \max\{|s_1|,\dots,|s_N|,1 + |s_N|\}$. Then for all $n \in \mathbb{N}$, $|s_n| \leq M$. Thus $(s_n)$ is bounded.
+:::
+
+The above lemma is very similar to Theorem $1.1.3$.
+
+::: {.callout-note icon="false"}
+## Theorem 1.3.5 (Cauchy Convergence Criterion)
+
+A sequence $(s_n)$ is convergent if and only if it is a Cauchy sequence.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We have already proved in Lemma $1.3.3$ that every convergent sequence is a Cauchy sequence, so we only need to prove the reverse direction. Suppose $(s_n)$ is a Cauchy sequence and let $S = \{s_n \colon n \in \mathbb{N}\}$ be the range of the sequence. We consider two cases, when $S$ is finite, and when $S$ is infinite.
+
+If $S$ is finite, then the minimum distant $\varepsilon$ between any two points is positive. Since $(s_n)$ is Cauchy, there exists a natural number $N$ such that $m,n \geq N$ implies $|s_n - s_m| < \varepsilon$. Given any $m \geq N$, $s_m$ and $s_N$ are both in $S$. If the distant between them is less than $\varepsilon$, then it must be zero. Thus $s_m = s_N$ for all $m \geq N$. Therefore $\lim s_n = s_N$.
+
+Next, suppose that $S$ is infinite. From Lemma $1.3.4$ we know $S$ is bounded. From the *Bolzano-Weierstrass* theorem there exists a point $s$ in $\mathbb{R}$ that is an accumulation point of $S$. We claim $(s_n)$ converges to $s$. Given any $\varepsilon > 0$, there exists a natural number $N$ such that $|s_n - s_m| < \varepsilon/2$ for any $n,m \geq N$. Since $s$ is an accumulation point of $S$, the neighborhood $N(s;\varepsilon/2)$ contains an infinite amount of points in $S$. Thus there exists some integer $m \geq N$ such that $s_m \in N(s;\varepsilon/2)$. Hence for any $n \geq N$ we have
+
+$$
+|s_n - s| = |s_n - s_m + s_m - s| \leq |s_n - s_m| + |s_m - s| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+$$
+
+Thus $\lim s_n = s$.
+:::
+
+## Practice
+
+## Recap
+
+In this section we proved the following theorems and results.
+
+::: {.callout-note icon="false"}
+## Theorem 1.3.1 (Monotone Convergence Theorem)
+
+A monotone sequence is convergent if and only if it is bounded.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.3.2
+
+$(a)$ If $(s_n)$ is an unbounded increasing sequence, then $\lim s_n = + \infty$
+
+$(b)$ If $(s_n)$ is an unbounded decreasing sequence, then $\lim s_n = - \infty$
+:::
+
+::: {.callout-note icon="false"}
+## Lemma 1.3.3
+
+Every convergent sequence is a Cauchy sequence.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma 1.3.4
+
+Every Cauchy sequence is bounded.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.3.5 (Cauchy Convergence Criterion)
+
+A sequence $(s_n)$ is convergent if and only if it is a Cauchy sequence.
+:::

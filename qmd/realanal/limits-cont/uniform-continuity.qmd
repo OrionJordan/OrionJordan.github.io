@@ -8,15 +8,26 @@ format:
 
 Continuity is defined on each point $c \in D$, we want to define a notion of continuity that is not pointwise, and is instead defined on the whole domain $D$.
 
+## Motivation
+
+A uniformly continuous function has a single $\delta$ that works on the whole domain, whereas a continuous function has a separate $\delta$ for each point $c \in D$.
+
+In other words, continuity is a local condition on a function. It is defined at each point $c \in D$, and cares only about an infinitesimally small neighborhood about said point. Uniform continuity is a stronger notion, defined over the entirety of the domain $D$ of a function.
+
+Roughly speaking, a function is uniformly continuous if there exists no *rapid* changes in the function. Verticle asymptotes on a function are *rapid* changes, where as linear changes aren't. Another piece of intuition is that a function is uniformly continuous if an infinitesimally small change in $x$ does not create an appreciable change in $f(x)$.[^1]
+
+[^1]: The following [Mathexchange](https://math.stackexchange.com/questions/3241309/what-is-the-intuition-behind-uniform-continuity) thread provides very useful intuition.
+
+We use the following definition to formalize our intuition on rapid changes.
+
 ::: {.callout-note icon="false"}
 ## Definition
 
 A function $f \colon D \to \mathbb{R}$ is uniformly continuous on $D$ if for all $\varepsilon > 0$, there exists $\delta > 0$ such that for all $x,y \in D$, $|x-y| < \delta \implies |f(x) - f(y)| < \varepsilon$. Symbolically
 
 $$
-\forall \varepsilon < 0, \exists \delta > 0 | \forall x,y \in D |x-y| < \delta \implies |f(x) - f(y)| < \varepsilon
+\forall \varepsilon > 0, \exists \delta > 0 | \forall x,y \in D |x-y| < \delta \implies |f(x) - f(y)| < \varepsilon
 $$
-
 :::
 
 ::: {.callout-warning icon="false"}
@@ -36,11 +47,8 @@ $$
 \forall x,y \in D, |x-y| < \frac{\varepsilon}{2} \implies 2|x-y| < 2\frac{\varepsilon}{2} = \varepsilon.
 $$
 
-Thus we have $f(x) = 2x$ is uniformly continuous. 
-
+Thus we have $f(x) = 2x$ is uniformly continuous.
 :::
-
-A uniformly continuous function has a single $\delta$ that works on the whole domain, whereas a continous function has a seperate $\delta$ for each point $c \in D$.
 
 ::: {.callout-warning icon="false"}
 ## Example (A non uniformly continuous function)
@@ -55,23 +63,22 @@ $$
 |f(x) - f(y)| = |x^2 - y^2| = |x + y| \cdot |x - y|.
 $$
 
-Let $\varepsilon = 1$. We need to show that given any $\delta > 0$, there exists some pair $x,y \in D$ such that 
+Let $\varepsilon = 1$. We need to show that given any $\delta > 0$, there exists some pair $x,y \in D$ such that
 
 $$
 |x-y| < \delta \implies |x + y| \cdot |x - y| \geq 1.
 $$
 
-Because we only need to find one pair $x,y$ for each $\delta$, it makes sense to have our pair depend on $\delta$. For any $x$, let $y = x + \delta/2$. This gives us $|x - y| = \delta/2$, and $|x + y| \cdot |x - y| = |x + y| \cdot \delta/2$. 
+Because we only need to find one pair $x,y$ for each $\delta$, it makes sense to have our pair depend on $\delta$. For any $x$, let $y = x + \delta/2$. This gives us $|x - y| = \delta/2$, and $|x + y| \cdot |x - y| = |x + y| \cdot \delta/2$.
 
-In order for $|x + y| \cdot \delta/2$ to be greater than $1$, we need $|x  + y| \geq 2/\delta$. We choose $x = 1/\delta$, as this gives $y = 1/\delta + \delta/2$. We now have enough information to construct our proof.
+In order for $|x + y| \cdot \delta/2$ to be greater than $1$, we need $|x + y| \geq 2/\delta$. We choose $x = 1/\delta$, as this gives $y = 1/\delta + \delta/2$. We now have enough information to construct our proof.
 
----------
+------------------------------------------------------------------------
 
 Let $\varepsilon = 1$. Given any $\delta > 0$, let $x = 1/\delta, y = 1/\delta + \delta/2$. Then $|x-y| = \delta/2 < \delta$, and $|f(x) - f(y)| = |x+y| \cdot |x-y| = |2/\delta + \delta/2| \cdot |\delta/2| \geq 1$. Thus our function $f$ is not continuous on $\mathbb{R}$.
-
 :::
 
-Insert graphical pictures later.
+Those two examples provide the usual process we use to prove a function is or is not continuous. However, a function being uniformly continuous depends on the domain used.
 
 ::: {.callout-warning icon="false"}
 ## Example (A bounded uniformly continuous function)
@@ -83,19 +90,17 @@ Note that for any $x,y \in D$, we have $|x + y| \leq 10$. For any $\varepsilon >
 $$
 |x-y| < \delta \implies |x + y|\cdot|x - y| < 10 \cdot \delta = 10\frac{\varepsilon}{10} = \varepsilon
 $$
-
 :::
 
-By bounding our domain, we were able to show the function is uniformly continuous on said domain. This leads us to believe (correctly!) that a continuous function on a compact domain is automatically uniformly continuous.
+By bounding our domain, we were able to show the function is uniformly continuous on said domain. This leads us to the following theorem.
 
 ::: {.callout-note icon="false"}
-## Theorem
+## Theorem 2.4.1
 
 If $D$ is compact, and $f \colon D \to \mathbb{R}$ is continuous, then $f$ is uniformly continuous.
-
 :::
 
-::: {.callout-note icon="false" collapse="true"}
+::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
 Let $\varepsilon > 0$. Since $f$ is continuous on $D$, it is continuous at each $x \in D$. For each $x \in D$, there exists some $\delta_x > 0$ such that
@@ -104,7 +109,7 @@ $$
 |x-y| < \delta_x \implies |f(x) - f(y)| < \frac{\varepsilon}{2}.
 $$
 
-The collection 
+The collection
 
 $$
 F = \left\{ N\left(x,\frac{\delta_x}{2}\right) \mid x \in D \right\}
@@ -114,18 +119,154 @@ is an open cover of $D$. Since $D$ is compact, $F$ contains a finite subcover. T
 
 Let $\delta = \min\left\{\frac{\delta_{x_1}}{2},\cdots,\frac{\delta_{x_n}}{2}\right\}$. We want to show that this $\delta$ fufills the conditions for uniform continuity. Suppose $x,y \in D$ and $|x - y| < \delta$. Since $\bigcup_{i=1}^nN(x_i,\delta_{x_i}/2)$ covers $D$, there exists some $i$ such that $x \in N(x_i,\delta_{x_i}/2)$.
 
-Since $|x-y| < \delta \leq \delta_{x_i}/2$, we have 
+Since $|x-y| < \delta \leq \delta_{x_i}/2$, we have
 
 $$
 |y - x_i| = |y-x + x - x_i| \leq |y-x| + |x - x_i| < \frac{\delta_{x_i}}{2} + \frac{\delta_{x_i}}{2} = \delta_{x_i}.
 $$
 
-Thus $|f(y) - f(x_i)| < \varepsilon/2$. We also have $|x - x_i| < \delta_{x_i}$, so $|f(x) - f(x_i)| < \varepsilon/2$. Thus
+Thus $|f(y) - f(x_i)| < \varepsilon/2$. We also have $|x - x_i| < \delta_{x_i}$, so $|f(x) - f(x_i)| < \varepsilon/2$. Through the triangle inequality
 
 $$
 |f(x) - f(y)| \leq |f(x) - f(x_i)|+|f(x_i) - f(y)| < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 $$
 
-Therefore our function is uniformly continuous. $\square$.
+Therefore our function is uniformly continuous.
 :::
 
+Historically, Cauchy believed the following theorem was true of any continuous function, which was later found to be inaccurate. 
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.2
+
+Let $f \colon D \to \mathbb{R}$ be uniformly continuous on $D$ and suppose $(x_n)$ is a Cauchy sequence in $D$. Then $(f(x_n))$ is Cauchy.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Given any $\varepsilon > 0$, since $f$ is uniformly continuous on $D$, there exists some $\delta > 0$ such that for all $x,y \in D$
+
+$$
+|x-y| < \delta \implies |f(x) - f(y)| < \varepsilon.
+$$
+
+Since $(x_n)$ is Cauchy, there exists an integer $N$ such that, when $n,m \geq N$
+
+$$
+|x_n - x_m| < \delta. 
+$$
+
+Therefore, for $m,n \geq N$, we also have $|f(x_n) - f(x_m)| < \varepsilon$, so $(f(x_n))$ is a Cauchy sequence.
+:::
+
+## Properties
+
+::: {.callout-note icon="false"}
+## Definition
+
+We say that a function $\tilde{f} \colon E \to \mathbb{R}$ is an [extension]{.definition} of a function $f \colon D \to \mathbb{R}$ if $D \subseteq E$ and $f(x) = \tilde{f}(x)$ for all $x \in D$.
+:::
+
+This definition allows us to take a function $f$, and create a new function $\tilde{f}$ such that $f(x) = \tilde{f}(x)$. If we extend $f$ to a domain, and prove $\tilde{f}$ is uniformly continuous on said domain, then clearly $f$ is uniformly continuous on it's sub-domain.
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.3
+
+A function $f \colon (a,b) \to \mathbb{R}$ is uniformly continuous on $(a,b)$ if and only if it can be extended to a function $\tilde{f}$ that is continuous on $[a,b]$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We start by proving the reverse direction. By Theorem $2.4.1$ if $\tilde{f}$ is continuous on $[a,b]$, it is uniformly continuous. It follws then that $\tilde{f}$, and hence $f$, is also uniformly continuous on the subset $(a,b)$.
+
+Conversly, suppose that $f$ is uniformly continuous on $(a,b)$. Let $(s_n)$ be a sequence in $(a,b)$ such that $\lim s_n = a$ (We know this sequence exists, because $a$ is an accumulation point). By Theorem $1.3.5$, $(s_n)$ is Cauchy. Then by Theorem $2.4.2$, $(f(s_n))$ is Cauchy, and thus converges. By Theorem $2.1.4$, $\lim_{x\to a}f(x) = p$ for some $p \in \mathbb{R}$. Similarly, $\lim_{x \to b}f(x) = q$ for some $q \in \mathbb{R}$.
+
+We define $\tilde{f} \colon [a,b] \to \mathbb{R}$ by
+
+$$
+\tilde{f}(x) = \begin{cases}
+f(x), & a < x < b\\
+p, & x = a\\
+q, & x = b
+\end{cases}
+$$
+
+Then $\tilde{f}$ is an extension of $f$. Since $f$ is continuous on $(a.b)$, so is $\tilde{f}$. Since $\tilde{f}$ is continuous on $a,b$ it follws that $\tilde{f}$ is continuous on $[a,b]$.
+:::
+
+Unrelated.
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.4
+
+Let $f\colon D \to \mathbb{R}$ be a uniformly continuous function on the bounded set $D$. Prove that $f$ is bounded on $D$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Suppose that $f(D)$ is not bounded. Then, for any $M \in \mathbb{R}$ there exists a sequence $(x_n) \in D$ such that for some natural number $n$, $|f(x_n)| \geq M$. 
+
+Since $D$ is bounded, there exists a convergent sub-sequence $(x^\prime_n)$ of $(x_n)$ by Theorem $1.4.2$, which is additionally a Cauchy sequence by Lemma $1.3.3$. Since $f$ is uniformly continuous, we would have that $(f(x^\prime_n))$ is a Cauchy sequence. But by Lemma $1.3.4$, every cauchy sequence must be bounded. Thus our assumption that $f(D)$ is unbounded is false, and $f(D)$ must be bounded.
+
+:::
+
+
+## Practice
+
+::: {.callout-tip icon="false"}
+## Problem
+
+A function $f \colon \mathbb{R} \to \mathbb{R}$ is said to be [periodic]{.definition} if there exists a number $k > 0$ such that $f(x + k) = f(x)$ for all $x \in \mathbb{R}$. Suppose that $f \colon \mathbb{R} \to \mathbb{R}$ is continuous and periodic. Prove that $f$ is bounded and uniformly continuous on $\mathbb{R}$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Let $f$ be a continuous function with period $k$. Take $f \colon [0,k] \to \mathbb{R}$. Since $[0,k]$ is compact, $f([0,k])$ is compact, and therefore bounded (since it obtains a minimum and maximum). For every $x \in \mathbb{R}$, we have some $y \in [0,k]$ such that $x-y = nk$ for some integer $n$, thus $f(x) = f(y + nk) = f(y)$, and $f(\mathbb{R}) = f([0,k])$. Since $f([0,k])$ is bounded, so is $f(\mathbb{R})$.
+
+\quad Since $[0,2k]$ is compact, and $f$ is continuous, $f([0,2k])$ is uniformly continuous. That is, for every $\varepsilon > 0$, there exists some $\delta_k > 0$ such that 
+
+$$
+|x_k - y_k| < \delta \implies |f(x_k) - f(y_k)| < \varepsilon, \forall x_k,y_k \in [0,2k].
+$$
+
+Chose some $\varepsilon > 0$. Let $\delta = \delta_k$. For all $x,y \in \mathbb{R}$, if $|x-y| < \delta$ there exists $x_k,y_k, \in [0,2k]$ and such that $x = x_k + nk$ and $y = y_k + nk$ for some integer $n$. Then for all $x,y\in \mathbb{R}$,
+
+$$
+|x - y| = |(x_k - n) - (y_k - n)| = |x_k - y_k| < \delta \implies\\ |f(x) - f(y)| = |f(x_k + nk) - f(y_k + nk)| = |f(x_k) - f(y_k)| < \varepsilon
+$$
+
+Thus $f \colon \mathbb{R} \to \mathbb{R}$ is uniformly continuous. Note we choose the interval $[0,2k]$ instead of $[0,k]$, so there arise no complications when $x < nk$ and $y > nk$.
+:::
+
+## Recap
+
+In this section we proved.
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.1
+
+If $D$ is compact, and $f \colon D \to \mathbb{R}$ is continuous, then $f$ is uniformly continuous.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.2
+
+Let $f \colon D \to \mathbb{R}$ be uniformly continuous on $D$ and suppose $(x_n)$ is a Cauchy sequence in $D$. Then $(f(x_n))$ is Cauchy.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.3
+
+A function $f \colon (a,b) \to \mathbb{R}$ is uniformly continuous on $(a,b)$ if and only if it can be extended to a function $\tilde{f}$ that is continuous on $[a,b]$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.4.4
+
+Let $f\colon D \to \mathbb{R}$ be a uniformly continuous function on the bounded set $D$. Prove that $f$ is bounded on $D$.
+:::

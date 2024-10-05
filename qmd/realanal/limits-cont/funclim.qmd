@@ -6,56 +6,56 @@ format:
     html-math-method: katex
 ---
 
+The limits of a functions determine how close the values of $f(x)$ are to some real number $L$, as $x$ approaches $c$, although not neccessarily at $c$ itself.
+
 ::: {.callout-note icon="false"}
 ## Definition
 
-Let $f \colon D \to \mathbb{R}$ and let $c$ be an accumulation point of $D$. We say that a real number $L$ is a [**limit of** $f$ at $c$]{style="color: blue"} if
+Let $f \colon D \to \mathbb{R}$ and let $c$ be an accumulation point of $D$. We say that a real number $L$ is a [limit of $f$ at $c$]{.definition} if for every $\varepsilon > 0$, there exists $\delta > 0$ such that
 
 $$
-\forall \varepsilon > 0, \exists \delta > 0\; s.t.\; 0 < |x-c| < \delta \implies |f(x) - L| < \varepsilon
+|x-c| < \delta \implies |f(x) - L| < \varepsilon
 $$
 :::
 
+In English, a function has a limit $L$ at $c$ if, as $x$ gets arbitrarily close to $c$, $f(x)$ gets arbitrarily close to $L$.
+
 ::: {.callout-note icon="false"}
-## Theorem
+## Theorem 2.1.1
 
 Let $f \colon D \to \mathbb{R}$ and $c$ be an accumulation point of $D$. Then $\lim_{x\to c}f(x) = L$ if and only if for each neighborhood of $V$ of $L$ there exists a deleted neighborhood $U$ of $c$ such that $f(U \cap D) \subseteq V$.
-:::
-
-::: {.callout-warning icon="false"}
-## Example
-
-TODO
-
-Let $\varepsilon > 0$. We have
-
-$$
-|f(x) - 1| = |(2x - 1) - 1| = |2(x-1)| = 2|x-1| < 2(\varepsilon/2) = \varepsilon
-$$
-
-Thus we have the limit as not equal to the value of the function.
-:::
-
-::: {.callout-note icon="false"}
-## Theorem
-
-Let $f \colon D \to \mathbb{R}$, and $c$ be an accumulation point of $D$. Then, $\lim_{x\to c} f(x) = L$ if and only if for every sequence $(s_n)$ in $D$ that converges to $c$ with $s_n \not = c$ for all $n$, the sequence $(f(s_n))$ converges to $L$.
 :::
 
 ::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
-Let $(s_n)$ be a sequence in $D$ that converges to $c$ and $s_n \not = c \forall n$, and $\lim_{x\to c} f(x) = L$.
+We start with the forward direction. For all $\varepsilon > 0$, let $V = N(L,\varepsilon)$. Because we have $\lim_{x\to c}f(x) = L$, there exists some $\delta$ such that $|x-c| < \delta$ implies $|f(x) - L| < \varepsilon$, or $f(x) \subseteq V$. Let $U = N(c,\delta)/c$. The neighborhood $U$ contains all points $x \not = c$ such that $|x-c| < \delta$. Thus $|f(U \cap D) - L| < \varepsilon$, and $f(U \cap D) \subseteq V$.
 
-We want to show that $\lim_{n\to \infty} f(s_n) = L$.
+Now we use the backwards direction. By letting $V = N(L,\varepsilon)$ for all $\varepsilon > 0$, we have that there exists a deleted neighborhood $U$ of $c$ is such that $f(U \cap D) \subseteq V$. We let $\delta$ represent the radius of $U$. For each point $|x-c| < \delta$, we have that $f(U \cup D) \subseteq V$. Thus $|x -c| < \delta$ implies $|f(x) - L| < \varepsilon$.
 
-By assumption $\lim_{x\to c} f(x) = L$, so given any $\varepsilon > 0, \exists \delta > 0\;s.t.\; 0 < |x-c| < f \implies |f(x) - L| < \varepsilon$ by assumption.
+:::
 
-Since $S_n \to c, \exists N \in \mathbb{N}\;s.t.\; \forall n \geq N$, we have that $|s_n - c| < \delta$. Now we have that $\forall n \geq N, |f(s_n) - L| < \varepsilon$ thus $(f(s_n)) \to L$.
+## Sequential Criterion for Limits
+
+Limits of seqeunces and functions are closely related.
+
+::: {.callout-note icon="false"}
+## Theorem 2.1.2
+
+Let $f \colon D \to \mathbb{R}$, and $c$ be an accumulation point of $D$. Then, $\lim_{x\to c} f(x) = L$ if and only if for every sequence $(s_n)$ in $D$ that converges to $c$ with $s_n \not = c$ for all $n$, the sequence $(f(s_n))$ converges to $L$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO Reverse Direction)
+
+Let $(s_n)$ be a sequence in $D$ that converges to $c$ and $s_n \not = c$ for all $n$, and $\lim_{x\to c} f(x) = L$.
+
+We start with the forward direction. We want to show that $\lim_{n\to \infty} f(s_n) = L$. By assumption $\lim_{x\to c} f(x) = L$, so given any $\varepsilon > 0$, there exists $\delta > 0$ such that $0 < |x-c| < \delta \implies |f(x) - L| < \varepsilon$. Since $(s_n)$ converges to $c$, there exists a natural number $N$ such that $n \geq N$ implies $|s_n - c| < \delta$. Thus for $n \geq N$ we have $0 < |s_n - c| < \delta$ and $s_n \in D$ such that $|f(s_n) - L| < \varepsilon$. Thus $\lim_{n \to\infty} = L$.
+
 :::
 
 ::: {.callout-note icon="false"}
-## Corollary
+## Corollary 2.1.3
 
 If $f \colon D \to \mathbb{R}$ and if $c$ is an accumulation point of $D$, then $f$ can have only one limit at $c$.
 :::
@@ -63,60 +63,84 @@ If $f \colon D \to \mathbb{R}$ and if $c$ is an accumulation point of $D$, then 
 ::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
-Follows from uniqueness of limits and sequences and previous theorem.
+Suppose that $\lim_{x \to c}f(x) = L_1$ and $\lim_{x \to c} f(x) = L_2$. By Theorem $2.1.2$, every sequence $(f(s_n))$ converges to $L$ (Granted that $s_n \not = c$ and $s_n$ converges to $c$). By Theorem $1.1.3$, If $(f(s_n))$ converges, then it's limit is unique. Therefore if $(f(s_n))$ converges to both $L_1$ and $L_2$, then $L_1 = L_2$. 
+
 :::
 
 ::: {.callout-note icon="false"}
-## Theorem
+## Theorem 2.1.4
 
 Let $f \colon D \to \mathbb{R}$, and $c$ be an accumulation point of $D$. Then the following are equivalent
 
--   $f$ does not have a limit at $c$
+$(a)$   $f$ does not have a limit at $c$
 
--   There exists a sequence $(s_n)$ in $D$ with each $s_n \not = c$ such that $(s_n)$ converges to $c$, but $(f(s_n))$ is not convergent in $\mathbb{R}$.
-:::
-
-::: {.callout-warning icon="false"}
-## Example
-
-Let $f(x) = \sin(1/x)$ for $x > 0$. We want to show that $\lim_{x\to 0} \sin(1/x)$ does not exists. 
-
-We prove this by considering two sequences, $s_n = \frac{2}{\pi n}$, then $s_n \to 0$ as $\frac{1}{n} \to 0$.
-:::
-
-::: {.callout-note icon="false"}
-## Definition
-
-Let $f \colon D \to \mathbb{R}$ and $g \colon D \to \mathbb{R}$. We define the sum $f + g$ and the product $fg$ to be the functions from $D$ to $\mathbb{R}$ given By
-
-$$
-(f+g)(x) = f(x) + g(x)
-$$
-
-and
-
-$$
-(fg)(x) = f(x)\cdot g(x)
-$$
-
-TODO
-
-:::
-
-::: {.callout-note icon="false"}
-## Theorem
-
-Function limits algebra
+$(b)$   There exists a sequence $(s_n)$ in $D$ with each $s_n \not = c$ such that $(s_n)$ converges to $c$, but $(f(s_n))$ is not convergent in $\mathbb{R}$.
 :::
 
 ::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
+If $(a)$ was false (If $f$ did have a limit at $c$), $(b)$ would neccessarily be false by Theorem $2.1.2$, and vice versa.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(x) = \sin(1/x)$ for $x > 0$. 
+
+**Claim:** $\lim_{x\to 0} \sin(1/x)$ does not exists. 
+
+We prove this by considering the sequence, $s_n = \frac{2}{\pi n}$. It is clear $\lim s_n = 0$. But the sequence $(f(s_n))$ is constantly oscillating between $1,0,-1,0,1,\dots$, and does not converge to any real number $L$. Therefore by Theorem $2.1.4$, $\sin(1/x)$ does not have a limit at $0$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f \colon D \to \mathbb{R}$ and $g \colon D \to \mathbb{R}$. We define the [sum]{.definition} $f + g$ and the [product]{.definition} $fg$ to be the functions from $D$ to $\mathbb{R}$ given By
+
+$$
+(f+g)(x) = f(x) + g(x) \quad \text{ and } \quad (fg)(x) = f(x)\cdot g(x)
+$$
+
+for all $x \in D$. If $k \in \mathbb{R}$, then the [multiple]{.definition} $kf \colon D \to \mathbb{R}$ is the function defined by
+
+$$
+(kf)(x) = k \cdot f(x), \quad \forall x \in D.
+$$
+
+If $g(x) \not = 0$ for all $x \in D$, then the [quotient]{.definition} $f/g \colon D \to \mathbb{R}$ is the function defined by
+
+$$
+\left(\frac{f}{g}\right)(x) = \frac{f(x)}{g(x)}, \quad \forall x \in D.
+$$
+
+:::
+
+The above 'definitions' are mostly just clarity on notation.
+
+::: {.callout-note icon="false"}
+## Theorem 2.1.5 (Algebraic Relations for functions)
+
+Let $f \colon D \to \mathbb{R}$ and $g \colon D \to \mathbb{R}$, and let $c$ be an accumulation point of $D$. If $\lim_{x\ to c} f(x) = L$ and $\lim_{x\to c}g(x) = M$, and $k \in \mathbb{R}$ then
+
+$(a)$ $\lim_{x\to c}(f + g)(x) = L + M$,
+
+$(b)$ $\lim_{x \to c}(fg)(x) = LM$,
+
+$(c)$ $\lim_{x\to c}(kf)(x) = kL$,
+
+$(d)$ If $g(x) \not = 0$ for all $x \in D$ and $M \not = 0$, $\lim_{x\to c}(f/g)(x) = L/M$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
 Tedious proof
 :::
 
 ::: {.callout-note icon="false"}
-## Corollary
+## Corollary 2.1.6
 
 For any polynomial $P(x)$, we have that $\lim_{x \to c} P(x) = P(c)$.
 
@@ -129,7 +153,7 @@ Apply previous theorem repeatadly
 :::
 
 ::: {.callout-note icon="false"}
-## Lemma
+## Lemma 2.1.7
 
 Let $f \colon D \to \mathbb{R}$ where $c$ is an accumulation point of $D$.
 
@@ -140,18 +164,72 @@ Suppose $\lim_{x\to c} f(x) > 0$. There exists a deleted neighborhood $U$ of $c$
 ## Proof
 
 Let $L = \lim_{x\to c} f(x) > 0$. Consider the neighborhood $N(L,L/2)$. By the first theorem today, $\exists$ a deleted neighborhood $U$ of $c$ such that $f(x)$ is contained in this neighborhood for all $x \in U \cap D$. Therefore if $L$ is positive, theres always a neighborhood of positive numbers. 
+:::
+
+## One-Sided Limits
+
+TO-DO
+
+## Practice
+
+## Recap
+
+In this section we proved the following theorems and results.
+
+::: {.callout-note icon="false"}
+## Theorem 2.1.1
+
+Let $f \colon D \to \mathbb{R}$ and $c$ be an accumulation point of $D$. Then $\lim_{x\to c}f(x) = L$ if and only if for each neighborhood of $V$ of $L$ there exists a deleted neighborhood $U$ of $c$ such that $f(U \cap D) \subseteq V$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.1.2
+
+Let $f \colon D \to \mathbb{R}$, and $c$ be an accumulation point of $D$. Then, $\lim_{x\to c} f(x) = L$ if and only if for every sequence $(s_n)$ in $D$ that converges to $c$ with $s_n \not = c$ for all $n$, the sequence $(f(s_n))$ converges to $L$.
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 2.1.3
+
+If $f \colon D \to \mathbb{R}$ and if $c$ is an accumulation point of $D$, then $f$ can have only one limit at $c$.
+:::
+
+
+::: {.callout-note icon="false"}
+## Theorem 2.1.4
+
+Let $f \colon D \to \mathbb{R}$, and $c$ be an accumulation point of $D$. Then the following are equivalent
+
+$(a)$   $f$ does not have a limit at $c$
+
+$(b)$   There exists a sequence $(s_n)$ in $D$ with each $s_n \not = c$ such that $(s_n)$ converges to $c$, but $(f(s_n))$ is not convergent in $\mathbb{R}$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.1.5 (Algebraic Relations for functions)
+
+Let $f \colon D \to \mathbb{R}$ and $g \colon D \to \mathbb{R}$, and let $c$ be an accumulation point of $D$. If $\lim_{x\ to c} f(x) = L$ and $\lim_{x\to c}g(x) = M$, and $k \in \mathbb{R}$ then
+
+$(a)$ $\lim_{x\to c}(f + g)(x) = L + M$,
+
+$(b)$ $\lim_{x \to c}(fg)(x) = LM$,
+
+$(c)$ $\lim_{x\to c}(kf)(x) = kL$,
+
+$(d)$ If $g(x) \not = 0$ for all $x \in D$ and $M \not = 0$, $\lim_{x\to c}(f/g)(x) = L/M$.
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 2.1.6
+
+For any polynomial $P(x)$, we have that $\lim_{x \to c} P(x) = P(c)$.
 
 :::
 
 ::: {.callout-note icon="false"}
-## Definition
+## Lemma 2.1.7
 
-Let $f \colon D \to \mathbb{R}$, where $c \in D$. We say that $f$ is continous at $c$ if 
+Let $f \colon D \to \mathbb{R}$ where $c$ is an accumulation point of $D$.
 
-$$
-\forall \varepsilon > 0, \exists \delta > 0, s.t.\; x \in D and |x-c| < \delta then $|f(x) - f(c)| < \varepsilon$.
-$$
-
+Suppose $\lim_{x\to c} f(x) > 0$. There exists a deleted neighborhood $U$ of $c$, s.t. $f(x) > 0, \forall x \in U \cap D$. 
 :::
-
-If $f$ is continous at all points $x \in D$, we say that $f$ is continouos on $D$.

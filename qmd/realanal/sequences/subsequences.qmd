@@ -1,0 +1,211 @@
+---
+title: "Subsequences"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(s_n)^\infty_{n=1}$ be a sequence and let $(n_k)^\infty_{k=1}$ be any increasing sequence of natural numbers. The sequence $(s_{n_k})^\infty_{k=1}$ is called a [**subsequence**]{.definition} of $(s_n)$.
+:::
+
+A subsequence is any sequence formed by deleting and renumbering terms of some original sequence. A subsequence must preserve the order of the terms of the original sequence, and consist of an infinite amount of terms.
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.1 
+
+If a sequence $(s_n)$ converges to a real number $s$, then every subsequence of $(s_n)$ also converges to $s$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $(s_{n_k})$ be any subsequence of $(s_n)$. Given any $\varepsilon > 0$, there exists a natural number $N$ such that $n \geq N$ implies $|s_n - s| < \varepsilon$. When $k \geq N$, $n_k \geq k \geq N$, so that $|s_{n_k} - s| < \varepsilon$. Thus $\lim s_{n_k} = s$.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+**Claim:** $s_n = (-1)^n$ is not a convergent sequence.
+
+Using the previous theorem, if $(s_n)$ converged to $s$, then every subsequence of $(s_n)$ would also converge to $s$. But $(s_{2n})$ converges to $1$, and $(s_{2n+1})$ converges to $-1$. Because the subsequences converge to different values, the original sequence does not converge.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.2 
+
+Every bounded sequence has a convergent subsequence.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $(s_n)$ be a sequence whose range $T = \{s_n \colon n \in \mathbb{N}\}$ is bounded.
+
+Suppose that $T$ is finite. Then there is some number $x \in T$ that is equal to $s_n$ for infinitely many values of $n$. That is there exists $n_1 < n_2 < \cdots < n_k < \cdots$ such that $s_{n_k} = x$ for all $k \in \mathbb{N}$. It follows that the subsequence $(s_{n_k})$ converges to $x$.
+
+Next, suppose $T$ is infinite. Then the Bolzano-Weierstrass theorem implies that $T$ has an accumulation point, $y$, in $\mathbb{R}$. We can construct a subsequence $(s_n)$ that converges to $y$. For each $k \in \mathbb{N}$, let $A_k = (y - 1/k,y+ 1/k)$ be the neighborhood about $y$ of radius $1/k$. Since $y$ is an accumulation point of $T$, given any $k \in \mathbb{N}$, there are infinitely many values of $n$ such that $s_n \in A_k$. In general we choose $s_{n_k} \in A_k$ with $n_k > n_{k-1}$. By doing so we obtain a subsequence $(s_{n_k})$ of $(s_n)$ for which $|s_{n_k} - y| < 1/k$ for all $k \in \mathbb{N}$. Theorem $1.1.1$ implies $\lim s_{n_k} = y$.
+:::
+
+And for unbounded sequences
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.3
+
+Every unbounded sequence contains a monotone subsequence that diverges to $\pm \infty$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Suppose $(s_n)$ is unbounded above. Given any $M \in \mathbb{R}$, there must be infinitely many terms of $(s_n)$ larger than $M$. There exists $n_1 \in \mathbb{N}$ such that $s_{n_1} > 1$. There must also exists $n_2 > n_1$ such that $s_{n_2} > \max \{2,s_{n_1}\}$. In general, given $n_1,\dots,n_k$ there exists $n_{k+1} > n_{k}$ such that $s_{n_{k+1}} > \max \{k,s_{n_k}\}$. It follows that the subsequence $(s_{n_k})$ is unbounded and increasing. By Theorem $1.3.2$, $\lim s_{n_k} = + \infty$.
+
+Finally if $(s_n)$ is not unbounded above, it must be unbounded below, and a similar argument produces an unbounded decreasing subsequence having $\lim s_{n_k} = -\infty$.
+:::
+
+## Limit Superior and Limit Inferior
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(s_n)$ be a bounded sequence. A [subsequential limit]{.definition} of $(s_n)$ is any real number that is the limit of some subsequence of $(s_n)$. If $S$ is the set of all subsequential limits of $(s_n)$, then we define the [limit superior]{.definition} of $(s_n)$ to be 
+
+$$
+\lim \sup s_n = \sup S
+$$
+
+And the [limit inferior]{.definition} of $(s_n)$ to be
+
+$$
+\lim \inf s_n = \inf S
+$$
+
+:::
+
+This defintion requires $(s_n)$ to be bounded. When $(s_n)$ is a convergent sequence, $\lim \inf s_n = \lim \sup s_n = \lim s_n$. If it happens that $\lim \inf s_n < \lim \sup s_n$, we say that $(s_n)$ [oscillates]{.definition}.
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.4
+
+Let $(s_n)$ be a bounded sequence and let $m = \lim \sup s_n$. Then the following properties hold:
+
+$(a)$ For every $\varepsilon > 0$, there exists a natural number $N$ such that $n \geq N$ implies $s_n < m + \varepsilon$.
+
+$(b)$ For every $\varepsilon > 0$, and for every $i \in \mathbb{N}$ there exists an integer $k > i$ such that $s_k > m - \varepsilon$.
+
+Furthermore, if $m$ is a real number satisfying these properties, $m = \lim \sup s_n$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 1.4.5
+
+Let $(s_n)$ be a bounded sequence and let $m = \lim \sup s_n$. Then $m \in S$, where $S$ is the set of subsequential limits of $(s_n)$. That is, there exists a subsequence of $(s_n)$ that converges to $m$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Combining both parts of Theorem $1.3.4$, we have the existence of some subsequence $(s_{n_k})$ of $(s_n)$ such that
+
+$$
+m - \frac{1}{k} < s_{n_k} < m + \frac{1}{k}
+$$
+
+Clearly then $(s_{n_k})$ converges to $m$.
+
+:::
+
+For a bounded sequence $(s_n)$, Corollary $1.3.5$ says the set $S$ of subsequential limits of $(s_n)$ contains its supremum $m$. That means $m$ is actually the maximum of $S$. Likewise, $\lim \inf s_n = \min S$. While this defintion is more correct, it is not readily generalized to unbounded sequences.
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.6
+
+Suppose that $(r_n)$ converges to a positive number $r$ and $(s_n)$ is a bounded sequence. Then
+
+$$
+\lim \sup r_n s_n = r\lim \sup s_n
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Les $s = \lim \sup s_n$ and $t = \lim \sup r_ns_n$. By the Corollary $1.3.5$, there exists a subsequence $(s_{n_k})$ of $(s_n)$ such that $\lim s_{n_k} = s$. We know $\lim r_{n_k} = r$ by Theorem $1.4.1$. Thus $\lim r_{n_k}s_{n_k} = rs$. Thus $rs \leq \lim \sup r_n s_n = t$ (Why).
+
+Similarly, let $(r_{n_k}s_{n_k})$ be a subsequence of $(r_ns_n)$ that converges to $t$. Then since $r > 0$,
+
+$$
+\lim s_{n_k} = \lim \frac{r_{n_k}s_{n_k}}{r_{n_k}} = \frac{t}{r},
+$$
+
+so that $t/r \leq s$. Thus $t \leq rs$. Since $rs \leq t$ and $t \leq rs$, we have $t = rs$.
+
+:::
+
+## Practice
+
+## Recap
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.1 
+
+If a sequence $(s_n)$ converges to a real number $s$, then every subsequence of $(s_n)$ also converges to $s$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.2 
+
+Every bounded sequence has a convergent subsequence.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.3
+
+Every unbounded sequence contains a monotone subsequence that diverges to $\pm \infty$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.4
+
+Let $(s_n)$ be a bounded sequence and let $m = \lim \sup s_n$. Then the following properties hold:
+
+$(a)$ For every $\varepsilon > 0$, there exists a natural number $N$ such that $n \geq N$ implies $s_n < m + \varepsilon$.
+
+$(b)$ For every $\varepsilon > 0$, and for every $i \in \mathbb{N}$ there exists an integer $k > i$ such that $s_k > m - \varepsilon$.
+
+Furthermore, if $m$ is a real number satisfying these properties, $m = \lim \sup s_n$.
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 1.4.5
+
+Let $(s_n)$ be a bounded sequence and let $m = \lim \sup s_n$. Then $m \in S$, where $S$ is the set of subsequential limits of $(s_n)$. That is, there exists a subsequence of $(s_n)$ that converges to $m$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.4.6
+
+Suppose that $(r_n)$ converges to a positive number $r$ and $(s_n)$ is a bounded sequence. Then
+
+$$
+\lim \sup r_n s_n = r\lim \sup s_n
+$$
+
+:::

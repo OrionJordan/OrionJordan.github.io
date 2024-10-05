@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../qmd/realanal/limits-cont/cont-func-prop.html" rel="next">
+<link href="../../../qmd/realanal/limits-cont/funclim.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -79,9 +81,10 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -109,13 +112,138 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont.html">Limits and Continuity</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont/cont-func.html">Continuous Functions</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Integration</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Infinite Series</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#practice" id="toc-practice" class="nav-link active" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -143,29 +271,83 @@ ul.task-list li input[type="checkbox"] {
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and let <span class="math inline">c \in D</span>. Then the following three conditions are equivalent</p>
-<p><span class="math inline">(a)\;</span> <span class="math inline">f</span> is continuous at <span class="math inline">c</span>.</p>
-<p><span class="math inline">(b)\;</span> If <span class="math inline">(x_n)</span> is any sequence in <span class="math inline">D</span> such that <span class="math inline">(x_n)</span> converges to <span class="math inline">c</span>.</p>
-<p><span class="math inline">(c)\;</span> For every neighborhood <span class="math inline">V</span> of <span class="math inline">f(c)</span> there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
-<p>Futhermore if <span class="math inline">c</span> is an accumulation point of <span class="math inline">D</span>, then the above are all equivalent to</p>
-<p><span class="math inline">(d)\;</span> <span class="math inline">f</span> has a limit at <span class="math inline">c</span> and <span class="math inline">\lim_{x \to c} f(x) = f(c)</span>.</p>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span>, where <span class="math inline">x,c \in D</span>. We say that <span class="math inline">f</span> is <span class="definition">continuous at <span class="math inline">c</span></span> if</p>
+<p><span class="math display">
+\forall \varepsilon &gt; 0, \exists \delta &gt; 0, |x-c| &lt; \delta \implies |f(x) - f(c)| &lt; \varepsilon.
+</span></p>
 </div>
 </div>
+<p>In English, this means a function is continuous if <span class="math inline">x</span> approaching <span class="math inline">c</span> implies the difference between <span class="math inline">f(x)</span> and <span class="math inline">f(c)</span> is arbitrarily small.</p>
+<p>If <span class="math inline">f</span> is continuous at all points <span class="math inline">x \in D</span>, we say that <span class="math inline">f</span> is <span class="definition">continuous on <span class="math inline">D</span></span>. Note that this definition of continuity is a pointwise notion.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.2.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and let <span class="math inline">c \in D</span>. Then the following three conditions are equivalent</p>
+<p><span class="math inline">(a)</span> <span class="math inline">f</span> is continuous at <span class="math inline">c</span>.</p>
+<p><span class="math inline">(b)</span> If <span class="math inline">(x_n)</span> is any sequence in <span class="math inline">D</span> such that <span class="math inline">(x_n)</span> converges to <span class="math inline">c</span>, then <span class="math inline">\lim f(x_n) = f(c)</span>.</p>
+<p><span class="math inline">(c)</span> For every neighborhood <span class="math inline">V</span> of <span class="math inline">f(c)</span> there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
+<p>Futhermore if <span class="math inline">c</span> is an accumulation point of <span class="math inline">D</span>, then the above are all equivalent to</p>
+<p><span class="math inline">(d)</span> <span class="math inline">f</span> has a limit at <span class="math inline">c</span> and <span class="math inline">\lim_{x \to c} f(x) = f(c)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We will assume the function is continuous at <span class="math inline">c</span>, and show it implies the rest of the properties.</p>
+<hr>
+<p><span class="math inline">(a) \implies (c)</span></p>
+<p>Then there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">U \cap D = \{c\}</span>. It follows that, for any neighborhood <span class="math inline">V</span> of <span class="math inline">f(c)</span>, <span class="math inline">f(U \cap D) = \{f(c)\} \subseteq V</span>. Thus <span class="math inline">(a)</span> implies <span class="math inline">(c)</span>.</p>
+</div>
+</div>
+</div>
+<p>Taking the negation of <span class="math inline">(a)</span> and <span class="math inline">(b)</span> in this Theorem, we have a useful Corollary for what it means for a function to be discontinous.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 2.2.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">c \in D</span>. Then <span class="math inline">f</span> is discontinous at <span class="math inline">c</span> if and only if there exists a sequence <span class="math inline">(x_n)</span> in <span class="math inline">D</span> such that <span class="math inline">(x_n)</span> converges to <span class="math inline">c</span> but the sequence <span class="math inline">(f(x_n))</span> does not converge to <span class="math inline">f(c)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof (TO-DO)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -186,6 +368,8 @@ f(x) =
 0 \text{ if $x$ is irrational}
 \end{cases}
 </span></p>
+<p><strong>Claim:</strong> <span class="math inline">f</span> is discontinous at every real number.</p>
+<p>For any point <span class="math inline">c \in \mathbb{R}</span>, take the neighborhood <span class="math inline">V</span> of <span class="math inline">f(c)</span> with <span class="math inline">\varepsilon &lt; 1</span>. The neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> will always contain both rational and irrational points (Due to both being dense in <span class="math inline">\mathbb{R}</span>), such that <span class="math inline">f(U \cap D) \not \subseteq V</span>. Thus by Theorem <span class="math inline">2.2.1</span>, the function is not continous at <span class="math inline">c</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
@@ -194,26 +378,26 @@ f(x) =
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem (Algebraic Relations of continuouity)
+Theorem 2.2.3 (Algebraic Relations of Continuity)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f,g \colon D \to \mathbb{R}</span> and <span class="math inline">c \in D</span>. If <span class="math inline">f,g</span> are both continous at the point <span class="math inline">c,</span> then</p>
-<p><span class="math inline">(a)\;</span> <span class="math inline">f + g</span> and <span class="math inline">fg</span> are continous at <span class="math inline">c</span>, and</p>
-<p><span class="math inline">(b)\;</span> <span class="math inline">f/g</span> is continous at <span class="math inline">c</span> if <span class="math inline">g(c) \not = 0</span>.</p>
+<p>Let <span class="math inline">f,g\; \colon D \to \mathbb{R}</span> and <span class="math inline">c \in D</span>. If <span class="math inline">f,g</span> are both continous at the point <span class="math inline">c,</span> then</p>
+<p><span class="math inline">(a)</span> <span class="math inline">f + g</span> and <span class="math inline">fg</span> are continous at <span class="math inline">c</span>, and</p>
+<p><span class="math inline">(b)</span> <span class="math inline">f/g</span> is continous at <span class="math inline">c</span> if <span class="math inline">g(c) \not = 0</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (TO-DO)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Use convergence criterion and previous results.</p>
 </div>
@@ -225,25 +409,25 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem (Algebraic Relations of continuouity)
+Theorem 2.2.4
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">g \colon E \to \mathbb{R}</span> such that <span class="math inline">f(D) \subseteq E</span>.</p>
-<p>If <span class="math inline">f</span> is continuous at <span class="math inline">c \in D</span> and <span class="math inline">g</span> is continous at <span class="math inline">f(c)</span>, then <span class="math inline">g \circ f \colon D \to \mathbb{R}</span> is continous at <span class="math inline">c</span>.</p>
+<p>If <span class="math inline">f</span> is continuous at <span class="math inline">c \in D</span> and <span class="math inline">g</span> is continuous at <span class="math inline">f(c)</span>, then <span class="math inline">g \circ f \colon D \to \mathbb{R}</span> is continuous at <span class="math inline">c</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (TO-DO)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>We want to show that given any neighborhood <span class="math inline">V</span> of <span class="math inline">g(f(c))</span>, there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
 <p>Since <span class="math inline">g</span> is continous at <span class="math inline">f(c)</span>, we know that there exists a neighborhood <span class="math inline">W</span> of <span class="math inline">f(c)</span> such that <span class="math inline">g(W \cap E) \subseteq V</span>. Similarly since <span class="math inline">f</span> is continous at <span class="math inline">c</span>, there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq W</span>.</p>
@@ -256,24 +440,24 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.2.5
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A function <span class="math inline">f</span> is continous on its domain <span class="math inline">D</span> if and only if for every open set <span class="math inline">U</span> of <span class="math inline">\mathbb{R}</span>, there exists an open subset <span class="math inline">V</span> of <span class="math inline">\mathbb{R}</span> such that <span class="math inline">V \cap D = f^{-1}(u)</span>.</p>
+<p>A function <span class="math inline">f\colon D \to \mathbb{R}</span> is continous on <span class="math inline">D</span> if and only if for every open set <span class="math inline">U</span> of <span class="math inline">\mathbb{R}</span>, there exists an open subset <span class="math inline">V</span> of <span class="math inline">\mathbb{R}</span> such that <span class="math inline">V \cap D = f^{-1}(U)</span>.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (TO-DO)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>WTS:</strong> <span class="math inline">f</span> being continous on <span class="math inline">D</span> implies <span class="math inline">V \cap D = f^{-1}(u)</span> .</p>
 <p>Assume <span class="math inline">f</span> is continous on <span class="math inline">D</span>. Let <span class="math inline">U</span> be an open subset of <span class="math inline">\mathbb{R}</span>. If <span class="math inline">c \in f^{-1}(U)</span>, then <span class="math inline">f(c) \in U</span>. Since <span class="math inline">U</span> is open, there exists a neighborhood <span class="math inline">U^\prime \subseteq U</span> containing <span class="math inline">f(c)</span>. Since <span class="math inline">f</span> is continous, there exists a neighborhood <span class="math inline">V(c)</span> of <span class="math inline">c</span> such that <span class="math inline">f(V(c) \cap D) \subseteq U^\prime</span>.</p>
@@ -282,147 +466,132 @@ Proof
 </div>
 </div>
 </div>
+<p>Note that the pre-image of a set may not exist. In this case we would say <span class="math inline">f^{-1}(U)</span> is the empty set, <span class="math inline">\varnothing</span>.</p>
+<p>$And when <span class="math inline">D</span> is <span class="math inline">\mathbb{R}</span>, we can write</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition
+Corollary 2.2.6
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A function <span class="math inline">f \colon D \to \mathbb{R}</span> is called bounded if <span class="math inline">f(D)</span> is a subset of <span class="math inline">\mathbb{R}</span> where there exists some <span class="math inline">M \in \mathbb{R}</span> such that <span class="math inline">|f(x)| \leq M</span> for all <span class="math inline">x \in D</span>.</p>
+<p>A function <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> is continuous if and only if <span class="math inline">f^{-1}(G)</span> is open in <span class="math inline">\mathbb{R}</span></p>
 </div>
 </div>
-<p>One may question if every continous function is bounded. They are not.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">D \subseteq \mathbb{R}</span> is a compact subset and <span class="math inline">f \colon D \to \mathbb{R}</span> is continuous, then <span class="math inline">f(D)</span> is compact.</p>
-</div>
-</div>
-<p>Slogan, a continous image of compact is again compact. Compact meaing closed and bounded.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">U = \{U_i\}</span> be an open cover of <span class="math inline">f(D)</span>. Since <span class="math inline">f</span> is continuous on <span class="math inline">D</span>, we have that for each <span class="math inline">U_i</span>, there exists an open set <span class="math inline">V_i</span> such that <span class="math inline">V_i \cap D = f^{-1}(U_i)</span>. Since <span class="math inline">f(D) \subseteq \bigcup U_i</span>, we have <span class="math inline">D \subseteq \bigcup f^{-1}(u_i) \subseteq \bigcup V_i</span> so <span class="math inline">\{V_i\}</span> is an open cover of <span class="math inline">D</span>.</p>
-<p>Since <span class="math inline">D</span> is compact, there exists finetly many $<span class="math inline">V_1,\dots,V_n</span> such that <span class="math inline">D \subseteq V_1 \cup \cdots \cup V_N</span> hence <span class="math inline">D \subseteq (V_1 \cap D) \cup \cdots \cup (V_N \cap D)</span> which implies <span class="math inline">f(D) \subseteq U_1 \cup \cdots \cup U_N</span>, thus <span class="math inline">\{U_1,\ldots,U_n\}</span> is a finite subcover of <span class="math inline">U</span>. Hence <span class="math inline">f(D)</span> is compact. </p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Corollary
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">D \subseteq \mathbb{R}</span> and <span class="math inline">f \colon D \to \mathbb{R}</span> be continuous on <span class="math inline">D</span>. Then, <span class="math inline">f</span> attains a minimum and maximum on <span class="math inline">D</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We know from our last proof that <span class="math inline">f(D)</span> is compact. And from the Heine theorem, must be closed and bounded, and therefore has a minimum and maximum.</p>
-</div>
-</div>
-<p>It is neccessary for <span class="math inline">D</span> to be compact, closed and bounded.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem (Intermediate Value Theorem)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon [a,b] \to \mathbb{R}</span> be continuous. For any value <span class="math inline">k</span> between <span class="math inline">f(a)</span> and <span class="math inline">f(b)</span>, there exists <span class="math inline">c \in (a,b)</span> such that <span class="math inline">f(c) = k</span>.</p>
-</div>
-</div>
-<p>We first prove this by proving a related Lemma.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Lemma
+Proof (TO-DO)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon [a,b] \to \mathbb{R}</span> be continuous, and suppose <span class="math inline">f(a) &lt; 0 &lt; f(b)</span>. Then there exists <span class="math inline">c \in (a,b)</span> such that <span class="math inline">f(c) = 0</span>.</p>
+
 </div>
 </div>
 </div>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<p>In this section we proved</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Theorem 2.2.1
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">S = \{x \in [a,b] \colon f(x) \leq 0\}</span>. Notice <span class="math inline">S</span> is bounded, and by our assumuption <span class="math inline">a \in S</span>. Since <span class="math inline">S</span> is not empty, and <span class="math inline">S</span> is bounded, we have that <span class="math inline">c = \sup S</span> exists in <span class="math inline">[a,b]</span>. We want to show <span class="math inline">f(c) = 0</span>.</p>
-<p><strong>Case 1:</strong> Suppose <span class="math inline">f(c) &lt; 0</span>.</p>
-<p><strong>WTS:</strong> This assumption contradicts <span class="math inline">c</span> being a supremum of <span class="math inline">S</span>, because <span class="math inline">c</span> is not an upper bound of <span class="math inline">S</span>.</p>
-<p>There exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(x) &lt; 0</span> for all <span class="math inline">x \in U \cap [a,b]</span>. Since we’re assumming <span class="math inline">f(c) &lt; 0 &lt; f(b)</span>, we have that <span class="math inline">c \not = b</span>, and thus there exists some <span class="math inline">p \in U</span> such that <span class="math inline">c&lt;p&lt;b</span>. But <span class="math inline">p \in U</span> hence <span class="math inline">f(p) &lt; 0</span>. This contradicts our assumption that <span class="math inline">c</span> is an upper bound for <span class="math inline">S</span>, so <span class="math inline">f(c)</span> must be <span class="math inline">&lt; 0</span>.</p>
-<p><strong>Case 2:</strong> Suppose <span class="math inline">f(c) &gt; 0</span>.</p>
-<p><strong>WTS:</strong> This assumption contradicts <span class="math inline">c</span> being a supremum of <span class="math inline">S</span>, because <span class="math inline">c</span> is not a least upper bound of <span class="math inline">S</span>.</p>
-<p>If <span class="math inline">f(c) &gt; 0</span>, there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(x) &gt; 0</span> for all <span class="math inline">x \cup [a,b]</span>, since <span class="math inline">f(a) &lt; 0 &lt; f(c)</span>. We have <span class="math inline">c \not = a</span> and thus <span class="math inline">U</span> contains some point, <span class="math inline">p</span>. We have <span class="math inline">0 &lt; p &lt; c</span>. Since <span class="math inline">f(x) &gt; 0</span> for <span class="math inline">x \in U</span></p>
-</div>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and let <span class="math inline">c \in D</span>. Then the following three conditions are equivalent</p>
+<p><span class="math inline">(a)</span> <span class="math inline">f</span> is continuous at <span class="math inline">c</span>.</p>
+<p><span class="math inline">(b)</span> If <span class="math inline">(x_n)</span> is any sequence in <span class="math inline">D</span> such that <span class="math inline">(x_n)</span> converges to <span class="math inline">c</span>, then <span class="math inline">\lim f(x_n) = f(c)</span>.</p>
+<p><span class="math inline">(c)</span> For every neighborhood <span class="math inline">V</span> of <span class="math inline">f(c)</span> there exists a neighborhood <span class="math inline">U</span> of <span class="math inline">c</span> such that <span class="math inline">f(U \cap D) \subseteq V</span>.</p>
+<p>Futhermore if <span class="math inline">c</span> is an accumulation point of <span class="math inline">D</span>, then the above are all equivalent to</p>
+<p><span class="math inline">(d)</span> <span class="math inline">f</span> has a limit at <span class="math inline">c</span> and <span class="math inline">\lim_{x \to c} f(x) = f(c)</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Corollary 2.2.2
 </div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">k</span> be any real number between <span class="math inline">f(a)</span> and <span class="math inline">f(b)</span>. If <span class="math inline">f(a)</span> is less than <span class="math inline">f(b)</span>, we apply the previous lemma to a new function given by <span class="math inline">g(x) = f(x) - k</span>.</p>
-<p>Then <span class="math inline">g(a) = f(a) - k &lt; 0</span>. Then <span class="math inline">g(b) = f(b) - k &gt; 0</span>. We can then apply the lemma from before to guarentee the existence of <span class="math inline">c \in (a,b)</span> such that <span class="math inline">g(c) = 0</span>. This is equivalent to saying that <span class="math inline">f(c) = k</span>.</p>
-<p>In the reverse case, the same argument works where <span class="math inline">g(x) = k - f(x)</span>. </p>
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">c \in D</span>. Then <span class="math inline">f</span> is discontinous at <span class="math inline">c</span> if and only if there exists a sequence <span class="math inline">(x_n)</span> in <span class="math inline">D</span> such that <span class="math inline">(x_n)</span> converges to <span class="math inline">c</span> but the sequence <span class="math inline">(f(x_n))</span> does not converge to <span class="math inline">f(c)</span>.</p>
 </div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.2.3 (Algebraic Relations of Continuity)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f,g\; \colon D \to \mathbb{R}</span> and <span class="math inline">c \in D</span>. If <span class="math inline">f,g</span> are both continous at the point <span class="math inline">c,</span> then</p>
+<p><span class="math inline">(a)</span> <span class="math inline">f + g</span> and <span class="math inline">fg</span> are continous at <span class="math inline">c</span>, and</p>
+<p><span class="math inline">(b)</span> <span class="math inline">f/g</span> is continous at <span class="math inline">c</span> if <span class="math inline">g(c) \not = 0</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.2.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> and <span class="math inline">g \colon E \to \mathbb{R}</span> such that <span class="math inline">f(D) \subseteq E</span>.</p>
+<p>If <span class="math inline">f</span> is continuous at <span class="math inline">c \in D</span> and <span class="math inline">g</span> is continuous at <span class="math inline">f(c)</span>, then <span class="math inline">g \circ f \colon D \to \mathbb{R}</span> is continuous at <span class="math inline">c</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.2.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f\colon D \to \mathbb{R}</span> is continous on <span class="math inline">D</span> if and only if for every open set <span class="math inline">U</span> of <span class="math inline">\mathbb{R}</span>, there exists an open subset <span class="math inline">V</span> of <span class="math inline">\mathbb{R}</span> such that <span class="math inline">V \cap D = f^{-1}(U)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 2.2.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> is continuous if and only if <span class="math inline">f^{-1}(G)</span> is open in <span class="math inline">\mathbb{R}</span></p>
 </div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -773,6 +942,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../qmd/realanal/limits-cont/funclim.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Limits of Functions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="pagination-link">
+        <span class="nav-page-text">Properties of Continuous Functions</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

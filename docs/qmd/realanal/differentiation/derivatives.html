@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Limit Theorems</title>
+<title>OOMN - The Derivative</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../qmd/realanal/sequences/mono-cauchy.html" rel="next">
-<link href="../../../qmd/realanal/sequences/convergence.html" rel="prev">
+<link href="../../../qmd/realanal/integration.html" rel="next">
+<link href="../../../qmd/realanal/differentiation.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -117,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences.html">Sequences</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/sequences/limittheo.html">Limit Theorems</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/differentiation.html">Differentiation</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/differentiation/derivatives.html">The Derivative</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -152,7 +152,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Limit Theorems</span></a>
   </div>
 </li>
@@ -216,7 +216,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The Derivative</span></a>
   </div>
 </li>
@@ -236,22 +236,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#infinite-limits" id="toc-infinite-limits" class="nav-link active" data-scroll-target="#infinite-limits">Infinite Limits</a></li>
-  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Limit Theorems</h1>
+<h1 class="title">The Derivative</h1>
 </div>
 
 
@@ -266,227 +258,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>We begin the section by showing that algebraic operations are compatible with limits.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.1 (Algebraic Relations for limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
-<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> We must show that <span class="math inline">|(s_n + t_n) - (s + t)|</span> is arbitrarily close to any <span class="math inline">\varepsilon</span>. Using the triangle inequality, we have</p>
-<p><span class="math display">\begin{align*}
-\left|(s_n + t_n) - (s + t)\right| &amp;= |(s_n - s) + (t_n - t)|\\
-&amp;\leq |s_n - s| + |t_n - t|.
-\end{align*}</span></p>
-<p>By the definition of convergence we have</p>
-<p><span class="math display">
-\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \frac{\varepsilon}{2}.
-</span></p>
-<p>and</p>
-<p><span class="math display">
-\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \frac{\varepsilon}{2}.
-</span></p>
-<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then for all <span class="math inline">n \geq N</span>, we have <span class="math display">
-|(s_n + t_n) - (s + t)| \leq |s_n - s| + |t_n - t| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
-</span></p>
-<p>Since this holds for all <span class="math inline">\varepsilon &gt; 0</span>, we have <span class="math inline">\lim (s_n + t_n) = s + t</span>.</p>
-<hr>
-<p><span class="math inline">(b)</span> First, we need to show <span class="math inline">\lim(ks_n) = ks</span>. Since <span class="math inline">\lim s_n = s</span>, there exists <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span></p>
-<p><span class="math display">
-|s_n - s| \leq \frac{\varepsilon}{|k|}.
-</span></p>
-<p>Therefore</p>
-<p><span class="math display">
-|k||s_n - s| \leq |k|\frac{\varepsilon}{|k|} \implies |ks_n - s_n| \leq \varepsilon
-</span></p>
-<p>When <span class="math inline">k \not = 0</span>. When <span class="math inline">k = 0</span>, our statement is trivially true. Next we need to show <span class="math inline">\lim s_n + k = s + k</span>. This is almost trivial since we are given <span class="math inline">\lim s_n = s</span>, and</p>
-<p><span class="math display">
-|(k + s_n) - (k + s)| = |s_n - s| &lt; \varepsilon.
-</span></p>
-<hr>
-<p><span class="math inline">(c)</span> We must show that <span class="math inline">|s_nt_n - st| &lt; \varepsilon</span>. We can rewrite our inequality</p>
-<p><span class="math display">
-|s_nt_s - st| = | s_nt_n + (s_nt - s_n t) - st|
-</span></p>
-<p>We can now use the triangle inequality to show</p>
-<p><span class="math display">\begin{align*}
-|(s_nt_n - s_nt) + (s_n t - st)| &amp;\leq |s_nt_n - s_nt| + | s_nt - st| \\
-&amp;= |s_n||t_n - t| + |t||s_n - s|
-\end{align*}</span></p>
-<p>Since <span class="math inline">(s_n)</span> is bounded, <span class="math inline">\exists M_1 &gt; 0</span> such that <span class="math inline">\forall n, |s_n| \leq M_1</span>.</p>
-<p>Let <span class="math inline">M = \max\{M_1,|t|\}</span>. Then we have</p>
-<p><span class="math display">
-|s_nt_n - st| \leq M|t_n - t| + M|s_n - s|.
-</span></p>
-<p>Because <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>, for any <span class="math inline">\varepsilon &gt; 0</span> there exists <span class="math inline">N_1,N_2 \in \mathbb{N}</span> such that when <span class="math inline">n \geq N_1</span> and <span class="math inline">n \geq N_2</span></p>
-<p><span class="math display">
-|t_n - t| \leq \frac{\varepsilon}{2M} \text{ and } |s_n - s| &lt; \frac{\varepsilon}{2M}
-</span></p>
-<p>respectively. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
-<p><span class="math display">
-|s_nt_n - st| \leq M|t_n - t| + M|s_n - s| &lt; M\left(\frac{\varepsilon}{2M}\right) + M\left(\frac{\varepsilon}{2M}\right) = \varepsilon.
-</span></p>
-<p>Thus we have shown <span class="math inline">\lim(s_nt_n) = st</span>.</p>
-<hr>
-<p><span class="math inline">(d)</span> Since <span class="math inline">s_n/t_n = s_n(1/t_n)</span>, if we can prove <span class="math inline">\lim 1/t_n = 1/t</span> we can use part <span class="math inline">(c)</span> to complete the proof. We need to show that for any <span class="math inline">\varepsilon &gt; 0</span></p>
-<p><span class="math display">
-\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| &lt; \varepsilon
-</span></p>
-<p>For all sufficently large <span class="math inline">n</span>. We want to get a lower bound on the denominator, <span class="math inline">t_nt</span>. Because <span class="math inline">t \not = 0</span>, there exists some <span class="math inline">N_1 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_1</span> implies <span class="math inline">|t_n - t| &lt; |t|/2 &lt; \varepsilon_t</span>. Thus for <span class="math inline">n \geq N_1</span> we have</p>
-<p><span class="math display">
-|t_n| = |t - (t - t_n)| \geq |t| - |t - t_n| &gt; |t| - \frac{|t|}{2} = \frac{|t|}{2}
-</span></p>
-<p>There also exists <span class="math inline">N_2 \in \mathbb{N}</span> such that <span class="math inline">n \geq N_2</span> implies <span class="math inline">|t_n - t| &lt; \frac{\varepsilon}{2}|t|^2</span>. Let <span class="math inline">N = \max\{N_1,N_2\}</span>. Then <span class="math inline">n \geq N</span> implies</p>
-<p><span class="math display">
-\left|\frac{1}{t_n} - \frac{1}{t}\right| = \left|\frac{t - t_n}{t_nt}\right| = \frac{1}{|t_n|}\left|\frac{t - t_n}{t}\right| &lt; \frac{2}{|t|}\left|\frac{t-t_n}{t}\right|&lt;\varepsilon.
-</span></p>
-<p>Thus <span class="math inline">\lim 1/t_n = 1/t</span>.</p>
-</div>
-</div>
-</div>
-<p>Another useful property of limits is that they are preserved under inequality operations.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.2 (Inequality operations on limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Towards a contradiction, suppose that <span class="math inline">t &lt; s</span>. Let <span class="math inline">\varepsilon = \frac{s-t}{2}.</span></p>
-<p>By the definition of convergence we have</p>
-<p><span class="math display">
-\exists N_1 \in \mathbb{N} \text{ such that }\forall n \geq N_1, |s_n - s| &lt; \varepsilon.
-</span></p>
-<p>Similarly we have</p>
-<p><span class="math display">
-\exists N_2 \in \mathbb{N} \text{ such that }\forall n \geq N_2, |t_n - t| &lt; \varepsilon.
-</span></p>
-<p>Let <span class="math inline">N = \max\{N_1,N_2\}</span>. For <span class="math inline">n \geq N, \; t_n &lt; t + \varepsilon = s - \varepsilon &lt; s_n</span>. But this contradicts our inital assumption that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>. Thus we conclude <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-</div>
-<p>This leads to a the following corollary</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Corollary 1.2.3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a constant sequence converging to <span class="math inline">s</span>, such that for all <span class="math inline">n \in \mathbb{N}</span>, <span class="math inline">s_n = 0</span>. We are given for all <span class="math inline">n</span>, <span class="math inline">t_n \geq 0</span>, thus <span class="math inline">t_n \geq s_n</span>. By Theorem <span class="math inline">1.2.2</span>, we have that <span class="math inline">t \geq s</span>. Because <span class="math inline">s = 0</span>, <span class="math inline">t \geq 0</span>.</p>
-</div>
-</div>
-</div>
-<p>These results lead us to the <span class="definition"><strong>Ratio test</strong></span>. This test is used to show that certain sequences converge to zero.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.4 (Ratio test)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
-</div>
-</div>
-<p>In simple english, if <span class="math inline">s_n</span> is a sequence of positive terms, where each subsequent term is smaller than the last, the sequence must converge to zero.</p>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>By our previous Corollary, we know that <span class="math inline">L \geq 0</span>. If <span class="math inline">L &lt; 1</span>, then there exists a real number <span class="math inline">c</span> such that <span class="math inline">0 \leq L &lt; c &lt; 1</span>. Let <span class="math inline">\varepsilon = c - L</span>, so that <span class="math inline">\varepsilon &gt; 0</span>.</p>
-<p>Since <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>, there exists some <span class="math inline">N \in \mathbb{N}</span> such that for all <span class="math inline">n \geq N</span>,</p>
-<p><span class="math display">
-\left|\frac{s_{n+1}}{s_n} - L\right| &lt; \varepsilon
-</span></p>
-<p>Let <span class="math inline">k = N + 1</span>. Then for all <span class="math inline">n \geq k</span> we have <span class="math inline">n - 1 \geq N</span> such that</p>
-<p><span class="math display">
-\frac{s_n}{s_{n+1}} &lt; L + \varepsilon = L + (c - L) = c.
-</span></p>
-<p>We drop the absolute value signs as, positive or negative, <span class="math inline">s_{n+1}/s_n - L &lt; \varepsilon</span>. For all <span class="math inline">n \geq k</span>,</p>
-<p><span class="math display">
-0 &lt; s_n &lt; s_{n-1}c
-</span></p>
-<p>We can repeat this inequality <span class="math display">
-0 &lt; s_{n-1} &lt; s_{n-2}c
-</span></p>
-<p>Thus</p>
-<p><span class="math display">
-0 &lt; s_n &lt; s_{n-1}c &lt; s_{n-2}c^2 &lt; \cdots &lt; s_kc^{n-k}.
-</span></p>
-<p>Let <span class="math inline">M = s_k/c^k</span>, we have <span class="math inline">0 &lt; s_n &lt; Mc^n</span> for all <span class="math inline">n \geq k</span>. Since <span class="math inline">0 &lt; c &lt; 1</span>, we have <span class="math inline">\lim c^n = 0</span> by a previous result. Thus <span class="math inline">\lim s_n = 0</span> by Theorem 1.1.1.</p>
-</div>
-</div>
-</div>
-<section id="infinite-limits" class="level2">
-<h2 class="anchored" data-anchor-id="infinite-limits">Infinite Limits</h2>
-<p>Certain sequences like <span class="math inline">s_n = n</span> are clearly not convergent, but behave predictably; growing without bounds towards infinity. We introduce the notion of <em>divergence</em> for these sequences.</p>
+<p>Next we talk about differentialbility</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -497,19 +269,14 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A sequence <span class="math inline">(s_n)</span> is said to <span class="definition"><strong>diverge</strong></span> to <span class="math inline">+\infty</span>, notated</p>
+<p>Let <span class="math inline">I</span> be any interval on <span class="math inline">\mathbb{R}</span>, and let <span class="math inline">c \in I</span>. We say that <span class="math inline">f \colon I \to \mathbb{R}</span> is <span class="definition"><strong>differentiable</strong></span> at <span class="math inline">c</span> if</p>
 <p><span class="math display">
-\lim s_n = +\infty
+\lim_{x \to c} \frac{f(x)-f(c)}{x-c}
 </span></p>
-<p>If for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &gt; M</span>.</p>
-<p>Similarly a sequence <span class="math inline">(s_n)</span> is said to diverge to <span class="math inline">-\infty</span>, notated</p>
-<p><span class="math display">
-\lim s_n = -\infty
-</span></p>
-<p>If for every <span class="math inline">M \in \mathbb{R}</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies that <span class="math inline">s_n &lt; M</span>.</p>
+<p>exists and is finite.</p>
 </div>
 </div>
-<p>A divergent sequence is <em><strong>NOT</strong></em> convergent, and our limit notation is only used for simplicity. Theorems which require a convergent sequence do not apply to divergent sequences.</p>
+<p>If <span class="math inline">f</span> is differentiable at every point in a subset <span class="math inline">S \subseteq I</span>, we say that <span class="math inline">f</span> is differentiable on <span class="math inline">S</span>. If <span class="math inline">f</span> has a derivative at <span class="math inline">c</span>, we notate <span class="math inline">f^\prime(c)</span>.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -520,29 +287,141 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>Claim:</strong> <span class="math inline">\lim n^2 = + \infty</span></p>
-<p>To show the sequence <span class="math inline">(s_n)</span> where <span class="math inline">s_n = n^2</span> diverges to positive infinity, we must show for every <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>.</p>
-<p>Let <span class="math inline">N</span> be equal to the smallest integer greater than <span class="math inline">|M|</span>. For all integers <span class="math inline">N^2 \geq N</span>. Thus for all <span class="math inline">n \geq N</span>, <span class="math inline">s_n = n^2 &gt; n &gt; M</span>. Thus our sequence <span class="math inline">(s_n)</span> diverges to positive infinity.</p>
+<p>Let <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> be a constant function. That is <span class="math inline">f(x) = d</span> for some <span class="math inline">d \in \mathbb{R}</span>.</p>
+<p><strong>Claim:</strong> The derivative of <span class="math inline">f</span> is zero at every point <span class="math inline">c \in \mathbb{R}</span>.</p>
+<p>We use out formula for differentiability</p>
+<p><span class="math display">
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{d - d}{x - c} = 0
+</span></p>
 </div>
 </div>
-<p>The above example is very simple, and gives a general idea for how infinite limit proofs are done. More technical examples can be found in the practice.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> be the identity function. That is <span class="math inline">f(x) = x</span> for all <span class="math inline">x \in \mathbb{R}</span>.</p>
+<p><strong>Claim:</strong> The derivative of <span class="math inline">f</span> is one at every point <span class="math inline">c \in \mathbb{R}</span>.</p>
+<p>We use out formula for differentiability</p>
+<p><span class="math display">
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{x - c}{x - c} = 1
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> where <span class="math inline">f(x) = x^2</span>.</p>
+<p><strong>Claim:</strong> The derivative of <span class="math inline">f</span> is <span class="math inline">2c</span> at every point <span class="math inline">c \in \mathbb{R}</span>.</p>
+<p>We use our formula for differentiability</p>
+<p><span class="math display">
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{x^2 - c^2}{x - c}
+</span></p>
+<p>Using the formula <span class="math inline">x^2 - y^2 = (x-y)(x+y)</span>, we get</p>
+<p><span class="math display">
+f^\prime(c) = \lim_{x \to c} \frac{(x-c)(x+c)}{x - c} = \lim_{x \to c} x + c = 2c
+</span></p>
+</div>
+</div>
+<p>We introduce another theorem</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.5
+Theorem 3.1.1 (Sequential criterion for differentiability)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
-<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
-<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
+<p>Let <span class="math inline">I</span> be an interval containing <span class="math inline">c</span> and <span class="math inline">f\colon I \to \mathbb{R}</span>. Then <span class="math inline">f</span> is differentiable at <span class="math inline">c</span> if and only if for all sequences <span class="math inline">(x_n)</span> in <span class="math inline">I</span> such that <span class="math inline">\lim (x_n) = c</span> we have</p>
+<p><span class="math display">
+\left(\frac{f(x_n)-f(c)}{x_n - c}\right)
+</span></p>
+<p>converges, given <span class="math inline">x_n \not = c</span> for all <span class="math inline">n</span>. Furthermore, if <span class="math inline">f</span> is differentiable at <span class="math inline">c</span>, then the above sequence of quotients will converge to <span class="math inline">f^\prime(c)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> where <span class="math inline">f(x) = |x|</span>.</p>
+<p><strong>Claim:</strong> The function <span class="math inline">f</span> is non-differentiable at <span class="math inline">x = 0</span>.</p>
+<p>We claim there exists some <span class="math inline">c \in \mathbb{R}</span> such that <span class="math inline">f</span> is not differentiabile at <span class="math inline">c</span>. Using our sequence criterion, we consider the sequence <span class="math inline">(x_n) = (-1)^n/n</span>.</p>
+<p>We have that <span class="math inline">x_n \to 0</span> and <span class="math inline">\forall n,x_n \not = 0</span>. If we assume that this sequence converges, then any subsequence must also converge and converge to the same value. However, when <span class="math inline">n</span> is even</p>
+<p><span class="math display">
+\frac{f(x_n) - f(0)}{x_n - 0} = \frac{1/n - 0}{1/n -0} = 1
+</span></p>
+<p>and when <span class="math inline">n</span> is odd,</p>
+<p><span class="math display">
+\frac{f(x_n) - f(0)}{x_n - 0} = \frac{1/n - 0}{-1/n -0} = -1.
+</span></p>
+<p>Our subsequences converge to different values, so the original sequence does not converge. Thus <span class="math inline">f</span> is not differentiable at <span class="math inline">0</span>.</p>
+</div>
+</div>
+<p>The above is an example of a function that is continuous everywhere, but not differentiable everywhere. Below is another example of this phenomonea</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> where</p>
+<p><span class="math display">
+f(x)=\begin{cases}
+            x\sin(1/x), &amp; x \not = 0\\
+            0, &amp; x = 0
+         \end{cases}
+</span></p>
+<p><strong>Claim:</strong> The function <span class="math inline">f</span> is non-differentiable at <span class="math inline">x = 0</span>.</p>
+<p>For <span class="math inline">x \not = 0</span>, we have that</p>
+<p><span class="math display">
+\frac{f(x) - f(0)}{x - 0} = \frac{x\sin(1/x) - 0}{x -0} = \sin(1/x)
+</span></p>
+<p>But <span class="math inline">\lim_{x\to 0}\sin(1/x)</span> does not exists. Thus <span class="math display">
+\lim_{x\to 0}\frac{f(x) - f(0)}{x - 0}
+</span></p>
+<p>does not exists, and <span class="math inline">f</span> is not differentiable at <span class="math inline">x = 0</span>.</p>
+</div>
+</div>
+<p>In the above example, we have a function that is continuous at <span class="math inline">x = 0</span>, but not differentiable. We can conclude continuity does not imply differentiability.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 3.1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">f \colon I \to \mathbb{R}</span> is differentiable at <span class="math inline">c</span>, then <span class="math inline">f</span> is continuous at <span class="math inline">c</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -551,11 +430,74 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> We are given that <span class="math inline">(s_n)</span> diverges to posiitve infinity. Then for every <span class="math inline">M</span> there exists a naturaul number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">t_n \geq s_n &gt; M</span>. Thus for any <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &gt; M</span>, and we have that <span class="math inline">\lim t_n = + \infty</span>.</p>
+<p>We want to show that <span class="math inline">\lim_{x\to c} f(x) = f(c)</span>. We do this by adding zero in a clever way. Note that</p>
+<p><span class="math display">
+f(x) =\left(\frac{f(x)-f(c)}{x-c}\right)(x-c) + f(c)
+</span></p>
+<p>When <span class="math inline">x \not = c</span>. Since the derivative <span class="math inline">f^\prime(c)</span> exists and is finite, we know that the <span class="math inline">\lim_{x\to c} (f(x)-f(c))/x-c</span> exists and is a real number. Taking the limit of the above equation</p>
+<p><span class="math display">
+\lim_{x \to c}f(x) = \lim_{x\to c}\left(\frac{f(x)-f(c)}{x-c}\right)\lim_{x\to c}(x-c) + \lim_{x \to c}f(c)
+</span></p>
+<p>Which gives</p>
+<p><span class="math display">
+\lim_{x \to c}f(x) = 0 + f(c) = f(c).
+</span></p>
+<p>Hence <span class="math inline">f</span> is continuous at <span class="math inline">c</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 3.1.3 (Algebraic Properties of Derivatives)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f,g \colon I \to \mathbb{R}</span> be differentiable at <span class="math inline">c \in I</span>. Then</p>
+<p><span class="math inline">(a)</span> <span class="math inline">(kf)^\prime(c) = kf^\prime(c)</span>, for all <span class="math inline">k \in \mathbb{R}</span></p>
+<p><span class="math inline">(b)</span> <span class="math inline">(f + g)^\prime(c) = f^\prime(c) + g^\prime(c)</span>.</p>
+<p><span class="math inline">(c)</span> <span class="math inline">(fg)^\prime(c) = f(c)g^\prime(c) + f^\prime(c)g(c)</span>.</p>
+<p><span class="math inline">(d)</span> <span class="math inline">(f/g)^\prime(c) = (f(c)g^\prime(c) - f^\prime(c)g(c))/g^2(c)</span>, provided <span class="math inline">g(c) \not = 0</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(c)</span> For <span class="math inline">x \in I</span>, <span class="math inline">x \not = c</span>, we have <span class="math display">
+\frac{f(x)g(x) - f(c)g(c)}{x-c} = f(x)\left(\frac{g(x) - g(c)}{x-c}\right) + g(c)\left(\frac{f(x)-f(c)}{x-c}\right)
+</span></p>
+<p>We want to evaluate the limit of the right hand side as <span class="math inline">x</span> approaches <span class="math inline">c</span>. Using our limit rules we have</p>
+<p><span class="math display">
+\lim_{x\to c} (fg)^\prime(x) = \lim_{x \to c}f(x)\left(\frac{g(x) - g(c)}{x-c}\right) + \lim_{x \to c} g(c)\left(\frac{f(x)-f(c)}{x-c}\right)
+</span></p>
+<p>Because <span class="math inline">f</span> is differentiable at <span class="math inline">c</span>, <span class="math inline">f</span> is continuous at <span class="math inline">c</span>, thus</p>
+<p><span class="math display">
+\lim_{x \to c}f(x)\left(\frac{g(x) - g(c)}{x-c}\right) = f(c)g^\prime(c)
+</span></p>
+<p>And similarly,</p>
+<p><span class="math display">
+\lim_{x \to c} g(c)\left(\frac{f(x)-f(c)}{x-c}\right) = f^\prime(c)g(c)
+</span></p>
+<p>Thus</p>
+<p><span class="math display">
+\lim_{x\to c} (fg)^\prime(x) = f(c)g^\prime(c) + f^\prime(c)g(c).
+</span></p>
 <hr>
-<p><span class="math inline">(b)</span> We are given that <span class="math inline">(t_n)</span> diverges to negative infinity. Then for every <span class="math inline">M</span> there exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">t_n &lt; M</span>. Because <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n</span>, we have <span class="math inline">s_n \leq t_n &lt; M</span>. Thus for every <span class="math inline">M</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &lt; M</span>, and we have that <span class="math inline">\lim s_n = - \infty</span></p>
+<p><span class="math inline">(d)</span></p>
 </div>
 </div>
 </div>
@@ -565,15 +507,18 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 1.2.6
+Theorem 3.1.4 (Chain Rule)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
+<p>Let <span class="math inline">I,J</span> be intervals in <span class="math inline">\mathbb{R}</span> and <span class="math inline">f \colon I \to \mathbb{R}</span>, <span class="math inline">g \colon J \to \mathbb{R}</span>, where <span class="math inline">f(I)\subseteq J</span> and <span class="math inline">c \in I</span>. If <span class="math inline">f</span> is differentiable at <span class="math inline">c</span> and <span class="math inline">g</span> is differentiable at <span class="math inline">f(c)</span>, then the composite function <span class="math inline">g \circ f</span> is differentiable at <span class="math inline">c</span> and</p>
+<p><span class="math display">
+(g \circ f)^\prime(c) = g^\prime(f(c))f^\prime(c).
+</span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -582,111 +527,32 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">\lim s_n = + \infty</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, let <span class="math inline">M = 1/\varepsilon</span>. There exists a natural number <span class="math inline">N</span> such that <span class="math inline">n \geq N</span> implies <span class="math inline">s_n &gt; M = 1/\varepsilon</span>. Since <span class="math inline">s_n</span> is positive, we have</p>
+<p>Since <span class="math inline">g</span> is differentiable at <span class="math inline">f(c)</span>, we have</p>
 <p><span class="math display">
-\left|\frac{1}{s_n} - 0\right| &lt; \varepsilon = \frac{1}{M}
+\lim_{y \to f(c)} \frac{g(y)-g(f(c))}{y - f(c)} = g^\prime(f(c)).
 </span></p>
-<p>Thus <span class="math inline">\lim 1/s_n = 0</span>. For the converse, assume <span class="math inline">\lim 1/s_n = 0</span>. Then there exists a natural number <span class="math inline">N</span> such that for all <span class="math inline">n \geq N</span>, we have</p>
+<p>Define <span class="math inline">h \colon J \to \mathbb{R}</span>, where</p>
 <p><span class="math display">
-\left|\frac{1}{s_n} - 0\right|  = \frac{1}{s_n} &lt; \varepsilon.
+h(y) = \begin{cases}
+\frac{g(y)-g(f(c))}{y-f(c)} &amp; \text{if } y \not =  f(c)\\
+g^\prime(f(c)) &amp; \text{if } y = f(c)
+\end{cases}
 </span></p>
-<p>Let <span class="math inline">M = 1/\varepsilon</span>. Flipping both sides of the inequality gives us <span class="math inline">s_n &gt; 1/\varepsilon = M</span>. Thus for some natural number <span class="math inline">N</span>, for all <span class="math inline">n \geq N</span> we have <span class="math inline">s_n &gt; M</span>. Thus <span class="math inline">\lim s_n = + \infty</span>.</p>
+<p>By the first statement, we know that <span class="math inline">h</span> is continuous at <span class="math inline">f(c)</span>. Since <span class="math inline">f</span> is differentiable at <span class="math inline">c</span>, <span class="math inline">f</span> is continuous at <span class="math inline">c</span>, and thus</p>
+<p><span class="math display">
+\lim_{x\to c} (h \circ f)(x) = h(f(c)) = g^\prime(f(c)).
+</span></p>
+<p>Skipped some steps</p>
+<p><span class="math display">
+g(f(c)) - g(f(c)) = h(f(x))(f(x)-f(c))
+</span></p>
 </div>
-</div>
-</div>
-</section>
-<section id="practice" class="level2">
-<h2 class="anchored" data-anchor-id="practice">Practice</h2>
-</section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<p>In this section we proved the following theorems and results.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.1 (Algebraic Relations for limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\lim s_n = s</span> and <span class="math inline">\lim t_n = t</span>. Then</p>
-<p><span class="math inline">(a) \; \lim (s_n + t_n) = s + t. \newline</span> <span class="math inline">(b) \; \lim(ks_n) = ks</span> and <span class="math inline">\lim(k + s_n) = k + s. \newline</span> <span class="math inline">(c) \; \lim(s_nt_n) = st. \newline</span> <span class="math inline">(d) \; \lim(s_n/t_n) = s/t</span> provided <span class="math inline">\forall n,t_n \not = 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.2 (Inequality operations on limits)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n) \to s</span> and <span class="math inline">(t_n) \to t</span>. If <span class="math inline">\forall n \in \mathbb{N},\;s_n \leq t_n</span>. Then <span class="math inline">s \leq t</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Corollary 1.2.3
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">(t_n)</span> converges to <span class="math inline">t</span> and <span class="math inline">t_n \geq 0</span> for all <span class="math inline">n \in \mathbb{N}</span>, then <span class="math inline">t \geq 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.4 (Ratio test)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> is a sequence of <em>positive</em> terms and that the sequence of ratios <span class="math inline">(s_{n+1}/s_n)</span> converges to <span class="math inline">L</span>. If <span class="math inline">L &gt; 1</span>, then <span class="math inline">\lim_{s_n} = 0</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.5
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Suppose that <span class="math inline">(s_n)</span> and <span class="math inline">(t_n)</span> are sequences such that <span class="math inline">s_n \leq t_n</span> for all <span class="math inline">n \in \mathbb{N}</span>.</p>
-<p><span class="math inline">(a)</span> If <span class="math inline">\lim s_n = + \infty</span> then <span class="math inline">\lim t_n = + \infty</span>.</p>
-<p><span class="math inline">(b)</span> If <span class="math inline">\lim t_n = - \infty</span> then <span class="math inline">\lim s_n = - \infty</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 1.2.6
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">(s_n)</span> be a sequence of positive numbers. Then <span class="math inline">\lim s_n = + \infty</span> if and only if <span class="math inline">\lim 1/s_n = 0</span>.</p>
 </div>
 </div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1039,13 +905,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../qmd/realanal/sequences/convergence.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Convergence</span>
+      <a href="../../../qmd/realanal/differentiation.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Differentiation</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="pagination-link">
-        <span class="nav-page-text">Monotone sequences and Cauchy sequences</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../qmd/realanal/integration.html" class="pagination-link">
+        <span class="nav-page-text">Integration</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

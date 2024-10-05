@@ -1,9 +1,9 @@
 ---
-title: "Sequences"
+title: "Limits and Continuity"
 format:
   html:
     toc: true
     html-math-method: katex
 ---
 
-Real analysis is the study of real numbers
+In this section we extend the notion of limits to functions, and introduces the concept of a continuous functions.

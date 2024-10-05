@@ -100,3 +100,159 @@ Next we consider $\lambda < 0$. This gives us $r = \pm\sqrt{+ \lambda}$
 $$
 A(x) = c_1e^{\sqrt{-\lambda}x} + c_2e^{-\sqrt{-\lambda}x}
 $$
+
+We get
+
+$$
+u(x,t) = B\sin\left(\frac{n\pi x}{L}\right)e^{-k\left(\frac{n\pi}{L}\right)^2t}
+$$
+
+Something something
+
+$$
+u(x,t) = 7\sin\left(\frac{8\pi x}{L}\right)e^{-k(8\pi/L)^2t}
+$$
+
+We use the principle of superposition, which states that any solution can be in the form
+
+$$
+u(x,t) = \sum_{n=1}^NB_n\sin\left(\frac{n\pi x}{L}\right)e^{-k(n\pi/L)^2t}
+$$
+
+We know that the sum of multiple solutions is a solution due to linearity. We have infinite solutions. The sum of all possible solutions is
+
+$$
+u(x,t) = \sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}{L}\right)e^{-k(n\pi/L)^2t}
+$$
+
+This will work for any initial condition $u(x,0) = f(x)$. We need functions that can wrote as an infinite sum we can apply linearity to. We claim any function can be wrote as an infinite linear combination of $\sin$ functions, known as a [**Fourier Series**]{.definition}
+
+$$
+f(x) = \sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L}.
+$$
+
+But how do we determine the constant $B_n$ for a given function $f(x)$? For this we need to check
+
+$$
+\int_0^L \sin(\frac{n\pi x}{L}) \sin(\frac{m\pi x}{L}) \; dx.
+$$
+
+When $n \not = m$ we use the product of $\sin$ to get
+
+$$
+\frac{1}{2} \int_0^L \cos(\frac{(n-m)\pi x}{L}) \; dx - \frac{1}{2}\int_0^L \cos\left(\frac{(n+m)\pi x}{L}\right) \; dx
+$$
+
+Which is equal to
+
+$$
+\frac{1}{2}\frac{L}{(n-m)\pi}\left.\sin\left(\frac{(n-m)\pi x}{L}\right)\right|^L_0 - \frac{1}{2}\frac{L}{(n+m)\pi}\left.\sin\left(\frac{(n+m)\pi x}{L}\right)\right|^L_0 = 0
+$$
+
+When $n = m$ we have
+
+$$
+\frac{1}{2}\int_0^L \cos(0)\; dx - \frac{1}{2}\int_0^L \cos\left(\frac{2n\pi x}{L}\right)\; dx = \frac{L}{2}
+$$
+
+Thus we have
+
+$$
+\int_0^L \sin\left(\frac{n\pi x}{L}\right) \sin\left(\frac{m\pi x}{L}\right) \; dx = \begin{cases}
+0 & n \not = m\\
+L/2 & n = m
+\end{cases}
+$$
+
+So lets find $B_m$. We know
+
+$$
+f(x) = \sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L}.
+$$
+
+Multiplying both sides by $\sin(m\pi x/L)$ gets us
+
+$$
+\sin\left(\frac{m\pi x}{L}\right)f(x) = \sin\left(\frac{m\pi x}{L}\right)\sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L} = \sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L}\sin\frac{m\pi x}{L}
+$$
+
+Integrating both sides from $0$ to $L$ with respect to $x$ gives
+
+$$
+\int_0^L\sin\left(\frac{m\pi x}{L}\right)f(x)\; dx = \sum_{n=1}^\infty B_n \int_0^L \sin \frac{n\pi x}{L}\sin\frac{m\pi x}{L} \; dx
+$$
+
+Which we solved earlier. We can expand the sum
+
+\begin{align*}
+\sum_{n=1}^\infty B_n \int_0^L \sin \frac{n\pi x}{L}\sin\frac{m\pi x}{L} \; dx &= B_1 \int_0^L \sin \frac{\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&+ B_2 \int_0^L \sin \frac{2\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&+ B_3\int_0^L \sin \frac{3\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&+ B_4\int_0^L \sin \frac{4\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&+ \cdots\\
+&+ B_m\int_0^L \sin \frac{m\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&+ B_{m+1}\int_0^L \sin \frac{(m+1)\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&+ \cdots\\
+&= B_m \frac{L}{2}
+\end{align*}
+
+Thus
+
+$$
+B_m = \frac{2}{L} \int_0^L f(x) \sin\left(\frac{m\pi x}{L}\right)\; dx
+$$
+
+If we want to represent $f(x)$, we just use the coeffiencts given by the above integral.
+
+Lets say for example we have $u(x,0) = f(x) = 100$. To write the solution, we need to compute $B_n$.
+
+\begin{align*}
+B_n &= \frac{2}{L} \int_0^L f(x) \sin\left(\frac{n\pi x}{L}\right)\; dx\\
+&= \frac{2}{L} \int_0^L 100 \sin\left(\frac{n\pi x}{L}\right)\; dx\\
+&= \frac{200}{L} \frac{L}{n\pi} \left.\left(- \cos\left(\frac{n\pi x}{L}\right)\right)\right|^L_0\\
+&= \frac{200}{n\pi}\left[-\cos(n\pi) + \cos(0)\right]
+\end{align*}
+
+Thus we have
+
+$$B_n = \begin{cases}
+400/n\pi  & \text{if } n \mod 2 = 1\\
+0 & \text{if } n \mod 2 = 0
+\end{cases}
+$$
+
+Then $f(x)$ is
+
+$$
+f(x) = \sum_{n=0}^\infty \frac{400}{(2n+1)\pi} \sin \frac{(2n+1)\pi x}{L}.
+$$
+
+Then we can rewrite our heat equation as
+
+$$
+u(x,t) = \left(\sum_{n=0}^\infty \frac{400}{(2n+1)\pi} \sin \frac{(2n+1)\pi x}{L}\right)e^{-k((2n+1)\pi/L)^2t}
+$$
+
+Another problem with different boundary conditions 
+
+$$
+u(x,t) = C\cos\left(\frac{n\pi x}{L}\right)e^{-k(n\pi/L)^2t}
+$$
+
+Using the superposition principle
+
+$$
+u(x,t) = \sum_{n=0}^\infty A_n \cos\left(\frac{n\pi x}{L}\right) e^{-k(n\pi/L)^2t}
+$$
+
+Is also a solution. What do we need in the solution to satisfy the initial condition $u(x,0) = f(x) = \sum A_n\cos(n\pi x/L)$. Same idea as before but with $\cos$ instead of $\sin$. Again we need to find $A_n$. 
+
+To determine $A_n$, we will need 
+
+$$
+\int_0^L \cos\left(\frac{n\pi x}{L}\right) \cos\left(\frac{m\pi x}{L}\right) \; dx = \begin{cases}
+0 & n \not = m\\
+L/2 & n = m\\
+L & n = m = 0
+\end{cases}
+$$

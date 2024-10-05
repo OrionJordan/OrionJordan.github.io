@@ -201,6 +201,116 @@ A(x) = c_2\sin\left(\frac{nx\pi}{L}\right)
 <p><span class="math display">
 A(x) = c_1e^{\sqrt{-\lambda}x} + c_2e^{-\sqrt{-\lambda}x}
 </span></p>
+<p>We get</p>
+<p><span class="math display">
+u(x,t) = B\sin\left(\frac{n\pi x}{L}\right)e^{-k\left(\frac{n\pi}{L}\right)^2t}
+</span></p>
+<p>Something something</p>
+<p><span class="math display">
+u(x,t) = 7\sin\left(\frac{8\pi x}{L}\right)e^{-k(8\pi/L)^2t}
+</span></p>
+<p>We use the principle of superposition, which states that any solution can be in the form</p>
+<p><span class="math display">
+u(x,t) = \sum_{n=1}^NB_n\sin\left(\frac{n\pi x}{L}\right)e^{-k(n\pi/L)^2t}
+</span></p>
+<p>We know that the sum of multiple solutions is a solution due to linearity. We have infinite solutions. The sum of all possible solutions is</p>
+<p><span class="math display">
+u(x,t) = \sum_{n=1}^\infty B_n\sin\left(\frac{n\pi x}{L}\right)e^{-k(n\pi/L)^2t}
+</span></p>
+<p>This will work for any initial condition <span class="math inline">u(x,0) = f(x)</span>. We need functions that can wrote as an infinite sum we can apply linearity to. We claim any function can be wrote as an infinite linear combination of <span class="math inline">\sin</span> functions, known as a <span class="definition"><strong>Fourier Series</strong></span></p>
+<p><span class="math display">
+f(x) = \sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L}.
+</span></p>
+<p>But how do we determine the constant <span class="math inline">B_n</span> for a given function <span class="math inline">f(x)</span>? For this we need to check</p>
+<p><span class="math display">
+\int_0^L \sin(\frac{n\pi x}{L}) \sin(\frac{m\pi x}{L}) \; dx.
+</span></p>
+<p>When <span class="math inline">n \not = m</span> we use the product of <span class="math inline">\sin</span> to get</p>
+<p><span class="math display">
+\frac{1}{2} \int_0^L \cos(\frac{(n-m)\pi x}{L}) \; dx - \frac{1}{2}\int_0^L \cos\left(\frac{(n+m)\pi x}{L}\right) \; dx
+</span></p>
+<p>Which is equal to</p>
+<p><span class="math display">
+\frac{1}{2}\frac{L}{(n-m)\pi}\left.\sin\left(\frac{(n-m)\pi x}{L}\right)\right|^L_0 - \frac{1}{2}\frac{L}{(n+m)\pi}\left.\sin\left(\frac{(n+m)\pi x}{L}\right)\right|^L_0 = 0
+</span></p>
+<p>When <span class="math inline">n = m</span> we have</p>
+<p><span class="math display">
+\frac{1}{2}\int_0^L \cos(0)\; dx - \frac{1}{2}\int_0^L \cos\left(\frac{2n\pi x}{L}\right)\; dx = \frac{L}{2}
+</span></p>
+<p>Thus we have</p>
+<p><span class="math display">
+\int_0^L \sin\left(\frac{n\pi x}{L}\right) \sin\left(\frac{m\pi x}{L}\right) \; dx = \begin{cases}
+0 &amp; n \not = m\\
+L/2 &amp; n = m
+\end{cases}
+</span></p>
+<p>So lets find <span class="math inline">B_m</span>. We know</p>
+<p><span class="math display">
+f(x) = \sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L}.
+</span></p>
+<p>Multiplying both sides by <span class="math inline">\sin(m\pi x/L)</span> gets us</p>
+<p><span class="math display">
+\sin\left(\frac{m\pi x}{L}\right)f(x) = \sin\left(\frac{m\pi x}{L}\right)\sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L} = \sum_{n=1}^\infty B_n \sin \frac{n\pi x}{L}\sin\frac{m\pi x}{L}
+</span></p>
+<p>Integrating both sides from <span class="math inline">0</span> to <span class="math inline">L</span> with respect to <span class="math inline">x</span> gives</p>
+<p><span class="math display">
+\int_0^L\sin\left(\frac{m\pi x}{L}\right)f(x)\; dx = \sum_{n=1}^\infty B_n \int_0^L \sin \frac{n\pi x}{L}\sin\frac{m\pi x}{L} \; dx
+</span></p>
+<p>Which we solved earlier. We can expand the sum</p>
+<p><span class="math display">\begin{align*}
+\sum_{n=1}^\infty B_n \int_0^L \sin \frac{n\pi x}{L}\sin\frac{m\pi x}{L} \; dx &amp;= B_1 \int_0^L \sin \frac{\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&amp;+ B_2 \int_0^L \sin \frac{2\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&amp;+ B_3\int_0^L \sin \frac{3\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&amp;+ B_4\int_0^L \sin \frac{4\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&amp;+ \cdots\\
+&amp;+ B_m\int_0^L \sin \frac{m\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&amp;+ B_{m+1}\int_0^L \sin \frac{(m+1)\pi x}{L}\sin\frac{m\pi x}{L} \; dx\\
+&amp;+ \cdots\\
+&amp;= B_m \frac{L}{2}
+\end{align*}</span></p>
+<p>Thus</p>
+<p><span class="math display">
+B_m = \frac{2}{L} \int_0^L f(x) \sin\left(\frac{m\pi x}{L}\right)\; dx
+</span></p>
+<p>If we want to represent <span class="math inline">f(x)</span>, we just use the coeffiencts given by the above integral.</p>
+<p>Lets say for example we have <span class="math inline">u(x,0) = f(x) = 100</span>. To write the solution, we need to compute <span class="math inline">B_n</span>.</p>
+<p><span class="math display">\begin{align*}
+B_n &amp;= \frac{2}{L} \int_0^L f(x) \sin\left(\frac{n\pi x}{L}\right)\; dx\\
+&amp;= \frac{2}{L} \int_0^L 100 \sin\left(\frac{n\pi x}{L}\right)\; dx\\
+&amp;= \frac{200}{L} \frac{L}{n\pi} \left.\left(- \cos\left(\frac{n\pi x}{L}\right)\right)\right|^L_0\\
+&amp;= \frac{200}{n\pi}\left[-\cos(n\pi) + \cos(0)\right]
+\end{align*}</span></p>
+<p>Thus we have</p>
+<p><span class="math display">B_n = \begin{cases}
+400/n\pi  &amp; \text{if } n \mod 2 = 1\\
+0 &amp; \text{if } n \mod 2 = 0
+\end{cases}
+</span></p>
+<p>Then <span class="math inline">f(x)</span> is</p>
+<p><span class="math display">
+f(x) = \sum_{n=0}^\infty \frac{400}{(2n+1)\pi} \sin \frac{(2n+1)\pi x}{L}.
+</span></p>
+<p>Then we can rewrite our heat equation as</p>
+<p><span class="math display">
+u(x,t) = \left(\sum_{n=0}^\infty \frac{400}{(2n+1)\pi} \sin \frac{(2n+1)\pi x}{L}\right)e^{-k((2n+1)\pi/L)^2t}
+</span></p>
+<p>Another problem with different boundary conditions</p>
+<p><span class="math display">
+u(x,t) = C\cos\left(\frac{n\pi x}{L}\right)e^{-k(n\pi/L)^2t}
+</span></p>
+<p>Using the superposition principle</p>
+<p><span class="math display">
+u(x,t) = \sum_{n=0}^\infty A_n \cos\left(\frac{n\pi x}{L}\right) e^{-k(n\pi/L)^2t}
+</span></p>
+<p>Is also a solution. What do we need in the solution to satisfy the initial condition <span class="math inline">u(x,0) = f(x) = \sum A_n\cos(n\pi x/L)</span>. Same idea as before but with <span class="math inline">\cos</span> instead of <span class="math inline">\sin</span>. Again we need to find <span class="math inline">A_n</span>.</p>
+<p>To determine <span class="math inline">A_n</span>, we will need</p>
+<p><span class="math display">
+\int_0^L \cos\left(\frac{n\pi x}{L}\right) \cos\left(\frac{m\pi x}{L}\right) \; dx = \begin{cases}
+0 &amp; n \not = m\\
+L/2 &amp; n = m\\
+L &amp; n = m = 0
+\end{cases}
+</span></p>
 
 
 

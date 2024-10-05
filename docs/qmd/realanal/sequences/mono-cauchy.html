@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../qmd/realanal/limits-cont.html" rel="next">
+<link href="../../../qmd/realanal/sequences/subsequences.html" rel="next">
 <link href="../../../qmd/realanal/sequences/limittheo.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
@@ -162,15 +162,65 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Limits and Continuity</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Differentiation</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <span class="sidebar-item-text sidebar-link text-start">
@@ -191,6 +241,9 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#monotone-sequences" id="toc-monotone-sequences" class="nav-link active" data-scroll-target="#monotone-sequences">Monotone Sequences</a></li>
+  <li><a href="#cauchy-sequences" id="toc-cauchy-sequences" class="nav-link" data-scroll-target="#cauchy-sequences">Cauchy sequences</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
   </ul>
 </nav>
     </div>
@@ -243,7 +296,7 @@ Theorem 1.3.1 (Monotone Convergence Theorem)
 <p>A monotone sequence is convergent if and only if it is bounded.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -267,6 +320,277 @@ s + \varepsilon &gt; s_N \geq s_n \geq s
 <p>for all <span class="math inline">n \geq N</span>. Thus <span class="math inline">(s_n)</span> converges to <span class="math inline">s</span>.</p>
 <p>The converse, that a convergent sequence is bounded, was proved in Theorem <span class="math inline">1.1.3</span>.</p>
 </div>
+</div>
+</div>
+<p>This allows us to prove sequences are convergent without using the defintion of convergence, and without knowledge of what the sequence converges to.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n)</span> be the sequence defined by <span class="math inline">s_1 = 1</span> and <span class="math inline">s_{n+1} = \sqrt{1 + s_n}</span> for <span class="math inline">n \geq 1</span>.</p>
+<p><strong>Claim:</strong> <span class="math inline">(s_n)</span> is a bounded increasing sequence.</p>
+<p>We can manually compute the first few terms of the sequences</p>
+<span class="math display">\begin{align*}
+s_1 &amp;= 1\\
+s_2 &amp;= \sqrt{1 + 1} &amp;\approx 1.414\\
+s_3 &amp;= \sqrt{1 + \sqrt{2}} &amp;\approx 1.554\\
+s_4 &amp;= \sqrt{1 + \sqrt{1 + \sqrt{2}}} &amp;\approx 1.598
+\end{align*}</span>
+<p>It appears that the sequence is bounded by <span class="math inline">2</span>. We can prove this via induction. Suppose <span class="math inline">s_k &lt; 2</span> for some <span class="math inline">k \in \mathbb{N}</span>. Then</p>
+<p><span class="math display">
+s_{k+1} = \sqrt{1 + s_k} &lt; \sqrt{1 + 2} = \sqrt{3} &lt; 2.
+</span></p>
+<p>Because <span class="math inline">s_1 = 1</span>, we can conclude via induction that <span class="math inline">s_n &lt; 2</span> for all <span class="math inline">n \in \mathbb{N}</span>. Thus we know <span class="math inline">(s_n)</span> is bounded. We now want to prove that it’s increasing. We also use induction to prove this. Suppose <span class="math inline">s_k &lt; s_{k+1}</span> for some natural number <span class="math inline">k</span>. Then we have</p>
+<p><span class="math display">
+s_{k+1} = \sqrt{1 + s_k} &lt; \sqrt{1 + s_{k+1}} = s_{k+2}
+</span></p>
+<p>Therefore our induction step is complete. Because <span class="math inline">s_1 &lt; s_2</span>, we have that <span class="math inline">s_n &lt; s_{n+1}</span> for all <span class="math inline">n \in \mathbb{N}</span>. Thus <span class="math inline">(s_n)</span> is an increasing sequence and is bounded by the interval <span class="math inline">[1,2]</span>. By Theorem <span class="math inline">1.3.1</span>, we can conclude that the sequence is convergent, even though we don’t know the value <span class="math inline">s</span> the sequence converges to.</p>
+<p>Because <span class="math inline">\lim s_{n+1} = \lim s_n</span> (Proof needed), we know that the value of <span class="math inline">s</span> must satisfy the equation</p>
+<p><span class="math display">
+s = \sqrt{1 + s}.
+</span></p>
+<p>This can be reasoned intuitively, as the difference <span class="math inline">s_{n+1} - s_n</span> must shrink to zero as <span class="math inline">n</span> grows. Solving through algebra</p>
+<span class="math display">\begin{align*}
+s &amp;= \sqrt{1 + s}\\
+s^2 - s - 1 &amp;= 0\\
+s &amp;= \frac{1 \pm \sqrt{5}}{2} = \phi
+\end{align*}</span>
+<p>Where <span class="math inline">\phi</span> is the Golden ratio. We take the positive value since <span class="math inline">s_n \geq 1</span> for all <span class="math inline">n</span>. Thus <span class="math inline">\lim s_n = \phi</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(a)</span> If <span class="math inline">(s_n)</span> is an unbounded increasing sequence, then <span class="math inline">\lim s_n = + \infty</span></p>
+<p><span class="math inline">(b)</span> If <span class="math inline">(s_n)</span> is an unbounded decreasing sequence, then <span class="math inline">\lim s_n = - \infty</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(a)</span> Let <span class="math inline">(s_n)</span> be an increasing sequence and suppose that the set <span class="math inline">S = \{s_n \colon n \in \mathbb{N}\}</span> is unbounded. Since <span class="math inline">(s_n)</span> is increasing, <span class="math inline">S</span> is bounded below by <span class="math inline">s_1</span>. Hence <span class="math inline">S</span> must be unbounded above. Given any <span class="math inline">M \in \mathbb{R}</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">s_N &gt; M</span>. Since <span class="math inline">(s_n)</span> is increasing, we have <span class="math inline">M &lt; s_N \leq s_n</span>, so <span class="math inline">\lim s_n = + \infty</span>.</p>
+<p>Identically</p>
+<p><span class="math inline">(b)</span> Let <span class="math inline">(s_n)</span> be a decreasing sequence and suppose that the set <span class="math inline">S = \{s_n \colon n \in \mathbb{N}\}</span> is unbounded. Since <span class="math inline">(s_n)</span> is decreasing, <span class="math inline">S</span> is bounded above by <span class="math inline">s_1</span>. Thus <span class="math inline">S</span> must be unbounded below. Given any <span class="math inline">M \in \mathbb{R}</span>, there exists a natrual number <span class="math inline">N</span> such that <span class="math inline">s_N &lt; M</span>. Since <span class="math inline">(s_n)</span> is decreasing, we have <span class="math inline">s_n &lt; s_N &lt; M</span>. Therefore <span class="math inline">\lim s_n = - \infty</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="cauchy-sequences" class="level2">
+<h2 class="anchored" data-anchor-id="cauchy-sequences">Cauchy sequences</h2>
+<p>When a sequence converges, not only do the terms get closer to the limit, they get closer to each other for sufficient large <span class="math inline">n</span>. It turns out that if the terms in a sequence get continually closer to each other, the sequence itself converges.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">(s_n)</span> is said to be a <span class="definition"><strong>Cauchy sequence</strong></span> if for all <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">m,n \geq N</span> implies that <span class="math inline">|s_n - s_m| &lt; \varepsilon</span>.</p>
+</div>
+</div>
+<p>Essentially, a sequence is Cauchy if the terms get arbitrarily close to each other.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma 1.3.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every convergent sequence is a Cauchy sequence.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">(s_n)</span> converges to <span class="math inline">s</span>. To show that <span class="math inline">s_n</span> is close to <span class="math inline">s_m</span> for sufficiently large <span class="math inline">n,m</span>, we use the fact that they are both close to <span class="math inline">s</span>. The triangle inequality gives</p>
+<p><span class="math display">
+|s_n - s_m| = |s_n - s + s - s_m| \leq |s_n - s| + |s - s_m|.
+</span></p>
+<p>For any <span class="math inline">\varepsilon &gt; 0</span>, choose some natural number <span class="math inline">N</span> such that <span class="math inline">k \geq N</span> implies <span class="math inline">|s_k - s| &lt; \varepsilon/2</span>. This <span class="math inline">k</span> exists, because <span class="math inline">\lim s_n = s</span>. Then for <span class="math inline">m,n \geq N</span> we have</p>
+<p><span class="math display">
+|s_n - s_m| \leq |s_n - s| + |s - s_m| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+</span></p>
+<p>Therefore <span class="math inline">(s_n)</span> is a Cauchy sequence.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma 1.3.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every Cauchy sequence is bounded.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">(s_n)</span> be a Cauchy sequence. Then there exists a natural number <span class="math inline">N</span> such that for all <span class="math inline">n,m \geq N</span>, <span class="math inline">|s_n - s_m| &lt; \varepsilon</span>. Let <span class="math inline">\varepsilon = 1</span>. Let <span class="math inline">m = N</span>. Through the triangle inequality we have</p>
+<p><span class="math display">
+|s_n| - |s_N| \leq |s_n - s_N| &lt; 1 \implies |s_n| &lt; 1 + |s_N|
+</span></p>
+<p>Let <span class="math inline">M = \max\{|s_1|,\dots,|s_N|,1 + |s_N|\}</span>. Then for all <span class="math inline">n \in \mathbb{N}</span>, <span class="math inline">|s_n| \leq M</span>. Thus <span class="math inline">(s_n)</span> is bounded.</p>
+</div>
+</div>
+</div>
+<p>The above lemma is very similar to Theorem <span class="math inline">1.1.3</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.5 (Cauchy Convergence Criterion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">(s_n)</span> is convergent if and only if it is a Cauchy sequence.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have already proved in Lemma <span class="math inline">1.3.3</span> that every convergent sequence is a Cauchy sequence, so we only need to prove the reverse direction. Suppose <span class="math inline">(s_n)</span> is a Cauchy sequence and let <span class="math inline">S = \{s_n \colon n \in \mathbb{N}\}</span> be the range of the sequence. We consider two cases, when <span class="math inline">S</span> is finite, and when <span class="math inline">S</span> is infinite.</p>
+<p>If <span class="math inline">S</span> is finite, then the minimum distant <span class="math inline">\varepsilon</span> between any two points is positive. Since <span class="math inline">(s_n)</span> is Cauchy, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">m,n \geq N</span> implies <span class="math inline">|s_n - s_m| &lt; \varepsilon</span>. Given any <span class="math inline">m \geq N</span>, <span class="math inline">s_m</span> and <span class="math inline">s_N</span> are both in <span class="math inline">S</span>. If the distant between them is less than <span class="math inline">\varepsilon</span>, then it must be zero. Thus <span class="math inline">s_m = s_N</span> for all <span class="math inline">m \geq N</span>. Therefore <span class="math inline">\lim s_n = s_N</span>.</p>
+<p>Next, suppose that <span class="math inline">S</span> is infinite. From Lemma <span class="math inline">1.3.4</span> we know <span class="math inline">S</span> is bounded. From the <em>Bolzano-Weierstrass</em> theorem there exists a point <span class="math inline">s</span> in <span class="math inline">\mathbb{R}</span> that is an accumulation point of <span class="math inline">S</span>. We claim <span class="math inline">(s_n)</span> converges to <span class="math inline">s</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that <span class="math inline">|s_n - s_m| &lt; \varepsilon/2</span> for any <span class="math inline">n,m \geq N</span>. Since <span class="math inline">s</span> is an accumulation point of <span class="math inline">S</span>, the neighborhood <span class="math inline">N(s;\varepsilon/2)</span> contains an infinite amount of points in <span class="math inline">S</span>. Thus there exists some integer <span class="math inline">m \geq N</span> such that <span class="math inline">s_m \in N(s;\varepsilon/2)</span>. Hence for any <span class="math inline">n \geq N</span> we have</p>
+<p><span class="math display">
+|s_n - s| = |s_n - s_m + s_m - s| \leq |s_n - s_m| + |s_m - s| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+</span></p>
+<p>Thus <span class="math inline">\lim s_n = s</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<p>In this section we proved the following theorems and results.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.1 (Monotone Convergence Theorem)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A monotone sequence is convergent if and only if it is bounded.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">(a)</span> If <span class="math inline">(s_n)</span> is an unbounded increasing sequence, then <span class="math inline">\lim s_n = + \infty</span></p>
+<p><span class="math inline">(b)</span> If <span class="math inline">(s_n)</span> is an unbounded decreasing sequence, then <span class="math inline">\lim s_n = - \infty</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma 1.3.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every convergent sequence is a Cauchy sequence.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lemma 1.3.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every Cauchy sequence is bounded.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 1.3.5 (Cauchy Convergence Criterion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">(s_n)</span> is convergent if and only if it is a Cauchy sequence.</p>
 </div>
 </div>
 
@@ -629,8 +953,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../../qmd/realanal/limits-cont.html" class="pagination-link">
-        <span class="nav-page-text">Limits and Continuity</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../../qmd/realanal/sequences/subsequences.html" class="pagination-link">
+        <span class="nav-page-text">Subsequences</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

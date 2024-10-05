@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
+<link href="../../../qmd/realanal/differentiation.html" rel="next">
+<link href="../../../qmd/realanal/limits-cont/cont-func-prop.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -82,7 +84,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -110,13 +112,140 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont.html">Limits and Continuity</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/limits-cont/uniform-continuity.html">Uniform Continuity</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Integration</span></span>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">
+ <span class="menu-text">Infinite Series</span></span>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#practice" id="toc-practice" class="nav-link" data-scroll-target="#practice">Practice</a></li>
+  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -139,6 +268,12 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Continuity is defined on each point <span class="math inline">c \in D</span>, we want to define a notion of continuity that is not pointwise, and is instead defined on the whole domain <span class="math inline">D</span>.</p>
+<section id="motivation" class="level2">
+<h2 class="anchored" data-anchor-id="motivation">Motivation</h2>
+<p>A uniformly continuous function has a single <span class="math inline">\delta</span> that works on the whole domain, whereas a continuous function has a separate <span class="math inline">\delta</span> for each point <span class="math inline">c \in D</span>.</p>
+<p>In other words, continuity is a local condition on a function. It is defined at each point <span class="math inline">c \in D</span>, and cares only about an infinitesimally small neighborhood about said point. Uniform continuity is a stronger notion, defined over the entirety of the domain <span class="math inline">D</span> of a function.</p>
+<p>Roughly speaking, a function is uniformly continuous if there exists no <em>rapid</em> changes in the function. Verticle asymptotes on a function are <em>rapid</em> changes, where as linear changes aren’t. Another piece of intuition is that a function is uniformly continuous if an infinitesimally small change in <span class="math inline">x</span> does not create an appreciable change in <span class="math inline">f(x)</span>.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>We use the following definition to formalize our intuition on rapid changes.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -151,7 +286,7 @@ Definition
 <div class="callout-body-container callout-body">
 <p>A function <span class="math inline">f \colon D \to \mathbb{R}</span> is uniformly continuous on <span class="math inline">D</span> if for all <span class="math inline">\varepsilon &gt; 0</span>, there exists <span class="math inline">\delta &gt; 0</span> such that for all <span class="math inline">x,y \in D</span>, <span class="math inline">|x-y| &lt; \delta \implies |f(x) - f(y)| &lt; \varepsilon</span>. Symbolically</p>
 <p><span class="math display">
-\forall \varepsilon &lt; 0, \exists \delta &gt; 0 | \forall x,y \in D |x-y| &lt; \delta \implies |f(x) - f(y)| &lt; \varepsilon
+\forall \varepsilon &gt; 0, \exists \delta &gt; 0 | \forall x,y \in D |x-y| &lt; \delta \implies |f(x) - f(y)| &lt; \varepsilon
 </span></p>
 </div>
 </div>
@@ -177,7 +312,6 @@ Example (A uniformly continuous function)
 <p>Thus we have <span class="math inline">f(x) = 2x</span> is uniformly continuous.</p>
 </div>
 </div>
-<p>A uniformly continuous function has a single <span class="math inline">\delta</span> that works on the whole domain, whereas a continous function has a seperate <span class="math inline">\delta</span> for each point <span class="math inline">c \in D</span>.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -204,7 +338,7 @@ Example (A non uniformly continuous function)
 <p>Let <span class="math inline">\varepsilon = 1</span>. Given any <span class="math inline">\delta &gt; 0</span>, let <span class="math inline">x = 1/\delta, y = 1/\delta + \delta/2</span>. Then <span class="math inline">|x-y| = \delta/2 &lt; \delta</span>, and <span class="math inline">|f(x) - f(y)| = |x+y| \cdot |x-y| = |2/\delta + \delta/2| \cdot |\delta/2| \geq 1</span>. Thus our function <span class="math inline">f</span> is not continuous on <span class="math inline">\mathbb{R}</span>.</p>
 </div>
 </div>
-<p>Insert graphical pictures later.</p>
+<p>Those two examples provide the usual process we use to prove a function is or is not continuous. However, a function being uniformly continuous depends on the domain used.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -222,21 +356,21 @@ Example (A bounded uniformly continuous function)
 </span></p>
 </div>
 </div>
-<p>By bounding our domain, we were able to show the function is uniformly continuous on said domain. This leads us to believe (correctly!) that a continuous function on a compact domain is automatically uniformly continuous.</p>
+<p>By bounding our domain, we were able to show the function is uniformly continuous on said domain. This leads us to the following theorem.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 2.4.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If <span class="math inline">D</span> is compact, and <span class="math inline">f \colon D \to \mathbb{R}</span> is continuous, then <span class="math inline">f</span> is uniformly continuous.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
@@ -262,18 +396,247 @@ F = \left\{ N\left(x,\frac{\delta_x}{2}\right) \mid x \in D \right\}
 <p><span class="math display">
 |y - x_i| = |y-x + x - x_i| \leq |y-x| + |x - x_i| &lt; \frac{\delta_{x_i}}{2} + \frac{\delta_{x_i}}{2} = \delta_{x_i}.
 </span></p>
-<p>Thus <span class="math inline">|f(y) - f(x_i)| &lt; \varepsilon/2</span>. We also have <span class="math inline">|x - x_i| &lt; \delta_{x_i}</span>, so <span class="math inline">|f(x) - f(x_i)| &lt; \varepsilon/2</span>. Thus</p>
+<p>Thus <span class="math inline">|f(y) - f(x_i)| &lt; \varepsilon/2</span>. We also have <span class="math inline">|x - x_i| &lt; \delta_{x_i}</span>, so <span class="math inline">|f(x) - f(x_i)| &lt; \varepsilon/2</span>. Through the triangle inequality</p>
 <p><span class="math display">
 |f(x) - f(y)| \leq |f(x) - f(x_i)|+|f(x_i) - f(y)| &lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon.
 </span></p>
-<p>Therefore our function is uniformly continuous. <span class="math inline">\square</span>.</p>
+<p>Therefore our function is uniformly continuous.</p>
 </div>
+</div>
+</div>
+<p>Historically, Cauchy believed the following theorem was true of any continuous function, which was later found to be inaccurate.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> be uniformly continuous on <span class="math inline">D</span> and suppose <span class="math inline">(x_n)</span> is a Cauchy sequence in <span class="math inline">D</span>. Then <span class="math inline">(f(x_n))</span> is Cauchy.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Given any <span class="math inline">\varepsilon &gt; 0</span>, since <span class="math inline">f</span> is uniformly continuous on <span class="math inline">D</span>, there exists some <span class="math inline">\delta &gt; 0</span> such that for all <span class="math inline">x,y \in D</span></p>
+<p><span class="math display">
+|x-y| &lt; \delta \implies |f(x) - f(y)| &lt; \varepsilon.
+</span></p>
+<p>Since <span class="math inline">(x_n)</span> is Cauchy, there exists an integer <span class="math inline">N</span> such that, when <span class="math inline">n,m \geq N</span></p>
+<p><span class="math display">
+|x_n - x_m| &lt; \delta.
+</span></p>
+<p>Therefore, for <span class="math inline">m,n \geq N</span>, we also have <span class="math inline">|f(x_n) - f(x_m)| &lt; \varepsilon</span>, so <span class="math inline">(f(x_n))</span> is a Cauchy sequence.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We say that a function <span class="math inline">\tilde{f} \colon E \to \mathbb{R}</span> is an <span class="definition">extension</span> of a function <span class="math inline">f \colon D \to \mathbb{R}</span> if <span class="math inline">D \subseteq E</span> and <span class="math inline">f(x) = \tilde{f}(x)</span> for all <span class="math inline">x \in D</span>.</p>
+</div>
+</div>
+<p>This definition allows us to take a function <span class="math inline">f</span>, and create a new function <span class="math inline">\tilde{f}</span> such that <span class="math inline">f(x) = \tilde{f}(x)</span>. If we extend <span class="math inline">f</span> to a domain, and prove <span class="math inline">\tilde{f}</span> is uniformly continuous on said domain, then clearly <span class="math inline">f</span> is uniformly continuous on it’s sub-domain.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon (a,b) \to \mathbb{R}</span> is uniformly continuous on <span class="math inline">(a,b)</span> if and only if it can be extended to a function <span class="math inline">\tilde{f}</span> that is continuous on <span class="math inline">[a,b]</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We start by proving the reverse direction. By Theorem <span class="math inline">2.4.1</span> if <span class="math inline">\tilde{f}</span> is continuous on <span class="math inline">[a,b]</span>, it is uniformly continuous. It follws then that <span class="math inline">\tilde{f}</span>, and hence <span class="math inline">f</span>, is also uniformly continuous on the subset <span class="math inline">(a,b)</span>.</p>
+<p>Conversly, suppose that <span class="math inline">f</span> is uniformly continuous on <span class="math inline">(a,b)</span>. Let <span class="math inline">(s_n)</span> be a sequence in <span class="math inline">(a,b)</span> such that <span class="math inline">\lim s_n = a</span> (We know this sequence exists, because <span class="math inline">a</span> is an accumulation point). By Theorem <span class="math inline">1.3.5</span>, <span class="math inline">(s_n)</span> is Cauchy. Then by Theorem <span class="math inline">2.4.2</span>, <span class="math inline">(f(s_n))</span> is Cauchy, and thus converges. By Theorem <span class="math inline">2.1.4</span>, <span class="math inline">\lim_{x\to a}f(x) = p</span> for some <span class="math inline">p \in \mathbb{R}</span>. Similarly, <span class="math inline">\lim_{x \to b}f(x) = q</span> for some <span class="math inline">q \in \mathbb{R}</span>.</p>
+<p>We define <span class="math inline">\tilde{f} \colon [a,b] \to \mathbb{R}</span> by</p>
+<p><span class="math display">
+\tilde{f}(x) = \begin{cases}
+f(x), &amp; a &lt; x &lt; b\\
+p, &amp; x = a\\
+q, &amp; x = b
+\end{cases}
+</span></p>
+<p>Then <span class="math inline">\tilde{f}</span> is an extension of <span class="math inline">f</span>. Since <span class="math inline">f</span> is continuous on <span class="math inline">(a.b)</span>, so is <span class="math inline">\tilde{f}</span>. Since <span class="math inline">\tilde{f}</span> is continuous on <span class="math inline">a,b</span> it follws that <span class="math inline">\tilde{f}</span> is continuous on <span class="math inline">[a,b]</span>.</p>
+</div>
+</div>
+</div>
+<p>Unrelated.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f\colon D \to \mathbb{R}</span> be a uniformly continuous function on the bounded set <span class="math inline">D</span>. Prove that <span class="math inline">f</span> is bounded on <span class="math inline">D</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose that <span class="math inline">f(D)</span> is not bounded. Then, for any <span class="math inline">M \in \mathbb{R}</span> there exists a sequence <span class="math inline">(x_n) \in D</span> such that for some natural number <span class="math inline">n</span>, <span class="math inline">|f(x_n)| \geq M</span>.</p>
+<p>Since <span class="math inline">D</span> is bounded, there exists a convergent sub-sequence <span class="math inline">(x^\prime_n)</span> of <span class="math inline">(x_n)</span> by Theorem <span class="math inline">1.4.2</span>, which is additionally a Cauchy sequence by Lemma <span class="math inline">1.3.3</span>. Since <span class="math inline">f</span> is uniformly continuous, we would have that <span class="math inline">(f(x^\prime_n))</span> is a Cauchy sequence. But by Lemma <span class="math inline">1.3.4</span>, every cauchy sequence must be bounded. Thus our assumption that <span class="math inline">f(D)</span> is unbounded is false, and <span class="math inline">f(D)</span> must be bounded.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="practice" class="level2">
+<h2 class="anchored" data-anchor-id="practice">Practice</h2>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> is said to be <span class="definition">periodic</span> if there exists a number <span class="math inline">k &gt; 0</span> such that <span class="math inline">f(x + k) = f(x)</span> for all <span class="math inline">x \in \mathbb{R}</span>. Suppose that <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> is continuous and periodic. Prove that <span class="math inline">f</span> is bounded and uniformly continuous on <span class="math inline">\mathbb{R}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a continuous function with period <span class="math inline">k</span>. Take <span class="math inline">f \colon [0,k] \to \mathbb{R}</span>. Since <span class="math inline">[0,k]</span> is compact, <span class="math inline">f([0,k])</span> is compact, and therefore bounded (since it obtains a minimum and maximum). For every <span class="math inline">x \in \mathbb{R}</span>, we have some <span class="math inline">y \in [0,k]</span> such that <span class="math inline">x-y = nk</span> for some integer <span class="math inline">n</span>, thus <span class="math inline">f(x) = f(y + nk) = f(y)</span>, and <span class="math inline">f(\mathbb{R}) = f([0,k])</span>. Since <span class="math inline">f([0,k])</span> is bounded, so is <span class="math inline">f(\mathbb{R})</span>.</p>
+<p>Since <span class="math inline">[0,2k]</span> is compact, and <span class="math inline">f</span> is continuous, <span class="math inline">f([0,2k])</span> is uniformly continuous. That is, for every <span class="math inline">\varepsilon &gt; 0</span>, there exists some <span class="math inline">\delta_k &gt; 0</span> such that</p>
+<p><span class="math display">
+|x_k - y_k| &lt; \delta \implies |f(x_k) - f(y_k)| &lt; \varepsilon, \forall x_k,y_k \in [0,2k].
+</span></p>
+<p>Chose some <span class="math inline">\varepsilon &gt; 0</span>. Let <span class="math inline">\delta = \delta_k</span>. For all <span class="math inline">x,y \in \mathbb{R}</span>, if <span class="math inline">|x-y| &lt; \delta</span> there exists <span class="math inline">x_k,y_k, \in [0,2k]</span> and such that <span class="math inline">x = x_k + nk</span> and <span class="math inline">y = y_k + nk</span> for some integer <span class="math inline">n</span>. Then for all <span class="math inline">x,y\in \mathbb{R}</span>,</p>
+<p><span class="math display">
+|x - y| = |(x_k - n) - (y_k - n)| = |x_k - y_k| &lt; \delta \implies\\ |f(x) - f(y)| = |f(x_k + nk) - f(y_k + nk)| = |f(x_k) - f(y_k)| &lt; \varepsilon
+</span></p>
+<p>Thus <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> is uniformly continuous. Note we choose the interval <span class="math inline">[0,2k]</span> instead of <span class="math inline">[0,k]</span>, so there arise no complications when <span class="math inline">x &lt; nk</span> and <span class="math inline">y &gt; nk</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="recap" class="level2">
+<h2 class="anchored" data-anchor-id="recap">Recap</h2>
+<p>In this section we proved.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">D</span> is compact, and <span class="math inline">f \colon D \to \mathbb{R}</span> is continuous, then <span class="math inline">f</span> is uniformly continuous.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon D \to \mathbb{R}</span> be uniformly continuous on <span class="math inline">D</span> and suppose <span class="math inline">(x_n)</span> is a Cauchy sequence in <span class="math inline">D</span>. Then <span class="math inline">(f(x_n))</span> is Cauchy.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon (a,b) \to \mathbb{R}</span> is uniformly continuous on <span class="math inline">(a,b)</span> if and only if it can be extended to a function <span class="math inline">\tilde{f}</span> that is continuous on <span class="math inline">[a,b]</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 2.4.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f\colon D \to \mathbb{R}</span> be a uniformly continuous function on the bounded set <span class="math inline">D</span>. Prove that <span class="math inline">f</span> is bounded on <span class="math inline">D</span>.</p>
 </div>
 </div>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The following <a href="https://math.stackexchange.com/questions/3241309/what-is-the-intuition-behind-uniform-continuity">Mathexchange</a> thread provides very useful intuition.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -622,6 +985,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Properties of Continuous Functions</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../qmd/realanal/differentiation.html" class="pagination-link">
+        <span class="nav-page-text">Differentiation</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 
