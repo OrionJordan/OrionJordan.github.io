@@ -5,10 +5,27 @@ page-layout: article
 anchor-sections: false
 search: false
 listing:
-  id: guide-links
-  template: ../../ejs/links.ejs
-  contents: content.yml
+  - id: highschool
+    template: ../../ejs/links.ejs
+    contents: 
+     - highschool.yml
+  - id: undergrad
+    template: ../../ejs/links.ejs
+    contents: 
+      - undergrad.yml
+format:  
+  html:
+    page-layout: full
+    grid:
+      body-width:	1000px
 ---
 
-::: {#guide-links .column-screen-inset-right style="max-width: 850px;"}
+## Highschool
+
+::: {#highschool}
+:::
+
+## Undergraduate
+
+::: {#undergrad}
 :::

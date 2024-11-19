@@ -1,0 +1,398 @@
+---
+title: "Properties of the Riemann Integral"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Theorem 4.2.1
+
+Let $f$ be a monotone function on $[a,b]$. Then $f$ is Riemann integrable.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Suppose $f$ is increasing on $[a,b]$. Since $f(a) \leq f(x) \leq f(b)$ for all $x \in [a,b]$, $f$ is bounded on $[a,b]$. Now given $\varepsilon > 0$ there exists $k > 0$ such that
+
+$$
+k[f(b)-f(a)] < \varepsilon
+$$
+
+By the Arichimeadian property. Let $P = \{x_0,\ldots,x_n\}$ be a partition of $[a,b]$ such that $\Delta x_i \leq k$ for all $i$ (Recall $\Delta x_i = x_i - x_{i-1}$). Since $f$ is increasing, we have
+
+$$
+m_i = f(x_{i-1}) \qquad \text{and} \qquad M_i = f(x_i)
+$$
+
+for $i \in \{1,\ldots,n\}$. Then
+
+\begin{align*}
+U(f,P) - L(f,P) &= \sum_{i=1}^n[f(x_i)-f(x_{i-1})](\Delta x_i)\\
+&\leq k\sum_{i=1}^n[f(x_i)-f(x_{i-1})] = k[f(b)-f(a)] < \varepsilon
+\end{align*}
+
+Since for all $\varepsilon > 0$, $U(f,P) - L(f,P) < \varepsilon$, $f$ is Riemann integrable by Theorem $4.1.4$. The proof is similar for decreasing monotone functions.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 4.2.2
+
+Let $f$ be a continuous function on $[a,b]$. Then $f$ is integrable on $[a,b]$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Since $f$ is continuous on $[a,b]$, a compact set, it is uniformly continuous on $[a,b]$. Thus for any $\varepsilon > 0$, there exists $\delta > 0$ such that
+
+$$
+|f(x)-f(y)| < \frac{\varepsilon}{b-a}
+$$
+
+When $x,y \in [a,b]$ and $|x-y| < \delta$. Let $P = \{x_0,\ldots,x_n\}$ be a partition of $[a,b]$ such that $\Delta x_i < \delta$ for all $i \in \{i,\ldots,n\}$. Since $f$ assumes its minimum and maximum on $[a,b]$, there exists points $s_i,t_i \in [a,b]$ such that $m_i = f(s_i)$, and $M_i = f(t_i)$. Since $x_i - x_{i-1} < \delta$, we have that $|s_i - t_i| < \delta$, and
+
+$$
+0 \leq M_i - m_i = f(t_i) - f(s_i) < \frac{\varepsilon}{b-a}
+$$
+
+for all $i$. It follows that
+
+$$
+U(f,P) - L(f,P) = \sum_{i=1}^n(M_i - m_i)(\Delta x_i) < \frac{\varepsilon}{b-a}\sum_{i=1}^n\Delta x_i = \varepsilon
+$$
+
+Thus by Theorem $4.1.4$, $f$ is Riemann integrable on $[a,b]$.
+
+:::
+
+We have now proved that two large classes of functions, monotone functions and continuous functions are Riemann integrable. There of course exists other functions that are neither continuous or monotone, but are still Riemann integrable.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f$ be the Thomae's function defined on the interval $[0,1]$ as
+
+$$
+f(x) = \begin{cases}
+\frac{1}{n} & \text{ if $x = \frac{m}{n}$ in rational in lowest terms,}\\
+0, & \text{ if $x$ is irrational.}
+\end{cases}
+$$
+
+Let $\varepsilon > 0$, choose $N$ such that $N > 2/\varepsilon$. Let $Y_N$ be the set of all rational numbers in $[0,1]$ that have a denominator less than $N$ when expressed in lowest terms, for example
+
+$$
+Y_5 = \left\{0,\frac{1}{4},\frac{1}{3},\frac{1}{2},\frac{2}{3},\frac{3}{4},1\right\}.
+$$
+
+Let $n > 4m/\varepsilon$ be an integer, and let $P = \{x_0,\ldots,x_n\}$ such that $\Delta x = 1/n$ for all $n$. 
+
+We want to split our indices into two disjoint subsets based on whether or not the indice contains a point in $Y_N$. Let
+
+$$
+A = \{i \colon [x_{i-1},x_i] \cap Y = \varnothing\} \text{ and } B = \{i \colon [x_{i-1},x_i] \cap Y \not = \varnothing\}.
+$$
+
+If $i \in A$, then every rational in $[x_{i-1},x_i]$ has a denominator greater or equal to $N$. This means $M_i \leq 1/N < \varepsilon/2$. It follows that
+
+$$
+\sum_{i \in A} M_i \Delta x_i \leq \frac{\varepsilon}{2}\sum_{i \in A} \Delta x_i < \frac{\varepsilon}{2}.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 4.2.3 (Linearity of the Riemann integral)
+
+Let $f$ and $g$ be Riemann integerable functions on $[a,b]$ and let $k \in \mathbb{R}$. Then
+
+$(a)$ $kf$ is Riemann integrable and 
+
+$$
+\int^b_a kf = k \int^b_a f
+$$
+
+$(b)$ $f + g$ is Riemann integrable and 
+
+$$
+\int^b_a (f+g) = \int^b_a f + \int^b_a g
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+$(a)$ If $k = 0$, then the result is trivial. Suppose $k > 0$ and let $P = \{x_0,\ldots,x_n\}$ be a partition of $[a,b]$. For all $i$ we have
+
+$$
+M_i(kf) = kM_i(f).
+$$
+
+Thus we have $U(kf,P) = kU(f,P)$, and $U(kf) = kU(f)$. Similarly we have $L(kf) = kL(f)$. Since $U(f) = L(f)$,
+
+$$
+L(kf) = k L(f) = k U(f) = U(kf).
+$$
+
+Thus $kf$ is Riemann integrable and furthermore
+
+$$
+\int^b_a kf = U(kf) = kU(f) = k\int^b_a f.
+$$
+
+The case where $k < 0$ is similar.
+
+$(b)$ We know 
+
+$$
+\sup [(f+g)(D)] \leq \sup f(D) + \sup g(D).
+$$
+
+So for any partition $P$, we have $M_i(f+g) \leq M_i(f) + M_i(g)$ for each $i$, so 
+
+$$
+U(f + g,P) \leq U(f,P) + U(g,P).
+$$
+
+Similarly
+
+$$
+L(f + g, P) \geq L(f,P) + L(g,P).
+$$
+
+We want to show $U(f+g,P) - L(f+g,P) < \varepsilon$. Given any $\varepsilon > 0$, there exists partitions $P_1,P_2$ of $[a,b]$ such that
+
+$$
+U(f,P_1) < L(f,P_1) + \frac{\varepsilon}{2} \quad \text{and} \quad U(g,P_2) < L(g,P_2) - \frac{\varepsilon}{2}.
+$$
+
+Let $P = P_1 \cup P_2$. Then by Theorem $4.1.2$ we have
+
+$$
+U(f,P) < L(f,P) + \frac{\varepsilon}{2} \quad \text{and} \quad U(g,P) < L(g,P) - \frac{\varepsilon}{2}.
+$$
+
+Combining inequalities we obtain
+
+$$
+\begin{align*}
+U(f+g,P) &\leq U(f,P) + U(g,P)\\
+&< L(f,P) + L(g,P) + \varepsilon \leq L(f+g,P) + \varepsilon.
+\end{align*}
+$$
+
+Thus by Theorem $4.1.4$ we have that $f+g$ in Riemann integrable. Furthermore since
+
+$$
+\begin{align*}
+\int^b_a(f+g) &= U(f + g) \leq U(f+g,P)\\
+&< L(f,P) + L(g,P) + \varepsilon\\
+&\leq L(f) + L(g) + \varepsilon = \int^b_a f + \int^b_a g + \varepsilon
+\end{align*}
+$$
+
+and
+
+$$
+\begin{align*}
+\int^b_a(f+g) &= L(f + g) \geq L(f+g,P)\\
+&> U(f,P) + U(g,P) - \varepsilon\\
+&\leq U(f) + U(g) - \varepsilon = \int^b_a f + \int^b_a g - \varepsilon
+\end{align*}
+$$
+
+we must have
+
+$$
+\int^b_a (f+g) = \int^b_a f + \int^b_a g.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 4.2.4
+
+If $f$ is Riemann integrable on both $[a,c]$ and $[c,b]$, then $f$ is Riemann integrable on $[a,b]$. Furthermore
+
+$$
+\int^b_a f = \int^c_a f + \int^b_c f.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Given $\varepsilon > 0$, there exists partitions $P_1$ of $[a,c]$ and $P_2$ of $[c,b]$ such that
+
+$$
+U(f,P_1) - L(f,P_1) < \frac{\varepsilon}{2} \quad \text{and} \quad U(f,P_2) - L(f,P_2) < \frac{\varepsilon}{2}.
+$$
+
+Let $P = P_1 \cup P_2$. Then $P$ is a partition of $[a,b]$ and we have
+
+$$
+\begin{align*}
+U(f,P) - L(f,P) &= U(f,P_1) + U(f,P_2) - L(f,P_1) - L(f,P_2)\\
+&= [U(f,P_1)-L(f,P_1)] + [U(f,P_2) - L(f,P_2)]\\
+&< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+\end{align*}
+$$
+
+Thus $f$ is Riemann integrable on $[a,b]$ by Theorem $4.1.4$. Furthermore,
+
+$$
+\begin{align*}
+\int^b_a f \leq U(f,P) &= U(f,P_1)+U(f,P_2)\\
+&< L(f,P_1) + L(f,P_2) + \varepsilon \leq \int^c_a f + \int^b_c f + \varepsilon, 
+\end{align*}
+$$
+
+and
+
+$$
+\begin{align*}
+\int^b_a f \geq L(f,P) &= L(f,P_1)+L(f,P_2)\\
+&> U(f,P_1) + U(f,P_2) - \varepsilon \geq \int^c_a f + \int^b_c f - \varepsilon, 
+\end{align*}
+$$
+
+Thus
+
+$$
+\int^b_a f = \int^c_a f + \int^b_c f.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 4.2.5
+
+For any functions $f,g$ which are Riemann integerable on $[a,b]$, such that $f(x) \leq g(x)$ for all $x \in [a,b]$, then
+
+$$
+\int^b_a f \leq \int^b_a g
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Later.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 4.2.6
+
+Let $f$ be Riemann integerable on $[a,b]$ and $g$ be continuous on $[c,d]$ where $f([a,b]) \subseteq [c,d]$. Then $g \circ f$ is Riemann integrable on $[a,b]$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Given $\varepsilon > 0$, let $K = \sup\{|g(t)| \colon t \in [c,d]\}$ and choose $\varepsilon^\prime > 0$ such that $\varepsilon^\prime(b-a+2K) < \varepsilon$. Since $g$ is continuous on $[c,d]$, it is uniformly continuous on $[c,d]$. Thus there exists some $\delta > 0$ such that $\delta < \varepsilon^\prime$ and such that $|g(s) - g(t)| < \varepsilon^\prime$ whenever $|s-t| < \delta$ and $s,t \in [c,d]$. Since $f$ is integrable on $[a,b]$, there exists some partition $P = \{x_0,\ldots,x_n\}$ of $[a,b]$ such that
+
+$$
+U(f,P) - L(f,P) < \delta^2.
+$$
+
+We claim that for this partition $P$ we also have
+
+$$
+U(g \circ f,P) - L(g \circ f,P) = \sum_{i=1}^n[M_i(g\circ f) - m_i(g \circ f)]\Delta x < \varepsilon.
+$$
+
+To show this we seperate our partition $P$ into two disjoint sets. Let
+
+$$
+A = \{i \colon M_i(f) - m_i(f) < \delta\} \text{ and } B = \{i\colon M_i(f) - m(i) \geq \delta\}.
+$$
+
+Then if $i \in A$, and $x,y \in [x_{i-1},x_i]$, we have
+
+$$
+|f(x) - f(y) | \leq M_i(f) - m_i(f) < \delta
+$$
+
+so that $|(g \circ f)(x) - (g \circ f)(y) | < \varepsilon^\prime$ and therefore $M_i(g \circ f) - m_i(g \circ f) \leq \varepsilon^\prime$. It follows that
+
+$$
+\sum_{i \in A}\left[  M_i(g\circ f) - m_i(g \circ f) \right]\Delta x_i \leq \varepsilon^\prime\sum_{i\in A} \Delta x_i \leq \varepsilon^\prime(b-a)
+$$
+
+Otherwise, if $i \in B$, then $[M_i(f) - m_i(f)]/\delta \geq 1$ so
+
+\begin{align*}
+\sum_{i \in B} \Delta x_i &\leq \frac{1}{\delta}\sum_{i \in B}[M_i(f) - m_i(f)]\Delta x_i\\
+&\leq \frac{1}{\delta}[U(f,P) - L(f,P)] < \delta < \varepsilon^\prime.
+\end{align*}
+
+Thus since $M_i(g \circ f) - m_i(g \circ f) \leq 2K$ for all $i$ we have
+
+$$
+\sum_{i \in B}[M_i(g \circ f) - m_i(g \circ f)]\Delta x \leq 2K\sum_{i \in B}\Delta x < 2K\varepsilon^\prime
+$$
+
+Combining our indices we have
+
+\begin{align*}
+U(g \circ f, P) - L(g \circ f,P) &= \sum_{i \in A}\left[  M_i(g\circ f) - m_i(g \circ f) \right]\Delta x_i\\
+&+ \sum_{i \in B}[M_i(g \circ f) - m_i(g \circ f)]\Delta x\\
+&\leq \varepsilon^\prime(b-a) + 2K\varepsilon^\prime = \varepsilon^\prime(b-a+2K) < \varepsilon
+\end{align*}
+
+Hence $g \circ f$ is Riemann integrable on $[a,b]$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 4.2.6
+
+If $f$ is Riemann integrable on both $[a,b]$ and $|f|$ is Riemann integrable on $[a,b]$, then
+
+$$
+\left|\int^b_a f \right| \leq \int^b_a |f|
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Since $f$ is Riemann integerable, the function is bounded on $[a,b]$. Let $B \geq |f(x)|$ for all $x \in [a,b]$. Define $g \colon [-B,B] \to \mathbb{R}$ such that it maps $t \to |t|$. Since $g$ is continuous and $g \circ f = |f|$, we have that $|f|$ is integerable. 
+
+Since we have that $-|f(x)| \leq f(x) \leq |f(x)|$ for all $x$, by Lemma $4.2.5$, we have that
+
+$$
+- \int^b_a |f| \leq \int^b_a f  \leq \int^b_a |f|
+$$
+
+which we can then rewrite using the definition of absolute value to obtain
+
+$$
+\left| \int^b_a f \right| \leq \int^b_a |f|
+$$
+
+:::

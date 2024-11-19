@@ -79,6 +79,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -99,20 +100,8 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="../../qmd/graph/GraphTheory.html" rel="" target="">
- <span class="menu-text">Graph Theory</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../qmd/integral/intro.html" rel="" target="">
- <span class="menu-text">Integral</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../qmd/logic/intro.html" rel="" target="">
- <span class="menu-text">Mathematical Logic</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../qmd/abstract/intro.html" rel="" target="">
- <span class="menu-text">Abstract Algebra</span></a>
+    <a class="nav-link" href="../../qmd/content/index.html" rel="" target="">
+ <span class="menu-text">Content</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -131,7 +120,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#table-of-contents" id="toc-table-of-contents" class="nav-link active" data-scroll-target="#table-of-contents">Table of contents</a></li>
+  <li><a href="#exam-3-review" id="toc-exam-3-review" class="nav-link active" data-scroll-target="#exam-3-review">Exam 3 review</a></li>
   </ul>
 </nav>
     </div>
@@ -168,8 +157,96 @@ ul.task-list li input[type="checkbox"] {
 <p><span class="math display">
 \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2u}{\partial y^2} = P(x,y)
 </span></p>
-<section id="table-of-contents" class="level2">
-<h2 class="anchored" data-anchor-id="table-of-contents">Table of contents</h2>
+<section id="exam-3-review" class="level2">
+<h2 class="anchored" data-anchor-id="exam-3-review">Exam 3 review</h2>
+<ul>
+<li>Fourier Series</li>
+</ul>
+<p>– Derivatives of fourier</p>
+<p>– Sin and cosine</p>
+<p>– Integrals of fourier series</p>
+<ul>
+<li>Wave equation</li>
+</ul>
+<p>– Find solutions using sep of var</p>
+<p>– Boundary conditions</p>
+<p>– Initial conditions from solution</p>
+<p>– Solutions from int. con</p>
+<p><span class="math display">
+u(x,t) = \sum^\infty_{n=1} \sin\left(\frac{n\pi x}{L}\right) \left(  A_n\cos\left( \frac{n\pi ct}{L} \right)  + B_n \sin \left( \frac{n\pi ct}{L} \right)\right)
+</span></p>
+<p>We convert</p>
+<p><span class="math display">
+_n\cos\left( \frac{n\pi ct}{L} \right)  + B_n \sin \left( \frac{n\pi ct}{L} \right)
+</span></p>
+<p>To</p>
+<p><span class="math display">
+R\sin \left( \frac{n\pi ct}{L} + \theta \right)
+</span></p>
+<p>Where <span class="math inline">R = \sqrt{A^2_N + B^2_n}</span> and <span class="math inline">\theta = \arctan(A_n/B_n)</span>.</p>
+<p>Note that</p>
+<p><span class="math display">
+\sin\left( \frac{n\pi x}{L} \right)\left( R\sin \left( \frac{n\pi ct}{L} + \theta \right)
+\right) = n^{th} \text{ node}
+</span></p>
+<hr>
+<p>Where a node</p>
+<p><span class="math display">
+= A_n\sin \left( \frac{n\pi x}{L} \right)\cos \left( \frac{n\pi ct}{L} \right) + B_n \sin \left( \frac{n\pi x}{L} \right)\sin \left( \frac{n\pi ct}{L} \right)
+</span></p>
+<p>Using the formula</p>
+<p><span class="math display">
+\cos \alpha - \cos \beta = -2\sin\left( \frac{\alpha + \beta}{2} \right)\sin\left( \frac{\alpha - \beta}{2}\right)
+</span></p>
+<p><span class="math display">
+\frac{1}{2}\cos \beta - \frac{1}{2} \cos \alpha = \sin\left( \frac{\alpha + \beta}{2} \right)\sin\left( \frac{\alpha - \beta}{2}\right)
+</span></p>
+<p>So we set</p>
+<p><span class="math display">
+\frac{\alpha + \beta}{2} = \frac{n\pi x}{L} \quad \text{and} \quad \frac{\alpha - \beta}{2} = \frac{n\pi ct}{L}
+</span></p>
+<p>Adding them together we get</p>
+<p><span class="math display">
+\frac{\alpha + \beta}{2} + \frac{\alpha - \beta}{2} = \alpha = \frac{n\pi}{L}(x + ct)
+</span></p>
+<p>Subtracting gives used</p>
+<p><span class="math display">
+\frac{\alpha + \beta}{2} - \frac{\alpha - \beta}{2} = \beta = \frac{n\pi}{L}(x - ct)
+</span></p>
+<p>Thus we get</p>
+<p><span class="math display">
+\sin \left( \frac{n\pi x}{L} \right)\sin \left( \frac{n\pi ct}{L} \right)  = \frac{1}{2}\cos \left( \frac{n\pi}{L}(x-ct) \right) - \frac{1}{2} \cos \left( \frac{n\pi}{L} (x+ct) \right)
+</span></p>
+<p>When <span class="math inline">t = 0</span>, we get</p>
+<p><span class="math display">
+\frac{1}{2}\cos \left( \frac{n\pi}{L}(x-ct) \right) - \frac{1}{2} \cos \left( \frac{n\pi}{L} (x+ct) \right) = 0
+</span></p>
+<p>The solution of the wave equation is the sum of two traveling waves, one to the left and one to the right.</p>
+<hr>
+<p>By conservation of energy we have</p>
+<p><span class="math display">
+\frac{d^2u}{dt^2} = c^2\frac{d^2u}{dx^2}
+</span></p>
+<p>We have</p>
+<p><span class="math display">
+\int^L_0 \frac{\partial^2u}{\partial t^2} \cdot \frac{\partial u}{\partial t} \, dx = \int^L_0 c^2\frac{\partial^2u}{\partial x^2} \cdot \frac{\partial u}{\partial t} \, dx
+</span></p>
+<p>Note that</p>
+<p><span class="math display">
+\frac{\partial^2u}{\partial t^2} \cdot \frac{\partial u}{\partial t} = \frac{\partial}{\partial t}\left( \frac{1}{2} \left(\frac{\partial u}{\partial t}\right)^2\right)
+</span></p>
+<p>Thus</p>
+<p><span class="math display">
+\int^L_0 \frac{\partial^2u}{\partial t^2} \cdot \frac{\partial u}{\partial t} \, dx = \int^L_0 \frac{\partial}{\partial t}\left( \frac{1}{2} \left(\frac{\partial u}{\partial t}\right)^2\right) \, dx
+</span></p>
+<p>And</p>
+<p><span class="math display">
+\int^L_0 c^2\frac{\partial^2u}{\partial x^2} \cdot \frac{\partial u}{\partial t} \, dx = \frac{\partial u}{\partial x} \frac{\partial u}{\partial t}
+</span></p>
+<p>The solution is also the infinite sum of some</p>
+<p><span class="math display">
+\text{Solution } = \sum^\infty_{n=1} \text{ Nodes}
+</span></p>
 
 
 </section>

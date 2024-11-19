@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://orionjordan.github.io/index.html</loc>
-    <lastmod>2024-10-05T08:10:32.310Z</lastmod>
+    <lastmod>2024-11-19T19:57:23.040Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/graph/GraphTheory.html</loc>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/intro.html</loc>
-    <lastmod>2024-10-05T08:10:49.757Z</lastmod>
+    <lastmod>2024-11-15T17:40:09.859Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/tricky/hyperbolic.html</loc>
@@ -110,7 +110,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/convergence.html</loc>
-    <lastmod>2024-09-28T07:05:57.159Z</lastmod>
+    <lastmod>2024-11-19T16:46:18.893Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/diffeq/fode.html</loc>
@@ -126,11 +126,11 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/pde/introduction.html</loc>
-    <lastmod>2024-08-20T21:29:28.903Z</lastmod>
+    <lastmod>2024-11-14T18:02:14.934Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/limittheo.html</loc>
-    <lastmod>2024-09-28T07:02:56.462Z</lastmod>
+    <lastmod>2024-11-14T18:55:57.320Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/pde/heatEquation.html</loc>
@@ -154,39 +154,39 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/funclim.html</loc>
-    <lastmod>2024-10-05T08:09:42.070Z</lastmod>
+    <lastmod>2024-11-15T20:11:32.850Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/content/index.html</loc>
-    <lastmod>2024-10-05T08:14:16.422Z</lastmod>
+    <lastmod>2024-11-19T19:57:25.637Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences.html</loc>
-    <lastmod>2024-10-05T07:53:37.716Z</lastmod>
+    <lastmod>2024-11-19T16:43:27.961Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont.html</loc>
-    <lastmod>2024-10-05T08:09:38.988Z</lastmod>
+    <lastmod>2024-11-15T20:11:30.854Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/differentiation.html</loc>
-    <lastmod>2024-10-01T01:25:15.166Z</lastmod>
+    <lastmod>2024-11-19T18:31:52.452Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/integration.html</loc>
-    <lastmod>2024-09-03T21:12:42.525Z</lastmod>
+    <lastmod>2024-11-19T19:57:30.605Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/infinite-series.html</loc>
-    <lastmod>2024-09-03T21:12:44.996Z</lastmod>
+    <lastmod>2024-11-14T20:42:37.364Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/cont-func.html</loc>
-    <lastmod>2024-10-05T07:21:26.430Z</lastmod>
+    <lastmod>2024-11-07T18:12:45.529Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/mono-cauchy.html</loc>
-    <lastmod>2024-09-28T06:59:29.813Z</lastmod>
+    <lastmod>2024-11-19T19:57:36.382Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/pde/heatequ/heatEquation-Dim.html</loc>
@@ -198,15 +198,15 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/uniform-continuity.html</loc>
-    <lastmod>2024-10-01T01:11:05.656Z</lastmod>
+    <lastmod>2024-11-15T18:46:29.320Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/pde/sep-var/method.html</loc>
-    <lastmod>2024-09-12T20:56:10.599Z</lastmod>
+    <lastmod>2024-11-07T21:26:08.243Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/pde/sep-var/heat-equ-zero-temp.html</loc>
-    <lastmod>2024-09-26T18:35:03.532Z</lastmod>
+    <lastmod>2024-10-17T17:38:11.802Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/differentiation/Derivatives.html</loc>
@@ -214,14 +214,86 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/subsequences.html</loc>
-    <lastmod>2024-09-28T07:03:06.620Z</lastmod>
+    <lastmod>2024-10-16T19:43:37.500Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/cont-func-prop.html</loc>
-    <lastmod>2024-10-01T20:58:53.780Z</lastmod>
+    <lastmod>2024-10-27T12:51:40.919Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/differentiation/derivatives.html</loc>
-    <lastmod>2024-10-01T16:30:06.883Z</lastmod>
+    <lastmod>2024-11-19T18:31:55.064Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/pde/fourier/fourier.html</loc>
+    <lastmod>2024-10-17T18:05:16.519Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/differentiation/taylor.html</loc>
+    <lastmod>2024-11-19T18:32:00.894Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/integration/riemann.html</loc>
+    <lastmod>2024-11-15T20:11:39.184Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/integration/riemannprop.html</loc>
+    <lastmod>2024-11-19T18:34:16.741Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/intro/sets.html</loc>
+    <lastmod>2024-10-29T03:37:00.640Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/about.html</loc>
+    <lastmod>2024-10-29T03:49:47.691Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/layout.html</loc>
+    <lastmod>2024-11-12T17:52:29.796Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/integration/fundcalc.html</loc>
+    <lastmod>2024-11-15T18:55:02.390Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/basics/abstract.html</loc>
+    <lastmod>2024-10-29T20:44:47.437Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/differentiation/mvt.html</loc>
+    <lastmod>2024-11-19T18:31:57.986Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/differentiation/lhospital.html</loc>
+    <lastmod>2024-11-19T18:31:59.523Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/infinite-series/converge.html</loc>
+    <lastmod>2024-11-19T19:57:16.041Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/infinite-series/infser.html</loc>
+    <lastmod>2024-11-14T18:57:13.264Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/infinite-series/power.html</loc>
+    <lastmod>2024-11-14T20:55:26.314Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/foundations/intro.html</loc>
+    <lastmod>2024-11-15T17:40:10.931Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/foundations/fundcalc.html</loc>
+    <lastmod>2024-11-15T17:40:43.488Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/sequences/construction.html</loc>
+    <lastmod>2024-11-15T18:04:09.476Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/realanal/sequences/definition.html</loc>
+    <lastmod>2024-11-19T18:31:38.867Z</lastmod>
   </url>
 </urlset>

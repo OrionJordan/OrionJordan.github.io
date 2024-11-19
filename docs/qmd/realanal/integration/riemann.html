@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>OOMN - Riemann Integral</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<link href="../../../qmd/realanal/integration/riemannprop.html" rel="next">
+<link href="../../../qmd/realanal/integration.html" rel="prev">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">OOMN</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/content/index.html" rel="" target="">
+ <span class="menu-text">Content</span></a>
+  </li>  
+</ul>
+            <div class="quarto-navbar-tools ms-auto">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/realanal/integration.html">Integration</a></li><li class="breadcrumb-item"><a href="../../../qmd/realanal/integration/riemann.html">Riemann Integral</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/definition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/mvt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mean Value Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/lhospital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L’Hospitals Rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/differentiation/taylor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taylor’s Theorem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/integration/riemann.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Riemann Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/integration/riemannprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of the Riemann Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/integration/fundcalc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamental Theorem of Calculus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../qmd/realanal/infinite-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Series</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../qmd/realanal/infinite-series/converge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence of Infinite Series</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#partitions" id="toc-partitions" class="nav-link active" data-scroll-target="#partitions">Partitions</a></li>
+  <li><a href="#darboux-sums" id="toc-darboux-sums" class="nav-link" data-scroll-target="#darboux-sums">Darboux sums</a></li>
+  <li><a href="#riemann-integral" id="toc-riemann-integral" class="nav-link" data-scroll-target="#riemann-integral">Riemann Integral</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Riemann Integral</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+<p>The Riemann Integral was the first formal definition of an integral, defined by Bernhard Riemann in 1854. Gaston Darboux developed a simpler approach to the Riemann Integral in 1875 (source needed), that I’ll be using in this section.</p>
+<section id="partitions" class="level2">
+<h2 class="anchored" data-anchor-id="partitions">Partitions</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">[a,b]</span> be an interval in <span class="math inline">\mathbb{R}</span>. A <span class="definition">partition</span> <span class="math inline">P</span> of <span class="math inline">[a,b]</span> is a finite set of points <span class="math inline">\{x_0,\ldots,x_n\}</span> in <span class="math inline">[a,b]</span> such that</p>
+<p><span class="math display">
+a = x_0 &lt; x_1 &lt; \cdots &lt; x_n = b.
+</span></p>
+</div>
+</div>
+<p>A partition serves to chop up our interval <span class="math inline">[a,b]</span> into fintely many subintervals <span class="math inline">[x_{i-1},x_{i}]</span>. We notate the length of the <span class="math inline">i^{th}</span> sub-interval in our partition with <span class="math display">
+\Delta x_i = x_i - x_{i-1}.
+</span></p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">P</span> and <span class="math inline">Q</span> are two partitions of <span class="math inline">[a,b]</span> with <span class="math inline">P \subseteq Q</span>, then <span class="math inline">Q</span> is called a <span class="definition">refinement</span> of <span class="math inline">P</span>.</p>
+</div>
+</div>
+</section>
+<section id="darboux-sums" class="level2">
+<h2 class="anchored" data-anchor-id="darboux-sums">Darboux sums</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a bounded function on <span class="math inline">[a,b]</span> and <span class="math inline">P = \{x_0,\ldots,x_n\}</span> be any partition on <span class="math inline">[a,b]</span>. Let</p>
+<p><span class="math display">
+M_i(f) = \sup\{f(x) \colon x \in [x_{i-1},x_i]\}
+</span> and <span class="math display">
+m_i(f) = \inf\{f(x) \colon x \in [x_{i-1},x_i]\}
+</span></p>
+<p>for each <span class="math inline">i \in \{1,\ldots,n\}</span>. We define <span class="math display">
+U(f,P) = \sum^n_{i=1}M_i\Delta x_i \qquad L(f,P) = \sum^n_{i=1}m_i\Delta x_i
+</span></p>
+<p>as the <span class="definition">Upper sum</span> and <span class="definition">Lower sum</span> respectively.</p>
+</div>
+</div>
+<p>Because we assume <span class="math inline">f</span> to be bounded function, there exists a lower and upper bound on the interval <span class="math inline">[a,b]</span>. Call these bounds <span class="math inline">m,M</span> respectively (No relation to <span class="math inline">m_i,M_i</span>). For any partition <span class="math inline">P</span> of <span class="math inline">[a,b]</span> we have <span class="math display">
+m(b-a) \leq L(f,p) \leq U(f,p) \leq M(b-a).
+</span></p>
+<p>Thus we know the upper and lower sums for <span class="math inline">f</span> exist, and form a bounded set.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 4.1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a bounded function on <span class="math inline">[a,b]</span>. If <span class="math inline">P</span> and <span class="math inline">Q</span> are partitions of <span class="math inline">[a,b]</span>, and <span class="math inline">Q</span> is a refinement of <span class="math inline">P</span>, then</p>
+<p><span class="math display">
+L(f,P) \leq L(f,Q) \leq U(f,Q) \leq U(f,P).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Direct Proof</strong></p>
+<p>The middle inequality <span class="math inline">L(f,Q) \leq U(f,Q)</span> above follows from our definitions. To prove <span class="math inline">L(f,P) \leq L(f,Q)</span>, suppose <span class="math inline">P = \{x_0,\ldots,x_k\}</span>, and consider the partition <span class="math inline">P*</span> formed by adding <span class="math inline">x*</span> to <span class="math inline">P</span>, where <span class="math inline">x_{k-1} &lt; x* &lt; x_k</span> for some <span class="math inline">k \in \{1,\ldots,n\}</span>. Let</p>
+<p><span class="math display">\begin{align*}
+t_1 &amp;= \inf \{f(x) \colon x \in [x_{k-1},x*]\}\\
+t_2 &amp;= \inf \{f(x) \colon x \in [x*, x_k]\}
+\end{align*}</span></p>
+<p>Then <span class="math inline">t_1 \geq m_k</span> and <span class="math inline">t_2 \geq m_k</span>, where <span class="math inline">m_k = \inf \{f(x) \colon x \in [x_{k-1},x_k]\}</span> as defined previously. All of the terms in <span class="math inline">L(f,P*)</span> and <span class="math inline">L(f,P)</span> are the same except for those over the interval <span class="math inline">[x_{k-1},x_k]</span>. Thus we have</p>
+<p><span class="math display">\begin{align*}
+L(f,P*) - L(f,P) &amp;= [t_1(x* - x_{k-1}) + t_2(x_k - x*)] - [m_k(x_k - x_{k-1})]\\
+&amp;= (t_1 - m_k)(x* - x_{k-1}) + (t_2 - m_k)(x_k - x*).
+\end{align*}</span></p>
+<p>This final sum is positive since all of the terms are positive. Thus <span class="math inline">L(f,P) \leq L(f,P*)</span>. If our partition <span class="math inline">Q</span> contains <span class="math inline">r</span> more points than <span class="math inline">P</span>, we apply this argument <span class="math inline">r</span> times to obtain <span class="math inline">L(f,P) \leq L(f,Q)</span>.</p>
+<p>The proof of <span class="math inline">U(f,Q) \leq U(f,P)</span> is similar.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 4.1.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a bounded function on <span class="math inline">[a,b]</span>. If <span class="math inline">P</span> and <span class="math inline">Q</span> are partitions of <span class="math inline">[a,b]</span>, then <span class="math inline">L(f,P) \leq U(f,Q)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Direct Proof</strong></p>
+<p>If <span class="math inline">P</span> and <span class="math inline">Q</span> are equal the proof is trivial, so we need only consider the case where <span class="math inline">P</span> and <span class="math inline">Q</span> are seperate partitions. Let <span class="math inline">R</span> be the partition given by <span class="math inline">P \cup Q</span>. <span class="math inline">R</span> is a refinement of both <span class="math inline">P</span> and <span class="math inline">Q</span>. By Theorem <span class="math inline">4.1.1</span> we have</p>
+<p><span class="math display">\begin{align*}
+L(f,P) \leq L(f,R) &amp;\leq U(f,R) \leq U(f,P)\\
+L(f,Q) \leq L(f,R) &amp;\leq U(f,R) \leq U(f,Q)\\
+\end{align*}</span></p>
+<p>Thus <span class="math inline">L(f,P) \leq U(f,Q)</span> for all partitions <span class="math inline">P</span> and <span class="math inline">Q</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="riemann-integral" class="level2">
+<h2 class="anchored" data-anchor-id="riemann-integral">Riemann Integral</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a bounded function defined on <span class="math inline">[a,b]</span> and <span class="math inline">P</span> be a partition on <span class="math inline">[a,b]</span>. Then</p>
+<p><span class="math display">
+U(f) = \inf \{U(f,P)\} \qquad L(f) = \sup \{L(f,P)\}
+</span></p>
+<p>are called the <span class="definition">upper integral</span> and <span class="definition">lower integral</span> of <span class="math inline">f</span> on <span class="math inline">[a,b]</span>, respectively.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">L(f) = U(f)</span>, we say that <span class="math inline">f</span> is <span class="definition">Riemann integrable</span> on <span class="math inline">[a,b]</span>, and notate the value with</p>
+<p><span class="math display">
+\int^a_b f \quad \text{ or } \quad \int^a_b f(x) \, dx.
+</span></p>
+<p>This is known as the <span class="definition">Riemann integral</span> of <span class="math inline">f</span> on <span class="math inline">[a,b]</span>.</p>
+</div>
+</div>
+<p>If a function is Riemann integrable, then the value of the integral on <span class="math inline">[a,b]</span> will be equal to the signed area between the function and the <span class="math inline">x</span>-axis.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 4.1.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a bounded function on <span class="math inline">[a,b]</span>. Then <span class="math inline">L(f) \leq U(f)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Direct Proof</strong></p>
+<p>If <span class="math inline">P</span> and <span class="math inline">Q</span> are partitions of <span class="math inline">[a,b]</span>, we have that <span class="math inline">L(f,P) \leq U(f,Q)</span> by Theorem <span class="math inline">4.1.2</span>. Then it follows that <span class="math inline">U(f,Q)</span> is an upper bound of the set defined by</p>
+<p><span class="math display">
+S = \{L(f,P) \colon P \text{ partitions } [a,b]\}.
+</span></p>
+<p>Thus <span class="math inline">U(f,Q) \geq \sup S</span>. That is, <span class="math inline">L(f) \leq U(f,Q)</span> for all partitions <span class="math inline">Q</span> of <span class="math inline">[a,b]</span>. Hence</p>
+<p><span class="math display">
+L(f) \leq \inf \{U(f,Q) \colon Q \text{ partitions } [a,b]\} = U(f).
+</span></p>
+</div>
+</div>
+</div>
+<p>Essentially this Corollary states that <em>every</em> lower sum will be less than <em>any</em> upper sum.</p>
+<p>Not every function is going to be Riemann integrable.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example (Non-integrable functions)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon [0,1] \to \mathbb{R}</span> be defined</p>
+<p><span class="math display">
+g(x) = \begin{cases}
+1, &amp; \text{if $x$ is rational}\\
+0, &amp; \text{if $x$ is irrational.}
+\end{cases}
+</span></p>
+<p>Let <span class="math inline">P = \{x_0,\ldots,x_n\}</span> be any partition of <span class="math inline">[0,1]</span>. Since each subinterval <span class="math inline">[x_{i-1},x_i]</span> contains both rational and irrational points, we have <span class="math inline">M_i = 1</span> and <span class="math inline">m_i = 0</span> for all <span class="math inline">i \in \{1,\dots,n\}</span>. Therefore</p>
+<p><span class="math display">
+U(f,P) = \sum^n_{i=1}(1)\Delta x_i = 1 \qquad L(f,P) = \sum^n_{i=1}(0)\Delta x_i = 0.
+</span></p>
+<p>Since the lower and upper integrals are different for every partition <span class="math inline">P</span>, <span class="math inline">f</span> is non-integrable on <span class="math inline">[0,1]</span>. This special function <span class="math inline">f</span> is known as the <em>Dirichlet</em> function.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 4.1.4 (Riemann integrablility Criterion)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a bounded function on <span class="math inline">[a,b]</span>. Then <span class="math inline">f</span> is integrable if and only if for each <span class="math inline">\varepsilon &gt; 0</span> there exists a partition <span class="math inline">P</span> of <span class="math inline">[a,b]</span> such that</p>
+<p><span class="math display">
+U(f,P) - L(f,P) &lt; \varepsilon.
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Direct Proof</strong></p>
+<hr>
+<p><strong>Forward direction</strong></p>
+<p>Suppose <span class="math inline">f</span> is integrable, meaning <span class="math inline">L(f) = U(f)</span>. Given any <span class="math inline">\varepsilon &gt; 0</span>, there exists a partition <span class="math inline">P_1</span> of <span class="math inline">[a,b]</span> such that</p>
+<p><span class="math display">
+L(f,P_1) &gt; L(f) - \frac{\varepsilon}{2}.
+</span></p>
+<p>This follows since <span class="math inline">L(f)</span> is a supremum. Similarly, there exists a partition <span class="math inline">P_2</span> of <span class="math inline">[a,b]</span> such that</p>
+<p><span class="math display">
+U(f,P_2) &lt; U(f) + \frac{\varepsilon}{2}.
+</span></p>
+<p>Let <span class="math inline">P = P_1 \cup P_2</span>. Then by Theorem <span class="math inline">4.1.1</span> we have</p>
+<p><span class="math display">\begin{align*}
+U(f,P) - L(f,P) &amp;\leq U(f,P_2) - L(f,P_1)\\
+&amp;&lt; \left[U(f) + \frac{\varepsilon}{2}\right] - \left[L(f) - \frac{\varepsilon}{2}\right]\\
+&amp;= U(f) - L(f) + \varepsilon = \varepsilon.
+\end{align*}</span></p>
+<p>Therefore <span class="math inline">f</span> being integrable implies there exists <span class="math inline">P</span> such that <span class="math inline">U(f,P) - L(f,P) &lt; \varepsilon</span>.</p>
+<p><strong>Reverse direction</strong></p>
+<p>Now, suppose we have <span class="math inline">P</span> such that <span class="math inline">U(f,P) - L(f,P) &lt; \varepsilon</span>. Then</p>
+<p><span class="math display">
+U(f) \leq U(f,P) &lt; L(f,P) + \varepsilon \leq L(f) + \varepsilon.
+</span></p>
+<p>Since <span class="math inline">\varepsilon &gt; 0</span> is arbitrary, we have <span class="math inline">U(f) \leq L(f)</span>. By Theorem <span class="math inline">4.1.3</span> we have that <span class="math inline">L(f) \leq U(f)</span>. Thus <span class="math inline">L(f) = U(f)</span>, and <span class="math inline">f</span> is Riemann integrable.</p>
+</div>
+</div>
+</div>
+<hr>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../../qmd/realanal/integration.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Integration</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../../qmd/realanal/integration/riemannprop.html" class="pagination-link">
+        <span class="nav-page-text">Properties of the Riemann Integral</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

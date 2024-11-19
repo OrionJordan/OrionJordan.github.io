@@ -6,7 +6,9 @@ format:
     html-math-method: katex
 ---
 
-Real analysis is the study of the behaviour of real numbers, sequences, functions, and provides a more rigourous framework for Calculus.
+Real analysis is the study of real numbers.
+
+## Table of Contents
 
 ------------------------------------------------------------------------
 

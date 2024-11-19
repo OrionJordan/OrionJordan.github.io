@@ -1,5 +1,6 @@
 - title: Real Analysis
-  subtitle: Analysis of the Reals • 2024
+  subtitle: Analysis of the Reals
+  image: realanal
   links:
     - text: Introduction
       href: ../realanal/intro.qmd
@@ -13,3 +14,9 @@
       href: ../realanal/integration.qmd
     - text: Infinite Series
       href: ../realanal/infinite-series.qmd
+
+- title: Partial Differential Equations
+  subtitle: Study of PDE's 
+  links:
+    - text: Todo
+

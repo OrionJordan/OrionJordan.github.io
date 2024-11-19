@@ -1,0 +1,266 @@
+---
+title: "Riemann Integral"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The Riemann Integral was the first formal definition of an integral, defined by Bernhard Riemann in 1854. Gaston Darboux developed a simpler approach to the Riemann Integral in 1875 (source needed), that I'll be using in this section.  
+
+## Partitions
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $[a,b]$ be an interval in $\mathbb{R}$. A [partition]{.definition} $P$ of $[a,b]$ is a finite set of points $\{x_0,\ldots,x_n\}$ in $[a,b]$ such that
+
+$$
+a = x_0 < x_1 < \cdots < x_n = b.
+$$
+
+:::
+
+A partition serves to chop up our interval $[a,b]$ into fintely many subintervals $[x_{i-1},x_{i}]$. We notate the length of the $i^{th}$ sub-interval in our partition with
+$$
+\Delta x_i = x_i - x_{i-1}.
+$$
+
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $P$ and $Q$ are two partitions of $[a,b]$ with $P \subseteq Q$, then $Q$ is called a [refinement]{.definition} of $P$. 
+
+:::
+
+
+## Darboux sums
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f$ be a bounded function on $[a,b]$ and $P = \{x_0,\ldots,x_n\}$ be any partition on $[a,b]$. Let
+
+$$
+M_i(f) = \sup\{f(x) \colon x \in [x_{i-1},x_i]\}
+$$
+and
+$$
+m_i(f) = \inf\{f(x) \colon x \in [x_{i-1},x_i]\}
+$$
+
+for each $i \in \{1,\ldots,n\}$. We define
+$$
+U(f,P) = \sum^n_{i=1}M_i\Delta x_i \qquad L(f,P) = \sum^n_{i=1}m_i\Delta x_i
+$$
+
+as the [Upper sum]{.definition} and [Lower sum]{.definition} respectively.
+
+:::
+
+Because we assume $f$ to be bounded function, there exists a lower and upper bound on the interval $[a,b]$. Call these bounds $m,M$ respectively (No relation to $m_i,M_i$). For any partition $P$ of $[a,b]$ we have 
+$$
+m(b-a) \leq L(f,p) \leq U(f,p) \leq M(b-a).
+$$
+
+Thus we know the upper and lower sums for $f$ exist, and form a bounded set.
+
+::: {.callout-note icon="false"}
+## Theorem 4.1.1
+
+Let $f$ be a bounded function on $[a,b]$. If $P$ and $Q$ are partitions of $[a,b]$, and $Q$ is a refinement of $P$, then
+
+$$
+L(f,P) \leq L(f,Q) \leq U(f,Q) \leq U(f,P).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+The middle inequality $L(f,Q) \leq U(f,Q)$ above follows from our definitions. To prove $L(f,P) \leq L(f,Q)$, suppose $P = \{x_0,\ldots,x_k\}$, and consider the partition $P*$ formed by adding $x*$ to $P$, where $x_{k-1} < x* < x_k$ for some $k \in \{1,\ldots,n\}$. Let
+
+\begin{align*}
+t_1 &= \inf \{f(x) \colon x \in [x_{k-1},x*]\}\\
+t_2 &= \inf \{f(x) \colon x \in [x*, x_k]\}
+\end{align*}
+
+Then $t_1 \geq m_k$ and $t_2 \geq m_k$, where $m_k = \inf \{f(x) \colon x \in [x_{k-1},x_k]\}$ as defined previously. All of the terms in $L(f,P*)$ and $L(f,P)$ are the same except for those over the interval $[x_{k-1},x_k]$. Thus we have
+
+\begin{align*}
+L(f,P*) - L(f,P) &= [t_1(x* - x_{k-1}) + t_2(x_k - x*)] - [m_k(x_k - x_{k-1})]\\
+&= (t_1 - m_k)(x* - x_{k-1}) + (t_2 - m_k)(x_k - x*).
+\end{align*}
+
+This final sum is positive since all of the terms are positive. Thus $L(f,P) \leq L(f,P*)$. If our partition $Q$ contains $r$ more points than $P$, we apply this argument $r$ times to obtain $L(f,P) \leq L(f,Q)$.
+
+The proof of $U(f,Q) \leq U(f,P)$ is similar.
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Theorem 4.1.2
+
+Let $f$ be a bounded function on $[a,b]$. If $P$ and $Q$ are partitions of $[a,b]$, then $L(f,P) \leq U(f,Q)$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+If $P$ and $Q$ are equal the proof is trivial, so we need only consider the case where $P$ and $Q$ are seperate partitions. Let $R$ be the partition given by $P \cup Q$. $R$ is a refinement of both $P$ and $Q$. By Theorem $4.1.1$ we have
+
+\begin{align*}
+L(f,P) \leq L(f,R) &\leq U(f,R) \leq U(f,P)\\
+L(f,Q) \leq L(f,R) &\leq U(f,R) \leq U(f,Q)\\
+\end{align*}
+
+Thus $L(f,P) \leq U(f,Q)$ for all partitions $P$ and $Q$.
+
+:::
+
+## Riemann Integral
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f$ be a bounded function defined on $[a,b]$ and $P$ be a partition on $[a,b]$. Then
+
+$$
+U(f) = \inf \{U(f,P)\} \qquad L(f) = \sup \{L(f,P)\}
+$$
+
+are called the [upper integral]{.definition} and [lower integral]{.definition} of $f$ on $[a,b]$, respectively.
+::: 
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $L(f) = U(f)$, we say that $f$ is [Riemann integrable]{.definition} on $[a,b]$, and notate the value with
+
+$$
+\int^a_b f \quad \text{ or } \quad \int^a_b f(x) \, dx.
+$$
+
+This is known as the [Riemann integral]{.definition} of $f$ on $[a,b]$.
+:::
+
+If a function is Riemann integrable, then the value of the integral on $[a,b]$ will be equal to the signed area between the function and the $x$-axis. 
+
+
+
+
+::: {.callout-note icon="false"}
+## Corollary 4.1.3
+
+Let $f$ be a bounded function on $[a,b]$. Then $L(f) \leq U(f)$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+If $P$ and $Q$ are partitions of $[a,b]$, we have that $L(f,P) \leq U(f,Q)$ by Theorem $4.1.2$. Then it follows that $U(f,Q)$ is an upper bound of the set defined by
+
+$$
+S = \{L(f,P) \colon P \text{ partitions } [a,b]\}.
+$$
+
+Thus $U(f,Q) \geq \sup S$. That is, $L(f) \leq U(f,Q)$ for all partitions $Q$ of $[a,b]$. Hence
+
+$$
+L(f) \leq \inf \{U(f,Q) \colon Q \text{ partitions } [a,b]\} = U(f).
+$$
+
+:::
+
+Essentially this Corollary states that *every* lower sum will be less than *any* upper sum.
+
+Not every function is going to be Riemann integrable.
+
+::: {.callout-warning icon="false"} 
+## Example (Non-integrable functions)
+
+Let $f \colon [0,1] \to \mathbb{R}$ be defined
+
+$$
+g(x) = \begin{cases}
+1, & \text{if $x$ is rational}\\
+0, & \text{if $x$ is irrational.}
+\end{cases}
+$$
+
+Let $P = \{x_0,\ldots,x_n\}$ be any partition of $[0,1]$. Since each subinterval $[x_{i-1},x_i]$ contains both rational and irrational points, we have $M_i = 1$ and $m_i = 0$ for all $i \in \{1,\dots,n\}$. Therefore
+
+$$
+U(f,P) = \sum^n_{i=1}(1)\Delta x_i = 1 \qquad L(f,P) = \sum^n_{i=1}(0)\Delta x_i = 0.
+$$
+
+Since the lower and upper integrals are different for every partition $P$, $f$ is non-integrable on $[0,1]$. This special function $f$ is known as the *Dirichlet* function.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 4.1.4 (Riemann integrablility Criterion)
+
+Let $f$ be a bounded function on $[a,b]$. Then $f$ is integrable if and only if for each $\varepsilon > 0$ there exists a partition $P$ of $[a,b]$ such that
+
+$$
+U(f,P) - L(f,P) < \varepsilon.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+-------------
+
+**Forward direction**
+
+Suppose $f$ is integrable, meaning $L(f) = U(f)$. Given any $\varepsilon > 0$, there exists a partition $P_1$ of $[a,b]$ such that
+
+$$
+L(f,P_1) > L(f) - \frac{\varepsilon}{2}.
+$$
+
+This follows since $L(f)$ is a supremum. Similarly, there exists a partition $P_2$ of $[a,b]$ such that
+
+$$
+U(f,P_2) < U(f) + \frac{\varepsilon}{2}.
+$$
+
+Let $P = P_1 \cup P_2$. Then by Theorem $4.1.1$ we have
+
+\begin{align*}
+U(f,P) - L(f,P) &\leq U(f,P_2) - L(f,P_1)\\
+&< \left[U(f) + \frac{\varepsilon}{2}\right] - \left[L(f) - \frac{\varepsilon}{2}\right]\\
+&= U(f) - L(f) + \varepsilon = \varepsilon.
+\end{align*}
+
+Therefore $f$ being integrable implies there exists $P$ such that $U(f,P) - L(f,P) < \varepsilon$.
+
+**Reverse direction**
+
+Now, suppose we have $P$ such that $U(f,P) - L(f,P) < \varepsilon$. Then
+
+$$
+U(f) \leq U(f,P) < L(f,P) + \varepsilon \leq L(f) + \varepsilon.
+$$
+
+Since $\varepsilon > 0$ is arbitrary, we have $U(f) \leq L(f)$. By Theorem $4.1.3$ we have that $L(f) \leq U(f)$. Thus $L(f) = U(f)$, and $f$ is Riemann integrable.
+
+:::
+
+--------------
+

@@ -1,0 +1,12 @@
+---
+title: "Foundations"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+For the purposes of this website, I will, unless explictily stated, be using $\textbf{ZFC}$ as the assumed set of axioms.
+
+## Table of Contents
+

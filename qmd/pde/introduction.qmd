@@ -27,6 +27,135 @@ $$
 $$
 
 
-## Table of contents
+## Exam 3 review
 
+- Fourier Series
 
+-- Derivatives of fourier
+
+-- Sin and cosine
+
+-- Integrals of fourier series
+
+- Wave equation
+
+-- Find solutions using sep of var
+
+-- Boundary conditions
+
+-- Initial conditions from solution
+
+-- Solutions from int. con
+
+$$
+u(x,t) = \sum^\infty_{n=1} \sin\left(\frac{n\pi x}{L}\right) \left(  A_n\cos\left( \frac{n\pi ct}{L} \right)  + B_n \sin \left( \frac{n\pi ct}{L} \right)\right) 
+$$
+
+We convert
+
+$$
+_n\cos\left( \frac{n\pi ct}{L} \right)  + B_n \sin \left( \frac{n\pi ct}{L} \right)
+$$
+
+To
+
+$$
+R\sin \left( \frac{n\pi ct}{L} + \theta \right)
+$$
+
+Where $R = \sqrt{A^2_N + B^2_n}$ and $\theta = \arctan(A_n/B_n)$.
+
+Note that
+
+$$
+\sin\left( \frac{n\pi x}{L} \right)\left( R\sin \left( \frac{n\pi ct}{L} + \theta \right)
+ \right) = n^{th} \text{ node}
+$$
+
+-------
+
+Where a node
+
+$$
+= A_n\sin \left( \frac{n\pi x}{L} \right)\cos \left( \frac{n\pi ct}{L} \right) + B_n \sin \left( \frac{n\pi x}{L} \right)\sin \left( \frac{n\pi ct}{L} \right) 
+$$
+
+Using the formula
+
+$$
+\cos \alpha - \cos \beta = -2\sin\left( \frac{\alpha + \beta}{2} \right)\sin\left( \frac{\alpha - \beta}{2}\right)
+$$
+
+$$
+\frac{1}{2}\cos \beta - \frac{1}{2} \cos \alpha = \sin\left( \frac{\alpha + \beta}{2} \right)\sin\left( \frac{\alpha - \beta}{2}\right)
+$$
+
+So we set
+
+$$
+\frac{\alpha + \beta}{2} = \frac{n\pi x}{L} \quad \text{and} \quad \frac{\alpha - \beta}{2} = \frac{n\pi ct}{L}
+$$
+
+Adding them together we get
+
+$$
+\frac{\alpha + \beta}{2} + \frac{\alpha - \beta}{2} = \alpha = \frac{n\pi}{L}(x + ct)
+$$
+
+Subtracting gives used
+
+$$
+\frac{\alpha + \beta}{2} - \frac{\alpha - \beta}{2} = \beta = \frac{n\pi}{L}(x - ct)
+$$
+
+Thus we get
+
+$$
+\sin \left( \frac{n\pi x}{L} \right)\sin \left( \frac{n\pi ct}{L} \right)  = \frac{1}{2}\cos \left( \frac{n\pi}{L}(x-ct) \right) - \frac{1}{2} \cos \left( \frac{n\pi}{L} (x+ct) \right)
+$$
+
+When $t = 0$, we get
+
+$$
+\frac{1}{2}\cos \left( \frac{n\pi}{L}(x-ct) \right) - \frac{1}{2} \cos \left( \frac{n\pi}{L} (x+ct) \right) = 0
+$$
+
+The solution of the wave equation is the sum of two traveling waves, one to the left and one to the right.
+
+-----------
+
+By conservation of energy we have
+
+$$
+\frac{d^2u}{dt^2} = c^2\frac{d^2u}{dx^2}
+$$
+
+We have
+
+$$
+\int^L_0 \frac{\partial^2u}{\partial t^2} \cdot \frac{\partial u}{\partial t} \, dx = \int^L_0 c^2\frac{\partial^2u}{\partial x^2} \cdot \frac{\partial u}{\partial t} \, dx 
+$$
+
+Note that
+
+$$
+\frac{\partial^2u}{\partial t^2} \cdot \frac{\partial u}{\partial t} = \frac{\partial}{\partial t}\left( \frac{1}{2} \left(\frac{\partial u}{\partial t}\right)^2\right)
+$$
+
+Thus
+
+$$
+\int^L_0 \frac{\partial^2u}{\partial t^2} \cdot \frac{\partial u}{\partial t} \, dx = \int^L_0 \frac{\partial}{\partial t}\left( \frac{1}{2} \left(\frac{\partial u}{\partial t}\right)^2\right) \, dx
+$$
+
+And
+
+$$
+\int^L_0 c^2\frac{\partial^2u}{\partial x^2} \cdot \frac{\partial u}{\partial t} \, dx = \frac{\partial u}{\partial x} \frac{\partial u}{\partial t}
+$$
+
+The solution is also the infinite sum of some
+
+$$
+\text{Solution } = \sum^\infty_{n=1} \text{ Nodes}
+$$

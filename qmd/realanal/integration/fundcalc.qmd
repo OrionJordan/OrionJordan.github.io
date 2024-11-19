@@ -1,0 +1,139 @@
+---
+title: "Fundamental Theorem of Calculus"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Our main goal in this section will be to prove the Fundamental theorem of Calculus, which states that integration and derivation are inverse operations. 
+
+::: {.callout-note icon="false"}
+## Theorem 4.3.1 (Fundamental Theorem of Calculus I)
+
+If $f$ be integrable on $[a,b]$, and for each $x \in [a,b]$, we set
+
+$$
+F(x) = \int^x_a f(t)\,dt,
+$$
+
+then $F$ is uniformly continuous on $[a,b]$. Furthermore if $f$ is continuous at $c \in [a,b]$, then $F$ is differentiable at $c$ and
+
+$$
+F^\prime(c) = f(c)
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Since $f$ is Riemann integrable on $[a,b]$, it is bounded by some $B$. We know $f$ is uniformly continuous on $[a,b]$, therefore given any $x,y \in [a,b]$ such that $x < y$ and $|x-y| < \delta = \varepsilon/B$, then
+
+\begin{align*}
+|F(x) - F(y)| &= \left| \int^y_a f - \int^x_a f \right|\\
+&= \left| \int^y_a f + \int^a_x f \right| \text{ (Theorem $4.2.4$)}\\
+&= \left| \int^y_x f \right| \leq \int^y_x |f| \leq \int^y_x B\\
+&\leq \frac{\varepsilon}{B}B = \varepsilon 
+\end{align*}
+
+Thus $F$ is uniformly continuous on $[a,b]$.
+
+----------
+
+Furthermore, suppose $f$ is continuous at some point $c \in [a,b]$. Given any $\varepsilon > 0$, there exists $\delta > 0$ such that $|f(t) - f(c)| < \varepsilon$ whenever $t \in [a,b]$ and $|t-c| < \delta$. Since $f(c)$ is a constant, we write
+
+$$
+f(c) = \frac{1}{x-c}\int^x_c f(c) \,dt, \quad \text{for } x \not = c.
+$$
+
+Since $f(c)$ is just a number, the integral evaluates to $(x-c)f(c)$. Then for any $x \in [a,b]$ such that $0 < |x-c| < \delta$, we have
+
+\begin{align*}
+\left|\frac{F(x) - F(c)}{x-c} - f(c)\right| &= \left| \frac{1}{x-c} \left[ \int^x_a f - \int^c_a f\right] - f(c) \right|\\
+&= \left| \frac{1}{x-c} \int^x_c f - \frac{1}{x-c} \int^x_c f(c) \right| \text{ (Theorem $4.2.4$)}\\
+&= \left| \frac{1}{x-c} \right| \left| \int^x_c [f - f(c)] \right| \\
+&\leq \left| \frac{1}{x-c} \right| \int^x_c \left| f - f(c) \right|\\
+&<\left| \frac{1}{x-c} \right| \varepsilon |x-c| = \varepsilon
+\end{align*}
+
+In the last step, because $t$ is inbetween $x$ and $c$, we know that $|t - c| < \delta$, and thus $|f(t) - f(c)| < \varepsilon$. Since $\varepsilon > 0$ was arbitrary, we conclude that
+
+$$
+F^\prime(c) = \lim_{x \to c} \frac{F(x) - F(c)}{x - c} = f(c)
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 4.3.2 
+
+Let $f$ be continuous on $[a,b]$ and $g$ be differentiable on $[c,d]$, where $g([c,d]) \subseteq [a,b]$. Define
+
+$$
+F(x) = \int^{g(x)}_a f, \quad \text{for all $x \in [c,d]$.}
+$$
+
+Then $F$ is differentiable on $[c,d]$ and $F^\prime(x) = g(f(x))g^\prime(x)$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Let $G(x) = \int^x_a f$ for $x \in [a,b]$ so that $F = G \circ g$ on $[c,d]$.
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Theorem 4.3.3 (Fundamental Theorem of Calculus II)
+
+Let $f$ be differentiable on $[a,b]$ and $f^\prime$ is Riemann integerable on $[a,b]$. Then
+
+$$
+\int^b_a f^\prime = f(b) - f(a).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"} 
+## Proof
+
+**Direct Proof**
+
+Let $P = \{x_0,\dots,x_n\}$ be a partition of $[a,b]$. On every subinterval $[x_{i-1},x_i]$, apply Mean Value Theorem to obtain $t_i \in (x_{i-1},x_i)$ such that 
+
+$$
+f(x_i) - f(x_{i-1}) = f^\prime(t_i)(x_i - x_{i-1}).
+$$
+ 
+Thus
+
+$$
+f(b) - f(a) = \sum^n_{i=1} f(x_i) - f(x_{i-1}) = \sum^n_{i=1} f^\prime(t_i)\Delta x_i.
+$$
+
+Then for all $i$, we have that $m_i(f^\prime) \leq f^\prime(t_i) \leq M_i(f^\prime)$. It follows that
+
+$$
+L(f^\prime,P) \leq f(b) - f(a) \leq U(f^\prime,P).
+$$
+
+Since this holds for every partition $P$, we also have
+
+$$
+L(f^\prime) \leq f(b) - f(a) \leq U(f^\prime).
+$$
+
+And since $f^\prime$ is assumed to be Riemann integrable on $[a,b]$, we have
+
+$$
+\int^b_a f^\prime = f(b) - f(a).
+$$
+
+:::

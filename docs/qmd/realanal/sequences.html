@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../qmd/realanal/sequences/convergence.html" rel="next">
+<link href="../../qmd/realanal/sequences/definition.html" rel="next">
 <link href="../../qmd/realanal/intro.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
@@ -64,6 +64,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -128,6 +144,12 @@ ul.task-list li input[type="checkbox"] {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/definition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definition</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
@@ -204,15 +226,71 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">The Derivative</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/mvt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mean Value Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/lhospital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L’Hospitals Rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/taylor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taylor’s Theorem</span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Integration</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/integration.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/integration/riemann.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Riemann Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/integration/riemannprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of the Riemann Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/integration/fundcalc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamental Theorem of Calculus</span></a>
+  </div>
+</li>
+      </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">
- <span class="menu-text">Infinite Series</span></span>
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/infinite-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Series</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/infinite-series/converge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence of Infinite Series</span></a>
+  </div>
+</li>
+      </ul>
   </li>
     </ul>
     </div>
@@ -220,7 +298,13 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#contents" id="toc-contents" class="nav-link active" data-scroll-target="#contents">Contents</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -242,9 +326,52 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Sequences play a large role throughout analysis, and will help us to define properties of functions. This section will define limits and how sequences converge, useful properties that follow from that, and end with an analysis on monotonic and Cauchy sequences.</p>
+<p>Sequences play a vital part in analysis, and build to notions of continuity, limits, derivatives, and series.</p>
+<section id="contents" class="level2">
+<h2 class="anchored" data-anchor-id="contents">Contents</h2>
+<ul>
+<li><p>Definition</p></li>
+<li><p>Convergence</p></li>
+</ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition"><strong>sequence</strong></span> is a, possibly infinite, collection of numbers such that each number is indexed by a natural number.</p>
+</div>
+</div>
+<p>For example, the following is a sequence</p>
+<p><span class="math display">
+(F_n) = \left(1,1,2,3,5,8,13,\dots\right)
+</span></p>
+<p>known as a the <em>Fibbonachi</em> sequence. We can denote each term by its placement, such that <span class="math inline">F_3 = 2</span>, and <span class="math inline">F_7 = 13</span>.</p>
+<p>For the purposes of real analysis, we will formalize sequences as functions from subsets of the natural numbers to the reals.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f \colon A \to S</span> be a function such that <span class="math inline">A \subseteq \mathbb{N}</span>. We call this function a sequence. We choose some symbol, for example <span class="math inline">a</span>, to represent the elements of the sequence.</p>
+<p>For each <span class="math inline">n \in A</span>, let <span class="math inline">a_n</span> denote <span class="math inline">f(n)</span>, and <span class="math inline">(a_n)</span> denote <span class="math inline">f</span> We may also denote a sequence <span class="math inline">(a_n)</span> by listing all of its terms,</p>
+<p><span class="math display">
+(a_1,a_2,\dots,a_n).
+</span></p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -602,8 +729,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../qmd/realanal/sequences/convergence.html" class="pagination-link">
-        <span class="nav-page-text">Convergence</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../../qmd/realanal/sequences/definition.html" class="pagination-link">
+        <span class="nav-page-text">Definition</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

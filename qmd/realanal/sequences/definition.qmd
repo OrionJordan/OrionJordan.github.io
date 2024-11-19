@@ -1,0 +1,36 @@
+---
+title: "Definition"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [**sequence**]{.definition} is a, possibly infinite, collection of numbers such that each number is indexed by a natural number.
+:::
+
+For example, the following is a sequence
+
+$$
+(F_n) = \left(1,1,2,3,5,8,13,\dots\right)
+$$
+
+known as a the *Fibbonachi* sequence. We can denote each term by its placement, such that $F_3 = 2$, and $F_7 = 13$. 
+
+For the purposes of real analysis, we will formalize sequences as functions from subsets of the natural numbers to the reals.
+
+::: {.callout-important icon="false"}
+## Notation
+
+Let $f \colon A \to S$ be a function such that $A \subseteq \mathbb{N}$. We call this function a sequence. We choose some symbol, for example $a$, to represent the elements of the sequence. 
+
+For each $n \in A$, let $a_n$ denote $f(n)$, and $(a_n)$ denote $f$ We may also denote a sequence $(a_n)$ by listing all of its terms,
+
+$$
+(a_1,a_2,\dots,a_n).
+$$
+:::
+

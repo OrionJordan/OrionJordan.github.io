@@ -1,0 +1,84 @@
+---
+title: "L'Hospitals Rule"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Theorem 3.3.1 (Cauchy Mean Value Theorem) 
+
+If $f$ and $g$ be functions that are continuous on $[a,b]$ and differentiable on $(a,b)$. Then there exists at least one point $c \in (a,b)$ such that
+
+$$
+[f(b) - f(a)]g^\prime(c) = [g(b)-g(a)]f^\prime(c).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let 
+
+$$
+h(x) = [f(b) - f(a)]g(x) = [g(b)-g(a)]f(x) \quad \text{for all $x \in [a,b]$}.
+$$
+
+Then $h$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Furthermore
+
+$$
+h(a) = f(b)g(a) - g(b)f(a) = h(b)
+$$
+
+Thus by the Mean Value Theorem there exists $c \in (a,b)$ such that $h^\prime(c) = 0$. That is,
+
+$$
+h^\prime(c) = [f(b)-f(a)]g^\prime(c) - [g(b)-g(a)]f^\prime(c) = 0.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 3.3.2 (L'Hospitals Rule) 
+
+Let $f$ and $g$ be differentiable on $(a,\infty)$. Suppose that $\lim_{x \to \infty}f(x) = \lim_{x \to \infty}g(x) = \infty$ and that $g^\prime(x) \not = 0$ for $x \in (a,\infty)$. If
+
+$$
+\lim_{x \to \infty} \frac{f^\prime(x)}{g^\prime(x)} = L, \quad 
+\text{where $L \in \mathbb{R}$},
+$$
+
+then
+
+$$
+\lim_{x\to\infty} \frac{f(x)}{g(x)} = L.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Given $\varepsilon > 0$, there exists an $N_1 > a$ such that $x > N_1$ implies that
+
+$$
+\left|  \frac{f^\prime(x)}{g^\prime(x)} - L \right| < \frac{\varepsilon}{2}.
+$$
+
+Since $\lim_{x\to\infty} f(x) = \lim_{x\to\infty} g(x) = \infty$, there exists an $N_2 > N_1$ such that $x > N_2$ implies that $f(x) > 0$, and $g(x) > 0$.
+
+Furthermore, there exists $N_3 > N_2$ such that $x > N_3$ implies that $f(x) > f(N_2)$ and $g(x) > g(N_2)$. For any point $x > N_3$, the Cauchy mean value theorem implies that there exists some point $c$ in $(N_2,x)$ such that
+
+$$
+\frac{f^\prime(c)}{g^\prime(c)} = \frac{f(x) - f(N_2)}{g(x) - g(N_2)} = \frac{f(x)}{g(x)} \frac{1 - f(N_2)/f(x)}{1 - g(N_2)/g(x)}.
+$$
+
+But then for $x > N_3$ we have
+
+$$
+\frac{f(x)}{g(x)} = \frac{f^\prime(c)}{g^\prime(c)} F(x) \quad \text{where } F(x) = \frac{1 - g(N_2)/g(x)}{1-f(N_2)/f(x)}.
+$$
+
+:::

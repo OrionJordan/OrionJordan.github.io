@@ -64,6 +64,7 @@ website:
       - section: "Sequences"
         href: "./qmd/realanal/sequences.qmd"
         contents:
+        - "./qmd/realanal/sequences/definition.qmd"
         - "./qmd/realanal/sequences/convergence.qmd"
         - "./qmd/realanal/sequences/limittheo.qmd"
         - "./qmd/realanal/sequences/mono-cauchy.qmd"
@@ -79,10 +80,19 @@ website:
         href: "./qmd/realanal/differentiation.qmd"
         contents:
         - "./qmd/realanal/differentiation/derivatives.qmd"
+        - "./qmd/realanal/differentiation/mvt.qmd"
+        - "./qmd/realanal/differentiation/lhospital.qmd"
+        - "./qmd/realanal/differentiation/taylor.qmd"
       - section: "Integration"
         href: "./qmd/realanal/integration.qmd"
+        contents:
+        - "./qmd/realanal/integration/riemann.qmd"
+        - "./qmd/realanal/integration/riemannprop.qmd"
+        - "./qmd/realanal/integration/fundcalc.qmd"
       - section: "Infinite Series"
         href: "./qmd/realanal/infinite-series.qmd"
+        contents:
+        - "./qmd/realanal/infinite-series/converge.qmd"
 
 theme:
   light: flatly
@@ -91,4 +101,7 @@ theme:
 format:
   html:
     css: styles.css
-    mainfont: "system-ui"
+    header-includes: |
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
+    mainfont: 'Computer Modern Serif'
+    fontsize: 14pt

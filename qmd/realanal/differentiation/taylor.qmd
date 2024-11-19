@@ -1,0 +1,63 @@
+---
+title: "Taylor's Theorem"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Theorem 3.4.1 (Taylor's Theorem)
+
+Let $f$ and its $n$-derivative be continuous on $[a,b]$ and differentiable on $(a,b)$. Let $x_0 \in [a,b]$. For each $x \in [a,b]$ such that $x \not = x_0$. Then there exists $c$ between $x,x_0$ such that
+
+\begin{align*}
+f(x) &= f(x_0) + f^\prime(x_0)(x-x_0) + \frac{f^{\prime\prime}(x_0)}{2!}(x-x_0)^2 + \cdots \\ 
+&+ \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + \frac{f^{(n+1)}(c)}{(n+1)!}(x-x_0)^{n+1}.
+\end{align*}
+
+:::
+
+We can think of the final term as measuring the failure of approximation given by the first $n+1$ terms.
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Fix $x \in [a,b]$ such that $x_0 \not = x$. Let $M$ be the unique solution to 
+
+$$
+f(x) = f(x_0) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-x_0)^n + M(x-x_0)^{n+1}.
+$$
+
+Define 
+
+$$
+F(t) = f(t) + f^\prime(t)(x-t) + \cdots + \frac{f^{(n)}(x_0)}{n!}(x-t)^n + M(x-t)^{n+1}.
+$$
+
+Our assumuptions imply $F(t)$ and its $n$-derivatives are continuous on $[a,b]$ and differentiable on $(a,b)$. Note that $F(x) = f(x)$. Our choice of $M$ implies that $F(x_0) = f(x)$. By the MVT, there exists $c$ between $x,x_0$ such that 
+
+$$
+F^\prime(c) = \frac{F(x)-F(x_0)}{x-x_0} = 0
+$$
+
+since $F(x) = F(x_0) = f(x)$. We can calculate $F^\prime(t)$, and find that all terms except the last two will cancel out. Thus 
+
+$$
+F^\prime(t) =\frac{f^{(n+1)}(t)}{n!}(x-t)^n - M(n+1)(x-t)^n.
+$$
+
+Thus, $F^\prime(c) = 0$ implies
+
+$$
+F^\prime(c) = \frac{f^{(n+1)}(c)}{n!}(x-t)^n - M(n+1)(x-c)^n = 0
+$$
+
+$$
+M = \frac{f^{(n+1)}(c)}{(n+1)!}.
+$$
+
+Therefore we have proved the Taylor series is an accurate representation.
+
+:::
+

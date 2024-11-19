@@ -1,0 +1,126 @@
+---
+title: "Standard layout"
+engine: knitr
+execute:
+  echo: false
+---
+
+## TODO
+
+-   Add home page, intro to self, contact
+-   Custom ink-scape svg
+-   Add images, dark mode priority, light mode later
+-   Content
+
+## Colors
+
+Dark Mode: `BG: #222222`
+
+## Callouts
+
+Callouts are used to section parts of the content together.  
+
+::: {.callout-note icon="false"}
+## Definition
+
+Definitions use ``.callout-note`` and explain a mathematical concept or term to be referenced. The definition callout should not be used for notation, but may include notation of the concept. The key term being discussed will be [highlighted]{.definition} by applying `{.definition}` to the key term. 
+
+The key term will appear bold, and be colored `blue` in light mode, and `cyan` in dark mode.
+:::
+
+## Tikz
+
+I use 'knitr', the engine for 'R' in order to render tikz images. Use `fig-ext: svg` for transparent backgrounds and svg outputs.
+
+TO-DO: Add light mode support (Wait for 1.5-1.6?)
+
+```{tikz}
+#| fig-cap: Test lines/text
+#| fig-ext: svg
+
+\usetikzlibrary{arrows,intersections,backgrounds}
+\usetikzlibrary{backgrounds}
+
+\begin{tikzpicture}[
+    scale=.5,
+    help lines/.style={
+        color=white,
+        text=white,
+        line width=0.2pt
+    }
+]
+
+\draw[style=help lines] (0,14) node[anchor=north west] {{\bf text}};
+\draw[style=help lines] (0,13.5) node[anchor=north west] {text};
+\draw[style=help lines] (0,13) node[anchor=north west] {text};
+\draw[style=help lines] (0,12.5) node[anchor=north west] {text};
+\draw[style=help lines] (0,12) node[anchor=north west] {text};
+
+
+\draw[style=help lines] (0,1) node[anchor=north west] {{\bf Deliberately left blank}};
+
+% bounding box
+\draw[style=help lines] (11,0.5) rectangle (12.5,14);
+\draw[style=help lines] (11.75,0.5) rectangle (13.25,14);
+\draw[style=help lines] (14,0.5) rectangle (15.5,14);
+\draw[style=help lines] (14.75,0.5) rectangle (16.25,14);
+\draw[style=help lines] (17,0.5) rectangle (18.5,14);
+\draw[style=help lines] (17.75,0.5) rectangle (19.25,14);
+\draw[style=help lines] (20,0.5) rectangle (21.5,14);
+\draw[style=help lines] (20.75,0.5) rectangle (22.25,14);
+\draw[style=help lines] (23,0.5) rectangle (24.5,14);
+\draw[style=help lines] (23.75,0.5) rectangle (25.25,14);
+
+\draw[style=help lines] (0,14) -- (26,14);
+\draw[style=help lines] (0,11) -- (26,11);
+\draw[style=help lines] (0,7.5) -- (26,7.5);
+\draw[style=help lines] (0,3.5) -- (26,3.5);
+\draw[style=help lines] (0,1) -- (26,1);
+\draw (11,0.5) rectangle (26,14);
+\draw (14,0.5) rectangle (23,14);
+\draw (17,0.5) rectangle (20,14);
+
+\draw[style=help lines] (12.5,14) node[anchor=south] {Year 1};
+\draw[style=help lines] (15.5,14) node[anchor=south] {Year 2};
+\draw[style=help lines] (18.5,14) node[anchor=south] {Year 3};
+\draw[style=help lines] (21.5,14) node[anchor=south] {Year 4};
+\draw[style=help lines] (24.5,14) node[anchor=south] {Year 5};
+
+% blocks
+
+
+\end{tikzpicture}
+```
+
+```{tikz}
+#| fig-cap: Test graph
+#| fig-ext: svg
+
+\usetikzlibrary {graphs,shapes.geometric}
+
+\tikz [new set=my nodes,  scale=2,  draw=white] {
+  \node [set=my nodes, circle,    white,  draw] at (1,1)   {A};
+  \node [set=my nodes, rectangle, white,  draw] at (1.5,0) {B};
+  \node [set=my nodes, diamond,   white,  draw] at (1,-1)  {C};
+  \node (d)           [star,      white,  draw] at (3,0)   {D};
+
+  \graph { X[white] -> (my nodes) -> (d) };
+}
+
+```
+
+-----------
+
+Real analysis exam 2
+
+If $f^\prime$ is bounded on $(a,b)$, prove $f$ is uniformly continuous on $(a,b)$.
+
+Show that any function with finite disconiutities is integerable.
+
+Show that if $f$ is integerable $1/f$ is integerable
+
+Taylor series nonsense
+
+
+
+Novemebr 17

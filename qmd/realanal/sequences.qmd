@@ -6,4 +6,12 @@ format:
     html-math-method: katex
 ---
 
-Sequences play a large role throughout analysis, and will help us to define properties of functions. This section will define limits and how sequences converge, useful properties that follow from that, and end with an analysis on monotonic and Cauchy sequences.
+Sequences play a vital part in analysis, and build to notions of continuity, limits, derivatives, and series. 
+
+## Contents
+
+- Definition
+
+- Convergence
+
+

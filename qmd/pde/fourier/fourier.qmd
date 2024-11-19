@@ -1,0 +1,23 @@
+---
+title: "Fourier Series"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The fourier series of a function $f(x)$ on the interval $[-L,L]$ is
+
+$$
+\text{Fourier series} = a_0 + \sum^\infty_{n=1}a_n\cos\frac{n\pi x}{L} + \sum^\infty_{n=1}b_n\sin\frac{n\pi x}{L}
+$$
+
+Where the coeffiencts are given by
+
+$$
+a_0 = \frac{1}{2L}\int^L_{-L}f(x)dx\\
+a_n = \frac{1}{L}\int^L_{-L}f(x)\cos\frac{n\pi x}{L}dx\\
+b_n = \frac{1}{L}\int^{L}_{-L}f(x)\sin\frac{n\pi x}{L}dx
+$$
+
+For odd functions, $a_n = a_0 = 0$. This gives us a fourier sine series.

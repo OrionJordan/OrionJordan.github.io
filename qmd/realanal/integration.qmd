@@ -1,9 +1,51 @@
 ---
-title: "Sequences"
+title: "Integration"
 format:
   html:
     toc: true
     html-math-method: katex
 ---
 
-Real analysis is the study of real numbers
+Integrals measure the signed area between the function and the $x$-axis.
+
+![A visual representation of the area under a function](../../images/Integral_example.svg)
+
+## Origins
+
+### Pre-calculus
+
+The concept of integration has been used since antiquity, due to its connections with geometry. Democritus of Thrace (c. 460BC - 370BC) considered the use of infinitely small slices of a cone in order to calculate it's volume, and Eudoxus of Cnidus (c. 390BC - 340BC) proved his formulas through his *method of exhaustion*. This method was used to calculate the area and volume of numerous shapes and solids, but "there was no general procedure that could be applied with minimal modifications to any problem"[^1]
+
+Similar and independent methods for calculating volume were discovered by Liu Hui (c. 225 - 295) and used to calculate the volume of a sphere by Zu Chongzhi (c. 429 - 500) and Zu Geng (c. 480 - 525). 
+
+Alhazen of Buyid (c. 965 - 1040), known as the "father of modern optics" developed an approach to calculate the area of the curve given by $y = x^k$, for any positive $k$; which is equivalant to calculating
+
+$$
+\int x^k \, dx.
+$$
+
+It was not until the 17th century however that advancements in integration and infinity were discovered. Bonaventura Cavalieri (1598-1647) developed the *method of indivisibles*, which allowed for relating the volume of a $3$-dimensional shape to the area of its $2$-dimensional slices. 
+
+Cavalieri published his work in two texts, *Geometria*, which consisted of seven books and 700 pages, and *Exercitationes*, consisting of six books. These books however, being very long and difficult to follow (as Cavalieri did not use standard notation), were not well disseminated to the mathematical community. Cavalieri wrote these texts explicitly avoiding infinite sums, as the concept was not well founded and we wanted to maintain rigour in his writing, however due to the nature of his writing many mathematicians interpreted the method of indivisibles as one relating to infinitesimals. 
+
+> ...while Cavalieri’s method of indivisibles, as he constructed it, did not directly
+give rise to modern calculus, it, and the interpretations other mathematicians
+made of it, helped stimulate research in the area, and was no doubt a significant
+development in the history of integration.[^2]
+
+### Leibniz and Newton
+
+In the 17th century it was discovered by Isaac Newton (1643 - 1727) and Gottfried Leibnitz (1646 - 1716) that the area under a curve given by a function $f(x)$, is directly related to the rate of change of the curve, known as the *Fundemental Theorem of Calculus*. Their work eventually led to the discovery of calculus, and enacted a major controversy as to who had first invented the discipline.[^3]
+
+Because of Fundemental Theorem of Calculus, the integral was generally seen as simply the 'anti-derivative' of a function, which simply happened to be related to an infinite summation. Additionally, their definitions of integration involved infinitely small numbers called *infinitesimals*, which did not obey the Archimedean property. This was also the subject of controversy for many years.
+
+## Citations (Change to bibtex)
+
+\[Ha01\] Hammarström, O. (2016). Origins of Integration (Dissertation).
+
+
+[^2]: Hammarström, O. (2016). Origins of Integration (Dissertation) p.44
+
+[^1]: Hammarström, O. (2016). Origins of Integration (Dissertation) p.5
+
+[^3]: [Wikipedia](https://en.wikipedia.org/wiki/Leibniz%E2%80%93Newton_calculus_controversy) has an article discussing the controversy. 

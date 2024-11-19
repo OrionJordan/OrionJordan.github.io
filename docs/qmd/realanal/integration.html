@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>OOMN - Sequences</title>
+<title>OOMN - Integration</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
+<link href="../../qmd/realanal/integration/riemann.html" rel="next">
+<link href="../../qmd/realanal/differentiation/taylor.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -61,11 +63,29 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -93,20 +113,211 @@ ul.task-list li input[type="checkbox"] {
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../qmd/realanal/integration.html">Integration</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Real Analysis</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/sequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sequences</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/definition.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Definition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/convergence.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limit Theorems</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/sequences/subsequences.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Subsequences</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/limits-cont.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits and Continuity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/funclim.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Limits of Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/cont-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/cont-func-prop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of Continuous Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/limits-cont/uniform-continuity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Uniform Continuity</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/differentiation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Differentiation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/derivatives.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">The Derivative</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/mvt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Mean Value Theorem</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/lhospital.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">L’Hospitals Rule</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/differentiation/taylor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Taylor’s Theorem</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/integration.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Integration</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/integration/riemann.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Riemann Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/integration/riemannprop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Properties of the Riemann Integral</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/integration/fundcalc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Fundamental Theorem of Calculus</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../qmd/realanal/infinite-series.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Infinite Series</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../qmd/realanal/infinite-series/converge.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Convergence of Infinite Series</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#origins" id="toc-origins" class="nav-link active" data-scroll-target="#origins">Origins</a>
+  <ul class="collapse">
+  <li><a href="#pre-calculus" id="toc-pre-calculus" class="nav-link" data-scroll-target="#pre-calculus">Pre-calculus</a></li>
+  <li><a href="#leibniz-and-newton" id="toc-leibniz-and-newton" class="nav-link" data-scroll-target="#leibniz-and-newton">Leibniz and Newton</a></li>
+  </ul></li>
+  <li><a href="#citations-change-to-bibtex" id="toc-citations-change-to-bibtex" class="nav-link" data-scroll-target="#citations-change-to-bibtex">Citations (Change to bibtex)</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Sequences</h1>
+<h1 class="title">Integration</h1>
 </div>
 
 
@@ -121,11 +332,51 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Real analysis is the study of real numbers</p>
+<p>Integrals measure the signed area between the function and the <span class="math inline">x</span>-axis.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../images/Integral_example.svg" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">A visual representation of the area under a function</figcaption>
+</figure>
+</div>
+<section id="origins" class="level2">
+<h2 class="anchored" data-anchor-id="origins">Origins</h2>
+<section id="pre-calculus" class="level3">
+<h3 class="anchored" data-anchor-id="pre-calculus">Pre-calculus</h3>
+<p>The concept of integration has been used since antiquity, due to its connections with geometry. Democritus of Thrace (c.&nbsp;460BC - 370BC) considered the use of infinitely small slices of a cone in order to calculate it’s volume, and Eudoxus of Cnidus (c.&nbsp;390BC - 340BC) proved his formulas through his <em>method of exhaustion</em>. This method was used to calculate the area and volume of numerous shapes and solids, but “there was no general procedure that could be applied with minimal modifications to any problem”<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>Similar and independent methods for calculating volume were discovered by Liu Hui (c.&nbsp;225 - 295) and used to calculate the volume of a sphere by Zu Chongzhi (c.&nbsp;429 - 500) and Zu Geng (c.&nbsp;480 - 525).</p>
+<p>Alhazen of Buyid (c.&nbsp;965 - 1040), known as the “father of modern optics” developed an approach to calculate the area of the curve given by <span class="math inline">y = x^k</span>, for any positive <span class="math inline">k</span>; which is equivalant to calculating</p>
+<p><span class="math display">
+\int x^k \, dx.
+</span></p>
+<p>It was not until the 17th century however that advancements in integration and infinity were discovered. Bonaventura Cavalieri (1598-1647) developed the <em>method of indivisibles</em>, which allowed for relating the volume of a <span class="math inline">3</span>-dimensional shape to the area of its <span class="math inline">2</span>-dimensional slices.</p>
+<p>Cavalieri published his work in two texts, <em>Geometria</em>, which consisted of seven books and 700 pages, and <em>Exercitationes</em>, consisting of six books. These books however, being very long and difficult to follow (as Cavalieri did not use standard notation), were not well disseminated to the mathematical community. Cavalieri wrote these texts explicitly avoiding infinite sums, as the concept was not well founded and we wanted to maintain rigour in his writing, however due to the nature of his writing many mathematicians interpreted the method of indivisibles as one relating to infinitesimals.</p>
+<blockquote class="blockquote">
+<p>…while Cavalieri’s method of indivisibles, as he constructed it, did not directly give rise to modern calculus, it, and the interpretations other mathematicians made of it, helped stimulate research in the area, and was no doubt a significant development in the history of integration.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+</blockquote>
+</section>
+<section id="leibniz-and-newton" class="level3">
+<h3 class="anchored" data-anchor-id="leibniz-and-newton">Leibniz and Newton</h3>
+<p>In the 17th century it was discovered by Isaac Newton (1643 - 1727) and Gottfried Leibnitz (1646 - 1716) that the area under a curve given by a function <span class="math inline">f(x)</span>, is directly related to the rate of change of the curve, known as the <em>Fundemental Theorem of Calculus</em>. Their work eventually led to the discovery of calculus, and enacted a major controversy as to who had first invented the discipline.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<p>Because of Fundemental Theorem of Calculus, the integral was generally seen as simply the ‘anti-derivative’ of a function, which simply happened to be related to an infinite summation. Additionally, their definitions of integration involved infinitely small numbers called <em>infinitesimals</em>, which did not obey the Archimedean property. This was also the subject of controversy for many years.</p>
+</section>
+</section>
+<section id="citations-change-to-bibtex" class="level2">
+<h2 class="anchored" data-anchor-id="citations-change-to-bibtex">Citations (Change to bibtex)</h2>
+<p>[Ha01] Hammarström, O. (2016). Origins of Integration (Dissertation).</p>
 
 
+</section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Hammarström, O. (2016). Origins of Integration (Dissertation) p.5<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Hammarström, O. (2016). Origins of Integration (Dissertation) p.44<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://en.wikipedia.org/wiki/Leibniz%E2%80%93Newton_calculus_controversy">Wikipedia</a> has an article discussing the controversy.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -474,6 +725,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../../qmd/realanal/differentiation/taylor.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Taylor’s Theorem</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../../qmd/realanal/integration/riemann.html" class="pagination-link">
+        <span class="nav-page-text">Riemann Integral</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
 </div> <!-- /content -->
 
 

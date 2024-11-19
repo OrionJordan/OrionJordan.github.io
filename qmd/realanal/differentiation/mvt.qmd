@@ -1,0 +1,167 @@
+---
+title: "Mean Value Theorem"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Theorem 3.2.1 
+
+If $f$ is differentiable on an open interval $(a,b)$ and $f$ assumes its maximum or minimum at a point $c \in (a,b)$, then $f^\prime(c) = 0$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Suppose that $f$ assumes its maximum at $c$. That is, $f(x) \leq f(c)$ for all $x \in (a,b)$. Let $(x_n)$ be a sequence converging to $c$ such that $a < x_n < c$ for all $n$. Since $f$ is differentiable at $c$, the sequence
+
+$$
+\left( \frac{f(x_n) - f(c)}{x_n - c} \right)
+$$
+
+converges to $f^\prime(c)$. Since $f(x_n) \leq f(c)$ and $x_n \leq c$, each term in our above sequence is nonnegative. Thus $f^\prime(c) \geq 0$.
+
+We repeat this argument with a sequence $(y_n)$, such that $c < y_n < b$ for all $n$. Each term in the sequence 
+
+$$
+\left( \frac{f(y_n) - f(c)}{y_n - c} \right)
+$$
+
+will be nonpositive, so $f^\prime(c) \leq 0$. We therefore conclude that $f^\prime(c) = 0$. If $f$ has a minimum at $c$, we apply the baove results to the function $-f$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 3.2.2 (Rolle's Theorem)
+
+Let $f$ be a continuous function on $[a,b]$ that is differentiable on $(a,b)$ and such that $f(a) = f(b)$. Then there exists at least one point $c$ in $(a,b)$ such that $f^\prime(c) = 0$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Since $f$ is continuous on a compact interval $[a,b]$, $f$ obtains a minumum $x_1$ and maximum $x_2$ by the Extreme Value Theorem.
+
+If $x_1,x_2$ are both endpoints of $[a,b]$, then the function is a constant, and $f^\prime(x) = 0$ for all $x \in [a,b]$.
+
+Otherwise, $f$ assumes either a minimum or maximum at some point $c \in (a,b)$, and by Theorem $3.2.1$, $f^\prime(c) = 0$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 3.2.3 (Mean Value Theorem)
+
+Let $f$ be a continuous function on $[a,b]$ that is differentiable on $(a,b)$. Then there exists at least one point $c \in (a,b)$ such that
+
+$$
+f^\prime(c) = \frac{f(b) - f(a)}{b-a}.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $g(x)$ be a function whose graph is the chord between $f(a)$ and $f(b)$. More formally
+
+$$
+g(x) = \frac{f(b)-f(a)}{b-a}(x-a) + f(a), \quad \text{for all $x \in [a,b]$}.
+$$
+
+Then the function $h = f - g$ is continuous on $[a,b]$ and differentiable on $(a,b)$. Since $f(a) = g(a)$ and $f(b) = g(b)$, we have that $h(a) = h(b) = 0$. Applying Rolle's Theorem we see that for some $c \in (a,b)$,
+
+$$
+0 = h^\prime(c) = f^\prime(c) - g^\prime(c) = f^\prime(c) - \frac{f(b) - f(a)}{b-a}.
+$$
+
+Thus
+
+$$
+f^\prime(c) = \frac{f(b)-f(a)}{b-a}.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 3.2.4
+
+Let $f$ be a continuous function on $[a,b]$ that is differentiable on $(a,b)$. If $f^\prime(x) = 0$ for all $x \in (a,b)$, then $f$ is constant on $[a,b]$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+**Proof by Contradiction**
+
+Suppose $f$ were not constant on $[a,b]$. Then there exists two points $a \leq x_1 < x_2 \leq b$ such that $f(x_1) \not = f(x_2)$. But then by MVT, for some $c \in (x_1,x_2)$ there exists
+
+$$
+f^\prime(c) = \frac{f(x_2) - f(x_1)}{x_2 - x_1} \not = 0
+$$
+
+Thus a contradiction.
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 3.2.5
+
+Let $f,g$ be continuous on $[a,b]$ and differentiable on $(a,b)$. Suppose that $f^\prime(x) = g^\prime(x)$ for all $x \in (a,b)$. Then there exists a constant $C$ such that
+
+$$
+f(x) = g(x) + C \quad \text{ for all $x \in [a,b]$}
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (to-do)
+
+**Direct Proof**
+
+Apply Theorem $3.2.4$ to $-g$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 3.2.6
+
+Let $f$ be differentiable on $I$. Then
+
+$(a)$ if $f^\prime(x) > 0$ for all $x \in I$, then $f$ is strictly increasing on $I$, and
+
+$(b)$ if $f^\prime(x) < 0$ for all $x \in I$, then $f$ is strictly decreasing on $I$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (to-do)
+
+**Direct Proof**
+
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 3.2.7 (Intermediate Value Theorem for Derivatives)
+
+Let $f$ be differentiable on $[a,b]$ and suppose there exists a number $k$ between $f^\prime(a)$ and $f^\prime(b)$. Then there exists a point $c \in (a,b)$ such that $f^\prime(c) = k$.
+
+$(a)$ if $f^\prime(x) > 0$ for all $x \in I$, then $f$ is strictly increasing on $I$, and
+
+$(b)$ if $f^\prime(x) < 0$ for all $x \in I$, then $f$ is strictly decreasing on $I$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (to-do)
+
+**Direct Proof**
+
+
+:::

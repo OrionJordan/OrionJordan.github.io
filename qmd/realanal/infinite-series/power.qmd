@@ -1,0 +1,182 @@
+---
+title: "Power Series"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+## Definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(a_n)$ be a sequence of real numbers. The series
+
+$$
+\sum^\infty_{n=0} a_n x^n = a_0 + a_1x + a_2x^2 + \cdots 
+$$
+
+Is called the [power series]{.definition} of $a_n$.
+:::
+
+Power series can be thought of as a generalization of polynomials, because given any polynomial 
+
+$$
+P = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n
+$$
+
+We can define a sequence 
+
+$$
+(a_n) = (a_0,a_1,a_2,\cdots,a_n,0,0,0,\cdots)
+$$
+
+And then the power series of $(a_n)$ will be equal to the polynomial $P$.
+
+::: {.callout-important icon="false"}
+## Notation
+
+We let $\mathbb{R}[x]$ denote a polynomial with real coeffients, and $\mathbb{R}[|x|]$ denote a power series with real coeffients.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Theorem
+
+Let $(a_n)$ be a sequence of real numbers. Let $\alpha = \limsup |a_n|^{1/n}$. We define a function $R$ such that 
+
+$$
+R = \begin{cases}
+\frac{1}{\alpha} & \text{if } 0 < \alpha < \infty\\
+\infty & \text{if } \alpha = 0\\
+0& \text{if } \alpha = \infty
+\end{cases}
+$$
+
+The power series of $(a_n)$ 
+
+$(a)$ Converges absolutly whenever $|x| < R$, and 
+
+$(b)$ Diverges when $|x| > R$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Comparison Test)
+
+Let $\sum a_n$ and $\sum b_n$ be infinite series such that $a_n,b_n \leq 0$ for all $n$. Then
+
+$(a)$ If $\sum a_n$ converges and $0 \leq b_n \leq a_n$ for all $n$, then $\sum b_n$ converges.
+
+$(b)$ If $\sum a_n$ = +\infty and $0 \leq a_n \leq b_n$ for all $n$, then $\sum b_n = + \infty$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$(a)$ Because $s_{a_n}$ is monotone and bounded, $s_{b_n}$ converges.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $\sum |a_n|$ converges, then $\sum a_n$ is [absolutly convergent]{.definition}, or that the sum [converges absolutly]{.definition}.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+If a series converges absolutly, then it converges.
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Theorem (Ratio Test)
+
+If $\sum a_n$, $a_n \not = 0$
+
+$(a)$ If $\limsup |a_{n+1}/a_n| < 1$, the the series is absolutly convergent.
+
+$(b)$ If $\liminf |a_{n+1}/a_n| > 1$ then the series diverges.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Integral test)
+
+Let $f$ be an integerable function defined on $[0,\infty)$ and suppose that $f$ is positive and decreasing. 
+
+Then the series $\sum f(n)$ converges if and only if
+
+$$
+\lim_{n \to \infty} \left( \int^n_1 f(x) \,dx \right)
+$$
+
+exists, and is finite.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+**Direct Proof:**
+
+Let $a_n = f(n)$, and $b_n = \int^{n+1}_n f(x)\,dx$. 
+
+Since $f$ is decreasing, given an integer $n$, $f(n+1) \leq f(x) \leq f(n)$ for all $x \in [n,n+1]$.
+
+By Theorem $444$, we have that
+
+$$
+\left| \int^{n+1}_{n} \right| \leq \int^{n+1}_{n} |f| \leq |f|.
+$$
+
+Therefore we have $0 \leq a_{n+1} \leq b_n \leq a_n$ for all integers $n$.
+
+By applying the comparison test twice, we have that $\sum a_n$ converges if and only if $\sum b_n$ converges. Note that
+
+$$
+\sum^k_{i=1} b_i = \int^{k+1}_1 f
+$$
+
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Given the series 
+
+$$
+\sum^{\infty}_{n=0} ne^{-n^2},
+$$
+
+we define a function $f(x) = x\exp(-x^2)$. If $f$ is integerable, positive, and decreasing on $[k,\infty)$, then we can use the integral test.
+
+The function is continuous, and positive by inspection. Taking the derivative of the function gets us
+
+$$
+f^\prime(x) = e^{-x^2}(1-2x^2).
+$$
+
+Since $f^\prime$ is non-positive on $[1/\sqrt{2},\infty)$, we can apply the integral test. We calculate
+
+$$
+\lim_{t\to\infty}\left( \int^t_1 f \right) = \frac{1}{2}
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Alternating series test)
+
+If $(a_n)$ is a decreasing sequence of positive numbers and $\lim a_n = 0$, then the series $\sum (-1)^{n}a_n$ converges.
+
+:::

@@ -1,4 +1,3 @@
-
 ::: {.link-cards}
 
 <% for (const item of items) { %>
@@ -6,6 +5,7 @@
 ::: {.card}
 ::: {.card-body}
 
+::: {.<%- item.image%>}
 ::: {.card-title}
 #### <%- item.title %>
 <% if (item.subtitle) { %>
@@ -13,6 +13,7 @@
 ###### <%- item.subtitle %>
 :::
 <% } %>
+:::
 :::
 
 <% for (const link of item.links) { %>
@@ -24,3 +25,6 @@
 <% } %>
 
 :::
+
+
+    

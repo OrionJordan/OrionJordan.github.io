@@ -1,0 +1,171 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[graphics, active, tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\usepackage{ngerman}
+
+%!tikz preamble begin
+\newcommand\colA{-7.5}
+\newcommand\colB{-5}
+\newcommand\colC{-2.5}
+\newcommand\colD{0}
+\newcommand\colE{2.5}
+\newcommand\colF{5}
+
+\newcommand\Height{2.5}% cm per band
+\newcommand\Band{*\Height/-10}
+\newcommand\Bum{\Band}% µm 0..1000
+\newcommand\Bmm{\Band-1*\Height}% mm 1..10
+\newcommand\Bcm{\Band-2*\Height}% cm 1..10
+\newcommand\Bdm{\Band-3*\Height}% dm 1..10
+\newcommand\Bm{\Band-4*\Height}% m  1..10
+\newcommand\Bdam{\Band-5*\Height}% Dm 1..10
+\newcommand\Bhm{\Band-6*\Height}% Hm 1..10
+\newcommand\Bkm{\Band-7*\Height}% Km 1..10
+\newcommand\inch{*2.54}
+\newcommand\yard{*0.9144}
+%!tikz preamble end
+
+
+\begin{document}
+%!tikz source begin
+\begin{tikzpicture}
+
+\tikzset{unit/.style={rectangle,draw=black!50,fill=white!20},every node/.style={fill=white!20}};
+
+\draw[gray] (\colA-1,0\Bum) rectangle (\colF,10\Bum); \node[unit] at (\colF,5\Bum) {$\mu$m};
+\draw[gray] (\colA-1,0\Bmm) rectangle (\colF,10\Bmm); \node[unit] at (\colF,5\Bmm) {mm};
+\draw[gray] (\colA-1,0\Bcm) rectangle (\colF,10\Bcm); \node[unit] at (\colF,5\Bcm) {cm};
+\draw[gray] (\colA-1,0\Bdm) rectangle (\colF,10\Bdm); \node[unit] at (\colF,5\Bdm) {dm};
+\draw[gray] (\colA-1,0\Bm) rectangle (\colF,10\Bm); \node[unit] at (\colF,5\Bm) {m};
+\draw[gray] (\colA-1,0\Bdam) rectangle (\colF,10\Bdam); \node[unit] at (\colF,5\Bdam) {dam};
+\draw[gray] (\colA-1,0\Bhm) rectangle (\colF,10\Bhm); \node[unit] at (\colF,5\Bhm) {hm};
+\draw[gray] (\colA-1,0\Bkm) rectangle (\colF,10\Bkm); \node[unit] at (\colF,5\Bkm) {km};
+
+\node[unit] (twip) at (\colC,5/72\inch\Bum) {twip};
+\node[unit] (point) at (\colB,100/72\inch\Bum) {point};
+\node[unit] (pica) at (\colB,25.4/6\Bmm) {pica};
+
+\node[unit] (line) at (\colC,25.4/12\Bmm) {line};
+
+\node[unit] (poppyseed) at (\colE,25.4/12\Bmm) {poppyseed};
+\node[unit] (barleycorn) at (\colE,25.4/3\Bmm) {barleycorn};
+
+\node[unit] (inch) at (\colD,2.54\Bcm) {inch};
+\node[unit] (foot) at (\colD,3.048\Bdm) {foot};
+\node[unit] (yard) at (\colD,9.144\Bdm) {yard};
+
+\node[unit] (stick) at (\colE,2\inch\Bcm) {stick};
+\node[unit] (nail) at (\colA,100\yard/16\Bcm) {nail};
+
+\node[unit] (finger) at (\colC,7/8\inch\Bcm) {finger};
+
+\node[unit] (digit) at (\colB,3/4\inch\Bcm) {digit};
+\node[unit] (palm) at (\colB,3\inch\Bcm) {palm};
+\node[unit] (hand) at (\colE,0.4\inch\Bdm) {hand};
+\node[unit] (shaftment) at (\colC,0.6\inch\Bdm) {shaftment};
+\node[unit] (span) at (\colA,0.9\inch\Bdm) {span};
+
+\node[unit] (cubit) at (\colB,1.8\inch\Bdm) {cubit};
+\node[unit] (ell) at (\colA,0.45\inch\Bm) {ell};
+
+\node[unit] (skein) at (\colA,1.2\yard\Bhm) {skein};
+\node[unit] (spindle) at (\colA,12\yard\Bkm) {spindle};
+
+\node[unit] (pace) at (\colC,3\inch\Bdm) {pace};
+\node[unit] (grade) at (\colB,.6\inch\Bm) {grade, step};
+\node[unit] (mileRoman) at (\colB,.6\inch\Bkm) {Roman mile};
+
+\node[unit] (rope) at (\colB,2.4\inch\Bm) {rope};
+
+\node[unit] (fathom) at (\colE,2\yard\Bm) {fathom};
+\node[unit] (shackle) at (\colE,3\yard\Bdam) {shackle};
+\node[unit] (cable) at (\colE,2\yard\Bhm) {cable};
+\node[unit] (milenautic) at (\colE,.608*1.2\inch\Bkm) {nautical mile};
+\node[unit] (league) at (\colC,.608*3.6\inch\Bkm) {league};
+
+\node[unit] (link) at (\colB,198/250\inch\Bdm) {link};
+\node[unit] (rod) at (\colC,1.98\inch\Bm) {\parbox{1.8cm}{rod, pole, perch}};
+\node[unit] (chainGunter) at (\colC,.792\inch\Bdam) {\parbox{1.8cm}{Gunter's chain}};
+
+\node[unit] (chainRamsden) at (\colB,1.2\inch\Bdam) {\parbox{2cm}{Ramsden's chain}};
+
+\node[unit] (furlong) at (\colC,2.2\yard\Bhm) {furlong};
+\node[unit] (milestatute) at (\colD,1.76\yard\Bkm) {mile};%statute mile
+
+%typography
+\draw [->] (twip) -- node{20} (point);
+\draw [->] (point) -- node{12} (pica);
+\draw [->] (pica) -- node{6} (inch);
+
+\draw [->] (point) -- node{6} (line);
+
+\draw (line) -- node{1} (poppyseed);% =
+
+\draw [->] (line) -- node{12} (inch);
+\draw [->] (poppyseed) -- node{4} (barleycorn);
+\draw [->] (barleycorn) -- node{3} (inch);
+ 
+\draw [->] (inch) -- node{$\frac78$} (finger);
+\draw [->] (point) -- node{63} (finger);% 7/8in = 21/2line = 63pt
+
+\draw [->] (grade) -- node{4} (rope);
+\draw [->] (rope) -- node{5} (chainRamsden);
+ 
+% Textile
+\draw [->] (ell) -- node{96} (skein);
+\draw [->] (skein) -- node{120} (spindle);
+ 
+\draw [->] (inch) -- node{2} (stick);
+\draw [->] (stick) -- node{2} (hand);
+\draw [->] (digit) -- node{4} (palm);
+\draw [->] (inch) -- node{3} (palm);
+\draw [->] (digit) -- node{3} (nail);
+\draw [->] (nail) -- node{4} (span);
+\draw [->] (palm) -- node{2} (shaftment);
+\draw [->] (palm) -- node{3} (span);
+ 
+\draw [->,thick] (inch) -- node{12} (foot);
+\draw [->] (hand) -- node{3} (foot);
+\draw [->] (shaftment) -- node{2} (foot);
+\draw [->] (shaftment) -- node{3} (cubit);
+\draw [->] (span) -- node{2} (cubit);
+\draw [->] (span) -- node{5} (ell);
+ 
+\draw [->,thick] (foot) -- node{3} (yard);
+%\draw [->] (cubit) -- node{2} (yard);
+\draw [->] (cubit) .. controls (.5\colC+.5\colD,6\Bdm) .. node{2} (yard);
+ 
+% Military, Roman
+%\draw [->] (foot) -- node{5} (grade);
+\draw [->] (shaftment) -- node{5} (pace);
+%\draw [->] (foot) -- node{$2\frac12$} (pace);
+\draw [->] (pace) .. controls (\colB,8\Bdm) .. node{2} (grade);
+%\draw [->] (grade) -- node{1000} (mileRoman);
+ 
+%\draw [->] (foot) -- node{6} (fathom);
+\draw [->] (yard) -- node{2} (fathom);
+
+\draw [->,thick] (yard) -- node{1760} (milestatute);
+ 
+\draw [->] (cubit) -- node{11} (rod);
+ 
+\draw [->] (fathom) -- node{11} (chainGunter);
+\draw [->] (rod) -- node{4} (chainGunter);
+\draw [->] (link) .. controls (\colC,1.5\Bm) .. node{25} (rod);
+\draw [->] (chainGunter) -- node{10} (furlong);
+\draw [->] (furlong) -- node{8} (milestatute);
+\draw [->] (chainRamsden) -- node{50} (mileRoman);
+ 
+\draw [->] (milenautic) -- node{3} (league);
+ 
+%nautic
+\draw [->] (fathom) -- node{15} (shackle);
+\draw [->] (fathom) .. controls (.25*\colE,3\Bdam) .. node{100} (cable);
+\draw [->] (cable) -- node{10} (milenautic);
+\draw [->] (foot) .. controls (\colF,3\Bm) .. node{6080} (milenautic);
+
+\end{tikzpicture}
+%!tikz source end
+
+\end{document}
