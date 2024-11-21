@@ -3,6 +3,7 @@ title: "Power Series"
 format:
   html:
     toc: true
+    toc-title: Table of Contents
     html-math-method: katex
 ---
 
@@ -180,3 +181,67 @@ $$
 If $(a_n)$ is a decreasing sequence of positive numbers and $\lim a_n = 0$, then the series $\sum (-1)^{n}a_n$ converges.
 
 :::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(f_n)$ be a sequence of functions defined on $S \subseteq \mathbb{R}$. The sequence is [pointwise convergent]{.definition} if for each $x \in S$, we have that $(f_n(x))$ converges.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(f_n)$ be a pointwise convergent sequence. Define $f \colon S \to \mathbb{R}$ such that $f(x) = \lim f_n(x)$. If $f$ is continuous, then $(f_n)$ is [uniformly convergent]{.definition}
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(f_n)$ be sequence of functions defined on $S \subseteq \mathbb{R}$. $(f_n)$ [converges uniformly]{.definition} to $f$ on $s$ if
+
+$$
+\forall \varepsilon > 0, \exists N \in \mathbb{N} s.t. \forall n \geq N and \forall x \in S, |f_n(x) - f(x)| < \varepsilon.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchy Criterion)
+
+Let $(f_n)$ be a sequence of functions on $S \subseteq \mathbb{R}$ such tha
+
+Given $\varepsilon > 0$, by the assumption we know that $\exists N \in \mathbb{N}$ such that $|f_n(x) - f_m(x)| < \varepsilon/2$ for all $x \in S$ and all $m,n\geq N$.
+
+Choose some $n \geq N$. Since $f_m \to \infty$.
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(f_n)$ be a sequence of functions. The series $\sum f_n$ is said to [converge pointwise]{.definition} if the sequence of partial sums
+
+$$
+s_n \coloneq \sum^n_{k=0}f_k(x)
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Weierstrass M-Test)
+
+Let $(f_n)$ be a sequence of functions. Let $(M_n)$ be a sequence of real numbers such that $|f_n(x)| \leq M_n$ for all $x\in S$ and for all $n$. If $\sum M_n$ converges, then $\sum f_n$ converges uniformly on $S$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Since $\sum M_n$ converges, we have that $\exists N \in \mathbb{N}$ such that $m,n \geq N$ implies $|s_n - s_{m-1}| < \varepsilon$. If $n \geq m \geq N$, then 
+
+$$
+|s_n(x) - s_m(x)| 
+$$
+
+:::
+
+Given $\varepsilon = 1$, let $N \in \mathbb{N}$ we need to find som

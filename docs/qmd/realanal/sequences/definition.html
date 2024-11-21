@@ -63,6 +63,7 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
   <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
   <script>document.addEventListener("DOMContentLoaded", function () {
@@ -159,13 +160,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Limit Theorems</span></a>
+ <span class="menu-text">Limit Properties</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+ <span class="menu-text">Special Sequences</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -330,15 +331,14 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <span class="definition"><strong>sequence</strong></span> is a, possibly infinite, collection of numbers such that each number is indexed by a natural number.</p>
+<p>A <span class="definition"><strong>sequence</strong></span> is a collection of terms such that each term is indexed by a natural number.</p>
 </div>
 </div>
-<p>For example, the following is a sequence</p>
+<p>Sequences may be finite or infinite, and their terms may be numbers or functions. For example, the following is a sequence of Fibbonachi numbers,</p>
 <p><span class="math display">
-(F_n) = \left(1,1,2,3,5,8,13,\dots\right)
+\left(1,1,2,3,5,8,13,\dots\right).
 </span></p>
-<p>known as a the <em>Fibbonachi</em> sequence. We can denote each term by its placement, such that <span class="math inline">F_3 = 2</span>, and <span class="math inline">F_7 = 13</span>.</p>
-<p>For the purposes of real analysis, we will formalize sequences as functions from subsets of the natural numbers to the reals.</p>
+<p>We can denote each term by its placement, for example <span class="math inline">F_3 = 2</span>, and <span class="math inline">F_7 = 13</span>.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -349,13 +349,11 @@ Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon A \to S</span> be a function such that <span class="math inline">A \subseteq \mathbb{N}</span>. We call this function a sequence. We choose some symbol, for example <span class="math inline">a</span>, to represent the elements of the sequence.</p>
-<p>For each <span class="math inline">n \in A</span>, let <span class="math inline">a_n</span> denote <span class="math inline">f(n)</span>, and <span class="math inline">(a_n)</span> denote <span class="math inline">f</span> We may also denote a sequence <span class="math inline">(a_n)</span> by listing all of its terms,</p>
-<p><span class="math display">
-(a_1,a_2,\dots,a_n).
-</span></p>
+<p>We use <span class="math inline">(a_n)</span> to denote a sequence, and <span class="math inline">a_n</span> without parenthesis to denote the <span class="math inline">n^{th}</span>-term of the sequence.</p>
+<p>We also use the notation <span class="math inline">(a_1,a_2,a_3,\dots)</span> to denote a sequence. All terms are sequential and commas are used to seperate terms.</p>
 </div>
 </div>
+<p>It is common to formalize sequences through functions, though our intuitive understanding will work just fine for the purposes of analysis.</p>
 
 
 

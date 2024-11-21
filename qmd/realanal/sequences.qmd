@@ -6,12 +6,16 @@ format:
     html-math-method: katex
 ---
 
-Sequences play a vital part in analysis, and build to notions of continuity, limits, derivatives, and series. 
+Sequences are the building blocks of analysis, and are the fundemental structure of limits, derivatives, and integrals.
 
 ## Contents
 
 - Definition
-
 - Convergence
-
+- Limit Properties
+  - Infinite Limits
+- Special Sequences
+  - Monotone Sequences
+  - Cauchy Sequences
+- Subsequences
 

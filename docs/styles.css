@@ -4,6 +4,7 @@ body
   .definition {
     color: blue;
     font-weight: bold;
+    font-size: 13pt;
   }
 
   .quarto-dark .definition {
@@ -88,3 +89,7 @@ body
   }
 
 /* Font shit */
+
+  .katex {
+    font-size: 14pt; /* Adjust the font size of math */
+  }

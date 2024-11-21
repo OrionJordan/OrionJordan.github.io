@@ -1,5 +1,5 @@
 ---
-title: "Monotone sequences and Cauchy sequences"
+title: "Special Sequences"
 format:
   html:
     toc: true

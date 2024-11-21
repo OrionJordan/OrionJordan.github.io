@@ -2,16 +2,19 @@
 title: "Real Analysis"
 format:
   html:
-    toc: true
+    toc: false
     html-math-method: katex
 ---
 
-Real analysis is the study of real numbers.
+Real analysis is the study of real numbers and their properties. 
+
+Section I: This section covers properties of sequences, limits, derivatives and integrals without regard to general metric spaces. 
 
 ## Table of Contents
 
-------------------------------------------------------------------------
+- Sequences
+- Limits
+- Differentiation
+- Integration
+- Infinite Series
 
-![Dedekind cut at square root of two[^1]](images/Dedekind.svg)
-
-[^1]: Melikamp, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons

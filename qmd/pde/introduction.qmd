@@ -10,7 +10,7 @@ Partial differential equations is the study of functions with partial derivative
 
 The way that heat is transferred through material is given by a PDE, known as the Heat transfer equation
 
-$$
+0$$
 \frac{\partial u}{\partial t} = a \frac{\partial^2u}{\partial x^2}
 $$
 
@@ -26,10 +26,9 @@ $$
 \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2u}{\partial y^2} = P(x,y)
 $$
 
-
 ## Exam 3 review
 
-- Fourier Series
+-   Fourier Series
 
 -- Derivatives of fourier
 
@@ -37,7 +36,7 @@ $$
 
 -- Integrals of fourier series
 
-- Wave equation
+-   Wave equation
 
 -- Find solutions using sep of var
 
@@ -72,7 +71,7 @@ $$
  \right) = n^{th} \text{ node}
 $$
 
--------
+------------------------------------------------------------------------
 
 Where a node
 
@@ -122,7 +121,7 @@ $$
 
 The solution of the wave equation is the sum of two traveling waves, one to the left and one to the right.
 
------------
+------------------------------------------------------------------------
 
 By conservation of energy we have
 
@@ -159,3 +158,5 @@ The solution is also the infinite sum of some
 $$
 \text{Solution } = \sum^\infty_{n=1} \text{ Nodes}
 $$
+
+------------------------------------------------------------------------

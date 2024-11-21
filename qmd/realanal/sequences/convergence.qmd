@@ -6,17 +6,26 @@ format:
     html-math-method: katex
 ---
 
-We are primarily interested in how sequences tend towards infinity.
+We are primarily interested in infinite sequences, and their behaviour as their terms approach infinity. The sequence 
+
+$$
+(1,2,3,4,\dots)
+$$
+
+appears to grow without bound, but the sequence
+
+$$
+(1,1.4,1.41,1.414,\dots)
+$$
+
+appears to be approaching some actual number. We formalize this through *convergence*.
 
 ::: {.callout-note icon="false"}
 ## Definition
-
-A sequence $(s_n)$ of real numbers [**converges**]{.definition} to a real number $s$ if, for all $\varepsilon > 0$, there exists some natural number $N$ such that $n > N$ implies $|s_n - s| < \varepsilon$.
+A sequence $(s_n)$ of real numbers is said to [converge]{.definition} to a real number $s$ if, for every $\varepsilon > 0$, there exists some natural number $N$ such that $n > N$ implies $|s_n - s| < \varepsilon$.
 :::
 
 Where $|s_n - s|$ is the distance between the points $s_n$ and $s$. Essentially, a sequence is convergent if the elements of $(s_n)$ get arbitrarily close to a point $s$ as the sequence progresses.
-
-If a sequence does not converge, than we say it is [**divergent**]{.definition}.
 
 ::: {.callout-note icon="false"}
 ## Definition
@@ -28,7 +37,7 @@ $$
 $$
 :::
 
-We typically abbreviate $\lim_{n\to\infty}s_n = s$ as $\lim s_n = s$
+We typically abbreviate $\lim_{n\to\infty}s_n = s$ as $\lim s_n = s$.
 
 Suppose we have a sequence $(s_n)$ which appears to converge to a number $s$. How would we go about proving the sequence fufills the definition of convergence?
 
@@ -51,14 +60,15 @@ The Archimedean property states that the natural numbers are unbounded in $\math
 :::
 -->
 ```
-::: {.callout-warning icon="false"}
-## Example
+::: {.callout-warning appearance="minimal" icon="false"}
 
-**Claim:** Given the sequence $s_n = 1/n$, we have 
+**Claim:** Given the sequence $s_n = 1/n$, we claim 
 
 $$
 \lim_{n \to \infty} \frac{1}{n} = 0.
 $$
+
+-------
 
 In order to show this sequence converges, we need to prove that for all $\varepsilon > 0$ there exists some $N \in \mathbb{N}$ such that for all $n \geq N$, we have
 
@@ -87,7 +97,9 @@ We call this the [**constant sequence**]{style="color: blue"}.
 :::
 -->
 ```
-See [Practice](http://localhost:3311/qmd/realanal/sequences/convergence.html#sec-practice) for more examples.
+See [Practice](#sec-practice) for more examples.
+
+## Properties
 
 ::: {.callout-note icon="false"}
 ## Theorem 1.1.1
@@ -105,7 +117,7 @@ and if $\lim a_n = 0$, then it follows that $\lim s_n = s$.
 ::: {.callout-tip icon="false" collapse="true"}
 ## Proof
 
-Given any $\varepsilon > 0$, since $\lim a_n = 0$ there exists $N_1 \in \mathbb{N}$ such that $n \geq N_1$ implies $|a_n| < \varepsilon/k$. Let $N = \max\{m,N_1\}$. Then for $n \geq \mathbb{N}$ we have $n \geq m$ and $n \geq N_1$, so
+Given any $\varepsilon > 0$, since $\lim a_n = 0$ there exists $N_1 \in \mathbb{N}$ such that $n \geq N_1$ implies $|a_n| < \varepsilon/k$. Let $N = \max\{m,N_1\}$. Then for $n \geq N$ we have $n \geq m$ and $n \geq N_1$, so
 
 $$
 |s_n - s| \leq k|a_n| < k\left(\frac{\varepsilon}{k}\right) = \varepsilon.
@@ -213,13 +225,14 @@ $$
 
 Let $N = \max\{N_1,N_2\}$. From the triangle inequality we have
 
-```{=tex}
+$$
 \begin{align*}
 |s-t| &= |s - s_n + s_n - t|\\
 &\leq |s-s_n|+|s_n-t|\\
 &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
 \end{align*}
-```
+$$
+
 Since this holds for all $\varepsilon > 0$, we have $s = t$.
 :::
 

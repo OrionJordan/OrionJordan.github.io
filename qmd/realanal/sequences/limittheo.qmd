@@ -1,5 +1,5 @@
 ---
-title: "Limit Theorems"
+title: "Limit Properties"
 format:
   html:
     toc: true

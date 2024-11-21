@@ -9,28 +9,22 @@ format:
 ::: {.callout-note icon="false"}
 ## Definition
 
-A [**sequence**]{.definition} is a, possibly infinite, collection of numbers such that each number is indexed by a natural number.
+A [**sequence**]{.definition} is a collection of terms such that each term is indexed by a natural number.
 :::
 
-For example, the following is a sequence
+Sequences may be finite or infinite, and their terms may be numbers or functions. For example, the following is a sequence of Fibbonachi numbers,
 
 $$
-(F_n) = \left(1,1,2,3,5,8,13,\dots\right)
+\left(1,1,2,3,5,8,13,\dots\right).
 $$
 
-known as a the *Fibbonachi* sequence. We can denote each term by its placement, such that $F_3 = 2$, and $F_7 = 13$. 
-
-For the purposes of real analysis, we will formalize sequences as functions from subsets of the natural numbers to the reals.
+We can denote each term by its placement, for example $F_3 = 2$, and $F_7 = 13$. 
 
 ::: {.callout-important icon="false"}
 ## Notation
+We use $(a_n)$ to denote a sequence, and $a_n$ without parenthesis to denote the $n^{th}$-term of the sequence.
 
-Let $f \colon A \to S$ be a function such that $A \subseteq \mathbb{N}$. We call this function a sequence. We choose some symbol, for example $a$, to represent the elements of the sequence. 
-
-For each $n \in A$, let $a_n$ denote $f(n)$, and $(a_n)$ denote $f$ We may also denote a sequence $(a_n)$ by listing all of its terms,
-
-$$
-(a_1,a_2,\dots,a_n).
-$$
+We also use the notation $(a_1,a_2,a_3,\dots)$ to denote a sequence. All terms are sequential and commas are used to seperate terms.
 :::
 
+It is common to formalize sequences through functions, though our intuitive understanding will work just fine for the purposes of analysis.

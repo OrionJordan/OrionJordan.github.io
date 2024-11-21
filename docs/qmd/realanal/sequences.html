@@ -63,23 +63,8 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="../../styles.css">
 </head>
@@ -159,13 +144,13 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/realanal/sequences/limittheo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Limit Theorems</span></a>
+ <span class="menu-text">Limit Properties</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../qmd/realanal/sequences/mono-cauchy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Monotone sequences and Cauchy sequences</span></a>
+ <span class="menu-text">Special Sequences</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -326,49 +311,23 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Sequences play a vital part in analysis, and build to notions of continuity, limits, derivatives, and series.</p>
+<p>Sequences are the building blocks of analysis, and are the fundemental structure of limits, derivatives, and integrals.</p>
 <section id="contents" class="level2">
 <h2 class="anchored" data-anchor-id="contents">Contents</h2>
 <ul>
-<li><p>Definition</p></li>
-<li><p>Convergence</p></li>
+<li>Definition</li>
+<li>Convergence</li>
+<li>Limit Properties
+<ul>
+<li>Infinite Limits</li>
+</ul></li>
+<li>Special Sequences
+<ul>
+<li>Monotone Sequences</li>
+<li>Cauchy Sequences</li>
+</ul></li>
+<li>Subsequences</li>
 </ul>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <span class="definition"><strong>sequence</strong></span> is a, possibly infinite, collection of numbers such that each number is indexed by a natural number.</p>
-</div>
-</div>
-<p>For example, the following is a sequence</p>
-<p><span class="math display">
-(F_n) = \left(1,1,2,3,5,8,13,\dots\right)
-</span></p>
-<p>known as a the <em>Fibbonachi</em> sequence. We can denote each term by its placement, such that <span class="math inline">F_3 = 2</span>, and <span class="math inline">F_7 = 13</span>.</p>
-<p>For the purposes of real analysis, we will formalize sequences as functions from subsets of the natural numbers to the reals.</p>
-<div class="callout callout-style-default callout-important no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Notation
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon A \to S</span> be a function such that <span class="math inline">A \subseteq \mathbb{N}</span>. We call this function a sequence. We choose some symbol, for example <span class="math inline">a</span>, to represent the elements of the sequence.</p>
-<p>For each <span class="math inline">n \in A</span>, let <span class="math inline">a_n</span> denote <span class="math inline">f(n)</span>, and <span class="math inline">(a_n)</span> denote <span class="math inline">f</span> We may also denote a sequence <span class="math inline">(a_n)</span> by listing all of its terms,</p>
-<p><span class="math display">
-(a_1,a_2,\dots,a_n).
-</span></p>
-</div>
-</div>
 
 
 </section>
