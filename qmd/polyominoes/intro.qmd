@@ -1,0 +1,13 @@
+---
+title: "Polyominoes"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+On 28 Decemeber 2024 I set out to discover as much about polyominoes as I could.
+
+## Sources
+
+Tulleken, Herman. (2019). Polyominoes. https://www.researchgate.net/publication/333296614_Polyominoes

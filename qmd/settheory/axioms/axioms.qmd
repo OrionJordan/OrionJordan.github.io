@@ -1,0 +1,59 @@
+---
+title: "Axioms"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+ZFC contains $10$ axioms for sets
+
+::: {.callout-important icon="false"}
+## Extensionality Axiom
+
+If two sets have the same members, they are equal:
+
+$$
+\forall A \forall B \left[\forall x (x \in A \iff x \in B) \implies A = B\right]
+$$
+:::
+
+::: {.callout-important icon="false"}
+## Empty Set Axiom
+
+There is a set with no members:
+
+$$
+\exists B \forall x, x \not \in B
+$$
+:::
+
+::: {.callout-important icon="false"}
+## Pairing Axiom
+
+For any two sets $u$ and $v$, there is a set having as members just $u$ and $v$:
+
+$$
+\forall u \forall v \exists B \forall x (x \in B \iff x = u \lor x = v)
+$$
+:::
+
+::: {.callout-important icon="false"}
+## Union Axiom (weak form)
+
+For any two sets $a$ and $b$, there is a set having whose members are the elements of $a$ or $b$ (or both):
+
+$$
+\forall a \forall b \exists B \forall x (x \in B \iff x \in a \lor x \in b)
+$$
+:::
+
+::: {.callout-important icon="false"}
+## Power Set Axiom
+
+For any set $a$, there is a set whose members are exactly the subsets of $a$:
+
+$$
+\forall a \exists B \forall x (x \in B \iff x \subseteq a)
+$$
+:::

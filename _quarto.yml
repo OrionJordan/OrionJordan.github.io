@@ -48,15 +48,14 @@ website:
     - title: "Abstract Algebra"
       contents:
       - "./qmd/abstract/intro.qmd"
+      - section: "**Prerequisites**"
+        contents:
+        - "./qmd/abstract/prereq/functions.qmd"
+        - "./qmd/abstract/prereq/relations.qmd"
       - section: "**Introduction into Groups**"
         contents:
         - "./qmd/abstract/intro-to-groups/definitions.qmd"
-        - "./qmd/abstract/intro-to-groups/symmetric-groups.qmd"
-        - "./qmd/abstract/intro-to-groups/homo-iso.qmd"
-        - "./qmd/abstract/intro-to-groups/subgroups.qmd"
-      - section: "**Quotient Groups**"
-        contents:
-        - "./qmd/abstract/quotient-groups/quotient-group.qmd"
+        - "./qmd/abstract/intro-to-groups/groups.qmd"
 
     - title: "Real Analysis"
       contents:

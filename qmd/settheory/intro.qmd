@@ -1,0 +1,14 @@
+---
+title: "Set Theory"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+
+
+## Table of Contents
+
+- Axioms
+- Sets

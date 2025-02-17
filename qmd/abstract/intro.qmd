@@ -1,11 +1,15 @@
 ---
-title: "Intro"
+title: "Abstract Algebra"
 format:
   html:
-    toc: true
+    toc: false
     html-math-method: katex
 ---
 
-## Abstract
+Like algebra but more abstract ig idk
 
-Its like algebra but more abstract ig idk
+## Table of Contents
+
+- Pre-requisites
+- Groups
+- 

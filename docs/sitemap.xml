@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://orionjordan.github.io/index.html</loc>
-    <lastmod>2024-11-20T20:18:22.056Z</lastmod>
+    <lastmod>2024-12-28T21:04:10.442Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/graph/GraphTheory.html</loc>
@@ -10,7 +10,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/integral/intro.html</loc>
-    <lastmod>2024-09-03T21:05:00.027Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.359Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/logic/intro.html</loc>
@@ -26,15 +26,15 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/abstract/intro.html</loc>
-    <lastmod>2024-08-20T14:07:59.167Z</lastmod>
+    <lastmod>2025-02-17T19:38:19.347Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/abstract/intro-to-groups/definitions.html</loc>
-    <lastmod>2024-06-07T18:37:08.881Z</lastmod>
+    <lastmod>2025-02-17T19:26:44.180Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/abstract/intro-to-groups/symmetric-groups.html</loc>
-    <lastmod>2024-08-20T14:07:55.013Z</lastmod>
+    <lastmod>2024-12-28T21:06:57.646Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/graph/intro/graphs.html</loc>
@@ -42,11 +42,11 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/integral/simple/intpart.html</loc>
-    <lastmod>2024-05-22T22:32:56.444Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.359Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/integral/simple/basics.html</loc>
-    <lastmod>2024-09-03T21:04:33.939Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.359Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/abstract/intro-to-groups/homo-iso.html</loc>
@@ -54,7 +54,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/integral/simple/substitution.html</loc>
-    <lastmod>2024-06-07T18:52:59.735Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.359Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/numtheo/multiples.html</loc>
@@ -74,7 +74,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/intro.html</loc>
-    <lastmod>2024-11-21T19:45:25.209Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/tricky/hyperbolic.html</loc>
@@ -158,19 +158,19 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/content/index.html</loc>
-    <lastmod>2024-11-20T20:03:34.165Z</lastmod>
+    <lastmod>2025-02-17T19:37:39.090Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences.html</loc>
-    <lastmod>2024-11-21T19:25:30.147Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont.html</loc>
-    <lastmod>2024-11-15T20:11:30.854Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/differentiation.html</loc>
-    <lastmod>2024-11-19T20:01:16.277Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/integration.html</loc>
@@ -182,7 +182,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/cont-func.html</loc>
-    <lastmod>2024-11-07T18:12:45.529Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/mono-cauchy.html</loc>
@@ -198,7 +198,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/uniform-continuity.html</loc>
-    <lastmod>2024-11-15T18:46:29.320Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/pde/sep-var/method.html</loc>
@@ -218,7 +218,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/limits-cont/cont-func-prop.html</loc>
-    <lastmod>2024-11-21T19:43:51.187Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/differentiation/derivatives.html</loc>
@@ -238,7 +238,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/integration/riemannprop.html</loc>
-    <lastmod>2024-11-19T18:34:16.741Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/intro/sets.html</loc>
@@ -282,7 +282,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/foundations/intro.html</loc>
-    <lastmod>2024-11-15T17:40:10.931Z</lastmod>
+    <lastmod>2025-01-31T03:39:04.782Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/foundations/fundcalc.html</loc>
@@ -294,6 +294,50 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/definition.html</loc>
-    <lastmod>2024-11-21T19:25:32.030Z</lastmod>
+    <lastmod>2024-12-28T21:03:53.362Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/integral/simple/trigsub.html</loc>
+    <lastmod>2024-12-28T21:14:38.809Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/integral/simple/decomp.html</loc>
+    <lastmod>2024-12-28T21:03:53.359Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/polyominoes/intro.html</loc>
+    <lastmod>2025-01-31T03:08:42.642Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/axioms.html</loc>
+    <lastmod>2025-02-03T21:43:39.769Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/intro.html</loc>
+    <lastmod>2025-01-31T03:39:15.129Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/topology/intro.html</loc>
+    <lastmod>2025-02-07T21:40:52.117Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/foundations/intro copy.html</loc>
+    <lastmod>2025-02-07T21:53:58.194Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/foundations/relations.html</loc>
+    <lastmod>2025-02-14T06:26:06.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/abstract/prereq/relations.html</loc>
+    <lastmod>2025-02-17T18:05:00.930Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/abstract/prereq/functions.html</loc>
+    <lastmod>2025-02-17T19:19:31.185Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/abstract/intro-to-groups/groups.html</loc>
+    <lastmod>2025-02-17T19:30:03.336Z</lastmod>
   </url>
 </urlset>

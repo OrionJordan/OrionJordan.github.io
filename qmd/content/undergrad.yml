@@ -1,3 +1,9 @@
+- title: Foundations
+  subtitle: Basic Logic and Set Theory
+  image: realanal
+  links:
+    - text: Logic
+
 - title: Real Analysis
   subtitle: Analysis of the Reals
   image: realanal
@@ -15,8 +21,26 @@
     - text: Infinite Series
       href: ../realanal/infinite-series.qmd
 
-- title: Partial Differential Equations
-  subtitle: Study of PDE's 
-  links:
-    - text: Todo
+#- title: Topology
+#  subtitle: Study of Spaces and Metrics
+#  image: realanal
+#  links:
+#    - text: Introduction
 
+- title: Abstract Algebra
+  subtitle: Study of Algebraic Structures
+  image: abalg
+  links:
+    - text: Introduction
+      href: ../abstract/intro.qmd
+    - text: Prerequisites
+      href: ../abstract/prereq/functions.qmd
+    - text: Groups
+      href: ../abstract/intro-to-groups/definitions.qmd
+
+#- title: Matrix Theory
+##  subtitle: Properties and Calculation of Matrices
+#  image: realanal
+ # links:
+  #  - text: Introduction
+##

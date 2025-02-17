@@ -15,22 +15,7 @@ An important example of a group comes from symmetries of geometric objects, most
 
 Lets take a hexagon, and apply an operation *s*, which reflects it along a line of symmetry. We could also apply an operation *r*, which rotates the hexagon by $\pi / 3$ radians. These operations swap the location of the vertices of the hexagon.
 
-::: {style="text-align:center;"}
-```{r, engine = 'tikz', fig.width=2, fig.height=2}
-#| label: example-graph
-#| fig-cap: "(Insert picture of a hexagon being rotated and symetry)"
-#| fig-align: 'center'
 
-\usetikzlibrary{graphs}
-\usetikzlibrary{graphs.standard}
-
-\begin{tikzpicture}[every node/.style={draw,circle, fill=black, inner sep=0pt, minimum size=.1cm}]
-  \graph[clockwise, radius=2cm] {subgraph C_n [n=6,name=A] };
-  \graph[clockwise, radius=2cm] {subgraph C_n [n=6,name=B] };
-  \graph[clockwise, radius=2cm] {subgraph C_n [n=6,name=C] };
-\end{tikzpicture}
-```
-:::
 
 If we represent the orignal labelling of the vertices as
 

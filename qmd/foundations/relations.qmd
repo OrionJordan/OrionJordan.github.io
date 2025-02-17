@@ -1,0 +1,249 @@
+---
+title: "Relations"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+A relation can be said to generalize the concept of a function. A relation is some kind of relationship between two elements in a set, which may or may not hold.
+
+## Definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A$ be a set. A [relation]{.definition} is a subset $R$ of the cartesian product $A \times A$.
+:::
+
+Any pair of elements $a,b \in A$ is either belonging to $R$ or not. If $(a,b) \in R$, we say "$a$ is in the relation $R$ to $b$". We frequently use _infix notation_, and write $aRb$ to mean $(a,b) \in R$. 
+
+Relations have many properties, the following three being the most useful.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\sim$ be a relation on a set $A$. We call $\sim$ [reflexive]{.definition} if for all $a \in A$
+
+$$
+a \sim a.
+$$
+:::
+
+For example, in standard arithmetic, $\leq$ is a reflexive relation, as $a \leq a$ for any $a$, whereas $>$ is not a reflexive relation.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\sim$ be a relation on a set $A$. We call $\sim$ [symmetric]{.definition} if for all $a,b \in A$
+
+$$
+a \sim b \implies b \sim a.
+$$
+:::
+
+Equality is an example of a symmetric relation, as clearly $a = b$ implies that $b = a$.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\sim$ be a relation on a set $A$. We call $\sim$ [transitive]{.definition} if for all $a,b \in A$
+
+$$
+a \sim b \text{ and } b \sim c \implies a \sim c
+$$
+:::
+
+The relation "is less than" is a transitive relation, as $a < b$ and $b < c$ imply $a < c$.
+
+## Equivalance Relations
+
+::: {.callout-note icon="false"}
+## Definition
+
+An [equivalence relation]{.definition} on a set $A$ is a relation $\sim$ such that $\sim$ is reflexive, symmetric, and transitive.
+:::
+
+Equivalance relations are (not suprisingly) related to equality, and cover notions like equivalance and congruency. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\sim$ be an equivalance relation on a set $A$. Let $[a]$ be a subset of $A$ determined by the equation
+$$
+[a] = \{x \mid a \sim x\}.
+$$
+:::
+
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $\sim$ be an equivalance relation on a set $A$. Then the equivalance class $[a]$ will always contain $a$ as an element.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Because $\sim$ is an equality relation, it is reflexive by definition. Therefore $a \sim a$, and thus $a \in [a]$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $\sim$ be an equivalance relation on a set $A$. Then the equivalance classes $[a]$ and $[b]$ are either disjoint or equal.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $[a] \cap [b]$ is empty, then the equivalance classes are disjoint. If instead there exists some element $c \in [a] \cap [b]$, then by definition we have $a \sim c$ and $b \sim c$. Using the symmetrical property of our relation, $b \sim c$ implies $c \sim b$, and then by transitivity we have $a \sim c$ and $c \sim b$ implies $a \sim b$. 
+
+If $a_2 \in [a]$,
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Because $\sim$ is an equality relation, it is reflexive by definition. Therefore $a \sim a$, and thus $a \in [a]$.
+:::
+
+## Convergence
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $(s_n)$ converges to a real number $s$, we say the series $\sum a_n$ is [convergent]{.definition} and write
+
+$$
+\sum^\infty_{n=1}a_n = s.
+$$
+
+If $(s_n)$ does not converge, the series $\sum^\infty_{n=1}a_n$ is [divergent]{.definition}. If
+
+\begin{align*}
+\lim_{n \to \infty} s_n &= +\infty \quad \text{then} \quad \sum^\infty_{n=1}a_n = +\infty \quad \text{ and}\\
+\lim_{n \to \infty} s_n &= -\infty \quad \text{then} \quad \sum^\infty_{n=1}a_n = -\infty.
+\end{align*}
+:::
+
+The question of whether or not a series converges is of great interest to mathematicians. 
+
+::: {.callout-warning icon="false"}
+## Example (Harmonic Series)
+
+The [harmonic series]{.definition} is defined
+
+$$
+\sum^\infty_{n=1} \frac{1}{n}
+$$
+
+The sequence $(s_n)$ is divergent, and thus the harmonic series is divergent. This is 
+:::
+
+::: {.callout-warning icon="false"}
+## Example (Telescoping Series)
+
+The series
+
+$$
+\sum^\infty_{n=1} \frac{1}{n(n+1)}
+$$
+
+has the partial sum
+
+$$
+s_n = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots + \frac{1}{n(n+1)}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.1 (Algebraic properties of Series)
+
+Let $\sum a_n = s$ and $\sum b_n = t$. Then 
+
+$(a)$ $\sum (a_n + b_n) = s + t$ and 
+
+$(b)$ $\sum (ka_n) = ks$ for every $k \in \mathbb{R}$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$(a)$ By converting our series to limits, we obtain
+$$
+\sum (a_n + b_n) = \lim (s_{a_n} + s_{b_n}) = s + t.
+$$
+
+-----------
+
+$(b)$ Similarly, we obtain
+
+$$
+\sum (ka_n) = \lim ks_{a_n} = k\lim s_{a_n} = ks.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.2
+
+If $\sum a_n$ is a convergent series, then $\lim_{n \to \infty} a_n = 0$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $\sum a_n$ is a convergent series, then the sequence of partial sums $(s_n)$ must have a finite limit. 
+
+Since $a_n = s_n - s_{n-1}$, we have $\lim a_n = \lim s_n - \lim s_{n-1} = 0$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.3 (Cauchy Criterion for Series)
+
+The infinite series $\sum a_n$ converges if and only if for each $\varepsilon > 0$, there exists a natural number $N$ such that if $n \geq m \geq N$, then
+
+$$
+|a_m + a_{m+1} + \cdots + a_{n}| = |s_n - s_{m-1}| < \varepsilon.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $\sum a_n$ be a convergent series. Then the sequence $(s_n)$ of partial sums converges. By the Cauchy Convergent Criterion, $(s_n)$ is Cauchy. Thus, for any $\varepsilon > 0$, there exists $N \in \mathbb{N}$ such that $m,n \geq N$ implies $|s_n - s_m| < \varepsilon$. Hence, if $n \geq m \geq N + 1$, then $m - 1 \geq N$, and $|s_n - s_{m-1}| < \varepsilon$ as desired. 
+
+Conversly, for all $\varepsilon > 0$ let $N$ exists such that $n \geq m \geq N$ implies $|s_n - s_{m-1}| < \varepsilon$. Then for $n > m \geq N$ we have $m + 1 > N$, so that $|s_n - s_m| < \varepsilon$. This implies $(s_n)$ is Cauchy, and therefore convergent.
+:::
+
+## Recap
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.1 (Algebraic properties of Series)
+
+Let $\sum a_n = s$ and $\sum b_n = t$. Then 
+
+$(a)$ $\sum (a_n + b_n) = s + t$ and 
+
+$(b)$ $\sum (ka_n) = ks$ for every $k \in \mathbb{R}$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.2
+
+If $\sum a_n$ is a convergent series, then $\lim_{n \to \infty} a_n = 0$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.3 (Cauchy Criterion for Series)
+
+The infinite series $\sum a_n$ converges if and only if for each $\varepsilon > 0$, there exists a natural number $N$ such that if $n \geq m \geq N$, then
+
+$$
+|a_m + a_{m+1} + \cdots + a_{n}| = |s_n - s_{m-1}| < \varepsilon.
+$$
+
+:::
