@@ -1,6 +1,5 @@
 ---
 title: "Standard layout"
-engine: knitr
 execute:
   echo: false
 ---

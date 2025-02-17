@@ -2663,7 +2663,7 @@
     "href": "qmd/layout.html#tikz",
     "title": "Standard layout",
     "section": "Tikz",
-    "text": "Tikz\nI use ‘knitr’, the engine for ‘R’ in order to render tikz images. Use fig-ext: svg for transparent backgrounds and svg outputs.\nTO-DO: Add light mode support (Wait for 1.5-1.6?)\n\n\n\n\n\nTest lines/text\n\n\n\n\n\n\n\n\n\nTest graph\n\n\n\n\n\nReal analysis exam 2\nIf \\(f^\\prime\\) is bounded on \\((a,b)\\), prove \\(f\\) is uniformly continuous on \\((a,b)\\).\nShow that any function with finite disconiutities is integerable.\nShow that if \\(f\\) is integerable \\(1/f\\) is integerable\nTaylor series nonsense\nNovemebr 17"
+    "text": "Tikz\nI use ‘knitr’, the engine for ‘R’ in order to render tikz images. Use fig-ext: svg for transparent backgrounds and svg outputs.\nTO-DO: Add light mode support (Wait for 1.5-1.6?)\n\nReal analysis exam 2\nIf \\(f^\\prime\\) is bounded on \\((a,b)\\), prove \\(f\\) is uniformly continuous on \\((a,b)\\).\nShow that any function with finite disconiutities is integerable.\nShow that if \\(f\\) is integerable \\(1/f\\) is integerable\nTaylor series nonsense\nNovemebr 17"
   },
   {
     "objectID": "qmd/layout.html#plot1",
