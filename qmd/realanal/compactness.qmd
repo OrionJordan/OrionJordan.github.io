@@ -1,0 +1,199 @@
+---
+title: "Compact Sets"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+Compactness is super important in both real analysis and topology.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A collection $\mathcal{A}$ of subsets of a space $X$ are a [cover]{.definition} of $X$ if the union of the elements of $\mathcal{A}$ is equal to $X$.
+:::
+
+And 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A$ be a set in some metric space $X$. If every open cover of $A$ contains a finite subcollection that also covers $A$.
+:::
+
+More explicitly, a set $A$ is compact in some space $X$ if for every open cover $$
+
+::: {.callout-important icon="false"}
+## Notation
+
+Let $(a_n)$ be a sequence of real numbers. We notate the partial sum from $m$ to $n$ by
+
+$$
+\sum^n_{k=m} a_k
+$$
+
+We may also save time by letting 
+
+$$
+\sum a_n := \sum^{\infty}_{n=0} a_n \text{ or } \sum^{\infty}_{n=1} a_n
+$$ 
+
+where are index starts at $0$ or $1$, whichever makes sense in context. 
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(a_n)$ be a sequence of real numbers. We define a sequence $(s_n)$ of partial sums by
+
+$$
+s_n = \sum^n_{k=1} a_k = a_1 + a_2 + \cdots + a_n.
+$$
+
+We refer to the sequence $(s_n)$ as an [infinite series]{.definition}. 
+:::
+
+We define $(s_n)$ as a sequence of partial sums in order to formalize the series into a sequence, which we've already studied. All of our previous theorems will apply to $(s_n)$, and therefore we can prove many theorems essentially for free!
+
+## Convergence
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $(s_n)$ converges to a real number $s$, we say the series $\sum a_n$ is [convergent]{.definition} and write
+
+$$
+\sum^\infty_{n=1}a_n = s.
+$$
+
+If $(s_n)$ does not converge, the series $\sum^\infty_{n=1}a_n$ is [divergent]{.definition}. If
+
+\begin{align*}
+\lim_{n \to \infty} s_n &= +\infty \quad \text{then} \quad \sum^\infty_{n=1}a_n = +\infty \quad \text{ and}\\
+\lim_{n \to \infty} s_n &= -\infty \quad \text{then} \quad \sum^\infty_{n=1}a_n = -\infty.
+\end{align*}
+:::
+
+The question of whether or not a series converges is of great interest to mathematicians. 
+
+::: {.callout-warning icon="false"}
+## Example (Harmonic Series)
+
+The [harmonic series]{.definition} is defined
+
+$$
+\sum^\infty_{n=1} \frac{1}{n}
+$$
+
+The sequence $(s_n)$ is divergent, and thus the harmonic series is divergent. This is 
+:::
+
+::: {.callout-warning icon="false"}
+## Example (Telescoping Series)
+
+The series
+
+$$
+\sum^\infty_{n=1} \frac{1}{n(n+1)}
+$$
+
+has the partial sum
+
+$$
+s_n = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots + \frac{1}{n(n+1)}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.1 (Algebraic properties of Series)
+
+Let $\sum a_n = s$ and $\sum b_n = t$. Then 
+
+$(a)$ $\sum (a_n + b_n) = s + t$ and 
+
+$(b)$ $\sum (ka_n) = ks$ for every $k \in \mathbb{R}$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$(a)$ By converting our series to limits, we obtain
+$$
+\sum (a_n + b_n) = \lim (s_{a_n} + s_{b_n}) = s + t.
+$$
+
+-----------
+
+$(b)$ Similarly, we obtain
+
+$$
+\sum (ka_n) = \lim ks_{a_n} = k\lim s_{a_n} = ks.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.2
+
+If $\sum a_n$ is a convergent series, then $\lim_{n \to \infty} a_n = 0$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $\sum a_n$ is a convergent series, then the sequence of partial sums $(s_n)$ must have a finite limit. 
+
+Since $a_n = s_n - s_{n-1}$, we have $\lim a_n = \lim s_n - \lim s_{n-1} = 0$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.3 (Cauchy Criterion for Series)
+
+The infinite series $\sum a_n$ converges if and only if for each $\varepsilon > 0$, there exists a natural number $N$ such that if $n \geq m \geq N$, then
+
+$$
+|a_m + a_{m+1} + \cdots + a_{n}| = |s_n - s_{m-1}| < \varepsilon.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $\sum a_n$ be a convergent series. Then the sequence $(s_n)$ of partial sums converges. By the Cauchy Convergent Criterion, $(s_n)$ is Cauchy. Thus, for any $\varepsilon > 0$, there exists $N \in \mathbb{N}$ such that $m,n \geq N$ implies $|s_n - s_m| < \varepsilon$. Hence, if $n \geq m \geq N + 1$, then $m - 1 \geq N$, and $|s_n - s_{m-1}| < \varepsilon$ as desired. 
+
+Conversely, for all $\varepsilon > 0$ let $N$ exists such that $n \geq m \geq N$ implies $|s_n - s_{m-1}| < \varepsilon$. Then for $n > m \geq N$ we have $m + 1 > N$, so that $|s_n - s_m| < \varepsilon$. This implies $(s_n)$ is Cauchy, and therefore convergent.
+:::
+
+## Recap
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.1 (Algebraic properties of Series)
+
+Let $\sum a_n = s$ and $\sum b_n = t$. Then 
+
+$(a)$ $\sum (a_n + b_n) = s + t$ and 
+
+$(b)$ $\sum (ka_n) = ks$ for every $k \in \mathbb{R}$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.2
+
+If $\sum a_n$ is a convergent series, then $\lim_{n \to \infty} a_n = 0$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 5.1.3 (Cauchy Criterion for Series)
+
+The infinite series $\sum a_n$ converges if and only if for each $\varepsilon > 0$, there exists a natural number $N$ such that if $n \geq m \geq N$, then
+
+$$
+|a_m + a_{m+1} + \cdots + a_{n}| = |s_n - s_{m-1}| < \varepsilon.
+$$
+
+:::

@@ -266,7 +266,7 @@ local cetz = {
       format, mime_type = 'svg', 'image/svg+xml'
     end
     local preamble = [[
-#import "@preview/cetz:0.2.2"
+#import "@preview/cetz:0.3.4"
 #set page(width: auto, height: auto, margin: .5cm)
 ]]
 
@@ -410,7 +410,10 @@ end
 
 --- Converts a PDF to SVG.
 local pdf2svg = function (imgdata)
-  local pdf_file = os.tmpname() .. '.pdf'
+  -- Using `os.tmpname()` instead of a hash would be slightly cleaner, but the
+  -- function causes problems on Windows (and wasm). See, e.g.,
+  -- https://github.com/pandoc-ext/diagram/issues/49
+  local pdf_file = 'diagram-' .. pandoc.utils.sha1(imgdata) .. '.pdf'
   write_file(pdf_file, imgdata)
   local args = {
     '--export-type=svg',

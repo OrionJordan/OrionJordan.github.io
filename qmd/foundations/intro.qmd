@@ -6,9 +6,10 @@ format:
     html-math-method: katex
 ---
 
-
+Most every math textbook starts the same way, with a chapter on notation, set theory, and logic.
 
 ## Table of Contents
 
+- 
 - Logic
 - Sets

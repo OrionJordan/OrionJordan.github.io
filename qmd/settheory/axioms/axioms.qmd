@@ -6,17 +6,40 @@ format:
     html-math-method: katex
 ---
 
-ZFC contains $10$ axioms for sets
+Below list the axioms of ZFC assuming FOL.
+
+We start with two primitive notions, which cannot be defined. These being an object called a "set" $\{\}$, and a relation called "contains" $\in$.
 
 ::: {.callout-important icon="false"}
-## Extensionality Axiom
+## Axiom of Extensionality.
 
 If two sets have the same members, they are equal:
 
 $$
-\forall A \forall B \left[\forall x (x \in A \iff x \in B) \implies A = B\right]
+\forall y \forall z \left[\forall x (x \in y \iff x \in z) \implies y = z\right]
 $$
 :::
+
+In english, this means for all sets $A,B$, if for all elements $x$ in $A$ if and only if $x$ in $B$, then $A = B$.
+
+We have the following definitions for additional symbols
+
+::: {.callout-note icon="false"}
+## Definition
+
+We denote the following
+
+- $x \not \in y$ if $\lnot(x \in y)$
+
+- $x \subseteq y$ if $\forall z \in x(z \in y)$
+
+- $x \subset y$ if $(x \subseteq y) \land \lnot(x = y)$
+:::
+
+
+## Existence Axioms
+
+The following axioms ensure the existence of many fundamental sets.
 
 ::: {.callout-important icon="false"}
 ## Empty Set Axiom
@@ -24,7 +47,7 @@ $$
 There is a set with no members:
 
 $$
-\exists B \forall x, x \not \in B
+\exists y \forall x, x \not \in y
 $$
 :::
 
@@ -57,3 +80,36 @@ $$
 \forall a \exists B \forall x (x \in B \iff x \subseteq a)
 $$
 :::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $x$ be the set with no members.
+
+We denote $x$ as $\varnothing$, and call it the [empty set]{.definition}.
+:::
+
+## Number construction
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $S$ be a function known as the [successor]{.definition} function, defined by
+
+$$
+S(a) = a \cup \{a\}.
+$$
+
+where $a$ is a set.
+:::
+
+Then we can construct our numbers by repeatedly applying the successor function to the empty set.
+
+$$
+\begin{align*}
+0 &= \{\} &=& \varnothing\\
+1 &= \{0\} &=& \{\varnothing\}\\
+2 &= \{0,1\} &=& \{\varnothing, \{\varnothing\}\}\\
+3 &= \{0,1,2\} &=& \{\varnothing, \{\varnothing\},\{\{\varnothing, \{\varnothing\}\}\}\}
+\end{align*}
+$$

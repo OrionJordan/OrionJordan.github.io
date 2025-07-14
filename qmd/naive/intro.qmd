@@ -1,0 +1,25 @@
+---
+title: "Naive Set Theory"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+The first chapter of every math textbook starts the same way, with an introduction on logic and set theory, complete with the authors preferred notation. Instead of writing the same preambles before every subject, I've compiled them all here.
+
+## Table of Contents
+
+- Fundamental Concepts
+  - Sets
+  - Set operations
+- Mathematical Concepts
+  - Functions
+  - Relations
+  - Numbers
+- Infinity
+  - Cardinality?
+
+
+
+

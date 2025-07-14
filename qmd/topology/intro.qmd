@@ -1,20 +1,19 @@
 ---
-title: "Real Analysis"
+title: "Topology"
 format:
   html:
     toc: false
     html-math-method: katex
 ---
 
-Topology
+Topology is the study of how geometric objects, and their properties, are preserved continuously deformation. 
+
+However, as interesting as that sounds, we will not study this. These notes will go over point-set topology, and the framework needed to do the fun stuff.
 
 ## Table of Contents
 
-- Foundations
--- Accumlation points
--- Induced functions
-- Topological Spaces
+- Topological Spaces and Continuous Functions
+-- Topological Spaces
+
 - Connectedness and Compactness
-- Integration
-- Infinite Series
 

@@ -1,0 +1,85 @@
+---
+title: "Sets"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+
+In mathematics we build new objects and theorems from previous ones, with ever increasing complexity. However, we have to start somewhere in math, and for much of modern mathematics we start with set theory.
+
+## Definition
+
+Sets are often thought of as _primitive notions_. This means they can't be defined from other concepts, and act as a bedrock for building more complex mathematical objects. We often build set theory from two primitive notions, _sets_ and _containment_.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [set]{.definition} is a collection of distinct elements.
+:::
+
+This definition is most likely unsatisfying. We have said nothing on the nature of what it means to be a collection or what it means to be an element. However, it is good enough for the purposes of this chapter, and once one has an intuitive understanding of a set one may look to axiomatic set theory for more concrete definitions and answers. For now though, lets examine what is meant by an element.
+
+::: {.callout-note icon="false"}
+## Definition
+
+An [element]{.definition} is an object contained by a set.
+:::
+
+Holy circular reasoning! Instead of getting too philosophical on the nature of these sets and elements, lets look at some examples.
+
+::: {.callout-important icon="false"}
+## Notation
+
+We usually denote a set by a capital letter $A,B,C,\dots$ and an element of a set by a lowercase letter $a,b,c$ etc.
+
+We very commonly use _brace notation_ for writing sets, where we denote a set $A$ by it's elements listed out, for example
+
+$$
+A = \{a,b,c\}
+$$
+
+or when a set contains way more elements than could be listed, for example the set of all integers, we write
+
+$$
+B = \{1,2,3,\dots\}.
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+If an element $a$ is [contained]{.definition} by a set $A$, we write
+
+$$
+a \in A.
+$$
+
+If an element $a$ is _not_ contained by a set $A$, we write
+
+$$
+a \not\in A.
+$$
+:::
+
+In the above definition, we would commonly say either "$a$ is in $A$" or "$a$ is not in $A$".
+
+A set is completely determined by it's elements. This means if two sets $A,B$ have exactly the same elements, they are the exact same set, and we may say $A = B$. 
+
+The final point to note is that a set only contains distinct elements. An element is either belongin to a set or not, and may not be contained _twice_ so to speak.
+
+::: {.callout-warning icon="false"}
+## Example
+
+$$
+A = \{a,b,c\} \quad B = \{b,a,a,a\}
+$$
+
+$A$ is an example of a set as each element only occurs once, but $B$ is not a set as $a$ occurs multiple times. Sometimes it may be convenient to just ignore an element if it occurs multiple times, such that
+$$
+B = \{b,a,a,a\} = \{b,a\}
+$$
+
+but realistically we shouldn't encounter this situation.
+:::

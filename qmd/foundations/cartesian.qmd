@@ -1,0 +1,20 @@
+---
+title: "Cartesian Products"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We have a definition for the cartesian product of two sets, but we can extend this definition.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\mathcal{A}$ be a nonempty collection of sets.
+
+An [indexing function]{.definition} on $\mathcal{A}$ is a surjective function $f$ from some set $J$, called the [index set]{.definition}, to $\mathcal{A}$.
+
+The collection $\mathcal{A}$ with the indexing function $f$ is called an [indexed family of sets]
+
+:::

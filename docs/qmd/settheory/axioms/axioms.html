@@ -150,8 +150,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#existence-axioms" id="toc-existence-axioms" class="nav-link active" data-scroll-target="#existence-axioms">Existence Axioms</a></li>
+  <li><a href="#number-construction" id="toc-number-construction" class="nav-link" data-scroll-target="#number-construction">Number construction</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -175,23 +182,47 @@ window.Quarto = {
 </header>
 
 
-<p>ZFC contains <span class="math inline">10</span> axioms for sets</p>
+<p>Below list the axioms of ZFC assuming FOL.</p>
+<p>We start with two primitive notions, which cannot be defined. These being an object called a “set” <span class="math inline">\{\}</span>, and a relation called “contains” <span class="math inline">\in</span>.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Extensionality Axiom
+Axiom of Extensionality.
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p>If two sets have the same members, they are equal:</p>
 <p><span class="math display">
-\forall A \forall B \left[\forall x (x \in A \iff x \in B) \implies A = B\right]
+\forall y \forall z \left[\forall x (x \in y \iff x \in z) \implies y = z\right]
 </span></p>
 </div>
 </div>
+<p>In english, this means for all sets <span class="math inline">A,B</span>, if for all elements <span class="math inline">x</span> in <span class="math inline">A</span> if and only if <span class="math inline">x</span> in <span class="math inline">B</span>, then <span class="math inline">A = B</span>.</p>
+<p>We have the following definitions for additional symbols</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We denote the following</p>
+<ul>
+<li><p><span class="math inline">x \not \in y</span> if <span class="math inline">\lnot(x \in y)</span></p></li>
+<li><p><span class="math inline">x \subseteq y</span> if <span class="math inline">\forall z \in x(z \in y)</span></p></li>
+<li><p><span class="math inline">x \subset y</span> if <span class="math inline">(x \subseteq y) \land \lnot(x = y)</span></p></li>
+</ul>
+</div>
+</div>
+<section id="existence-axioms" class="level2">
+<h2 class="anchored" data-anchor-id="existence-axioms">Existence Axioms</h2>
+<p>The following axioms ensure the existence of many fundamental sets.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -204,7 +235,7 @@ Empty Set Axiom
 <div class="callout-body-container callout-body">
 <p>There is a set with no members:</p>
 <p><span class="math display">
-\exists B \forall x, x \not \in B
+\exists y \forall x, x \not \in y
 </span></p>
 </div>
 </div>
@@ -256,8 +287,52 @@ Power Set Axiom
 </span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">x</span> be the set with no members.</p>
+<p>We denote <span class="math inline">x</span> as <span class="math inline">\varnothing</span>, and call it the <span class="definition">empty set</span>.</p>
+</div>
+</div>
+</section>
+<section id="number-construction" class="level2">
+<h2 class="anchored" data-anchor-id="number-construction">Number construction</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">S</span> be a function known as the <span class="definition">successor</span> function, defined by</p>
+<p><span class="math display">
+S(a) = a \cup \{a\}.
+</span></p>
+<p>where <span class="math inline">a</span> is a set.</p>
+</div>
+</div>
+<p>Then we can construct our numbers by repeatedly applying the successor function to the empty set.</p>
+<p><span class="math display">
+\begin{align*}
+0 &amp;= \{\} &amp;=&amp; \varnothing\\
+1 &amp;= \{0\} &amp;=&amp; \{\varnothing\}\\
+2 &amp;= \{0,1\} &amp;=&amp; \{\varnothing, \{\varnothing\}\}\\
+3 &amp;= \{0,1,2\} &amp;=&amp; \{\varnothing, \{\varnothing\},\{\{\varnothing, \{\varnothing\}\}\}\}
+\end{align*}
+</span></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

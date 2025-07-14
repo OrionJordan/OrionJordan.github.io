@@ -13,7 +13,13 @@ Most of the previous methods for proving the limit of a sequence require us to h
 ::: {.callout-note icon="false"}
 ## Definition
 
-A sequence $(s_n)$ of real numbers is [**increasing**]{.definition} if $s_n \leq s_{n+1}$ for all $n \in \mathbb{N}$, and is [**decreasing**]{.definition} if $s_n \geq s_{n+1}$ for all $n \in \mathbb{N}$. A sequence is monotone if it is increasing or decreasing.
+Let $\{s_n\}$ be a real sequence.
+
+If $s_n \leq s_{n+1}$ for all $n \in \mathbb{N}$, then $\{s_n\}$ is       [**strictly increasing**]{.definition}.
+
+If $s_n \geq s_{n+1}$ for all $n \in \mathbb{N}$, then $\{s_n\}$ is       [**strictly decreasing**]{.definition}.
+
+If $\{s_n\}$ is strictly increasing or decreasing, it is [**monotone**]{.definition}.
 :::
 
 ::: {.callout-note icon="false"}

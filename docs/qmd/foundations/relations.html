@@ -155,10 +155,11 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
-  <li><a href="#equivalance-relations" id="toc-equivalance-relations" class="nav-link" data-scroll-target="#equivalance-relations">Equivalance Relations</a></li>
-  <li><a href="#convergence" id="toc-convergence" class="nav-link" data-scroll-target="#convergence">Convergence</a></li>
-  <li><a href="#recap" id="toc-recap" class="nav-link" data-scroll-target="#recap">Recap</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link active" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#equivalence-relations" id="toc-equivalence-relations" class="nav-link" data-scroll-target="#equivalence-relations">Equivalence Relations</a>
+  <ul class="collapse">
+  <li><a href="#partitions" id="toc-partitions" class="nav-link" data-scroll-target="#partitions">Partitions</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -184,9 +185,7 @@ window.Quarto = {
 </header>
 
 
-<p>A relation can be said to generalize the concept of a function. A relation is some kind of relationship between two elements in a set, which may or may not hold.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>A relation is some kind of relationship between two elements in a set, which may or may not hold.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -197,10 +196,25 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A</span> be a set. A <span class="definition">relation</span> is a subset <span class="math inline">R</span> of the cartesian product <span class="math inline">A \times A</span>.</p>
+<p>Let <span class="math inline">A</span> be a set. A <span class="definition">relation</span> <span class="math inline">R</span> on the set <span class="math inline">A</span> is a subset of the cartesian product <span class="math inline">A \times A</span>.</p>
 </div>
 </div>
-<p>Any pair of elements <span class="math inline">a,b \in A</span> is either belonging to <span class="math inline">R</span> or not. If <span class="math inline">(a,b) \in R</span>, we say “<span class="math inline">a</span> is in the relation <span class="math inline">R</span> to <span class="math inline">b</span>”. We frequently use <em>infix notation</em>, and write <span class="math inline">aRb</span> to mean <span class="math inline">(a,b) \in R</span>.</p>
+<p>Any pair of elements <span class="math inline">a,b \in A</span> is either belonging to <span class="math inline">R</span> or not. If <span class="math inline">(a,b) \in R</span>, we say “<span class="math inline">a</span> is in the relation <span class="math inline">R</span> to <span class="math inline">b</span>”.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is common to use <span class="math inline">\sim</span> as a general relation symbol, and we almost always use <em>infix</em> notation for relations, and write <span class="math inline">a \sim b</span> to mean <span class="math inline">{(a,b) \in\, \sim}</span>. When <span class="math inline">(a,b) \not \in\, \sim</span> we write <span class="math inline">a \not \sim b</span>.</p>
+</div>
+</div>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
 <p>Relations have many properties, the following three being the most useful.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -212,50 +226,62 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sim</span> be a relation on a set <span class="math inline">A</span>. We call <span class="math inline">\sim</span> <span class="definition">reflexive</span> if for all <span class="math inline">a \in A</span></p>
+<p>Let <span class="math inline">\sim</span> be a relation on a set <span class="math inline">A</span>.</p>
+<ul>
+<li>We call <span class="math inline">\sim</span> <span class="definition">reflexive</span> if for all <span class="math inline">a \in A</span></li>
+</ul>
 <p><span class="math display">
 a \sim a.
 </span></p>
-</div>
-</div>
-<p>For example, in standard arithmetic, <span class="math inline">\leq</span> is a reflexive relation, as <span class="math inline">a \leq a</span> for any <span class="math inline">a</span>, whereas <span class="math inline">&gt;</span> is not a reflexive relation.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sim</span> be a relation on a set <span class="math inline">A</span>. We call <span class="math inline">\sim</span> <span class="definition">symmetric</span> if for all <span class="math inline">a,b \in A</span></p>
+<ul>
+<li>We call <span class="math inline">\sim</span> <span class="definition">symmetric</span> if for all <span class="math inline">a,b \in A</span></li>
+</ul>
 <p><span class="math display">
 a \sim b \implies b \sim a.
 </span></p>
-</div>
-</div>
-<p>Equality is an example of a symmetric relation, as clearly <span class="math inline">a = b</span> implies that <span class="math inline">b = a</span>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sim</span> be a relation on a set <span class="math inline">A</span>. We call <span class="math inline">\sim</span> <span class="definition">transitive</span> if for all <span class="math inline">a,b \in A</span></p>
+<ul>
+<li>We call <span class="math inline">\sim</span> <span class="definition">transitive</span> if for all <span class="math inline">a,b \in A</span></li>
+</ul>
 <p><span class="math display">
 a \sim b \text{ and } b \sim c \implies a \sim c
 </span></p>
 </div>
 </div>
-<p>The relation “is less than” is a transitive relation, as <span class="math inline">a &lt; b</span> and <span class="math inline">b &lt; c</span> imply <span class="math inline">a &lt; c</span>.</p>
+<p>There are also special properties when a relation is <em>never</em> reflexive, symmetric, or transitive.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\sim</span> be a relation on a set <span class="math inline">A</span>.</p>
+<ul>
+<li>We call <span class="math inline">\sim</span> <span class="definition">anti-reflexive</span> if for all <span class="math inline">a\in A</span>,</li>
+</ul>
+<p><span class="math display">
+a \not \sim a.
+</span></p>
+<ul>
+<li>We call <span class="math inline">\sim</span> <span class="definition">anti-symmetric</span> if for all <span class="math inline">a,b \in A</span>,</li>
+</ul>
+<p><span class="math display">
+a \sim b \implies b \not \sim a.
+</span></p>
+<ul>
+<li>We call <span class="math inline">\sim</span> <span class="definition">anti-transitive</span> if for all <span class="math inline">a,b,c \in A</span>,</li>
+</ul>
+<p><span class="math display">
+a \sim b \text{ and } b \sim c \implies a \not \sim c.
+</span></p>
+</div>
+</div>
 </section>
-<section id="equivalance-relations" class="level2">
-<h2 class="anchored" data-anchor-id="equivalance-relations">Equivalance Relations</h2>
+<section id="equivalence-relations" class="level2">
+<h2 class="anchored" data-anchor-id="equivalence-relations">Equivalence Relations</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -269,7 +295,7 @@ Definition
 <p>An <span class="definition">equivalence relation</span> on a set <span class="math inline">A</span> is a relation <span class="math inline">\sim</span> such that <span class="math inline">\sim</span> is reflexive, symmetric, and transitive.</p>
 </div>
 </div>
-<p>Equivalance relations are (not suprisingly) related to equality, and cover notions like equivalance and congruency.</p>
+<p>Equivalence relations are (not surprisingly) related to equality, and cover notions like equivalence and congruency.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -280,26 +306,41 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sim</span> be an equivalance relation on a set <span class="math inline">A</span>. Let <span class="math inline">[a]</span> be a subset of <span class="math inline">A</span> determined by the equation <span class="math display">
+<p>Let <span class="math inline">\sim</span> be an equivalence relation on a set <span class="math inline">A</span>. Let <span class="math inline">[a]</span> be a subset of <span class="math inline">A</span> determined by the equation <span class="math display">
 [a] = \{x \mid a \sim x\}.
 </span></p>
+<p>We call <span class="math inline">[a]</span> the <span class="definition">equivalence class</span> of <span class="math inline">A</span> generated by <span class="math inline">a</span>.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Notation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>While context is usually enough to know which relation an equivalence class is referring to, <span class="math inline">[a]_\sim</span> is used to mean the equivalence class of <span class="math inline">A</span> generated by <span class="math inline">a</span> with the relation <span class="math inline">\sim</span>.</p>
+</div>
+</div>
+<p>Equivalence classes have the following properties:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Lemma
+Lemma 1.2.1
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sim</span> be an equivalance relation on a set <span class="math inline">A</span>. Then the equivalance class <span class="math inline">[a]</span> will always contain <span class="math inline">a</span> as an element.</p>
+<p>Let <span class="math inline">\sim</span> be an equivalence relation on a set <span class="math inline">A</span>. Then the equivalence class <span class="math inline">[a]</span> will always contain <span class="math inline">a</span> as an element.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -308,7 +349,7 @@ Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Because <span class="math inline">\sim</span> is an equality relation, it is reflexive by definition. Therefore <span class="math inline">a \sim a</span>, and thus <span class="math inline">a \in [a]</span>.</p>
 </div>
@@ -320,28 +361,11 @@ Proof
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem
+Theorem 1.2.2
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sim</span> be an equivalance relation on a set <span class="math inline">A</span>. Then the equivalance classes <span class="math inline">[a]</span> and <span class="math inline">[b]</span> are either disjoint or equal.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">[a] \cap [b]</span> is empty, then the equivalance classes are disjoint. If instead there exists some element <span class="math inline">c \in [a] \cap [b]</span>, then by definition we have <span class="math inline">a \sim c</span> and <span class="math inline">b \sim c</span>. Using the symmetrical property of our relation, <span class="math inline">b \sim c</span> implies <span class="math inline">c \sim b</span>, and then by transitivity we have <span class="math inline">a \sim c</span> and <span class="math inline">c \sim b</span> implies <span class="math inline">a \sim b</span>.</p>
-<p>If <span class="math inline">a_2 \in [a]</span>,</p>
-</div>
+<p>Let <span class="math inline">\sim</span> be an equivalence relation on a set <span class="math inline">A</span>. Then the equivalence classes <span class="math inline">[a]</span> and <span class="math inline">[b]</span> are either disjoint or equal.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -356,13 +380,50 @@ Proof
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Because <span class="math inline">\sim</span> is an equality relation, it is reflexive by definition. Therefore <span class="math inline">a \sim a</span>, and thus <span class="math inline">a \in [a]</span>.</p>
+<p>If <span class="math inline">[a] \cap [b]</span> is empty, then the equivalence classes are disjoint.</p>
+<p>If instead there exists some element <span class="math inline">c \in [a] \cap [b]</span>, then by definition we have <span class="math inline">a \sim c</span> and <span class="math inline">b \sim c</span>. Using the symmetrical property of our relation, <span class="math inline">b \sim c</span> implies <span class="math inline">c \sim b</span>, and then by transitivity we have <span class="math inline">a \sim c</span> and <span class="math inline">c \sim b</span> implies <span class="math inline">a \sim b</span>.</p>
+<p>Suppose <span class="math inline">[a]</span> contains some element <span class="math inline">a_2</span>. Then we have <span class="math inline">a \sim a_2</span>, which via symmetry gives <span class="math inline">a_2 \sim a</span>, transitivity with <span class="math inline">a \sim b</span> implies <span class="math inline">a_2 \sim b</span>, and symmetry again gives <span class="math inline">b \sim a_2</span>. Thus <span class="math inline">a_2 \in [b]</span>. Since then every element in <span class="math inline">[a]</span> belongs to <span class="math inline">[b]</span>, we have <span class="math inline">[a] \subseteq [b]</span>.</p>
+<p>Similarly, this can be repeated to show <span class="math inline">[b] \subseteq [a]</span>, and thus <span class="math inline">[a] = [b]</span>. Therefore, two equivalence classes are either disjoint, or equivalent.</p>
 </div>
 </div>
 </div>
-</section>
-<section id="convergence" class="level2">
-<h2 class="anchored" data-anchor-id="convergence">Convergence</h2>
+<p>Using these theorems, we can show that the collection of equivalence classes formed by an equivalence relation have a special property.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Corollary 1.2.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\sim</span> be an equivalence relation on <span class="math inline">A</span>. The collection of equivalence classes of <span class="math inline">A</span> form disjoint subsets of <span class="math inline">A</span> whose union is all of <span class="math inline">A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\sim</span> be an equivalence relation on a set <span class="math inline">A</span>, and let <span class="math inline">\mathcal{E}</span> be the collection of all the equivalence classes determined by this relation <span class="math display">
+\mathcal{E} = \{[x] \mid x \in A\}.
+</span></p>
+<p>By Theorem <span class="math inline">1.2.2</span>, distinct elements of <span class="math inline">\mathcal{E}</span> are disjoint. And furthermore by Lemma <span class="math inline">1.2.1</span>, the union of elements of <span class="math inline">\mathcal{E}</span> is equal to <span class="math inline">A</span>, since each element of <span class="math inline">A</span> belongs to an equivalence class. Thus the collection of equivalence classes of <span class="math inline">A</span> are disjoint and have a union of <span class="math inline">A</span>.</p>
+</div>
+</div>
+</div>
+<p>The collection of equivalence classes is a partitcular example of what is called a <em>partition</em>.</p>
+<section id="partitions" class="level3">
+<h3 class="anchored" data-anchor-id="partitions">Partitions</h3>
+<hr>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -373,68 +434,21 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If <span class="math inline">(s_n)</span> converges to a real number <span class="math inline">s</span>, we say the series <span class="math inline">\sum a_n</span> is <span class="definition">convergent</span> and write</p>
-<p><span class="math display">
-\sum^\infty_{n=1}a_n = s.
-</span></p>
-<p>If <span class="math inline">(s_n)</span> does not converge, the series <span class="math inline">\sum^\infty_{n=1}a_n</span> is <span class="definition">divergent</span>. If</p>
-<p><span class="math display">\begin{align*}
-\lim_{n \to \infty} s_n &amp;= +\infty \quad \text{then} \quad \sum^\infty_{n=1}a_n = +\infty \quad \text{ and}\\
-\lim_{n \to \infty} s_n &amp;= -\infty \quad \text{then} \quad \sum^\infty_{n=1}a_n = -\infty.
-\end{align*}</span></p>
+<p>A <span class="definition">partition</span> of a set <span class="math inline">A</span> is a collection of disjoint subsets of <span class="math inline">A</span> whose union is all of <span class="math inline">A</span>.</p>
 </div>
 </div>
-<p>The question of whether or not a series converges is of great interest to mathematicians.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example (Harmonic Series)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The <span class="definition">harmonic series</span> is defined</p>
-<p><span class="math display">
-\sum^\infty_{n=1} \frac{1}{n}
-</span></p>
-<p>The sequence <span class="math inline">(s_n)</span> is divergent, and thus the harmonic series is divergent. This is</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example (Telescoping Series)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The series</p>
-<p><span class="math display">
-\sum^\infty_{n=1} \frac{1}{n(n+1)}
-</span></p>
-<p>has the partial sum</p>
-<p><span class="math display">
-s_n = \frac{1}{2} + \frac{1}{6} + \frac{1}{12} + \cdots + \frac{1}{n(n+1)}
-</span></p>
-</div>
-</div>
+<p>We proved the set of equivalence classes forms a partition. It is true also that given any partition <span class="math inline">P</span> on a set <span class="math inline">A</span>, there is exactly one equivalence relation <span class="math inline">\sim</span> from which <span class="math inline">P</span> is derived.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Theorem 5.1.1 (Algebraic properties of Series)
+Theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sum a_n = s</span> and <span class="math inline">\sum b_n = t</span>. Then</p>
-<p><span class="math inline">(a)</span> <span class="math inline">\sum (a_n + b_n) = s + t</span> and</p>
-<p><span class="math inline">(b)</span> <span class="math inline">\sum (ka_n) = ks</span> for every <span class="math inline">k \in \mathbb{R}</span>.</p>
+<p>Given a partition <span class="math inline">P</span> on a set <span class="math inline">A</span>, there exists exactly one equivalence relation on <span class="math inline">A</span> from which we can derive <span class="math inline">P</span>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
@@ -443,135 +457,20 @@ Theorem 5.1.1 (Algebraic properties of Series)
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+Proof (FINISH)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><span class="math inline">(a)</span> By converting our series to limits, we obtain <span class="math display">
-\sum (a_n + b_n) = \lim (s_{a_n} + s_{b_n}) = s + t.
-</span></p>
-<hr>
-<p><span class="math inline">(b)</span> Similarly, we obtain</p>
-<p><span class="math display">
-\sum (ka_n) = \lim ks_{a_n} = k\lim s_{a_n} = ks.
-</span></p>
+<p>To show that <span class="math inline">P</span> comes from some relation, let us define a relation <span class="math inline">\sim</span> such that <span class="math inline">a \sim b</span> if <span class="math inline">a</span> and <span class="math inline">b</span> are in the same element of <span class="math inline">P</span>. This relation very clearly generates the partition <span class="math inline">P</span>.</p>
+<p>To show there exists only one relation generating <span class="math inline">P</span>, assume there exists two relations <span class="math inline">\sim_1,\sim_2</span>.</p>
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 5.1.2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">\sum a_n</span> is a convergent series, then <span class="math inline">\lim_{n \to \infty} a_n = 0</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">\sum a_n</span> is a convergent series, then the sequence of partial sums <span class="math inline">(s_n)</span> must have a finite limit.</p>
-<p>Since <span class="math inline">a_n = s_n - s_{n-1}</span>, we have <span class="math inline">\lim a_n = \lim s_n - \lim s_{n-1} = 0</span>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 5.1.3 (Cauchy Criterion for Series)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The infinite series <span class="math inline">\sum a_n</span> converges if and only if for each <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that if <span class="math inline">n \geq m \geq N</span>, then</p>
-<p><span class="math display">
-|a_m + a_{m+1} + \cdots + a_{n}| = |s_n - s_{m-1}| &lt; \varepsilon.
-</span></p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Proof
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sum a_n</span> be a convergent series. Then the sequence <span class="math inline">(s_n)</span> of partial sums converges. By the Cauchy Convergent Criterion, <span class="math inline">(s_n)</span> is Cauchy. Thus, for any <span class="math inline">\varepsilon &gt; 0</span>, there exists <span class="math inline">N \in \mathbb{N}</span> such that <span class="math inline">m,n \geq N</span> implies <span class="math inline">|s_n - s_m| &lt; \varepsilon</span>. Hence, if <span class="math inline">n \geq m \geq N + 1</span>, then <span class="math inline">m - 1 \geq N</span>, and <span class="math inline">|s_n - s_{m-1}| &lt; \varepsilon</span> as desired.</p>
-<p>Conversly, for all <span class="math inline">\varepsilon &gt; 0</span> let <span class="math inline">N</span> exists such that <span class="math inline">n \geq m \geq N</span> implies <span class="math inline">|s_n - s_{m-1}| &lt; \varepsilon</span>. Then for <span class="math inline">n &gt; m \geq N</span> we have <span class="math inline">m + 1 &gt; N</span>, so that <span class="math inline">|s_n - s_m| &lt; \varepsilon</span>. This implies <span class="math inline">(s_n)</span> is Cauchy, and therefore convergent.</p>
-</div>
-</div>
-</div>
+
+
 </section>
-<section id="recap" class="level2">
-<h2 class="anchored" data-anchor-id="recap">Recap</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 5.1.1 (Algebraic properties of Series)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">\sum a_n = s</span> and <span class="math inline">\sum b_n = t</span>. Then</p>
-<p><span class="math inline">(a)</span> <span class="math inline">\sum (a_n + b_n) = s + t</span> and</p>
-<p><span class="math inline">(b)</span> <span class="math inline">\sum (ka_n) = ks</span> for every <span class="math inline">k \in \mathbb{R}</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 5.1.2
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>If <span class="math inline">\sum a_n</span> is a convergent series, then <span class="math inline">\lim_{n \to \infty} a_n = 0</span>.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Theorem 5.1.3 (Cauchy Criterion for Series)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The infinite series <span class="math inline">\sum a_n</span> converges if and only if for each <span class="math inline">\varepsilon &gt; 0</span>, there exists a natural number <span class="math inline">N</span> such that if <span class="math inline">n \geq m \geq N</span>, then</p>
-<p><span class="math display">
-|a_m + a_{m+1} + \cdots + a_{n}| = |s_n - s_{m-1}| &lt; \varepsilon.
-</span></p>
-</div>
-</div>
-
-
 </section>
 
 </main> <!-- /main -->

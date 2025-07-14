@@ -1,0 +1,74 @@
+---
+title: "Topological Spaces"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+<!--
+TO-DO 
+
+History: https://hsm.stackexchange.com/questions/8409/history-of-various-definitions-of-topology
+-->
+
+There is a large history in defining precisely what a topology is, but the modern and standard definition is one that relies upon open sets.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [topology]{.definition} on a set $X$ is a collection $\mathcal{T}$ of subsets of $X$ called [open sets]{.definition}, which have the following properties:
+
+($O1$) $\colon$ The empty set $\varnothing$ and the set itself $X$ are in $\mathcal{T}$.
+
+($O2$) $\colon$ Any union of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+($O3$) $\colon$ Any finite intersection of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+-------
+
+A [topological space]{.definition} is an ordered pair $(X,\mathcal{T})$ such that $X$ is a set and $\mathcal{T}$ is a topology on $X$.
+:::
+
+Note that this definition gives no insight into what an open set is, just properties we expect open sets to have. Given the same set $X$, we can construct many different topologies by choosing different sets to be open.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(X,\mathcal{T})$ be a topological space, a subset $F$ of $X$ is called [closed]{.definition} if $F^C$ is open, or $F^C \in \mathcal{T}$. 
+:::
+
+By applying De Morgan laws to our open set properties, we can easily show the following lemma.
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $(X,\mathcal{T})$ be a topological space. Then the following are true:
+
+($C1$) $\colon$ The empty set $\varnothing$ and the set itself $X$ are closed.
+
+($C2$) $\colon$ Any finite union of closed sets is closed.
+
+($C3$) $\colon$ Any intersection of closed sets is closed.
+:::
+
+## Comparing Topologies
+
+We have already seen how the same set $X$ can be given many separate topologies by choosing different sets to be open. The following definition gives us a way to compare the 'size' of different topologies.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\mathcal{T}$ and $\mathcal{T}^\prime$ be topologies on a set $X$. 
+
+If $\mathcal{T} \subseteq \mathcal{T}^\prime$, we say that $\mathcal{T}^\prime$ is [finer]{.definition} than $\mathcal{T}$.
+
+If $\mathcal{T^\prime} \subseteq \mathcal{T}$, we say that $\mathcal{T}$ is [coarser]{.definition} than $\mathcal{T}^\prime$.
+
+If $\mathcal{T} \subset \mathcal{T}^\prime$, we say that $\mathcal{T}^\prime$ is [strictly finer]{.definition} than $\mathcal{T}$.
+
+If $\mathcal{T^\prime} \subset \mathcal{T}$, we say that $\mathcal{T}$ is [strictly coarser]{.definition} than $\mathcal{T}^\prime$.
+:::
+
+In his book, "Topology", James Munkres gives the following quote as a helpful way to think about the nomenclature.
+
+> This terminology is suggested by thinking of a topological space as being something like a truckload full of gravel—the pebbles and all unions of collections of pebbles being the open sets. If now we smash the pebbles into smaller ones, the collection of open sets has been enlarged, and the topology, like the gravel, is said to have been made finer by the operation.

@@ -9,22 +9,27 @@ format:
 ::: {.callout-note icon="false"}
 ## Definition
 
-A [**sequence**]{.definition} is a collection of terms such that each term is indexed by a natural number.
+Let $A \subseteq \mathbb{N}$ and $S$ be a set.
+
+If $f \colon A \to S$ is a function, then $f$ is a [sequence]{.definition}.
 :::
 
-Sequences may be finite or infinite, and their terms may be numbers or functions. For example, the following is a sequence of Fibbonachi numbers,
+Sequences may be finite or infinite, and their terms may be numbers or functions. 
+
+::: {.callout-important icon="false"}
+## Notation
+
+Let $f \colon A \to S$ be a sequence.
+
+It is common to choose some letter, usually $s$, to represent the elements of this sequence.
+
+For each $k \in A$, $f(k)$ is denoted $s_k$, and $f$ is denoted $(s_k)_{k\in A}$.
+:::
+
+For example, the following is a sequence of Fibbonachi numbers,
 
 $$
 \left(1,1,2,3,5,8,13,\dots\right).
 $$
 
-We can denote each term by its placement, for example $F_3 = 2$, and $F_7 = 13$. 
-
-::: {.callout-important icon="false"}
-## Notation
-We use $(a_n)$ to denote a sequence, and $a_n$ without parenthesis to denote the $n^{th}$-term of the sequence.
-
-We also use the notation $(a_1,a_2,a_3,\dots)$ to denote a sequence. All terms are sequential and commas are used to seperate terms.
-:::
-
-It is common to formalize sequences through functions, though our intuitive understanding will work just fine for the purposes of analysis.
+We would denote the sequence $(F_k)_{k\in \mathbb{N}}$, where $F_1 = 1$, $F_2 = 1$, $F_3 = 2$, ect.

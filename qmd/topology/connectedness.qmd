@@ -1,0 +1,82 @@
+---
+title: "Connectedness"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We have an intuitive idea of what it means for a shape (or in this case, topological space) to be connected, owever our intuition may fail us when it comes to esoteric spaces.
+
+For example, take the 'topologist sine curve'.
+
+TO-DO: Picture and explanation
+
+TO-DO: Compare rations not being connected
+
+## Connected Spaces
+
+We will view connectedness as a property belonging to a topological space, rather than as a property of sets in a space. However much like compactness the notion can be easily extended to sets using the subspace topology.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $X$ be a topological space. A [separation]{.definition} of $X$ is a pair of disjoint, nonempty, open subsets whose union is $X$.
+:::
+
+Symbollically, this means a separation of a space is a pair $U,V$ of open subsets such that
+
+$$
+\varnothing \not = U,V \text{ and } U\,\dot\cup\,V = X
+$$
+
+Where $\dot\cup$ represents a disjoint union. This leads to our definition of connectedness -
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $X$ be a topological space. If there exist no separation of $X$, then $X$ is [connected]{.definition}. 
+
+If a separation does exist, $X$ is called [disconnected]{.definition}.
+:::
+
+And that's it!
+
+## Properties
+
+The most common property of connectedness is that
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $(X,\tau)$ be a topological space. Then $(X,\tau)$ is connected if and only if $\varnothing$ and $X$ are the only sets that are both open and closed.
+:::
+
+The proof is suprisngly simple.
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\Rightarrow$) Let $(X,\tau)$ be a connected space. By way of contradiction, let $A \subset X$ be a nonempty proper subset that is both open and closed. Then there exist a separation
+$$
+U = A \quad V = A^C.
+$$
+
+But since $(X,\tau)$ is connected by assumption, we have a contradiction. Thus there exist no such set $A$.
+
+($\Leftarrow$) Let $(X,\tau)$ be a space such that the only sets that are both open and closed are $\varnothing$ and $X$. Towards a contradiction assume that there exist some separation of $(X,\tau)$ by sets $U,V$. Then since $U \, \dot\cup \, V = X$, we have that $V = U^C$ and that both $U$ and $U^C$ are open.
+
+Then that means $U$ is both open and closed, contradicting our assumption that $(X,\tau)$ contains no other closed and open set. Thus there exists no such separation, meaning $(X,\tau)$ is connected.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $\mathcal{T}_1$ and $\mathcal{T_2}$ be topologies on a set $X$, where $\mathcal{T_1}$ is finer than $\mathcal{T_2}$. Then if $(X,\mathcal{T}_1)$ is connected, so is $(X,\mathcal{T}_2)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+
+:::

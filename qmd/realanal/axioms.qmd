@@ -1,0 +1,39 @@
+---
+title: "Axiomatic Definition"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Next we introduce a new property of real functions, _differentiability_.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $I$ be any interval on $\mathbb{R}$, and let $c \in I$. We say that $f \colon I \to \mathbb{R}$ is [**differentiable**]{.definition} at $c$ if 
+
+$$
+\lim_{x \to c} \frac{f(x)-f(c)}{x-c}
+$$ 
+
+exists and is finite.
+
+:::
+
+If $f$ is differentiable at every point in a subset $S \subseteq I$, we say that $f$ is differentiable on $S$. If $f$ has a derivative at $c$, we notate $f^\prime(c)$.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f \colon \mathbb{R} \to \mathbb{R}$ be a constant function. That is $f(x) = d$ for some $d \in \mathbb{R}$.
+
+**Claim:** The derivative of $f$ is zero at every point $c \in \mathbb{R}$.
+
+We use out formula for differentiability
+
+$$
+f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{d - d}{x - c} = 0
+$$
+
+:::

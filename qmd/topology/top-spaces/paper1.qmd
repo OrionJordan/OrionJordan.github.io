@@ -1,0 +1,157 @@
+---
+title: "SEPARATION AXIOMS BETWEEN To AND T1 "
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(X,\mathcal{T})$ be a topological space, and $A,B$ be subsets of $X$. 
+
+Then $A$ is said to be [weakly separated]{.definition} from $B$ if there exist an open set $G$ such that $A \subset G$ and $G \cap B = \varnothing$.
+:::
+
+This definition of weakly separated sets 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $S = (X,\mathcal{T})$ be a topological space, and $\mathscr{A}$ be a cover of $X$. Then we call $\mathscr{A}$ an [open cover]{.definition} if 
+
+$$
+\mathscr{A} \subset \mathcal{T}.
+$$
+:::
+
+Thus, $\mathscr{A}$ is an open cover if it is made up of open sets. 
+
+## Compactness
+
+Now we define the notion of a space being compact.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A space $X = (S,\mathcal{T})$ is [compact]{.definition} if every open cover $\mathscr{A}$ of $S$ has a finite subcover that also covers $S$.
+:::
+
+We next prove that subspaces are compact by the same definition.
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $X$ be a space and $Y$ be a subspace of $X$. Then $Y$ is compact if and only if every cover of $Y$ by open sets in $X$ has a finite subcover.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\leftarrow$) Suppose $Y$ is compact, and $\mathscr{A} = \{A_\alpha\}_{\alpha \in I}$ is a cover of $Y$ by sets open in $X$. Then the collection
+
+$$
+\{A_\alpha \cap Y \mid \alpha \in I\}
+$$
+
+is a cover of $Y$ by sets open in $Y$, making it an open cover of $Y$. Since we assumed $Y$ is compact, we have that there exists a finite subcover
+
+$$
+\{A_{\alpha_1} \cap Y, \dots, A_{\alpha_n} \cap Y\}.
+$$
+
+Then $\{A_{\alpha_1}, \dots, A_{\alpha_n}\}$ is a finite subcover of $Y$ by sets open in $X$.
+
+($\rightarrow$) Suppose every cover of $Y$ by open sets in $X$ has a finite subcover. Let $\mathscr{B} = \{B_{\alpha}\}_{\alpha \in I}$ be an open cover of $Y$. Then, for each $\alpha \in J$, choose a set $A_\alpha$ open in $X$ such that
+
+$$
+A_\alpha = B_\alpha \cap Y.
+$$
+
+(To-DO: Prove such a set exists) Then the collection $\mathscr{A} = \{A_\alpha\}_{\alpha \in I}$. is a cover of $Y$ by sets open in $X$. Thus there exists a finite subcover $\{A_{\alpha_1}, \dots, A_{\alpha_n}\}$. Then $\{B_{\alpha_1}, \dots, B_{\alpha_n}\}$ is a finite subcover of $Y$, and $Y$ is compact.
+:::
+
+Next we prove many properties of compact spaces
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Every closed subspace of a compact space is compact.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $X$ be a compact topological space and $Y$ be a closed subspace of $X$. Then we have that $Y$ is closed in $X$, implying $X \backslash Y$ is open in $X$ by definition.
+
+Let $\mathscr{A}$ be a cover of $Y$ by sets open in $X$. Then 
+
+$$
+\mathscr{B} = \mathscr{A} \cup X \backslash Y
+$$
+
+is an open cover of $X$. Since $X$ is compact, there exists a finite subcover $\mathscr{B}^\prime$ which covers $Y$. We may safely remove $X\backslash Y$ from $\mathscr{B}^\prime$ to obtain a finite subcover of $\mathscr{A}$. Thus $Y$ is compact.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Every compact subspace of a Hausdorff space is closed.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $Y$ be a compact subspace of a Hausdorff space $X$. We want to prove that $X\backslash Y$ is open, and thus $Y$ is closed.
+
+Let $x_0$ be a point in $X \backslash Y$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The image of a compact space under a continuous map is compact.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $f\colon X \to Y$ be continuous, and $X$ be a compact space. Let $\mathscr{A}$ be a covering of the set $f(X)$ by sets open in $Y$. Then the collection
+
+$$
+\{f^{-1}(A) \mid A \in \mathscr{A}\}
+$$
+
+Is a collection of sets covering $X$, that are open in $X$ since $f$ is continuous. Since $X$ is compact, there exists a finite subcover 
+
+$$
+\{f(A_1),\dots,f(A_n)\}
+$$
+
+that covers $X$. Then the sets $A_1,\dots,A_n$ form a finite subcover of $f(X)$, and thus $f(X)$ is compact.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The product of fintely many compact spaces is compact.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $f\colon X \to Y$ be continuous, and $X$ be a compact space. Let $\mathscr{A}$ be a covering of the set $f(X)$ by sets open in $Y$. Then the collection
+
+$$
+\{f^{-1}(A) \mid A \in \mathscr{A}\}
+$$
+
+Is a collection of sets covering $X$, that are open in $X$ since $f$ is continuous. Since $X$ is compact, there exists a finite subcover 
+
+$$
+\{f(A_1),\dots,f(A_n)\}
+$$
+
+that covers $X$. Then the sets $A_1,\dots,A_n$ form a finite subcover of $f(X)$, and thus $f(X)$ is compact.
+:::

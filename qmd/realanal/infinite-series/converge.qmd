@@ -166,7 +166,7 @@ $$
 
 Let $\sum a_n$ be a convergent series. Then the sequence $(s_n)$ of partial sums converges. By the Cauchy Convergent Criterion, $(s_n)$ is Cauchy. Thus, for any $\varepsilon > 0$, there exists $N \in \mathbb{N}$ such that $m,n \geq N$ implies $|s_n - s_m| < \varepsilon$. Hence, if $n \geq m \geq N + 1$, then $m - 1 \geq N$, and $|s_n - s_{m-1}| < \varepsilon$ as desired. 
 
-Conversly, for all $\varepsilon > 0$ let $N$ exists such that $n \geq m \geq N$ implies $|s_n - s_{m-1}| < \varepsilon$. Then for $n > m \geq N$ we have $m + 1 > N$, so that $|s_n - s_m| < \varepsilon$. This implies $(s_n)$ is Cauchy, and therefore convergent.
+Conversely, for all $\varepsilon > 0$ let $N$ exists such that $n \geq m \geq N$ implies $|s_n - s_{m-1}| < \varepsilon$. Then for $n > m \geq N$ we have $m + 1 > N$, so that $|s_n - s_m| < \varepsilon$. This implies $(s_n)$ is Cauchy, and therefore convergent.
 :::
 
 ## Recap

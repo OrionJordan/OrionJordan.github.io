@@ -1,0 +1,157 @@
+---
+title: "The Metric Topology"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [metric]{.definition} on a set $X$ is a function
+
+$$
+d \colon X \times X \rightarrow R
+$$
+
+such that the following hold:
+
+$(1)$ $d(x,y) \geq 0$ for all $x,y \in X$, with equality only at $x = y$.
+
+$(2)$ $d(x,y) = d(y,x)$ for all $x,y \in X$.
+
+$(3)$ $d(x,y) + d(y,z) \geq d(x,z)$ for all $x,y,z\in X$ (Triangle inequality)
+:::
+
+The value of $d(x,y)$ is called the [distance]{.definition} between $x$ and $y$ in the metric $d$.
+
+We can come up with many alternate ways to calculate distance between points. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $d$ be a metric on a set $X$, and let $\varepsilon > 0$. The set
+
+$$
+B_d(x,\varepsilon) = \{y \mid d(x,y) < \varepsilon\}
+$$
+
+of all points $y$ whose distance from $x$ is less than $\varepsilon$ is called the [$\varepsilon$-ball centered at $x$]{.definition}. We often omit the metric when it is implied, and write simply $B(x,\varepsilon)$.
+:::
+
+[Why is this relevant, explain how it relates to topology, why we induce a topology from a metric]
+
+We now have a formal way to express balls in other metrics. We now examine how we can induce a topology from a metric.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $d$ be a metric on the set $X$. The collection of all balls $B_d(x,\varepsilon)$ for $x \in X$ and $\varepsilon > 0$, is a basis for a topology on $X$. This is called the [metric topology]{.definition} induced by $X$.
+:::
+
+We must of course prove that taking the collection of balls of any radius centered at any point creates a basis for a topology, but that can wait.
+
+We have seen how a metric can induce a topology, but can we 'extract' a metric from a topology? Sometimes.
+
+::: {.callout-note icon="false"}
+## Definition
+Let $(X,\mathcal{T})$ be a topological space. $(X,\mathcal{T})$ is [metrizable]{.definition} if there exists a metric $d$ on $X$ that induces $\mathcal{T}$ on $X$.
+:::
+
+The following definition is wacky
+
+https://math.stackexchange.com/questions/3327448/equivalence-or-non-equivalence-of-definitions-for-metric-spaces
+
+::: {.callout-note icon="false"}
+## Definition
+Let $d$ be a metric on a set $X$. A [metric space]{.definition} is an ordered pair $(X,d)$. 
+:::
+
+Though the analysis of metric spaces lies deeper with analysis than topology, we shall still examine some properties.
+
+## Properties of Metric Spaces
+
+::: {.callout-note icon="false"}
+## Definition
+Let $(X,d)$ be a metric space. A subset $A$ of $X$ is said to be [bounded]{.definition} if there exists some number $M$ such that
+
+$$
+d(a_1,a_2) \leq M
+$$
+
+for all $a_1,a_2 \in A$.
+:::
+
+We can expand on this definition
+
+::: {.callout-note icon="false"}
+## Definition
+Let $(X,d)$ be a metric space, and $A$ a non-empty bounded subset of $X$. The [diameter]{.definition} of $A$ is defined
+
+$$
+\text{diam }A = \sup\{d(a_1,a_2) \mid a_1,a_2 \in A\}.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $(X,d)$ be a metric space, and define ${\bar{d} \colon X \times X \rightarrow \mathbb{R}}$ by
+
+$$
+\bar{d}(x,y) = \min\{d(x,y),1\}.
+$$
+
+Then $\bar{d}$ is called the [standard bounded metric]{.definition} corresponding to $d$.
+:::
+
+We must now prove $\bar{d}$ is a metric.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Given a metric $d$, the standard bounded metric $\bar{d}$ is also a metric.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We have to show that $\bar{d}$ fulfills the conditions for a metric.
+
+$(1)$ $\bar{d}(x,y) \geq 0$ for all $x,y \in X$, with equality only at $x = y$.
+
+Since $d$ is a metric, we have that $d(x,y) \geq 0$ for all $x,y \in X$. Because $\bar{d}(x,y)$ is equivalent to either $d(x,y)$ or $1$, which are both above $0$ for all $x,y \in X$, we have that $\bar{d}(x,y) \geq 0$ for all $x,y \in X$. 
+
+Additionally, $\bar{d}(x,y)$ can only equal $0$ if $d(x,y)$ does. Since $d$ is a metric, we know this equality is only at $x = y$, and thus $\bar{d}(x,y) = 0$ only if $x = y$.
+
+$(2)$ $\bar{d}(x,y) = \bar{d}(y,x)$ for all $x,y \in X$.
+
+Because $d$ is a metric
+
+$$
+\bar{d}(y,x) = \min\{d(y,x),1\} = \min\{d(x,y),1\} = \bar{d}(x,y)
+$$
+
+$(3)$ $\bar{d}(x,y) + \bar{d}(y,z) \geq \bar{d}(x,z)$ for all $x,y,z\in X$ (Triangle inequality)
+
+If either $d(x,y) \geq 1$ or $d(y,z) \geq 1$, then the left hand side of the equation is clearly greater than the right, as $\bar{d}(x,z) \leq 1$. Then we only need check the case where $d(x,y) < 1$ and $d(y,z) < 1$. 
+
+If $d(x,y) + d(y,z) \geq 1$, then we are done for the reasons listed above. If $d(x,y) + d(y,z) < 1$, then because $d$ is a metric, $d(x,z) < 1$, and $\bar{d} = d$ for all relevant values, the inequality holds.
+:::
+
+The boundeness of a set is not a topological property, as it only depends on the metric $d$ that is used for $X$, and nothing to do with the topology induced by $X$. To show this consider the following theorem
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $(X,d)$ be a metric space, and let $\bar{d}$ be the standard bounded metric.
+
+Then $\bar{d}$ induces the same topology as $d$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+
+:::

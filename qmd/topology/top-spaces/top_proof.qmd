@@ -1,0 +1,137 @@
+---
+title: "Proof of Topological Spaces"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Recall the definition of a topological space.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [topology]{.definition} on a set $X$ is a collection $\mathcal{T}$ of subsets of $X$ having the following properties:
+
+- The empty set $\varnothing$ and the set itself $X$ are in $\mathcal{T}$.
+
+- Any union of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+- Any finite intersection of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+A [topological space]{.definition} is an ordered pair $(X,\mathcal{T})$ such that $X$ is a set and $\mathcal{T}$ is a topology on $X$.
+:::
+
+We prove the following are examples of topological spaces.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $X$ be a finite set, and let $\mathcal{T} = \mathcal{P}(X)$.
+
+Then $(X,\mathcal{T})$ is the [Discrete Topology (Finite)]{.definition}. (S000001)
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We must show the space satisfies the three requirements to be a topology
+
+$(1)$ The empty set $\varnothing$ and the set itself $X$ are in $\mathcal{T}$.
+
+$\qquad$ By definition of a powerset, $\varnothing \in \mathcal{P}(X)$, and $X \in \mathcal{P}(X)$.
+
+$(2)$ Any union of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$ is closed under set union.
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$ is closed under set union.
+
+$(3)$ Any finite intersection of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$
+ is closed under set intersection.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $X$ be a countably infinite set, and let $\mathcal{T} = \mathcal{P}(X)$.
+
+Then $(X,\mathcal{T})$ is the [Discrete Topology (Countable)]{.definition}. (S000002)
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We must show the space satisfies the three requirements to be a topology
+
+$(1)$ The empty set $\varnothing$ and the set itself $X$ are in $\mathcal{T}$.
+
+$\qquad$ By definition of a powerset, $\varnothing \in \mathcal{P}(X)$, and $X \in \mathcal{P}(X)$.
+
+$(2)$ Any union of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$ is closed under set union.
+
+$(3)$ Any finite intersection of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$
+ is closed under set intersection.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $X$ be an uncountably infinite set, and let $\mathcal{T} = \mathcal{P}(X)$.
+
+Then $(X,\mathcal{T})$ is the [Discrete Topology (Uncountable)]{.definition}. (S000003)
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We must show the space satisfies the three requirements to be a topology
+
+$(1)$ The empty set $\varnothing$ and the set itself $X$ are in $\mathcal{T}$.
+
+$\qquad$ By definition of a powerset, $\varnothing \in \mathcal{P}(X)$, and $X \in \mathcal{P}(X)$.
+
+$(2)$ Any union of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$ is closed under set union.
+
+$(3)$ Any finite intersection of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ By THEOREM of powerset, $\mathcal{P}(X)$
+ is closed under set intersection.
+:::
+
+(TO-DO: Foundations, prove power set properties, link here.)
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $X$ be a countably infinite set, and let $\mathcal{T}$ be all sets $U$ such that $X \backslash U$ is finite, and the empty set.
+
+Then $(X,\mathcal{T})$ is the [Cofinite Topology (Countable)]{.definition}. (S000015)
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We must show the space satisfies the three requirements to be a topology
+
+$(1)$ The empty set $\varnothing$ and the set itself $X$ are in $\mathcal{T}$.
+
+$\qquad$ The empty set is open by definition. The set $X \backslash X$ is the empty set, which is finite, thus $X$ is open.
+
+$(2)$ Any union of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ All open sets are either infinite or empty, thus the intersection of two infinite sets (or an infinite and empty set) is infinite, and thus in the topology.
+
+$(3)$ Any finite intersection of elements in $\mathcal{T}$ is in $\mathcal{T}$.
+
+$\qquad$ The intersection of two open sets in $\mathcal{T}$ is always infinite, as if it were finite $A \backslash B$ would be infinite, and thus $X \backslash B$ would be infinite, and $B$ would not be open. Repeat induction.
+:::
+
+(TO-DO: De Morgans laws, better proofs)

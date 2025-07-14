@@ -8,13 +8,19 @@ format:
 
 Real analysis is the study of real numbers and their properties. 
 
-Section I: This section covers properties of sequences, limits, derivatives and integrals without regard to general metric spaces. 
-
 ## Table of Contents
 
+Section I: This section covers properties of sequences, limits, derivatives and integrals.
+
+- Preface
 - Sequences
 - Limits
 - Differentiation
 - Integration
 - Infinite Series
+
+Section II: This section covers the topology of the real line, 
+
+- Topology
+- Construction
 

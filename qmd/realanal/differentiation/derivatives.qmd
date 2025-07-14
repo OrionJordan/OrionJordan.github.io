@@ -6,7 +6,7 @@ format:
     html-math-method: katex
 ---
 
-Next we talk about differentialbility
+Next we introduce a new property of real functions, _differentiability_.
 
 ::: {.callout-note icon="false"}
 ## Definition

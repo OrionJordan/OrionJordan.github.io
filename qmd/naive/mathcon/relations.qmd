@@ -6,17 +6,19 @@ format:
     html-math-method: katex
 ---
 
-A relation can be said to generalize the concept of a function. A relation is some kind of relationship between two elements in a set, which may or may not hold.
+------------
+
+A relation is some property between elements that may or may not hold. As a non-mathematical example, the phrase "is a child of" is a relation. "You are a child of your father" is a true statement, so the relation holds. However "Your father is a child of you" is false, so the relation does not hold.
+
+## Definition
 
 ::: {.callout-note icon="false"}
 ## Definition
 
-Let $A$ be a set. A [relation]{.definition} $R$ on the set $A$ is a subset of the cartesian product $A \times A$.
-
-We can also define a relation over two sets $A$ and $B$, where $R$ is a subset of the cartesian product $A \times B$.
+Let $A$ be a set. A [relation]{.definition} $R$ on the set $A$ is any subset of the cartesian product $A \times A$.
 :::
 
-Any pair of elements $a,b \in A$ is either belonging to $R$ or not. If $(a,b) \in R$, we say "$a$ is in the relation $R$ to $b$".
+Then we've defined a relation $R$ to be a set of ordered pairs $(a,b)$ where $a,b \in A$. Any pair of elements is either belonging to $R$ or not. If $(a,b) \in R$, we say "$a$ is in the relation $R$ to $b$", and that the relation between the two elements _holds_ or is _true_.
 
 ::: {.callout-important icon="false"}
 ## Notation
@@ -168,3 +170,25 @@ A [partition]{.definition} of a set $A$ is a collection of disjoint subsets of $
 :::
 
 We proved the set of equivalence classes forms a partition. It is true also that given any partition $P$ on a set $A$, there is exactly one equivalence relation $\sim$ from which $P$ is derived. (TO-DO PROOF)
+
+## Finatary Relations
+
+The relations we have covered up until now take place over a single set. We can generalize the concept by letting the relation take place over an arbitrary amount of sets.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A_1,A_2,\dots,A_n$ be sets. A [finatary relation]{.definition} $R$ is a subset of the Cartesian product $A_1 \times A_2 \times \dots \times A_n$.
+:::
+
+Not only does this definition allow us to have relations between any finite amount of sets, it also allows these sets to be distinct. The [arity]{.definition} of a relation is the number of sets the relation is over. We call a relation over $n$ sets an $n$-ary relation, and use latin terms like _unary_, _binary_ and _ternary_ for $1$-ary, $2$-ary and $3$-ary relations respectively.  
+
+#### Nullary Relations
+
+Intriguingly, this definition allows to define _nullary_, or $0$-ary relations. Using the definition of Cartesian product, the nullary product is the set
+
+$$
+\displaystyle{\prod_\varnothing = \{\varnothing\}}
+$$
+
+and thus we have two nullary relations, $R = \varnothing$ and $R = \{\varnothing\}$. 

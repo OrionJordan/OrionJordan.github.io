@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
-<link href="../../../qmd/abstract/intro-to-groups/definitions.html" rel="prev">
+<link href="../../../qmd/abstract/prereq/relations.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -151,7 +151,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/abstract/intro-to-groups/definitions.html"><strong>Introduction into Groups</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/abstract/intro-to-groups/groups.html">Groups</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>Introduction into Groups</strong></li><li class="breadcrumb-item"><a href="../../../qmd/abstract/intro-to-groups/groups.html">Groups</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -202,11 +202,8 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/abstract/intro-to-groups/definitions.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Binary Operations</span></a>
-  </div>
-</li>
+ <span class="menu-text">./qmd/abstract/intro-to-groups/definitions.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/abstract/intro-to-groups/groups.html" class="sidebar-item-text sidebar-link active">
@@ -226,7 +223,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/abstract/intro-to-groups/definitions.html"><strong>Introduction into Groups</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/abstract/intro-to-groups/groups.html">Groups</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>Introduction into Groups</strong></li><li class="breadcrumb-item"><a href="../../../qmd/abstract/intro-to-groups/groups.html">Groups</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Groups</h1>
 </div>
@@ -255,18 +252,19 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <span class="definition"><strong>group</strong></span> is an ordered pair <span class="math inline">(G,\star)</span> where <span class="math inline">G</span> is a set and <span class="math inline">\star</span> is an associative binary relation on that set, such that</p>
+<p>A <span class="definition"><strong>group</strong></span> is an ordered pair <span class="math inline">(G,\star)</span> where <span class="math inline">G</span> is a set and <span class="math inline">\star</span> is a binary relation on that set, such that</p>
 <ul>
-<li>There exists an element <span class="math inline">e</span> in <span class="math inline">G</span> known as the <span class="definition"><strong>identity</strong></span> such that for all <span class="math inline">a \in G</span>,</li>
+<li><p>The binary relation <span class="math inline">\star</span> is associative.</p></li>
+<li><p>There exists an element <span class="math inline">e</span> in <span class="math inline">G</span> known as the <span class="definition"><strong>identity</strong></span> such that for all <span class="math inline">a \in G</span>,</p></li>
 </ul>
 <p><span class="math display">
-a \star e = e \star a = a
+a \star e = e \star a = a.
 </span></p>
 <ul>
 <li>For each <span class="math inline">a \in G</span>, there exists an element <span class="math inline">a^{-1} \in G</span> called the <span class="definition"><strong>inverse</strong></span> of <span class="math inline">a</span>, such that</li>
 </ul>
 <p><span class="math display">
-a \star a^{-1} = a^{-1} \star a = e
+a \star a^{-1} = a^{-1} \star a = e.
 </span></p>
 </div>
 </div>
@@ -977,8 +975,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../qmd/abstract/intro-to-groups/definitions.html" class="pagination-link" aria-label="Binary Operations">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Binary Operations</span>
+      <a href="../../../qmd/abstract/prereq/relations.html" class="pagination-link" aria-label="Relations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Relations</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

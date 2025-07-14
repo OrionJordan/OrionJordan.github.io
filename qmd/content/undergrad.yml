@@ -1,8 +1,14 @@
-- title: Foundations
-  subtitle: Basic Logic and Set Theory
+- title: Naive Set Theory
+  subtitle: Introduction to Sets
   image: realanal
   links:
-    - text: Logic
+    - text: Introduction
+      href: ../naive/intro.qmd
+    - text: Fundamental Concepts
+      href: ../naive/fundementals.qmd
+    - text: Mathematical Concepts
+      href: ../naive/mathcon.qmd
+
 
 - title: Real Analysis
   subtitle: Analysis of the Reals

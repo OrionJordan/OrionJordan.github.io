@@ -1,0 +1,102 @@
+---
+title: "Functions"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+A function is a special type of relation such that any element $a$ in the functions _domain_ is in relation to exactly one element $b$ in the functions _codomain_.
+
+## Definitions
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A,B$ be sets. A [function]{.definition} $f$ is a subset of the cartesian product $A \times B$ such that if $(a,b) \in f$ and $(a,b^\prime) \in f$, $b = b^\prime$.
+:::
+
+We say $f$ is a function from $A$ to $B$, or that $f$ is a mapping from $A$ to $B$. We now clarify exactly what is meant by _domain_ and _codomain_.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f$ be a function from $A$ to $B$. We call $A$ the [domain]{.definition} of the function, and $B$ the [codomain]{.definition} of the function.
+:::
+
+::: {.callout-important icon="false"}
+## Notation
+If $f$ is a function from $A$ to $B$, we commonly denote $f$ by $f \colon A \to B$. Very commonly there exists some _rule_ by which $f$ relates its domain and codomain. We denote by $f(a)$ the unique element of $B$ that this rule determines $f$ assigns to $a$. For example, say we write
+
+"Let $f\colon \mathbb{R} \to \mathbb{R}$ be a function such that ${\{(a,a^3 + 1) \mid a \in A\} \in f}$."
+
+We abbreviate this by writing
+
+"Let $f \colon \mathbb{R} \to \mathbb{R}$ be the function such that $f(a) = a^3 + 1$".
+:::
+
+Next we define what is meant by the terms _image_ and _preimage_.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f \colon A \to B$ be a function. If $A^\prime$ is a subset of $A$, we denote by $f(A^\prime)$ the set of all $f(a)$ for points $a \in A^\prime$. This set is called the [image]{.definition} of $A^\prime$ under $f$. Formally,
+
+$$
+f(A^\prime) = \{b \mid b = f(a) \text{ for some } a \in A^\prime\}.
+$$
+:::
+
+And the converse
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f \colon A \to B$ be a function. If $B^\prime$ is a subset of $B$, we denote by $f^{-1}(B^\prime)$ the set of all elements of $A$ whose image under $f$ lie in $B^\prime$. This set is called the [preimage]{.definition} of $B^\prime$ under $f$. Formally
+
+$$
+f^{-1}(B^\prime) = \{a \mid f(a) \in B_0\}.
+$$
+:::
+
+It is entirely possible that the preimage of $B^\prime$ is empty. In this case we simply say $f(B^\prime) = \varnothing$.
+
+Finally we define what is meant by the _range_ of a function.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f \colon A \to B$ be a function. The [range]{.definition} of the function is the collection of all elements in the codomain which are mapped to by the some element in the domain. This is simply $f(A)$.
+:::
+
+## Properties
+
+The most important properties of a function depend on if they said function is _injective_ or _surjective_.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon A \to B$ is [injective]{.definition} if for all $a,a^\prime \in A$
+
+$$
+f(a) = f(a^\prime) \implies a = a^\prime.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon A \to B$ is [surjective]{.definition} if
+
+$$
+b \in B \implies \exists a \in A \text{ such that } f(a) = b.
+$$
+:::
+
+And the most appealing type of function,
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon A \to B$ is [bijection]{.definition} if $f$ is both injective and surjective.
+:::

@@ -367,14 +367,11 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <span class="definition"><strong>sequence</strong></span> is a collection of terms such that each term is indexed by a natural number.</p>
+<p>Let <span class="math inline">A \subseteq \mathbb{N}</span> and <span class="math inline">S</span> be a set.</p>
+<p>If <span class="math inline">f \colon A \to S</span> is a function, then <span class="math inline">f</span> is a <span class="definition">sequence</span>.</p>
 </div>
 </div>
-<p>Sequences may be finite or infinite, and their terms may be numbers or functions. For example, the following is a sequence of Fibbonachi numbers,</p>
-<p><span class="math display">
-\left(1,1,2,3,5,8,13,\dots\right).
-</span></p>
-<p>We can denote each term by its placement, for example <span class="math inline">F_3 = 2</span>, and <span class="math inline">F_7 = 13</span>.</p>
+<p>Sequences may be finite or infinite, and their terms may be numbers or functions.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -385,11 +382,16 @@ Notation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We use <span class="math inline">(a_n)</span> to denote a sequence, and <span class="math inline">a_n</span> without parenthesis to denote the <span class="math inline">n^{th}</span>-term of the sequence.</p>
-<p>We also use the notation <span class="math inline">(a_1,a_2,a_3,\dots)</span> to denote a sequence. All terms are sequential and commas are used to seperate terms.</p>
+<p>Let <span class="math inline">f \colon A \to S</span> be a sequence.</p>
+<p>It is common to choose some letter, usually <span class="math inline">s</span>, to represent the elements of this sequence.</p>
+<p>For each <span class="math inline">k \in A</span>, <span class="math inline">f(k)</span> is denoted <span class="math inline">s_k</span>, and <span class="math inline">f</span> is denoted <span class="math inline">(s_k)_{k\in A}</span>.</p>
 </div>
 </div>
-<p>It is common to formalize sequences through functions, though our intuitive understanding will work just fine for the purposes of analysis.</p>
+<p>For example, the following is a sequence of Fibbonachi numbers,</p>
+<p><span class="math display">
+\left(1,1,2,3,5,8,13,\dots\right).
+</span></p>
+<p>We would denote the sequence <span class="math inline">(F_k)_{k\in \mathbb{N}}</span>, where <span class="math inline">F_1 = 1</span>, <span class="math inline">F_2 = 1</span>, <span class="math inline">F_3 = 2</span>, ect.</p>
 
 
 

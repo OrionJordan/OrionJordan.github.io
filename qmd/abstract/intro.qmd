@@ -11,5 +11,7 @@ Like algebra but more abstract ig idk
 ## Table of Contents
 
 - Pre-requisites
+-- Functions
+-- Relations
 - Groups
-- 
+-- Binary operations

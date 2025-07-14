@@ -1,0 +1,89 @@
+---
+title: "Open sets of Real Numbers"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We start our study of topology by looking at real analysis, and seeing what motivates our definitions in topology.
+
+## Motivation
+
+Much of the study of point-set topology is motivated by abstracting ideas from Real Analysis. In particular, we get our definition of a 'topology' from studying open intervals in $\mathbb{R}$.
+
+::: {.callout-note icon="false"}
+## Definition
+
+When $a,b \in \mathbb{R}$, and $a < b$, we use the following notations for intervals
+
+An [open interval]{.definition} is defined 
+
+$$
+(a,b) = \{x \in \mathbb{R} \mid a < x < b\}
+$$
+
+A [half open interval]{.definition} is defined as either 
+$$
+(a,b] = \{x \in \mathbb{R} \mid a < x \leq b\}\\
+[a,b) = \{x \in \mathbb{R} \mid a \leq x < b\}
+$$
+
+And a [closed interval]{.definition} is defined
+
+$$
+[a,b] = \{x \in \mathbb{R} \mid a \leq x \leq b\}
+$$
+:::
+
+Open intervals don't contain their endpoints, which leads to interesting properties.
+
+::: {.callout-note icon="false"}
+## Claim
+
+Let $x$ be some point in the open interval $(a,b)$. There there exists some $\delta > 0$ such that $(x - \delta, x + \delta) \subset (a,b)$. 
+:::
+
+This means for each point $x$ in the interval $(a,b)$, you can construct an interval around $x$ that is completely contained in $(a,b)$.
+
+TO-DO: Diagram
+
+::: {.callout-note icon="false" collapse="true"}
+## Proof
+
+Let $x$ be some point in the open interval $(a,b)$. Then define delta to be half of the minimum distance from $x$ to the endpoints of the interval;
+
+$$
+\delta = \frac{\min\{|a-x|,|b-x|\}}{2}.
+$$
+
+Then one can clearly see $x + \delta < a$, and $x - \delta > b$. Thus $(x - \delta,x+\delta) \subset (a,b)$.
+:::
+
+## Open sets
+
+This property of open intervals is much more important than it looks, and it can be applied to other types of sets.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $U$ be a set, and $x \in U$. Then $x$ is an [interior point]{.definition} of $S$ if there exists some $\delta > 0$ such that $(x - \delta, x + \delta) \subset U$.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $[0,4]$ be an interval. Then $2$ is an interior point of $[0,4]$. We cab check this by letting $\delta$ equal $1$. Then
+
+$$
+(2 - 1, 2 + 1) = (1,3) \subset [0,4]
+$$
+:::
+
+With this definition, we can abstract our previous property of open intervals to other sets. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $U$ is [open]{.definition} if every point $x \in U$ is an interior point.
+:::

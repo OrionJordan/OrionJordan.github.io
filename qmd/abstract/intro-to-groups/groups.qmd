@@ -9,18 +9,20 @@ format:
 ::: {.callout-note icon="false"}
 ## Definition
 
-A [**group**]{.definition} is an ordered pair $(G,\star)$ where $G$ is a set and $\star$ is an associative binary relation on that set, such that
+A [**group**]{.definition} is an ordered pair $(G,\star)$ where $G$ is a set and $\star$ is a binary relation on that set, such that
+
+- The binary relation $\star$ is associative.
 
 -   There exists an element $e$ in $G$ known as the [**identity**]{.definition} such that for all $a \in G$,
 
 $$
-a \star e = e \star a = a
+a \star e = e \star a = a.
 $$
 
 -   For each $a \in G$, there exists an element $a^{-1} \in G$ called the [**inverse**]{.definition} of $a$, such that
 
 $$
-a \star a^{-1} = a^{-1} \star a = e
+a \star a^{-1} = a^{-1} \star a = e.
 $$
 :::
 
