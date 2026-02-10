@@ -1,0 +1,128 @@
+---
+title: "Compactness"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Insert paragraph about the importance of compactness
+
+## Sequential Compactness
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $K \subseteq \mathbb{R}$ is [sequentially compact]{.definition} if every sequence in $K$ has a convergent subsequence whose limit belongs to $K$.
+:::
+
+To show a set isn't sequentially compact, we just have to find a single sequence that doesn't admit any convergent subsequence.
+
+::: {.callout-warning icon="false"}
+## Example 
+
+The open interval $I = (0,1)$ is not sequentially compact as the sequence $(1/n)_{n \in \mathbb{N}}$ converges to $0$, so every subsequence converges to $0 \not\in I$, therefore $I$ is not sequentially compact.   
+:::
+
+It should be clear.
+
+::: {.callout-warning icon="false"}
+## Theorem (Bolzano-Weierstrass) 
+
+A susbet of $\mathbb{R}$ is sequentially compact if it is closed and bounded. 
+:::
+
+## Topological Compactness
+
+We said in the beginning that every topological property could be stated in terms of open sets. Topological compactness may at first seem completely different, but they are in fact the same property.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subset \mathbb{R}$. A [cover]{.definition} of $A$ is any collection of sets $\{A_i \subset \mathbb{R}\mid i \in I\}$ whose union contains $A$,
+
+$$
+A \subseteq\bigcup_{i\in I} A_i.
+$$
+:::
+
+So a cover of a set $A$ is just a collection of sets which, as the name implies, 'cover' $A$. Very similarly
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subset \mathbb{R}$. An [open cover]{.definition} of $A$ is a cover $\{A_i \subset \mathbb{R}\mid i \in I\}$ such that $A_i$ is open for every $i \in I$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subset \mathbb{R}$, and let $C = \{A_i \subset \mathbb{R}\mid i \in I\}$ be a cover of $A$. A [subcover]{.definition} of $C$ is a sub-collection $S \subset C$ such that 
+
+$$
+S = \{A_j \in C \mid j \in I\}
+$$
+
+is a cover of $A$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subset \mathbb{R}$, and let $C$ be a cover of $A$. A subcover $S$ of $C$ is a [finite subcover]{.definition} if it consist of a finite amount of elements.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subset \mathbb{R}$. Then $A$ is [compact]{.definition} if every open cover of $A$ has a finite subcover.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Heine-Borel)
+
+A subset of $\mathbb{R}$ is compact if and only if it is closed and bounded.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\Rightarrow$) 
+
+($\Leftarrow$) We now must prove that any compact set $S \subset \mathbb{R}$ is closed and bounded.
+
+Let $A_i = (-i,i)$. Then 
+$$
+\bigcup_{i \in \mathbb{N}} A_i = \mathbb{R}.
+$$
+
+So $\{A_i \mid i \in \mathbb{N}\}$ is an open cover of $S$. Since $S$ is compact, there exists a finite subcover $\{A_{i_1},A_{i_2},\dots,A_{i_n}\}$. Let $N = \max\{i_1,i_2,\dots,i_n\}$. Then
+
+$$
+S \subseteq \bigcup_{k = 1}^n A_{i_k} = (-N,N),
+$$
+
+so $S$ is bounded. 
+
+To prove $S$ is closed, we need to show $S^C$ is open. Recall this means to prove that there exists an open interval around each point in $S^C$. We will accomplish this by choosing a point $p \in S^C$, and constructing a cover of $S$ that doesn't include $p$. We will then use the fact $S$ is compact to prove the existence of an interval around $p$ completely outside of $S$.
+
+Suppose $p \in S^C$. Then for each $i \in \mathbb{N}$ let
+$$
+A_i = \left(-\infty,x-\frac{1}{i}\right) \cup \left(x + \frac{1}{i},\infty\right).
+$$
+
+Then the collection $\{A_i \mid i \in \mathbb{N}\}$ is a cover of $S$ since
+
+$$
+\bigcup_{i \in \mathbb{N}} A_i = (-\infty,p) \cup (p,\infty) = \mathbb{R} \backslash p.
+$$
+
+Since $S$ is compact, there exists a finite subcover $\{A_{i_1},A_{i_2},\dots,A_{i_n}\}$. Let $N = \max\{i_1,i_2,\dots,i_n\}$. Then
+
+$$
+S \subset \bigcup_{k=1}^n A_{i_k} = \left(-\infty,p-\frac{1}{N}\right) \cup \left(p + \frac{1}{N},\infty\right).
+$$
+
+This is very important, as it implies $(p - 1/N,p + 1/N) \subset S^C$. Since our choice of $p$ was arbitrary, $S^C$ is open, meaning $S$ is closed.
+:::
+

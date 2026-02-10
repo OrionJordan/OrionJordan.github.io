@@ -1,0 +1,147 @@
+---
+title: "Closed sets"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The opposite of an open set, as one may have guessed, is a closed set. However these properties are not mutually exclusive.
+
+## Definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S \subseteq \mathbb{R}$ is [closed]{.definition} if its compliment $S^C = \{p \in \mathbb{R} \mid p \not \in S\}$ is open.
+:::
+
+Lets use our same example from the last page.
+
+::: {.callout-warning icon="false" collapse="true"}
+## Example
+
+Let $A = (0,1)$ and $B = [0,1]$. We have that $A^C = (-\infty,0]$ and ${B^C = (-\infty,0) \cup (1,\infty)}$. 
+
+It is clear to see that $A$ is not a closed set, as it's compliment $A^C$ is not open.
+
+We do see however, that $B$ is a closed set. This is because $B^C$ is the union of two open sets, which is of course open by Theorem 2.1.  
+:::
+
+We can now prove some important sets are closed. Do note that both $\mathbb{R}$ and $\varnothing$ are both closed and open as these properties are not mutually exclusive. Sets that are both open and closed are sometimes called [clopen]{.definition}.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+The set of real numbers $\mathbb{R}$ is closed.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+The compliment of $\mathbb{R}$, $\{p \in \mathbb{R} \mid p \not \in \mathbb{R}\}$ is the empty set $\varnothing$ which is open by Theorem [num]. Thus $\mathbb{R}$ is closed.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2
+
+The empty set $\varnothing$ is closed.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+The compliment of $\varnothing$, $\{p \in \mathbb{R} \mid p \not \in \varnothing\}$ is the set of all real numbers $\mathbb{R}$ which is open by Theorem [num]. Thus $\varnothing$ is closed.
+:::
+
+These sets are the only sets in $\mathbb{R}$ that are both open and closed, a fact we will later prove.
+
+::: {.callout-note icon="false"}
+## Theorem 1.3
+
+Let $a,b \in \mathbb{R}$. Then $[a,b]$ is closed.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+The compliment of $[a,b]$ is $(-\infty,a) \cup (b,\infty)$. Both of these sets are open, and the union of two open intervals is open, so $[a,b]$ is closed.
+:::
+
+## Union and Intersection of Closed Sets
+
+Similar to open sets, we can preserve the property of being closed with unions and intersections. The main two properties are
+
+- Any finite union of closed sets is closed
+
+- Any arbitrary intersection of closed sets is closed.
+
+Notice the switch in the terms 'arbitrary' and 'finite' as compared to the similar properties of closed sets.
+
+::: {.callout-note icon="false"}
+## Theorem 2.1
+
+Let $\{A_i \subset \mathbb{R} \mid i \in I\}$ be closed sets for any finite index set $I$. Then $\bigcup_{i \in I} A_i$ is open.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Since $\{A_i \subset \mathbb{R} \mid i \in I\}$ are closed, each $A_i^C$ is open. We use De Morgan's laws to state
+
+$$
+\left(\bigcup_{i\in I} A_i\right)^{C} = \bigcap_{i\in I}A^C_i.
+$$
+
+The intersection of finite many open sets is open by Theorem [num], thus $\cup_{i\in I} A_i$ is closed.
+
+:::
+
+::: {#nte-theo .callout-note icon="false"}
+## Theorem 2.2
+
+Let $\{A_i \subset \mathbb{R} \mid i \in I\}$ be open sets for a finite index set $I$. Then $\bigcap_{i \in I} A_i$ is open.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Since $\{A_i \subset \mathbb{R} \mid i \in I\}$ are closed, each $A_i^C$ is open. Similar to the last proof, we use De Morgan's laws to state
+
+$$
+\left(\bigcup_{i\in I} A_i\right)^{C} = \bigcap_{i\in I}A^C_i.
+$$
+
+:::
+
+The union of arbitrarily many closed sets may not be closed, as shown below.
+
+::: {.callout-warning icon="false"}
+## Example 
+
+To see an example of why an infinite intersection of open sets may not be open, let take $p$ to be any singleton in $(a,b)$ (A singleton being a set containing only one element). 
+
+The set $p$ is closed, as it's compliment consist of $(-\infty,p) \cup (p,\infty)$. But the union of all $\bigcup p$ is $(a,b)$, which is not closed as it's compliment is not open. 
+
+:::
+## TODO
+
+-   Content
+-   Add home page, intro to self, contact
+-   Custom ink-scape svg
+-   Add images, dark mode priority
+-   Roadmap
+---------
+
+### Real
+
+- Axiomatize
+- History of analysis
+- Basic Topology
+
+### Complex
+
+- Make like real

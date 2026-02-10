@@ -1,0 +1,117 @@
+---
+title: "Finite Sets"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Cardinality is a way of measuring the 'size' of sets. Before we have a precise notion of cardinality, we start by defining what it means for two sets to be of the same size.
+
+## Definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [equinumerous]{.definition} to a set $B$ (written $A \approx B$) if there exists a bijection $f\colon A \to B$.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+The sets $A = \{1,2,3\}$ and $B =\{2,4,6\}$ are equinumerous. We can prove this by constructing a bijective function $f \colon A \to B$. The function
+
+$$
+f = \{(1,2),(2,4),(3,6)\}
+$$
+
+is clearly a bijection between $A$ and $B$, and therefore we write ${A \approx B.}$
+:::
+
+Its clear that finite sets are equinumerous if they have the same number of elements. In fact, we will use equinumerosity to formally define what it means to be a finite set later. When sets are infinite however, equinumerousity may test our intuition.
+
+::: {.callout-warning icon="false"}
+## Example
+
+The set of natural numbers $\mathbb{N} = \{1,2,\dots\}$ and the set of even numbers $E =\{2,4,6,\dots\}$ are equinumerous. The function $f\colon \mathbb{N} \to E$ where
+
+$$
+f(x) = 2x
+$$
+
+is clearly a bijection. This shows infinite sets may be equinumerous to proper subsets of themselves, a completely different situation from finite sets.
+:::
+
+## Properties
+
+We will start our list of properties by proving equinumerosity to be reflexive, symmetric, and transitive.
+
+::: {.callout-note icon="false"}
+## Theorem (Reflexivity of Equinumerosity)
+
+For any set $A$, $A \approx A$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Given a set $A$, the identity function $f \colon A \to A$ where $f(x) = x$ is clearly a bijection, and so $A \approx A$. 
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Symmetry of Equinumerosity)
+
+For any sets $A$ and $B$, if $A \approx B$, then $B \approx A$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $A \approx B$, then there exists some bijection $f \colon A \to B$. Since $f$ is a bijection, there exists a bijection $f^{-1} \colon B \to A$, and thus $B \approx A$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Transitivity of Equinumerosity)
+
+For any sets $A$,$B$ and $C$, if $A \approx B$ and $B \approx C$ then $A \approx C$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+We are given that $A \approx B$ and $B \approx C$, so there exists bijections $f \colon A \to B$ and $g \colon B \to C$. Since the composition of two bijective functions is bijective, $g \circ f \colon A \to C$ is a bijection and so $A \approx C$.
+:::
+
+Equinumoristy has the three properties of an equivalence relation, but it cannot be represented as such because it concerns all sets. 
+
+::: {.callout-note icon="false"}
+## Theorem
+
+No set is equinumerous to it's powerset. 
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $A$ be a set, and let $f \colon A \to \mathcal{P}(A)$ be any function. We want to show that $f$ is not a bijection. We will do so by showing that $f$ is not surjective.
+
+Let $B = \{x \in A \mid  x \not \in f(x)\}$. Since $B$ is a subset of $A$, $B \in \mathcal{P}(A)$. 
+
+Assume there exists $a \in A$ such that $f(a) = B$. Then we have that $a$ is not in $B$ if and only if $a$ is not in $f(a)$ (since $f(a) = B$). But if $a \not \in f(a)$, then $a \in D$, so $a$ is in $D$ if and only if $a$ is not in $D$, a contradiction!
+
+Then for each $x \in A$, $f(x) \not = B$, and thus $f$ is not surjective and not bijective. Since $A$ and $f$ were arbitrary, no set is equinumeruous to its powerset.
+:::
+
+This theorem allows us to always construct a 'larger' set from some initial one. 
+
+## Finite sets
+
+You are surely familiar with what it means for a set to be finite, but we have yet to give a formal definition.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set is [finite]{.definition} if it is eqinumerous to some natural number. Otherwise it is [infinite]{.definition}.
+:::
+
+

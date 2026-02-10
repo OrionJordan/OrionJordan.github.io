@@ -1,0 +1,116 @@
+---
+title: "Natural Numbers"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+When studying natural numbers we could do as we did for sets, and start with some primitive notion of a number and use axioms to define how it behaves. However, with our already developed ideas in set theory we can construct the numbers from sets.
+
+Usually, we define numbers from sets as follows
+
+$$
+0 = \varnothing\\
+1 = \{0\} = \{\varnothing\}\\
+2 = \{0,1\} = \{\varnothing,\{\varnothing\}\}\\
+$$
+
+Let us define this truly.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Given a set $a$, its [successor]{.definition} $a^+$ is given by
+
+$$
+a^+ = a \cup \{a\}.
+$$
+:::
+
+This is all well and good, and we can construct such successors from the axioms of union and pairing. We now give another definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [inductive]{.definition} if $\varnothing \in A$ and the following statement holds
+
+$$
+(\forall a \in A) a^+ \in A
+$$
+:::
+
+It is clear that any inductive set will be infinite, but we have not yet encountered infinite sets. This is where the axiom of infinity comes in.
+
+::: {.callout-important icon="false"}
+## Axiom of Infinity
+
+There exists an inductive set:
+
+$$
+(\exists A)[\varnothing \in A \land (\forall a \in A)a^+ \in A].
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [natural number]{.definition} is a set that belongs to every inductive set.
+
+:::
+
+::: {.callout-note icon="false"}
+## Proposition
+
+There exists a set whose members are exactly the natural numbers.
+
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $A$ be an inductive set, which exists thanks to the axiom of infinity. Then using the separation axiom, we create a set $w$ such that
+
+$$
+x \in w \implies x \text{ in every inductive set}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+$\omega$ is the set of all natural numbers.
+:::
+
+::: {.callout-note icon="false"}
+## Proposition
+
+$\omega$ is inductive, and is a subset of every other inductive set.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [Peano system]{.definition} is an ordered triple $(N,S,e)$ consisting of a set $N$, a function $S \colon N \to N$, and some member $e \in N$ such that
+
+$(i)$ $e \not \in ran(S)$
+
+$(ii)$ $S$ is injective
+
+$(iii)$ Any subset $A$ of $N$ that contains $e$ and is closed under $S$ equals $N$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [transitive]{.definition} if every member of a member of $A$ is also a member of $A$:
+
+$$
+x \in a \in A \implies x \in A.
+$$
+:::
+
+[TO-DO] Non transitive, transitive sets.
+
+
+

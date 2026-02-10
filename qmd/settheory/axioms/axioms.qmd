@@ -6,9 +6,27 @@ format:
     html-math-method: katex
 ---
 
-Below list the axioms of ZFC assuming FOL.
+The ideas we have studied up to now feel very natural, and are all true properties we want set theory to have. We want, however, for set theory to be built on absolute solid foundations with no ambiguity, and thus it is axiomatized in first order logic.
 
-We start with two primitive notions, which cannot be defined. These being an object called a "set" $\{\}$, and a relation called "contains" $\in$.
+The following chapter is devoted to developing all the ideas from the last, with care for the Axioms. The specific axoioms we choose to include develop a system known as $ZFC$. This is not the only way to formalize set theory however, and not even the only set of axioms used to formalize $ZFC$.
+
+The goal of this section is to start with two primitive notions, an object called a _set_, and a relation called _contains_, denoted with $\in$, and build up the usual $9$ axioms of $ZFC$.
+
+## Basic Axioms
+
+Formally we know nothing about what a set is or what the relation _containment_ does. We have our intuitive ideas of course, and need to somehow make explicit all of our assumptions. Lets start with a basic axiom, and see how it fits our intuition.
+
+We may start with the simple axiom
+
+::: {.callout-important icon="false"}
+## Set Existence Axiom
+
+There exist a set:
+
+$$
+\exists A (A = A)
+$$
+:::
 
 ::: {.callout-important icon="false"}
 ## Axiom of Extensionality.
@@ -20,25 +38,6 @@ $$
 $$
 :::
 
-In english, this means for all sets $A,B$, if for all elements $x$ in $A$ if and only if $x$ in $B$, then $A = B$.
-
-We have the following definitions for additional symbols
-
-::: {.callout-note icon="false"}
-## Definition
-
-We denote the following
-
-- $x \not \in y$ if $\lnot(x \in y)$
-
-- $x \subseteq y$ if $\forall z \in x(z \in y)$
-
-- $x \subset y$ if $(x \subseteq y) \land \lnot(x = y)$
-:::
-
-
-## Existence Axioms
-
 The following axioms ensure the existence of many fundamental sets.
 
 ::: {.callout-important icon="false"}
@@ -47,28 +46,71 @@ The following axioms ensure the existence of many fundamental sets.
 There is a set with no members:
 
 $$
-\exists y \forall x, x \not \in y
+\exists A \forall x, x \not \in A
 $$
 :::
+
+::: {.callout-note icon="false"}
+## Proposition
+
+There exists only one set to which no elements belong. Symbollically
+
+$$
+\forall A \forall B [(\forall u(u\not\in A) \land \forall v(v \not\in B)) \implies A = B]
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\varnothing$ be the set with no members. This is called the [empty set]{.definition}.
+:::
+
+Now we know for certain that at least one set exists. The following axioms will allow us to construct more sets from that.
+
+## Existence Axioms
 
 ::: {.callout-important icon="false"}
 ## Pairing Axiom
 
-For any two sets $u$ and $v$, there is a set having as members just $u$ and $v$:
+For any two sets $A$ and $B$, there is a set having as members just $A$ and $B$:
 
 $$
 \forall u \forall v \exists B \forall x (x \in B \iff x = u \lor x = v)
 $$
 :::
 
+This is our first method of constructing a new set from previous sets. 
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $A$ and $B$ be sets. Then the set $\{A,B\}$ exists. Within our current universe of sets we have only shown the existence of $\varnothing$ as a set, but now, through the axiom of pairing, we can create $\{\varnothing,\varnothing\}$ which through the axiom of extension is equivalent too $\{\varnothing\}$.
+
+We can apply this axiom repeatedly to create new sets.
+:::
+
+Next we look at a weak form of the Union Axiom which allows us to union two sets together.
+
 ::: {.callout-important icon="false"}
 ## Union Axiom (weak form)
 
-For any two sets $a$ and $b$, there is a set having whose members are the elements of $a$ or $b$ (or both):
+For any two sets $a$ and $b$, there is a set having whose members are the elements of $a$ or $b$:
 
 $$
 \forall a \forall b \exists B \forall x (x \in B \iff x \in a \lor x \in b)
 $$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+The axiom of pairing allowed us to construct sets with one element, and sets with two elements. Using the axiom of union, we are able to construct sets of any arbitrary length. For example, let $A,B,C$ be sets, then
+
+$$
+\{A\} \cup \{B,C\} = \{A,B,C\}.
+$$
+
 :::
 
 ::: {.callout-important icon="false"}
@@ -81,13 +123,9 @@ $$
 $$
 :::
 
-::: {.callout-note icon="false"}
-## Definition
+Now we can prove some facts
 
-Let $x$ be the set with no members.
 
-We denote $x$ as $\varnothing$, and call it the [empty set]{.definition}.
-:::
 
 ## Number construction
 

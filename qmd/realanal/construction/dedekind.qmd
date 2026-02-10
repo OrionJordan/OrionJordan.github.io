@@ -1,0 +1,99 @@
+---
+title: "Dedekind Construction"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Dedekind published his construction of the reals from subsets of $\mathbb{Q}$ in 1872. The idea behind his construction is to define any real number $r$ as a subset of $\mathbb{Q}$ consisting of every rational number less than $r$.
+
+## Cuts
+
+We begin by forming subsets of $\mathbb{Q}$ known as cuts.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [Dedekind cut]{.definition} of $B$ is some subset $A$ of $B$ such that
+
+$(1)$ $A$ is nonempty, and $A \not = \mathbb{B}$.
+
+$(2)$ If $p \in A$, $q \in \mathbb{B}$ and $q < p$, then $q \in A$.
+
+$(3)$ If $p \in A$, then there exists $r \in A$ such that $p < r$.
+:::
+
+A cut is a subset $A$ of $\mathbb{Q}$ such that if $p \in A$, then $A$ also contains all elements less than $p$. Property $(3)$ simply states that $A$ does not contain a greatest element.
+
+::: {.callout-warning icon="false"}
+## Example
+
+The set $A = \{p \in \mathbb{Q} \mid a^2 < 2 \text{ or } a < 0\}$ is a dedekind cut of $\mathbb{Q}$. We can show $A$ is a cut by showing it satisfies the three properties of dedekind cuts. 
+
+$(1)$ Clearly $A$ satisfies the first property. 
+
+$(2)$ If $p \in A$, $q \in \mathbb{Q}$ and $q < p$, then either $q < 0$ and $q \in A$, or $0 < q < p < 2$ in which case clearly $q^2 < 2$ and $q \in A$.
+
+$(3)$ We must show for any $p \in A$, there exists $r \in A$ such that $p < r$. Choosing 
+
+$$
+r = \frac{2p + 2}{p + 2}
+$$
+
+works, as $p < r$ and $r^2 < 2$.
+
+Thus $A$ is a dedekind cut of $\mathbb{Q}$. It contains every rational less than $\sqrt{2}$.
+:::
+
+Now that we know what cuts are, how can we use them to construct the real numbers?
+
+## Operations
+
+Our goal is to assign each cut with a real number, such that the set of all Dedekind cuts satisfies the real number axioms. In order to do this, we need to define addition, multiplication, and an ordering operation on the set of all Dedekind cuts.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $R$ be the set of all Dedekind cuts of $\mathbb{Q}$. Then if $A,B \in R$ we define the [Dedekind order]{.definition} as
+
+$$
+A \leq_R B \text{ if } A \subset B.
+$$
+
+:::
+
+The ordering of Dedekind cuts is rather straightforward. If $A \leq_R B$, then $B$ contains some element greater than every element of $A$, and thus will correspond to a larger real number. Addition is similarly intuitive.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $R$ be the set of all Dedekind cuts of $\mathbb{Q}$. Then if $A,B \in R$, we define [Dedekind addition]{.definition} as
+
+$$
+A + B = \{p + q \mid p \in A, q \in B\}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $R$ be the set of all dedekind cuts of $\mathbb{Q}$. Then $(R,+)$ satisfies the addition field axioms.
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+We will prove the first four field axioms, as they don't rely on multiplication which we haven't defined yet.
+
+-----
+
+$(F1)$ $R$ is closed under addition.
+
+In order to show $R$ is closed under addition, we must show that $A,B \in R$ implies $A + B \in R$. We will do this by showing it satisfies the three dedekind cut properties.
+
+$(DC1)$ Clearly $A + B$ is nonempty.
+:::
+
+We need to define some ordering on $R$.
+

@@ -1,0 +1,7 @@
+---
+title: "Intervals and neighborhoods"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---

@@ -1,0 +1,242 @@
+---
+title: "Equinumerous Arithmetic"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The goal of this section is to justify cardinal arithmetic. When we assign cardinal sizes to sets, it will be necessary to perform arithmetic on these numbers. 
+
+The following theorem will be used to justify cardinal addition using unions of disjoint sets.
+
+::: {.callout-note icon="false"}
+## Theorem (Equnimerous addition)
+
+Let $A,B,C,D$ be sets such that $A \approx B$ and $C \approx D$. If $A \cap C = \varnothing$ and ${B \cap D = \varnothing}$, then $A \cup C \approx B \cup D$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+By our hypothesis we have bijections $f$ and $g$ such that $A \approx B$ under $f$ and $C \approx D$ under $g$. We also have that $A \cap C = \varnothing$ and $B \cap D = \varnothing$. By (Theorem 93) we know $f \cup g$ is a bijection from $A \cup C$ to $B \cup D$. Thus $A \cup C \approx B \cup D$.
+:::
+
+The next theorem will justify cardinal multiplication using cartesian products.
+
+::: {.callout-note icon="false"}
+## Theorem (Equinumerous Multiplication)
+
+Let $A,B,C,D$ be sets such that $A \approx B$ and $C \approx D$. Then $A \times C \approx B \times D$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+By our hypothesis we have bijections $f$ and $g$ such that $A \approx B$ under $f$ and $C \approx D$ under $g$. We construct a function $h$ such that for $a \in A$ and $c \in C$
+
+$$
+h((a,c)) = (f(a),g(c)).
+$$
+
+To prove $h$ is a bijection, we must show it is injective
+
+$$
+h((a,c)) = h((a^\prime,c^\prime)) \implies (f(a),g(c)) = (f(a^\prime),g(c^\prime)).
+$$
+
+Ordered pairs are only equal if their respective components are equal, so $f(a) = f(a^\prime)$ and $g(c) = g(c^\prime)$. Since both $f$ and $g$ are injective, we have $a = a^\prime$ and $c = c^\prime$.
+
+Next we must show $h$ is surjective. For every $b \in B$ and $d \in D$, there exists $a \in A$ and $c \in C$ such that $f(a) = b$ and $g(c) = d$ since $f$ and $g$ are surjective. Then for all $(b,d) \in B \times D$, there exists $a \in A$ and $c \in C$ such that
+
+$$
+(b,d) = (f(a),g(c)) = h(a,c)
+$$
+
+thus $h$ is surjective. Since $h$ is injective and surjective, it is a bijection. Therefore $A \times C \approx B \times D$.
+:::
+
+We now prove the commutativity and associativity of our equinumerous multiplication.
+
+::: {.callout-note icon="false"}
+## Theorem (Equinumerous Multiplication is Commutative)
+
+Let $A,B$ be sets. Then $A \times B \approx B \times A$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $f$ be a function such that for all $a \in A$ and $b \in B$
+
+$$
+f((a,b)) = (b,a).
+$$
+
+To prove $f$ is injective note
+
+$$
+f((a,b)) = f((a^\prime,b^\prime)) \implies (b,a) = (b^\prime,a^\prime)
+$$
+
+since ordered pairs are only equal when their respective components are equal, we have $a = a^\prime$ and $b = b^\prime$. Given some arbitrary $(b,a) \in B \times A$ we have $(a,b) \in A \times B$ such that $f((a,b)) = (b,a)$. 
+
+Thus $f$ is a bijection, and $A \times B \approx B \times A$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Equinumerous Multiplication is Associative)
+
+Let $A,B,C$ be sets. Then $A \times (B \times C) \approx (A \times B) \times C$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $f$ be a function such that for all $a \in A$, $b \in B$ and $c \in C$
+
+$$
+f((a,(b,c))) = ((a,b),c).
+$$
+
+The amount of parenthesis is labourous. To show $f$ is injective note
+
+$$
+f((a,(b,c))) = f((a^\prime,(b^\prime,c^\prime))) \implies ((a,b),c) = ((a^\prime,b^\prime),c^\prime)
+$$
+
+since ordered pairs are only equal when their respective components are $(a,b) = (a^\prime,b^\prime)$ and $c = c^\prime$. Applying this argument once more to $(a,b) = (a^\prime,b^\prime)$ yields $a = a^\prime$ and $b = b^\prime$. Thus $f$ is injective.
+
+For some arbitrary $((a,b),c) \in (A \times B) \times C$ we have $(a,(b,c)) \in A \times (B \times C)$ such that
+
+$$
+f((a,(b,c))) = ((a,b),c)
+$$
+
+and so $f$ is surjective. Thus $f$ is a bijection we have ${A \times (B \times C) \approx (A \times B) \times C}$.
+:::
+
+The next theorem shows the existence of a multiplicative identity in multiplication. Here any singleton acts as our identity element.
+
+::: {.callout-note icon="false"}
+## Theorem (Equinumerous Multiplication Identity)
+
+Let $A,b$ be sets. Then $A \times \{b\} \approx A$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $f$ be a function such that for all $a \in A$
+
+$$
+f((a,b)) = a.
+$$
+
+The function is trivially a bijection, and thus $A \times \{b\} \approx A$.
+:::
+
+The next theorem proves that given two sets $A,B$ we can construct disjoint sets $C,D$ equinumerous with their counterparts. This allows us to perform arithmetic without fear of overlapping elements. 
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $A,B$ be sets. Then there exists sets $C$ and $D$ such that $A \approx C$ and $B \approx D$, and $C \cap D = \varnothing$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $C = A \times \{\varnothing\}$ and ${D = B \times \{\{\varnothing\}\}}$. Then by the previous theorem $A \approx C$ and $B \approx D$, and clearly $C \cap D = \varnothing$.
+:::
+
+The following theorems will justify cardinal exponentiation using set exponentiation.
+
+::: {.callout-note icon="false"}
+## Theorem (Equinumerous Exponentiation)
+
+Let $A,B,C,D$ be sets. If $A \approx B$ and $C \approx D$, then $A^C \approx B^D$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Recall that $A^C$ is the set of all functions from $C \to A$. By our hypothesis there exists bijections $f,g$ such that $A \approx B$ under $f$ and $C \approx D$ under $g$. Let $h \in A^C$, then
+
+$$
+f \circ h \in B^C
+$$
+
+and
+
+$$
+f \circ h \circ g^{-1} \in B^D.
+$$
+
+Let $f^\prime$ be the function
+$$
+f^\prime(h) = f \circ h \circ g^{-1}
+$$
+
+where $h \in A^C$. We will show this function is a bijection between $A^C$ and $B^D$. $f^\prime$ clearly has $A^C$ as its domain and $B^D$ as its codomain. To show $f$ is injective, let $h,h^\prime \in A^C$. Then
+
+$$
+f^\prime(h) = f^\prime(h^\prime) \implies f \circ h \circ g^{-1} = f \circ h^\prime \circ g^{-1}.
+$$
+
+Since $f$ is injective, $h \circ g^{-1} = h^\prime \circ g^{-1}$. Since $g$ is surjecive we can compose both sides with $g$ to obtain $h = h^\prime$. Thus $h = h^\prime$, and $f^\prime$ is injective. 
+
+To show $f^\prime$ is surjective, let $h^\prime \in B^D$ and choose $h = f^{-1} \circ h^\prime \circ g$. Then
+
+$$
+f(h) = f \circ (f^{-1} \circ h^\prime \circ g) \circ g^{-1} = h^\prime.
+$$
+
+Thus $f$ is a bijection, and $A^C \approx B^D$.
+:::
+
+The following theorems will justify various properties of cardinal exponentiation.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C$ be sets. If $B \cap C = \varnothing$ then $A^{B \cup C} \approx A^B \times A^C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (To-Do)
+
+Let $h \in A^{B \cup C}$ and $f$ be the function
+
+$$
+f(h) = ()
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C$ be sets. $(A \times B)^C \approx A^C \times B^C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (To-Do)
+
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C$ be sets. $(A^B)^C \approx A^{B \times C}$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (To-Do)
+
+
+
+:::

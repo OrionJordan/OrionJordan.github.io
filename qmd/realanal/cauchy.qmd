@@ -1,0 +1,41 @@
+---
+title: "Cauchy formula for repeated integration"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Integration has an interesting property where given some continuous function $f(x)$, we can 'compress' $n$ many antiderivatives of $f$ into a single integral. This property was discovered by Cauchy in 1823.
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchy formula for repeated integration)
+
+Let $f$ be a continuous function on the real line. Then any iterative integral of $f$ can be expressed
+
+$$
+\int_a^x \cdots \int_a^{x_3} \int_a^{x_2} f(x_1) dx_1 \cdots dx_n = \frac{1}{(n-1)!}\int_a^x (x-t)^{n-1}f(t)dt
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+The proof is given by induction. Let $n=1$ be the base case. Then
+
+\begin{align*}
+\int_a^x f(x) dx &= \frac{1}{1}\int_a^x (x-t)^0f(t)dt\\
+&= \int_a^x f(t) dt
+\end{align*}
+
+So the base case is clearly true. Assuming this is true for $n$, we must prove the $n+1$ case. Using the Leibniz integral rule, note
+
+$$
+\frac{d}{dx} \left[ \frac{1}{n!} \int_a^x (x-t)^n f(t) dt \right] = \frac{1}{(n-1)!} \int_a^x (x-t)^{n-1} f(t) dt.
+$$
+
+
+
+:::
+
+

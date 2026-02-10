@@ -1,0 +1,1090 @@
+---
+title: "Exponents"
+format:
+  html:
+    html-math-method: katex
+---
+
+## Exponential function
+
+We sometimes write
+
+$$
+\exp(z) = e^z = \sum_{n=0}^\infty \frac{z^n}{n!}
+$$
+
+to show that $e^z$ is a function of $z$. This series converges everywhere (by the ratio test).
+
+We can prove Eulers formula.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $exp(z)$ be the exponential function. Then
+
+- $\frac{d}{dz}\exp(z) = \exp(z)$
+
+- $\exp(z_1 + z_2) = \exp(z_1)\exp(z_2)$.
+:::
+
+Say we want to find the inverse function of $\exp$. We have the problem that $\exp$ is not injetive. In fact, for every $w$ in $\exp(z) = w$, there are infinetly many $z$ to make it true.
+
+## Complex Logarithm
+
+We will call the inverse function $\log$. We say
+
+$$
+\log(z) = w \iff z = \exp(w).
+$$
+
+If we write $z = re^{i\theta}$ and $w = x  +yi$, then we see
+
+$$
+\log(z) = w \iff re^{i\theta} = e^{x + yi}.
+$$
+
+Thus $r = e^x$ and $y \in \arg(z)$. So $x = \ln r$, and $y \in \arg(z)$. So
+
+$$
+\log(z) = \ln z + i\arg(z).
+$$
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [principle branch of the logarithm]{.definition} is given by
+
+$$
+\text{Log}(z) = \ln |z| + i\arg(z).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+- $\log(z_1z_2) = \log(z_1) + \log(z_2)$
+
+- $\log(1/z) = -\log(z)$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($b$) Recall $\arg(1/z) = -\arg(z)$. Then we have 
+
+\begin{align*}
+\log(1/z) &= \ln(|1/z|) + \arg(1/z)i\\
+&= 
+\end{align*}
+:::
+
+Things aren't always as easy as you want them to be. - Professor Griffen.
+
+The principle value $\text{Log}(z)$ does not have these properties as it is bounded. But when does it?
+
+::: {.callout-note icon="false"}
+## Theorem
+
+- $\text{Log}(z_1z_2) = \text{Log}(z_1) + \text{Log}(z_2)$ when
+
+$$
+-\pi < \text{Arg}(z_1) + \text{Arg}(z_2) \leq \pi
+$$
+
+- $\log(1/z) = -\log(z)$
+:::
+
+We can create other branches of $\log$ with $\log_\alpha(z)$ in the strip $\alpha < \theta \leq \alpha + 2\pi$.
+
+So $\log_{-\pi}(z) = \text{Log}(z)$. To calculate another branch
+
+::: {.callout-warning icon="false"}
+## Example
+
+
+:::
+
+## Complex exponents
+
+We can give meaning to statements like $i^{2+3i}$.
+
+The principle branch of $z^c$ is 
+
+$$
+f(z) = \exp(c\text{Log}(z)).
+$$
+
+::: {.callout-warning icon="false"}
+## Example
+
+Take for example $(1+i)^i$, we get
+
+$$
+\ln(\sqrt{2}) + i(\pi/4 + 2\pi n).
+$$
+
+which gives
+
+$$
+e^{-\pi/4 + 2\pi n}(\cos\ln\sqrt{2} + i\sin\ln\sqrt{2})
+$$
+
+with a principle value
+$$
+e^{-\pi/4}(\cos\ln\sqrt{2} + i\sin\ln\sqrt{2}).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+These properties hold.
+
+- $z^{-c} = \frac{1}{z^c}$
+
+- $\frac{z^c}{z^d} = z^{c-d}$
+
+- $z^cz^d = z^{c+d}$
+
+- $(z^c)^n = z^{nc}$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Proofs for each statement
+
+--------
+
+$(a)$ Note that $\exp(-w) = \frac{1}{\exp(w)}$. Then
+
+$$
+z^{-c} = \exp((-c)\log)
+$$
+
+---------
+
+$(b)$ Note since $\exp(w+z) = \exp(w)\exp(z)$, we have
+
+\begin{align*}
+z^{c+d} &= \exp((c+d)\log{z})\\
+&= \exp(c\log{z}) + \exp(d\log{z})\\
+&= z^c + z^d.
+\end{align*}
+
+----------
+
+$(c)$ Since $\exp(w)^n = \exp(nw)$ for $n$ being an integer, we have
+
+$$
+(z^{c})^n = \exp^n((c)\log{z})\\
+= \exp(nc\log(z))\\
+= z^{cn}
+$$
+:::
+
+::: {.callout-important icon="false"}
+## Warning
+
+For complex numbers, $(z^w)^v \not = (z^{wv})$ for some values.
+
+$$
+(i^2)^i = \exp(i\log(-1)) = \exp(i(i(\pi + 2\pi n)))
+$$
+
+But
+
+$$
+i^{2i} = \exp(-(\pi + 4\pi n))
+$$
+
+:::
+
+## Trig and hyperbolic functions
+
+Define
+
+::: {.callout-note icon="false"}
+## Definition
+
+The complex sine and cosine functions
+
+$$
+\sin(z) = \sum^\infty_{n=0} \frac{(-1)^nz^{2n+1}}{(2n+1)!}
+$$
+
+$$
+\cos(z) = \sum^\infty_{n=0} \frac{(-1)^nz^{2n}}{(2n)!}
+$$
+:::
+
+These functions are both entire. [TO-DO] proof. Do the same derivative rules apply?
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The derivative rules hold. That is
+
+- $\frac{d}{dz}\cos(z) = -\sin (z)$
+
+- $\frac{d}{dz} \sin(z) = \cos(z)$
+:::
+
+Properties
+
+::: {.callout-note icon="false"}
+## Theorem
+
+- $\cos(-z) = \cos(z)$
+
+- $\sin(-z) = - \sin(z)$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+We have $e^{iz} = \cos z + i \sin z$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+We have
+
+$$
+\cos z = \frac{e^{iz} + e^{-iz}}{2}
+$$
+
+$$
+\sin z = \frac{e^{iz} - e^{-iz}}{2}
+$$
+:::
+
+## Complex integration
+
+Let $f(z)$ be a complex function, then there exists a $f(z) = u(x) + iv(x)$. So
+
+::: {.callout-note icon="false"}
+## Definition
+
+For a complex function $f(z)$ we have
+
+$$
+\int f(z) = \int u(x) + i \int v(x)
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+For $f(z) = (t + i)^2$ we have
+
+\begin{align*}
+\int_0^1 (t - i)^2 dt &= \left[\frac{1}{3}(t+i)^3\right] 
+\end{align*}
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+For $f(z) = e^t\cos(t)$, let $u = e^t$ and $v = \cos(t)$. Then
+
+\begin{align*}
+\int_0^{\pi/2} e^t\cos(t)\, dt &= \frac{e^{\pi/2 - 1}}{2}
+\end{align*}
+:::
+
+Recall $e^{it} = \cos t + i \sin t$. Then
+
+$$
+e^{t+it} = e^t\cos t + i e^t \sin t
+$$
+
+We use eulers method and then separate into both real and complex parts.
+
+Recall from lecture $7$ that a parameterized curve in the complex plane is
+
+$$
+C \colon z(t) = x(t) + i y(t)
+$$
+
+for some continuous real valued functions. We say $z(t)$ is differentiable if both $x(t)$ and $y(t)$ are. 
+
+We will integrate complex functions over [contours]{.definition}, unions of smooth curves.
+
+In order to do Riemann sums, we split our contour into many different intervals and then take a test under each contour. 
+
+$$
+\sum_{i=1}^n f(c_i)(z_i - z_{i-1}) = \sum_{i=1}f(c_i)\Delta z
+$$
+
+Then we can define the integral.
+
+$$
+\int_C f(z) dz = \lim_{n \to \infty} \sum_{i=1}f(c_i)\Delta z
+$$
+
+Then we can do some coolio
+
+\begin{align*}
+\int_C f(z) dz &= \lim_{n \to \infty} \sum_{i=1}f(c_i)\Delta z\\
+&= \int_a^b f(z(t))z^\prime(t) dt
+\end{align*}
+
+::: {.callout-warning icon="false"}
+## Example
+
+For $f(z) = z^2$, and a contour line from $0$ to $3i$ we need to intgerate. Here we choose the parameterization $z(t) = 3ti$ for $0 \leq t \leq 1$. This is clearly a smooth contour. Thus
+
+\begin{align*}
+\int_C f(z) dz &= \int_0^1 (z(t))^2z^\prime(t) dt\\
+&= \int_0^1 (3ti)^2(3i)\\
+&= -9i
+\end{align*}
+
+If we instead parametrize $z(t) = t^2i$ where $0 \leq t \leq \sqrt{3}$. Then $z^\prime(t) = 2ti$.
+
+\begin{align*}
+\int_C f(z) dz &= \int_0^1 (z(t))^2z^\prime(t) dt\\
+&= \int_0^{\sqrt{3}} (t^2i)^2(2ti)\\
+&= -9i
+\end{align*}
+
+:::
+
+## Images of sin and cos
+
+Recall
+
+$$
+\cos z = \frac{e^{iz} + e^{-iz}}{2}
+$$
+
+$$
+\sin z = \frac{e^{iz} - e^{-iz}}{2}
+$$
+
+
+We also have
+
+$$
+\cosh z = \frac{e^{z} + e^{-z}}{2}
+$$
+
+$$
+\sinh z = \frac{e^{z} - e^{-z}}{2}
+$$
+
+::: {.callout-note icon="false"}
+## Theorem
+
+We have the identity
+
+$$
+\sin(x + yi) = \sin(x)\cosh(y) + i \cos(x)\sinh(y).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Find the image of $\{z \colon \Re (z) = 2\}$ under $\sin z$.
+
+Let $w = \sin(z)$ and $z = 2 + yi$. Then
+
+$$
+u + vi = \sin(2 + yi).
+$$
+
+Using our previous theorem
+
+\begin{align*}
+u + vi &= \sin(2 + yi)\\
+&= \sin(2)\cosh(y) + i\cos(2)\sinh(y)
+
+\end{align*}
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Deformation of contours)
+
+Let $C_1,C_2$ be two simple closed positively oriented contours such that
+
+- $C_1$ is in the interioir of $C_2$, and
+
+- $f(z)$ is analytic on some domain $D$ that contains $C_1$ and $C_2$ and the area inbetween.
+
+Then $\int_{C_1} f(z) = \int_{C_2} f(z)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$C_2 = A  +B$, and $C_1 = E + F$. Then
+
+$$
+\int_{C_2} - \int_{C_1} = \int_A f + \int_B f - \int_E f - \int_F f
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 
+
+Let $C$ be a simple closed positively oriented contour containing some point $z_0 \in \mathbb{C}$ in its interioir. Then
+
+
+- $\displaystyle\int_C \frac{1}{z - z_0} dz = 2\pi i$
+
+- $\displaystyle\int_C (z - z_0)^n dz = 0$ for all integers $n \not = -1$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+The function $f(z) = 1/(z - z_0)$ is always analytic except for $z = z_0$, so we can deform the contour to some circle containing $z_0$.
+
+$$
+\int_C \frac{1}{z - z_0} dz = \int_{C^+_r(z_0)}\frac{1}{z - z_0} dz = 2\pi i.
+$$
+
+The function $f(z) = (z- z_0)^n$ is entire for every nonnegative integer $n$, so it is always $0$. When $n$ is negative and not $1$, we choose a paramitization and obtain $0$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Extended Cauchy-Goursat)
+
+Let $C$ and $C_1,\dots,C_k$ be simple closed positively oriented contours such that 
+
+- $C_i$ are all in the interioir of $C$
+
+- The interiors of $C_i$ are all disjoint.
+
+- $f(z)$ is analytic on some domain $D$ that contains all these contours and the region between $C$ and $C_i$.
+
+Then $\int_{C_1} f(z) = \sum_{i=1}^k \int_{C_i} f(z)$.
+:::
+
+## Fundamental Theorems of Integration
+
+So far we have only done definite integrals over contours. Lets expand our purview.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+If $f(z)$ is an analytic function in a simply connected domain $D$, such that $z_0$ is in $D$ and $C$ is any contour in $D$ with an initial point $z_0$ and terminal point $z$, then
+
+- $\displaystyle F(z) = \int_C f(w) dw$
+
+- $F(z)$ is a well defined function of $z$ which is analytic on $D$ such that $F^\prime(z) = f(z)$.
+:::
+
+We will often write $F(z) = \int^z_{z_0} f(w) dw$ to mean that we are free to choose any contour $C$. This integral is called the antiderivative.
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We first need to show that using any two contours will lead us to the same integral. 
+
+Then we must prove that the derivative is equivalent to the function we began with.
+
+$$
+F(z + \Delta z) - F(z) = \int_{C_1} f(w) dw - \int_{C_2} f(w) dw
+$$
+
+Due to continuity, we can keep shrinking $\Delta z$ so that $|\Delta z| > \delta$. Since $|w - z| > \delta$, we have that $|f(w) - f(z)| < \varepsilon$.
+
+So $F^\prime(z) = f(z)$.
+
+:::
+
+If $C$ is a positively oriented curve, then integrating over $|dz|$ gives the length of the curve $C$.
+
+$$
+\int_C |dz| = \text{len } C
+$$
+
+## Bounding integrals
+
+::: {.callout-note icon="false"}
+## Theorem (Bounding integrals)
+
+If $f(z)$ is continuous on a contour $C$ with a maximum of $M$.
+
+\begin{align*}
+\left|\int_C f(z) dz\right| &\leq \int_C |f(z)| |dz|\\
+&\leq M\int_C |dz|\\
+&= M \cdot \text{len } C
+\end{align*}
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Definite integrals)
+
+Let $f$ be analytic in a simply connected domain $D$. If $z_1$ and $z_2$ are points in $D$ joined by a contour $C$, then
+
+$$
+\int_C f(z) dz = \int_{z_1}^{z_2} f(z) dz
+$$
+
+:::
+
+## Cuachys integral formula
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchy integral formula)
+
+Let $f$ be analytic in a simply connected domain $D$, and let $C$ be a simply closed positively oriented contour. If $z_0$ is in the interior of $C$,
+
+$$
+f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z - z_0} dz.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Since $z_0$ is in the interior of your contour, there exists some $r > 0$ such that $C_r(z_0)$ is contained in the interior of $C$. Then
+
+\begin{align*}
+\frac{1}{2\pi i} \int_{C_{r}^+(z_0)} \frac{f(z)}{z - z_0} dz &=\\
+&= \frac{f(z_0)}{2\pi i} \int_{C_{r}^+(z_0)} \frac{1}{z - z_0}dz\\
+&= \frac{f(z_0)}{2\pi i} 2\pi i = f(z_0)
+\end{align*}
+
+It comes down to proving
+
+$$
+\int_{C_{r}^+(z_0)} \frac{f(z)}{z - z_0} dz = \int_{C_{r}^+(z_0)} \frac{f(z_0)}{z - z_0} dz
+$$
+
+Since $f(z)$ is continuous in $D$, for every $\varepsilon > 0$ there exists a $\delta > 0$ such that
+
+$$
+|z - z_0| < \delta \implies |f(z) - f(z_0)| < \varepsilon.
+$$
+
+Then
+
+\begin{align*}
+\left| \int_{C_{\delta/2}^+(z_0)} \frac{f(z)}{z - z_0} dz - \int_{C_{\delta/2}^+(z_0)} \frac{f(z_0)}{z - z_0} dz\right| &=\\
+&= \left| \int_{C_{\delta/2}^+(z_0)} \frac{f(z) - f(z_0)}{z - z_0} dz \right|\\
+&\leq \int_{C_{\delta/2}^+(z_0)} \frac{|f(z) - f(z_0)|}{|z - z_0|} dz\\
+&\leq \frac{\varepsilon}{\delta/2} \int_{C_{\delta/2}^+(z_0)} |dz|\\
+&\leq \frac{\varepsilon}{\delta/2}(2\pi (\delta/2)) = 2\pi\varepsilon 
+\end{align*}
+
+Then the difference of the two integrals is $0$, and thus
+
+$$
+\int_{C_{r}^+(z_0)} \frac{f(z)}{z - z_0} dz = \int_{C_{r}^+(z_0)} \frac{f(z_0)}{z - z_0} dz.
+$$
+
+Divide each side by $2\pi i$ and use deformation of contours to prove
+
+$$
+f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z - z_0} dz.
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Find
+
+$$
+\int_{C_2^+(0)} \frac{e^z}{z - i} dz.
+$$
+
+Here $z_0 = i$ and $f(z) = e^z$. Then by the Cauchy integral theorem
+
+$$
+\int_{C_2^+(0)} \frac{e^z}{z - i} dz = 2\pi e^i.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchy integral formula for nth derivatives)
+
+Let $f$ be analytic in a simply connected domain $D$, and let $C$ be a simply closed positively oriented contour. If $z_0$ is in the interior of $C$, then for any nonnegative integer $n \geq 0$,
+
+$$
+f^(n)(z_0) = \frac{n!}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz.
+$$
+
+:::
+
+## Review
+
+When is a function analytic?
+
+If $f$ is analytic, then the CR equations hold
+
+$$
+u_x = v_Y
+$$
+
+$$
+u_y = - v_x
+$$
+
+A function must be continuous and differentiable.
+
+[Study definitions]
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z,w \in \mathbb{C}$, and $f \colon \mathbb{C} \to \mathbb{C}$ be a function. The [limit]{.definition} of $f$ at $z$ is $w$ if for all $D_\varepsilon(w)$, there exists $D_\delta(z)$ such that $f(D_\delta(z)) \subset D_\varepsilon(w)$.
+
+Equivalently, if $|z - z_0| < \delta$ then $|f(z) - w_0| < \varepsilon$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A complex function is continuous if for all $z \in D$, we have
+
+$$
+\lim_{z \to z_0} = f(z_0).
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z_0 \in \mathbb{C}$, and $f$ be a complex valued function. Then the [derivative]{.definition} of $f$ is defined
+
+$$
+f^\prime(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}
+$$
+
+if limit exists. If $f^\prime(z_0)$ exists, we say $f$ is [differentiable]{.definition} at $z_0$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z_0 \in \mathbb{C}$ a7nd $f$ be a complex valued function. The function $f$ is [holomorphic]{.definition} at a point $z_0$ if it is differentiable at at every point in some neighborhood $D_\varepsilon(z_0)$. 
+:::
+
+A function is harmonic if $u_{xx} + u_{yy} = 0$.
+
+If $f(z) = u + vi$, then both $u$ and $v$ are harmonic.
+
+Given a harmonic function, you can find a harmonic conjugate. 
+
+## Mareras and Liouville's Theorem
+
+
+::: {.callout-note icon="false"}
+## Theorem (Marera's Theorem)
+
+Let $f(z)$ be a continuous function on a simply connected domain $D$, and let
+
+$$
+\int_C f(z) dz = 0
+$$
+
+for all simply closed contours $C$. Then $f(z)$ is an analytic function.
+:::
+
+The idea is that we prove $f$ is analytic starting from a weaker starting condition.
+
+::: {.callout-note icon="false"}
+## Theorem (Gauss's Mean Value Theorem)
+
+Let $f(z)$ be an analytic function on a simply connected domain $D$ containing a circle $C_r(z_0)$, then
+
+$$
+f(z_0) = \frac{1}{2\pi} \int_0^2\pi f(z_0 + re^{it}) dt.
+$$
+:::
+
+The idea is that the value of the function at the center is the 'average' of the function across a circle around $z_0$.
+
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+The Cauchy integral formula implies
+
+$$
+f(z) = \frac{1}{2\pi i} \int_{C_r(z_0)} \frac{f(z_0)}{z - z_0}.
+$$
+
+Then we have
+
+\begin{align*}
+f(z) &= \frac{1}{2\pi i} \int_{C_r(z_0)} \frac{f(z_0)}{z - z_0}\\
+&= \frac{1}{2\pi i} \int^{2\pi}_0 \frac{f(z_0 + re^{it})}{z_0 + re^{it} - z_0} ire^{it} dt\\
+&= \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{it}) dt
+\end{align*}
+
+:::
+
+::: {.callout-note icon="false"}
+## Lemma (Maximum Modulus Principle)
+
+If $f(x,y)$ is continuous on a bounded domain $D$, then $f$ obtains its maximum value of either at a point $m \in D$, or on the boundary of $D$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Local Maximum Modulus Principle)
+
+Let $f(z)$ be analytic on some closed disk $D_R(z_0)$. If $f(z)$ is non-constant, then the maximum of the function is not obtained on the disk.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Local Maximum Modulus Principle)
+
+Assume $\max|f(z)| = |f(z_0)|$. Then $|f(z)| \leq |f(z_0)|$ for all $z = D_R(z_0)$. We will show this forces $f(z)$ to be constant.
+
+By Gauss's Mean Value Theorem, for $0 < r < R$, we have
+
+\begin{align*}
+|f(z_0)| &= \left| \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{it}) dt \right| \\
+&\leq \frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{it} dt)\\
+&\leq \frac{1}{2\pi} \int_0^{2\pi} |f(z_0)| dt\\
+&= |f(z_0)|
+\end{align*}
+
+Then clearly all of our inequalities are equivalent. Thus
+
+$$
+\frac{1}{2\pi} \int_0^{2\pi} f(z_0 + re^{it}) dt = \frac{1}{2\pi} \int_0^{2\pi} |f(z_0)| dt
+$$
+
+Since these integrals must be equivalent, we can subtract to obtain
+
+$$
+\int_0^{2\pi} \left| f(z_0) - f(z_0 + re^{it}) \right| = 0.
+$$
+
+Thus $f(z_0) = f(z_0 + re^{it})$ for all $t$. Then the function must be a constant.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Maximum Modulus Principle)
+
+Let $f(z)$ be analytic and non-constant on some closed disk $D_R(z_0)$. Then $\max |f(z)|$ is not obtained in $D$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Maximum Modulus Principle)
+
+Assume $\max|f(z)| = |f(z_0)|$ where $z_0 = D$. Let $P$ be some path from $z$ to $z_0$. Then $P$ can be covered by finitely many disks $D_0,D_1,\dots,D_m$ containing $z_0,z_1,\dots,z_m$, such that for all $i \leq m$
+
+$$
+z_i \in D_i \cap D_{i-1}.
+$$
+
+By our Local Maximum Modulus Principle, we have that $f(z)$ is constant on $D_0$. Thus $f(z_0) = f(z_1)$. Since $f(z_0)$ is the maximum, we have that $f(z_1)$ is the maximum of $D_1$. Since the function obtains a maximum on $D_1$, we have that the function is constant on $D_1$. We apply this argument $m$ times to obtain that $f(z_0) = f(z)$.
+
+Since $z$ was arbitrary, we have that $f(z)$ is constant, and thus a contradiction.
+:::
+
+Now an example.
+
+::: {.callout-warning icon="false"}
+## Example (Maximum Modulus Principle)
+
+Find the maximum of $|az + b|$ on $D_r(0)$ for $a,b \in \mathbb{C}$ fixed. Let $f(z) = az + b$.
+
+If $a = 0$ then clearly $f(z) = b$, and the maximum of $f(z)$ is $b$.
+
+If $a \not = 0$, and $b = 0$ then $f$ is not constant on $D_r(0)$. Then
+
+$$
+|f(z)| = |za| = |a| \cdot |z| \leq |z| \cdot r.
+$$
+
+If $a \not = 0$, and $b \not = 0$ then the maximum is obtained at the boundary. Let $z = re^{it}$ for $0 \leq t \leq 2pi$.
+
+Then the maximum $|f(z(t))| = |a| \cdot r + |b|$. Is this obtainable? 
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchys Inequality)
+
+Let $f(z)$ be analytic in a simply connected domain $D$ containing the a circle $C_R(z_0)$. If $|f(z)| \leq M$ for all $z \in C_R(z_0)$, then
+
+$$
+\left|f^{(n)}(z_0)\right| \leq \frac{n!M}{R^n}
+$$
+
+for all $0 \leq n$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Cauchys Inequality)
+
+We have from Cauchy's integral formula,
+
+\begin{align*}
+f^{(n)}(z_0) &= \frac{n!}{2\pi i} \int_{C^+_R(z_0)} \frac{f(z)}{(z - z_0)^{n+1}} dz\\
+|f^{(n)}(z_0)| &= \frac{n!}{2\pi i} \left| \int_{C^+_R(z_0)} \frac{f(z)}{(z - z_0)^{n+1}} dz \right|\\
+&\leq \frac{n!}{2\pi} \int_{C^+_R(z_0)} \frac{|f(z)|}{|(z - z_0)^{n+1}|} dz\\
+&\leq \frac{n!}{2\pi} \int_{C^+_R(z_0)} \frac{M}{R^{n+1}} dz\\
+&= \frac{n!M}{R^n}.
+\end{align*}
+
+Thus 
+
+$$
+\left|f^{(n)}(z_0)\right| \leq \frac{n!M}{R^n}.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Liouville's Theorem)
+
+Let $f(z)$ be entire and $|f(z)| \leq M$ for all $z$. Then $f(z)$ is a constant function.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Liouville's Theorem)
+
+Use Cauchy's inequality for $n = 1$. Since $\mathbb{C}$ is a simply connected domain, we have
+
+$$
+|f^\prime(z)| \leq \frac{1!M}{R^1} = \frac{M}{R}
+$$
+
+for arbitrary $R$. Thus $|f^\prime(z)| = 0$, and thus $f^\prime(z) = 0$, which implies $f$ is a constant function.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Fundamental Theorem of Algebra)
+
+If $P(z)$ is a polynomial function of degree $n \geq 1$, then their exists $z_0$ such that $P(z_0) = 0$.
+:::
+
+::: {.callout-note icon="false"}
+## Proof (Fundamental Theorem of Algebra)
+
+Assume $P(z)$ has no root. Let $f(z) = 1/P(z)$. Since $P(z)$ is entire and never zero, we have that $f(z)$ is entire and nonconstant. 
+
+Contradiction.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Little Picard's Theorem)
+
+If $f(z)$ is entire with an image notcontaining at least two points, then $f(z)$ is constant.  
+:::
+
+## Power series
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $f(z)$ is analytic at a point $z = a$, then the [Taylor Series]{.definition} of $f$ centered at $\alpha$ is
+
+$$
+\sum
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Taylors Theorem)
+
+Suppose $f(z)$ is analytic on a domain $D$ and $D_r(\alpha)$ is a disk contained in $D$. Then the Taylor series for $f$ centered at $\alpha$ converges to $f(z)$.
+:::
+
+Convergence and divergence on disks.
+
+::: {.callout-note icon="false"}
+## Example
+
+
+$$
+\frac{1}{z -2} = \frac{(1)}{(z-3) + 1} = \frac{1}{1 -(z - 3)}
+$$
+:::
+
+## Laurent series
+
+If a function $f(z)$ is not analytic at a point $\alpha$, then it wont have a taylor series. However, we may have a trick for this
+
+- $e^z = \sum\frac{1}{n!}z^n$
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [Laurent series]{.definition} is a convergent series
+
+$$
+\sum_{n=-\infty}^\infty c_n(z-a)^n
+$$
+
+where $c_n$ are complex numbers. This may be formally strange, so we express it as
+
+$$
+\sum_{n=1}^\infty c_{-n}(z-a)^{-n} + c_0 + \sum_{n=1}^\infty c_n(z-a)^n
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+An [annulus]{.definition} centered at $z = \alpha$ is
+
+$$
+A(\alpha,r,R) = \{z \mid r < |z-a| < R\}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Laurent's Theorem)
+
+Suppose $f(z)$ is analytic on an annulus $A = A(\alpha,r,R)$. For all $z \in A$, $f(z)$ has a Laurent series expansion
+
+$$
+f(z) = \sum_{n=-\infty}^\infty c_n(z-a)^n
+$$
+
+where for all $r < \rho < R$,
+
+$$
+c_n = \frac{1}{2\pi i} \int_{C_\rho^+(\alpha)} \frac{}{}dz
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Uniqueness of Laurent's Theorem)
+
+Suppose $f(z)$ is analytic on an annulus $A = A(\alpha,r,R)$ with Laurent series $$. Then 
+
+- If $f(z) = \sum_{n=-\infty}^\infty b_n(z-a)^n$ then $b_n = c_n$ for all $n \in \mathbb{N}$.
+
+- The derivative $f^\prime(z) = \sum_{n=-\infty}^\infty nc_n(z-\alpha)^{n-1}$ for all $z \in A(\alpha,r,R)$.
+:::
+
+::: {.callout-note icon="false"}
+## Example
+
+Find the Laurent series for $\exp(-1/z^2)$ centered at $\alpha = 0$
+:::
+
+Remeber
+
+$$
+\frac{1}{1-z} = -\sum_{n=1}^\infty z^{-n}.
+$$
+
+## Poles and Zeros
+
+::: {.callout-note icon="false"}
+## Corollary
+
+If $f(z)$ has a zero of order $m$ at $\alpha$ and $g(z)$ has a zero of order $n$ at $\alpha$, then $f(z)g(z)$ has a zero of order $m+n$ at $\alpha$.
+:::
+
+::: {.callout-note icon="false"}
+## Corollary
+
+If $f(z)$ has a pole of order $m$ at $\alpha$ and $g(z)$ has a zero of order $n$ at $\alpha$, then
+
+- If $m > n$ then $f(z)g(z)$ has a pole of order $m-n$ at $\alpha$.
+
+- If $m < n$ then $f(z)g(z)$ has a zero of order $n-m$ at $\alpha$.
+
+- If $m = n$ then $f(z)g(z)$ has a removable singularity at $\alpha$.
+:::
+
+## Residue Theorem
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $f(z)$ has a nonremovable singularity at $z_0$, then the coefficient $a_{-1}$ of $(z-z_0)^{-1}$ in the Laurent series is called the [residue]{.definition} of $f$ at $z_0$.
+:::
+
+Remember how to do Laurent series.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [Laurent series]{.definition} is a convergent series
+
+$$
+\sum_{n=-\infty}^\infty c_n(z-a)^n
+$$
+
+where $c_n$ are complex numbers. This may be formally strange, so we express it as
+
+$$
+\sum_{n=1}^\infty c_{-n}(z-a)^{-n} + c_0 + \sum_{n=1}^\infty c_n(z-a)^n
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $C$ be a simple closed contour inside a simply conn3ected domain $D$.
+
+$$
+\int_C f(z) dz = 2 \pi i \sum_{i=1}^n \text{Res}[f,z_0]
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $f$ has a simple pole at $z_0$, then
+
+$$
+\text{Res}[f,z_0] = \lim_{z\to z_0}(z - z_0)f(z)
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $f$ has a pole of order $2$ at $z_0$, then
+
+$$
+\text{Res}[f,z_0] = \lim_{z\to z_0} \frac{d}{dz} (z - z_0)^2f(z)
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $f$ has a pole of order $2$ at $z_0$, then
+
+$$
+\text{Res}[f,z_0] = \lim_{z\to z_0} \frac{d}{dz} (z - z_0)^2f(z)
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $f$ has a pole of order $2$ at $z_0$, then
+
+$$
+\text{Res}[f,z_0] = \frac{1}{(n-1)!}\lim_{z\to z_0} \frac{d^{n-1}}{dz^{n-1}} (z - z_0)^nf(z)
+$$
+:::
+
+## Trig with residues
+
+Given
+
+$$
+\int_0^{2\pi} F(\cos t, \sin t)\,dt
+$$
+

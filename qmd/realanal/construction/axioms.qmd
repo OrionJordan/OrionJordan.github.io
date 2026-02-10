@@ -1,0 +1,26 @@
+---
+title: "Axioms"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+In order to define the real numbers, we need a set of axioms that the real numbers will obey.
+
+## Axiomatic definition
+
+::: {.callout-note icon="false"}
+## Axioms
+
+The real numbers are a set denoted by $\mathbb{R}$, such that the following properties hold
+
+$(R1)$ $\mathbb{R}$ is a field under addition and multiplication.
+
+$(R2)$ $\mathbb{R}$ is totally ordered for some $\leq$.
+
+$(R3)$ Addition and multiplication preserve order.
+
+$(R4)$ Every non-empty subset of $\mathbb{R}$ that is bounded above has a least upper bound. 
+:::
+

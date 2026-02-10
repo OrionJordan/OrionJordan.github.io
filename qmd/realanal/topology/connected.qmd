@@ -1,0 +1,50 @@
+---
+title: "Connected sets"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Insert paragraph about the importance of compactness
+
+## Connected sets
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $S \subset \mathbb{R}$. We say $S$ is [connected]{.definition} if there do not exist disjoint open sets $U,V \subset \mathbb{R}$ such that $S \cap U$ and $S \cap V$ are nonempty and
+
+$$
+S = (S \cap U) \cup (S \cap V).
+$$
+:::
+
+The motivation behind this definition is that a set $A$ space is connected if, and only if, it cannot be divided in two nonempty, open and disjoint subsets.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+A set of real numbers is connected if and only if it is an interval.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\Rightarrow$) We first want to show every connected set is an interval. Let $A \subset \mathbb{R}$ not be an interval. Then there exists $a,b \in A$ and $c \not \in A$ such that $a < c < b$ by the definition of an interval. Then the open sets $U = (-\infty,c)$ and $(c,\infty)$ separate $A$. Thus every set that is not an interval is disconnected, and every connected set is an interval.
+
+($\Leftarrow$) We now want to show every interval is connected. Let $I \in \mathbb{R}$ be an interval. Towards a contradiction say $I$ is disconnected. Then there exist open sets $U,V$ that separate $I$. Choose $a \in I \cap U$ and $b \in I \cap V$. Without loss of generality, take $a < b$. Let
+
+$$
+c = \sup (U \cap [a,b]).
+$$
+
+We will show that $a < c < b$, and that $c \not \in I$, therefore $I$ is not an interval. We start by showing $c$ is between $a$ and $b$.
+
+If there exist $x \in U$ such that $a \leq x < b$, then $[x,x+\varepsilon) \subset U$ for some $\varepsilon > 0$ since $U$ is open. So $x \not = \sup (U \cap [a,b])$ Thus $c \not = a$ and if $a < c < b$, $c \not \in U$.
+
+If there exist $y \in V$ such that $a < y \leq b$, then $(y-\varepsilon,y] \subset V$ for some $\varepsilon > 0$ since $V$ is open. So $(y - \varepsilon,y]$ is disjoint from $U$, meaning $y \not = \sup(U \cup [a,b])$. It follows that $c \not = b$ and $c \not \in U \cap V$. Thus $a < c < b$ and $c \not \in I$, meaning $I$ is not an interval, and thus a contradiction. Thus $I$ is connected.
+:::
+
+So for real numbers, connectedness is the same property as being an interval, which makes it pretty boring. 

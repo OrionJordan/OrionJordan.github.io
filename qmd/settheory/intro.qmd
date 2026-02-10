@@ -2,13 +2,34 @@
 title: "Set Theory"
 format:
   html:
-    toc: true
+    toc: false
     html-math-method: katex
 ---
 
+This section covers set theory, in particular $ZFC$ set theory, and constructs the foundations of mathematics from $8$ axioms. Topics include basic properties of sets, functions and relations, ordinal and cardinal numbers, and ends with the construction of rational and real numbers.
 
 
 ## Table of Contents
 
-- Axioms
-- Sets
+- Introduction
+  - History
+  - Logic
+- Axioms and Operations
+  - Subsets
+  - Powersets
+  - Unions
+  - Intersections
+- Relations and Functions
+- Cardinal Numbers
+  - Equinumerosity
+  - Equinumerosity Arithmetic
+  - Equinumerosity Ordering
+  - Finite Sets
+- Ordinal Numbers
+
+
+
+
+
+
+

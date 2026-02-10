@@ -1,0 +1,392 @@
+---
+title: "Integrals"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+## Real and Imaginary parts
+
+If $f(z)$ be a complex function, then there exists $u(x),v(x)$ such that $f(z) = u(x) + iv(x)$. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f(z)$ be a complex function. There exists $u(x),v(x)$ such that $f(z) = u(x) + iv(x)$. Then
+
+$$
+\int f(z) = \int u(x) + i \int v(x)
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+For $f(z) = (t + i)^2$ we have
+
+\begin{align*}
+\int_0^1 (t - i)^2 dt &= \int_0^1 t^2 -1 dt - \int_0^1 2ti dt
+\end{align*}
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+For $f(z) = e^t\cos(t)$, let $u = e^t$ and $v = \cos(t)$. Then
+
+\begin{align*}
+\int_0^{\pi/2} e^t\cos(t)\, dt &= \frac{e^{\pi/2 - 1}}{2}
+\end{align*}
+:::
+
+
+## Parametrizing contours
+
+Recall $e^{it} = \cos t + i \sin t$. Then
+
+$$
+e^{t+it} = e^t\cos t + i e^t \sin t
+$$
+
+We use eulers method and then separate into both real and complex parts.
+
+Recall from lecture $7$ that a parameterized curve in the complex plane is
+
+$$
+C \colon z(t) = x(t) + i y(t)
+$$
+
+for some continuous real valued functions. We say $z(t)$ is differentiable if both $x(t)$ and $y(t)$ are. 
+
+We will integrate complex functions over [contours]{.definition}, unions of smooth curves.
+
+In order to do Riemann sums, we split our contour into many different intervals and then take a test under each contour. 
+
+$$
+\sum_{i=1}^n f(c_i)(z_i - z_{i-1}) = \sum_{i=1}f(c_i)\Delta z
+$$
+
+Then we can define the integral.
+
+$$
+\int_C f(z) dz = \lim_{n \to \infty} \sum_{i=1}f(c_i)\Delta z
+$$
+
+Then we can do some coolio
+
+\begin{align*}
+\int_C f(z) dz &= \lim_{n \to \infty} \sum_{i=1}f(c_i)\Delta z\\
+&= \int_a^b f(z(t))z^\prime(t) dt
+\end{align*}
+
+::: {.callout-warning icon="false"}
+## Example
+
+For $f(z) = z^2$, and a contour line from $0$ to $3i$ we need to intgerate. Here we choose the parameterization $z(t) = 3ti$ for $0 \leq t \leq 1$. This is clearly a smooth contour. Thus
+
+\begin{align*}
+\int_C f(z) dz &= \int_0^1 (z(t))^2z^\prime(t) dt\\
+&= \int_0^1 (3ti)^2(3i)\\
+&= -9i
+\end{align*}
+
+If we instead parametrize $z(t) = t^2i$ where $0 \leq t \leq \sqrt{3}$. Then $z^\prime(t) = 2ti$.
+
+\begin{align*}
+\int_C f(z) dz &= \int_0^1 (z(t))^2z^\prime(t) dt\\
+&= \int_0^{\sqrt{3}} (t^2i)^2(2ti)\\
+&= -9i
+\end{align*}
+
+:::
+
+## Cauchys Contours
+
+::: {.callout-note icon="false"}
+## Theorem (Deformation of contours)
+
+Let $C$ be a simple closed positively oriented contour, and $f(z)$ be analytic on some simple connected domain $D$ that contains $C$. Then
+
+$$
+\oint_C f(z) = 0
+$$
+
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Deformation of contours)
+
+Let $C_1,C_2$ be two simple closed positively oriented contours such that
+
+- $C_1$ is in the interioir of $C_2$, and
+
+- $f(z)$ is analytic on some domain $D$ that contains $C_1$ and $C_2$ and the area inbetween.
+
+Then $\int_{C_1} f(z) = \int_{C_2} f(z)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$C_2 = A  +B$, and $C_1 = E + F$. Then
+
+$$
+\int_{C_2} - \int_{C_1} = \int_A f + \int_B f - \int_E f - \int_F f
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Corollary 
+
+Let $C$ be a simple closed positively oriented contour containing some point $z_0 \in \mathbb{C}$ in its interioir. Then
+
+
+- $\displaystyle\int_C \frac{1}{z - z_0} dz = 2\pi i$
+
+- $\displaystyle\int_C (z - z_0)^n dz = 0$ for all integers $n \not = -1$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+The function $f(z) = 1/(z - z_0)$ is always analytic except for $z = z_0$, so we can deform the contour to some circle containing $z_0$.
+
+$$
+\int_C \frac{1}{z - z_0} dz = \int_{C^+_r(z_0)}\frac{1}{z - z_0} dz = 2\pi i.
+$$
+
+The function $f(z) = (z- z_0)^n$ is entire for every nonnegative integer $n$, so it is always $0$. When $n$ is negative and not $1$, we choose a paramitization and obtain $0$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Extended Cauchy-Goursat)
+
+Let $C$ and $C_1,\dots,C_k$ be simple closed positively oriented contours such that 
+
+- $C_i$ are all in the interioir of $C$
+
+- The interiors of $C_i$ are all disjoint.
+
+- $f(z)$ is analytic on some domain $D$ that contains all these contours and the region between $C$ and $C_i$.
+
+Then $\int_{C_1} f(z) = \sum_{i=1}^k \int_{C_i} f(z)$.
+:::
+
+## Fundamental Theorems of Integration
+
+So far we have only done definite integrals over contours. Lets expand our purview.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+If $f(z)$ is an analytic function in a simply connected domain $D$, such that $z_0$ is in $D$ and $C$ is any contour in $D$ with an initial point $z_0$ and terminal point $z$, then
+
+- $\displaystyle F(z) = \int_C f(w) dw$
+
+- $F(z)$ is a well defined function of $z$ which is analytic on $D$ such that $F^\prime(z) = f(z)$.
+:::
+
+We will often write $F(z) = \int^z_{z_0} f(w) dw$ to mean that we are free to choose any contour $C$. This integral is called the antiderivative.
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We first need to show that using any two contours will lead us to the same integral. 
+
+Then we must prove that the derivative is equivalent to the function we began with.
+
+$$
+F(z + \Delta z) - F(z) = \int_{C_1} f(w) dw - \int_{C_2} f(w) dw
+$$
+
+Due to continuity, we can keep shrinking $\Delta z$ so that $|\Delta z| > \delta$. Since $|w - z| > \delta$, we have that $|f(w) - f(z)| < \varepsilon$.
+
+So $F^\prime(z) = f(z)$.
+
+:::
+
+If $C$ is a positively oriented curve, then integrating over $|dz|$ gives the length of the curve $C$.
+
+$$
+\int_C |dz| = \text{len } C
+$$
+
+## Bounding integrals
+
+::: {.callout-note icon="false"}
+## Theorem (Bounding integrals)
+
+If $f(z)$ is continuous on a contour $C$ with a maximum of $M$.
+
+\begin{align*}
+\left|\int_C f(z) dz\right| &\leq \int_C |f(z)| |dz|\\
+&\leq M\int_C |dz|\\
+&= M \cdot \text{len } C
+\end{align*}
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Definite integrals)
+
+Let $f$ be analytic in a simply connected domain $D$. If $z_1$ and $z_2$ are points in $D$ joined by a contour $C$, then
+
+$$
+\int_C f(z) dz = \int_{z_1}^{z_2} f(z) dz
+$$
+
+:::
+
+## Cuachys integral formula
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchy integral formula)
+
+Let $f$ be analytic in a simply connected domain $D$, and let $C$ be a simply closed positively oriented contour. If $z_0$ is in the interior of $C$,
+
+$$
+f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z - z_0} dz.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Since $z_0$ is in the interior of your contour, there exists some $r > 0$ such that $C_r(z_0)$ is contained in the interior of $C$. Then
+
+\begin{align*}
+\frac{1}{2\pi i} \int_{C_{r}^+(z_0)} \frac{f(z)}{z - z_0} dz &=\\
+&= \frac{f(z_0)}{2\pi i} \int_{C_{r}^+(z_0)} \frac{1}{z - z_0}dz\\
+&= \frac{f(z_0)}{2\pi i} 2\pi i = f(z_0)
+\end{align*}
+
+It comes down to proving
+
+$$
+\int_{C_{r}^+(z_0)} \frac{f(z)}{z - z_0} dz = \int_{C_{r}^+(z_0)} \frac{f(z_0)}{z - z_0} dz
+$$
+
+Since $f(z)$ is continuous in $D$, for every $\varepsilon > 0$ there exists a $\delta > 0$ such that
+
+$$
+|z - z_0| < \delta \implies |f(z) - f(z_0)| < \varepsilon.
+$$
+
+Then
+
+\begin{align*}
+\left| \int_{C_{\delta/2}^+(z_0)} \frac{f(z)}{z - z_0} dz - \int_{C_{\delta/2}^+(z_0)} \frac{f(z_0)}{z - z_0} dz\right| &=\\
+&= \left| \int_{C_{\delta/2}^+(z_0)} \frac{f(z) - f(z_0)}{z - z_0} dz \right|\\
+&\leq \int_{C_{\delta/2}^+(z_0)} \frac{|f(z) - f(z_0)|}{|z - z_0|} dz\\
+&\leq \frac{\varepsilon}{\delta/2} \int_{C_{\delta/2}^+(z_0)} |dz|\\
+&\leq \frac{\varepsilon}{\delta/2}(2\pi (\delta/2)) = 2\pi\varepsilon 
+\end{align*}
+
+Then the difference of the two integrals is $0$, and thus
+
+$$
+\int_{C_{r}^+(z_0)} \frac{f(z)}{z - z_0} dz = \int_{C_{r}^+(z_0)} \frac{f(z_0)}{z - z_0} dz.
+$$
+
+Divide each side by $2\pi i$ and use deformation of contours to prove
+
+$$
+f(z_0) = \frac{1}{2\pi i} \int_C \frac{f(z)}{z - z_0} dz.
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Find
+
+$$
+\int_{C_2^+(0)} \frac{e^z}{z - i} dz.
+$$
+
+Here $z_0 = i$ and $f(z) = e^z$. Then by the Cauchy integral theorem
+
+$$
+\int_{C_2^+(0)} \frac{e^z}{z - i} dz = 2\pi e^i.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Cauchy integral formula for nth derivatives)
+
+Let $f$ be analytic in a simply connected domain $D$, and let $C$ be a simply closed positively oriented contour. If $z_0$ is in the interior of $C$, then for any nonnegative integer $n \geq 0$,
+
+$$
+f^(n)(z_0) = \frac{n!}{2\pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz.
+$$
+
+:::
+
+## Review
+
+When is a function analytic?
+
+If $f$ is analytic, then the CR equations hold
+
+$$
+u_x = v_Y
+$$
+
+$$
+u_y = - v_x
+$$
+
+A function must be continuous and differentiable.
+
+[Study definitions]
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z,w \in \mathbb{C}$, and $f \colon \mathbb{C} \to \mathbb{C}$ be a function. The [limit]{.definition} of $f$ at $z$ is $w$ if for all $D_\varepsilon(w)$, there exists $D_\delta(z)$ such that $f(D_\delta(z)) \subset D_\varepsilon(w)$.
+
+Equivalently, if $|z - z_0| < \delta$ then $|f(z) - w_0| < \varepsilon$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A complex function is continuous if for all $z \in D$, we have
+
+$$
+\lim_{z \to z_0} = f(z_0).
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z_0 \in \mathbb{C}$, and $f$ be a complex valued function. Then the [derivative]{.definition} of $f$ is defined
+
+$$
+f^\prime(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}
+$$
+
+if limit exists. If $f^\prime(z_0)$ exists, we say $f$ is [differentiable]{.definition} at $z_0$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z_0 \in \mathbb{C}$ a7nd $f$ be a complex valued function. The function $f$ is [holomorphic]{.definition} at a point $z_0$ if it is differentiable at at every point in some neighborhood $D_\varepsilon(z_0)$. 
+:::
+
+A function is harmonic if $u_{xx} + u_{yy} = 0$.
+
+If $f(z) = u + vi$, then both $u$ and $v$ are harmonic.
+
+Given a harmonic function, you can find a harmonic conjugate. 
+

@@ -1,0 +1,148 @@
+---
+title: "Axioms and Construction"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+In algebra we learned [Complex numbers]{.definition} exist in the form $z = u + vi$, where $u,v$ are real numbers and $i = \sqrt{-1}$. Complex analysis requires rigorous proof, so we must define exactly what we mean by a complex number.
+
+## Axioms
+
+Complex numbers are not usually stated as axioms; they are instead defined as ordered pairs of real numbers or as a field extension of the reals. These definitions lead to construction-dependent properties without giving a list of explicit axioms.
+
+We want to choose a set of axioms which give all the desired properties of complex numbers shown in the last section. I have listed below a slightly modified version of the axioms found from [MetaMath](https://us.metamath.org/mpeuni/mmcomplex.html), a formal math database.
+
+::: {.callout-important icon="false"}
+## Axioms
+
+The complex numbers are a set denoted by $\mathbb{C}$, such that the following properties hold
+
+$(C1)$ $\mathbb{C}$ is a field.
+
+$(C2)$ $\mathbb{C}$ contains a subfield isomorphic to $\mathbb{R}$. We will call this subfield $\mathbb{R}_C$
+
+$(C3)$ There exists a number $i \in \mathbb{C}$ such that $(i \cdot i) + 1 = 0$.
+
+$(C4)$ For every complex number $z \in \mathbb{C}$, there exist $x,y \in \mathbb{R}_C$ such that $z = x + (y \cdot i)$.
+:::
+
+There are some differences between these axioms and the ones stated by MetaMath, such as the former defining $\mathbb{R}$ as a genuine subset of $\mathbb{C}$. The axioms given above allow us to use our familiar construction of the reals given in real analysis.
+
+Note that while although $\mathbb{R}_C$ and $\mathbb{R}$ are set-theoretically different, they are isomorphic. We will use them interchangly, and occasionally make the false statement
+
+## Construction
+
+Now we must show that we can construct a structrure satisfying these axioms. There are a few equivalent ways to do this, the most common being the use of ordered pairs.
+
+### Ordered pairs
+
+We will use the most common construction of the complex numbers, defining them as ordered pairs of real numbers. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+The set of complex numbers $\mathbb{C}$ is equivalent to the cartesian product $\mathbb{R} \times \mathbb{R}$.
+:::
+
+We also use the following definitions for addition and multiplication
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Addition]{.definition} relation $+_\mathbb{C} \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) +_\mathbb{C} (x_2,y_2) \to (x_1 + x_2, y_1 + y_2).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Multiplication]{.definition} relation $\cdot_\mathbb{C} \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) \cdot_\mathbb{C} (x_2,y_2) \to (x_1x_2 - y_1y_2, x_1y_2 + x_2y_1).
+$$
+:::
+
+We will immeditably abuse notation and denote $+_\mathbb{C}$ as $+$, and $\cdot_\mathbb{C}$ as $\cdot$ (or simply $A \cdot B$ as $AB$). Now to show that this definition satisfies our axioms!
+
+::: {.callout-note icon="false"}
+## Theorem (Axiom C1)
+
+The complex numbers $(\mathbb{C}, +, \cdot)$ form a field. That is
+
+$(F1)$ Addition is closed.
+
+$$
+\forall z,w \in \mathbb{C}, z + w \in \mathbb{C}.
+$$
+
+$(F2)$ Addition is commutative.
+
+$$
+\forall z,w \in \mathbb{C}, z + w = w + z.
+$$
+
+$(F3)$ Addition is associative.
+
+$$
+\forall z,w,t \in \mathbb{C}, (z + w) + t = z + (y + z).
+$$
+
+$(F4)$ There exist an additive identity.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Axiom C1)
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Axiom C2)
+
+The complex numbers contain a subfield $\mathbb{R}_C$ isomorphic to $\mathbb{R}$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Axiom C2)
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Axiom C3)
+
+There exists a number $i \in \mathbb{C}$ such that $(i \cdot i) + 1 = 0$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Axiom C3)
+
+Let $i = (0,1)$. Then from some algebra we obtain
+
+\begin{align*}
+((0,1) \cdot (0,1)) + (1,0) &=\\
+(0 - 1, 0 + 0) + (1,0) &=\\
+(1 - 1,0) = (0,0) &= 0. 
+\end{align*}
+
+Where $1 = (1,0)$ and $0 = (0,0)$ as defined from our field.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Axiom C4)
+
+For every complex number $z \in \mathbb{C}$, there exist $x,y \in \mathbb{R}_C$ such that $z = x + (y \cdot i)$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (Axiom C4)
+
+We know that $\mathbb{R}_C = (a,0)$ where $a \in \mathbb{R}$. Then after algebra we have for all $z \in \mathbb{C}$, exists $x,y \in \mathbb{R}$ such that $z = (x,y)$, which is exactly our definition.
+:::
+
+And just like that, we've shown that ordered pairs are a model for the complex numbers. 

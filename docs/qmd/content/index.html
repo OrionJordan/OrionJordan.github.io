@@ -72,34 +72,6 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-highschool .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-subtitle','listing-links',{ data: ['index'] },{ data: ['categories'] }],
-      
-      searchColumns: ["listing-title","listing-subtitle","listing-links"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-highschool'] = new List('listing-highschool', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  
-
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
     const listingTargetEl = window.document.querySelector('#listing-undergrad .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
@@ -218,46 +190,6 @@ window.Quarto = {
 </header>
 
 
-<section id="highschool" class="level2">
-<h2 data-anchor-id="highschool">Highschool</h2>
-<div id="listing-highschool" class="quarto-listing quarto-listing-container-custom">
-<div class="link-cards">
-<div class="card">
-<div class="card-body">
-<div class="{.}">
-<section id="geometry" class="level4 card-title">
-<h4 data-anchor-id="geometry">Geometry</h4>
-<section id="study-of-euclidean-shapes" class="level6 card-subtitle">
-<h6 data-anchor-id="study-of-euclidean-shapes">Study of Euclidean Shapes</h6>
-</section>
-</section>
-</div>
-<ul>
-<li><a href="">To do</a></li>
-</ul>
-</div>
-</div>
-<div class="card">
-<div class="card-body">
-<div class="{.}">
-<section id="number-theory" class="level4 card-title">
-<h4 data-anchor-id="number-theory">Number Theory</h4>
-<section id="study-of-integers" class="level6 card-subtitle">
-<h6 data-anchor-id="study-of-integers">Study of Integers</h6>
-</section>
-</section>
-</div>
-<ul>
-<li><a href="">To do</a></li>
-</ul>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-</section>
 <section id="undergraduate" class="level2">
 <h2 data-anchor-id="undergraduate">Undergraduate</h2>
 <div id="listing-undergrad" class="quarto-listing quarto-listing-container-custom">
@@ -265,23 +197,21 @@ No matching items
 <div class="card">
 <div class="card-body">
 <div class="realanal">
-<section id="naive-set-theory" class="level4 card-title">
-<h4 data-anchor-id="naive-set-theory">Naive Set Theory</h4>
-<section id="introduction-to-sets" class="level6 card-subtitle">
-<h6 data-anchor-id="introduction-to-sets">Introduction to Sets</h6>
+<section id="set-theory" class="level4 card-title">
+<h4 data-anchor-id="set-theory">Set Theory</h4>
+<section id="sets-and-foundations" class="level6 card-subtitle">
+<h6 data-anchor-id="sets-and-foundations">Sets and Foundations</h6>
 </section>
 </section>
 </div>
 <ul>
-<li><a href="../../qmd/naive/intro.html">Introduction</a></li>
-<li><a href="../naive/fundementals.qmd">Fundamental Concepts</a></li>
-<li><a href="../naive/mathcon.qmd">Mathematical Concepts</a></li>
+<li><a href="../../qmd/settheory/intro.html">Introduction</a></li>
 </ul>
 </div>
 </div>
 <div class="card">
 <div class="card-body">
-<div class="realanal">
+<div class="testink">
 <section id="real-analysis" class="level4 card-title">
 <h4 data-anchor-id="real-analysis">Real Analysis</h4>
 <section id="analysis-of-the-reals" class="level6 card-subtitle">
@@ -296,23 +226,6 @@ No matching items
 <li><a href="../../qmd/realanal/differentiation.html">Differentiation</a></li>
 <li><a href="../../qmd/realanal/integration.html">Integration</a></li>
 <li><a href="../../qmd/realanal/infinite-series.html">Infinite Series</a></li>
-</ul>
-</div>
-</div>
-<div class="card">
-<div class="card-body">
-<div class="abalg">
-<section id="abstract-algebra" class="level4 card-title">
-<h4 data-anchor-id="abstract-algebra">Abstract Algebra</h4>
-<section id="study-of-algebraic-structures" class="level6 card-subtitle">
-<h6 data-anchor-id="study-of-algebraic-structures">Study of Algebraic Structures</h6>
-</section>
-</section>
-</div>
-<ul>
-<li><a href="../../qmd/abstract/intro.html">Introduction</a></li>
-<li><a href="../abstract/prereq/functions.qmd">Prerequisites</a></li>
-<li><a href="../abstract/intro-to-groups/definitions.qmd">Groups</a></li>
 </ul>
 </div>
 </div>

@@ -1,0 +1,118 @@
+---
+title: "Ordered Pairs"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We will very often want to assign an order to our sets. As it stands our current sets are equivalent based solely on the elements contained in them due to the axiom of extension, i.e.
+
+$$
+\{a,b\} = \{b,a\}.
+$$
+
+If in the above example we wanted some way to show that $a$ is the first element, we would need to order our sets. This is where ordered pairs come in. Letting parenthesis denote ordered pairs, we want that two ordered pairs are equivalent
+$$
+(a,b) = (x,y)
+$$
+
+if and only if $a = x$ and $b = y$. This is so we avoid pesky situations where $(a,b) = (b,a)$ and order is lost, with the only exception when $a = b$.
+
+## Definitions
+
+We start with some nonexamples to emphasize the importantance of choosing a definition.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Suppose we define $(a,b)_{\text{non1}} = \{a,b\}$ (where we use 'non1' simply as the name of this definition), then (as shown above) we do not have our desired property, since
+
+$$
+(a,b)_{\text\{non1\}} = (b,a)_{\text{non1}}.
+$$
+
+Lets try to be a little more clever and define $(a,b)_{\text{non2}} = \{a,\{b\}\}$. At first glance this may look to work, but unfortunately
+
+$$
+(\{\varnothing\},\{\varnothing\})_{\text{non2}} = (\{\{\varnothing\}\},\varnothing)_{\text{non2}}.
+$$
+
+In this case the pairs refer to the same set $\{\{\varnothing\},\{\{\varnothing\}\}\}$.
+:::
+
+So we must be a little careful when choosing a definition. We will use the definition given by Kazimierz Kuratowski in 1921
+
+::: {.callout-note icon="false"}
+## Definition
+
+An [ordered pair]{.definition} is denoted
+$$
+\left( a,b \right) = \{\{a\},\{a,b\}\}
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Example
+
+We call this an ordered pair, as there is now a definite first and second element which cannot be rearranged. The ordered pairs
+
+$$
+\langle a,b\rangle \not= \left<b,a\right>
+$$
+
+because their set representations are not equal
+
+$$
+\{\{a\},\{a,b\}\} \not= \{\{b\},\{b,a\}\}
+$$
+:::
+
+Now we prove that this definition works as we expect, and ordered pairs always uniquly determine the order of two elements.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+ $\langle a,b \rangle = \langle x,y \rangle$ if and only if $a = x$ and $b = y$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$(\impliedby)$ We start by proving the reverse implication. If $a = x$ and $b = y$, then by simply replacing variable names, we have
+
+$$
+\{\{a\},\{a,b\}\} = \{\{x\},\{x,y\}\}
+$$
+
+and consequently by our definition of an ordered pair,
+
+$$
+\langle a,b \rangle = \langle x,y \rangle.
+$$
+
+$(\implies)$ For the other direction, we have that $\langle a,b \rangle = \langle x,y \rangle$, meaning
+
+$$
+\{\{a\},\{a,b\}\} = \{\{x\},\{x,y\}\}
+$$
+
+Then by the axiom of extension, we have that
+
+$$
+\{a\} \in  \{\{x\},\{x,y\}\} \quad \text{and} \quad \{a,b\} \in  \{\{x\},\{x,y\}\}.
+$$
+
+Which leaves us with two cases,
+
+$(a)$ $\{a\} = \{x\}$ and $\{a,b\} = \{x,y\}$ 
+
+$(b)$ $\{a\} = \{x,y\}$ and $\{a,b\} = \{x\}$.
+
+In case $(b)$, we have that $a = x = y$ from our first statement, and then that $a = x = b = y$ from our second, so the theorem holds.
+
+In case $(a)$, we have clearly that $a = x$ from our first statement, and from our second we have that either $a = y$ or $b = y$. If $b = y$, we are done. If $a = y$, then we have case $(b)$, in which the theorem also holds.
+:::
+
+

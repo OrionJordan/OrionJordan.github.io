@@ -150,8 +150,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#axiomatic-definition" id="toc-axiomatic-definition" class="nav-link active" data-scroll-target="#axiomatic-definition">Axiomatic definition</a></li>
+  <li><a href="#construction" id="toc-construction" class="nav-link" data-scroll-target="#construction">Construction</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -175,7 +182,9 @@ window.Quarto = {
 </header>
 
 
-<p>Next we introduce a new property of real functions, <em>differentiability</em>.</p>
+<p>Real analysis is the study of the set of Real numbers. We define the real numbers to be a set such that the following properties hold.</p>
+<section id="axiomatic-definition" class="level2">
+<h2 class="anchored" data-anchor-id="axiomatic-definition">Axiomatic definition</h2>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -186,34 +195,21 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">I</span> be any interval on <span class="math inline">\mathbb{R}</span>, and let <span class="math inline">c \in I</span>. We say that <span class="math inline">f \colon I \to \mathbb{R}</span> is <span class="definition"><strong>differentiable</strong></span> at <span class="math inline">c</span> if</p>
-<p><span class="math display">
-\lim_{x \to c} \frac{f(x)-f(c)}{x-c}
-</span></p>
-<p>exists and is finite.</p>
+<p>The real numbers are a set denoted by <span class="math inline">\mathbb{R}</span>, such that the following properties hold</p>
+<p><span class="math inline">(R1)</span> <span class="math inline">\mathbb{R}</span> is a field under addition and multiplication.</p>
+<p><span class="math inline">(R2)</span> <span class="math inline">\mathbb{R}</span> is totally ordered for <span class="math inline">\leq</span>.</p>
+<p><span class="math inline">(R3)</span> Addition and multiplication preserve order.</p>
+<p><span class="math inline">(R4)</span> Every non-empty subset of <span class="math inline">\mathbb{R}</span> that is bounded above has a least upper bound.</p>
 </div>
 </div>
-<p>If <span class="math inline">f</span> is differentiable at every point in a subset <span class="math inline">S \subseteq I</span>, we say that <span class="math inline">f</span> is differentiable on <span class="math inline">S</span>. If <span class="math inline">f</span> has a derivative at <span class="math inline">c</span>, we notate <span class="math inline">f^\prime(c)</span>.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Example
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">f \colon \mathbb{R} \to \mathbb{R}</span> be a constant function. That is <span class="math inline">f(x) = d</span> for some <span class="math inline">d \in \mathbb{R}</span>.</p>
-<p><strong>Claim:</strong> The derivative of <span class="math inline">f</span> is zero at every point <span class="math inline">c \in \mathbb{R}</span>.</p>
-<p>We use out formula for differentiability</p>
-<p><span class="math display">
-f^\prime(c) = \lim_{x \to c} \frac{f(x) - f(c)}{x - c} = \lim_{x \to c} \frac{d - d}{x - c} = 0
-</span></p>
-</div>
-</div>
+<p>This definition is more of a theorem as we have yet to prove that any set, let alone a unique set, satisfy these properties.</p>
+</section>
+<section id="construction" class="level2">
+<h2 class="anchored" data-anchor-id="construction">Construction</h2>
+<p>TO-DO: Dedekind Cut Construction</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

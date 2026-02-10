@@ -59,7 +59,11 @@ as the [Upper sum]{.definition} and [Lower sum]{.definition} respectively.
 
 :::
 
-Because we assume $f$ to be bounded function, there exists a lower and upper bound on the interval $[a,b]$. Call these bounds $m,M$ respectively (No relation to $m_i,M_i$). For any partition $P$ of $[a,b]$ we have 
+The upper (lower) sums are defined as the sum of the product of the supremum (infimum) of each subinterval multiplied by the length of the subinterval.
+
+Because we assume $f$ to be bounded function, there exists a lower and upper bound of the function on the interval $[a,b]$. This also implies the existence of a supremum and infimum, so we know our upper and lower sums exist.
+
+Call these bounds $m,M$ respectively (No relation to $m_i,M_i$). For any partition $P$ of $[a,b]$ we have 
 $$
 m(b-a) \leq L(f,p) \leq U(f,p) \leq M(b-a).
 $$

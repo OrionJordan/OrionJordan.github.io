@@ -1,0 +1,22 @@
+---
+title: "Intro"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+In this section, we introduce topological properties of $\mathbb{R}$ such as open and closed sets, compactness, connectedness, etc. This section focuses exclusively on the real line, although all of these properties exist for general topological spaces and discussed in [Topology].
+
+- Open sets
+- Closed sets
+- Points
+- Compactness
+- Connected
+
+- Measure
+- Density
+- Meager sets
+- Baires category theorem
+- Blumburg Theorem
+- 

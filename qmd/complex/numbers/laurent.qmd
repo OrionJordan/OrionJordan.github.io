@@ -1,0 +1,67 @@
+---
+title: "Laurent Series"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+There exist some functions $f(x)$ which cannot be expressed as a Power series using Taylor series expansion. We can however use a Laurent series expansion to expand some of these functions into a Power series with negative terms.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f(x)$ be a complex function analytic on the annulus $A \colon r_1 < |z - z_0| < r_2$. The [Laurent series]{.definition} of $f(x)$ around a point $z_0$ inside the annulus is given by
+
+$$
+f(x) = \sum_{n = -\infty}^\infty a_n(z-z_0)^n
+$$
+
+where the coefficients $a_n$ are defined by
+
+$$
+a_n = \frac{1}{2\pi i} \int_C \frac{f(z)}{(z-z_0)^{n+1}} dz
+$$
+
+where $C$ is any circle inside the annulus $A$.
+:::
+
+We first have to prove that the Laurent series expansion exists.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $f(x)$ be a complex function analytic on some annulus $A$. Then the Laurent series of $f(x)$ around $z_0 \in A$ exists.
+:::
+
+Note that depending on the annulus, a function will have different Laurent series expansions.
+
+## Residues
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f(x)$ have a Laurent series around some point $z_0$,
+
+$$
+f(x) = \sum_{n = -\infty}^\infty a_n(z-z_0)^n.
+$$
+
+Then [Residue]{.definition} of $f$ at $z_0$ is the coefficient $a_{-1}$, and is denoted
+
+$$
+\text{Res}(f,z_0) = a_{-1}.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Residue Theorem)
+
+Let $f(z)$ be analytic on a region $D$ except for a set of isolated singularities $S$. Then for any simple closed curve $C$ on $D$
+
+$$
+\int_C f(z) dz = 2\pi i \sum_{z_0 \in S} \text{Res}[f,z_0]
+$$
+:::
+

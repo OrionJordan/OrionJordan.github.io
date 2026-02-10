@@ -1,0 +1,198 @@
+---
+title: "Equinumerous Ordering"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We have used the concept of equinumerosity to tell when two sets $A$ and $B$ are the same size, now we will define what it means for a set $B$ to be larger than $A$.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [dominated]{.definition} by a set $B$ (written $A \preceq B$) if there exists $C$ such that $A \approx C$ and $C \subseteq B$.
+
+:::
+
+We may also say $A$ is less then or equal to $B$, like we would for standard numbers.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $A = \{1,2\}$ and $B = \{3,4,5\}$. Then there exists a subset $C = \{3,4\} \subseteq B$ such that $A \approx C$ under the function
+
+$$
+f = \{(1,3),(2,4)\}.
+$$
+
+Therefore we say $A$ is dominated by $B$, or $A \preceq B$.
+:::
+
+## Properties
+
+The following properties naturally follow from the definition.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C$ be sets, then
+
+$(a)$ If $A \approx B$, then $A \preceq B$.
+
+$(b)$ If $A \subseteq B$, then $A \preceq B$.
+
+$(c)$ If $A \preceq B$ and $B \preceq C$ then $A \preceq C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+$(a)$ 
+
+Since $B$ is a subset of itself, and we have $A \approx B$ by our hypothesis, we have that $A \preceq B$.
+
+------------
+
+$(b)$ 
+
+By the reflexivity of equinumerosity, we have $A \approx A$. Since $A$ is a subset of $B$ by our hypothesis, we have $A \preceq B$.
+
+------------
+
+$(c)$ 
+
+Since $B \preceq C$ there exists $E \subseteq C$ and $g \colon B \to E$ such that $B \approx E$, similarly since $A \preceq B$, there exists $D \subseteq B$ and $f \colon A \to D$ such that $A \approx D$. 
+
+Let $F = g(D)$ and $h$ be the restriction of $g$ to the domain $D$, that is 
+
+$$
+h \colon D \to g(D).
+$$
+
+Since $g$ is bijective, its restrictions are bijective. Then $A \approx F$ under ${h \circ f}$. Since $F$ is a subset of $C$, we have $A \preceq F$.
+:::
+
+A basic yet surprisingly difficult to prove theorem follows, which will be instrumental in calculating the cardinalities of sets. This theorem is known as the Schroder-Bernstein theorem.
+
+::: {.callout-note icon="false"}
+## Theorem (Schroder-Bernstein Theorem)
+
+Let $A,B$ be sets. If $A \preceq B$ and $B \preceq A$, then $A \approx B$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
+Let $B_1 \subseteq B$ and $A_1 \subset A$. Then by our hypothesis, let
+
+$$
+f \colon A \to B_1
+$$
+and 
+$$
+g \colon B \to A_1
+$$
+
+be bijections.
+:::
+
+We continue our list of properties with the following monotonicity results, showing how dominance works under our equinumerous addition, multiplication, and exponential operations.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C,D$ be sets, and $A \preceq B$ and $C \preceq D$. Then
+
+$(a)$ If $B \cap D = \varnothing$, then $A \cup C \preceq B \cup D$.
+
+$(b)$ $A \times C \preceq B \times D$.
+
+$(c)$ $A^C \preceq B^D$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
+$(a)$ 
+
+Let $B^\prime \subseteq B$ and $D^\prime \subseteq D$ be such that $A \approx B^\prime$ and $C \approx D^\prime$. We now have two cases
+
+If $A \cap C = \varnothing$, then $A \cup C \approx B^\prime \cup D^\prime$ by our Theorem of Equinumerous Addition. Since $B^\prime \cup D^\prime \subseteq B \cup D$, we have $A \cup C \preceq B \cup D$.
+
+If $A \cap C \not= \varnothing$, then (TO-DO).
+
+------------
+
+$(b)$
+
+Let $B^\prime \subseteq B$ and $D^\prime \subseteq D$ be such that $A \approx B^\prime$ and $C \approx D^\prime$. Then by our Theorem of Equinumerous Multiplication, we have that $A \times C \approx B^\prime \times D^\prime$. Since $B^\prime \times D^\prime \subseteq B \times D$ we have that $A \times C \preceq B \times D$.
+
+:::
+
+## Strict Ordering
+
+We further define a strict "less then" relation as follows.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [less then]{.definition} a set $B$ (written $A \prec B$) if $A \preceq B$ and $A \not \approx B$.
+
+:::
+
+This is a stricter relation then requiring $A$ be equinumerous to a proper subset of $B$, as some infinite sets are equinumerous to proper subsets of themselves.
+
+The following properties naturally follow from the definition.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C$ be sets, then
+
+$(a)$ $A \not \prec A$
+
+$(b)$ If $A \prec B$, then $B \not\prec A$.
+
+$(c)$ If $A \prec B$ and $B \prec C$ then $A \prec C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A,B,C$ be sets, then
+
+$(a)$ If $A \preceq B$ then $B \not \prec A$.
+
+$(b)$ If $A \preceq B$, and $B \prec C$ then $A \prec C$.
+
+$(c)$ If $A \prec B$ and $B \preceq C$ then $A \prec C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
+:::
+
+We can now revisit Cantors theorem with a stronger result.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Let $A$ be a set. Then $A \prec \mathcal{P}(A)$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof (TO-DO)
+
+:::

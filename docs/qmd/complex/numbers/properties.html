@@ -1,0 +1,2212 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Properties – OOMN</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">OOMN</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../qmd/content/index.html"> 
+<span class="menu-text">Content</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#real-and-imaginary-functions" id="toc-real-and-imaginary-functions" class="nav-link active" data-scroll-target="#real-and-imaginary-functions">Real and Imaginary functions</a></li>
+  <li><a href="#conjugates" id="toc-conjugates" class="nav-link" data-scroll-target="#conjugates">Conjugates</a></li>
+  <li><a href="#modulus" id="toc-modulus" class="nav-link" data-scroll-target="#modulus">Modulus</a></li>
+  <li><a href="#polar-coords" id="toc-polar-coords" class="nav-link" data-scroll-target="#polar-coords">Polar-coords</a></li>
+  <li><a href="#solving-equations" id="toc-solving-equations" class="nav-link" data-scroll-target="#solving-equations">Solving equations</a></li>
+  <li><a href="#topology-of-the-complex-numbers" id="toc-topology-of-the-complex-numbers" class="nav-link" data-scroll-target="#topology-of-the-complex-numbers">Topology of the Complex numbers</a></li>
+  <li><a href="#functions-and-linear-mappings" id="toc-functions-and-linear-mappings" class="nav-link" data-scroll-target="#functions-and-linear-mappings">Functions and linear mappings</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#inverse-exponents" id="toc-inverse-exponents" class="nav-link" data-scroll-target="#inverse-exponents">Inverse exponents</a></li>
+  <li><a href="#limits-and-continuity" id="toc-limits-and-continuity" class="nav-link" data-scroll-target="#limits-and-continuity">Limits and continuity</a></li>
+  <li><a href="#differentiable-and-holomorphic-functions" id="toc-differentiable-and-holomorphic-functions" class="nav-link" data-scroll-target="#differentiable-and-holomorphic-functions">Differentiable and holomorphic functions</a>
+  <ul class="collapse">
+  <li><a href="#cauchy-riemann-equations" id="toc-cauchy-riemann-equations" class="nav-link" data-scroll-target="#cauchy-riemann-equations">Cauchy-Riemann equations</a></li>
+  </ul></li>
+  <li><a href="#sequences-and-series" id="toc-sequences-and-series" class="nav-link" data-scroll-target="#sequences-and-series">Sequences and Series</a></li>
+  <li><a href="#infinite-series" id="toc-infinite-series" class="nav-link" data-scroll-target="#infinite-series">Infinite Series</a></li>
+  <li><a href="#fractals" id="toc-fractals" class="nav-link" data-scroll-target="#fractals">Fractals</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Properties</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Complex numbers can be though of as an ordered pair of real numbers.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">z</span> is an ordered pair <span class="math inline">(x,y)</span> such that <span class="math inline">x,y \in \mathbb{R}</span>, then <span class="math inline">z</span> is a <span class="definition">Complex number</span>.</p>
+</div>
+</div>
+<p>Then we define the following relations</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Addition</span> relation <span class="math inline">+ \colon \mathbb{C} \to \mathbb{C}</span> is defined <span class="math display">
+(x_1,y_1) + (x_2,y_2) \to (x_1 + x_2, y_1 + y_2).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Subtraction</span> relation <span class="math inline">- \colon \mathbb{C} \to \mathbb{C}</span> is defined <span class="math display">
+(x_1,y_1) + (x_2,y_2) \to (x_1 - x_2, y_1 - y_2).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Multiplication</span> relation <span class="math inline">\times \colon \mathbb{C} \to \mathbb{C}</span> is defined <span class="math display">
+(x_1,y_1) \times (x_2,y_2) \to (x_1x_2 - y_1y_2, x_1y_2 + x_2y_1).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Division</span> relation <span class="math inline">\  \colon \mathbb{C} \to \mathbb{C}</span> is defined <span class="math display">
+(x_1,y_1) \times (x_2,y_2) \to (x_1x_2 - y_1y_2, x_1y_2 + x_2y_1).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Quotient</span> relation $ $ is defined $$</p>
+<p>$$</p>
+</div>
+</div>
+<section id="real-and-imaginary-functions" class="level2">
+<h2 class="anchored" data-anchor-id="real-and-imaginary-functions">Real and Imaginary functions</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Real part</span> of a complex number is given by the function</p>
+<p><span class="math display">
+\text{Re} \colon (x,y) \to x
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Imaginary part</span> of a complex number is given by the function</p>
+<p><span class="math display">
+\text{Im} \colon (x,y) \to y
+</span></p>
+</div>
+</div>
+<p>TO-DO: Theorems</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">Circle</span> around an inmaginary number <span class="math inline">z_0</span> with radius <span class="math inline">r</span> is</p>
+<p><span class="math display">
+\{z \, \vert \, \text{abs}(z - z_0) = r\}
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given any cubic equation of the form</p>
+<p><span class="math display">
+z^3 + az^2 + bz + c = 0
+</span></p>
+<p>the substitution <span class="math inline">z = x - \frac{a}{3}</span> gives the equivalent depressed cubic</p>
+<p><span class="math display">
+x^3 + bx + c = 0.
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><span class="math display">
+\begin{align*}
+z^3 + az^2 + bz + c &amp;= 0\\
+\left(x - \frac{a}{3}\right)^3 + a\left(x - \frac{a}{3}\right)^2 + b\left(x - \frac{a}{3}\right) + c &amp;= 0\\
+x^3 + bx + c &amp;= 0
+\end{align*}
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A depressed cubic has the following solution</p>
+<p><span class="math display">
+x = \sqrt[3]{-\frac{c}{2} + \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}} + \sqrt[3]{-\frac{c}{2} - \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}}.
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given <span class="math inline">a = 0</span>, <span class="math inline">b=3</span>, <span class="math inline">c =-4</span> <span class="math display">
+x = \sqrt[3]{-\frac{c}{2} + \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}} + \sqrt[3]{-\frac{c}{2} - \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}}.
+</span></p>
+<p>Gives <span class="math inline">x=1</span>, allowing us to factor and obtain the solutions</p>
+<p><span class="math display">
+x = \frac{1 \pm i\sqrt{11}}{2}.
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Method
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Create monic polynomial</li>
+<li>Preform change of variables</li>
+<li>Use Ferro-Tartaglia formula</li>
+<li>Factor to obtain a quadratic</li>
+<li>Find remaining solutions</li>
+</ul>
+</div>
+</div>
+<p>TO-DO: Prove solutions of real cubic equations</p>
+</section>
+<section id="conjugates" class="level2">
+<h2 class="anchored" data-anchor-id="conjugates">Conjugates</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given a complex number <span class="math inline">z \in \mathbb{C}</span>, we define its <span class="definition">conjugate</span> <span class="math display">
+\overline{z} = \text{Re}(z) - \text{Im}(z)
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following identities hold true</p>
+<ul>
+<li><p><span class="math inline">z + \overline{z} = 2\text{Re}(z)</span></p></li>
+<li><p><span class="math inline">\overline{\overline{z}} = z</span></p></li>
+<li><p><span class="math inline">\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}</span></p></li>
+<li><p><span class="math inline">\overline{z_1z_2} = \overline{z_1} \cdot \overline{z_2}</span></p></li>
+<li><p>$ = $</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z \in \mathbb{C}</span>. Then</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Triangle inequality)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given <span class="math inline">z_1,z_2 \in \mathbb{C}</span></p>
+</div>
+</div>
+</section>
+<section id="modulus" class="level2">
+<h2 class="anchored" data-anchor-id="modulus">Modulus</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let</p>
+<p><span class="math inline">r = |z| = \sqrt{x^2+y^2}</span></p>
+</div>
+</div>
+<p>To-DO: Polar coordinates for complex numbers</p>
+</section>
+<section id="polar-coords" class="level2">
+<h2 class="anchored" data-anchor-id="polar-coords">Polar-coords</h2>
+<p>When <span class="math inline">|z| \not = 0</span>, we can define a complex number by two quantities <span class="math inline">r</span> for radius, and <span class="math inline">\theta</span> for angle.</p>
+<p>A complex number has an infinite amount of polar representations.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z \in \mathbb{C}</span>, then exists <span class="math inline">r \in \mathbb{R}</span> and <span class="math inline">\theta \in [0,2\pi]</span> such that</p>
+<p><span class="math inline">z = r\cos\theta + r\sin\theta i</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">argument</span> of a complex number is given by the function</p>
+<p><span class="math display">
+\arg z = \{\theta \mid r\cos\theta + r\sin\theta i = z\}
+</span></p>
+<p>where <span class="math inline">r = |z|</span>.</p>
+</div>
+</div>
+<p>The argument is any <span class="math inline">\theta \not = 0</span> such that for some <span class="math inline">r</span> the polar representation is accurate.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="math inline">\arg (1 + i) = \{\frac{\pi}{4} + 2\pi n \mid n \in \mathbb{N}\}</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">principle argument</span> of a complex number is given by the function</p>
+<p><span class="math display">
+\text{Arg } \colon z \to (-\pi,\pi].
+</span></p>
+<p>such that</p>
+<p><span class="math display">
+\text{Arg } z = \{\theta \mid r\cos\theta + r\sin\theta i = z\}
+</span></p>
+<p>where <span class="math inline">r = |z|</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span class="definition">De Moives formula</span> is used when exponetiating complex numbers.</p>
+<p><span class="math display">
+(e^{i\theta})^n = e^{in\theta}.
+</span></p>
+<p>In polar form</p>
+<p><span class="math display">
+(\cos\theta + \sin\theta i)^n = (\cos(n\theta) + \sin(n\theta) i)
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using De Moivres formulas, prove</p>
+<p><span class="math display">
+\cos(5\theta) = ???
+</span></p>
+<p>We have</p>
+<p><span class="math display">
+(\cos\theta + \sin \theta i)^5 = \cos(5\theta) + \sin(5\theta)i
+</span></p>
+<p>Which using binomial theorem</p>
+<p><span class="math display">
+(a + b)^5 = a^5 + \binom{5}{1}a^4b + \binom{5}{2}a^3b^2 + \binom{5}{3}a^2b^3 + \binom{5}{4}ab^4 + b^5.
+</span></p>
+<p>Which evaluates into</p>
+<p><span class="math display">
+(a + b)^5 = a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5.
+</span></p>
+<p>Plugging this back into our equation</p>
+<p><span class="math display">
+a^5 + 5\cos^4\theta \sin \theta i + 10\cos^3 \theta \sin^2 \theta i^2 + 10\cos^2\theta \sin^3\theta i^3 \\+ 5\cos\theta \sin^4\theta i^4 + \sin^5\theta i^5 = \cos(5\theta) + \sin(5\theta)i
+</span></p>
+<p>Matching the real parts we have</p>
+<p><span class="math display">
+cos(5\theta) = ??
+</span></p>
+</div>
+</div>
+</section>
+<section id="solving-equations" class="level2">
+<h2 class="anchored" data-anchor-id="solving-equations">Solving equations</h2>
+<p>The equation <span class="math inline">z^n = 1</span> can easily be solved with <span class="math inline">z = 1</span>, but there should exist <span class="math inline">n</span> many solutions.</p>
+<p>We can solve it with polar representation.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">Roots of unity</span> are complez solutions to the polynomial <span class="math inline">z^n - 1 = 0</span>, where <span class="math inline">n</span> is an integer.</p>
+<p>Notice that</p>
+<p><span class="math display">
+|z^n| = 1 \implies |z|^n = 1
+</span></p>
+<p>by our modulus operations. Using our polar representation, we have</p>
+<p><span class="math display">
+z = re^{i\theta}
+</span></p>
+<p>where <span class="math inline">z</span> is not zero. Then</p>
+<p><span class="math display">
+(e^{i\theta})^n = e^{ni\theta} = 1
+</span></p>
+<p>Thus the solutions to <span class="math inline">z^n = 1</span> are</p>
+<p><span class="math display">
+z_k = e^{2ki\pi/n}
+</span></p>
+<p>for <span class="math inline">k</span> as an integer. Thus we have obtained all <span class="math inline">n</span> solutions to the polynomial.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">primitive nth root of unity</span> is given by <span class="math inline">z_1 = \omega_n = e^{2i\pi/n}</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Find all <span class="math inline">5th</span> roots of <span class="math inline">9i</span>.</p>
+<p>Let <span class="math inline">z = re^{i\theta}</span>. Converting to polar form</p>
+<p><span class="math display">
+r^5e^{i5\theta} = 9e^{i\pi/2}.
+</span></p>
+<p>Then <span class="math inline">r^5 = 9</span> and <span class="math inline">e^{i5\theta} = e^{i\pi/2}</span>.</p>
+<p>Then <span class="math inline">\theta = \pi/10 + 2\pi k /5</span>, and <span class="math inline">r = \sqrt[5]{9}</span>.</p>
+</div>
+</div>
+<p>We say <span class="math inline">z = \zeta \omega_n^k</span> is a solution to the equation <span class="math inline">z^n = \zeta^n</span>.</p>
+</section>
+<section id="topology-of-the-complex-numbers" class="level2">
+<h2 class="anchored" data-anchor-id="topology-of-the-complex-numbers">Topology of the Complex numbers</h2>
+<p>A parametrized curve in <span class="math inline">\mathbb{C}</span> is</p>
+<p><span class="math display">
+C \colon z(t) = x(t) + y(t)i
+</span></p>
+<p>for <span class="math inline">a \leq t \leq b</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A curve is <span class="definition">smooth</span> if <span class="math inline">x(t)</span> and <span class="math inline">y(t)</span> are differentiable.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A curve is <span class="definition">closed</span> if <span class="math inline">z(a) = z(b)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A curve is <span class="definition">non-intersecting</span> if <span class="math inline">t_1 \not = t_2</span> implies <span class="math inline">z(t_1) \not= z(t_2)</span>.</p>
+</div>
+</div>
+<p>A positive orientation is counter clockwise, while a negative orientation is clockwise.</p>
+<p>A circle is denoted <span class="math inline">C_\epsilon(z_0)</span> for a circle of radius <span class="math inline">\epsilon</span> and center <span class="math inline">z_0</span>.</p>
+<p>A disk is denoted <span class="math inline">D_\epsilon(z_0)</span> and is all the stuff inside the circle.</p>
+<p>The closed disk is denoted <span class="math inline">\overline{D}_\varepsilon(z_0)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">S \subset \mathbb{C}</span> be a set. A point <span class="math inline">p</span> in <span class="math inline">S</span> is an <span class="definition">interior</span> point of <span class="math inline">S</span> if there exists some <span class="math inline">\varepsilon &gt; 0</span> such that some <span class="math inline">\varepsilon</span> neighborhood of <span class="math inline">p</span> is completely contained in <span class="math inline">S</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">S \subset \mathbb{C}</span> be a set. A point <span class="math inline">p</span> in <span class="math inline">S</span> is a <span class="definition">boundary</span> point of <span class="math inline">S</span> if for all <span class="math inline">\varepsilon &gt; 0</span>, there exist ptext</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">S</span> is called open if every point in <span class="math inline">S</span> is open.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">S</span> is called open if every point in <span class="math inline">S</span> is open.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A set <span class="math inline">S</span> is called a <span class="definition">domain</span> if it is open and pathwise-connected.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">region</span> is a domain together with an arbitrary amount of boundary points.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every point in <span class="math inline">D_1(0)</span> is an interior point.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_0 \in D_1(0)</span>. Then <span class="math inline">|z_0| &lt; 1</span>, so <span class="math inline">\varepsilon = 1 - |z_0|</span> is positive.</p>
+<p>We want to show <span class="math inline">D_\varepsilon(z_0) \subset S</span>. Any point <span class="math inline">z \in D_\varepsilon(z_0)</span> had the property</p>
+<p><span class="math display">
+\begin{align*}
+|z - z_0| &amp;&lt; \varepsilon\\
+&amp;&lt;1 - |z_0|
+\end{align*}
+</span></p>
+<p>And by triangle inequality</p>
+<p><span class="math display">
+|z| = |(z - z_0) + z_0| \leq |z - z_0| + |z_0| &lt; 1.
+</span></p>
+</div>
+</div>
+<p>Prove every point in <span class="math inline">C_1(0)</span> is on the boundary.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_0 \in C_1(0)</span>. Then <span class="math inline">|z_0| = 1</span>. Write <span class="math inline">z_0 = e^{i\theta_0}</span>. Then we have <span class="math inline">z_1 = (1 + \varepsilon/2)z_0</span>.</p>
+<p><span class="math display">
+|z_1 - z_0| &lt; \varepsilon.
+</span></p>
+<p>Thus <span class="math inline">z_0</span> is in the boundary of <span class="math inline">S</span>.</p>
+</div>
+</div>
+<p>Thus we have.</p>
+</section>
+<section id="functions-and-linear-mappings" class="level2">
+<h2 class="anchored" data-anchor-id="functions-and-linear-mappings">Functions and linear mappings</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">complex-valued function</span> is a function <span class="math inline">f : \mathbb{C} \to \mathbb{C}</span>. Also called a map.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = z^2</span>. The domain and range of the function is <span class="math inline">\mathbb{C}</span>.</p>
+<p>Let <span class="math inline">g(z) = |z|^2</span>. The domain is the complex numbers, while the range is strictly the positive real numbers with zero.</p>
+<p>Let <span class="math inline">h(z) = 1/z</span>. Then the domain and range are <span class="math inline">\mathbb{C}^*</span>.</p>
+</div>
+</div>
+<p>Functions can be in polar, cartesian, or complex form.</p>
+<p>The image of <span class="math inline">A</span> is the output of <span class="math inline">f(A)</span>.</p>
+</section>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>The most important properties of a function depend on if they said function is <em>injective</em> or <em>surjective</em>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon A \to B</span> is <span class="definition">injective</span> if for all <span class="math inline">a,a^\prime \in A</span></p>
+<p><span class="math display">
+f(a) = f(a^\prime) \implies a = a^\prime.
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = z^2</span>. This is not an injective function as <span class="math inline">1</span> and <span class="math inline">-1</span> map to the same number.</p>
+<p>Let <span class="math inline">g(z) = iz</span>. This is an injective function.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon A \to B</span> is <span class="definition">surjective</span> if for all <span class="math inline">b \in B</span>, there exists <span class="math inline">a \in A</span> such that</p>
+<p><span class="math display">
+f(a) = b.
+</span></p>
+</div>
+</div>
+<p>And the most appealing type of function,</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">f \colon A \to B</span> is <span class="definition">bijection</span> if <span class="math inline">f</span> is both injective and surjective.</p>
+</div>
+</div>
+<p>If a function is injective, there exists an inverse.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = iz + 2</span>. Then by setting <span class="math inline">w = iz+2</span> and solving for <span class="math inline">w</span>, we have</p>
+<p><span class="math display">
+f^{-1}(w) = -iz + 2i.
+</span></p>
+</div>
+</div>
+</section>
+<section id="inverse-exponents" class="level2">
+<h2 class="anchored" data-anchor-id="inverse-exponents">Inverse exponents</h2>
+<p>Let <span class="math inline">f(z) = z^2</span>. In exponential form we have <span class="math inline">f(re^{i\theta}) = r^2e^{2i\theta}</span>. We know that this function is very much not injective.</p>
+<p>We want to find some restriction for our function such that <span class="math inline">f \colon D \to \mathbb{C}</span> is injective. This gives us</p>
+<p><span class="math display">
+D = \{re^{i\theta} \colon r &gt; 0, \frac{-\pi}{2} &lt; \theta \leq \frac{\pi}{2}\}.
+</span></p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A = \{z \mid \Im(z) = 2\}</span> maps to a parabola.</p>
+</div>
+</div>
+<p>This allows us to create a <span class="definition">principle root function</span>. This is a well defined function that gives us an inverse for any squared complex numbers.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Fact
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">g</span> be the principle root function. Then <span class="math inline">g(z) = \sqrt{|z|}e^{i\frac{\arg(z)}{2}}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">principal nth root</span> is given by</p>
+<p><span class="math display">
+g(w) = \sqrt[n]{|w|} e^{i\frac{\text{Arg}(w)}{n}}.
+</span></p>
+</div>
+</div>
+</section>
+<section id="limits-and-continuity" class="level2">
+<h2 class="anchored" data-anchor-id="limits-and-continuity">Limits and continuity</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z,w \in \mathbb{C}</span>, and <span class="math inline">f \colon \mathbb{C} \to \mathbb{C}</span> be a function. The <span class="definition">limit</span> of <span class="math inline">f</span> at <span class="math inline">z</span> is <span class="math inline">w</span> if for all <span class="math inline">D_\varepsilon(w)</span>, there exists <span class="math inline">D_\delta(z)</span> such that <span class="math inline">f(D_\delta(z)) \subset D_\varepsilon(w)</span>.</p>
+<p>Equivalently, if <span class="math inline">|z - z_0| &lt; \delta</span> then <span class="math inline">|f(z) - w_0| &lt; \varepsilon</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove <span class="math inline">\lim_{z \to 0}z^2 = 0</span></p>
+<p>Let <span class="math inline">\varepsilon &gt; 0</span>, and choose <span class="math inline">\delta = \sqrt{\varepsilon}</span>. If <span class="math inline">z \in D_\delta(0)</span>, then <span class="math inline">|z| &lt; \sqrt{\varepsilon}</span>. Thus <span class="math inline">z^2 = f(z) &lt; \varepsilon</span> and <span class="math inline">f(z) \in D_\varepsilon(0)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove <span class="math inline">\lim_{z \to 0} \overline{z}/z</span> does not exist.</p>
+<p>Let <span class="math inline">\Im(z) = 0</span>, then as <span class="math inline">z</span> approaches <span class="math inline">0</span>, we have that <span class="math inline">f(z) = 1</span>. But if <span class="math inline">\Re(z) = 0</span>, as <span class="math inline">z</span> approaches <span class="math inline">0</span> we have that <span class="math inline">f(z) -1</span>.</p>
+<p>Thus, the limit does not exist.</p>
+</div>
+</div>
+<p>Lots of theorems exist.</p>
+<p>$$</p>
+<p>$$</p>
+<p>Limit breaks up, limit follows limit properties.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A complex function is continuous if for all <span class="math inline">z \in D</span>, we have</p>
+<p><span class="math display">
+\lim_{z \to z_0} = f(z_0).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Prove <span class="math inline">f(z)=z^{-1}</span> is continuous on it’s domain, <span class="math inline">\mathbb{C}^*</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">branch</span> of a multivalued function <span class="math inline">f</span> is a single values function.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The function <span class="math inline">f(z)=z^{1/2}</span> has the branches</p>
+<ul>
+<li><span class="math inline">f_1(z) = \sqrt{r}e^{i\frac{\text{Arg}(z)}{2}}</span></li>
+<li><span class="math inline">f_2(z) = -\sqrt{r}e^{i\frac{\text{Arg}(z)}{2}}</span></li>
+<li><span class="math inline">f_3(z) = -\sqrt{r}e^{i\frac{\text{arg}(z)}{2}}</span></li>
+</ul>
+<p>Not continuous on negative <span class="math inline">x</span>-axis.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">branch cut</span> of a multivalued function <span class="math inline">f</span> is the set of discontinuties for all branches.</p>
+</div>
+</div>
+<p>Depressed cubic Products and algebra Modulus, argument, conjugate formulas Triangle equality reverse and direct Limits Exponential/Polar/Cartesian Find all roots of numbers Prove topological results (Disk,Circle,Etc.) Openness/Pathconnectedness Find images under mappings Find limits and epsilon delta proofs</p>
+</section>
+<section id="differentiable-and-holomorphic-functions" class="level2">
+<h2 class="anchored" data-anchor-id="differentiable-and-holomorphic-functions">Differentiable and holomorphic functions</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_0 \in \mathbb{C}</span>, and <span class="math inline">f</span> be a complex valued function. Then the <span class="definition">derivative</span> of <span class="math inline">f</span> is defined</p>
+<p><span class="math display">
+f^\prime(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}
+</span></p>
+<p>if limit exists. If <span class="math inline">f^\prime(z_0)</span> exists, we say <span class="math inline">f</span> is <span class="definition">differentiable</span> at <span class="math inline">z_0</span>.</p>
+</div>
+</div>
+<p>Example of finding a functions derivative</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = z^3</span>. Find the derivative of <span class="math inline">f</span>.</p>
+<p><span class="math display">\begin{align*}
+f^\prime(z_0) &amp;= \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}\\
+&amp;= \lim_{z \to z_0} \frac{z^3 - z^3_0}{z - z_0}\\
+&amp;= \lim_{z \to z_0} \frac{(z - z_0)(z^2 + zz_0 + z^2_0)}{z - z_0}\\
+&amp;= \lim_{z \to z_0} z^2 + zz_0 + z^2_0\\
+&amp;= 3z^2_0.
+\end{align*}</span></p>
+</div>
+</div>
+<p>Do all functions have a derivative at some point? No.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = \overline{z}</span>. Show that <span class="math inline">f</span> is differentiable nowhere.</p>
+<p><span class="math display">\begin{align*}
+f^\prime(z_0) &amp;= \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}\\
+&amp;= \lim_{z \to z_0} \frac{\overline{z} - \overline{z_0}}{z - z_0}
+\end{align*}</span></p>
+<p>We previously showed that this limit does not exist. Therefore the function is not differentiable at any point.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_0 \in \mathbb{C}</span> and <span class="math inline">f</span> be a complex valued function. The function <span class="math inline">f</span> is <span class="definition">holomorphic</span> at a point <span class="math inline">z_0</span> if it is differentiable at at every point in some neighborhood <span class="math inline">D_\varepsilon(z_0)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">R \subset \mathbb{C}</span> and <span class="math inline">f</span> be a complex valued function. The function <span class="math inline">f</span> is <span class="definition">holomorphic</span> on the region <span class="math inline">R</span> if <span class="math inline">f</span> is holomorphic at every point in <span class="math inline">R</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f</span> be a complex valued function. The function <span class="math inline">f</span> is <span class="definition">entire</span> if is differentiable at every point in the complex plane.</p>
+</div>
+</div>
+<p>The above definition is eequivalent to being holomorphic at every point on the complex plane.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = z^3</span>. Since <span class="math inline">f</span> is differentiable at every point <span class="math inline">z_0 \in \mathbb{C}</span>, it is entire.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">f(z) = |z|</span>. The function <span class="math inline">f</span> is differentiable only at <span class="math inline">z_0 = 0</span>, and nowhere else. Therefore the function is holomorphic nowhere, since there exists no neighborhood where every point is differentiable.</p>
+</div>
+</div>
+<p>Now we can move on to some properties</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_0 \in \mathbb{C}</span> and let <span class="math inline">f</span> be a complex valued function.</p>
+<p>If <span class="math inline">f</span> is differentiable at <span class="math inline">z_0</span>, then <span class="math inline">f</span> is continuous at <span class="math inline">z_0</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-68-contents" aria-controls="callout-68" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-68" class="callout-68-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<p>We can convert L’Hopital’s rule into the complex plane.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_0 \in \mathbb{C}</span> and <span class="math inline">f,g</span> be complex valued functions.</p>
+<p>If <span class="math inline">f</span> and <span class="math inline">g</span> are holomorphic at <span class="math inline">z_0</span>, and <span class="math inline">f(z_0) = 0</span> and <span class="math inline">g(z_0) = 0</span>, then</p>
+<p><span class="math display">
+\lim{z \to z_0} \frac{f(z)}{g(z)} = \frac{f^\prime(z)}{g^\prime(z)}
+</span></p>
+<p>as long as <span class="math inline">g^\prime(z_0) \not= 0</span>.</p>
+</div>
+</div>
+<section id="cauchy-riemann-equations" class="level3">
+<h3 class="anchored" data-anchor-id="cauchy-riemann-equations">Cauchy-Riemann equations</h3>
+<p>Let <span class="math inline">f</span> be a complex function differentiable at <span class="math inline">z_0 \in \mathbb{C}</span> written in it’s real and imaginary parts, that is</p>
+<p><span class="math display">
+f(x +iy) = u(x,y) + iv(x,y)
+</span></p>
+<p>If <span class="math inline">f = u + vi</span> is holomorphic, then both <span class="math inline">u</span> and <span class="math inline">v</span> are harmonic.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A function <span class="math inline">u(x,y)</span> is <span class="definition">harmonic</span> if it satisfies</p>
+<p><span class="math display">
+u_{xx} + u_{yy} = 0
+</span></p>
+</div>
+</div>
+<p>Given a harmonic function <span class="math inline">u(x,y)</span>, we can choose <span class="math inline">v(x,y)</span> such that <span class="math inline">f(z) = u(x,y) + iv(x,y)</span> is holomorphic.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">u(x,y)</span> be a harmonic function. A <span class="definition">harmonic conjugate</span> is a function <span class="math inline">v</span> such that <span class="math inline">f(z) = u(x,y) + iv(x,y)</span> is holomorphic.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The following are functions</p>
+<p><span class="math display">
+\text{curl}(\overline{V}) = \frac{\partial q}{\partial x} - \frac{\partial p}{\partial y}.
+</span></p>
+<p>The curl detects rotation.</p>
+<p><span class="math display">
+\text{div}(\overline{V}) = \frac{\partial p}{\partial x} - \frac{\partial q}{\partial y}.
+</span></p>
+<p>The div detects divergence.</p>
+<p><span class="math display">
+\text{grad}(\phi(x,y)) = \frac{\partial \phi}{\partial x} - i\frac{\partial \phi}{\partial y}.
+</span></p>
+</div>
+</div>
+<p>If continuity holds, then <span class="math inline">V</span> is holomorphic.</p>
+<p><span class="math display">
+F(z) = \phi(x,y) + \psi(x,y)i
+</span></p>
+</section>
+</section>
+<section id="sequences-and-series" class="level2">
+<h2 class="anchored" data-anchor-id="sequences-and-series">Sequences and Series</h2>
+<p>Many properties of sequences from real numbers carry over to complex numbers.</p>
+<p>We have the same definition of sequence from real analysis, that is</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A \subseteq \mathbb{N}</span> and <span class="math inline">S</span> be a set.</p>
+<p>If <span class="math inline">f \colon A \to S</span> is a function, then <span class="math inline">f</span> is a <span class="definition">sequence</span>.</p>
+</div>
+</div>
+<p>except now each term may be a complex number.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_n = e^{2\pi n i/5}</span> be a complex sequence. Then</p>
+<p><span class="math display">
+z_n = (e^{2\pi i/5},e^{4\pi i/5},e^{6\pi i/5},\dots)
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A sequence <span class="math inline">(z_n)</span> of complex numbers is said to <span class="definition">converge</span> to a complex number <span class="math inline">w</span> if, for every <span class="math inline">\varepsilon &gt; 0</span>, there exists some natural number <span class="math inline">N</span> such that <span class="math inline">n &gt; N</span> implies <span class="math inline">z_n \in D_\varepsilon(w)</span>.</p>
+</div>
+</div>
+<p>This creates are ability to make a limit.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_n</span> be a sequence of complex numbers and let <span class="math inline">w</span> be a fixed complex number. Then</p>
+<p><span class="math display">
+\lim_{n\to\infty} z_n = w
+</span></p>
+<p>if and only if</p>
+<p><span class="math display">
+\lim_{n\to\infty} \Re(z) = \Re(w) \text{ and } \lim_{n\to\infty} \Im(z) = \Im(w).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-77-contents" aria-controls="callout-77" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-77" class="callout-77-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>(<span class="math inline">\Rightarrow</span>) Let <span class="math inline">z_n = x_n + y_ni</span> and <span class="math inline">w = u + vi</span>.</p>
+<p>Since <span class="math inline">z_n</span> converges to <span class="math inline">w</span>, we have that for all <span class="math inline">\varepsilon &gt; 0</span> there exist <span class="math inline">N</span> such that <span class="math inline">n &gt; N</span> implies <span class="math inline">|z_n - w| &lt; \varepsilon</span>. Then</p>
+<p><span class="math display">
+|x_n - u| = |\Re(z_n) - \Re(w)|.
+</span></p>
+<p>(<span class="math inline">\Leftarrow</span>) Let <span class="math inline">\lim_{n \to \infty} x_n = u</span> and <span class="math inline">\lim_{n \to \infty} y_n = v</span>.</p>
+<p>When <span class="math inline">n &gt; \max(N_{\varepsilon/2},M_{\varepsilon/2})</span>, we have that</p>
+<p><span class="math display">
+|x_n - u| + |y_n - v| &lt; \varepsilon/2 + \varepsilon/2 = \varepsilon
+</span></p>
+<p>And since <span class="math inline">|x_n - u| + |y_n - v| \geq |z_n - w|</span>, we have that <span class="math inline">|z_n - w| &lt; \varepsilon</span> so we have our limit.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">z_n = \frac{1}{n} + \frac{1}{n}i</span>. Show that <span class="math inline">z_n</span> converges to <span class="math inline">0</span>.</p>
+<hr>
+<p>We need to find some <span class="math inline">N_\varepsilon</span> such that <span class="math inline">n &gt; N_\varepsilon</span> implies <span class="math inline">|z_n| &lt; \varepsilon</span>.</p>
+<p>We know <span class="math inline">|z_n| = \frac{1}{n}\sqrt{2}</span>. Thus</p>
+<p><span class="math display">\begin{align*}
+\frac{1}{n}\sqrt{2} &amp;&lt; \varepsilon \\
+\frac{1}{\varepsilon}\sqrt{2} &amp;&lt; n
+\end{align*}</span></p>
+<p>So we choose <span class="math inline">N_\varepsilon = \lceil \sqrt{2}/\varepsilon \rceil</span>.</p>
+</div>
+</div>
+</section>
+<section id="infinite-series" class="level2">
+<h2 class="anchored" data-anchor-id="infinite-series">Infinite Series</h2>
+<p>Given a sequence <span class="math inline">\{z_n\}^\infty_{n=1}</span> we can take it’s sum and ask if it converges to a complex number.</p>
+<p>Same as real variable calculus.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\{z_n\}</span> be a sequence. If <span class="math inline">\sum_{n=1}^\infty</span> converges, then <span class="math inline">\lim_{n\to\infty}z_n = 0</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-80-contents" aria-controls="callout-80" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-80" class="callout-80-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">geometric series</span> <span class="math inline">\sum_{n=0}^\infty z_n</span> converges or diverges depending on <span class="math inline">|z|</span> as follows</p>
+<ul>
+<li><p>If <span class="math inline">|z| &lt; 1</span> then <span class="math inline">\sum_{n=0}^\infty z_n = \frac{1}{1-z}</span></p></li>
+<li><p>If <span class="math inline">|z| \geq 1</span> then <span class="math inline">\sum_{n=0}^\infty z_n</span> diverges.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\sum_{n=0}^\infty</span> has the property <span class="math inline">\lim_{n\to\infty} |z_{n+1}|/|z_n| = L</span> then</p>
+<ul>
+<li><p>If <span class="math inline">L &lt; 1</span> then the series converges absolutely.</p></li>
+<li><p>If <span class="math inline">L &gt; 1</span> then the series diverges.</p></li>
+<li><p>If <span class="math inline">L = 1</span>, nothing.</p></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\lim_{n\to\infty} &lt; 1</span> then the series is guaranteed to converge absolutely.</p>
+</div>
+</div>
+<p>We can do some pretty cool stuff and find the <span class="definition">radius of convergence</span></p>
+</section>
+<section id="fractals" class="level2">
+<h2 class="anchored" data-anchor-id="fractals">Fractals</h2>
+<p>Fractals encode information about iterative functions.</p>
+<p>For example, given a function <span class="math inline">f(z) = z^2</span>, what happens if we apply this iterativly to some initial point <span class="math inline">z_0</span>.</p>
+<p>Clearly when <span class="math inline">|z_0| &gt; 1</span>, the sequence never converges. When <span class="math inline">|z_0| &lt; 1</span>, the sequence converges. What about when <span class="math inline">|z| = 1</span>?</p>
+<p>The convergent points on the circle have a different cardinality (<span class="math inline">\aleph</span>) then the points that don’t (<span class="math inline">2^\aleph</span>).</p>
+<p><span class="math display">
+K = \{z\in\mathbb{C} \mid f^\infty(z) \text{ is bounded}\}
+</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/orionjordan\.github\.io\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

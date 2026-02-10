@@ -155,7 +155,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#existence-axioms" id="toc-existence-axioms" class="nav-link active" data-scroll-target="#existence-axioms">Existence Axioms</a></li>
+  <li><a href="#axiom-of-extensionality" id="toc-axiom-of-extensionality" class="nav-link active" data-scroll-target="#axiom-of-extensionality">Axiom of Extensionality</a></li>
+  <li><a href="#existence-axioms" id="toc-existence-axioms" class="nav-link" data-scroll-target="#existence-axioms">Existence Axioms</a></li>
   <li><a href="#number-construction" id="toc-number-construction" class="nav-link" data-scroll-target="#number-construction">Number construction</a></li>
   </ul>
 </nav>
@@ -182,8 +183,13 @@ window.Quarto = {
 </header>
 
 
-<p>Below list the axioms of ZFC assuming FOL.</p>
-<p>We start with two primitive notions, which cannot be defined. These being an object called a “set” <span class="math inline">\{\}</span>, and a relation called “contains” <span class="math inline">\in</span>.</p>
+<p>The ideas we have studied up to now feel very natural, and are all true properties we want set theory to have. We want, however, for set theory to be built on absolute solid foundations with no ambiguity, and thus it is axiomatized in first order logic.</p>
+<p>The following chapter is devoted to developing all the ideas from the last, with care for the Axioms. The specific axoioms we choose to include develop a system known as <span class="math inline">ZFC</span>. This is not the only way to formalize set theory however, and not even the only set of axioms used to formalize <span class="math inline">ZFC</span>.</p>
+<p>The goal of this section is to start with two primitive notions, an object called a <em>set</em>, and a relation called <em>contains</em>, denoted with <span class="math inline">\in</span>.</p>
+<p>With only these two notions we can’t do much, so we introduce our first axiom.</p>
+<section id="axiom-of-extensionality" class="level2">
+<h2 class="anchored" data-anchor-id="axiom-of-extensionality">Axiom of Extensionality</h2>
+<p>Formally we know nothing about what a set is or what the relation <em>containment</em> does. We have our intuitive ideas of course, and need to somehow make explicit all of our assumptions. Lets start with a basic axiom, and see how it fits our intuition.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -200,28 +206,6 @@ Axiom of Extensionality.
 </span></p>
 </div>
 </div>
-<p>In english, this means for all sets <span class="math inline">A,B</span>, if for all elements <span class="math inline">x</span> in <span class="math inline">A</span> if and only if <span class="math inline">x</span> in <span class="math inline">B</span>, then <span class="math inline">A = B</span>.</p>
-<p>We have the following definitions for additional symbols</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We denote the following</p>
-<ul>
-<li><p><span class="math inline">x \not \in y</span> if <span class="math inline">\lnot(x \in y)</span></p></li>
-<li><p><span class="math inline">x \subseteq y</span> if <span class="math inline">\forall z \in x(z \in y)</span></p></li>
-<li><p><span class="math inline">x \subset y</span> if <span class="math inline">(x \subseteq y) \land \lnot(x = y)</span></p></li>
-</ul>
-</div>
-</div>
-<section id="existence-axioms" class="level2">
-<h2 class="anchored" data-anchor-id="existence-axioms">Existence Axioms</h2>
 <p>The following axioms ensure the existence of many fundamental sets.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -235,10 +219,43 @@ Empty Set Axiom
 <div class="callout-body-container callout-body">
 <p>There is a set with no members:</p>
 <p><span class="math display">
-\exists y \forall x, x \not \in y
+\exists A \forall x, x \not \in A
 </span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There exists only one set to which no elements belong. Symbollically</p>
+<p><span class="math display">
+\forall A \forall B [(\forall u(u\not\in A) \land \forall v(v \not\in B)) \implies A = B]
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\varnothing</span> be the set with no members. This is called the <span class="definition">empty set</span>.</p>
+</div>
+</div>
+<p>Now we know for certain that at least one set exists. The following axioms will allow us to construct more sets from that.</p>
+</section>
+<section id="existence-axioms" class="level2">
+<h2 class="anchored" data-anchor-id="existence-axioms">Existence Axioms</h2>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -249,12 +266,28 @@ Pairing Axiom
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For any two sets <span class="math inline">u</span> and <span class="math inline">v</span>, there is a set having as members just <span class="math inline">u</span> and <span class="math inline">v</span>:</p>
+<p>For any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, there is a set having as members just <span class="math inline">A</span> and <span class="math inline">B</span>:</p>
 <p><span class="math display">
 \forall u \forall v \exists B \forall x (x \in B \iff x = u \lor x = v)
 </span></p>
 </div>
 </div>
+<p>This is our first method of constructing a new set from previous sets.</p>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> and <span class="math inline">B</span> be sets. Then the set <span class="math inline">\{A,B\}</span> exists. Within our current universe of sets we have only shown the existence of <span class="math inline">\varnothing</span> as a set, but now, through the axiom of pairing, we can create <span class="math inline">\{\varnothing,\varnothing\}</span> which through the axiom of extension is equivalent too <span class="math inline">\{\varnothing\}</span>.</p>
+<p>We can apply this axiom repeatedly to create new sets.</p>
+</div>
+</div>
+<p>Next we look at a weak form of the Union Axiom which allows us to union two sets together.</p>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -265,9 +298,25 @@ Union Axiom (weak form)
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>For any two sets <span class="math inline">a</span> and <span class="math inline">b</span>, there is a set having whose members are the elements of <span class="math inline">a</span> or <span class="math inline">b</span> (or both):</p>
+<p>For any two sets <span class="math inline">a</span> and <span class="math inline">b</span>, there is a set having whose members are the elements of <span class="math inline">a</span> or <span class="math inline">b</span>:</p>
 <p><span class="math display">
 \forall a \forall b \exists B \forall x (x \in B \iff x \in a \lor x \in b)
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The axiom of pairing allowed us to construct sets with one element, and sets with two elements. Using the axiom of union, we are able to construct sets of any arbitrary length. For example, let <span class="math inline">A,B,C</span> be sets, then</p>
+<p><span class="math display">
+\{A\} \cup \{B,C\} = \{A,B,C\}.
 </span></p>
 </div>
 </div>
@@ -287,20 +336,7 @@ Power Set Axiom
 </span></p>
 </div>
 </div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Let <span class="math inline">x</span> be the set with no members.</p>
-<p>We denote <span class="math inline">x</span> as <span class="math inline">\varnothing</span>, and call it the <span class="definition">empty set</span>.</p>
-</div>
-</div>
+<p>Now we can prove some facts</p>
 </section>
 <section id="number-construction" class="level2">
 <h2 class="anchored" data-anchor-id="number-construction">Number construction</h2>

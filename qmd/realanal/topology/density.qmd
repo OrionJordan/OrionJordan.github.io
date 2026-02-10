@@ -1,0 +1,111 @@
+---
+title: "Density"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Density is one of the ways of measuring how 'big' a set is. A set is dense in another set if every subset of the latter set contains a (infinite amount of) point(s) of the former set. 
+
+## Definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S \subset \mathbb{R}$ is [dense]{.definition} in $K \subset \mathbb{R}$ if every non-empty open set $U \subset K$ contains an element from $S$.
+:::
+
+This means for point in $K$, there exists a point in $S$ arbitrarily close. 
+
+::: {.callout-warning icon="false"}
+## Example
+
+The prime example of a dense set is $\mathbb{Q}$ being dense in $\mathbb{R}$. Every non-empty open interval of $\mathbb{R}$ contains some rational point $p \in \mathbb{Q}$ by the Archimedean property.
+:::
+
+## Properties
+
+Denseness has some nice properties.
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Every set is dense in itself.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Every set is dense in its closure.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Given three sets $A,B,C \subset \mathbb{R}$, if $A$ is dense in $B$ and $B$ is dense in $C$, then $A$ is dense in $C$.
+:::
+
+## Nowhere Dense
+
+The opposite of a dense set is one that isn't dense, anywhere on $\mathbb{R}$. As we saw in the previous section, every set is dense in itself and in its closure, so we'll have to specify exactly what we mean.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S \subseteq \mathbb{R}$ is [nowhere dense]{.definition} if for every nonempty open interval $I$, $S$ is not dense in $I$.
+:::
+
+By specifying that $S$ is not dense in a nonempty open interval, we don't run into problems with $S$ being dense in itself or it's closure. 
+
+::: {.callout-note icon="false"}
+## Theorem
+
+A set $S \subseteq \mathbb{R}$ is nowhere dense if $\varnothing = \text{int}(\text{cl}(S))$.
+:::
+
+This theorem is so useful it is often given as the definition of a nowhere dense set. The following are useful properties of nowhere dense sets
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $S$ be a nowhere dense set. Then every subset of $S$ is also nowhere dense.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $\{S_i \subset \mathbb{R} \mid i \in I\}$ be nowhere dense sets for a finite index set $I$. Then $\bigcup_{i \in I} A_i$ is nowhere dense.
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $I_1$ be an arbitrary interval, then there exists some $p_1 \in I_1$ such that for some $\varepsilon_1 > 0$, ${(p_1 - \varepsilon_1,p_1 + \varepsilon_1)} \cap S_1 = \varnothing$ since $S_1$ is nowhere dense.
+
+Next let $I_2 = {(p_1 - \varepsilon_1,p_1 + \varepsilon_1)}$. Then there exists some $p_2 \in I_2$ such that for some $\varepsilon_2 > 0$, ${(p_2 - \varepsilon_2,p_2 + \varepsilon_2)} \cap S_2 = \varnothing$ since $S_2$ is nowhere dense. 
+
+Thus $S_1 \cup S_2$ is nowhere dense in $I_1$. This can repeated any finite amount of times.
+:::
+
+This argument does not work when applied to a countable union of nowhere dense sets, as the nested interval theorem states that our intersection $\bigcap I_n$ of intervals will contain a point, which may belong to some set $S_n$.
+
+There also exists the counterexample of $\mathbb{Q}$, which is a countable union of nowhere dense sets (singletons) but is dense in $\mathbb{R}$.
+
+::: {.callout-note icon="false"}
+## Corollary
+
+The closure of a nowhere dense set is nowhere dense.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+This is a simple one liner, since $\text{cl}(\text{cl}(S)) = \text{cl}(S)$ for every set $S$. By our theorem if $S$ is nowhere dense,
+
+$$
+\text{int}(\text{cl}(\text{cl}(S))) = \text{int}(\text{cl}(S)) = \varnothing.
+$$
+
+So the closure of $S$ is also nowhere dense. 
+:::

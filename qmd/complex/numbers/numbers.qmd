@@ -1,0 +1,106 @@
+---
+title: "Complex numbers"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+We will start our analysis of Complex numbers by starting with our definition we used to construct them.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $x,y \in \mathbb{R}$. Then $z = (x,y)$ is a [complex number]{.definition}. 
+
+We commonly denote $z$ with $x + yi$ instead of $(x,y)$.
+:::
+
+The set of all complex numbers is denoted $\mathbb{C}$. Recall our definitions for addition and multiplication
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Addition]{.definition} relation $+_\mathbb{C} \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) +_\mathbb{C} (x_2,y_2) \to (x_1 + x_2, y_1 + y_2).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Multiplication]{.definition} relation $\times_\mathbb{C} \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) \times_\mathbb{C} (x_2,y_2) \to (x_1x_2 - y_1y_2, x_1y_2 + x_2y_1).
+$$
+:::
+
+We will abbreviate $+_\mathbb{C}$ as $+$, and $\times_\mathbb{C}$ as either $\times$, $\cdot$, or concatenated variables.
+
+## Real and imaginary parts
+
+We define the following unary functions
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Real part]{.definition} of a complex number is given by the function $\text{Re} \colon \mathbb{C} \to \mathbb{R}$ such that
+
+$$
+\text{Re} \colon (x,y) \to x.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Imaginary part]{.definition} of a complex number is given by the function $\text{Im} \colon \mathbb{C} \to \mathbb{R}$ such that
+
+$$
+\text{Im} \colon (x,y) \to y.
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $z = 2 + 3i$. Then by our definition we have ${z = (2,3).}$ This lets us calculate our real and imaginary parts as $\text{Re}(z) = 2$, and $\text{Im}(z) = 3$.
+:::
+
+Now we can start using these functions for theorems. Our first theorem states that $z$ is equal to its real and imaginary parts.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z \in \mathbb{C}$. Then $z = (\text{Re}(z),\text{Im}(z))$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $z \in \mathbb{C}$. Then $z = (x,y)$. We have from our definitions of real and imaginary parts that $\text{Re}(z) = x$ and $\text{Im}(z) = y$. Then
+
+$$
+(\text{Re}(z),\text{Im}(z)) = (x,y) = z.
+$$
+:::
+
+Our next theorem states that if two complex numbers have the same real and imaginary parts, they are the same number.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z,w \in \mathbb{C}$. If $\text{Re}(z) = \text{Re}(w)$, and $\text{Im}(z) = \text{Im}(w)$ then $w = z$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $z = (x,y)$ and $w = (u,v)$. If $\text{Re}(z) = \text{Re}(w)$ then we have $x = u$. Similarly, if $\text{Im}(z) = \text{Im}(w)$ then we have $y = v$. This gives us our equivalence
+
+$$
+z = (x,y) = (u,v) = w.
+$$
+:::

@@ -1,18 +1,14 @@
-- title: Naive Set Theory
-  subtitle: Introduction to Sets
+- title: Set Theory
+  subtitle: Sets and Foundations
   image: realanal
   links:
     - text: Introduction
-      href: ../naive/intro.qmd
-    - text: Fundamental Concepts
-      href: ../naive/fundementals.qmd
-    - text: Mathematical Concepts
-      href: ../naive/mathcon.qmd
+      href: ../settheory/intro.qmd
 
 
 - title: Real Analysis
   subtitle: Analysis of the Reals
-  image: realanal
+  image: testink
   links:
     - text: Introduction
       href: ../realanal/intro.qmd
@@ -33,16 +29,16 @@
 #  links:
 #    - text: Introduction
 
-- title: Abstract Algebra
-  subtitle: Study of Algebraic Structures
-  image: abalg
-  links:
-    - text: Introduction
-      href: ../abstract/intro.qmd
-    - text: Prerequisites
-      href: ../abstract/prereq/functions.qmd
-    - text: Groups
-      href: ../abstract/intro-to-groups/definitions.qmd
+#- title: Abstract Algebra
+#  subtitle: Study of Algebraic Structures
+#  image: abalg
+#  links:
+#    - text: Introduction
+#      href: ../abstract/intro.qmd
+#    - text: Prerequisites
+#      href: ../abstract/prereq/functions.qmd
+#    - text: Groups
+#      href: ../abstract/intro-to-groups/definitions.qmd
 
 #- title: Matrix Theory
 ##  subtitle: Properties and Calculation of Matrices
@@ -50,3 +46,10 @@
  # links:
   #  - text: Introduction
 ##
+
+#- title: Complex Analysis
+#  subtitle: Analysis of Complex Numbers
+#  image: testink
+#  links:
+#    - text: Introduction
+#      href: ../complex/intro.qmd

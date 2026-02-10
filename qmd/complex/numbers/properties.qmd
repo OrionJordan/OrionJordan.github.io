@@ -1,0 +1,1023 @@
+---
+title: "Properties"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+Complex numbers can be though of as an ordered pair of real numbers. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+If $z$ is an ordered pair $(x,y)$ such that $x,y \in \mathbb{R}$, then $z$ is a [Complex number]{.definition}.
+:::
+
+Then we define the following relations
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Addition]{.definition} relation $+ \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) + (x_2,y_2) \to (x_1 + x_2, y_1 + y_2).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Subtraction]{.definition} relation $- \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) + (x_2,y_2) \to (x_1 - x_2, y_1 - y_2).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Multiplication]{.definition} relation $\times \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) \times (x_2,y_2) \to (x_1x_2 - y_1y_2, x_1y_2 + x_2y_1).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Division]{.definition} relation $\  \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+(x_1,y_1) \times (x_2,y_2) \to (x_1x_2 - y_1y_2, x_1y_2 + x_2y_1).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Quotient]{.definition} relation $ \div \colon \mathbb{C} \to \mathbb{C}$ is defined
+$$
+
+$$
+:::
+
+## Real and Imaginary functions
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Real part]{.definition} of a complex number is given by the function
+
+$$
+\text{Re} \colon (x,y) \to x
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Imaginary part]{.definition} of a complex number is given by the function
+
+$$
+\text{Im} \colon (x,y) \to y
+$$
+:::
+
+TO-DO: Theorems
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [Circle]{.definition} around an inmaginary number $z_0$ with radius $r$ is
+
+$$
+\{z \, \vert \, \text{abs}(z - z_0) = r\}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Given any cubic equation of the form
+
+$$
+z^3 + az^2 + bz + c = 0
+$$
+
+the substitution $z = x - \frac{a}{3}$ gives the equivalent depressed cubic
+
+$$
+x^3 + bx + c = 0.
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+$$
+\begin{align*}
+z^3 + az^2 + bz + c &= 0\\
+\left(x - \frac{a}{3}\right)^3 + a\left(x - \frac{a}{3}\right)^2 + b\left(x - \frac{a}{3}\right) + c &= 0\\
+x^3 + bx + c &= 0
+\end{align*}
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+A depressed cubic has the following solution
+
+$$
+x = \sqrt[3]{-\frac{c}{2} + \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}} + \sqrt[3]{-\frac{c}{2} - \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}}.
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Given $a = 0$, $b=3$, $c =-4$
+$$
+x = \sqrt[3]{-\frac{c}{2} + \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}} + \sqrt[3]{-\frac{c}{2} - \sqrt{\frac{c^2}{4} + \frac{b^3}{27}}}.
+$$
+
+Gives $x=1$, allowing us to factor and obtain the solutions 
+
+$$
+x = \frac{1 \pm i\sqrt{11}}{2}.
+$$
+
+:::
+
+::: {.callout-tip icon="false"}
+## Method
+
+- Create monic polynomial
+- Preform change of variables
+- Use Ferro-Tartaglia formula
+- Factor to obtain a quadratic
+- Find remaining solutions
+:::
+
+TO-DO: Prove solutions of real cubic equations
+
+## Conjugates
+
+::: {.callout-note icon="false"}
+## Definition
+
+Given a complex number $z \in \mathbb{C}$, we define its [conjugate]{.definition}
+$$
+\overline{z} = \text{Re}(z) - \text{Im}(z)
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The following identities hold true
+
+- $z + \overline{z} = 2\text{Re}(z)$
+
+- $\overline{\overline{z}} = z$
+
+- $\overline{z_1 + z_2} = \overline{z_1} + \overline{z_2}$
+
+- $\overline{z_1z_2} = \overline{z_1} \cdot \overline{z_2}$
+
+- $\overline{z_1/z_2} = $ 
+
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $z \in \mathbb{C}$. Then 
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (Triangle inequality)
+
+Given $z_1,z_2 \in \mathbb{C}$
+
+:::
+
+## Modulus
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let 
+
+$r = |z| = \sqrt{x^2+y^2}$
+
+:::
+
+To-DO: Polar coordinates for complex numbers
+
+## Polar-coords
+
+When $|z| \not = 0$, we can define a complex number by two quantities $r$ for radius, and $\theta$ for angle.
+
+A complex number has an infinite amount of polar representations.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z \in \mathbb{C}$, then exists $r \in \mathbb{R}$ and $\theta \in [0,2\pi]$ such that
+
+$z = r\cos\theta + r\sin\theta i$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [argument]{.definition} of a complex number is given by the function
+
+$$
+\arg z = \{\theta \mid r\cos\theta + r\sin\theta i = z\}
+$$
+
+where $r = |z|$.
+:::
+
+The argument is any $\theta \not = 0$ such that for some $r$ the polar representation is accurate.
+
+::: {.callout-warning icon="false"}
+## Example
+
+$\arg (1 + i) = \{\frac{\pi}{4} + 2\pi n \mid n \in \mathbb{N}\}$
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [principle argument]{.definition} of a complex number is given by the function
+
+$$
+\text{Arg } \colon z \to (-\pi,\pi].
+$$
+
+such that
+
+$$
+\text{Arg } z = \{\theta \mid r\cos\theta + r\sin\theta i = z\}
+$$
+
+where $r = |z|$.
+:::
+
+
+::: {.callout-note icon="false"}
+## Definition
+
+[De Moives formula]{.definition} is used when exponetiating complex numbers.
+
+$$
+(e^{i\theta})^n = e^{in\theta}.
+$$
+
+In polar form
+
+$$
+(\cos\theta + \sin\theta i)^n = (\cos(n\theta) + \sin(n\theta) i)
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Using De Moivres formulas, prove
+
+$$
+\cos(5\theta) = ???
+$$
+
+We have
+
+$$
+(\cos\theta + \sin \theta i)^5 = \cos(5\theta) + \sin(5\theta)i
+$$
+
+Which using binomial theorem
+
+$$
+(a + b)^5 = a^5 + \binom{5}{1}a^4b + \binom{5}{2}a^3b^2 + \binom{5}{3}a^2b^3 + \binom{5}{4}ab^4 + b^5.
+$$
+
+Which evaluates into
+
+$$
+(a + b)^5 = a^5 + 5a^4b + 10a^3b^2 + 10a^2b^3 + 5ab^4 + b^5.
+$$
+
+Plugging this back into our equation
+
+$$
+a^5 + 5\cos^4\theta \sin \theta i + 10\cos^3 \theta \sin^2 \theta i^2 + 10\cos^2\theta \sin^3\theta i^3 \\+ 5\cos\theta \sin^4\theta i^4 + \sin^5\theta i^5 = \cos(5\theta) + \sin(5\theta)i
+$$
+
+Matching the real parts we have
+
+$$
+cos(5\theta) = ??
+$$
+:::
+
+## Solving equations
+
+The equation $z^n = 1$ can easily be solved with $z = 1$, but there should exist $n$ many solutions.
+
+We can solve it with polar representation.
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Roots of unity]{.definition} are complez solutions to the polynomial $z^n - 1 = 0$, where $n$ is an integer.
+
+Notice that
+
+$$
+|z^n| = 1 \implies |z|^n = 1
+$$
+
+by our modulus operations. Using our polar representation, we have
+
+$$
+z = re^{i\theta}
+$$
+
+where $z$ is not zero. Then
+
+$$
+(e^{i\theta})^n = e^{ni\theta} = 1
+$$
+
+Thus the solutions to $z^n = 1$ are
+
+$$
+z_k = e^{2ki\pi/n}
+$$
+
+for $k$ as an integer. Thus we have obtained all $n$ solutions to the polynomial.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [primitive nth root of unity]{.definition} is given by $z_1 = \omega_n = e^{2i\pi/n}$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Find all $5th$ roots of $9i$.
+
+Let $z = re^{i\theta}$. Converting to polar form
+
+$$
+r^5e^{i5\theta} = 9e^{i\pi/2}.
+$$
+
+Then $r^5 = 9$ and $e^{i5\theta} = e^{i\pi/2}$.
+
+Then $\theta = \pi/10 + 2\pi k /5$, and $r = \sqrt[5]{9}$.
+:::
+
+We say $z = \zeta \omega_n^k$ is a solution to the equation $z^n = \zeta^n$.
+
+## Topology of the Complex numbers
+
+A parametrized curve in $\mathbb{C}$ is
+
+$$
+C \colon z(t) = x(t) + y(t)i
+$$
+
+for $a \leq t \leq b$.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A curve is [smooth]{.definition} if $x(t)$ and $y(t)$ are differentiable.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A curve is [closed]{.definition} if $z(a) = z(b)$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A curve is [non-intersecting]{.definition} if $t_1 \not = t_2$ implies $z(t_1) \not= z(t_2)$.
+:::
+
+A positive orientation is counter clockwise, while a negative orientation is clockwise.
+
+A circle is denoted $C_\epsilon(z_0)$ for a circle of radius $\epsilon$ and center $z_0$.
+
+A disk is denoted $D_\epsilon(z_0)$ and is all the stuff inside the circle.
+
+The closed disk is denoted $\overline{D}_\varepsilon(z_0)$.
+
+::: {.callout-note icon="false"}
+## Definition
+Let $S \subset \mathbb{C}$ be a set. A point $p$ in $S$ is an [interior]{.definition} point of $S$ if there exists some $\varepsilon > 0$ such that some $\varepsilon$ neighborhood of $p$ is completely contained in $S$. 
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+Let $S \subset \mathbb{C}$ be a set. A point $p$ in $S$ is a [boundary]{.definition} point of $S$ if for all $\varepsilon > 0$, there exist ptext
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S$ is called open if every point in $S$ is open.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S$ is called open if every point in $S$ is open.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S$ is called a [domain]{.definition} if it is open and pathwise-connected.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [region]{.definition} is a domain together with an arbitrary amount of boundary points.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Every point in $D_1(0)$ is an interior point.
+
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $z_0 \in D_1(0)$. Then $|z_0| < 1$, so $\varepsilon = 1 - |z_0|$ is positive.
+
+We want to show $D_\varepsilon(z_0) \subset S$. Any point $z \in D_\varepsilon(z_0)$ had the property 
+
+$$
+\begin{align*}
+|z - z_0| &< \varepsilon\\
+&<1 - |z_0|
+\end{align*}
+$$
+
+And by triangle inequality
+
+$$
+|z| = |(z - z_0) + z_0| \leq |z - z_0| + |z_0| < 1.
+$$
+:::
+
+Prove every point in $C_1(0)$ is on the boundary.
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $z_0 \in C_1(0)$. Then $|z_0| = 1$. Write $z_0 = e^{i\theta_0}$. Then we have $z_1 = (1 + \varepsilon/2)z_0$.
+
+$$
+|z_1 - z_0| < \varepsilon.
+$$
+
+Thus $z_0$ is in the boundary of $S$.
+:::
+
+Thus we have.
+
+## Functions and linear mappings
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [complex-valued function]{.definition} is a function $f : \mathbb{C} \to \mathbb{C}$. Also called a map.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = z^2$. The domain and range of the function is $\mathbb{C}$.
+
+Let $g(z) = |z|^2$. The domain is the complex numbers, while the range is strictly the positive real numbers with zero.
+
+Let $h(z) = 1/z$. Then the domain and range are $\mathbb{C}^*$.
+:::
+
+Functions can be in polar, cartesian, or complex form.
+
+The image of $A$ is the output of $f(A)$.
+
+## Properties
+
+The most important properties of a function depend on if they said function is _injective_ or _surjective_.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon A \to B$ is [injective]{.definition} if for all $a,a^\prime \in A$
+
+$$
+f(a) = f(a^\prime) \implies a = a^\prime.
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = z^2$. This is not an injective function as $1$ and $-1$ map to the same number.
+
+Let $g(z) = iz$. This is an injective function.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon A \to B$ is [surjective]{.definition} if for all $b \in B$, there exists $a \in A$ such that
+
+$$
+f(a) = b.
+$$
+:::
+
+And the most appealing type of function,
+
+::: {.callout-note icon="false"}
+## Definition
+
+A function $f \colon A \to B$ is [bijection]{.definition} if $f$ is both injective and surjective.
+:::
+
+If a function is injective, there exists an inverse.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = iz + 2$. Then by setting $w = iz+2$ and solving for $w$, we have
+
+$$
+f^{-1}(w) = -iz + 2i.
+$$
+:::
+
+## Inverse exponents
+
+Let $f(z) = z^2$. In exponential form we have $f(re^{i\theta}) = r^2e^{2i\theta}$. We know that this function is very much not injective.
+
+We want to find some restriction for our function such that $f \colon D \to \mathbb{C}$ is injective. This gives us 
+
+$$
+D = \{re^{i\theta} \colon r > 0, \frac{-\pi}{2} < \theta \leq \frac{\pi}{2}\}.
+$$
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $A = \{z \mid \Im(z) = 2\}$ maps to a parabola.
+
+:::
+
+This allows us to create a [principle root function]{.definition}. This is a well defined function that gives us an inverse for any squared complex numbers.
+
+::: {.callout-note icon="false"}
+## Fact
+
+Let $g$ be the principle root function. Then $g(z) = \sqrt{|z|}e^{i\frac{\arg(z)}{2}}$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [principal nth root]{.definition} is given by
+
+$$
+g(w) = \sqrt[n]{|w|} e^{i\frac{\text{Arg}(w)}{n}}.
+$$
+
+:::
+
+## Limits and continuity
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z,w \in \mathbb{C}$, and $f \colon \mathbb{C} \to \mathbb{C}$ be a function. The [limit]{.definition} of $f$ at $z$ is $w$ if for all $D_\varepsilon(w)$, there exists $D_\delta(z)$ such that $f(D_\delta(z)) \subset D_\varepsilon(w)$.
+
+Equivalently, if $|z - z_0| < \delta$ then $|f(z) - w_0| < \varepsilon$.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Prove $\lim_{z \to 0}z^2 = 0$
+
+Let $\varepsilon > 0$, and choose $\delta = \sqrt{\varepsilon}$. If $z \in D_\delta(0)$, then $|z| < \sqrt{\varepsilon}$. Thus $z^2 = f(z) < \varepsilon$ and $f(z) \in D_\varepsilon(0)$.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Prove $\lim_{z \to 0} \overline{z}/z$ does not exist.
+
+Let $\Im(z) = 0$, then as $z$ approaches $0$, we have that $f(z) = 1$. But if $\Re(z) = 0$, as $z$ approaches $0$ we have that $f(z) -1$.
+
+Thus, the limit does not exist.
+:::
+
+Lots of theorems exist.
+
+$$
+
+$$
+
+Limit breaks up, limit follows limit properties.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A complex function is continuous if for all $z \in D$, we have
+
+$$
+\lim_{z \to z_0} = f(z_0).
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Prove $f(z)=z^{-1}$ is continuous on it's domain, $\mathbb{C}^*$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [branch]{.definition} of a multivalued function $f$ is a single values function.
+
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+The function $f(z)=z^{1/2}$ has the branches
+
+- $f_1(z) = \sqrt{r}e^{i\frac{\text{Arg}(z)}{2}}$
+- $f_2(z) = -\sqrt{r}e^{i\frac{\text{Arg}(z)}{2}}$
+- $f_3(z) = -\sqrt{r}e^{i\frac{\text{arg}(z)}{2}}$
+
+Not continuous on negative $x$-axis.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [branch cut]{.definition} of a multivalued function $f$ is the set of discontinuties for all branches.
+:::
+
+Depressed cubic
+Products and algebra
+Modulus, argument, conjugate formulas
+Triangle equality reverse and direct
+Limits
+Exponential/Polar/Cartesian
+Find all roots of numbers
+Prove topological results (Disk,Circle,Etc.)
+Openness/Pathconnectedness
+Find images under mappings
+Find limits and epsilon delta proofs
+
+## Differentiable and holomorphic functions
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z_0 \in \mathbb{C}$, and $f$ be a complex valued function. Then the [derivative]{.definition} of $f$ is defined
+
+$$
+f^\prime(z_0) = \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}
+$$
+
+if limit exists. If $f^\prime(z_0)$ exists, we say $f$ is [differentiable]{.definition} at $z_0$.
+:::
+
+Example of finding a functions derivative
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = z^3$. Find the derivative of $f$.
+
+\begin{align*}
+f^\prime(z_0) &= \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}\\
+&= \lim_{z \to z_0} \frac{z^3 - z^3_0}{z - z_0}\\
+&= \lim_{z \to z_0} \frac{(z - z_0)(z^2 + zz_0 + z^2_0)}{z - z_0}\\
+&= \lim_{z \to z_0} z^2 + zz_0 + z^2_0\\
+&= 3z^2_0.
+\end{align*}
+:::
+
+Do all functions have a derivative at some point? No.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = \overline{z}$. Show that $f$ is differentiable nowhere.
+
+\begin{align*}
+f^\prime(z_0) &= \lim_{z \to z_0} \frac{f(z) - f(z_0)}{z - z_0}\\
+&= \lim_{z \to z_0} \frac{\overline{z} - \overline{z_0}}{z - z_0}
+\end{align*}
+
+We previously showed that this limit does not exist. Therefore the function is not differentiable at any point.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $z_0 \in \mathbb{C}$ and $f$ be a complex valued function. The function $f$ is [holomorphic]{.definition} at a point $z_0$ if it is differentiable at at every point in some neighborhood $D_\varepsilon(z_0)$. 
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $R \subset \mathbb{C}$ and $f$ be a complex valued function. The function $f$ is [holomorphic]{.definition} on the region $R$ if $f$ is holomorphic at every point in $R$.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $f$ be a complex valued function. The function $f$ is [entire]{.definition} if is differentiable at every point in the complex plane.
+:::
+
+The above definition is eequivalent to being holomorphic at every point on the complex plane.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = z^3$. Since $f$ is differentiable at every point $z_0 \in \mathbb{C}$, it is entire. 
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $f(z) = |z|$. The function $f$ is differentiable only at $z_0 = 0$, and nowhere else. Therefore the function is holomorphic nowhere, since there exists no neighborhood where every point is differentiable.
+:::
+
+Now we can move on to some properties
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z_0 \in \mathbb{C}$ and let $f$ be a complex valued function.
+
+If $f$ is differentiable at $z_0$, then $f$ is continuous at $z_0$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+:::
+
+We can convert L'Hopital's rule into the complex plane.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z_0 \in \mathbb{C}$ and $f,g$ be complex valued functions.
+
+If $f$ and $g$ are holomorphic at $z_0$, and $f(z_0) = 0$ and $g(z_0) = 0$, then
+
+$$
+\lim{z \to z_0} \frac{f(z)}{g(z)} = \frac{f^\prime(z)}{g^\prime(z)}
+$$
+
+as long as $g^\prime(z_0) \not= 0$.
+:::
+
+### Cauchy-Riemann equations
+
+Let $f$ be a complex function differentiable at $z_0 \in \mathbb{C}$ written in it's real and imaginary parts, that is
+
+$$
+f(x +iy) = u(x,y) + iv(x,y)
+$$
+
+If $f = u + vi$ is holomorphic, then both $u$ and $v$ are harmonic.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+A function $u(x,y)$ is [harmonic]{.definition} if it satisfies
+
+$$
+u_{xx} + u_{yy} = 0
+$$
+:::
+
+Given a harmonic function $u(x,y)$, we can choose $v(x,y)$ such that $f(z) = u(x,y) + iv(x,y)$ is holomorphic.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $u(x,y)$ be a harmonic function. A [harmonic conjugate]{.definition} is a function $v$ such that $f(z) = u(x,y) + iv(x,y)$ is holomorphic.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The following are functions
+
+$$
+\text{curl}(\overline{V}) = \frac{\partial q}{\partial x} - \frac{\partial p}{\partial y}.
+$$
+
+The curl detects rotation.
+
+$$
+\text{div}(\overline{V}) = \frac{\partial p}{\partial x} - \frac{\partial q}{\partial y}.
+$$
+
+The div detects divergence.
+
+$$
+\text{grad}(\phi(x,y)) = \frac{\partial \phi}{\partial x} - i\frac{\partial \phi}{\partial y}.
+$$
+:::
+
+If continuity holds, then $V$ is holomorphic.
+
+$$
+F(z) = \phi(x,y) + \psi(x,y)i
+$$
+
+## Sequences and Series
+
+Many properties of sequences from real numbers carry over to complex numbers.
+
+We have the same definition of sequence from real analysis, that is
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A \subseteq \mathbb{N}$ and $S$ be a set.
+
+If $f \colon A \to S$ is a function, then $f$ is a [sequence]{.definition}.
+:::
+
+except now each term may be a complex number. 
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $z_n = e^{2\pi n i/5}$ be a complex sequence. Then
+
+$$
+z_n = (e^{2\pi i/5},e^{4\pi i/5},e^{6\pi i/5},\dots)
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+A sequence $(z_n)$ of complex numbers is said to [converge]{.definition} to a complex number $w$ if, for every $\varepsilon > 0$, there exists some natural number $N$ such that $n > N$ implies $z_n \in D_\varepsilon(w)$.
+:::
+
+This creates are ability to make a limit.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z_n$ be a sequence of complex numbers and let $w$ be a fixed complex number. Then
+
+$$
+\lim_{n\to\infty} z_n = w
+$$
+
+if and only if
+
+$$
+\lim_{n\to\infty} \Re(z) = \Re(w) \text{ and } \lim_{n\to\infty} \Im(z) = \Im(w).
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\Rightarrow$) Let $z_n = x_n + y_ni$ and $w = u + vi$.
+
+Since $z_n$ converges to $w$, we have that  for all $\varepsilon > 0$ there exist $N$ such that $n > N$ implies $|z_n - w| < \varepsilon$. Then
+
+$$
+|x_n - u| = |\Re(z_n) - \Re(w)|.
+$$
+
+($\Leftarrow$) Let $\lim_{n \to \infty} x_n = u$ and $\lim_{n \to \infty} y_n = v$.
+
+When $n > \max(N_{\varepsilon/2},M_{\varepsilon/2})$, we have that
+
+$$
+|x_n - u| + |y_n - v| < \varepsilon/2 + \varepsilon/2 = \varepsilon
+$$
+
+And since $|x_n - u| + |y_n - v| \geq |z_n - w|$, we have that $|z_n - w| < \varepsilon$ so we have our limit.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $z_n = \frac{1}{n} + \frac{1}{n}i$. Show that $z_n$ converges to $0$.
+
+--------
+
+We need to find some $N_\varepsilon$ such that $n > N_\varepsilon$ implies $|z_n| < \varepsilon$.
+
+We know $|z_n| = \frac{1}{n}\sqrt{2}$. Thus
+
+\begin{align*}
+\frac{1}{n}\sqrt{2} &< \varepsilon \\
+\frac{1}{\varepsilon}\sqrt{2} &< n
+\end{align*}
+
+So we choose $N_\varepsilon = \lceil \sqrt{2}/\varepsilon \rceil$.
+:::
+
+## Infinite Series
+
+Given a sequence $\{z_n\}^\infty_{n=1}$ we can take it's sum and ask if it converges to a complex number.
+
+Same as real variable calculus.  
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $\{z_n\}$ be a sequence. If $\sum_{n=1}^\infty$ converges, then $\lim_{n\to\infty}z_n = 0$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [geometric series]{.definition} $\sum_{n=0}^\infty z_n$ converges or diverges depending on $|z|$ as follows
+
+- If $|z| < 1$ then $\sum_{n=0}^\infty z_n = \frac{1}{1-z}$
+
+- If $|z| \geq 1$ then $\sum_{n=0}^\infty z_n$ diverges.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $\sum_{n=0}^\infty$ has the property $\lim_{n\to\infty} |z_{n+1}|/|z_n| = L$ then
+
+- If $L < 1$ then the series converges absolutely.
+
+- If $L > 1$ then the series diverges.
+
+- If $L = 1$, nothing.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $\lim_{n\to\infty} < 1$ then the series is guaranteed to converge absolutely.
+:::
+
+We can do some pretty cool stuff and find the [radius of convergence]{.definition}
+
+## Fractals
+
+Fractals encode information about iterative functions.
+
+For example, given a function $f(z) = z^2$, what happens if we apply this iterativly to some initial point $z_0$.
+
+Clearly when $|z_0| > 1$, the sequence never converges. When $|z_0| < 1$, the sequence converges. What about when $|z| = 1$?
+
+The convergent points on the circle have a different cardinality ($\aleph$) then the points that don't ($2^\aleph$).
+
+$$
+K = \{z\in\mathbb{C} \mid f^\infty(z) \text{ is bounded}\}
+$$
+

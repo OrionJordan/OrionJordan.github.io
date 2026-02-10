@@ -1,0 +1,13 @@
+---
+title: "Motivation"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+In Calculus you learn what a derivative is and how to take an anti-derivative, and through 'The Fundamental Theorem of Calculus' learn its relation to the area under a curve. This theorem is not proven, but instead taken as fact. Much of Real Analysis is formalizing these ideas of Calculus under mathematical rigor.
+
+## Real Numbers
+
+Real 

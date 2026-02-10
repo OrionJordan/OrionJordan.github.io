@@ -60,6 +60,11 @@ website:
     - title: "Real Analysis"
       contents:
       - "./qmd/realanal/intro.qmd"
+      - section: "Construction"
+        href: "./qmd/realanal/construction.qmd"
+        contents:
+        - "./qmd/realanal/construction/motivation.qmd"
+        - "./qmd/realanal/construction/axions.qmd"
       - section: "Sequences"
         href: "./qmd/realanal/sequences.qmd"
         contents:

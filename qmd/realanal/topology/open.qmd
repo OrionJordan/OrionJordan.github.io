@@ -1,0 +1,161 @@
+---
+title: "Open sets"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Open sets are the most important aspect of topology, so much so that every further topological property can be defined entirely from open sets.
+
+## Definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $S \subseteq \mathbb{R}$ is [open]{.definition} if for every point $p \in S$, there exists some $\varepsilon > 0$ such that 
+
+$$
+(p - \varepsilon,p+\varepsilon) \subseteq S.
+$$ 
+:::
+
+To illustrate the definition, take the following examples.
+
+::: {.callout-warning icon="false" collapse="true"}
+## Example
+
+Let $A = (0,1)$ and $B = [0,1]$. 
+
+For any point $p \in A$, we can always find some $\varepsilon$ that gives us an interval entirely contained in $A$. To see how, choose $\varepsilon$ as follows
+
+$$
+\varepsilon = \min\left(\frac{|p-0|}{2},\frac{|p-1|}{2}\right).
+$$
+
+We choose $\varepsilon$ to be half of the distance from $p$ to $0$, or $p$ to $1$, whichever is lesser. Then $p - \varepsilon > 0$, and $p + \varepsilon < 1$. Thus $(p-\varepsilon,p+\varepsilon) \subset A$, and $A$ is open.
+
+However, $B$ is not open. Let $p = 1$. Then every interval around $p$ will necessarily be outside the set $B$, as $1 + \varepsilon > 1$ for all $\varepsilon > 0$.
+:::
+
+Now let's use the definition to prove some important sets are open!
+
+::: {.callout-note icon="false"}
+## Theorem 1.1
+
+The set of real numbers $\mathbb{R}$ is open.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $p$ be any element of $\mathbb{R}$, and let $\varepsilon > 0$. The interval given by $(p - \varepsilon,p+\varepsilon)$ is a subset of $\mathbb{R}$ by definition, so $\mathbb{R}$ is open.
+
+[Link to definition]
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.2
+
+The empty set $\varnothing$ is open.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Since the empty set has no elements, this statement is vacously true.
+
+[Link to vacous truth]
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 1.3
+
+Let $a,b \in \mathbb{R}$. Then $(a,b)$ is open.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $p \in (a,b)$, and choose
+
+$$
+\varepsilon = \min\left(\frac{|p-a|}{2},\frac{|p-b|}{2}\right).
+$$
+
+This sets $\varepsilon$ as the minimum distance from $p$ to our endpoints, and ensures $p - \varepsilon > a$ and $p + \varepsilon < b$. Then our interval $(p - \varepsilon,p+\varepsilon)$ is a subset of $(a,b)$, and thus $(a,b)$ is open.
+:::
+
+
+
+## Unions and Intersections of Open Sets
+
+There are important results with unions and intersections of open sets. The most important properties being
+
+- Any arbitrary union of open sets is open
+
+- Any finite intersection of open sets is open.
+
+These properties are so important they are chosen as axioms for topological spaces. 
+
+::: {.callout-note icon="false"}
+## Theorem 2.1
+
+Let $\{A_i \subset \mathbb{R} \mid i \in I\}$ be open sets for any arbitrary index set $I$. Then $\bigcup_{i \in I} A_i$ is open.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $\mathcal{A} = \bigcup_{i \in I} A_i$, and $p \in \mathcal{A}$. Since $\mathcal{A}$ is a union, there exists some $i \in I$ such that $p \in A_i$. Since $A_i$ is open, there exists a neighborhood around $p$ completely contained in $A_i$. Then $(p-\varepsilon,p+\varepsilon) \subset A_i \subset \mathcal{A}$, and thus $\mathcal{A}$ is open.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem 2.2
+
+Let $\{A_i \subset \mathbb{R} \mid i \in I\}$ be open sets for a finite index set $I$. Then $\bigcap_{i \in I} A_i$ is open.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $\mathcal{A} = \bigcap_{i \in I} A_i$. If $p \in \mathcal{A}$, then $p$ is in $A_i$ for all $i \in I$. Because $A_i$ is open for all $i \in I$, there exists an epsilon neighborhood around $p$ in each $A_i$. Choose 
+
+$$
+\varepsilon = \min\{\varepsilon_1,\dots,\varepsilon_k\}
+$$
+
+where $\varepsilon_i$ is the epsilon radius around $p$ contained in $A_i$. Since $\varepsilon$ is the minimum distance, we have
+
+$$
+(p-\varepsilon,p+\varepsilon) \subset \mathcal{A}.
+$$
+
+And $\mathcal{A}$ is open.
+:::
+
+You may wonder why we can take a arbitrary union of open sets and get an open set, but only take a finite intersection of open sets. 
+
+::: {.callout-warning icon="false"}
+## Example 
+
+To see an example of why an infinite intersection of open sets may not be open, let
+
+$$
+A_n = \left(-\frac{1}{n},\frac{1}{n}\right)
+$$
+
+for all $n \in \mathbb{N}$. Then each $A_n$ is clearly open by Theorem 1.3, but the intersection 
+
+$$
+\bigcap^\infty_{n=1}A_n = \{0\}
+$$
+
+is a single element, and not open.
+:::

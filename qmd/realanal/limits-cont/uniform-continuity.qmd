@@ -10,9 +10,7 @@ Continuity is defined on each point $c \in D$, we want to define a notion of con
 
 ## Motivation
 
-A uniformly continuous function has a single $\delta$ that works on the whole domain, whereas a continuous function has a separate $\delta$ for each point $c \in D$.
-
-In other words, continuity is a local condition on a function. It is defined at each point $c \in D$, and cares only about an infinitesimally small neighborhood about said point. Uniform continuity is a stronger notion, defined over the entirety of the domain $D$ of a function.
+Continuity is a local condition on a function. It is defined at each point $c \in D$, and cares only about an infinitesimally small neighborhood about said point. Uniform continuity is a stronger notion, defined over the entirety of the domain $D$ of a function.
 
 Roughly speaking, a function is uniformly continuous if there exists no *rapid* changes in the function. Verticle asymptotes on a function are *rapid* changes, where as linear changes aren't. Another piece of intuition is that a function is uniformly continuous if an infinitesimally small change in $x$ does not create an appreciable change in $f(x)$.[^1]
 
@@ -23,14 +21,10 @@ We use the following definition to formalize our intuition on rapid changes.
 ::: {.callout-note icon="false"}
 ## Definition
 
-A function $f \colon D \to \mathbb{R}$ is uniformly continuous on $D$ if for all $\varepsilon > 0$, there exists $\delta > 0$ such that for all $x,y \in D$, $|x-y| < \delta \implies |f(x) - f(y)| < \varepsilon$. Symbolically
-
-$$
-\forall \varepsilon > 0, \exists \delta > 0 | \forall x,y \in D |x-y| < \delta \implies |f(x) - f(y)| < \varepsilon
-$$
+A function $f \colon D \to \mathbb{R}$ is [uniformly continuous]{.definition} on $D$ if for all $\varepsilon > 0$, there exists $\delta > 0$ such that for all $x,y \in D$, $|x-y| < \delta \implies |f(x) - f(y)| < \varepsilon$.
 :::
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning icon="false" collapse="true"}
 ## Example (A uniformly continuous function)
 
 **Claim:** The function $f(x) = 2x$ is uniformly continuous on $\mathbb{R}$.
@@ -50,7 +44,7 @@ $$
 Thus we have $f(x) = 2x$ is uniformly continuous.
 :::
 
-::: {.callout-warning icon="false"}
+::: {.callout-warning icon="false" collapse="true"}
 ## Example (A non uniformly continuous function)
 
 **Claim:** The function $f(x) = x^2$ is not uniformly continuous on $\mathbb{R}$.
@@ -90,6 +84,33 @@ Note that for any $x,y \in D$, we have $|x + y| \leq 10$. For any $\varepsilon >
 $$
 |x-y| < \delta \implies |x + y|\cdot|x - y| < 10 \cdot \delta = 10\frac{\varepsilon}{10} = \varepsilon
 $$
+:::
+
+Clearly
+
+::: {.callout-note icon="false"}
+## Lemma 2.4.5
+
+Let $f\colon D \to R$ be a uniformly continuous function on D. Then $f$ is continuous on $D$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $f$ is uniformly continuous on $D$, then for all $\varepsilon$ there exists $\delta$ such that for all $x,y \in D$
+
+$$
+|x - y| < \delta \implies |f(x) - f(y)| < \varepsilon.
+$$
+
+Then for any $c \in D$, we have
+
+$$
+|x - c| < \delta \implies |f(x) - f(c)| < \varepsilon
+$$
+
+so $f$ is continuous at $c$ for all $c \in D$, and thus $f$ is continuous on $D$.
 :::
 
 By bounding our domain, we were able to show the function is uniformly continuous on said domain. This leads us to the following theorem.
@@ -168,7 +189,7 @@ Therefore, for $m,n \geq N$, we also have $|f(x_n) - f(x_m)| < \varepsilon$, so 
 We say that a function $\tilde{f} \colon E \to \mathbb{R}$ is an [extension]{.definition} of a function $f \colon D \to \mathbb{R}$ if $D \subseteq E$ and $f(x) = \tilde{f}(x)$ for all $x \in D$.
 :::
 
-This definition allows us to take a function $f$, and create a new function $\tilde{f}$ such that $f(x) = \tilde{f}(x)$. If we extend $f$ to a domain, and prove $\tilde{f}$ is uniformly continuous on said domain, then clearly $f$ is uniformly continuous on it's sub-domain.
+This definition allows us to take a function $f$, and create a new function $\tilde{f}$ such that $f(x) = \tilde{f}(x)$ for all $x \in D$. If we extend $f$ to a domain, and prove $\tilde{f}$ is uniformly continuous on said domain, then clearly $f$ is uniformly continuous on it's sub-domain.
 
 ::: {.callout-note icon="false"}
 ## Theorem 2.4.3

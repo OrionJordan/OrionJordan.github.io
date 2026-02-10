@@ -90,7 +90,7 @@ $$
 
 :::
 
-This defintion requires $(s_n)$ to be bounded. When $(s_n)$ is a convergent sequence, $\lim \inf s_n = \lim \sup s_n = \lim s_n$. If it happens that $\lim \inf s_n < \lim \sup s_n$, we say that $(s_n)$ [oscillates]{.definition}.
+This definition requires $(s_n)$ to be bounded. When $(s_n)$ is a convergent sequence, $\lim \inf s_n = \lim \sup s_n = \lim s_n$. If it happens that $\lim \inf s_n < \lim \sup s_n$, we say that $(s_n)$ [oscillates]{.definition}.
 
 ::: {.callout-note icon="false"}
 ## Theorem 1.4.4

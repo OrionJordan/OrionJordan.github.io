@@ -1,5 +1,28 @@
 ---
-title: "Orions Online Math Notes"
+title: "Orion Jordan"
+about: 
+    image: orion.jpg
+    template: trestles
+    links:
+    - icon: github
+      text: Github
+      href: https://github.com/OrionJordan
+    - icon: youtube
+      text: Youtube
+      href: https://www.youtube.com/channel/UC5EJ87vBGbDq5DnzUnRj1AA
+    - icon: stack-overflow
+      text: Math Exchange
+      href: https://math.stackexchange.com/users/1063903/orion-jordan
 css: styles.css
 ---
 
+::: {.column-page}
+
+## Bio
+
+Undergraduate student at the University of North Texas,
+majoring in mathematics.
+
+## Website
+
+This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject.

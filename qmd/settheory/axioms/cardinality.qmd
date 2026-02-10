@@ -1,0 +1,89 @@
+---
+title: "Cardinality"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We will now introduce cardinality.
+
+## Equinumerosity
+
+Cardinality is a way of measuring the 'size' of sets by the number of elements in them. Before we have a precise notion of cardinality, we define a relation 
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [equinumerous]{.definition} to a set $B$ if there exists a bijection $f\colon A \to B$.
+:::
+
+
+
+::: {.callout-note icon="false"}
+## Theorem
+
+For any sets $A$,$B$ and $C$:
+
+$(i)$ $A \approx A$.
+
+$(ii)$ If $A \approx B$, then $B \approx A$.
+
+$(iii)$ If $A \approx B$ and $BB \approx C$ then $A \approx C$.
+:::
+
+Thus, theres sorta an equivalancy relation to equinumeroisty.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+No set is equal in cardinality to it's powerset.
+:::
+
+## Finite sets
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set is [finite]{.definition} if it is equinumerous to some natural number.
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+Cardinal numbers will be some element of the set $\text{card } A$ for some set $A$. We define $\text{card } \omega = \aleph_0$.
+:::
+
+The set of sets with cardinality $k$ is too large to be a set.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Any subset of a finite set is finite.
+:::
+
+## Cardinal Arithmetic
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $\kappa$ and $\lambda$ be cardinal numbers.
+
+$(a)$ $\kappa + \lambda$ = card $(K \cup L)$ where $K$ and $L$ are any disjoint sets of cardinality $\kappa$ and $\lambda$.
+
+$(b)$ $\kappa \cdot \lambda$ = card $(K \times L)$ where $K$ and $L$ are any sets of cardinality $\kappa$ and $\lambda$.
+
+$(c)$ $\kappa^\lambda$ = card $(K^L)$ where $K$ and $L$ are any disjoint sets of cardinality $\kappa$ and $\lambda$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+If $C$ is a proper subset of a natural number $n$, then $C \approx m$ for some $m$ less than $n$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Any subset of a finite set is finite.
+:::

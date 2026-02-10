@@ -1,0 +1,55 @@
+---
+title: "Finite Sets"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We have mentioned finite sets on a few occansions, but have yet to give a formal definition. This section will define what it means for a set to be finite, and properties of finite sets.
+
+## Definition
+
+There a few definitions of finite sets, we will use the definition found in Enderton [1977].
+
+::: {.callout-note icon="false"}
+## Definition
+
+A set $A$ is [finite]{.definition} if it is equinumerous to some natural number.
+:::
+
+This definition is simple, and only relies on the concept of equinumerosity which we just discussed, and the natural numbers.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $A = \{x,y\}$. The bijective function 
+
+$$
+f = \{(x,0),(y,1)\}
+$$
+
+shows that $A \approx 2$, and since $2 \in \mathbb{N}$ we have that $A$ is finite.
+:::
+
+## Properties
+
+We will begin with a handful of simple theorems expanding our knowledge on finite sets. 
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The empty set is finite
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $A$ be a set. Then the singleton $\{A\}$ is finite.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $A$ be a set. If $A$ is finite and $B \subseteq A$, then $B$ is finite.
+:::

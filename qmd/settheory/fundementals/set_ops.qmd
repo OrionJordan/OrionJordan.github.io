@@ -1,0 +1,197 @@
+---
+title: "Set Operations"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Operations has a specific meaning in mathematics, but for this section I simply mean operation as in 'things to do to sets'.
+
+## Subsets
+
+Subsets are the first time we will encounter a relationship between two sets. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A,B$ be sets. We say $A$ is a [subset]{.definition} of $B$ if every element of $A$ is also an element of $B$. This is notated 
+
+$$
+A \subseteq B \text{ or } B \supseteq A
+$$
+
+If every element of $A$ is an element of $B$, and $A$ is not equal to $B$, then $A$ is a [proper subset]{.definition} of $B$, and denoted
+
+$$
+A \subset B.
+$$
+:::
+
+Of course no definition is complete without examples!
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let the following be sets
+
+$$
+A = \{a,b,c\} \qquad B = \{a,b\}.
+$$
+
+Since every element of $B$ is in $A$, we have that $A \subset B$.
+:::
+
+If one wanted to prove that two sets were identical, the most common technique is showing that $A \subset B$, and also that $B \subset A$, which is only possible if $A$ and $B$ are identical.
+
+::: {.callout-note icon="false"}
+## Proposition
+
+If $A \subset B$ and $B \subset A$, then $A = B$. 
+
+:::
+
+::: {.callout-note icon="false"}
+## Proposition
+
+Let $A,B$ and $C$ be sets, then the following statements hold
+
+$(Reflexive)$ $A \subset A$
+
+$(Transitive)$ If $A \subset B$ and $B \subset C$, then $A \subset C$
+
+::: 
+
+[TO-DO: Proof on this fact, along with other properties of subsets.]
+
+
+## Powersets
+
+We will now explore a simple function on a set $A$. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A$ be a set. Then the [power set]{.definition} of $A$, denoted $\mathcal{P}(A)$ is the set of all subsets of $A$. In set builder notation
+
+$$
+\mathcal{P}(A) = \{S \mid S \subset A\}.
+$$
+:::
+
+Some examples are in order
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $A = \{a,b\}$. Then we know the following sets are all subsets of $A$.
+
+$$
+\{\}, \quad \{a\}, \quad \{b\}, \quad \{a,b\}.
+$$
+
+So we have that the powerset of $A$ is the set
+
+$$
+\mathcal{P}(A) = \{\{\},\{a\},\{b\},\{a,b\}\}.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Proposition
+
+Let $A$ be a set. Then $\mathcal{P}(A)$ will always contain the empty set, and $A$ itself.
+:::
+
+::: {.callout-note icon="false"}
+## Proposition
+
+Let $A$ be a finite set containing $k$ elements. Then $\mathcal{P}(A)$ will contain $2^k$ elements.
+:::
+
+This definition however will get a little tricky when thinking about infinite sets. It is easy to count how many subsets exist with a finite number (footnote about dumb philosphical finitist) but it is not clear how, or if, we can take the powerset of an infinite set. It would be quite useful to take the powerset of infinite sets, so we axiomatically define it
+
+::: {.callout-important icon="false"}
+## Axiom of Power Set
+
+For every set $A$, there exists a power set $\mathcal{P}(A)$.
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+From the axiom of power set, we know $\mathcal{P}(\mathbb{N})$ exists, and contains all subsets of $\mathbb{N}$. Then it contains
+
+$$
+\begin{align*}
+&\text{All natural numbers: } &&\{0,1,2,3,4,\dots\}\\
+&\text{The empty set: } &&\{\}\\
+&\text{All even numbers: } &&\{0,2,4,6,8,\dots\}\\
+&\text{All odd numbers: } &&\{1,3,5,7,9,\dots\}\\
+&\text{The number seven: } &&\{7\}
+\end{align*}
+$$
+
+And so on. The powerset of $\mathbb{N}$ contains every subset of the natural numbers, 
+:::
+
+## Union
+
+When given two sets, one may wish to refer to the collection of all elements which belong to the set, this is how we define a union.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $A,B$ be sets. The [Union]{.definition} of $A$ and $B$ is the set of elements either contained in either $A$ or $B$, and is denoted;
+$$
+A \bigcup B = \{x \mid x \in A \text{ or } x \in B\}.
+$$
+:::
+
+
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $A = \{a,b,d\}$ and $B = \{b,c\}$. Then the union between the two is
+
+$$
+A \bigcup B = \{a,b,c,d\}
+$$
+
+As each element is either in $A$, $B$, or both. This can be represented with Venn diagrams as such.
+
+![](venn.svg){fig-align="center"}
+:::
+
+
+## Intersection
+
+::: {.callout-note icon="false"}
+## Definition
+
+
+:::
+
+## Ordered pairs and Cartesian Products
+
+We previously mentioned that sets were unordered due to the principle of extensionality. But let's say you needed some way to say that an element in a set comes first. This is where ordered pairs come in.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Let $a,b$ be sets. The [ordered pair]{.definition} $(a,b)$ is defined by:
+
+$$
+(a,b) = \{\{a\},\{a,b\}\}.
+$$
+:::
+
+This allows us to separate the elements $a$ and $b$, and fulfills the important property that $(a,b) \not = (b,a)$.
+
+::: {.callout-note icon="false"}
+## Proposition
+
+Let $(a,b)$ and $(x,y)$ be ordered pairs. Then $(a,b) = (x,y)$ if and only if $a = x$ and $b = y$.
+:::
+

@@ -1,0 +1,155 @@
+---
+title: "Basic Operations"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+There are three very common operations that are new to complex numbers.
+
+## Algebra
+
+## Conjugates
+
+We start by introducing the complex conjugate.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Given a complex number $z = x + yi$, we define its [conjugate]{.definition} to be
+$$
+\overline{z} = x - yi
+$$
+:::
+
+The conjugate of a number is very simple, and just flips the sign of the complex numbers imaginary part. 
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z,w \in \mathbb{C}$. Then we have the following
+
+$(a)$ $\overline{z + w} = \overline{z} + \overline{w}$
+
+$(b)$ $\overline{z - w} = \overline{z} - \overline{w}$
+
+$(c)$ $\overline{z \cdot w} = \overline{z} \cdot \overline{w}$
+
+$(d)$ $\overline{\left(\frac{z}{w}\right)} = \frac{\overline{z}}{\overline{w}}$
+
+$(e)$ $\overline{\overline{z}} = z$
+:::
+
+## Parts
+
+We define the following unary functions
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Real part]{.definition} of a complex number is given by the function $\text{Re} \colon \mathbb{C} \to \mathbb{R}$ such that
+
+$$
+\text{Re}(z) = \frac{z +\overline{z}}{2}
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Imaginary part]{.definition} of a complex number is given by the function $\text{Im} \colon \mathbb{C} \to \mathbb{R}$ such that
+
+$$
+\text{Im}(z) = \frac{z - \overline{z}}{2i}.
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $z = 2 + 3i$. Then the conjugate is $\overline{z} = 2 - 3i$. This gives us for our real and imaginary parts
+
+$$
+\text{Re}(z) = \frac{z +\overline{z}}{2} = \frac{(2+3i) + (2 - 3i)}{2} = \frac{4 + 0i}{2} = 2
+$$
+
+$$
+\text{Im}(z) = \frac{z - \overline{z}}{2i} = \frac{(2+3i) - (2 - 3i)}{2} = \frac{0 + 6i}{2} = 3
+$$
+:::
+
+We have that a complex number is equivalent to it's real and imaginary parts.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z \in \mathbb{C}$. Then $z = \text{Re}(z) + \text{Im}(z) \cdot i$.
+:::
+
+This could be proved directly, but instead I opt for some simple one line lemmas.
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $z = x + yi$. Then $\text{Re}(z) = x$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We know $\overline{z} = x - yi$. Using our real part function we obtain
+
+$$
+\text{Re}(z) = \frac{z +\overline{z}}{2} = \frac{2x}{2} = x.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Let $z = x + yi$. Then $\text{Im}(z) = y$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We know $\overline{z} = x - yi$. Using our imaginary part function we obtain
+
+$$
+\text{Im}(z) = \frac{z - \overline{z}}{2} = \frac{2yi}{2i} = y.
+$$
+:::
+
+Then our proof is a pretty simple one-liner
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $z = x + yi$. Then from our previous lemmas we have $\text{Re}(z) = x$ and $\text{Im}(z) = y$. Substitution gives us
+
+$$
+z = x + yi = \text{Re}(z) + \text{Im}(z) \cdot i.
+$$
+:::
+
+Our next theorem states that if two complex numbers have the same real and imaginary parts, they are the same number.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z,w \in \mathbb{C}$. $z = w$ if and only if $\text{Re}(z) = \text{Re}(w)$ and $\text{Im}(z) = \text{Im}(w)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\Leftarrow$) Let $z = (x,y)$ and $w = (u,v)$. If $\text{Re}(z) = \text{Re}(w)$ then we have $x = u$. Similarly, if $\text{Im}(z) = \text{Im}(w)$ then we have $y = v$. This gives us our equivalence
+
+$$
+z = (x,y) = (u,v) = w.
+$$
+
+($\Rightarrow$) Let $z = w$. Then $(x,y) = (u,v)$. We know that ordered pairs are only equivalent if $x = u$ and $y = v$. Since $\text{Re}(z) = x$ and $\text{Re(w) = u}$, we have $\text{Re}(z) = \text{Re}(w)$. A similar argument applies to the imaginary part.
+:::

@@ -1,0 +1,26 @@
+---
+title: "Complex Analysis"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+Complex analysis is the study of Complex numbers and their properties. 
+
+## Table of Contents
+
+- Motivation (TO-DO)
+- Axioms (FINISH PROOFS)
+- Complex Numbers
+- - Basic properties (Beta)
+- Complex Functions
+- - Exponentials
+- - Square roots / Unity
+- Derivatives
+- - Sequences
+- - Limits
+- - Derivatives
+- - Holomorphic functions
+- Integrals
+

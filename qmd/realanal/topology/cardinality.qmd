@@ -1,0 +1,44 @@
+---
+title: "Cardinality"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Cardinality is a set theoretic way to measure the 'size' of a set. If a set $A$ has a larger cardinality than a set $B$, we intuit $A$ to be a bigger set. 
+
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Any two non-empty open intervals $I = (a,b)$ and $J = (c,d)$ have the same cardinality.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Two sets have the same cardinality if there is a bijection between them. So we wish to find a bijective function $f \colon I \to J$.
+
+We consider a simple linear function such that $f(a) = c$, $f(b) = d$. Geometrically we can consider stretching the interval $(a,b)$ by a factor of $d - c$, and then shifting it to start at $c$. This gives the following function.
+
+$$
+f(x) = c + (d-c)\frac{x - a}{b-a}.
+$$
+
+We must now prove the function bijective. If $f(x_1) = f(x_2)$, then by simple algebra we obtain $x_1 = x_2$. Let $y \in J$. Then there exist $x \in I$ such that
+
+$$
+a + \frac{y-c}{d-c}(b-a) = x.
+$$
+
+Our function is bijective, and the open sets have the same cardinality.
+:::
+
+::: {.callout-note icon="false"}
+## Lemma
+
+Every interval has cardinality $\mathfrak{c}$.
+:::
+

@@ -24,3 +24,5 @@ Section II: This section covers the topology of the real line,
 - Topology
 - Construction
 
+- Numbers
+

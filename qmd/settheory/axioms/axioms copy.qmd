@@ -1,0 +1,54 @@
+---
+title: "Arbitrary Unions"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Suppose we have an infinite collection of sets 
+
+$$
+A = \{b_0,b_1,b_2,\dots\}.
+$$
+
+For a finite set, we could simply union $b_1 \cup b_2 \cup \dots \cup b_n$, but for an infinite set, this would require an infinite amount of steps. For this reason we upgrade our union axiom to be
+
+::: {.callout-important icon="false"}
+## Union Axiom
+
+For any set $A$, there exists a set $B$ whose elements are exactly the members of the members of $A$.
+
+$$
+\forall x[ x \in B \iff (\exists b \in A)x \in b].
+$$
+:::
+
+In our more common symbolic notion, we would write
+
+$$
+x \in \bigcup A \iff (\exists b \in A) x \in b.
+$$
+
+We needed to upgrade our union axiom for infinite sets, but maybe suprisngly we don't need a new axiom for infinite intersections. This is because intersections of sets have less elements, and we can use the separation axiom.
+
+::: {.callout-note icon="false"}
+## Proposition
+
+For any nonempty set $A$, there exists a set unique set $B$ such that for any $x$,
+
+$$
+x \in b \iff (\forall a \in A) x \in a
+$$
+:::
+
+::: {.callout-tip icon="false"}
+## Proof
+
+Let $A$ be nonempty. Simply apply the subset axioms to create a set $B$ where
+
+$$
+x \in B \iff (\forall c \in A) x \in c
+$$
+
+:::

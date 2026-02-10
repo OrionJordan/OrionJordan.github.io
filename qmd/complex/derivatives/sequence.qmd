@@ -1,0 +1,80 @@
+---
+title: "Sequences"
+format:
+  html:
+    toc: true
+    toc-location: right
+    html-math-method: katex
+---
+
+We can break a complex number into it's real and imaginary parts. 
+
+## Definition
+
+We define the following unary functions
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Real part]{.definition} of a complex number is given by the function $\text{Re} \colon \mathbb{C} \to \mathbb{R}$ such that
+
+$$
+\text{Re} \colon (x,y) \to x.
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [Imaginary part]{.definition} of a complex number is given by the function $\text{Im} \colon \mathbb{C} \to \mathbb{R}$ such that
+
+$$
+\text{Im} \colon (x,y) \to y.
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example
+
+Let $z = 2 + 3i$. Then by our definition we have ${z = (2,3).}$ This lets us calculate our real and imaginary parts as $\text{Re}(z) = 2$, and $\text{Im}(z) = 3$.
+:::
+
+## Properties
+
+We have that a complex number is equivalent to it's real and imaginary parts.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z \in \mathbb{C}$. Then $z = (\text{Re}(z),\text{Im}(z))$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Let $z \in \mathbb{C}$. Then $z = (x,y)$. We have from our definitions of real and imaginary parts that $\text{Re}(z) = x$ and $\text{Im}(z) = y$. Then
+
+$$
+(\text{Re}(z),\text{Im}(z)) = (x,y) = z.
+$$
+:::
+
+Our next theorem states that if two complex numbers have the same real and imaginary parts, they are the same number.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Let $z,w \in \mathbb{C}$. $z = w$ if and only if $\text{Re}(z) = \text{Re}(w)$ and $\text{Im}(z) = \text{Im}(w)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+($\Leftarrow$) Let $z = (x,y)$ and $w = (u,v)$. If $\text{Re}(z) = \text{Re}(w)$ then we have $x = u$. Similarly, if $\text{Im}(z) = \text{Im}(w)$ then we have $y = v$. This gives us our equivalence
+
+$$
+z = (x,y) = (u,v) = w.
+$$
+
+($\Rightarrow$) Let $z = w$. Then $(x,y) = (u,v)$. We know that ordered pairs are only equivalent if $x = u$ and $y = v$. Since $\text{Re}(z) = x$ and $\text{Re(w) = u}$, we have $\text{Re}(z) = \text{Re}(w)$. A similar argument applies to the imaginary part.
+:::

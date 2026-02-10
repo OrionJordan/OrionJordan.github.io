@@ -1,0 +1,6 @@
+---
+title: "Standard layout"
+execute:
+  echo: false
+---
+
