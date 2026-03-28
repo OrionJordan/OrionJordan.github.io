@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cardinal Numbers – OOMN</title>
+<title>Axion of Regularity – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#properties-of-regularity" id="toc-properties-of-regularity" class="nav-link active" data-scroll-target="#properties-of-regularity">Properties of Regularity</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +164,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cardinal Numbers</h1>
+<h1 class="title">Axion of Regularity</h1>
 </div>
 
 
@@ -181,50 +181,111 @@ window.Quarto = {
 </header>
 
 
-<p>We now have all the tools necessary to talk about cardinal numbers. Or so you would think.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>There are many competing ways to define cardinal numbers that rely on different axioms. We start with a simple definition used by Russell and Frege. This definition has problems and is not valid in <span class="math inline">ZFC</span> set theory, but will demonstrate what we want a cardinal number to be.</p>
+<p>It is time to examine our next axiom, the axiom of regularity. The question may occasionally arise on if a set can contain itself as a member. For many reasons this seems to be unnatural, and we wish to develop set theory such that a set cannot contain itself. A simple solution to this problem seems to be establishing an axiom that no set may contain itself, and the obvious choice for an axiom seems to be:</p>
+<p><span class="math display">
+A \not \in A.
+</span></p>
+<p>However, this does not solve our problem of sets containing themselves, one could imagine two sets <span class="math inline">A</span>,<span class="math inline">B</span> such that</p>
+<p><span class="math display">
+A \in B \quad \land \quad B \in A
+</span></p>
+<p>which could imply <span class="math inline">A = \{\{A\}\}</span>. If we took the negation of the above statement as our axiom however, we would still fall victim to larger cycles of membership caushing problems, say three sets containing each other.</p>
+<p>This is where the axiom of regularity comes in. The axiom of regularity (when combined with the axiom of pairing) will prevent any set from containing itself as an element, and any finite cycle of membership which may cause issues. Once we introduce the axiom of choice, regularity will also prevent infinite decreasing sequences of sets. At last we give our definition for the axiom of regularity.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Axiom of Regularity
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every non-empty set <span class="math inline">A</span> contains an element that is disjoint from <span class="math inline">A</span>.</p>
+<p><span class="math display">
+\forall A (A \not = \varnothing \implies (\exists B \in A)(B \cap A = \varnothing)).
+</span></p>
+</div>
+</div>
+<p>This definition of regularity was given by Zermelo in 1930, and is still the most common definition of regularity. It should be noted that although sets containing themselves seems unnatural, there is no logical reason for them to be excluded from study. The axiom of regularity allows us to exclude sets with undesirable properties, but if we so wished we could exclude this axiom and continue our study of set theory without encountering contradiction or paradox.</p>
+<section id="properties-of-regularity" class="level2">
+<h2 class="anchored" data-anchor-id="properties-of-regularity">Properties of Regularity</h2>
+<p>It is not immediately obvious how this axiom prevents self referentiation in sets, so lets see it in action.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition (Frege-Russell)
+Theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A,B</span> be arbitrary sets. Then the <span class="definition">cardinal number</span> <span class="math inline">\overline{\overline{A}}</span> is the class of all sets equnumerous to <span class="math inline">A</span>,</p>
+<p>No set is an element of itself, <span class="math inline">A \not \in A</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Towards a contradiction, assume <span class="math inline">A</span> is such that <span class="math inline">A \in A</span>. Since <span class="math inline">A \in \{A\}</span> we have</p>
 <p><span class="math display">
-\overline{\overline{A}} = \{B \mid A \approx B\}.
+A \in \{A\} \cap A.
 </span></p>
-<p>We say <span class="math inline">\overline{\overline{A}}</span> is the <span class="definition">cardinality</span> of <span class="math inline">A</span>.</p>
+<p>By the axiom of regularity, there exists <span class="math inline">B \in \{A\}</span> such that <span class="math inline">B \cup \{A\} = \varnothing</span>.</p>
+<p>Since <span class="math inline">\{A\}</span> is a singleton, we must have <span class="math inline">B = A</span>. But then by regularity <span class="math inline">A \cap \{A\} = \varnothing</span>, contradicting our assumption. Thus <span class="math inline">A \not \in A</span>.</p>
 </div>
 </div>
-<p>If we were to take this definition, we would have the following.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+</div>
+<p>We above used regularity on <span class="math inline">\{A\}</span>. Since <span class="math inline">A</span> is the only element in <span class="math inline">\{A\}</span>, by regularity we must have that <span class="math inline">A \cap \{A\} = \varnothing</span>. This implies that <span class="math inline">A \not \in A</span>. We will use this same method in the next theorem to show that two sets cannot contain each other.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the Frege-Russell definition of cardinal numbers, we will define the cardinal numbers of the sets <span class="math inline">0</span>, <span class="math inline">1</span> and <span class="math inline">2</span>.</p>
-<p>Since we have that <span class="math inline">0 = \varnothing</span>, we have that</p>
-<p><span class="math display">
-\overline{\overline{0}} = \{A \mid A \approx \varnothing\} = \varnothing.
-</span></p>
-<p>Then <span class="math inline">\overline{\overline{0}}</span> is the set of all sets containing no members. Similarly for <span class="math inline">1</span> we have</p>
-<p><span class="math display">
-\overline{\overline{1}} = \{A \mid A \approx \{\varnothing\} \} = \text{Set of all Singletons}.
-</span></p>
-<p>Then</p>
+<p>No two sets <span class="math inline">A,B</span> exists such that <span class="math inline">A \in B</span> and <span class="math inline">B \in A</span></p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Towards a contradiction, assume <span class="math inline">A \in B</span> and <span class="math inline">B \in A</span>. Then since <span class="math inline">A \in \{A,B\}</span> and <span class="math inline">B \in \{A,B\}</span></p>
+<p><span class="math display">
+A \in \{A,B\} \cap B \quad \text{and}\quad B \in \{A,B\} \cap A.
+</span></p>
+<p>By the axiom of regularity, there exists <span class="math inline">C \in \{A,B\}</span> such that <span class="math inline">{C \cup \{A,B\} = \varnothing.}</span> Since <span class="math inline">\{A,B\}</span> is a pair, we must have either</p>
+<p><span class="math display">
+C = A \quad \text{or} \quad C = B.
+</span> Therefore either <span class="math display">
+\{A,B\} \cap A = \varnothing \quad \text{or}\quad \{A,B\} \cap B = \varnothing.
+</span></p>
+<p>Both of which contradict our assumption.</p>
+</div>
+</div>
+</div>
+<p>We can continue this for chains of an indefinite size. We will later see how introducing the axiom of choice will allow us to prove no infinite chains exist. The axiom of regularity also proves some elementary results about cartesian products.</p>
 
 
 </section>

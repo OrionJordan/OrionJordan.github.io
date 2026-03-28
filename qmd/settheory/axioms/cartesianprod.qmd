@@ -1,0 +1,260 @@
+---
+title: "Cartesian Products"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The Cartesian product of two sets $A$ and $B$ is the set of all ordered pairs $(a,b)$ such that $a \in A$ and $b \in B$. Similar to how unions function as an analog of set addition, the cartesian product is our analog of multiplication. 
+
+::: {.callout-note icon="false"}
+## Definition
+
+Given two sets $A$ and $B$, the [Cartesian product]{.definition} is the set of all ordered pairs $(a,b)$ such that $a \in A$ and $b \in B$, denoted
+
+$$
+A \times B = \{(a,b) \mid a \in A \land b \in B\}
+$$
+:::
+
+In order to prove theorems about the Cartesian product of course, we must first prove that for any two sets $A$ and $B$, the Cartesian product exists. 
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+Given two sets $A$ and $B$, the Cartesian product $A \times B$ exists.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We start by proving there exists a set containing every ordered pair $(a,b)$ where $a \in A$ and $b \in B$. Then we will use the axiom of specification to build a set containing exactly the ordered pairs $(a,b)$.
+
+Let $x = (a,b)$ where $a \in A$ and $b \in B$. Then by the definition of ordered pairs
+
+$$
+x = \{\{a\},\{a,b\}\}.
+$$
+
+It is clear ${\{a\} \subseteq A \cup B}$ and ${\{a,b\} \subseteq A \cup B}$. So by our powerset theorem ${\{a,b\} \in  \mathcal{P}(A \cup B)}$ and ${\{a\} \in  \mathcal{P}(A \cup B)}$. Therefore
+
+$$
+{\{\{a\},\{a,b\}\}} \subseteq \mathcal{P}(A \cup B).
+$$
+
+Once more by our powerset theorem
+
+$$
+{\{\{a\},\{a,b\}\}} \in \mathcal{P}(\mathcal{P}(A \cup B)).
+$$
+
+So
+
+$$
+x \in \mathcal{P}(\mathcal{P}(A \cup B)).
+$$
+
+Now that we have proved $x$ is an element of $\mathcal{P}(\mathcal{P}(A \cup B))$. We use the axiom of specification to define
+
+$$
+A \times B = \{x \in \mathcal{P}(\mathcal{P}(A \cup B)) \mid (\exists a)(\exists b) (a \in A \land b \in B \land x = (a,b))\}.
+$$
+:::
+
+## Properties
+
+We now go through the list of theorems and proofs given in Suppes. The first two theorems follow immediately and will be used in almost all the following theorems.
+
+Theorem 96 shows every element in the Cartesian product $A \times B$ is an ordered pair for some $a \in A$ and $b \in B$, and the converse.
+
+Theorem 97 shows that for every ordered pair $(a,b)$ in $A \times B$ their exists some $a \in A$ and $b \in B$, and the converse.
+
+Theorem 96 is useful when we need to show a property of any element in the Cartesian product $A \times B$, and Theorem 97 is useful to show a specific element exists in the Cartesian product $A \times B$, or in the underlying sets $A$ and $B$.
+
+::: {.callout-note icon="false"}
+## Theorem [96]
+
+Let $A$ and $B$ be sets. Then $x \in A \times B$ if and only if $x = (a,b)$ for some $a \in A$ and $b \in B$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+This proof is essentially just the definition.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [97]
+
+Let $A$ and $B$ be sets. Then $(a,b) \in A \times B$ if and only if there exists $a \in A$ and $b \in B$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+This proof is essentially just the definition.
+
+:::
+
+The next seven theorems in Suppes give properties of the Cartesian product of two sets.
+
+If either of two sets $A$ or $B$ are empty our cartesian product $A \times B$ will also be empty, and conversely. This is because there exists either no $a \in A$ or $b \in B$ to produce ordered pairs. The following theorem proves this. 
+
+::: {.callout-note icon="false"}
+## Theorem [98]
+
+Let $A$ and $B$ be sets. Then $A \times B = \varnothing$ if and only if $A = \varnothing$ or $B = \varnothing$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We start with the forward direction. By hypothesis $A \times B = \varnothing$ and towards a contradiction assume $A \not = \varnothing$ and $B \not = \varnothing$. Then their exists $a \in A$ and $b \in B$ since $A,B$ are non empty. But by Theorem 97 if $a \in A$ and $b \in B$ exists, $(a,b) \in A \times B$.
+
+This contradicts our hypothesis that $A \times B = \varnothing$, and thus our assumption was incorrect, and at least one of $A$ or $B$ is empty.
+
+To prove the reverse direction, we have that either $A = \varnothing$ or $B = \varnothing$. From this is follows that for all $x = (a,b)$ their does not exist either $a \in A$ or $b \in B$. Thus by Theorem 96, for all $x = (a,b)$, $x \not \in A \times B$. Thus $A \times B = \varnothing$.
+:::
+
+If the Cartesian products $A \times B$ and $B \times A$ are equivalent, then either $A = \varnothing$ or $B = \varnothing$, or $A = B$.
+
+::: {.callout-note icon="false"}
+## Theorem [99]
+
+Let $A$ and $B$ be sets. Then $A \times B = B \times A$ if and only if $A = \varnothing$ or $B = \varnothing$ or $A = B$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We start with the forward direction. By hypothesis $A \times B = B \times A$ and towards a contradiction assume $A \not = \varnothing$ and $B \not = \varnothing$ and $A \not = B$.
+
+Since $A \not = B$, there exists $c \in A$ such that $c \not \in B$ or $d \in B$ such that $d \not \in A$. Without loss of generality, we will assume there exists $c \in A$. Then since $B$ is not empty, there exists
+
+$$
+(c,b) \in A \times B.
+$$
+
+But since $A \times B = B \times A$, we have
+
+$$
+(c,b) \in B \times A.
+$$
+
+By Theorem 97 then, $c \in B$, which contradicts our assumption. If we assumed $d \in B$ instead, we would have the same contradiction. Thus our initial assumption is incorrect, and $A = \varnothing$, $B = \varnothing$, or $A = B$.
+
+To prove the reverse direction, we have three conditions and must examine each one. If either $A = \varnothing$ or $B = \varnothing$ then by Theorem 98 we have
+
+$$
+A \times B = \varnothing = B \times A.
+$$
+
+Next we have that $A = B$. By the properties of logical equality
+
+$$
+A \times A = A \times A.
+$$
+
+Then immediately we have
+
+$$
+A \times B = B \times A.
+$$
+:::
+
+The next two theorems relate Cartesian products to subsets.
+
+::: {.callout-note icon="false"}
+## Theorem [100]
+
+Let $A,B,C$ be sets. If $A \not = \varnothing$ and $A \times B \subseteq A \times C$ then $B \subseteq C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $B = \varnothing$ then the proof is trivial, so assume $B \not = \varnothing$. Since $A$ is also non empty, there exists $a \in A$ and $b \in B$. Then by Theorem 97  we have
+
+$$
+(a,b) \in A \times B.
+$$ 
+
+By our hypothesis this also gives $(a,b) \in A \times C$. Then by Theorem 97 again we know $b \in C$. Since $b$ was an arbitrary element of $B$, we have that $B \subseteq C$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [101]
+
+Let $A,B,C$ be sets. If $B \subseteq C$ then $A \times B \subseteq A \times C$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $A = \varnothing$ then the proof is trivial, so assume $A \not = \varnothing$. Then there exists $a \in A$ and $b \in B$. By Theorem 96 we have that for every $x \in A \times B$, $x = (a,b)$ for some $a \in A$ and $b \in B$. Since $B \subseteq C$, $b \in C$ and thus by Theorem 97
+
+$$
+x \in A \times C.
+$$
+
+Since our choice of $x$ was arbitrary, every $x \in A \times B$ is in $A \times C$, and thus $A \times B \subseteq A \times C$.
+:::
+
+The last three theorems state the distributive laws for intersections, unions, and differences of Cartesian products.
+
+::: {.callout-note icon="false"}
+## Theorem [102]
+
+Let $A,B,C$ be sets. Then
+
+$$
+A \times (B \cap C) = (A \times B) \cap (A \times C).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof [TO-DO]
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Theorem [103]
+
+Let $A,B,C$ be sets. Then
+
+$$
+A \times (B \cup C) = (A \times B) \cup (A \times C).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof [TO-DO]
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [104]
+
+Let $A,B,C$ be sets. Then
+
+$$
+A \times (B \sim C) = (A \times B) \sim (A \times C).
+$$
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof [TO-DO]
+
+:::

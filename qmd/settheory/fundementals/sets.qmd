@@ -70,7 +70,7 @@ A set is completely determined by it's elements. This means if two sets $A,B$ ha
 Two sets are equal if and only if they have the same elements.
 :::
 
-Another point to note is that a set only contains distinct elements. An element is either belongin to a set or not, and may not be contained _twice_ so to speak. Additionally, the way we order elements in a set is irrelevant, as two sets are equal if they contain the same elements, so
+Another point to note is that a set only contains distinct elements. An element is either belongin to a set or not, and may not be contained _twice_ so to speak. Additionally, the way we order elements in a set is irrelevant, so
 
 $$
 \{a,b\} = \{b,a\}

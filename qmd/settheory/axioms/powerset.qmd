@@ -1,0 +1,159 @@
+---
+title: "Axion of Power set"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The next axiom we look at will be the Axiom of Powerset. We previously looked at what it means for a set to be a subset of another set. In this section we will examine the set containing all subsets of a given set. This is called the _power set_ of a given set.
+
+The power set gets it's name from the fact that if the $A$ has $n$ elements, then the powerset $\mathcal{P}(A)$ has $2^n$ elements. For example, if
+
+$$
+A = \{1,2\}
+$$
+
+then
+
+$$
+\mathcal{P}(A) = \{\varnothing,\{1\},\{2\},\{1,2\}\}.
+$$
+
+We will prove this fact later once we have developed tools to count the number of elements in a set. It is worth noting that the empty set and the given set are both a member of a given sets power set.
+
+::: {.callout-note icon="false"}
+## Definition
+
+Given a set $A$, the [Power set]{.definition} of $A$ is the set of all subsets of $A$, denoted
+
+$$
+\mathcal{P}(A) = \{B \mid B \subseteq A\}
+$$
+:::
+
+We have the definition, but of course we need to prove that the power set of any given set exists. This is where the axiom of power set comes in. 
+
+::: {.callout-important icon="false"}
+## Axiom of Power Set
+
+For any set $A$, there is a set whose members are exactly the subsets of $A$:
+
+$$
+(\forall A)(\exists B)(\forall C) (C \in B \iff C \subseteq A)
+$$
+:::
+
+As a side note, it is possible to prove that the power set of finite sets exists without using the axiom of powerset. However, since the power set of a given set has exponentially more elements then the given set, it is necessary to prove that the power set of infinite sets exists. We will touch on this matter more when we discuss cardinality.
+
+## Properties
+
+We can now discuss various properties of the power set. This list of theorems is given in Suppes. The following follows immediately from the definition, and is stated for use in future theorems.
+
+::: {.callout-note icon="false"}
+## Theorem [86]
+
+Let $A,B$ be sets. Then $B \in \mathcal{P}(A)$ if and only if $B \subseteq A$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+This follows immediately from the definition.
+:::
+
+Next we prove that given a set $A$, the set $A$ itself and the empty set are elements of $\mathcal{P}(A)$.
+
+::: {.callout-note icon="false"}
+## Theorem [87]
+
+Let $A$ be a set. Then $A \in \mathcal{P}(A)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By Theorem 5, $A \subseteq A$. Then by Theorem 86 $A \in \mathcal{P}(A)$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [88]
+
+Let $A$ be a set. Then $\varnothing \in \mathcal{P}(A)$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By Theorem X, $\varnothing \subseteq A$. Then by Theorem 86 $\varnothing \in \mathcal{P}(A)$.
+:::
+
+The next two theorems are simply proving the results of repeatedly applying the powerset to the empty set.
+
+::: {.callout-note icon="false"}
+## Theorem [89]
+$$
+\mathcal{P}(\varnothing) = \{\varnothing\}
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By Theorem 87, $\varnothing \in \mathcal{P}(\varnothing)$. We now must show no other element exist in ${\mathcal{P}(\varnothing).}$ By Theorem 86 if $A \in \mathcal{P}(\varnothing)$ then $A \subseteq \varnothing$. But then by Theorem X, $A = \varnothing$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [90]
+
+$$
+\mathcal{P}(\mathcal{P}(\varnothing)) = \{\varnothing,\{\varnothing\}\}
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof [TO-DO]
+
+We know by Theorem 89 that $\mathcal{P}(\varnothing) = \{\varnothing\}$, so we only need to find $\mathcal{P}(\{\varnothing\})$. We can easily show by Theorems 87 and 88 that $\varnothing$ and $\{\varnothing\}$ are elements of $\mathcal{P}(\{\varnothing\})$.
+
+We now need to show these are the only elements of the power set. If $A \in \mathcal{P}(\mathcal{P}(\varnothing))$, then by Theorem 86, $A \subseteq \{\varnothing\}$.
+
+:::
+
+We now relate power sets to subsets, unions, intersections and differences.
+
+::: {.callout-note icon="false"}
+## Theorem [91]
+
+Let $A,B$ be sets. Then $A \subseteq B$ if and only if $\mathcal{P}(A) \subseteq \mathcal{P}(B)$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [92]
+
+Let $A,B$ be sets. Then 
+
+$$
+\mathcal{P}(A) \cup \mathcal{P}(B) \subseteq \mathcal{P}(A \cup B).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [93]
+
+Let $A,B$ be sets. Then 
+
+$$
+\mathcal{P}(A \cap B) \subseteq \mathcal{P}(A) \cap \mathcal{P}(B).
+$$
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [94]
+
+Let $A,B$ be sets. Then 
+
+$$
+\mathcal{P}(A \sim B) \subseteq (\mathcal{P}(A) \sim \mathcal{P}(B)) \cup \{0\}.
+$$
+:::

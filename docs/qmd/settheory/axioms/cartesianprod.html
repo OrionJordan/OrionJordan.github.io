@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cardinal Numbers – OOMN</title>
+<title>Cartesian Products – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link active" data-scroll-target="#properties">Properties</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +164,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cardinal Numbers</h1>
+<h1 class="title">Cartesian Products</h1>
 </div>
 
 
@@ -181,48 +181,383 @@ window.Quarto = {
 </header>
 
 
-<p>We now have all the tools necessary to talk about cardinal numbers. Or so you would think.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>There are many competing ways to define cardinal numbers that rely on different axioms. We start with a simple definition used by Russell and Frege. This definition has problems and is not valid in <span class="math inline">ZFC</span> set theory, but will demonstrate what we want a cardinal number to be.</p>
+<p>The Cartesian product of two sets <span class="math inline">A</span> and <span class="math inline">B</span> is the set of all ordered pairs <span class="math inline">(a,b)</span> such that <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>. Similar to how unions function as an analog of set addition, the cartesian product is our analog of multiplication.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition (Frege-Russell)
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A,B</span> be arbitrary sets. Then the <span class="definition">cardinal number</span> <span class="math inline">\overline{\overline{A}}</span> is the class of all sets equnumerous to <span class="math inline">A</span>,</p>
+<p>Given two sets <span class="math inline">A</span> and <span class="math inline">B</span>, the <span class="definition">Cartesian product</span> is the set of all ordered pairs <span class="math inline">(a,b)</span> such that <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>, denoted</p>
 <p><span class="math display">
-\overline{\overline{A}} = \{B \mid A \approx B\}.
+A \times B = \{(a,b) \mid a \in A \land b \in B\}
 </span></p>
-<p>We say <span class="math inline">\overline{\overline{A}}</span> is the <span class="definition">cardinality</span> of <span class="math inline">A</span>.</p>
 </div>
 </div>
-<p>If we were to take this definition, we would have the following.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<p>In order to prove theorems about the Cartesian product of course, we must first prove that for any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, the Cartesian product exists.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Theorem
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the Frege-Russell definition of cardinal numbers, we will define the cardinal numbers of the sets <span class="math inline">0</span>, <span class="math inline">1</span> and <span class="math inline">2</span>.</p>
-<p>Since we have that <span class="math inline">0 = \varnothing</span>, we have that</p>
+<p>Given two sets <span class="math inline">A</span> and <span class="math inline">B</span>, the Cartesian product <span class="math inline">A \times B</span> exists.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We start by proving there exists a set containing every ordered pair <span class="math inline">(a,b)</span> where <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>. Then we will use the axiom of specification to build a set containing exactly the ordered pairs <span class="math inline">(a,b)</span>.</p>
+<p>Let <span class="math inline">x = (a,b)</span> where <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>. Then by the definition of ordered pairs</p>
 <p><span class="math display">
-\overline{\overline{0}} = \{A \mid A \approx \varnothing\} = \varnothing.
+x = \{\{a\},\{a,b\}\}.
 </span></p>
-<p>Then <span class="math inline">\overline{\overline{0}}</span> is the set of all sets containing no members. Similarly for <span class="math inline">1</span> we have</p>
+<p>It is clear <span class="math inline">{\{a\} \subseteq A \cup B}</span> and <span class="math inline">{\{a,b\} \subseteq A \cup B}</span>. So by our powerset theorem <span class="math inline">{\{a,b\} \in  \mathcal{P}(A \cup B)}</span> and <span class="math inline">{\{a\} \in  \mathcal{P}(A \cup B)}</span>. Therefore</p>
 <p><span class="math display">
-\overline{\overline{1}} = \{A \mid A \approx \{\varnothing\} \} = \text{Set of all Singletons}.
+{\{\{a\},\{a,b\}\}} \subseteq \mathcal{P}(A \cup B).
 </span></p>
-<p>Then</p>
+<p>Once more by our powerset theorem</p>
+<p><span class="math display">
+{\{\{a\},\{a,b\}\}} \in \mathcal{P}(\mathcal{P}(A \cup B)).
+</span></p>
+<p>So</p>
+<p><span class="math display">
+x \in \mathcal{P}(\mathcal{P}(A \cup B)).
+</span></p>
+<p>Now that we have proved <span class="math inline">x</span> is an element of <span class="math inline">\mathcal{P}(\mathcal{P}(A \cup B))</span>. We use the axiom of specification to define</p>
+<p><span class="math display">
+A \times B = \{x \in \mathcal{P}(\mathcal{P}(A \cup B)) \mid (\exists a)(\exists b) (a \in A \land b \in B \land x = (a,b))\}.
+</span></p>
+</div>
+</div>
+</div>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>We now go through the list of theorems and proofs given in Suppes. The first two theorems follow immediately and will be used in almost all the following theorems.</p>
+<p>Theorem 96 shows every element in the Cartesian product <span class="math inline">A \times B</span> is an ordered pair for some <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>, and the converse.</p>
+<p>Theorem 97 shows that for every ordered pair <span class="math inline">(a,b)</span> in <span class="math inline">A \times B</span> their exists some <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>, and the converse.</p>
+<p>Theorem 96 is useful when we need to show a property of any element in the Cartesian product <span class="math inline">A \times B</span>, and Theorem 97 is useful to show a specific element exists in the Cartesian product <span class="math inline">A \times B</span>, or in the underlying sets <span class="math inline">A</span> and <span class="math inline">B</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [96]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> and <span class="math inline">B</span> be sets. Then <span class="math inline">x \in A \times B</span> if and only if <span class="math inline">x = (a,b)</span> for some <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This proof is essentially just the definition.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [97]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> and <span class="math inline">B</span> be sets. Then <span class="math inline">(a,b) \in A \times B</span> if and only if there exists <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This proof is essentially just the definition.</p>
+</div>
+</div>
+</div>
+<p>The next seven theorems in Suppes give properties of the Cartesian product of two sets.</p>
+<p>If either of two sets <span class="math inline">A</span> or <span class="math inline">B</span> are empty our cartesian product <span class="math inline">A \times B</span> will also be empty, and conversely. This is because there exists either no <span class="math inline">a \in A</span> or <span class="math inline">b \in B</span> to produce ordered pairs. The following theorem proves this.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [98]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> and <span class="math inline">B</span> be sets. Then <span class="math inline">A \times B = \varnothing</span> if and only if <span class="math inline">A = \varnothing</span> or <span class="math inline">B = \varnothing</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We start with the forward direction. By hypothesis <span class="math inline">A \times B = \varnothing</span> and towards a contradiction assume <span class="math inline">A \not = \varnothing</span> and <span class="math inline">B \not = \varnothing</span>. Then their exists <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span> since <span class="math inline">A,B</span> are non empty. But by Theorem 97 if <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span> exists, <span class="math inline">(a,b) \in A \times B</span>.</p>
+<p>This contradicts our hypothesis that <span class="math inline">A \times B = \varnothing</span>, and thus our assumption was incorrect, and at least one of <span class="math inline">A</span> or <span class="math inline">B</span> is empty.</p>
+<p>To prove the reverse direction, we have that either <span class="math inline">A = \varnothing</span> or <span class="math inline">B = \varnothing</span>. From this is follows that for all <span class="math inline">x = (a,b)</span> their does not exist either <span class="math inline">a \in A</span> or <span class="math inline">b \in B</span>. Thus by Theorem 96, for all <span class="math inline">x = (a,b)</span>, <span class="math inline">x \not \in A \times B</span>. Thus <span class="math inline">A \times B = \varnothing</span>.</p>
+</div>
+</div>
+</div>
+<p>If the Cartesian products <span class="math inline">A \times B</span> and <span class="math inline">B \times A</span> are equivalent, then either <span class="math inline">A = \varnothing</span> or <span class="math inline">B = \varnothing</span>, or <span class="math inline">A = B</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [99]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> and <span class="math inline">B</span> be sets. Then <span class="math inline">A \times B = B \times A</span> if and only if <span class="math inline">A = \varnothing</span> or <span class="math inline">B = \varnothing</span> or <span class="math inline">A = B</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We start with the forward direction. By hypothesis <span class="math inline">A \times B = B \times A</span> and towards a contradiction assume <span class="math inline">A \not = \varnothing</span> and <span class="math inline">B \not = \varnothing</span> and <span class="math inline">A \not = B</span>.</p>
+<p>Since <span class="math inline">A \not = B</span>, there exists <span class="math inline">c \in A</span> such that <span class="math inline">c \not \in B</span> or <span class="math inline">d \in B</span> such that <span class="math inline">d \not \in A</span>. Without loss of generality, we will assume there exists <span class="math inline">c \in A</span>. Then since <span class="math inline">B</span> is not empty, there exists</p>
+<p><span class="math display">
+(c,b) \in A \times B.
+</span></p>
+<p>But since <span class="math inline">A \times B = B \times A</span>, we have</p>
+<p><span class="math display">
+(c,b) \in B \times A.
+</span></p>
+<p>By Theorem 97 then, <span class="math inline">c \in B</span>, which contradicts our assumption. If we assumed <span class="math inline">d \in B</span> instead, we would have the same contradiction. Thus our initial assumption is incorrect, and <span class="math inline">A = \varnothing</span>, <span class="math inline">B = \varnothing</span>, or <span class="math inline">A = B</span>.</p>
+<p>To prove the reverse direction, we have three conditions and must examine each one. If either <span class="math inline">A = \varnothing</span> or <span class="math inline">B = \varnothing</span> then by Theorem 98 we have</p>
+<p><span class="math display">
+A \times B = \varnothing = B \times A.
+</span></p>
+<p>Next we have that <span class="math inline">A = B</span>. By the properties of logical equality</p>
+<p><span class="math display">
+A \times A = A \times A.
+</span></p>
+<p>Then immediately we have</p>
+<p><span class="math display">
+A \times B = B \times A.
+</span></p>
+</div>
+</div>
+</div>
+<p>The next two theorems relate Cartesian products to subsets.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [100]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B,C</span> be sets. If <span class="math inline">A \not = \varnothing</span> and <span class="math inline">A \times B \subseteq A \times C</span> then <span class="math inline">B \subseteq C</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">B = \varnothing</span> then the proof is trivial, so assume <span class="math inline">B \not = \varnothing</span>. Since <span class="math inline">A</span> is also non empty, there exists <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>. Then by Theorem 97 we have</p>
+<p><span class="math display">
+(a,b) \in A \times B.
+</span></p>
+<p>By our hypothesis this also gives <span class="math inline">(a,b) \in A \times C</span>. Then by Theorem 97 again we know <span class="math inline">b \in C</span>. Since <span class="math inline">b</span> was an arbitrary element of <span class="math inline">B</span>, we have that <span class="math inline">B \subseteq C</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [101]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B,C</span> be sets. If <span class="math inline">B \subseteq C</span> then <span class="math inline">A \times B \subseteq A \times C</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">A = \varnothing</span> then the proof is trivial, so assume <span class="math inline">A \not = \varnothing</span>. Then there exists <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>. By Theorem 96 we have that for every <span class="math inline">x \in A \times B</span>, <span class="math inline">x = (a,b)</span> for some <span class="math inline">a \in A</span> and <span class="math inline">b \in B</span>. Since <span class="math inline">B \subseteq C</span>, <span class="math inline">b \in C</span> and thus by Theorem 97</p>
+<p><span class="math display">
+x \in A \times C.
+</span></p>
+<p>Since our choice of <span class="math inline">x</span> was arbitrary, every <span class="math inline">x \in A \times B</span> is in <span class="math inline">A \times C</span>, and thus <span class="math inline">A \times B \subseteq A \times C</span>.</p>
+</div>
+</div>
+</div>
+<p>The last three theorems state the distributive laws for intersections, unions, and differences of Cartesian products.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [102]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B,C</span> be sets. Then</p>
+<p><span class="math display">
+A \times (B \cap C) = (A \times B) \cap (A \times C).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof [TO-DO]
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [103]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B,C</span> be sets. Then</p>
+<p><span class="math display">
+A \times (B \cup C) = (A \times B) \cup (A \times C).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof [TO-DO]
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [104]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B,C</span> be sets. Then</p>
+<p><span class="math display">
+A \times (B \sim C) = (A \times B) \sim (A \times C).
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof [TO-DO]
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
 </div>
 </div>
 

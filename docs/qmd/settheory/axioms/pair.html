@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cardinal Numbers – OOMN</title>
+<title>Axion of Pairing – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#roster-notation" id="toc-roster-notation" class="nav-link active" data-scroll-target="#roster-notation">Roster notation</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +165,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cardinal Numbers</h1>
+<h1 class="title">Axion of Pairing</h1>
 </div>
 
 
@@ -181,50 +182,93 @@ window.Quarto = {
 </header>
 
 
-<p>We now have all the tools necessary to talk about cardinal numbers. Or so you would think.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>There are many competing ways to define cardinal numbers that rely on different axioms. We start with a simple definition used by Russell and Frege. This definition has problems and is not valid in <span class="math inline">ZFC</span> set theory, but will demonstrate what we want a cardinal number to be.</p>
+<p>The previous three axioms have only allowed us to prove one set exists, the empty set. In order to expand how many sets we have, we introduce the axiom of pairing. This axiom guarantees that for any two sets there exists a set they both belong to.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Axiom of Pairing
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, there exists a set <span class="math inline">C</span> whose members are exactly <span class="math inline">A</span> and <span class="math inline">B</span>.</p>
+<p><span class="math display">
+(\forall A)(\forall B)(\exists C)(\forall D)(D \in C \iff D = A \lor D = B)
+</span></p>
+</div>
+</div>
+<p>We can of course use the axiom of extension to show that our set is unique.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition (Frege-Russell)
+Theorem [42]
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A,B</span> be arbitrary sets. Then the <span class="definition">cardinal number</span> <span class="math inline">\overline{\overline{A}}</span> is the class of all sets equnumerous to <span class="math inline">A</span>,</p>
-<p><span class="math display">
-\overline{\overline{A}} = \{B \mid A \approx B\}.
-</span></p>
-<p>We say <span class="math inline">\overline{\overline{A}}</span> is the <span class="definition">cardinality</span> of <span class="math inline">A</span>.</p>
+<p>For any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, there exists a unique set <span class="math inline">C</span> whose members are exactly <span class="math inline">A</span> and <span class="math inline">B</span>.</p>
 </div>
 </div>
-<p>If we were to take this definition, we would have the following.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof [TO-DO]
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
+</div>
+</div>
+<p>This will lead us directly to our definition of an unordered pair.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the Frege-Russell definition of cardinal numbers, we will define the cardinal numbers of the sets <span class="math inline">0</span>, <span class="math inline">1</span> and <span class="math inline">2</span>.</p>
-<p>Since we have that <span class="math inline">0 = \varnothing</span>, we have that</p>
+<p>For any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, the <span class="definition">unordered pair</span> <span class="math inline">C</span> is the set containing exclusively <span class="math inline">A</span> and <span class="math inline">B</span>, denoted</p>
 <p><span class="math display">
-\overline{\overline{0}} = \{A \mid A \approx \varnothing\} = \varnothing.
+\{A,B\} = C \iff (\forall D)(D \in C \iff D = A \lor D = B).
 </span></p>
-<p>Then <span class="math inline">\overline{\overline{0}}</span> is the set of all sets containing no members. Similarly for <span class="math inline">1</span> we have</p>
-<p><span class="math display">
-\overline{\overline{1}} = \{A \mid A \approx \{\varnothing\} \} = \text{Set of all Singletons}.
-</span></p>
-<p>Then</p>
 </div>
 </div>
+<p>This notational choice to refer to <span class="math inline">\{A,B\}</span> in brackets is known as roster notation, and we will quickly give a note on it.</p>
+<section id="roster-notation" class="level2">
+<h2 class="anchored" data-anchor-id="roster-notation">Roster notation</h2>
+<p>We can now extend our set theory to contain many additional sets besides the empty set. In doing this we run into the problem that notating these sets with formal logic is tedious. Given two sets <span class="math inline">A</span> and <span class="math inline">B</span>, we just saw how long it is to refer to the set <span class="math inline">C</span> containing only these two elements</p>
+<p><span class="math display">
+C \iff (\forall D)(D \in C \iff D = A \lor D = B).
+</span></p>
+<p>And this gets worse. Say we wanted a set <span class="math inline">D</span> containing sets <span class="math inline">A,B</span> and <span class="math inline">C</span>. Then we would have to write</p>
+<p><span class="math display">
+D \iff (\forall E)(E \in D \iff E = A \lor E = B \lor E = C).
+</span></p>
+<p>Specifying each element in the set with another logical or. Roster notation is our short hand for specifying ‘small’ sets by individually writing between curly brackets each element of our set, separated by a comma. Using this, our set <span class="math inline">D</span> consisting of three members will be wrote</p>
+<p><span class="math display">
+D = \{A,B,C\}.
+</span></p>
+<p>We can also denote the empty set this way, writing</p>
+<p><span class="math display">
+\varnothing = \{\}.
+</span></p>
+</section>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>We will now observe a large amount of properties given to us by the pairing axiom.</p>
 
 
 </section>

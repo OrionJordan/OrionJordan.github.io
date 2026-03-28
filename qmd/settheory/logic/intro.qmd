@@ -10,10 +10,9 @@ This section covers $ZFC$ set theory, and constructs the foundations of mathemat
 
 ## Table of Contents
 
-- Introduction
+- Logic
   - History
-  - First-order Logic
-  - Relationsip between FOL and ZFC
+  - Logic / Language
 - Basic Axioms and Operations
   - Primitive notions / Set containment
   - Preview of Axioms               X

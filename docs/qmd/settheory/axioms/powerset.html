@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cardinal Numbers – OOMN</title>
+<title>Axion of Powerset – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link active" data-scroll-target="#properties">Properties</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +164,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cardinal Numbers</h1>
+<h1 class="title">Axion of Powerset</h1>
 </div>
 
 
@@ -181,48 +181,200 @@ window.Quarto = {
 </header>
 
 
-<p>We now have all the tools necessary to talk about cardinal numbers. Or so you would think.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>There are many competing ways to define cardinal numbers that rely on different axioms. We start with a simple definition used by Russell and Frege. This definition has problems and is not valid in <span class="math inline">ZFC</span> set theory, but will demonstrate what we want a cardinal number to be.</p>
+<p>The next axiom we look at will be the Axiom of Powerset. We previously looked at what it means for a set to be a subset of another set. In this section we will examine the set containing all subsets of a given set. This is called the <em>power set</em> of a given set.</p>
+<p>The power set gets it’s name from the fact that if the <span class="math inline">A</span> has <span class="math inline">n</span> elements, then the powerset <span class="math inline">\mathcal{P}(A)</span> has <span class="math inline">2^n</span> elements. For example, if</p>
+<p><span class="math display">
+A = \{1,2\}
+</span></p>
+<p>then</p>
+<p><span class="math display">
+\mathcal{P}(A) = \{\varnothing,\{1\},\{2\},\{1,2\}\}.
+</span></p>
+<p>We will prove this fact later once we have developed tools to count the number of elements in a set. It is worth noting that the empty set and the given set are both a member of a given sets power set.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition (Frege-Russell)
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A,B</span> be arbitrary sets. Then the <span class="definition">cardinal number</span> <span class="math inline">\overline{\overline{A}}</span> is the class of all sets equnumerous to <span class="math inline">A</span>,</p>
+<p>Given a set <span class="math inline">A</span>, the <span class="definition">Power set</span> of <span class="math inline">A</span> is the set of all subsets of <span class="math inline">A</span>, denoted</p>
 <p><span class="math display">
-\overline{\overline{A}} = \{B \mid A \approx B\}.
+\mathcal{P}(A) = \{B \mid B \subseteq A\}
 </span></p>
-<p>We say <span class="math inline">\overline{\overline{A}}</span> is the <span class="definition">cardinality</span> of <span class="math inline">A</span>.</p>
 </div>
 </div>
-<p>If we were to take this definition, we would have the following.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<p>We have the definition, but of course we need to prove that the power set of any given set exists. This is where the axiom of power set comes in.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Axiom of Power Set
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the Frege-Russell definition of cardinal numbers, we will define the cardinal numbers of the sets <span class="math inline">0</span>, <span class="math inline">1</span> and <span class="math inline">2</span>.</p>
-<p>Since we have that <span class="math inline">0 = \varnothing</span>, we have that</p>
+<p>For any set <span class="math inline">A</span>, there is a set whose members are exactly the subsets of <span class="math inline">A</span>:</p>
 <p><span class="math display">
-\overline{\overline{0}} = \{A \mid A \approx \varnothing\} = \varnothing.
+(\forall A)(\exists B)(\forall C) (C \in B \iff C \subseteq A)
 </span></p>
-<p>Then <span class="math inline">\overline{\overline{0}}</span> is the set of all sets containing no members. Similarly for <span class="math inline">1</span> we have</p>
+</div>
+</div>
+<p>As a side note, it is possible to prove that the power set of finite sets exists without using the axiom of powerset. However, since the power set of a given set has exponentially more elements then the given set, it is necessary to prove that the power set of infinite sets exists. We will touch on this matter more when we discuss cardinality.</p>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>We can now discuss various properties of the power set. This list of theorems is given in Suppes. The following follows immediately from the definition, and is stated for use in future theorems.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [86]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">B \in \mathcal{P}(A)</span> if and only if <span class="math inline">B \subseteq A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>This follows immediately from the definition.</p>
+</div>
+</div>
+</div>
+<p>Next we prove that given a set <span class="math inline">A</span>, the set <span class="math inline">A</span> itself and the empty set are elements of <span class="math inline">\mathcal{P}(A)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [87]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">A \in \mathcal{P}(A)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By Theorem 5, <span class="math inline">A \subseteq A</span>. Then by Theorem 86 <span class="math inline">A \in \mathcal{P}(A)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [88]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">\varnothing \in \mathcal{P}(A)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By Theorem X, <span class="math inline">\varnothing \subseteq A</span>. Then by Theorem 86 <span class="math inline">\varnothing \in \mathcal{P}(A)</span>.</p>
+</div>
+</div>
+</div>
+<p>The next two theorems are simply proving the results of repeatedly applying the powerset to the empty set.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [89]
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p><span class="math display">
-\overline{\overline{1}} = \{A \mid A \approx \{\varnothing\} \} = \text{Set of all Singletons}.
+\mathcal{P}(\varnothing) = \{\varnothing\}
 </span></p>
-<p>Then</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By Theorem 87, <span class="math inline">\varnothing \in \mathcal{P}(\varnothing)</span>. We now must show no other element exist in <span class="math inline">\mathcal{P}(\varnothing)</span>. By Theorem 86 if <span class="math inline">A \in \mathcal{P}(\varnothing)</span> then <span class="math inline">A \subseteq \varnothing</span>. But then by Theorem X, <span class="math inline">A = \varnothing</span>. Thus</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [90]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">\varnothing \in \mathcal{P}(A)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By Theorem X, <span class="math inline">\varnothing \subseteq A</span>. Then by Theorem 86 <span class="math inline">\varnothing \in \mathcal{P}(A)</span>.</p>
+</div>
 </div>
 </div>
 

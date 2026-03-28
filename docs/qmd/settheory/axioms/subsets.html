@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cardinal Numbers – OOMN</title>
+<title>Subsets – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link active" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#proper-subsets" id="toc-proper-subsets" class="nav-link" data-scroll-target="#proper-subsets">Proper Subsets</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +165,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cardinal Numbers</h1>
+<h1 class="title">Subsets</h1>
 </div>
 
 
@@ -181,28 +182,23 @@ window.Quarto = {
 </header>
 
 
-<p>We now have all the tools necessary to talk about cardinal numbers. Or so you would think.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>There are many competing ways to define cardinal numbers that rely on different axioms. We start with a simple definition used by Russell and Frege. This definition has problems and is not valid in <span class="math inline">ZFC</span> set theory, but will demonstrate what we want a cardinal number to be.</p>
+<p>It is very common for two sets <span class="math inline">A</span> and <span class="math inline">B</span> to be such that every element in <span class="math inline">A</span> is contained in <span class="math inline">B</span>. This is the notion of a subset.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition (Frege-Russell)
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A,B</span> be arbitrary sets. Then the <span class="definition">cardinal number</span> <span class="math inline">\overline{\overline{A}}</span> is the class of all sets equnumerous to <span class="math inline">A</span>,</p>
+<p>A <span class="definition">subset</span> <span class="math inline">A</span> of a set <span class="math inline">B</span> is some set such that every element in <span class="math inline">A</span> is also in <span class="math inline">B</span>. Formally</p>
 <p><span class="math display">
-\overline{\overline{A}} = \{B \mid A \approx B\}.
+A \subseteq B \iff \forall x (x \in A \implies x \in B).
 </span></p>
-<p>We say <span class="math inline">\overline{\overline{A}}</span> is the <span class="definition">cardinality</span> of <span class="math inline">A</span>.</p>
 </div>
 </div>
-<p>If we were to take this definition, we would have the following.</p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -213,16 +209,137 @@ Example
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the Frege-Russell definition of cardinal numbers, we will define the cardinal numbers of the sets <span class="math inline">0</span>, <span class="math inline">1</span> and <span class="math inline">2</span>.</p>
-<p>Since we have that <span class="math inline">0 = \varnothing</span>, we have that</p>
+<p>Let <span class="math inline">A</span> and <span class="math inline">B</span> be sets such that</p>
 <p><span class="math display">
-\overline{\overline{0}} = \{A \mid A \approx \varnothing\} = \varnothing.
+A = \{a,b,c\} \qquad \text{and} \qquad B = \{a,b,c,d\}.
 </span></p>
-<p>Then <span class="math inline">\overline{\overline{0}}</span> is the set of all sets containing no members. Similarly for <span class="math inline">1</span> we have</p>
+<p>Then we have <span class="math inline">A \subseteq</span> since each element in <span class="math inline">A</span> is in <span class="math inline">B</span>. However we do not have <span class="math inline">B \subseteq A</span> since <span class="math inline">d \in B</span> but <span class="math inline">d \not \in A</span>.</p>
+</div>
+</div>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>Now we can take a look at some properties of subsets.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">A \subseteq A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. If <span class="math inline">A \subseteq B</span> and <span class="math inline">B \subseteq A</span>, then <span class="math inline">A = B</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. If <span class="math inline">A \subseteq \varnothing</span> then <span class="math inline">A = \varnothing</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> and <span class="math inline">C</span> be sets. If <span class="math inline">A \subseteq B</span> and <span class="math inline">B \subseteq C</span>, then <span class="math inline">A \subseteq C</span>.</p>
+</div>
+</div>
+</section>
+<section id="proper-subsets" class="level2">
+<h2 class="anchored" data-anchor-id="proper-subsets">Proper Subsets</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">proper subset</span> <span class="math inline">A</span> of a set <span class="math inline">B</span> is some set such that <span class="math inline">A \subseteq B</span> and <span class="math inline">A \not = B</span>. Formally</p>
 <p><span class="math display">
-\overline{\overline{1}} = \{A \mid A \approx \{\varnothing\} \} = \text{Set of all Singletons}.
+A \subset B \iff A \subseteq B \land A \not = B.
 </span></p>
-<p>Then</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">A \not \subset A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">A \subset B</span> implies <span class="math inline">B \not \subset A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">A \subset B</span> and <span class="math inline">B \subset C</span> implies <span class="math inline">A \subset C</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem 10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">A \subset B</span> implies <span class="math inline">A \subseteq B</span>.</p>
 </div>
 </div>
 

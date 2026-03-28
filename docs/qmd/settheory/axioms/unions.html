@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Cardinal Numbers – OOMN</title>
+<title>Unions, Intersections, and Differences – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -155,7 +155,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#definition" id="toc-definition" class="nav-link active" data-scroll-target="#definition">Definition</a></li>
+  <li><a href="#intersections" id="toc-intersections" class="nav-link active" data-scroll-target="#intersections">Intersections</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
   </ul>
 </nav>
     </div>
@@ -164,7 +165,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Cardinal Numbers</h1>
+<h1 class="title">Unions, Intersections, and Differences</h1>
 </div>
 
 
@@ -181,48 +182,173 @@ window.Quarto = {
 </header>
 
 
-<p>We now have all the tools necessary to talk about cardinal numbers. Or so you would think.</p>
-<section id="definition" class="level2">
-<h2 class="anchored" data-anchor-id="definition">Definition</h2>
-<p>There are many competing ways to define cardinal numbers that rely on different axioms. We start with a simple definition used by Russell and Frege. This definition has problems and is not valid in <span class="math inline">ZFC</span> set theory, but will demonstrate what we want a cardinal number to be.</p>
+<p>We now examine some of the basic operations that can be done to sets. The good thing about some of these operations is that they don’t require the use of any axioms, and can be formalized in logic alone. First we look at intersections.</p>
+<section id="intersections" class="level2">
+<h2 class="anchored" data-anchor-id="intersections">Intersections</h2>
+<p>The intersection of two sets <span class="math inline">A</span> and <span class="math inline">B</span> is the set of all elements that belong to both <span class="math inline">A</span> and <span class="math inline">B</span>. For example,</p>
+<p><span class="math display">
+\{1,2\} \cup \{2,3\} = \{2\}.
+</span></p>
+<p>We start with our definition of a intersection.</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Definition (Frege-Russell)
+Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Let <span class="math inline">A,B</span> be arbitrary sets. Then the <span class="definition">cardinal number</span> <span class="math inline">\overline{\overline{A}}</span> is the class of all sets equnumerous to <span class="math inline">A</span>,</p>
+<p>For any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, the <span class="definition">intersection</span> <span class="math inline">C</span> is the set whose members are the members in both <span class="math inline">A</span> and <span class="math inline">B</span>.</p>
 <p><span class="math display">
-\overline{\overline{A}} = \{B \mid A \approx B\}.
+A \cap B = \{x \mid x \in A \land x \in B\}
 </span></p>
-<p>We say <span class="math inline">\overline{\overline{A}}</span> is the <span class="definition">cardinality</span> of <span class="math inline">A</span>.</p>
 </div>
 </div>
-<p>If we were to take this definition, we would have the following.</p>
-<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<p>But of course before we can use our definition, we must prove the intersection exists and is unique.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Example
+Theorem [11]
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Using the Frege-Russell definition of cardinal numbers, we will define the cardinal numbers of the sets <span class="math inline">0</span>, <span class="math inline">1</span> and <span class="math inline">2</span>.</p>
-<p>Since we have that <span class="math inline">0 = \varnothing</span>, we have that</p>
+<p>For any two sets <span class="math inline">A</span> and <span class="math inline">B</span>, their intersection exists and is unique. Formally</p>
 <p><span class="math display">
-\overline{\overline{0}} = \{A \mid A \approx \varnothing\} = \varnothing.
+(\forall A)(\forall B)(\exists!C)(\forall x)(x \in C \iff x \in A \land x \in B)
 </span></p>
-<p>Then <span class="math inline">\overline{\overline{0}}</span> is the set of all sets containing no members. Similarly for <span class="math inline">1</span> we have</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We are immediately given that the intersection exists by the axiom of specification. Given two sets <span class="math inline">A</span> and <span class="math inline">B</span></p>
 <p><span class="math display">
-\overline{\overline{1}} = \{A \mid A \approx \{\varnothing\} \} = \text{Set of all Singletons}.
+(\exists C)(\forall x)(x \in C \iff x \in A \land x \in B).
 </span></p>
-<p>Then</p>
+<p>In order to show it is unique, we use the axiom of extension. Let <span class="math inline">C^\prime</span> be a second set such that</p>
+<p><span class="math display">
+x \in C^\prime \iff x \in A \land x \in B.
+</span></p>
+<p>Then for every <span class="math inline">x</span></p>
+<p><span class="math display">
+x \in C^\prime \iff x \in C.
+</span></p>
+<p>Thus by the axiom of extensionality</p>
+<p><span class="math display">
+C^\prime = C.
+</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>We start of course by turning our definition into a theorem so we can use it in future theorems.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [12]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all sets <span class="math inline">A</span> and <span class="math inline">B</span>, <span class="math inline">x \in A \cap B</span> if and only if <span class="math inline">x \in A</span> and <span class="math inline">x \in B</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We first convert our set builder notation into logic.</p>
+<p><span class="math display">
+A \cap B = C \iff (\forall c)(c \in C \iff c \in A \land c \in B)
+</span></p>
+<p>Then <span class="math inline">x \in A \cap B</span> implies <span class="math inline">x \in C</span> which implies <span class="math inline">x \in A</span> and <span class="math inline">x \in B</span>.</p>
+</div>
+</div>
+</div>
+<p>Now we assert the commutativity and associativity of intersection.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [13]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all sets <span class="math inline">A</span> and <span class="math inline">B</span>, <span class="math inline">A \cap B = B \cap A</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For all <span class="math inline">x \in A \cap B</span>, <span class="math inline">x \in A</span> and <span class="math inline">x \in B</span> by Theorem 12. Since <span class="math inline">x \in B</span> and <span class="math inline">x \in A</span>. Also by Theorem 12 we have <span class="math inline">x \in B \cap A</span>. So <span class="math inline">A \cap B \subseteq B \cap A</span>.</p>
+<p>Applying the same logic on <span class="math inline">B \cap A</span> we have <span class="math inline">B \cap A \subseteq A \cap B</span>. Thus <span class="math inline">A \cap B = B \cap A</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem [14]
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all sets <span class="math inline">A</span>, <span class="math inline">B</span> and <span class="math inline">C</span>, <span class="math inline">(A \cap B) \cap C = A \cap ( B \cap A)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+
+</div>
 </div>
 </div>
 

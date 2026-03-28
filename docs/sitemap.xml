@@ -314,7 +314,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/axioms/axioms.html</loc>
-    <lastmod>2025-07-21T23:24:42.116Z</lastmod>
+    <lastmod>2026-02-27T00:17:23.312Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/basics/abstract.html</loc>
@@ -430,7 +430,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/intro.html</loc>
-    <lastmod>2026-02-09T20:59:00.190Z</lastmod>
+    <lastmod>2026-03-26T01:45:15.436Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/naive/axioms/equinum.html</loc>
@@ -462,11 +462,11 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/cardinality/finite.html</loc>
-    <lastmod>2026-02-09T21:32:20.018Z</lastmod>
+    <lastmod>2026-02-10T16:39:12.111Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/cardinality/cardinal.html</loc>
-    <lastmod>2026-02-09T20:03:50.250Z</lastmod>
+    <lastmod>2026-02-26T22:44:30.860Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/cardinality/equinumarth.html</loc>
@@ -478,15 +478,15 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/axioms/axioms copy.html</loc>
-    <lastmod>2025-07-21T23:52:38.565Z</lastmod>
+    <lastmod>2026-02-27T00:39:37.259Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/fundementals/set_ops.html</loc>
-    <lastmod>2025-07-22T20:52:37.377Z</lastmod>
+    <lastmod>2026-02-27T00:38:44.926Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/fundementals/sets.html</loc>
-    <lastmod>2025-07-22T20:52:41.850Z</lastmod>
+    <lastmod>2026-02-27T00:39:39.216Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/axioms/cardinality.html</loc>
@@ -511,5 +511,53 @@
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/mathcon/functions.html</loc>
     <lastmod>2025-07-11T22:31:40.842Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/extenspec.html</loc>
+    <lastmod>2026-03-25T19:17:24.270Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/regulation.html</loc>
+    <lastmod>2026-03-04T23:05:39.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/pair.html</loc>
+    <lastmod>2026-03-13T22:45:48.627Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/powerset.html</loc>
+    <lastmod>2026-03-11T02:41:21.794Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/cartesianprod.html</loc>
+    <lastmod>2026-03-11T01:02:17.606Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/regularity.html</loc>
+    <lastmod>2026-03-04T23:05:39.077Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/preview.html</loc>
+    <lastmod>2026-03-05T17:03:52.790Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/subsets.html</loc>
+    <lastmod>2026-03-25T21:13:52.604Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/unions.html</loc>
+    <lastmod>2026-03-14T03:27:40.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/axioms/intersect.html</loc>
+    <lastmod>2026-03-14T17:07:20.746Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/logic/logic.html</loc>
+    <lastmod>2026-03-28T17:44:11.217Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/logic/intro.html</loc>
+    <lastmod>2026-03-25T19:11:01.103Z</lastmod>
   </url>
 </urlset>

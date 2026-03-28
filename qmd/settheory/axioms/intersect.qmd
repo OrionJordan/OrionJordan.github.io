@@ -1,0 +1,304 @@
+---
+title: "Intersections, and Differences"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+We now examine some of the basic operations that can be done to sets. These operations require no additional axioms to define, and will give us good practice in applying the axiom of specification and extension. 
+
+## Intersections
+
+The intersection of two sets $A$ and $B$ is the set of all elements that belong to both $A$ and $B$. For example,
+
+$$
+\{1,2\} \cup \{2,3\} = \{2\}.
+$$
+
+We start with our definition of a intersection.
+
+::: {.callout-note icon="false"}
+## Definition
+
+For any two sets $A$ and $B$, the [intersection]{.definition} is the set whose members are the members in both $A$ and $B$.
+
+$$
+A \cap B = \{x \mid x \in A \land x \in B\}
+$$
+:::
+
+But of course before we can use our definition, we must prove the intersection exists and is unique.
+
+::: {.callout-note icon="false"}
+## Theorem [11]
+
+For any two sets $A$ and $B$, their intersection exists and is unique. Formally
+
+$$
+(\forall A)(\forall B)(\exists!C)(\forall x)(x \in C \iff x \in A \land x \in B)
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We are immediately given that the intersection exists by the axiom of specification. Given two sets $A$ and $B$
+
+$$
+(\exists C)(\forall x)(x \in C \iff x \in A \land x \in B).
+$$
+
+In order to show it is unique, we use the axiom of extension. Let $C^\prime$ be a second set such that
+
+$$
+x \in C^\prime \iff x \in A \land x \in B.
+$$
+
+Then for every $x$
+
+$$
+x \in C^\prime \iff x \in C.
+$$
+
+Thus by the axiom of extensionality
+
+$$
+C^\prime = C.
+$$
+:::
+
+## Intersection Properties
+
+We start of course by turning our definition into a theorem so we can use it in future theorems.
+
+::: {.callout-note icon="false"}
+## Theorem [12]
+
+For all sets $A$ and $B$, $x \in A \cap B$ if and only if $x \in A$ and $x \in B$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We first convert our set builder notation into logic.
+
+$$
+A \cap B = C \iff (\forall c)(c \in C \iff c \in A \land c \in B)
+$$
+
+Then $x \in A \cap B$ implies $x \in C$ which implies $x \in A$ and $x \in B$.
+:::
+
+Now we assert the commutativity and associativity of intersection.
+
+::: {.callout-note icon="false"}
+## Theorem [13]
+
+For all sets $A$ and $B$, $A \cap B = B \cap A$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+For all $x \in A \cap B$, $x \in A$ and $x \in B$ by Theorem 12. Since $x \in B$ and $x \in A$. Also by Theorem 12 we have $x \in B \cap A$. So $A \cap B \subseteq B \cap A$.
+
+Applying the same logic on $B \cap A$ we have $B \cap A \subseteq A \cap B$. Thus $A \cap B = B \cap A$.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [14]
+
+For all sets $A$, $B$ and $C$,  ${(A \cap B) \cap C = A \cap ( B \cap C)}$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+:::
+
+Next we show that intersection is an idempotent operation. This means that the operation preformed on any given element and itself yields the given element.
+
+::: {.callout-note icon="false"}
+## Theorem [15]
+
+For all sets $A$, $A \cap A = A$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+Since we must show two sets $A \cap A$ and $A$ are identical, we will use the subset method.
+
+By Theorem 12, we have $x \in A \cap A$ if $x \in A$ and $x \in A$. So $A \cap A \subseteq A$. 
+
+If $x \in A$, then $x \in A \land x \in A$ is true, and thus $x \in A \cap A$. So $A \subseteq A \cap A$.
+
+Since $A \cap A \subseteq A$ and $A \subseteq A \cap A$, we have $A \cap A = A$.
+:::
+
+The next three theorems relate intersections to the empty set and subsets.
+
+::: {.callout-note icon="false"}
+## Theorem [16]
+
+For all sets $A$, $A \cap \varnothing = \varnothing$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By Theorem 12, if $x \in A \cap \varnothing$ then $x \in A$ and $x \in \varnothing$.
+
+But by Theorem 1 $x \not \in \varnothing$. Since this applies for all $x \in A \cap \varnothing$ by Theorem 2 $A \cap \varnothing = \varnothing$.
+
+:::::: {.callout-note icon="false"}
+## Theorem [11]
+
+For any two sets $A$ and $B$, their intersection exists and is unique. Formally
+
+$$
+(\forall A)(\forall B)(\exists!C)(\forall x)(x \in C \iff x \in A \land x \in B)
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We are immediately given that the intersection exists by the axiom of specification. Given two sets $A$ and $B$
+
+$$
+(\exists C)(\forall x)(x \in C \iff x \in A \land x \in B).
+$$
+
+In order to show it is unique, we use the axiom of extension. Let $C^\prime$ be a second set such that
+
+$$
+x \in C^\prime \iff x \in A \land x \in B.
+$$
+
+Then for every $x$
+
+$$
+x \in C^\prime \iff x \in C.
+$$
+
+Thus by the axiom of extensionality
+
+$$
+C^\prime = C.
+$$
+:::
+
+We start by proving the forward direction. If $A \subseteq B$, then for all $x \in A$, $x \in B$ by the definition of a subset. Since $x \in A$ and $x \in B$ by Theorem 12 we have $x \in A \cap B$. Therefore $A \subseteq A \cap B$. By Theorem 17 we have $A \cap B \subseteq A$, thus by Theorem X we have $A \cap B = A$.
+
+Now we assume $A \cap B = A$ and must prove $A \subseteq B$. Since $A = A \cap B$, for all $a \in A$, $a \in A \cap B$. By Theorem 12 we have $a \in A \cap B$ implies $a \in A$ and $a \in B$. Since for all $a \in A$ we have $a \in B$, $A \subseteq B$.
+:::
+
+## Differences
+
+We now investigate our next operation, differences. The difference of two sets $A$ and $B$ is the collection of elements belonging to $A$ and not $B$. For example
+
+$$
+\{1,2,3\} \setminus \{2,4\} = \{1,3\}.
+$$
+
+We start with our definition
+
+::: {.callout-note icon="false"}
+## Definition
+
+For any two sets $A$ and $B$, the [difference]{.definition} between $A$ and $B$ is the set consisting of all elements in $A$ and not in $B$.
+$$
+A \setminus B = \{x \mid x \in A \land x \not\in B\}
+$$
+:::
+
+Now we must prove that the difference between two sets exists and is unique.
+
+::: {.callout-note icon="false"}
+## Theorem [30]
+
+For any two sets $A$ and $B$, their difference exists and is unique. Formally
+
+$$
+(\forall A)(\forall B)(\exists!C)(\forall x)(x \in C \iff x \in A \land x \not\in B)
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We are immediately given that the intersection exists by the axiom of specification. Given two sets $A$ and $B$
+
+$$
+(\exists C)(\forall x)(x \in C \iff x \in A \land x \not\in B).
+$$
+
+In order to show it is unique, we use the axiom of extension. Let $C^\prime$ be a second set such that
+
+$$
+x \in C^\prime \iff x \in A \land x \not\in B.
+$$
+
+Then for every $x$
+
+$$
+x \in C^\prime \iff x \in C.
+$$
+
+Thus by the axiom of extensionality
+
+$$
+C^\prime = C.
+$$
+:::
+
+## Difference Properties
+
+We always start by converting our definition into a theorem.
+
+::: {.callout-note icon="false"}
+## Theorem [12]
+
+For all sets $A$ and $B$, $x \in A \cap B$ if and only if $x \in A$ and $x \not \in B$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+We first convert our set builder notation into logic.
+
+$$
+A \setminus B = C \iff (\forall c)(c \in C \iff c \in A \land c \not\in B)
+$$
+
+Then $x \in A \setminus B$ implies $x \in C$ which implies $x \in A$ and $x \not\in B$.
+:::
+
+Now we show that the difference operation is not idempotent.
+
+::: {.callout-note icon="false"}
+## Theorem [12]
+
+For all sets $A$, $A \setminus A = \varnothing$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $x \in A \setminus A$, then $x \in A$ and $x \not \in A$. This is clearly a contradiction for all $x$, thus $A \setminus A = \varnothing$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem [13]
+
+For all sets $A$ and $B$, $A \setminus B = B \setminus A$ implies $A = B$.
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+If $x \in A \setminus A$, then $x \in A$ and $x \not \in A$. This is clearly a contradiction for all $x$, thus $A \setminus A = \varnothing$.
+:::

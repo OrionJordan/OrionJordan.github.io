@@ -1,0 +1,32 @@
+---
+title: "Preview of Axioms"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+List of ZFC axioms.
+
+::: {.callout-important icon="false"}
+## Axiom of Empty Set
+
+There exist a set such that no set is an element of it.
+
+$$
+\exists A \forall a (a \not \in A).
+$$
+:::
+
+::: {.callout-important icon="false"}
+## Axiom of extensionality
+
+
+:::
+
+::: {.callout-important icon="false"}
+## Axiom of regularity
+
+
+:::
+

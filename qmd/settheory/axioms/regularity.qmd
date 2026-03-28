@@ -1,0 +1,91 @@
+---
+title: "Axion of Regularity"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+It is time to examine our next axiom, the axiom of regularity. The question may occasionally arise on if a set can contain itself as a member. For many reasons this seems to be unnatural, and we wish to develop set theory such that a set cannot contain itself. A simple solution to this problem seems to be establishing an axiom that no set may contain itself, and the obvious choice for an axiom seems to be:
+
+$$
+A \not \in A.
+$$
+
+However, this does not solve our problem of sets containing themselves, one could imagine two sets $A$,$B$ such that
+
+$$
+A \in B \quad \land \quad B \in A
+$$
+
+which could imply $A = \{\{A\}\}$. If we took the negation of the above statement as our axiom however, we would still fall victim to larger cycles of membership caushing problems, say three sets containing each other.
+
+This is where the axiom of regularity comes in. The axiom of regularity (when combined with the axiom of pairing) will prevent any set from containing itself as an element, and any finite cycle of membership which may cause issues. Once we introduce the axiom of choice, regularity will also prevent infinite decreasing sequences of sets. At last we give our definition for the axiom of regularity.
+
+::: {.callout-important icon="false"}
+## Axiom of Regularity
+
+Every non-empty set $A$ contains an element that is disjoint from $A$.
+
+$$
+\forall A (A \not = \varnothing \implies (\exists B \in A)(B \cap A = \varnothing)).
+$$
+:::
+
+This definition of regularity was given by Zermelo in 1930, and is still the most common definition of regularity. It should be noted that although sets containing themselves seems unnatural, there is no logical reason for them to be excluded from study. The axiom of regularity allows us to exclude sets with undesirable properties, but if we so wished we could exclude this axiom and continue our study of set theory without encountering contradiction or paradox. 
+
+## Properties of Regularity
+
+It is not immediately obvious how this axiom prevents self referentiation in sets, so lets see it in action.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+No set is an element of itself, $A \not \in A$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Towards a contradiction, assume $A$ is such that $A \in A$. Since $A \in \{A\}$ we have 
+
+$$
+A \in \{A\} \cap A.
+$$
+
+By the axiom of regularity, there exists $B \in \{A\}$ such that $B \cup \{A\} = \varnothing$. 
+
+Since $\{A\}$ is a singleton, we must have $B = A$. But then by regularity $A \cap \{A\} = \varnothing$, contradicting our assumption. Thus $A \not \in A$.
+:::
+
+We above used regularity on $\{A\}$. Since $A$ is the only element in $\{A\}$, by regularity we must have that $A \cap \{A\} = \varnothing$. This implies that $A \not \in A$. We will use this same method in the next theorem to show that two sets cannot contain each other.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+No two sets $A,B$ exists such that $A \in B$ and $B \in A$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Towards a contradiction, assume $A \in B$ and $B \in A$. Then since $A \in \{A,B\}$ and $B \in \{A,B\}$
+
+$$
+A \in \{A,B\} \cap B \quad \text{and}\quad B \in \{A,B\} \cap A.
+$$
+
+By the axiom of regularity, there exists $C \in \{A,B\}$ such that ${C \cup \{A,B\} = \varnothing.}$ Since $\{A,B\}$ is a pair, we must have either
+
+$$
+C = A \quad \text{or} \quad C = B.
+$$
+Therefore either
+$$
+\{A,B\} \cap A = \varnothing \quad \text{or}\quad \{A,B\} \cap B = \varnothing.
+$$
+
+Both of which contradict our assumption.
+:::
+
+We can continue this for chains of an indefinite size. We will later see how introducing the axiom of choice will allow us to prove no infinite chains exist. The axiom of regularity also proves some elementary results about cartesian products.

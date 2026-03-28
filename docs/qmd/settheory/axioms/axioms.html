@@ -155,7 +155,7 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#axiom-of-extensionality" id="toc-axiom-of-extensionality" class="nav-link active" data-scroll-target="#axiom-of-extensionality">Axiom of Extensionality</a></li>
+  <li><a href="#basic-axioms" id="toc-basic-axioms" class="nav-link active" data-scroll-target="#basic-axioms">Basic Axioms</a></li>
   <li><a href="#existence-axioms" id="toc-existence-axioms" class="nav-link" data-scroll-target="#existence-axioms">Existence Axioms</a></li>
   <li><a href="#number-construction" id="toc-number-construction" class="nav-link" data-scroll-target="#number-construction">Number construction</a></li>
   </ul>
@@ -185,11 +185,27 @@ window.Quarto = {
 
 <p>The ideas we have studied up to now feel very natural, and are all true properties we want set theory to have. We want, however, for set theory to be built on absolute solid foundations with no ambiguity, and thus it is axiomatized in first order logic.</p>
 <p>The following chapter is devoted to developing all the ideas from the last, with care for the Axioms. The specific axoioms we choose to include develop a system known as <span class="math inline">ZFC</span>. This is not the only way to formalize set theory however, and not even the only set of axioms used to formalize <span class="math inline">ZFC</span>.</p>
-<p>The goal of this section is to start with two primitive notions, an object called a <em>set</em>, and a relation called <em>contains</em>, denoted with <span class="math inline">\in</span>.</p>
-<p>With only these two notions we can’t do much, so we introduce our first axiom.</p>
-<section id="axiom-of-extensionality" class="level2">
-<h2 class="anchored" data-anchor-id="axiom-of-extensionality">Axiom of Extensionality</h2>
+<p>The goal of this section is to start with two primitive notions, an object called a <em>set</em>, and a relation called <em>contains</em>, denoted with <span class="math inline">\in</span>, and build up the usual <span class="math inline">9</span> axioms of <span class="math inline">ZFC</span>.</p>
+<section id="basic-axioms" class="level2">
+<h2 class="anchored" data-anchor-id="basic-axioms">Basic Axioms</h2>
 <p>Formally we know nothing about what a set is or what the relation <em>containment</em> does. We have our intuitive ideas of course, and need to somehow make explicit all of our assumptions. Lets start with a basic axiom, and see how it fits our intuition.</p>
+<p>We may start with the simple axiom</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Set Existence Axiom
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>There exist a set:</p>
+<p><span class="math display">
+\exists A (A = A)
+</span></p>
+</div>
+</div>
 <div class="callout callout-style-default callout-important no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

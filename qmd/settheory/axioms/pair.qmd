@@ -1,0 +1,78 @@
+---
+title: "Axion of Pairing"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The previous three axioms have only allowed us to prove one set exists, the empty set. In order to expand how many sets we have, we introduce the axiom of pairing. This axiom guarantees that for any two sets there exists a set they both belong to.
+
+::: {.callout-important icon="false"}
+## Axiom of Pairing
+
+For any two sets $A$ and $B$, there exists a set $C$ whose members are exactly $A$ and $B$.
+
+$$
+(\forall A)(\forall B)(\exists C)(\forall D)(D \in C \iff D = A \lor D = B)
+$$
+:::
+
+We can of course use the axiom of extension to show that our set is unique.
+
+::: {.callout-note icon="false"}
+## Theorem [42]
+
+For any two sets $A$ and $B$, there exists a unique set $C$ whose members are exactly $A$ and $B$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof [TO-DO]
+
+
+:::
+
+This will lead us directly to our definition of an unordered pair.
+
+::: {.callout-note icon="false"}
+## Definition
+
+For any two sets $A$ and $B$, the [unordered pair]{.definition} $C$ is the set containing exclusively $A$ and $B$, denoted
+
+$$
+\{A,B\} = C \iff (\forall D)(D \in C \iff D = A \lor D = B).
+$$
+:::
+
+This notational choice to refer to $\{A,B\}$ in brackets is known as roster notation, and we will quickly give a note on it.
+
+## Roster notation
+
+We can now extend our set theory to contain many additional sets besides the empty set. In doing this we run into the problem that notating these sets with formal logic is tedious. Given two sets $A$ and $B$, we just saw how long it is to refer to the set $C$ containing only these two elements
+
+$$
+C \iff (\forall D)(D \in C \iff D = A \lor D = B).
+$$
+
+And this gets worse. Say we wanted a set $D$ containing sets $A,B$ and $C$. Then we would have to write
+
+$$
+D \iff (\forall E)(E \in D \iff E = A \lor E = B \lor E = C).
+$$
+
+Specifying each element in the set with another logical or. Roster notation is our short hand for specifying 'small' sets by individually writing between curly brackets each element of our set, separated by a comma. Using this, our set $D$ consisting of three members will be wrote
+
+$$
+D = \{A,B,C\}.
+$$
+
+We can also denote the empty set this way, writing
+
+$$
+\varnothing = \{\}.
+$$
+
+## Properties
+
+We will now observe a large amount of properties given to us by the pairing axiom. 
