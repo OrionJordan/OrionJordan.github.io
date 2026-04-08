@@ -1,0 +1,122 @@
+---
+title: "Logic"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas.
+
+## Alphabet
+
+We will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic
+
+-   **Connectives -** $\land, \lor, \implies, \iff, \lnot$
+
+-   **Quantifiers -** $\forall, \exists$
+
+-   **Variables -** An infinite set of variables $x_1,x_2,x_3,\dots,x_n$. Although other letters in the alphabhet, both capital and lowercase may be used.
+
+-   **Punctuation -** Right $)$ and left $($ parenthesis, commas, colons, bars $\mid$, and any other similar symbol. 
+
+-   **Equality -** The equal sign $=$.
+
+Our connectives each have special meanings, $\land$ meaning 'and', $\lor$ meaning 'or', $\implies$ meaning 'implies', $\iff$ meaning 'if and only if' and $\lnot$ meaning 'not'. We are also given two quantifiers to work with. $\forall$ meaning 'for all' or 'for every', and $\exists$ meaning 'there exists'. 
+
+We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see $ZFC$ uses a predicate $\exists$ in it's axioms, so we need an arbitrary predicate in our list of symbols for $ZFC$ to use. To be safe we include an infinite list of predicate and function symbols.
+
+-   **Predicates -** An infinite set of predicates $P_1,P_2,P_3,\dots,P_n$. Although other letters in the alphabhet, both capital and lowercase may be used.
+
+-   **Functions -** An infinite set of functions $f_1,f_2,f_3,\dots,f_n$. Although other letters in the alphabhet, both capital and lowercase may be used.
+
+Predicates and functions may take any number of variables as arguments, which may be notated in the obvious way $P(x)$ for a predicate taking one argument, $P(x,y)$ for two, etc. If the number of arguments is irrelevant however we simply write $P$.
+
+While $ZFC$ doesn't use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many.
+
+## Formulas
+
+The syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like
+
+$$
+\forall \forall \exists ((\lnot\iff =x \exists)
+$$
+
+which are clearly nonsensical. In order to prevent these strings from occurring in our study, we'll define which strings are valid and call them formulas.
+
+::: {.callout-note icon="false"}
+## Definition 
+
+A [well-formed formula]{.definition} usually abbreviated _wff_ or just _formula_, is a string of characters formed by the following recursive rules:
+
+If $x$ and $y$ are variables, then 
+
+- $x = y$
+
+is a formula. Given a predicate $P$ taking $n$ arguments, and $n$ variables $x_1,x_2,\dots,x_n$
+
+- $P(x_1,x_2,\dots,x_n)$
+
+Is a formula. Given a predicate $P$ and a variable $x$, we can create the following formulas
+
+- $\forall x P$
+- $\exists x P$.
+- $\lnot P$
+
+And finally given two formulas $\phi$ and $\psi$, the following are formulas
+
+- $\phi \land \psi$
+- $\phi \lor \psi$
+- $\phi \implies \psi$
+- $\phi \iff \psi$
+:::
+
+Using these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in _bound_ and _free_ variables.
+
+## Bound and Free variables
+
+Variables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus _bound_ to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation
+
+$$
+\sum_{k=1}^{10} f(k,n).
+$$
+
+The variable $k$ is bound and acts as a placeholder for a value between $1$ and $10$. The variable $n$ however is free, it is not quantified and the value of the expression depends on the value of $n$. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence
+
+$$
+\text{Lisa found her book}.
+$$
+
+The pronoun 'her' is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like 'herself' and 'himself' are examples of bound variables, take the sentence
+
+$$
+\text{Jane hurt herself}.
+$$
+
+In this sentence, 'herself' is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let's look at how to define them.
+
+::: {.callout-note icon="false"}
+## Definition 
+
+A [subformula]{.definition} of some formula $\phi$ is some consecutive sequence of symbols in $\phi$ which form a formula.
+:::
+
+(not quite right)
+
+For example, the formula
+
+$$
+(\exists x P(x)) \land (\forall x P(x,y))
+$$
+
+has as subformulas $\exists x P(x)$ 
+
+## Truth and Connectives
+
+Now we'll look at the actual meaning behind our connectives. A formula is either true or false. There is 
+
+## Sources
+
+https://en.wikipedia.org/wiki/Free_variables_and_bound_variables
+
+Kunen 1980

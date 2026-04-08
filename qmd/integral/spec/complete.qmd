@@ -1,0 +1,49 @@
+---
+title: "Completing the Square"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Completing the square is a commonly used trick in algebra, and allows us to take an irreducable quadratic and change it into a squared term plus a constant. The motivating example for this section is 
+
+$$
+\int \sqrt{x^2 + 4x + 5} \, dx.
+$$
+
+Let's see how completing the square helps us solve this integral.
+
+::: {.callout-warning icon="false"}
+## Example (Completing the Square)
+
+Given the integral
+
+$$
+\int \sqrt{x^2 + 4x + 5} \, dx.
+$$
+
+the quadratic can be rewrote
+$$
+x^2 + 4x + 5 = x^2 + 4x +4 - 4 + 5 = (x+2)^2 + 1.
+$$
+
+Giving us
+$$
+\int \sqrt{(x+2)^2 + 1} \, dx.
+$$
+
+Which we can then solve using a trigonometric substitution.
+:::
+
+## Problems
+
+::: {.callout-warning icon="false"}
+## Problem 117 - Pauls Online Notes
+
+Evaluate the following integral
+
+$$
+\int \sqrt{x^2 + 4x + 5} \, dx
+$$
+:::

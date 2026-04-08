@@ -2093,7 +2093,7 @@
     "href": "qmd/integral/simple/decomp.html#method",
     "title": "Partial fraction decomposition",
     "section": "Method",
-    "text": "Method\nWhen given an integral in the form\n\n\\int \\frac{P(X)}{Q(X)} \\, dx\n\nWhere P(x) and Q(x) are polynomials such that the degree of Q(x) is higher than the degree of P(x). We can decompose the fraction based on the factors of Q(x). There are four cases for the factors of Q(x).\n\n\n\n\n\n\nDecomposition cases\n\n\n\n\n\nCase I: Distinct linear factors\nWhen Q(x) has distinct linear factors, i.e.\n\nQ(x) = (a_1 x + b_1)(a_2 x + b_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{B}{a_2x + b_2}\n\nCase 2: Repeated linear factors\nWhen Q(x) has repeated linear factors, i.e.\n\nQ(x) = (a x + b)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1}{ax + b} + \\frac{A_2}{(ax + b)^2} + \\cdots + \\frac{A_k}{(a x + b)^k}\n\nCase 3: Distinct quadratic factors\nWhen Q(x) has distinct quadratic factors, i.e.\n\nQ(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1 + B_1}{a_1 x^2 + b_1x + c_1} + \\frac{A_2 + B_2}{a_2 x^2 + b_2x + c_2}\n\nCase 4: Repeated quadratic factors\nWhen Q(x) has repeated quadratic factors, i.e.\n\nQ(x) = (a x^2 + bx + c)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a x^2 + bx + c} + \\cdots + \\frac{A_kx + B_k}{(a x^2 + bx + c)^k}\n\n\n\n\nNote that Q(x) does not have one case of factors exculsivly. For example\n\nQ(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2\n\nWill decompose into\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{Bx + C}{a_2 x^2 + b_2x + c_2} + \\frac{Dx + E}{(a_2 x^2 + b_2x + c_2)^2}\n\nNext we need a method for finding the value of the constants in the numerator.\n\n\n\n\n\n\nEvaluating constants\n\n\n\n\n\nConsider the integral from the beginning\n\n\\int \\frac{3x + 11}{x^2 - x - 6} \\,dx\n\nWe can now decompose the integrand to obtain\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A}{x - 3} + \\frac{B}{x + 2}\n\nThe problem is now finding values for the constants A,B which make the relation true. By cross multiplying the right side of the equation we get\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A(x + 2) + B(x - 3)}{(x - 3)(x + 2)}\n\nWhich simplifies to\n\n3x + 11 = A(x + 2) + B(x - 3).\n\nWe can then create a system of equations such that the above expression is always true. This method is long but will always work. The faster method (that isn’t always possible) is to find values of x such that the equation reduces. Using the faster method, we obtain\n\nx = 3 \\: : \\: 3(3) + 11 = A(3 + 2) + B(3 - 3) \\implies A = 4\\\\\nx = -2 \\: : \\: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \\implies B = -1\n\nWhich gives us our final expression\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{4}{x - 3} - \\frac{1}{x + 2}\n\nWhich as shown above, makes the integral trivial to solve.\n\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}} = 4\\ln |x - 3| - \\ln |x + 2| + C.",
+    "text": "Method\nWhen given an integral in the form\n\n\\int \\frac{P(X)}{Q(X)} \\, dx\n\nWhere P(x) and Q(x) are polynomials such that the degree of Q(x) is higher than the degree of P(x). We can decompose the fraction based on the factors of Q(x). There are four cases for the factors of Q(x).\n\n\n\n\n\n\nDecomposition cases\n\n\n\n\n\nCase I: Distinct linear factors\nWhen Q(x) has distinct linear factors, i.e.\n\nQ(x) = (a_1 x + b_1)(a_2 x + b_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{B}{a_2x + b_2}\n\nCase 2: Repeated linear factors\nWhen Q(x) has repeated linear factors, i.e.\n\nQ(x) = (a x + b)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1}{ax + b} + \\frac{A_2}{(ax + b)^2} + \\cdots + \\frac{A_k}{(a x + b)^k}\n\nCase 3: Distinct quadratic factors\nWhen Q(x) has distinct quadratic factors, i.e.\n\nQ(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a_1 x^2 + b_1x + c_1} + \\frac{A_2x + B_2}{a_2 x^2 + b_2x + c_2}\n\nCase 4: Repeated quadratic factors\nWhen Q(x) has repeated quadratic factors, i.e.\n\nQ(x) = (a x^2 + bx + c)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a x^2 + bx + c} + \\cdots + \\frac{A_kx + B_k}{(a x^2 + bx + c)^k}\n\n\n\n\nNote that Q(x) may contain multiple cases to factor. For example\n\nQ(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2\n\nWill decompose into\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{Bx + C}{a_2 x^2 + b_2x + c_2} + \\frac{Dx + E}{(a_2 x^2 + b_2x + c_2)^2}\n\nNext we need a method for finding the value of the constants in the numerator.\n\n\n\n\n\n\nEvaluating constants\n\n\n\n\n\nConsider the integral from the beginning\n\n\\int \\frac{3x + 11}{x^2 - x - 6} \\,dx\n\nWe can now decompose the integrand to obtain\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A}{x - 3} + \\frac{B}{x + 2}\n\nThe problem is now finding values for the constants A,B which make the relation true. By cross multiplying the right side of the equation we get\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A(x + 2) + B(x - 3)}{(x - 3)(x + 2)}\n\nWhich simplifies to\n\n3x + 11 = A(x + 2) + B(x - 3).\n\nWe can then create a system of equations such that the above expression is always true. This method is long but will always work. The faster method (that isn’t always possible) is to find values of x such that the equation reduces. Using the faster method, we obtain\n\nx = 3 \\: : \\: 3(3) + 11 = A(3 + 2) + B(3 - 3) \\implies A = 4\\\\\nx = -2 \\: : \\: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \\implies B = -1\n\nWhich gives us our final expression\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{4}{x - 3} - \\frac{1}{x + 2}\n\nWhich as shown above, makes the integral trivial to solve.\n\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}} = 4\\ln |x - 3| - \\ln |x + 2| + C.",
     "crumbs": [
       "**Simple Techniques**",
       "Partial fraction decomposition"
@@ -3198,7 +3198,7 @@
     "href": "qmd/settheory/logic/logic.html",
     "title": "Logic",
     "section": "",
-    "text": "First-order logic is the standard system and language used in mathematics. Logic provides the tools we need to define, as best we can, what a proposition is, what truth is, and how to quantify expressions. Logic, and moreover mathematical logic, are fields of study in their own right far too large to be described fully in this section. Instead, we will be examining the minimum amount of logic needed to provide as a framework on which to build ZFC set theory on top of.\n(TO-DO)\nRewrite to be less bad. Talk about lack of definitions for string and stuff. Philosophicle mumbo jumbo."
+    "text": "First-order logic is the standard system and language used in mathematics. Logic provides the tools we need to define, as best we can, what a proposition is, what truth is, and how to quantify expressions. Logic, and moreover mathematical logic, are fields of study in their own right far too large to be described fully in this section. Instead, we will be examining the minimum amount of logic needed to provide as a framework on which to build ZFC set theory on top of.\n(TO-DO)\nRewrite to be less bad. Talk about lack of definitions for string and stuff. Philosophicle mumbo jumbo.\nMaybe add ZFC and FOL before intro to logic, talk about math being built on philosophy, a language, then truth. Talk about meta theories."
   },
   {
     "objectID": "qmd/settheory/logic/logic.html#first-order-theories",
@@ -3303,7 +3303,7 @@
     "href": "qmd/settheory/logic/logic.html#syntax",
     "title": "Logic",
     "section": "Syntax",
-    "text": "Syntax\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate \\exists in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many.\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas P and Q, the following are formulas\n\nP \\land Q\nP \\lor Q\nP \\implies Q\nP \\iff Q"
+    "text": "Syntax\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate \\exists in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many.\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas P and Q, the following are formulas\n\nP \\land Q\nP \\lor Q\nP \\implies Q\nP \\iff Q\n\n\n\nUsing these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in bound and free variables."
   },
   {
     "objectID": "qmd/settheory/logic/logic.html#truth-and-connectives",
@@ -3311,5 +3311,1095 @@
     "title": "Logic",
     "section": "Truth and Connectives",
     "text": "Truth and Connectives\nNow we’ll look at the actual meaning behind our connectives. A formula is either true or false. There is"
+  },
+  {
+    "objectID": "qmd/settheory/logic/syntax.html",
+    "href": "qmd/settheory/logic/syntax.html",
+    "title": "Logic",
+    "section": "",
+    "text": "The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas."
+  },
+  {
+    "objectID": "qmd/settheory/logic/syntax.html#alphabet",
+    "href": "qmd/settheory/logic/syntax.html#alphabet",
+    "title": "Logic",
+    "section": "Alphabet",
+    "text": "Alphabet\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate \\exists in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many."
+  },
+  {
+    "objectID": "qmd/settheory/logic/syntax.html#formulas",
+    "href": "qmd/settheory/logic/syntax.html#formulas",
+    "title": "Logic",
+    "section": "Formulas",
+    "text": "Formulas\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas \\phi and \\psi, the following are formulas\n\n\\phi \\land \\psi\n\\phi \\lor \\psi\n\\phi \\implies \\psi\n\\phi \\iff \\psi\n\n\n\nUsing these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in bound and free variables."
+  },
+  {
+    "objectID": "qmd/settheory/logic/syntax.html#bound-and-free-variables",
+    "href": "qmd/settheory/logic/syntax.html#bound-and-free-variables",
+    "title": "Logic",
+    "section": "Bound and Free variables",
+    "text": "Bound and Free variables\nVariables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus bound to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation\n\n\\sum_{k=1}^{10} f(k,n).\n\nThe variable k is bound and acts as a placeholder for a value between 1 and 10. The variable n however is free, it is not quantified and the value of the expression depends on the value of n. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence\n\n\\text{Lisa found her book}.\n\nThe pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence\n\n\\text{Jane hurt herself}.\n\nIn this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.\n\n\n\n\n\n\nDefinition\n\n\n\nA subformula of some formula \\phi is some consecutive sequence of symbols in \\phi which form a formula.\n\n\n(not quite right)\nFor example, the formula\n\n(\\exists x P(x)) \\land (\\forall x P(x,y))\n\nhas as subformulas \\exists x P(x)"
+  },
+  {
+    "objectID": "qmd/settheory/logic/syntax.html#truth-and-connectives",
+    "href": "qmd/settheory/logic/syntax.html#truth-and-connectives",
+    "title": "Logic",
+    "section": "Truth and Connectives",
+    "text": "Truth and Connectives\nNow we’ll look at the actual meaning behind our connectives. A formula is either true or false. There is"
+  },
+  {
+    "objectID": "qmd/settheory/logic/syntax.html#sources",
+    "href": "qmd/settheory/logic/syntax.html#sources",
+    "title": "Logic",
+    "section": "Sources",
+    "text": "Sources\nhttps://en.wikipedia.org/wiki/Free_variables_and_bound_variables\nKunen 1980"
+  },
+  {
+    "objectID": "qmd/settheory/logic/logic.html#bound-and-free-variables",
+    "href": "qmd/settheory/logic/logic.html#bound-and-free-variables",
+    "title": "Logic",
+    "section": "Bound and Free variables",
+    "text": "Bound and Free variables"
+  },
+  {
+    "objectID": "qmd/integral/intro.html",
+    "href": "qmd/integral/intro.html",
+    "title": "Integration Bee",
+    "section": "",
+    "text": "This is a series of notes and integrals in preparation for the 2026 UNT Integration Bee. The Integration Bee takes place on April 10th, in GAB 106 at 3pm!",
+    "crumbs": [
+      "Integration Bee"
+    ]
+  },
+  {
+    "objectID": "qmd/numanal/formalsystem.html",
+    "href": "qmd/numanal/formalsystem.html",
+    "title": "Numerical Analysis",
+    "section": "",
+    "text": "A formal system consists of a formal language, with strict rules on what symbols are allowed and how to connect them, combined with a deductive system, containing axioms and rules for deducing true statements.\n\n\n\n\n\n\nDefinition\n\n\n\nA formal system is a mathematical structure consisting of\n\nA formal language\nA deductive system"
+  },
+  {
+    "objectID": "qmd/integral/simple/basics.html",
+    "href": "qmd/integral/simple/basics.html",
+    "title": "Basics",
+    "section": "",
+    "text": "This section introduces the concept of antidifferentiation, linearity, power rule and trigonometric identities.",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/basics.html#inverse-power-rule",
+    "href": "qmd/integral/simple/basics.html#inverse-power-rule",
+    "title": "Basics",
+    "section": "Inverse power rule",
+    "text": "Inverse power rule\nOne of the basic rules of differentiation is that of power rule.\n\n\\frac{d}{dx} x^m = mx^{m-1}\n\nSuspecting this will be a useful property, we can derive an expression for the inverse power rule from the definition of an integral.\n\n\\int mx^{m-1} dx = x^m\n\nApply linearity and the substituion n = m-1\n\n\\int x^{n} dx = \\frac{x^{n+1}}{n+1}\n\n\n\n\n\n\n\nExample\n\n\n\n\n\nFind the solution to the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\nWe first begin by applying linearity\n\n= 2 \\int x^2 \\,dx - 3\\int x \\, dx - \\int 1x^0 \\, dx\n\nThen inverse power rule\n\n= \\frac{2x^3}{3} - \\frac{3x^2}{2} - x + C\n\nGiving us a solution to the polynomial. This process can be done for any standard polynomial.\n\n\n\n\n\n\n\n\n\nTheorem (Integration of a polynomial)\n\n\n\nLet f(x) be a polynomial in the form\n\nf(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + c\n\nThen\n\n\\int f(x)\\,dx = \\frac{a_nx^{n+1}}{n+1} + \\frac{a_{n-1}x^{n}}{n} +  \\cdots + \\frac{a_1x^2}{2} + cx + C\n\n\n\n\nEdge case\nOne may notice that when n=-1, inverse power rules gives us an undefined result\n\n\\int x^{-1}\\,dx = \\frac{1}{0} + C.\n\nFor this particular value of n, we get the expression\n\n\\int x^{-1}\\,dx = \\ln|x| + C.\n\nNote the absolute value bars. This is because the function \\ln is not defined for negative values of x, where our integrand is.",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/basics.html#common-identities",
+    "href": "qmd/integral/simple/basics.html#common-identities",
+    "title": "Basics",
+    "section": "Common identities",
+    "text": "Common identities\nThis section will cover many commonly used integration identities without much explanation.\n\nTrig identities\nTrigonometry is a huge part of the integration bee, and will repeatedly appear in almost every section of this guide. As such it is crucial to have a complete understanding of these functions and how they interact.\nThe integrals below are the direct inverse of differentiating the six primary trig functions.\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘compliment’, and then negating the result.\n\n\nInverse Trig identities\nWe can use special formulas to differentiate inverse functions. By differentiating \\arcsin(x) and \\arctan(x), we get\n\n\\int \\frac{1}{x^2 + 1} \\, dx = \\arctan(x) + C \\hspace{0.5in} \\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\nIt is worth noting that\n\n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{1-x^2}.\n\nSo the second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ by a constant (\\frac{\\pi}{2}).\n\n\nExponential and logarithmic functions\nBy once again inverting common derivative rules, we get the following identities.\n\n\\int e^x \\, dx = e^x + C \\hspace{0.5in} \\int a^x \\,dx = \\frac{a^x}{\\ln{x}} + C",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/basics.html#examples",
+    "href": "qmd/integral/simple/basics.html#examples",
+    "title": "Basics",
+    "section": "Examples",
+    "text": "Examples\nSome example problems from various websites\n\nInverse power rule\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5 - 18x^2 + 7 \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the formula for evaluating polynomials\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 6x^3 + 7x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5\\, dx - 18x^2 + 7\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice the integral ends at the dx, meaning the solution is\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 18x^2 + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.3)\n\n\n\nEvaluate the following integral\n\n\\int 12t^7 - t^2 - t + 3 \\, dt\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nClassic polynomial, the only difference is the use of t instead of x\n\n\\int 12t^7 - t^2 - t + 3 \\, dt = \\frac{3}{2}t^8 - \\frac{1}{3}t^3 - \\frac{1}{2}t^2 + 3t + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.6)\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponets\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\int w^\\frac{1}{3} + 10w^\\frac{3}{5} \\, dw\n\nAnd then apply inverse power rule\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\frac{3}{4}w^\\frac{4}{3} + \\frac{25}{4}w^\\frac{8}{5} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.9)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = \\int \\frac{7}{3}y^{-6} + y^{-10} - 2y^{\\frac{4}{3}} \\, dy\n\nAnd then apply inverse power rule\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = -\\frac{7}{15}y^{-5} - \\frac{1}{9} y^{-9} + 6y^{-\\frac{1}{3}} + C\n\nBe careful to make sure you have the right answer.\n\n\n\n\n\nCommon identites\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.14)\n\n\n\nEvaluate the following integral\n\n\\int \\sin x + 10 \\csc^2 x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int \\sin x + 10 \\csc^2 x \\, dx = -\\cos x - 10 \\cot x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.15)\n\n\n\nEvaluate the following integral\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx = 2 \\sin x - \\sec x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.16)\n\n\n\nEvaluate the following integral\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nMultiply out and simplify the equation. \n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = \\int 12 + 1 + \\csc^2 \\theta \\, d\\theta\n\nBecause\n\n\\csc x= \\frac{1}{\\sin x}\n\nSo we get the answer\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = 13 \\theta + \\cot \\theta + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.20)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the inverse trig identities\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}} = \\arctan x + 12 \\arcsin x + C",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "qmd/logic/intro.html",
+    "href": "qmd/logic/intro.html",
+    "title": "Introduction to Mathematical Logic",
+    "section": "",
+    "text": "Mathematical logic is the study of formal reasoning and logic within mathematical systems. The study of logic typically consists of the construction of a formal system, and then investigating what statements can be made true or false in that system.",
+    "crumbs": [
+      "Introduction to Mathematical Logic"
+    ]
+  },
+  {
+    "objectID": "qmd/logic/intro.html#table-of-contents",
+    "href": "qmd/logic/intro.html#table-of-contents",
+    "title": "Introduction to Mathematical Logic",
+    "section": "Table of contents",
+    "text": "Table of contents\n\nFormal Systems",
+    "crumbs": [
+      "Introduction to Mathematical Logic"
+    ]
+  },
+  {
+    "objectID": "qmd/logic/intro.html#formal-languages",
+    "href": "qmd/logic/intro.html#formal-languages",
+    "title": "Introduction to Mathematical Logic",
+    "section": "Formal languages",
+    "text": "Formal languages",
+    "crumbs": [
+      "Introduction to Mathematical Logic"
+    ]
+  },
+  {
+    "objectID": "qmd/logic/intro.html#deductive-systems",
+    "href": "qmd/logic/intro.html#deductive-systems",
+    "title": "Introduction to Mathematical Logic",
+    "section": "Deductive systems",
+    "text": "Deductive systems",
+    "crumbs": [
+      "Introduction to Mathematical Logic"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/intro.html#table-of-contents",
+    "href": "qmd/integral/intro.html#table-of-contents",
+    "title": "Integration Bee",
+    "section": "Table of Contents",
+    "text": "Table of Contents\n\nExplicit Integrals\n\nFundamentals\nInverse power rule\nLogarithms and Exponents\nTrigonometric Functions\n\nGeneral methods\n\nSubstitution\nIntegration by parts\nPartial fraction decomposition\n\nSpecialized methods\n\nTrigonometric Identities and powers\nTrigonometric Substitution\nCompleting the square.\nWeirstrass Substitution",
+    "crumbs": [
+      "Integration Bee"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/intro.html#references",
+    "href": "qmd/integral/intro.html#references",
+    "title": "Set Theory",
+    "section": "References",
+    "text": "References\nNaive Set Theory - Paul Hermas - 1960",
+    "crumbs": [
+      "Set Theory"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/basics.html#definition",
+    "href": "qmd/integral/simple/basics.html#definition",
+    "title": "Basics",
+    "section": "Definition",
+    "text": "Definition\nAntiderivatives are the inverse of the differentiation. Given some function f(x) where\n\nf^\\prime(x) = g(x)\n\nthe antiderivative of g(x) is f(x). In general, the antiderivative of a function g(x) is a separate function f(x) whose we must differentiate to obtain g(x). This yields our definition.\n\n\n\n\n\n\nDefinition\n\n\n\nThe antiderivative of a function g(x) is some function f(x) such that\n\nf^\\prime(x) = g(x).\n\nThis is notated with an integration sign. Given a function g(x) we denote it’s antiderivative with\n\n\\int g(x) \\, dx\n\n\n\nThese antiderivatives are also called indefinite integrals, or just integrals for short. For any function g(x), there exists an infinite set of antiderivatives f(x) which only vary by some constant. Thus we write\n\n\\int g(x) \\, dx = f(x) + C\n\nwhere f(x) is some antiderivative of g(x) and C is any real number. Antiderivatives do not always exists for any arbitrary function g(x), and when they do exist, they may not be possible to express in elementary terms.\nFrom this point on, we will refer almost exclusively to antiderivatives as integrals. We will call functions integrable if their antiderivative exists.",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/basics.html#linearity",
+    "href": "qmd/integral/simple/basics.html#linearity",
+    "title": "Basics",
+    "section": "Linearity",
+    "text": "Linearity\nIntegrals have a property called linearity. This means they are closed under linear transformations of functions like addition and scaler multiplication. For example\n\n\\int f(x) + g(x) \\,dx = \\int f(x) \\,dx + \\int g(x) \\,dx.\n\nOr, given some constant C\n\n\\int C f(x) \\,dx = C \\int f(x) \\,dx.\n\nThis is presented in the following theorem without proof.\n\n\n\n\n\n\nTheorem\n\n\n\nFor all integrable functions f(x),g(x) and constants \\alpha,\\beta \\in \\mathbb{R}, the following holds\n\n\\int \\alpha f(x) + \\beta g(x) \\,dx = \\alpha \\int f(x) \\,dx+ \\beta \\int g(x) \\,dx",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Basics"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/trigidents.html",
+    "href": "qmd/integral/simple/trigidents.html",
+    "title": "Integrals of common functions",
+    "section": "",
+    "text": "This section introduces the rules for trigonometric identities."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigidents.html#trig-identities",
+    "href": "qmd/integral/simple/trigidents.html#trig-identities",
+    "title": "Integrals of common functions",
+    "section": "Trig identities",
+    "text": "Trig identities\nThere are six commonly used trigonometric functions, all of which can be expressed using only two, \\sin and \\cos. They are defined as follows.\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\sin(x) and \\cos(x) be our starting functions. Then we define the following functions\nThe Tangent function defined\n\n\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}\n\nThe Secant function defined\n\n\\sec(x) = \\frac{1}{\\cos(x)}\n\nThe Cosecant function defined\n\n\\csc(x) = \\frac{1}{\\sin(x)}\n\nand the Cotangent function defined\n\n\\cot(x) = \\frac{1}{\\tan(x)} = \\frac{\\cos(x)}{\\sin(x)}\n\n\n\nAnd of course each trigonmetric identity has a derivative, and a corresponding integral\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each trigonometric identity are as follows.\n\\begin{array}{ll}\n\\sin^\\prime(x) = \\cos(x) & \\cos^\\prime(x) = -\\sin(x)\\\\\n\n\\tan^\\prime(x) = \\sec^2(x) \\hspace{0.5in} & \\cot^\\prime(x) = -\\csc^2(x)\\\\\n\n\\sec^\\prime(x) = \\sec(x)\\tan(x) \\hspace{0.5in} & \\csc^\\prime(x) = -\\csc(x)\\cot(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\n\n\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘complement’, and then negating the result."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigidents.html#examples",
+    "href": "qmd/integral/simple/trigidents.html#examples",
+    "title": "Integrals of Trig Identities",
+    "section": "Examples",
+    "text": "Examples\nSome example problems from various websites\n\nInverse power rule\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5 - 18x^2 + 7 \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the formula for evaluating polynomials\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 6x^3 + 7x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5\\, dx - 18x^2 + 7\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice the integral ends at the dx, meaning the solution is\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 18x^2 + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.3)\n\n\n\nEvaluate the following integral\n\n\\int 12t^7 - t^2 - t + 3 \\, dt\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nClassic polynomial, the only difference is the use of t instead of x\n\n\\int 12t^7 - t^2 - t + 3 \\, dt = \\frac{3}{2}t^8 - \\frac{1}{3}t^3 - \\frac{1}{2}t^2 + 3t + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.6)\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponets\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\int w^\\frac{1}{3} + 10w^\\frac{3}{5} \\, dw\n\nAnd then apply inverse power rule\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\frac{3}{4}w^\\frac{4}{3} + \\frac{25}{4}w^\\frac{8}{5} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.9)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = \\int \\frac{7}{3}y^{-6} + y^{-10} - 2y^{\\frac{4}{3}} \\, dy\n\nAnd then apply inverse power rule\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = -\\frac{7}{15}y^{-5} - \\frac{1}{9} y^{-9} + 6y^{-\\frac{1}{3}} + C\n\nBe careful to make sure you have the right answer.\n\n\n\n\n\nCommon identites\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.14)\n\n\n\nEvaluate the following integral\n\n\\int \\sin x + 10 \\csc^2 x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int \\sin x + 10 \\csc^2 x \\, dx = -\\cos x - 10 \\cot x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.15)\n\n\n\nEvaluate the following integral\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx = 2 \\sin x - \\sec x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.16)\n\n\n\nEvaluate the following integral\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nMultiply out and simplify the equation. \n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = \\int 12 + 1 + \\csc^2 \\theta \\, d\\theta\n\nBecause\n\n\\csc x= \\frac{1}{\\sin x}\n\nSo we get the answer\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = 13 \\theta + \\cot \\theta + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.20)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the inverse trig identities\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}} = \\arctan x + 12 \\arcsin x + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/fundamentals.html",
+    "href": "qmd/integral/simple/fundamentals.html",
+    "title": "Fundamentals",
+    "section": "",
+    "text": "This section introduces the concept of antidifferentiation and linearity."
+  },
+  {
+    "objectID": "qmd/integral/simple/fundamentals.html#definition",
+    "href": "qmd/integral/simple/fundamentals.html#definition",
+    "title": "Fundamentals",
+    "section": "Definition",
+    "text": "Definition\nAntiderivatives are the inverse of the differentiation. Given some function f(x) where\n\nf^\\prime(x) = g(x)\n\nthe antiderivative of g(x) is f(x). In general, the antiderivative of a function g(x) is a separate function f(x) whose we must differentiate to obtain g(x). This yields our definition.\n\n\n\n\n\n\nDefinition\n\n\n\nThe antiderivative of a function g(x) is some function f(x) such that\n\nf^\\prime(x) = g(x).\n\nThis is notated with an integration sign. Given a function g(x) we denote it’s antiderivative with\n\n\\int g(x) \\, dx\n\n\n\nThese antiderivatives are also called indefinite integrals, or just integrals for short. For any function g(x), there exists an infinite set of antiderivatives f(x) which only vary by some constant. Thus we write\n\n\\int g(x) \\, dx = f(x) + C\n\nwhere f(x) is some antiderivative of g(x) and C is any real number. Antiderivatives do not always exists for any arbitrary function g(x), and when they do exist, they may not be possible to express in elementary terms.\nFrom this point on, we will refer almost exclusively to antiderivatives as integrals. We will call functions integrable if their antiderivative exists."
+  },
+  {
+    "objectID": "qmd/integral/simple/fundamentals.html#linearity",
+    "href": "qmd/integral/simple/fundamentals.html#linearity",
+    "title": "Fundamentals",
+    "section": "Linearity",
+    "text": "Linearity\nIntegrals have a property called linearity. This means they are closed under linear transformations of functions like addition and scaler multiplication. For example\n\n\\int f(x) + g(x) \\,dx = \\int f(x) \\,dx + \\int g(x) \\,dx.\n\nOr, given some constant C\n\n\\int C f(x) \\,dx = C \\int f(x) \\,dx.\n\nThis is presented in the following theorem without proof.\n\n\n\n\n\n\nTheorem\n\n\n\nFor all integrable functions f(x),g(x) and constants \\alpha,\\beta \\in \\mathbb{R}, the following holds\n\n\\int \\alpha f(x) + \\beta g(x) \\,dx = \\alpha \\int f(x) \\,dx+ \\beta \\int g(x) \\,dx"
+  },
+  {
+    "objectID": "qmd/integral/simple/fundamentals.html#inverse-power-rule",
+    "href": "qmd/integral/simple/fundamentals.html#inverse-power-rule",
+    "title": "Fundamentals",
+    "section": "Inverse power rule",
+    "text": "Inverse power rule\nNow we can begin to work on some explicit integrals. One of the most fundamental rules in differential calculus is the power rule,\n\n\\frac{d}{dx} x^m = mx^{m-1} .\n\nSuspecting this will be a useful property, we can derive an expression for the inverse power rule from the definition of an integral.\n\n\\int mx^{m-1} dx = x^m\n\nApplying linearity and the substitution n = m-1, we obtain\n\n\\int x^{n} dx = \\frac{x^{n+1}}{n+1}\n\nwhenever n \\not = -1. This is known as the inverse power rule, and allows us to integrate any polynomial.\n\n\n\n\n\n\nExample\n\n\n\n\n\nFind the solution to the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\nWe first begin by applying linearity\n\n= 2 \\int x^2 \\,dx - 3\\int x \\, dx - \\int 1x^0 \\, dx\n\nThen inverse power rule\n\n= \\frac{2x^3}{3} - \\frac{3x^2}{2} - x + C\n\nGiving us a solution to the polynomial. This process can be done for any standard polynomial.\n\n\n\n\n\n\n\n\n\nTheorem (Integration of a polynomial)\n\n\n\nLet f(x) be a polynomial in the form\n\nf(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + c\n\nThen\n\n\\int f(x)\\,dx = \\frac{a_nx^{n+1}}{n+1} + \\frac{a_{n-1}x^{n}}{n} +  \\cdots + \\frac{a_1x^2}{2} + cx + C\n\n\n\nThere begs the question though, how do we integrate when n = -1? The inverse power rule gives us an undefined answer\n\n\\int x^{-1}\\,dx = \\frac{1}{0} + C.\n\nThe solution, once again provided without proof, is to use the natural logarithm.\n\n\n\n\n\n\nTheorem (Integration of 1/x)\n\n\n\n\n\\int x^{-1}\\,dx = \\ln|x| + C.\n\n\n\nNote the absolute value bars. This is because the function \\ln is not defined for negative values of x, whereas our integrand is."
+  },
+  {
+    "objectID": "qmd/integral/simple/fundamentals.html#common-identities",
+    "href": "qmd/integral/simple/fundamentals.html#common-identities",
+    "title": "Fundamentals",
+    "section": "Common identities",
+    "text": "Common identities\nThis section will cover many commonly used integration identities without much explanation.\n\nTrig identities\nTrigonometry is a huge part of the integration bee, and will repeatedly appear in almost every section of this guide. As such it is crucial to have a complete understanding of these functions and how they interact.\nThe integrals below are the direct inverse of differentiating the six primary trig functions.\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘compliment’, and then negating the result.\n\n\nInverse Trig identities\nWe can use special formulas to differentiate inverse functions. By differentiating \\arcsin(x) and \\arctan(x), we get\n\n\\int \\frac{1}{x^2 + 1} \\, dx = \\arctan(x) + C \\hspace{0.5in} \\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\nIt is worth noting that\n\n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{1-x^2}.\n\nSo the second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ by a constant (\\frac{\\pi}{2}).\n\n\nExponential and logarithmic functions\nBy once again inverting common derivative rules, we get the following identities.\n\n\\int e^x \\, dx = e^x + C \\hspace{0.5in} \\int a^x \\,dx = \\frac{a^x}{\\ln{x}} + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/fundamentals.html#examples",
+    "href": "qmd/integral/simple/fundamentals.html#examples",
+    "title": "Fundamentals",
+    "section": "Examples",
+    "text": "Examples\nSome example problems from various websites\n\nInverse power rule\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.14)\n\n\n\nEvaluate the following integral\n\n\\int \\sin x + 10 \\csc^2 x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int \\sin x + 10 \\csc^2 x \\, dx = -\\cos x - 10 \\cot x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.15)\n\n\n\nEvaluate the following integral\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx = 2 \\sin x - \\sec x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.16)\n\n\n\nEvaluate the following integral\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nMultiply out and simplify the equation. \n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = \\int 12 + 1 + \\csc^2 \\theta \\, d\\theta\n\nBecause\n\n\\csc x= \\frac{1}{\\sin x}\n\nSo we get the answer\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = 13 \\theta + \\cot \\theta + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.20)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the inverse trig identities\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}} = \\arctan x + 12 \\arcsin x + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html",
+    "href": "qmd/integral/simple/powerrule.html",
+    "title": "Inverse power rule",
+    "section": "",
+    "text": "We start with the first rule of integration, which allows us to start calculating explicit integrals."
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html#inverse-power-rule",
+    "href": "qmd/integral/simple/powerrule.html#inverse-power-rule",
+    "title": "Inverse power rule",
+    "section": "",
+    "text": "Now we can begin to work on some explicit integrals. One of the most fundamental rules in differential calculus is the power rule,\n\n\\frac{d}{dx} x^m = mx^{m-1} .\n\nSuspecting this will be a useful property, we can derive an expression for the inverse power rule from the definition of an integral.\n\n\\int mx^{m-1} dx = x^m\n\nApplying linearity and the substitution n = m-1, we obtain\n\n\\int x^{n} dx = \\frac{x^{n+1}}{n+1}\n\nwhenever n \\not = -1. This is known as the inverse power rule, and allows us to integrate any regular polynomial.\n\n\n\n\n\n\nTheorem (Inverse power rule)\n\n\n\nFor every n \\in \\mathbb{Z} \\backslash \\{-1\\} \n\\int x^{n} dx = \\frac{x^{n+1}}{n+1}\n\n\n\n\n\n\n\n\n\nExample\n\n\n\nFind the solution to the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\nWe first begin by applying linearity\n\n= 2 \\int x^2 \\,dx - 3\\int x \\, dx - \\int 1x^0 \\, dx\n\nThen inverse power rule\n\n= \\frac{2x^3}{3} - \\frac{3x^2}{2} - x + C\n\nGiving us a solution to the polynomial. This process can be done for any standard polynomial.\n\n\n\n\n\n\n\n\nTheorem (Integration of a polynomial)\n\n\n\nLet f(x) be a polynomial in the form\n\nf(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + c\n\nThen\n\n\\int f(x)\\,dx = \\frac{a_nx^{n+1}}{n+1} + \\frac{a_{n-1}x^{n}}{n} +  \\cdots + \\frac{a_1x^2}{2} + cx + C\n\n\n\nThere begs the question though, how do we integrate when n = -1? The inverse power rule gives us an undefined answer\n\n\\int x^{-1}\\,dx = \\frac{1}{0} + C.\n\nThe solution, once again provided without proof, is to use the natural logarithm.\n\n\n\n\n\n\nTheorem (Integration of 1/x)\n\n\n\n\n\\int x^{-1}\\,dx = \\ln|x| + C.\n\n\n\nNote the absolute value bars. This is because the function \\ln is not defined for negative values of x, whereas our integrand is."
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html#definition",
+    "href": "qmd/integral/simple/powerrule.html#definition",
+    "title": "Inverse power rule",
+    "section": "Definition",
+    "text": "Definition\nOne of the most fundamental rules in differential calculus is the power rule,\n\n\\frac{d}{dx} x^m = mx^{m-1} .\n\nSuspecting this will be a useful property, we can derive an expression for the inverse power rule from the definition of an integral.\n\n\\int mx^{m-1} dx = x^m\n\nApplying linearity and the substitution n = m-1, we obtain\n\n\\int x^{n} dx = \\frac{x^{n+1}}{n+1}\n\nwhenever n \\not = -1. This is known as the inverse power rule, and allows us to integrate any regular polynomial.\n\n\n\n\n\n\nDefinition (Inverse power rule)\n\n\n\nFor every n \\in \\mathbb{R} \\backslash \\{-1\\} \n\\int x^{n} dx = \\frac{x^{n+1}}{n+1} + C.\n\nThis is the inverse power rule."
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html#edge-case",
+    "href": "qmd/integral/simple/powerrule.html#edge-case",
+    "title": "Inverse power rule",
+    "section": "Edge case",
+    "text": "Edge case\nThere begs the question though, how do we integrate when n = -1? The inverse power rule gives us an undefined answer\n\n\\int x^{-1}\\,dx = \\frac{1}{0} + C.\n\nThe solution, once again provided without proof, is to use the natural logarithm.\n\n\n\n\n\n\nTheorem (Integration of 1/x)\n\n\n\n\n\\int x^{-1}\\,dx = \\ln|x| + C.\n\n\n\nNote the absolute value bars. This is because the function \\ln is not defined for negative values of x, whereas our integrand is."
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html#examples",
+    "href": "qmd/integral/simple/powerrule.html#examples",
+    "title": "Inverse power rule",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5\\, dx - 18x^2 + 7\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice the integral ends at the dx, meaning the solution is\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 18x^2 + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.3)\n\n\n\nEvaluate the following integral\n\n\\int 12t^7 - t^2 - t + 3 \\, dt\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nClassic polynomial, the only difference is the use of t instead of x\n\n\\int 12t^7 - t^2 - t + 3 \\, dt = \\frac{3}{2}t^8 - \\frac{1}{3}t^3 - \\frac{1}{2}t^2 + 3t + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.6)\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\int w^\\frac{1}{3} + 10w^\\frac{3}{5} \\, dw\n\nAnd then apply inverse power rule\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\frac{3}{4}w^\\frac{4}{3} + \\frac{25}{4}w^\\frac{8}{5} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.9)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = \\int \\frac{7}{3}y^{-6} + y^{-10} - 2y^{\\frac{4}{3}} \\, dy\n\nAnd then apply inverse power rule\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = -\\frac{7}{15}y^{-5} - \\frac{1}{9} y^{-9} + 6y^{-\\frac{1}{3}} + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html#polynomials",
+    "href": "qmd/integral/simple/powerrule.html#polynomials",
+    "title": "Inverse power rule",
+    "section": "Polynomials",
+    "text": "Polynomials\nLets apply this rule to some polynomials.\n\n\n\n\n\n\nExample\n\n\n\nFind the solution to the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\nWe first begin by applying linearity\n\n= 2 \\int x^2 \\,dx - 3\\int x \\, dx - \\int 1x^0 \\, dx\n\nThen inverse power rule\n\n= \\frac{2x^3}{3} - \\frac{3x^2}{2} - x + C\n\n\n\nThis process can be done for any standard polynomial.\n\n\n\n\n\n\nTheorem (Integration of a polynomial)\n\n\n\nLet f(x) be a polynomial in the form\n\nf(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + c\n\nThen\n\n\\int f(x)\\,dx = \\frac{a_nx^{n+1}}{n+1} + \\frac{a_{n-1}x^{n}}{n} +  \\cdots + \\frac{a_1x^2}{2} + cx + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/powerrule.html#edge-case-and-roots",
+    "href": "qmd/integral/simple/powerrule.html#edge-case-and-roots",
+    "title": "Inverse power rule",
+    "section": "Edge case and roots",
+    "text": "Edge case and roots\nThere begs the question though, how do we integrate when n = -1? The inverse power rule gives us an undefined answer\n\n\\int x^{-1}\\,dx = \\frac{1}{0} + C.\n\nThe solution, once again provided without proof, is to use the natural logarithm.\n\n\n\n\n\n\nTheorem (Integration of 1/x)\n\n\n\n\n\\int x^{-1}\\,dx = \\ln|x| + C.\n\n\n\nNote the absolute value bars. This is because the function \\ln is not defined for negative values of x, whereas our integrand is.\nSince the inverse power rule works for roots, we’re able to take the integral of arbitrary root functions.\n\n\n\n\n\n\nExample\n\n\n\nFind the solution to the following integral\n\n\\int \\frac{x}{\\sqrt[3]{x}} \\, dx\n\nChanging exponents allows us to get the following\n\n\\int \\frac{x}{\\sqrt[3]{x}} \\, dx = \\int x^{2/3} \\, dx\n\nThen inverse power rule\n\n= \\frac{3x^{5/3}}{5} + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/substitution.html",
+    "href": "qmd/integral/simple/substitution.html",
+    "title": "Substitution",
+    "section": "",
+    "text": "The motivating example for this section will be the integral shown below.\n\\int \\sec^2(x)e^{1 + \\tan{x}} \\, dx\nThe techniques shown in the last section don’t work here. Linearity does not allow for separation of products, and we don’t have an identity which gets us a solution. In order to solve these types of integrals, we’ll need a new rule.\nSubstitution can often be thought of as undoing chain rule, by substituting the interior function.\nThe biggest problem is identitfying the function to substitute. There is no general way of identifying which function in the integrand needs to be substituted.",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/substitution.html#examples",
+    "href": "qmd/integral/simple/substitution.html#examples",
+    "title": "Substitution",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.1)\n\n\n\nEvaluate the following integral\n\n\\int   {{\\left( {8x - 12} \\right){{\\left( {4{x^2} - 12x} \\right)}^4}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = 4x^2 - 12x\n\nWe get \n\\int   {{\\left( {8x - 12} \\right){{\\left( {4{x^2} - 12x} \\right)}^4}\\,dx}} = \\frac{1}{5}(4x^2 - 12x)^5 + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.2)\n\n\n\nEvaluate the following integral\n\n\\int{{3{t^{ - 4}}{{\\left( {2 + 4{t^{ - 3}}} \\right)}^{ - 7}}\\,dt}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = 2 - 4t^{-3}\n\nWe get \n\\int{{3{t^{ - 4}}{{\\left( {2 + 4{t^{ - 3}}} \\right)}^{ - 7}}\\,dt}} = \\frac{1}{24}(2+4t^{-3})^{-6} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.14)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nFirst notice how \\csc x \\cot x is the derivative of -\\csc x. This leads us to try some form of \\csc x for u. I use\n\nu = 2 - \\csc x\n\nLeading too \n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx = - \\int \\frac{1}{u} \\, du\n\nWhich is then\n\n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx = \\ln |u| + C = \\ln |2 - \\csc x| + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.13)\n\n\n\nEvaluate the following integral\n\n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWhile the integral looks incredibly complex, if we substitute the term inside the radical (the usual choice) we can start to break it down.\n\nu = \\cos^2(2x) - 5\n\nThus \n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}} = -\\frac{5}{2} \\int \\sqrt{u} \\, du\n\nWhich leads too\n\n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}} = -\\frac{5}{3}(\\cos^2(2x) - 5)^\\frac{3}{2} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.15)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{6}{7 + y^2} \\,dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThis does not follow our usual f(g(x))g^\\prime(x) example. For this case, we’ll try to convert into an identity we know. It is clear we can’t have y^2 be a term in u, as this would only make the integral more complicated (as thers no y to be consumed in the du). The integrand sorta resembles the derivative of \\arctan y, so we can try to rewrite it\n\n\\int \\frac{6}{7 + y^2} \\,dy = \\frac{6}{7} \\int \\frac{1}{1 + \\frac{y^2}{7}} \\, dy\n\nNotice that if we make the substitution \nu = \\frac{y}{\\sqrt{7}}\n\nWe get\n\n\\int \\frac{6}{7 + y^2} \\,dy = \\frac{6\\sqrt{7}}{7} \\int \\frac{1}{1 + u^2} \\, du\n\nWhich gives us\n\n\\int \\frac{6}{7 + y^2} \\,dy = \\frac{6\\sqrt{7}}{7} \\arctan \\left(\\frac{y}{\\sqrt{7}}\\right) + C\n\n\n\n\n\n\n\n\n\n\nProblem - Arctan generalization\n\n\n\nEvaluate the previous integral in it’s general form\n\n\\int \\frac{1}{a^2 + x^2} \\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nLike last time, we’ll factor out a^2 from the bottom and then use a substitution.\n\n\\int \\frac{1}{a^2 + x^2} \\,dx = \\frac{1}{a^2} \\int \\frac{1}{1 + (x^2/a^2)} \\, dy\n\nMakeing the substitution \nu = \\frac{x}{a}\n\nWe get\n\n\\int \\frac{1}{a^2 + x^2} \\,dx = \\frac{1}{a} \\int \\frac{1}{1 + u^2} \\, dx\n\nWhich gives us\n\n\\int \\frac{1}{a^2 + x^2} \\,dx = \\frac{1}{a} \\arctan \\left(\\frac{x}{a}\\right) + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.4.6)\n\n\n\nEvaluate the following integral\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\, + 7{w^3} - 6\\,\\,\\sqrt[3]{w}\\,dw}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing linearity on the integral allows us to do different substitutions. Seeing as the last two terms can be integrated with the inverse power rule, we only need to a substitution on the first term. Luckily this is an easy case.\n\nu = 1 + e^{2-8w}\n\nGives\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\,dw} = -\\frac{5}{2}\\int \\sqrt{u}\\, du\n\nWhich is\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\,dw} = -\\frac{5}{3}(1 + e^{2-8w})^\\frac{3}{2} + C\n\nThen solving the other terms gives us our solution.\n\n= -\\frac{5}{3}(1 + e^{2-8w})^\\frac{3}{2} + \\frac{7}{4}w^4 - \\frac{9}{2}w^\\frac{4}{3} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus II - A7.1.18)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = x^4 + 1\n\nWe get\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}} = \\frac{1}{4}\\int \\frac{u - 1}{\\sqrt{u}}\n\nWhich we can then apply linearity and inverse power rule to, giving us\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}} = \\frac{1}{4}\\left( \\frac{2}{3}(x^4 + 1)^\\frac{3}{2} + 2(x^4 + 1)^\\frac{1}{2}\\right) + C",
+    "crumbs": [
+      "**Simple Techniques**",
+      "Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/simple/trigidents.html#inverse-trig-identities",
+    "href": "qmd/integral/simple/trigidents.html#inverse-trig-identities",
+    "title": "Integrals of common functions",
+    "section": "Inverse Trig identities",
+    "text": "Inverse Trig identities\nEach trig function has an inverse function, which may be helpful in our integrals. We traditionally only look at the inverses of \\sin,\\tan and \\sec.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{x^2 + 1} \\, dx = \\arctan(x) + C\n\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\n\n\\int \\frac{1}{x\\sqrt{x^2 - 1}}\\,dx = \\text{arcsec}(x) + C\n\n\n\nIt is worth noting that the derivative of \\arccos is very similar to \\arcsin \n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{\\sqrt{1-x^2}}.\n\nSo our second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ only by a constant (\\frac{\\pi}{2})."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigidents.html#exponential-and-logarithmic-functions",
+    "href": "qmd/integral/simple/trigidents.html#exponential-and-logarithmic-functions",
+    "title": "Integrals of common functions",
+    "section": "Exponential and logarithmic functions",
+    "text": "Exponential and logarithmic functions\nBy once again inverting common derivative rules, we get the following identities.\n\n\n\n\n\n\nTheorem\n\n\n\n\n\\int e^x \\, dx = e^x + C \\hspace{0.5in} \\int a^x \\,dx = \\frac{a^x}{\\ln{x}} + C"
+  },
+  {
+    "objectID": "qmd/integral/simple/commfunc.html",
+    "href": "qmd/integral/simple/commfunc.html",
+    "title": "Integrals of common functions",
+    "section": "",
+    "text": "This section introduces the rules for trigonometric identities."
+  },
+  {
+    "objectID": "qmd/integral/simple/commfunc.html#trig-identities",
+    "href": "qmd/integral/simple/commfunc.html#trig-identities",
+    "title": "Integrals of common functions",
+    "section": "Trig identities",
+    "text": "Trig identities\nThere are six commonly used trigonometric functions, all of which can be expressed using only two, \\sin and \\cos. They are defined as follows.\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\sin(x) and \\cos(x) be our starting functions. Then we define the following functions\nThe Tangent function defined\n\n\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}\n\nThe Secant function defined\n\n\\sec(x) = \\frac{1}{\\cos(x)}\n\nThe Cosecant function defined\n\n\\csc(x) = \\frac{1}{\\sin(x)}\n\nand the Cotangent function defined\n\n\\cot(x) = \\frac{1}{\\tan(x)} = \\frac{\\cos(x)}{\\sin(x)}\n\n\n\nAnd of course each trigonmetric identity has a derivative, and a corresponding integral\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each trigonometric identity are as follows.\n\\begin{array}{ll}\n\\sin^\\prime(x) = \\cos(x) & \\cos^\\prime(x) = -\\sin(x)\\\\\n\n\\tan^\\prime(x) = \\sec^2(x) \\hspace{0.5in} & \\cot^\\prime(x) = -\\csc^2(x)\\\\\n\n\\sec^\\prime(x) = \\sec(x)\\tan(x) \\hspace{0.5in} & \\csc^\\prime(x) = -\\csc(x)\\cot(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\n\n\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘complement’, and then negating the result."
+  },
+  {
+    "objectID": "qmd/integral/simple/commfunc.html#inverse-trig-identities",
+    "href": "qmd/integral/simple/commfunc.html#inverse-trig-identities",
+    "title": "Integrals of common functions",
+    "section": "Inverse Trig identities",
+    "text": "Inverse Trig identities\nEach trig function has an inverse function, which may be helpful in our integrals. We traditionally only look at the inverses of \\sin,\\tan and \\sec.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{x^2 + 1} \\, dx = \\arctan(x) + C\n\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\n\n\\int \\frac{1}{x\\sqrt{x^2 - 1}}\\,dx = \\text{arcsec}(x) + C\n\n\n\nIt is worth noting that the derivative of \\arccos is very similar to \\arcsin \n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{\\sqrt{1-x^2}}.\n\nSo our second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ only by a constant (\\frac{\\pi}{2})."
+  },
+  {
+    "objectID": "qmd/integral/simple/commfunc.html#exponential-and-logarithmic-functions",
+    "href": "qmd/integral/simple/commfunc.html#exponential-and-logarithmic-functions",
+    "title": "Integrals of common functions",
+    "section": "Exponential and logarithmic functions",
+    "text": "Exponential and logarithmic functions\nBy once again inverting common derivative rules, we get the following identities.\n\n\n\n\n\n\nTheorem\n\n\n\n\n\\int e^x \\, dx = e^x + C \\hspace{0.5in} \\int a^x \\,dx = \\frac{a^x}{\\ln{a}} + C"
+  },
+  {
+    "objectID": "qmd/integral/intro copy.html",
+    "href": "qmd/integral/intro copy.html",
+    "title": "The list",
+    "section": "",
+    "text": "The big list"
+  },
+  {
+    "objectID": "qmd/integral/intro copy.html#basics",
+    "href": "qmd/integral/intro copy.html#basics",
+    "title": "The list",
+    "section": "Basics",
+    "text": "Basics\nIntegrals using only the definition and linearity. Let F^\\prime(x) = f(x) and G^\\prime(x) = g(x)\n\n\\int f(x) \\, dx\n\\int f(x) + g(x) \\, dx\n\\int k f(x) \\, dx\n\\int -f(x) \\, dx\n\\int af(x) + bg(x) \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/intro copy.html#inverse-power-rule",
+    "href": "qmd/integral/intro copy.html#inverse-power-rule",
+    "title": "The list",
+    "section": "Inverse power rule",
+    "text": "Inverse power rule\nFor this section apply the following\n\n\n\n\n\n\nDefinition (Inverse power rule)\n\n\n\nFor all n \\in \\mathbb{R} \\backslash \\{-1\\} \n\\int x^{n} dx = \\frac{x^{n+1}}{n+1} + C.\n\n\n\n\n\\int x \\, dx\n\\int x^2 \\, dx\n\\int \\, dx\n\\int 2x^2 - 3x - 1 \\, dx\n\\int \\sqrt{x} \\, dx\n\\int x^\\pi \\, dx\n\\int \\frac{1}{\\sqrt{x}} \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/tricky/weirstrass.html",
+    "href": "qmd/integral/tricky/weirstrass.html",
+    "title": "Weirstrass Substitution",
+    "section": "",
+    "text": "The Weirstrass substitution, also called the tangent half-angle substitution, is a method for converting integrals of trigonometric functions of x to regular rational functions of t. We do this by making a substitution of t = \\tan(x/2). In general\n\\int f(\\sin x, \\cos x) \\, dx = \\int f\\left(\\frac{2t}{1 + t^2},\\frac{1-t^2}{1+t^2}\\right)\\frac{2}{1 + t^2} \\, dt."
+  },
+  {
+    "objectID": "qmd/integral/tricky/weirstrass.html#substitution",
+    "href": "qmd/integral/tricky/weirstrass.html#substitution",
+    "title": "Weirstrass Substitution",
+    "section": "Substitution",
+    "text": "Substitution\nThe substitution will be presented without proof, and functions as follows\n\n\n\n\n\n\nTheorem\n\n\n\n\n\nUsing the substitution t = \\tan(x/2) the following functions of x can be expressed as ration functions of t\n\n\\sin x = \\frac{2t}{1 + t^2}\n\n\n\\cos x = \\frac{1 - t^2}{1 + t^2}\n\n\ndx = \\frac{2}{1 + t^2} dt\n\n\n\n\nNote that the denominator in every case is 1 + t^2.\n\n\n\n\n\n\nExample\n\n\n\nGiven the following integral \n\\int \\csc x \\, dx\n\nWe use the Weirstrass substitution to obtain\n\n\\sin x = \\frac{2t}{1 + t^2} \\qquad dx = \\frac{2}{1 + t^2}dt\n\nand substitute it into our integral\n\n\\int \\csc x \\, dx = \\int \\frac{1 + t^2}{2t} \\frac{2}{1 + t^2} \\, dt\n\nwhich becomes\n\n\\int \\csc x \\, dx = \\int \\frac{1}{t} \\, dt = \\ln(t)\n\nyielding\n\n\\int \\csc x \\, dx = \\ln(\\tan\\frac{x}{2})"
+  },
+  {
+    "objectID": "qmd/integral/list.html",
+    "href": "qmd/integral/list.html",
+    "title": "The list",
+    "section": "",
+    "text": "The big list"
+  },
+  {
+    "objectID": "qmd/integral/list.html#basics",
+    "href": "qmd/integral/list.html#basics",
+    "title": "The list",
+    "section": "Basics",
+    "text": "Basics\nIntegrals using only the definition and linearity. Let F^\\prime(x) = f(x) and G^\\prime(x) = g(x)\n\n\\int f(x) \\, dx\n\\int f(x) + g(x) \\, dx\n\\int k f(x) \\, dx\n\\int -f(x) \\, dx\n\\int af(x) + bg(x) \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/list.html#inverse-power-rule",
+    "href": "qmd/integral/list.html#inverse-power-rule",
+    "title": "The list",
+    "section": "Inverse power rule",
+    "text": "Inverse power rule\nFor this section apply the following\n\n\n\n\n\n\nDefinition (Inverse power rule)\n\n\n\nFor all n \\in \\mathbb{R} \\backslash \\{-1\\} \n\\int x^{n} dx = \\frac{x^{n+1}}{n+1} + C.\n\n\n\n\n\\int x \\, dx\n\\int x^2 \\, dx\n\\int \\, dx\n\\int 2x^2 - 3x - 1 \\, dx\n\\int \\sqrt{x} \\, dx\n\\int x^\\pi \\, dx\n\\int \\frac{1}{\\sqrt{x}} \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/list.html#common-identities",
+    "href": "qmd/integral/list.html#common-identities",
+    "title": "The list",
+    "section": "Common Identities",
+    "text": "Common Identities"
+  },
+  {
+    "objectID": "qmd/integral/list.html#substitution",
+    "href": "qmd/integral/list.html#substitution",
+    "title": "The list",
+    "section": "Substitution",
+    "text": "Substitution"
+  },
+  {
+    "objectID": "qmd/integral/list.html#integration-by-parts",
+    "href": "qmd/integral/list.html#integration-by-parts",
+    "title": "The list",
+    "section": "Integration by parts",
+    "text": "Integration by parts"
+  },
+  {
+    "objectID": "qmd/integral/list.html#trigonometric-identities",
+    "href": "qmd/integral/list.html#trigonometric-identities",
+    "title": "The list",
+    "section": "Trigonometric Identities",
+    "text": "Trigonometric Identities"
+  },
+  {
+    "objectID": "qmd/integral/list.html#partial-fraction-decomposition",
+    "href": "qmd/integral/list.html#partial-fraction-decomposition",
+    "title": "The list",
+    "section": "Partial Fraction Decomposition",
+    "text": "Partial Fraction Decomposition"
+  },
+  {
+    "objectID": "qmd/integral/tricky/weirstrass.html#problems",
+    "href": "qmd/integral/tricky/weirstrass.html#problems",
+    "title": "Weirstrass Substitution",
+    "section": "Problems",
+    "text": "Problems\n\n\n\n\n\n\nProblem 1\n\n\n\n\n\\int \\sec x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 2\n\n\n\n\n\\int \\frac{1}{1 + \\sin x + \\cos x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 3\n\n\n\n\n\\int \\frac{1}{2 + \\sin x} \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/list.html#fundamentals",
+    "href": "qmd/integral/list.html#fundamentals",
+    "title": "The list",
+    "section": "Fundamentals",
+    "text": "Fundamentals\nIntegrals using only the definition and linearity. Let F^\\prime(x) = f(x) and G^\\prime(x) = g(x)\n\n\\int f(x) \\, dx\n\\int f(x) + g(x) \\, dx\n\\int k f(x) \\, dx\n\\int -f(x) \\, dx\n\\int af(x) + bg(x) \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/list.html#explicit",
+    "href": "qmd/integral/list.html#explicit",
+    "title": "The list",
+    "section": "Explicit",
+    "text": "Explicit\nThis section takes us through explicit antiderivatives, and the forms we will attempt to convert each integral into.\n\nFundamentals\nIntegrals using only the definition and linearity. Let F^\\prime(x) = f(x) and G^\\prime(x) = g(x)\n\n\\int f(x) \\, dx\n\\int f(x) + g(x) \\, dx\n\\int k f(x) \\, dx\n\\int -f(x) \\, dx\n\\int af(x) + bg(x) \\, dx\n\n\n\nInverse power rule\n\n\\int x \\, dx\n\\int x^2 \\, dx\n\\int 2x^2 - 3x - 1 \\, dx\n\\int 2x(x^2 + 4)^2\n\\int \\frac{1}{x^2} \\, dx\n\\int \\frac{3}{x^6} + \\frac{7}{x^{10}} - \\frac{4}{x^{12}} \\, dx\n\\int \\sqrt{x} \\, dx\n\\int \\frac{1}{\\sqrt{x}} \\, dx\n\\int \\sqrt[3]{x} + 2\\sqrt[5]{x^2}\\, dw\n\\int x^\\pi \\, dx\n\n\n\nLogarithms and Exponents\n\n\\int e^x \\, dx\n\\int 5e^{5x} \\, dx\n\\int e^{x + a} \\, dx\n\\int \\frac{1}{e^x} \\, dx\n\\int a^x \\, dx\n\\int a^{bx} \\, dx\n\\int \\frac{1}{x} \\, dx\n\\int \\frac{1}{x + a} \\, dx\n\n\n\nTrigonometric Functions\n\n\\int \\sin x \\, dx\n\\int \\cos x \\, dx\n\\int \\frac{1}{\\sin^2 x} \\, dx\n\\int \\frac{1}{\\cos^2 x} \\, dx\n\\int \\frac{\\sin x}{\\cos^2 x} \\, dx\n\\int \\frac{\\cos x}{\\sin^2 x} \\, dx\n\\int \\frac{1}{x^2 + 1} \\, dx\n\\int \\frac{1}{\\sqrt{1 - x^2}} \\, dx\n\\int \\frac{1}{x\\sqrt{x^2 - 1}} \\, dx\n\\int \\sinh x \\, dx\n\\int \\cosh x \\, dx\n\\int \\frac{1}{\\sinh^2 x} \\, dx\n\\int \\frac{1}{\\cosh^2 x} \\, dx\n\\int \\frac{\\sinh x}{\\cosh^2 x} \\, dx\n\\int \\frac{\\cosh x}{\\sinh^2 x} \\, dx\n\\int \\frac{1}{1 - x^2} \\, dx\n\\int \\frac{1}{\\sqrt{x^2 + 1}} \\, dx\n\\int \\frac{1}{x\\sqrt{1 - x^2}} \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/list.html#general-methods",
+    "href": "qmd/integral/list.html#general-methods",
+    "title": "The list",
+    "section": "General Methods",
+    "text": "General Methods\nNow we use some methods to expand the number of integrals we can solve.\n\nSubstitution\n\n\\int 2x(x^2 + 4)^2 \\, dx\n\\int \\frac{x}{\\sqrt{1-2x^2}} \\, dx\n\n\n\nIntegration by parts\n\n\\int \\ln x \\, dx\n\\int x\\ln x \\, dx\n\\int x^2 \\ln x \\, dx\n\\int x^n \\ln x \\, dx\n\\int \\arctan x \\, dx\n\\int e^x \\cos x \\, dx\n\\int e^x \\sin x \\, dx\n\n\n\nPartial Fraction Decomposition\n\n\\int \\frac{1}{(x-1)(x-2)} \\, dx\n\\int \\frac{1}{(x+a)(x+b)} \\, dx\n\\int \\frac{x-9}{(x+5)(x-2)} \\, dx\n\\int \\frac{x+c}{(x+a)(x+b)} \\, dx\n\\int \\frac{x^2}{x^2 - 1} \\, dx\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx"
+  },
+  {
+    "objectID": "qmd/integral/list.html#specialized-methods",
+    "href": "qmd/integral/list.html#specialized-methods",
+    "title": "The list",
+    "section": "Specialized Methods",
+    "text": "Specialized Methods\n\nTrigonometric Identities\n\n\nTrigonometric Substitution\n\n\nCompleting the square\n\n\nWeirstrass Substitution\nhttps://math.stackexchange.com/questions/967117/integration-of-int-frac1-x1x-frac13"
+  },
+  {
+    "objectID": "qmd/integral/simple/logexp.html",
+    "href": "qmd/integral/simple/logexp.html",
+    "title": "Logarithms and Exponents",
+    "section": "",
+    "text": "Next we move onto logarithms and exponents."
+  },
+  {
+    "objectID": "qmd/integral/simple/logexp.html#exponents",
+    "href": "qmd/integral/simple/logexp.html#exponents",
+    "title": "Logarithms and Exponents",
+    "section": "Exponents",
+    "text": "Exponents\nIt is well known that e^x is it’s own derivative, giving us the formula\n\n\\int e^x \\, dx = e^x + C.\n\nUsing chain rule, we get some slightly modified formulas.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals hold \n\\begin{align*}\n&\\int e^x \\, dx&&= e^x + C \\\\\n&\\int ae^{ax} \\,dx &&= e^{ax} + C\\\\\n&\\int e^{ax + b} \\,dx &&= \\frac{1}{a}e^{ax + b} + C\n\\end{align*}"
+  },
+  {
+    "objectID": "qmd/integral/simple/logexp.html#formulas",
+    "href": "qmd/integral/simple/logexp.html#formulas",
+    "title": "Logarithms and Exponents",
+    "section": "Formulas",
+    "text": "Formulas\nIt is well known that e^x is it’s own derivative, giving us the formula\n\n\\int e^x \\, dx = e^x + C.\n\nUsing chain rule, we get some slightly modified formulas.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals hold \n\\begin{align*}\n&\\int e^x \\, dx&&= e^x + C \\\\\n&\\int ae^{ax} \\,dx &&= e^{ax} + C\\\\\n&\\int e^{ax + b} \\,dx &&= \\frac{1}{a}e^{ax + b} + C\n\\end{align*}\n\n\n\nBut these are just raising the constant e to a power, what if we have some arbitrary constant a?\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals hold \n\\begin{align*}\n&\\int a^x \\, dx&&= \\frac{a^x}{\\ln a} + C \\\\\n&\\int ba^{bx} \\,dx &&= \\frac{a^{bx}}{\\ln a} + C\\\\\n&\\int a^{bx + c} \\,dx &&= \\frac{a^{bx+c}}{b\\ln a} + C\n\\end{align*}\n\n\n\nNext we look at logarithms. This is a real simple one\n\n\n\n\n\n\nTheorem\n\n\n\nThis integral holds \n\\begin{align*}\n&\\int \\frac{1}{x} \\, dx&&= \\ln |x| + C \\\\\n&\\int \\frac{1}{x + a} \\,dx &&= \\ln |x| + C\\\\\n\\end{align*}\n\n\n\nThese absolute value bars are necessary for some reason I don’t fully get it."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html",
+    "href": "qmd/integral/simple/trigfunc.html",
+    "title": "Trigonometric Functions",
+    "section": "",
+    "text": "Trigonometry is a huge part of the integration bee, and will repeatedly appear in a large portion of integrals. As such it is crucial to have a complete understanding of these functions and how they interact."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html#trig-identities",
+    "href": "qmd/integral/simple/trigfunc.html#trig-identities",
+    "title": "Trigonometric Functions",
+    "section": "",
+    "text": "There are six commonly used trigonometric functions, all of which can be expressed using only two, \\sin and \\cos. They are defined as follows.\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\sin(x) and \\cos(x) be our starting functions. Then we define the following functions\nThe Tangent function defined\n\n\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}\n\nThe Secant function defined\n\n\\sec(x) = \\frac{1}{\\cos(x)}\n\nThe Cosecant function defined\n\n\\csc(x) = \\frac{1}{\\sin(x)}\n\nand the Cotangent function defined\n\n\\cot(x) = \\frac{1}{\\tan(x)} = \\frac{\\cos(x)}{\\sin(x)}\n\n\n\nAnd of course each trigonmetric identity has a derivative, and a corresponding integral\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each trigonometric identity are as follows.\n\\begin{array}{ll}\n\\sin^\\prime(x) = \\cos(x) & \\cos^\\prime(x) = -\\sin(x)\\\\\n\n\\tan^\\prime(x) = \\sec^2(x) \\hspace{0.5in} & \\cot^\\prime(x) = -\\csc^2(x)\\\\\n\n\\sec^\\prime(x) = \\sec(x)\\tan(x) \\hspace{0.5in} & \\csc^\\prime(x) = -\\csc(x)\\cot(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\n\n\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘complement’, and then negating the result."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html#inverse-trig-identities",
+    "href": "qmd/integral/simple/trigfunc.html#inverse-trig-identities",
+    "title": "Trigonometric Functions",
+    "section": "Inverse Trig identities",
+    "text": "Inverse Trig identities\nEach trig function has an inverse function, which may be helpful in our integrals. We traditionally only look at the inverses of \\sin,\\tan and \\sec.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{x^2 + 1} \\, dx = \\arctan(x) + C\n\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\n\n\\int \\frac{1}{x\\sqrt{x^2 - 1}}\\,dx = \\text{arcsec}(x) + C\n\n\n\nIt is worth noting that the derivative of \\arccos is very similar to \\arcsin \n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{\\sqrt{1-x^2}}.\n\nSo our second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ only by a constant (\\frac{\\pi}{2})."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html#trigonometric-functions",
+    "href": "qmd/integral/simple/trigfunc.html#trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Trigonometric Functions",
+    "text": "Trigonometric Functions\nThere are six commonly used trigonometric functions, all of which can be expressed using only two, \\sin and \\cos. They are defined as follows.\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\sin(x) and \\cos(x) be our starting functions. Then we define the following functions\nThe Tangent function defined\n\n\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}\n\nThe Secant function defined\n\n\\sec(x) = \\frac{1}{\\cos(x)}\n\nThe Cosecant function defined\n\n\\csc(x) = \\frac{1}{\\sin(x)}\n\nand the Cotangent function defined\n\n\\cot(x) = \\frac{1}{\\tan(x)} = \\frac{\\cos(x)}{\\sin(x)}\n\n\n\nAnd of course each trigonmetric function has a derivative, and a corresponding integral\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each trigonometric function are as follows.\n\\begin{array}{ll}\n\\sin^\\prime(x) = \\cos(x) & \\cos^\\prime(x) = -\\sin(x)\\\\\n\n\\tan^\\prime(x) = \\sec^2(x) \\hspace{0.5in} & \\cot^\\prime(x) = -\\csc^2(x)\\\\\n\n\\sec^\\prime(x) = \\sec(x)\\tan(x) \\hspace{0.5in} & \\csc^\\prime(x) = -\\csc(x)\\cot(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\n\n\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘complement’, and then negating the result."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html#inverse-trigonometric-functions",
+    "href": "qmd/integral/simple/trigfunc.html#inverse-trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Inverse Trigonometric functions",
+    "text": "Inverse Trigonometric functions\nEach trig function has an inverse function, which may be helpful in our integrals. We traditionally only look at the inverses of \\sin,\\tan and \\sec.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{x^2 + 1} \\, dx = \\arctan(x) + C\n\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\n\n\\int \\frac{1}{x\\sqrt{x^2 - 1}}\\,dx = \\text{arcsec}(x) + C\n\n\n\nIt is worth noting that the derivative of \\arccos is very similar to \\arcsin \n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{\\sqrt{1-x^2}}.\n\nSo our second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ only by a constant (\\frac{\\pi}{2})."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html#hyperbolic-trigonometric-functions",
+    "href": "qmd/integral/simple/trigfunc.html#hyperbolic-trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Hyperbolic Trigonometric functions",
+    "text": "Hyperbolic Trigonometric functions\nFor each trigonometric function, we can take it’s hyperbolic counterpart.\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each hyperbolic trigonometric function are as follows.\n\\begin{array}{ll}\n\\sinh^\\prime(x) = \\cosh(x) & \\cosh^\\prime(x) = \\sinh(x)\\\\\n\n\\tanh^\\prime(x) = \\text{sech}^2(x) \\hspace{0.5in} & \\text{coth}^\\prime(x) = -\\text{csch}^2(x)\\\\\n\n\\text{sech}^\\prime(x) = -\\text{sech}(x)\\tanh(x) \\hspace{0.5in} & \\text{csch}^\\prime(x) = -\\text{csch}(x)\\coth(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cosh x\\,dx}} = \\sinh x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sinh x\\,dx}} =  \\cosh x + C\\\\\n\n\\displaystyle\\int{{{{\\text{sech} }^2}x\\,dx}} = \\tanh x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\text{csch} }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\text{sech} x\\tanh x\\,dx}} = -\\text{sech} x + C \\hspace{0.5in} & \\displaystyle\\int{{\\text{csch} x\\,\\text{coth}\\, x\\,dx}} =  - \\text{csch} x + C\n\\end{array}\n\n\nMy strategy for these is just to hope they don’t show up."
+  },
+  {
+    "objectID": "qmd/integral/simple/trigfunc.html#inverse-hyperbolic-trigonometric-functions",
+    "href": "qmd/integral/simple/trigfunc.html#inverse-hyperbolic-trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Inverse Hyperbolic Trigonometric functions",
+    "text": "Inverse Hyperbolic Trigonometric functions\nBut wait, theres more!\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{1 - x^2} \\, dx = \\text{arctanh}(x) + C\n\n\n\\int \\frac{1}{\\sqrt{x^2 + 1}}\\,dx = \\text{arcsinh}(x) + C\n\n\n\\int \\frac{-1}{x\\sqrt{1 - x^2}}\\,dx = \\text{arcsech}(x) + C"
+  },
+  {
+    "objectID": "qmd/integral/tricky/trigsub.html",
+    "href": "qmd/integral/tricky/trigsub.html",
+    "title": "Trig substitutions",
+    "section": "",
+    "text": "Our motivation for this section is the following integral\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx\nThis integral is very difficult to solve with the previous techniques. The trick comes from the substitution\nx = \\frac{2}{5}\\sec \\theta\nWhich after a fair amount of algebra and calculus gives us\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx = \\sqrt{25x^2 - 4} + 2\\arccos \\left(\\frac{2}{5x}\\right) + C\nSolving these integrals relies on a method known as trigonometric substitutions."
+  },
+  {
+    "objectID": "qmd/integral/tricky/trigsub.html#method",
+    "href": "qmd/integral/tricky/trigsub.html#method",
+    "title": "Trig substitutions",
+    "section": "Method",
+    "text": "Method\nFirst, lets explain how we solved the previous integral.\n\n\n\n\n\n\nExample\n\n\n\n\n\nWe have the following integral, which is difficult to solve using previous techniques.\n\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx\n\nUsing the substitution\n\nx = \\frac{2}{5}\\sec \\theta\n\nWe can reduce the integral and get a solution in terms of \\theta.\n\\begin{array}{ll}\n\n& = \\displaystyle \\int \\frac{\\sqrt{25(\\frac{2}{5}\\sec \\theta)^2 - 4}}{\\frac{2}{5}\\sec \\theta} \\, (\\frac{2}{5}\\tan \\theta \\sec \\theta \\, d\\theta)\\\\\n& =  \\displaystyle\\int \\sqrt{4\\sec^2 \\theta - 4} \\, \\tan \\theta \\, d\\theta\\\\\n& = \\displaystyle2\\int \\sqrt{\\sec^2 \\theta - 1} \\, \\tan \\theta \\, d\\theta = 2\\int\\tan^2\\theta \\, d\\theta\\\\\n& = 2\\left(\\tan \\theta + \\theta\\right) + C\n\\end{array}\nNow we only need to undo our substitution. Notice that\n\n\\sec \\theta = \\frac{\\text{hyp}}{\\text{adj}} = \\frac{5x}{2}\n\nThis can be visualized in the triangle.\n\n\\tan \\theta = \\frac{\\sqrt{25x^2-4}}{2}\n\n\n\\theta = \\arccos \\left(\\frac{2}{5x}\\right)\n\nGiving us our final answer\n\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx = \\sqrt{25x^2-4} + 2\\arccos \\left(\\frac{2}{5x}\\right) + C\n\n\n\n\nWhen faced with an integral containing a radical expression in the form \\sqrt{\\pm(bx + c)^2 \\pm a}, we can usually find some subtitution for x which simplifies the expression into a singular trigonometric identity. This is achievable due to the following three identities.\n\\begin{array}{ll}\n1 - \\sin^2x &=& \\cos^2 x\\\\\n\\tan^2x + 1 &=& \\sec^2 x\\\\\n\\sec^2x - 1 &=& \\tan^2 x\n\\end{array}\nLets see how these identites allow us to reduce certain radicals.\n\n\n\n\n\n\nTrig substitutions\n\n\n\n\n\nLets examine the three cases where trig identities allow us to simplify a radical expression.\n\nCase I: \\sqrt{a - (bx + c)^2}\nNotice how this case is a constant, subtracted by a squared variable term. This resembles our first expression, 1 - \\sin^2x = \\cos^2 x. We want to get the expression in these terms so we can reduce the radicle. Notice by making the substitution\n\n(bx + c) = \\sqrt{a}\\sin \\theta\n\nWe get the equation\n\n\\sqrt{a - (\\sqrt{a}\\sin\\theta)^2} = \\sqrt{a}\\sqrt{1-\\sin^2\\theta} = \\sqrt{a}\\cos\\theta\n\nWe have now elimated the variable from the radical.\n\nCase II: \\sqrt{(bx + c)^2 + a}\nThis case resembles our identity \\tan^2x + 1 = \\sec^2 x. So lets try the substitution\n\n(bx + c) = \\sqrt{a}\\tan \\theta\n\nWhich gives us\n\n\\sqrt{(\\sqrt{a}\\tan \\theta)^2 + a} = \\sqrt{a}\\sqrt{\\tan^2 \\theta + 1} = \\sqrt{a}\\sec\\theta\n\nWe have now elimated the variable from the radical.\n\nCase III: \\sqrt{(bx + c)^2 - a}\nThis case resembles \\sec^2x - 1. Using the substitution\n\n(bx + c) = \\sqrt{a}\\sec \\theta\n\nWe get the equation\n\n\\sqrt{(\\sqrt{a}\\sec \\theta)^2 - a} = \\sqrt{a}\\sqrt{\\sec^2\\theta - 1} = \\sqrt{a}\\tan\\theta\n\nWe have now elimated the variable from the radical.\n\n\n\nFor ease of use, the following table shows what substitution to make depending on the case.\n\\begin{array}{ll}\n\\text{Radical expression} \\hspace{0.25in} & \\text{Substitution}\\\\\n&\\\\\n\\sqrt{a - (bx + c)^2} \\hspace{0.25in} & (bx + c) = \\sqrt{a}\\sin\\theta\\\\\n&\\\\\n\\sqrt{(bx + c)^2 + a} \\hspace{0.25in} & (bx + c) = \\sqrt{a}\\tan\\theta\\\\\n&\\\\\n\\sqrt{(bx + c)^2 - a} \\hspace{0.25in} & (bx + c) = \\sqrt{a}\\sec\\theta\n\\end{array}"
+  },
+  {
+    "objectID": "qmd/integral/tricky/trigsub.html#examples",
+    "href": "qmd/integral/tricky/trigsub.html#examples",
+    "title": "Trig substitutions",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nProblem\n\n\n\nEvaluate the following integral\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice that the radicle expression resembles the third row of our table. If we make the substitution\n\nx = 3\\sin \\theta\\\\\ndx = 3\\cos\\theta\\,d\\theta\n\nWe get\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx = \\int\\frac{3\\sqrt{1-\\sin^2\\theta}}{9\\sin^2\\theta}(3\\cos\\theta)\\,d\\theta = \\int\\frac{\\cos^2\\theta}{\\sin^2\\theta} d\\theta\n\nWhich evaulates to \n\\int\\frac{\\cos^2\\theta}{\\sin^2\\theta} d\\theta = -\\cot\\theta - \\theta + C\n\nThis however, is only half the problem. We still need to convert the equation back to its orginal variable. Once again, the method of drawing a triangle will help to simplify the final expression.\nNote that \\sin \\theta = \\displaystyle\\frac{\\text{opp}}{\\text{hyp}} = \\displaystyle\\frac{x}{3}\nSo\n\n\\cot \\theta = \\frac{\\text{adj}}{\\text{opp}} = \\frac{\\sqrt{9 -x^2}}{x}\n\nGiving us a final answer of\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx = \\frac{-\\sqrt{9-x^2}}{x} - \\arcsin\\left(\\frac{x}{3}\\right) + C"
+  },
+  {
+    "objectID": "qmd/integral/tricky/complete.html",
+    "href": "qmd/integral/tricky/complete.html",
+    "title": "Completing the Square",
+    "section": "",
+    "text": "Completing the square is a commonly used trick in algebra, and allows us to take an irreducable quadratic and change it into a squared term plus a constant. The motivating example for this section is\n\n\\int \\sqrt{x^2 + 4x + 5} \\, dx.\n\nLet’s see how completing the square helps us solve this integral.\n\n\n\n\n\n\nExample (Completing the Square)\n\n\n\nGiven the integral\n\n\\int \\sqrt{x^2 + 4x + 5} \\, dx.\n\nthe quadratic can be rewrote \nx^2 + 4x + 5 = x^2 + 4x +4 - 4 + 5 = (x+2)^2 + 1.\n\nGiving us \n\\int \\sqrt{(x+2)^2 + 1} \\, dx.\n\nWhich we can then solve using a trigonometric substitution."
+  },
+  {
+    "objectID": "qmd/integral/tricky/trigident.html",
+    "href": "qmd/integral/tricky/trigident.html",
+    "title": "Trigonometric Identities and Powers",
+    "section": "",
+    "text": "We now examine various trigonometric identities that will help us in our quest to win the integration bee, and examine how to deal with powers of trigonometric functions."
+  },
+  {
+    "objectID": "qmd/integral/tricky/trigident.html#identities",
+    "href": "qmd/integral/tricky/trigident.html#identities",
+    "title": "Trigonometric Identities and Powers",
+    "section": "Identities",
+    "text": "Identities\nWe start by looking at various forms of 1.\n\n\n\n\n\n\nTheorem (Pythagorean Identities)\n\n\n\nThe following are true\n\n\\begin{align*}\n\\sin^2 x + \\cos^2 x &= 1\\\\\n\\sec^2 x - \\tan^2 x &= 1\\\\\n\\csc^2 x - \\cot^2 x &= 1\n\\end{align*}\n\n\n\nOf course, these identities can be rearranged when needed, so we’ll often use identities like \\tan^2 x - 1 = \\sec^2 x. Next we examine double angle identities.\n\n\n\n\n\n\nTheorem (Double angle identities)\n\n\n\nThe following double angle identities hold\n\n\\begin{align*}\n\\sin(2x) &= 2\\sin x \\cos x\\\\\n\\cos(2x) &= 2\\cos^2x - 1\\\\\n\\cos(2x) &= 1 - 2\\sin^2 x\n\\end{align*}\n\nand can be rewritten\n\n\\begin{align*}\n\\sin x \\cos x &= \\frac{1}{2}\\sin(2x)\\\\\n\\cos^2x &= \\frac{1}{2}(1 + \\cos(2x))\\\\\n\\sin^2x &= \\frac{1}{2}(1 - \\cos(2x))\n\\end{align*}\n\n\n\nThere also exist half-angle identities and formulas for products of angles. [TO-DO]"
+  },
+  {
+    "objectID": "qmd/integral/tricky/trigident.html#integrals-of-powers-of-trigonometric-functions",
+    "href": "qmd/integral/tricky/trigident.html#integrals-of-powers-of-trigonometric-functions",
+    "title": "Trigonometric Identities and Powers",
+    "section": "Integrals of powers of trigonometric functions",
+    "text": "Integrals of powers of trigonometric functions\nThe motivating example for this section is the integral\n\n\\int \\sin^5 x \\, dx\n\nwhich, although it can be solved by integration by parts, is much simpler if we use the identity \\sin^2 = 1 - \\cos^2.\n\n\n\n\n\n\nExample (Powers of sin)\n\n\n\n\n\nGiven the following integral \n\\int \\sin^5 x \\, dx\n\nWe take out a \\sin x and use our identity to obtain\n\n\\int \\left(1-\\cos^2 x\\right)^2 \\sin x \\, dx\n\nUsing u = \\cos x we obtain\n\n-\\int \\left(1-u^2 \\right)^2 \\, du\n\nwhereby inverse power rule gets us\n\n= -\\left(u - \\frac{2}{3}u^3 + \\frac{1}{5}u^5\\right) + C\n\nand reversing the u-sub gives us\n\n= -\\cos x + \\frac{2}{3}\\cos^3 x - \\frac{1}{5}\\cos^5 x + C\n\n\n\n\nThis is the general method when we have an odd exponent on either \\sin or \\cos. We factor out one exponent, use identities to transform all but our factored exponent into some other function, and then preform a u-sub.\nLets see how this looks like with \\tan and \\sec functions!\n\n\n\n\n\n\nExample (Powers of sec)\n\n\n\n\n\nGiven the following integral \n\\int \\sec^6 x \\, dx\n\nWe take out a \\sec^2 x and use our identity to obtain\n\n\\int \\left(\\tan^2 x + 1\\right)^2 \\sec^2 x \\, dx\n\nUsing u = \\tan x we obtain\n\n\\int \\left(u^2 + 1 \\right)^2 \\, du\n\nwhereby inverse power rule gets us\n\n= \\left(\\frac{1}{5}u^5\\right + \\frac{2}{3}u^3) + C\n\nand reversing the u-sub gives us\n\n= \\frac{1}{5}\\tan^5 x + \\frac{2}{3}\\tan^3 x + C"
+  },
+  {
+    "objectID": "qmd/integral/explicit/fundamentals.html",
+    "href": "qmd/integral/explicit/fundamentals.html",
+    "title": "Fundamentals",
+    "section": "",
+    "text": "This section introduces the concept of antidifferentiation and linearity.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Fundamentals"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/fundamentals.html#definition",
+    "href": "qmd/integral/explicit/fundamentals.html#definition",
+    "title": "Fundamentals",
+    "section": "Definition",
+    "text": "Definition\nAntiderivatives are the inverse of the differentiation. Given some function f(x) where\n\nf^\\prime(x) = g(x)\n\nthe antiderivative of g(x) is f(x). In general, the antiderivative of a function g(x) is a separate function f(x) whose we must differentiate to obtain g(x). This yields our definition.\n\n\n\n\n\n\nDefinition\n\n\n\nThe antiderivative of a function g(x) is some function f(x) such that\n\nf^\\prime(x) = g(x).\n\nThis is notated with an integration sign. Given a function g(x) we denote it’s antiderivative with\n\n\\int g(x) \\, dx\n\n\n\nThese antiderivatives are also called indefinite integrals, or just integrals for short. For any function g(x), there exists an infinite set of antiderivatives f(x) which only vary by some constant. Thus we write\n\n\\int g(x) \\, dx = f(x) + C\n\nwhere f(x) is some antiderivative of g(x) and C is any real number. Antiderivatives do not always exists for any arbitrary function g(x), and when they do exist, they may not be possible to express in elementary terms.\nFrom this point on, we will refer almost exclusively to antiderivatives as integrals. We will call functions integrable if their antiderivative exists.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Fundamentals"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/fundamentals.html#linearity",
+    "href": "qmd/integral/explicit/fundamentals.html#linearity",
+    "title": "Fundamentals",
+    "section": "Linearity",
+    "text": "Linearity\nIntegrals have a property called linearity. This means they are closed under linear transformations of functions like addition and scaler multiplication. For example\n\n\\int f(x) + g(x) \\,dx = \\int f(x) \\,dx + \\int g(x) \\,dx.\n\nOr, given some constant C\n\n\\int C f(x) \\,dx = C \\int f(x) \\,dx.\n\nThis is presented in the following theorem without proof.\n\n\n\n\n\n\nTheorem\n\n\n\nFor all integrable functions f(x),g(x) and constants \\alpha,\\beta \\in \\mathbb{R}, the following holds\n\n\\int \\alpha f(x) + \\beta g(x) \\,dx = \\alpha \\int f(x) \\,dx+ \\beta \\int g(x) \\,dx",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Fundamentals"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/fundamentals.html#examples",
+    "href": "qmd/integral/explicit/fundamentals.html#examples",
+    "title": "Fundamentals",
+    "section": "Examples",
+    "text": "Examples\nSome example problems from various websites\n\nInverse power rule\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.14)\n\n\n\nEvaluate the following integral\n\n\\int \\sin x + 10 \\csc^2 x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int \\sin x + 10 \\csc^2 x \\, dx = -\\cos x - 10 \\cot x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.15)\n\n\n\nEvaluate the following integral\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSimply use linearity to break up the integral, and then apply identities\n\n\\int 2\\cos x - \\sec x\\tan x \\, dx = 2 \\sin x - \\sec x + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.16)\n\n\n\nEvaluate the following integral\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nMultiply out and simplify the equation. \n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = \\int 12 + 1 + \\csc^2 \\theta \\, d\\theta\n\nBecause\n\n\\csc x= \\frac{1}{\\sin x}\n\nSo we get the answer\n\n\\int 12 + \\csc \\theta \\left( {\\sin  \\theta  + \\csc  \\theta } \\right)\\,d\\theta = 13 \\theta + \\cot \\theta + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.20)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the inverse trig identities\n\n\\int{{\\frac{1}{{1 + {x^2}}} + \\frac{{12}}{{\\sqrt {1 - {x^2}} }}\\,dx}} = \\arctan x + 12 \\arcsin x + C"
+  },
+  {
+    "objectID": "qmd/integral/gen/intpart.html",
+    "href": "qmd/integral/gen/intpart.html",
+    "title": "Integration by parts",
+    "section": "",
+    "text": "There will often be integrals where substitution cannot simplify the integrand into one term. We can use the following as our motivating example\n\\int x e^{6x} dx\nAttempting to use a substitution, such as u = 6x gives us\n\\frac{1}{6}\\int ue^u\\,du\nwhich while technically simpler gets us nowhere. We need a new technique to be able to properly separate functions where substitution fails. This is where integration by parts comes in.\nLets try to use the formula to solve our example. We can choose u to be either term in our example.\nAnd voila, our integral is solved.",
+    "crumbs": [
+      "**General Methods**",
+      "Integration by parts"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/intpart.html#tabular-method",
+    "href": "qmd/integral/gen/intpart.html#tabular-method",
+    "title": "Integration by parts",
+    "section": "Tabular method",
+    "text": "Tabular method\nAn easier (faster) way to do integration by parts is known as the Tabular method. The tabular method can quickly calculate repeated integration by parts.\n\n\n\n\n\n\nExample (Stop 1)\n\n\n\n\n\nThe following example will show the first ‘stop’ used in tabular integration.\nFind the solution to the following integral\n\n\\int x^2 \\sin(3x) \\, dx\n\nThis could be solved using our formula for integration by parts, but this results in a messy calculation using repeated integration by parts. In order to solve these problems faster, we will use the Tabular method.\nFirst, choose two terms to work with in the integral. We will choose x^2 and \\sin(3x). We want to choose a term that will eventually default to 0 after repeated differention. Place this term under the D in your table, and the other term under the I. Draw a plus to the left of your terms.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} x^2 \\hspace{0.25in} & \\sin(3x)\n\\end{array}\nTo begin, we will differentiate the term under our D, and integrate the term under our I, then flip the sign.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} x^2 \\hspace{0.25in} & \\sin(3x)\\\\\n- & \\hspace{0.25in} 2x \\hspace{0.25in} & \\frac{1}{3}\\cos(3x)\n\\end{array}\nRepeating this process eventually gives us a 0 in our D column. This is our first stop, meaning we don’t need any more steps.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} x^2 \\hspace{0.25in} & \\sin(3x)\\\\\n- & \\hspace{0.25in} 2x \\hspace{0.25in} & -(1/3)\\cos(3x)\\\\\n+ & \\hspace{0.25in} 2 \\hspace{0.25in} & -(1/9)\\sin(3x)\\\\\n- & \\hspace{0.25in} 0 \\hspace{0.25in} & (1/27)\\cos(3x)\\\\\n\\end{array}\nMultiply the n^{th} under the D by the (n+1)^{th} term under the I. Then add or subtract the product by the sign the the left of the D column. This is the answer to our integral.\n\n\\int x^2 \\sin (3x) \\,dx = -\\frac{1}{3}x^2\\cos(3x) + \\frac{2}{9}x\\sin(3x) - \\frac{2}{27}\\cos(3x) + C\n\nAnd we’re done!\n\n\n\n\n\n\n\n\n\nExample (Stop 2)\n\n\n\n\n\nThe following example will show the second ‘stop’ used in tabular integration.\n\n\\int x^4 \\ln x \\,dx\n\nAlthough it seems obvious we should put x^4 under the D column, we quickly realize that we cannot integrate \\ln x without integration by parts. Because of this, we have no choice but to but \\ln x under the D column. Carrying on with our calculations\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} \\ln x \\hspace{0.25in} & x^4\\\\\n- & \\hspace{0.25in} x^{-1} \\hspace{0.25in} & (1/5)x^5\n\\end{array}\nWe can quickly notice that 0 will never appear under the D column. This is where our second stop comes in. If we can easily calculate the integral of a rows product (That is, the product of terms under the D and I columns for a singular row) than we stop, and add the integral of that row to our diagonal solution.\n\n\\int x^4 \\ln x \\,dx = \\frac{1}{5}x^5\\ln x  - \\frac{1}{5} \\int x^{-1}x^5\n\nThis is formula for regular integration by parts, so unfortunately this didn’t save us any time, but we still got the right answer!\n\n\\int x^4 \\ln x \\,dx = \\frac{1}{5}x^5\\ln x  - \\frac{1}{25} x^5\n\n\n\n\n\n\n\n\n\n\nExample (Stop 3)\n\n\n\n\n\nThe following example will show the third ‘stop’ used in tabular integration.\n\n\\int e^x \\sin x \\,dx\n\nIntegrating e^x and \\sin x are both easy. I’ll choose to integrate e^x for simplicity sake.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} \\sin x \\hspace{0.25in} & e^x\\\\\n- & \\hspace{0.25in} \\cos x \\hspace{0.25in} & e^x\\\\\n+ & \\hspace{0.25in} -\\sin x \\hspace{0.25in} & e^x\\\\\n- & \\hspace{0.25in} -\\cos x \\hspace{0.25in} & e^x\n\\end{array}\nClearly this will go on forever without a 0 under our D column, or an easily integrable row. This introduces our third stop. Notice that our first and third rows only differ by a constant coefficient. When this happens, we write our diagonalization and our integral, stopping at the repeated row.\n\n\\int e^x \\sin x \\,dx = e^x \\sin x - e^x \\cos(x) - \\int e^x \\sin x \\, dx\n\nNotice how this is the same integral on the left and right hand of the equation. Moving the integral over gives us\n\n2\\int e^x \\sin x \\,dx = e^x \\sin x - e^x \\cos(x)\n\nDiving by 2\n\n\\int e^x \\sin x \\,dx = \\frac{e^x \\sin x - e^x \\cos(x)}{2}\n\nAnd we have our answer.\n\n\n\nClearly the tabular method is a huge time saver for repeated integration by parts.",
+    "crumbs": [
+      "**General Methods**",
+      "Integration by parts"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/intpart.html#examples",
+    "href": "qmd/integral/gen/intpart.html#examples",
+    "title": "Integration by parts",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nProblem\n\n\n\nEvaluate the following integral\n\n\\int \\ln x \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nSolving this is a little counter intuitive seeing as it only has one term. If we let 1 be the second term however, we can evaluate with the tabular method. We pretty cleary have the integrate 1, as we can’t integrate \\ln x.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} \\ln x \\hspace{0.25in} & 1\\\\\n- & \\hspace{0.25in} \\frac{1}{x} \\hspace{0.25in} & x\n\\end{array}\nBecause the product of the second row is easy to integrate, we stop using the tabular method and compute.\n\n\\int \\ln x \\, dx = x \\ln x - \\int 1 \\, dx = x \\ln x - x + C\n\nWhich solves our integral.\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus II - 7.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 4x \\cos \\left( {2 - 3x} \\right)\\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWe have two terms, 4x and \\cos (2-3x). Its clear that differentiaing 4x will give us 0 quickly, so we begin with the tabular method.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} 4x \\hspace{0.25in} & \\cos (2-3x)\\\\\n- & \\hspace{0.25in} 4 \\hspace{0.25in} & -(1/3)\\sin (2-3x)\\\\\n+ & \\hspace{0.25in} 0 \\hspace{0.25in} & -(1/9)\\cos (2-3x)\\\\\n\\end{array}\nWe use the first stop, and get the following solution to the integral\n\n\\int 4x \\cos \\left( {2 - 3x} \\right)\\,dx = -\\frac{4x}{3}\\sin (2-3x) - \\frac{4}{9} \\cos (2-3x) + C\n\nWhich solves our integral.\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus II - 7.1.5)\n\n\n\nEvaluate the following integral\n\n\\int{{e}^{2x}}\\cos \\left( {\\frac{1}{4}x} \\right)\\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWithout any leads on which term to integrate, I choose to integrate cos(\\frac{1}{4}x) on a whim. You may integrate either term however, and the answer will be the same.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} e^{2x} \\hspace{0.25in} & \\cos ((1/4)x)\\\\\n- & \\hspace{0.25in} 2e^{2x} \\hspace{0.25in} & 4\\sin ((1/4)x)\\\\\n+ & \\hspace{0.25in} 4e^{2x} \\hspace{0.25in} & -16\\cos ((1/4)x)\\\\\n\\end{array}\nNotice how the product of row three is a multiple of our initial integral. This is the third stop, so we evaluate our table to get.\n\n\\int{{e}^{2x}}\\cos \\left( {\\frac{1}{4}x} \\right)\\,dx = 4e^{2x}\\sin(\\frac{1}{4}x) + 32e^{2x}\\cos(\\frac{1}{4}x) - 64\\int{{e}^{2x}}\\cos \\left( {\\frac{1}{4}x} \\right)\\,dx\n\n\n65 \\int{{e}^{2x}}\\cos \\left( {\\frac{1}{4}x} \\right)\\,dx = 4e^{2x}\\sin(\\frac{1}{4}x) + 32e^{2x}\\cos(\\frac{1}{4}x)\n\n\n\\int{{e}^{2x}}\\cos \\left( {\\frac{1}{4}x} \\right)\\,dx = \\frac{4e^{2x}\\sin(\\frac{1}{4}x) + 32e^{2x}\\cos(\\frac{1}{4}x)}{65}\n\nWhich solves our integral.\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus II - A7.1.12)\n\n\n\nEvaluate the following integral\n\n\\int 8\\arctan\\left( 2x \\right)\\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nBecause integrating \\arctan is the question, we will derive it instead, and integrate the 8.\n\\begin{array}{ll}\n& \\hspace{0.25in} D \\hspace{0.25in} & I\\\\\n+ & \\hspace{0.25in} \\arctan(2x) \\hspace{0.25in} & 8\\\\\n- & \\hspace{0.25in} 2/(1+4x^2) \\hspace{0.25in} & 8x\\\\\n\\end{array}\nUsing our third stop and integrating the second row, we get\n\n\\int 8\\arctan\\left(2x\\right)\\,dx = 8x\\arctan(2x) - 2 \\int \\frac{8x}{1+4x^2}\n\nApplying a substitution \nu = 4x^2\n\nWe get \n\\int 8\\arctan\\left(2x \\right)\\,dx = 8x\\arctan(2x) - 2 \\ln |1+4x^2| + C\n\nSolving our integral."
+  },
+  {
+    "objectID": "qmd/integral/gen/substitution.html",
+    "href": "qmd/integral/gen/substitution.html",
+    "title": "Substitution",
+    "section": "",
+    "text": "The motivating example for this section will be the integral shown below.\n\\int \\sec^2(x)e^{1 + \\tan{x}} \\, dx\nThe techniques shown in the last section don’t work here. Linearity does not allow for separation of products, and we don’t have an identity which gets us a solution. In order to solve these types of integrals, we’ll need a new rule.\nSubstitution can often be thought of as undoing chain rule, by substituting the interior function.\nThe biggest problem is identitfying the function to substitute. There is no general way of identifying which function in the integrand needs to be substituted.",
+    "crumbs": [
+      "**General Methods**",
+      "Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/substitution.html#examples",
+    "href": "qmd/integral/gen/substitution.html#examples",
+    "title": "Substitution",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.1)\n\n\n\nEvaluate the following integral\n\n\\int   {{\\left( {8x - 12} \\right){{\\left( {4{x^2} - 12x} \\right)}^4}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = 4x^2 - 12x\n\nWe get \n\\int   {{\\left( {8x - 12} \\right){{\\left( {4{x^2} - 12x} \\right)}^4}\\,dx}} = \\frac{1}{5}(4x^2 - 12x)^5 + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.2)\n\n\n\nEvaluate the following integral\n\n\\int{{3{t^{ - 4}}{{\\left( {2 + 4{t^{ - 3}}} \\right)}^{ - 7}}\\,dt}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = 2 - 4t^{-3}\n\nWe get \n\\int{{3{t^{ - 4}}{{\\left( {2 + 4{t^{ - 3}}} \\right)}^{ - 7}}\\,dt}} = \\frac{1}{24}(2+4t^{-3})^{-6} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.14)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nFirst notice how \\csc x \\cot x is the derivative of -\\csc x. This leads us to try some form of \\csc x for u. I use\n\nu = 2 - \\csc x\n\nLeading too \n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx = - \\int \\frac{1}{u} \\, du\n\nWhich is then\n\n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx = \\ln |u| + C = \\ln |2 - \\csc x| + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.13)\n\n\n\nEvaluate the following integral\n\n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWhile the integral looks incredibly complex, if we substitute the term inside the radical (the usual choice) we can start to break it down.\n\nu = \\cos^2(2x) - 5\n\nThus \n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}} = -\\frac{5}{2} \\int \\sqrt{u} \\, du\n\nWhich leads too\n\n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}} = -\\frac{5}{3}(\\cos^2(2x) - 5)^\\frac{3}{2} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.3.15)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{6}{7 + y^2} \\,dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nThis does not follow our usual f(g(x))g^\\prime(x) example. For this case, we’ll try to convert into an identity we know. It is clear we can’t have y^2 be a term in u, as this would only make the integral more complicated (as thers no y to be consumed in the du). The integrand sorta resembles the derivative of \\arctan y, so we can try to rewrite it\n\n\\int \\frac{6}{7 + y^2} \\,dy = \\frac{6}{7} \\int \\frac{1}{1 + \\frac{y^2}{7}} \\, dy\n\nNotice that if we make the substitution \nu = \\frac{y}{\\sqrt{7}}\n\nWe get\n\n\\int \\frac{6}{7 + y^2} \\,dy = \\frac{6\\sqrt{7}}{7} \\int \\frac{1}{1 + u^2} \\, du\n\nWhich gives us\n\n\\int \\frac{6}{7 + y^2} \\,dy = \\frac{6\\sqrt{7}}{7} \\arctan \\left(\\frac{y}{\\sqrt{7}}\\right) + C\n\n\n\n\n\n\n\n\n\n\nProblem - Arctan generalization\n\n\n\nEvaluate the previous integral in it’s general form\n\n\\int \\frac{1}{a^2 + x^2} \\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nLike last time, we’ll factor out a^2 from the bottom and then use a substitution.\n\n\\int \\frac{1}{a^2 + x^2} \\,dx = \\frac{1}{a^2} \\int \\frac{1}{1 + (x^2/a^2)} \\, dy\n\nMakeing the substitution \nu = \\frac{x}{a}\n\nWe get\n\n\\int \\frac{1}{a^2 + x^2} \\,dx = \\frac{1}{a} \\int \\frac{1}{1 + u^2} \\, dx\n\nWhich gives us\n\n\\int \\frac{1}{a^2 + x^2} \\,dx = \\frac{1}{a} \\arctan \\left(\\frac{x}{a}\\right) + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.4.6)\n\n\n\nEvaluate the following integral\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\, + 7{w^3} - 6\\,\\,\\sqrt[3]{w}\\,dw}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing linearity on the integral allows us to do different substitutions. Seeing as the last two terms can be integrated with the inverse power rule, we only need to a substitution on the first term. Luckily this is an easy case.\n\nu = 1 + e^{2-8w}\n\nGives\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\,dw} = -\\frac{5}{2}\\int \\sqrt{u}\\, du\n\nWhich is\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\,dw} = -\\frac{5}{3}(1 + e^{2-8w})^\\frac{3}{2} + C\n\nThen solving the other terms gives us our solution.\n\n= -\\frac{5}{3}(1 + e^{2-8w})^\\frac{3}{2} + \\frac{7}{4}w^4 - \\frac{9}{2}w^\\frac{4}{3} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus II - A7.1.18)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = x^4 + 1\n\nWe get\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}} = \\frac{1}{4}\\int \\frac{u - 1}{\\sqrt{u}}\n\nWhich we can then apply linearity and inverse power rule to, giving us\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}} = \\frac{1}{4}\\left( \\frac{2}{3}(x^4 + 1)^\\frac{3}{2} + 2(x^4 + 1)^\\frac{1}{2}\\right) + C"
+  },
+  {
+    "objectID": "qmd/integral/spec/weirstrass.html",
+    "href": "qmd/integral/spec/weirstrass.html",
+    "title": "Weirstrass Substitution",
+    "section": "",
+    "text": "The Weirstrass substitution, also called the tangent half-angle substitution, is a method for converting integrals of trigonometric functions of x to regular rational functions of t. We do this by making a substitution of t = \\tan(x/2). In general\n\\int f(\\sin x, \\cos x) \\, dx = \\int f\\left(\\frac{2t}{1 + t^2},\\frac{1-t^2}{1+t^2}\\right)\\frac{2}{1 + t^2} \\, dt.",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Weirstrass Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/weirstrass.html#substitution",
+    "href": "qmd/integral/spec/weirstrass.html#substitution",
+    "title": "Weirstrass Substitution",
+    "section": "Substitution",
+    "text": "Substitution\nThe substitution will be presented without proof, and functions as follows\n\n\n\n\n\n\nTheorem\n\n\n\nUsing the substitution t = \\tan(x/2) the following functions of x can be expressed as ration functions of t\n\n\\begin{align*}\n\\sin x &= \\frac{2t}{1 + t^2}\\\\\n\\cos x &= \\frac{1 - t^2}{1 + t^2}\\\\\ndx &= \\frac{2}{1 + t^2} dt\n\\end{align*}\n\n\n\nNote that the denominator in every case is 1 + t^2.\n\n\n\n\n\n\nExample\n\n\n\nGiven the following integral \n\\int \\csc x \\, dx\n\nWe use the Weirstrass substitution to obtain\n\n\\sin x = \\frac{2t}{1 + t^2} \\qquad dx = \\frac{2}{1 + t^2}dt\n\nand substitute it into our integral\n\n\\int \\csc x \\, dx = \\int \\frac{1 + t^2}{2t} \\frac{2}{1 + t^2} \\, dt\n\nwhich becomes\n\n\\int \\csc x \\, dx = \\int \\frac{1}{t} \\, dt = \\ln(t)\n\nyielding\n\n\\int \\csc x \\, dx = \\ln(\\tan\\frac{x}{2})",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Weirstrass Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/weirstrass.html#hyperbolic-substitution",
+    "href": "qmd/integral/spec/weirstrass.html#hyperbolic-substitution",
+    "title": "Weirstrass Substitution",
+    "section": "Hyperbolic Substitution",
+    "text": "Hyperbolic Substitution"
+  },
+  {
+    "objectID": "qmd/integral/spec/weirstrass.html#problems",
+    "href": "qmd/integral/spec/weirstrass.html#problems",
+    "title": "Weirstrass Substitution",
+    "section": "Problems",
+    "text": "Problems\n\n\n\n\n\n\nProblem 118\n\n\n\n\n\\int \\sec x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 119\n\n\n\n\n\\int \\frac{1}{1 + \\sin x + \\cos x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 120\n\n\n\n\n\\int \\frac{1}{2 + \\sin x} \\, dx",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Weirstrass Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigident.html",
+    "href": "qmd/integral/spec/trigident.html",
+    "title": "Trigonometric Identities and Powers",
+    "section": "",
+    "text": "We now examine various trigonometric identities that will help us in our quest to win the integration bee, and examine how to deal with powers of trigonometric functions.",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trigonometric Identities and Powers"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigident.html#identities",
+    "href": "qmd/integral/spec/trigident.html#identities",
+    "title": "Trigonometric Identities and Powers",
+    "section": "Identities",
+    "text": "Identities\nWe start by looking at various forms of 1.\n\n\n\n\n\n\nTheorem (Pythagorean Identities)\n\n\n\nThe following are true\n\n\\begin{align*}\n\\sin^2 x + \\cos^2 x &= 1\\\\\n\\sec^2 x - \\tan^2 x &= 1\\\\\n\\csc^2 x - \\cot^2 x &= 1\n\\end{align*}\n\n\n\nOf course, these identities can be rearranged when needed, so we’ll often use identities like \\tan^2 x - 1 = \\sec^2 x. Next we examine double angle identities.\n\n\n\n\n\n\nTheorem (Double angle identities)\n\n\n\nThe following double angle identities hold\n\n\\begin{align*}\n\\sin(2x) &= 2\\sin x \\cos x\\\\\n\\cos(2x) &= 2\\cos^2x - 1\\\\\n\\cos(2x) &= 1 - 2\\sin^2 x\n\\end{align*}\n\nand can be rewritten\n\n\\begin{align*}\n\\sin x \\cos x &= \\frac{1}{2}\\sin(2x)\\\\\n\\cos^2x &= \\frac{1}{2}(1 + \\cos(2x))\\\\\n\\sin^2x &= \\frac{1}{2}(1 - \\cos(2x))\n\\end{align*}\n\n\n\nThere also exist half-angle identities and formulas for products of angles. [TO-DO]",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trigonometric Identities and Powers"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigident.html#integrals-of-powers-of-trigonometric-functions",
+    "href": "qmd/integral/spec/trigident.html#integrals-of-powers-of-trigonometric-functions",
+    "title": "Trigonometric Identities and Powers",
+    "section": "Integrals of powers of trigonometric functions",
+    "text": "Integrals of powers of trigonometric functions\nThe motivating example for this section is the integral\n\n\\int \\sin^5 x \\, dx\n\nwhich, although it can be solved by integration by parts, is much simpler if we use the identity \\sin^2 = 1 - \\cos^2.\n\n\n\n\n\n\nExample (Powers of sin)\n\n\n\n\n\nGiven the following integral \n\\int \\sin^5 x \\, dx\n\nWe take out a \\sin x and use our identity to obtain\n\n\\int \\left(1-\\cos^2 x\\right)^2 \\sin x \\, dx\n\nUsing u = \\cos x we obtain\n\n-\\int \\left(1-u^2 \\right)^2 \\, du\n\nwhereby inverse power rule gets us\n\n= -\\left(u - \\frac{2}{3}u^3 + \\frac{1}{5}u^5\\right) + C\n\nand reversing the u-sub gives us\n\n= -\\cos x + \\frac{2}{3}\\cos^3 x - \\frac{1}{5}\\cos^5 x + C\n\n\n\n\nThis is the general method when we have an odd exponent on either \\sin or \\cos. We factor out one exponent, use identities to transform all but our factored exponent into some other function, and then preform a u-sub.\nLets see how this looks like with \\tan and \\sec functions!\n\n\n\n\n\n\nExample (Powers of sec)\n\n\n\n\n\nGiven the following integral \n\\int \\sec^6 x \\, dx\n\nWe take out a \\sec^2 x and use our identity to obtain\n\n\\int \\left(\\tan^2 x + 1\\right)^2 \\sec^2 x \\, dx\n\nUsing u = \\tan x we obtain\n\n\\int \\left(u^2 + 1 \\right)^2 \\, du\n\nwhereby inverse power rule gets us\n\n= \\left(\\frac{1}{5}u^5\\right + \\frac{2}{3}u^3) + C\n\nand reversing the u-sub gives us\n\n= \\frac{1}{5}\\tan^5 x + \\frac{2}{3}\\tan^3 x + C\n\n\n\n\nFor this example, it was necessary that \\sec had an even power so we could factor out a \\sec^2 and convert the rest of our \\sec to \\tan functions.",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trigonometric Identities and Powers"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigident.html#problems",
+    "href": "qmd/integral/spec/trigident.html#problems",
+    "title": "Trigonometric Identities and Powers",
+    "section": "Problems",
+    "text": "Problems\nI am running out of time to prepare for the competition, so the problems listed may be simpler then what to expect for the integration bee.\n\nIntegrals involving powers of trigonometric functions\n\n\n\n\n\n\nProblem 109\n\n\n\nEvaluate the following integral\n\n\\int \\sec^9 x \\tan^5 x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 110\n\n\n\nEvaluate the following integral\n\n\\int \\sec^3 x \\tan^5 x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 111\n\n\n\nEvaluate the following integral\n\n\\int \\sec^4 x \\tan^6 x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 112\n\n\n\nEvaluate the following integral\n\n\\int \\sin^8 x \\cos^5 x \\, dx",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trigonometric Identities and Powers"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/powerrule.html",
+    "href": "qmd/integral/explicit/powerrule.html",
+    "title": "Inverse power rule",
+    "section": "",
+    "text": "We start with the first rule of integration, which allows us to start calculating explicit integrals.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Inverse power rule"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/powerrule.html#definition",
+    "href": "qmd/integral/explicit/powerrule.html#definition",
+    "title": "Inverse power rule",
+    "section": "Definition",
+    "text": "Definition\nOne of the most fundamental rules in differential calculus is the power rule,\n\n\\frac{d}{dx} x^m = mx^{m-1} .\n\nSuspecting this will be a useful property, we can derive an expression for the inverse power rule from the definition of an integral.\n\n\\int mx^{m-1} dx = x^m\n\nApplying linearity and the substitution n = m-1, we obtain\n\n\\int x^{n} dx = \\frac{x^{n+1}}{n+1}\n\nwhenever n \\not = -1. This is known as the inverse power rule, and allows us to integrate any regular polynomial.\n\n\n\n\n\n\nDefinition (Inverse power rule)\n\n\n\nFor every n \\in \\mathbb{R} \\backslash \\{-1\\} \n\\int x^{n} dx = \\frac{x^{n+1}}{n+1} + C.\n\nThis is the inverse power rule.\n\n\nLets apply this rule to some polynomials.\n\n\n\n\n\n\nExample\n\n\n\n\n\nFind the solution to the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\nWe first begin by applying linearity\n\n= 2 \\int x^2 \\,dx - 3\\int x \\, dx - \\int 1x^0 \\, dx\n\nThen inverse power rule\n\n= \\frac{2x^3}{3} - \\frac{3x^2}{2} - x + C\n\n\n\n\nThis process can be done for any standard polynomial.\n\n\n\n\n\n\nTheorem (Integration of a polynomial)\n\n\n\nLet f(x) be a polynomial in the form\n\nf(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + c\n\nThen\n\n\\int f(x)\\,dx = \\frac{a_nx^{n+1}}{n+1} + \\frac{a_{n-1}x^{n}}{n} +  \\cdots + \\frac{a_1x^2}{2} + cx + C\n\n\n\nBut that’s not all! The inverse power rule works for all exponents (except -1) so we can apply this rule to roots and such.\n\n\n\n\n\n\nExample\n\n\n\n\n\nFind the solution to the following integral\n\n\\int \\frac{x}{\\sqrt[3]{x}} \\, dx\n\nChanging exponents allows us to get the following\n\n\\int \\frac{x}{\\sqrt[3]{x}} \\, dx = \\int x^{2/3} \\, dx\n\nThen inverse power rule\n\n= \\frac{3x^{5/3}}{5} + C\n\n\n\n\nThis also works for real exponents, but it’s not very useful in practice.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Inverse power rule"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/powerrule.html#polynomials",
+    "href": "qmd/integral/explicit/powerrule.html#polynomials",
+    "title": "Inverse power rule",
+    "section": "Polynomials",
+    "text": "Polynomials\nLets apply this rule to some polynomials.\n\n\n\n\n\n\nExample\n\n\n\nFind the solution to the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\nWe first begin by applying linearity\n\n= 2 \\int x^2 \\,dx - 3\\int x \\, dx - \\int 1x^0 \\, dx\n\nThen inverse power rule\n\n= \\frac{2x^3}{3} - \\frac{3x^2}{2} - x + C\n\n\n\nThis process can be done for any standard polynomial.\n\n\n\n\n\n\nTheorem (Integration of a polynomial)\n\n\n\nLet f(x) be a polynomial in the form\n\nf(x) = a_nx^n + a_{n-1}x^{n-1} + \\cdots + a_1x + c\n\nThen\n\n\\int f(x)\\,dx = \\frac{a_nx^{n+1}}{n+1} + \\frac{a_{n-1}x^{n}}{n} +  \\cdots + \\frac{a_1x^2}{2} + cx + C"
+  },
+  {
+    "objectID": "qmd/integral/explicit/powerrule.html#edge-case-and-roots",
+    "href": "qmd/integral/explicit/powerrule.html#edge-case-and-roots",
+    "title": "Inverse power rule",
+    "section": "Edge case and roots",
+    "text": "Edge case and roots\nThere begs the question though, how do we integrate when n = -1? The inverse power rule gives us an undefined answer\n\n\\int x^{-1}\\,dx = \\frac{1}{0} + C.\n\nThe solution, once again provided without proof, is to use the natural logarithm.\n\n\n\n\n\n\nTheorem (Integration of 1/x)\n\n\n\n\n\\int x^{-1}\\,dx = \\ln|x| + C.\n\n\n\nNote the absolute value bars. This is because the function \\ln is not defined for negative values of x, whereas our integrand is.\nSince the inverse power rule works for roots, we’re able to take the integral of arbitrary root functions.\n\n\n\n\n\n\nExample\n\n\n\nFind the solution to the following integral\n\n\\int \\frac{x}{\\sqrt[3]{x}} \\, dx\n\nChanging exponents allows us to get the following\n\n\\int \\frac{x}{\\sqrt[3]{x}} \\, dx = \\int x^{2/3} \\, dx\n\nThen inverse power rule\n\n= \\frac{3x^{5/3}}{5} + C"
+  },
+  {
+    "objectID": "qmd/integral/explicit/powerrule.html#examples",
+    "href": "qmd/integral/explicit/powerrule.html#examples",
+    "title": "Inverse power rule",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5\\, dx - 18x^2 + 7\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice the integral ends at the dx, meaning the solution is\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 18x^2 + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.1.3)\n\n\n\nEvaluate the following integral\n\n\\int 12t^7 - t^2 - t + 3 \\, dt\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nClassic polynomial, the only difference is the use of t instead of x\n\n\\int 12t^7 - t^2 - t + 3 \\, dt = \\frac{3}{2}t^8 - \\frac{1}{3}t^3 - \\frac{1}{2}t^2 + 3t + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.6)\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\int w^\\frac{1}{3} + 10w^\\frac{3}{5} \\, dw\n\nAnd then apply inverse power rule\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\frac{3}{4}w^\\frac{4}{3} + \\frac{25}{4}w^\\frac{8}{5} + C\n\n\n\n\n\n\n\n\n\n\nPauls Online Notes (Calculus - 5.2.9)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = \\int \\frac{7}{3}y^{-6} + y^{-10} - 2y^{\\frac{4}{3}} \\, dy\n\nAnd then apply inverse power rule\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = -\\frac{7}{15}y^{-5} - \\frac{1}{9} y^{-9} + 6y^{-\\frac{1}{3}} + C"
+  },
+  {
+    "objectID": "qmd/integral/explicit/trigfunc.html",
+    "href": "qmd/integral/explicit/trigfunc.html",
+    "title": "Trigonometric Functions",
+    "section": "",
+    "text": "Trigonometry is a huge part of the integration bee, and will repeatedly appear in a large portion of integrals. As such it is crucial to have a complete understanding of these functions and how they interact.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Trigonometric Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/trigfunc.html#trigonometric-functions",
+    "href": "qmd/integral/explicit/trigfunc.html#trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Trigonometric Functions",
+    "text": "Trigonometric Functions\nThere are six commonly used trigonometric functions, all of which can be expressed using only two, \\sin and \\cos. They are defined as follows.\n\n\n\n\n\n\nDefinition\n\n\n\nLet \\sin(x) and \\cos(x) be our starting functions. Then we define the following functions\nThe Tangent function defined\n\n\\tan(x) = \\frac{\\sin(x)}{\\cos(x)}\n\nThe Secant function defined\n\n\\sec(x) = \\frac{1}{\\cos(x)}\n\nThe Cosecant function defined\n\n\\csc(x) = \\frac{1}{\\sin(x)}\n\nand the Cotangent function defined\n\n\\cot(x) = \\frac{1}{\\tan(x)} = \\frac{\\cos(x)}{\\sin(x)}\n\n\n\nAnd of course each trigonmetric function has a derivative, and a corresponding integral\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each trigonometric function are as follows.\n\\begin{array}{ll}\n\\sin^\\prime(x) = \\cos(x) & \\cos^\\prime(x) = -\\sin(x)\\\\\n\n\\tan^\\prime(x) = \\sec^2(x) \\hspace{0.5in} & \\cot^\\prime(x) = -\\csc^2(x)\\\\\n\n\\sec^\\prime(x) = \\sec(x)\\tan(x) \\hspace{0.5in} & \\csc^\\prime(x) = -\\csc(x)\\cot(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cos x\\,dx}} = \\sin x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sin x\\,dx}} =  - \\cos x + C\\\\\n\n\\displaystyle\\int{{{{\\sec }^2}x\\,dx}} = \\tan x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\csc }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\sec x\\tan x\\,dx}} = \\sec x + C \\hspace{0.5in} & \\displaystyle\\int{{\\csc x\\cot x\\,dx}} =  - \\csc x + C\n\\end{array}\n\n\nIt is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its ‘complement’, and then negating the result.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Trigonometric Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/trigfunc.html#inverse-trigonometric-functions",
+    "href": "qmd/integral/explicit/trigfunc.html#inverse-trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Inverse Trigonometric functions",
+    "text": "Inverse Trigonometric functions\nEach trig function has an inverse function, which may be helpful in our integrals. We traditionally only look at the inverses of \\sin,\\tan and \\sec.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{1 + x^2} \\, dx = \\arctan(x) + C\n\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = \\arcsin(x) + C\n\n\n\\int \\frac{1}{x\\sqrt{x^2 - 1}}\\,dx = \\text{arcsec}(x) + C\n\n\n\nIt is worth noting that the derivative of \\arccos is very similar to \\arcsin \n\\frac{d}{dx}\\arccos(x) = -\\frac{1}{\\sqrt{1-x^2}}.\n\nSo our second integral can also be solved\n\n\\int \\frac{1}{\\sqrt{1-x^2}}\\,dx = -\\arccos(x) + C.\n\nThis is because \\arcsin and -\\arccos differ only by a constant (\\frac{\\pi}{2}).",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Trigonometric Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/trigfunc.html#hyperbolic-trigonometric-functions",
+    "href": "qmd/integral/explicit/trigfunc.html#hyperbolic-trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Hyperbolic Trigonometric functions",
+    "text": "Hyperbolic Trigonometric functions\nFor each trigonometric function, we can take it’s hyperbolic counterpart.\n\n\n\n\n\n\nDefinition\n\n\n\nThe derivatives of each hyperbolic trigonometric function are as follows.\n\\begin{array}{ll}\n\\sinh^\\prime(x) = \\cosh(x) & \\cosh^\\prime(x) = \\sinh(x)\\\\\n\n\\tanh^\\prime(x) = \\text{sech}^2(x) \\hspace{0.5in} & \\text{coth}^\\prime(x) = -\\text{csch}^2(x)\\\\\n\n\\text{sech}^\\prime(x) = -\\text{sech}(x)\\tanh(x) \\hspace{0.5in} & \\text{csch}^\\prime(x) = -\\text{csch}(x)\\coth(x)\n\\end{array}\nWhich give us the following integrals\n\\begin{array}{ll}\n\\displaystyle\\int{{\\cosh x\\,dx}} = \\sinh x + C \\hspace{0.5in} & \\displaystyle\\int{{\\sinh x\\,dx}} =  \\cosh x + C\\\\\n\n\\displaystyle\\int{{{{\\text{sech} }^2}x\\,dx}} = \\tanh x + C \\hspace{0.5in} & \\displaystyle\\int{{{{\\text{csch} }^2}x\\,dx}} =  - \\cot x + C\\\\\n\n\\displaystyle\\int{{\\text{sech} x\\tanh x\\,dx}} = -\\text{sech} x + C \\hspace{0.5in} & \\displaystyle\\int{{\\text{csch} x\\,\\text{coth}\\, x\\,dx}} =  - \\text{csch} x + C\n\\end{array}\n\n\nNote that the derivatives of both \\sinh and \\cosh are positive, but the derivative of \\text{sech} is negative. Besides that, the hyperbolic functions have the same derivatives as regular trigonometric functions.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Trigonometric Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/trigfunc.html#inverse-hyperbolic-trigonometric-functions",
+    "href": "qmd/integral/explicit/trigfunc.html#inverse-hyperbolic-trigonometric-functions",
+    "title": "Trigonometric Functions",
+    "section": "Inverse Hyperbolic Trigonometric functions",
+    "text": "Inverse Hyperbolic Trigonometric functions\nBut wait, theres more! Each hyperbolic trigonometric function has an inverse.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals evaluate to inverse trig functions,\n\n\\int \\frac{1}{1 - x^2} \\, dx = \\text{arctanh}(x) + C\n\n\n\\int \\frac{1}{\\sqrt{x^2 + 1}}\\,dx = \\text{arcsinh}(x) + C\n\n\n\\int \\frac{-1}{x\\sqrt{1 - x^2}}\\,dx = \\text{arcsech}(x) + C\n\n\n\nNote how the \\text{arctanh}(x) and \\text{arcsinh}(x) functions are simply flipped signs of their non hyperbolic counterparts, and \\text{arcsech}(x) takes a negative from inside the root and ‘moves it’ to the numerator.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Trigonometric Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/logexp.html",
+    "href": "qmd/integral/explicit/logexp.html",
+    "title": "Logarithms and Exponents",
+    "section": "",
+    "text": "Next we move onto logarithms and exponents.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Logarithms and Exponents"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/logexp.html#formulas",
+    "href": "qmd/integral/explicit/logexp.html#formulas",
+    "title": "Logarithms and Exponents",
+    "section": "Formulas",
+    "text": "Formulas\nIt is well known that e^x is it’s own derivative, giving us the formula\n\n\\int e^x \\, dx = e^x + C.\n\nUsing chain rule, we get some slightly modified formulas.\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals hold \n\\begin{align*}\n&\\int e^x \\, dx&&= e^x + C \\\\\n&\\int ae^{ax} \\,dx &&= e^{ax} + C\\\\\n&\\int e^{ax + b} \\,dx &&= \\frac{1}{a}e^{ax + b} + C\n\\end{align*}\n\n\n\nBut these are just raising the constant e to a power, what if we have some arbitrary constant a?\n\n\n\n\n\n\nTheorem\n\n\n\nThe following integrals hold \n\\begin{align*}\n&\\int a^x \\, dx&&= \\frac{a^x}{\\ln a} + C \\\\\n&\\int ba^{bx} \\,dx &&= \\frac{a^{bx}}{\\ln a} + C\\\\\n&\\int a^{bx + c} \\,dx &&= \\frac{a^{bx+c}}{b\\ln a} + C\n\\end{align*}\n\n\n\nNext we look at logarithms. This is a real simple one\n\n\n\n\n\n\nTheorem\n\n\n\nThis integral holds \n\\begin{align*}\n&\\int \\frac{1}{x} \\, dx&&= \\ln |x| + C \\\\\n&\\int \\frac{1}{x + a} \\,dx &&= \\ln |x| + C\\\\\n\\end{align*}\n\n\n\nThese absolute value bars are necessary since the natural logarithm function is only defined for positive numbers.",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Logarithms and Exponents"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigsub.html",
+    "href": "qmd/integral/spec/trigsub.html",
+    "title": "Trig substitutions",
+    "section": "",
+    "text": "Our motivation for this section is the following integral\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx\nThis integral is very difficult to solve with the previous techniques. The trick comes from the substitution\nx = \\frac{2}{5}\\sec \\theta\nWhich after a fair amount of algebra and calculus gives us\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx = \\sqrt{25x^2 - 4} + 2\\arccos \\left(\\frac{2}{5x}\\right) + C\nSolving these integrals relies on a method known as trigonometric substitutions.",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trig substitutions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigsub.html#method",
+    "href": "qmd/integral/spec/trigsub.html#method",
+    "title": "Trig substitutions",
+    "section": "Method",
+    "text": "Method\nFirst, lets explain how we solved the previous integral.\n\n\n\n\n\n\nExample\n\n\n\n\n\nWe have the following integral, which is difficult to solve using previous techniques.\n\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx\n\nUsing the substitution\n\nx = \\frac{2}{5}\\sec \\theta\n\nWe can reduce the integral and get a solution in terms of \\theta.\n\\begin{array}{ll}\n\n& = \\displaystyle \\int \\frac{\\sqrt{25(\\frac{2}{5}\\sec \\theta)^2 - 4}}{\\frac{2}{5}\\sec \\theta} \\, (\\frac{2}{5}\\tan \\theta \\sec \\theta \\, d\\theta)\\\\\n& =  \\displaystyle\\int \\sqrt{4\\sec^2 \\theta - 4} \\, \\tan \\theta \\, d\\theta\\\\\n& = \\displaystyle2\\int \\sqrt{\\sec^2 \\theta - 1} \\, \\tan \\theta \\, d\\theta = 2\\int\\tan^2\\theta \\, d\\theta\\\\\n& = 2\\left(\\tan \\theta + \\theta\\right) + C\n\\end{array}\nNow we only need to undo our substitution. Notice that\n\n\\sec \\theta = \\frac{\\text{hyp}}{\\text{adj}} = \\frac{5x}{2}\n\nThis can be visualized in the triangle.\n\n\\tan \\theta = \\frac{\\sqrt{25x^2-4}}{2}\n\n\n\\theta = \\arccos \\left(\\frac{2}{5x}\\right)\n\nGiving us our final answer\n\n\\int \\frac{\\sqrt{25x^2 - 4}}{x} \\, dx = \\sqrt{25x^2-4} + 2\\arccos \\left(\\frac{2}{5x}\\right) + C\n\n\n\n\nWhen faced with an integral containing a radical expression in the form \\sqrt{\\pm(bx + c)^2 \\pm a}, we can usually find some subtitution for x which simplifies the expression into a singular trigonometric identity. This is achievable due to the following three identities.\n\\begin{array}{ll}\n1 - \\sin^2x &=& \\cos^2 x\\\\\n\\tan^2x + 1 &=& \\sec^2 x\\\\\n\\sec^2x - 1 &=& \\tan^2 x\n\\end{array}\nLets see how these identites allow us to reduce certain radicals.\n\n\n\n\n\n\nTrig substitutions\n\n\n\n\n\nLets examine the three cases where trig identities allow us to simplify a radical expression.\n\nCase I: \\sqrt{a - (bx + c)^2}\nNotice how this case is a constant, subtracted by a squared variable term. This resembles our first expression, 1 - \\sin^2x = \\cos^2 x. We want to get the expression in these terms so we can reduce the radicle. Notice by making the substitution\n\n(bx + c) = \\sqrt{a}\\sin \\theta\n\nWe get the equation\n\n\\sqrt{a - (\\sqrt{a}\\sin\\theta)^2} = \\sqrt{a}\\sqrt{1-\\sin^2\\theta} = \\sqrt{a}\\cos\\theta\n\nWe have now elimated the variable from the radical.\n\nCase II: \\sqrt{(bx + c)^2 + a}\nThis case resembles our identity \\tan^2x + 1 = \\sec^2 x. So lets try the substitution\n\n(bx + c) = \\sqrt{a}\\tan \\theta\n\nWhich gives us\n\n\\sqrt{(\\sqrt{a}\\tan \\theta)^2 + a} = \\sqrt{a}\\sqrt{\\tan^2 \\theta + 1} = \\sqrt{a}\\sec\\theta\n\nWe have now elimated the variable from the radical.\n\nCase III: \\sqrt{(bx + c)^2 - a}\nThis case resembles \\sec^2x - 1. Using the substitution\n\n(bx + c) = \\sqrt{a}\\sec \\theta\n\nWe get the equation\n\n\\sqrt{(\\sqrt{a}\\sec \\theta)^2 - a} = \\sqrt{a}\\sqrt{\\sec^2\\theta - 1} = \\sqrt{a}\\tan\\theta\n\nWe have now elimated the variable from the radical.\n\n\n\nFor ease of use, the following table shows what substitution to make depending on the case.\n\\begin{array}{ll}\n\\text{Radical expression} \\hspace{0.25in} & \\text{Substitution}\\\\\n&\\\\\n\\sqrt{a - (bx + c)^2} \\hspace{0.25in} & (bx + c) = \\sqrt{a}\\sin\\theta\\\\\n&\\\\\n\\sqrt{(bx + c)^2 + a} \\hspace{0.25in} & (bx + c) = \\sqrt{a}\\tan\\theta\\\\\n&\\\\\n\\sqrt{(bx + c)^2 - a} \\hspace{0.25in} & (bx + c) = \\sqrt{a}\\sec\\theta\n\\end{array}",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trig substitutions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigsub.html#examples",
+    "href": "qmd/integral/spec/trigsub.html#examples",
+    "title": "Trig substitutions",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nProblem\n\n\n\nEvaluate the following integral\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice that the radicle expression resembles the third row of our table. If we make the substitution\n\nx = 3\\sin \\theta\\\\\ndx = 3\\cos\\theta\\,d\\theta\n\nWe get\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx = \\int\\frac{3\\sqrt{1-\\sin^2\\theta}}{9\\sin^2\\theta}(3\\cos\\theta)\\,d\\theta = \\int\\frac{\\cos^2\\theta}{\\sin^2\\theta} d\\theta\n\nWhich evaulates to \n\\int\\frac{\\cos^2\\theta}{\\sin^2\\theta} d\\theta = -\\cot\\theta - \\theta + C\n\nThis however, is only half the problem. We still need to convert the equation back to its orginal variable. Once again, the method of drawing a triangle will help to simplify the final expression.\nNote that \\sin \\theta = \\displaystyle\\frac{\\text{opp}}{\\text{hyp}} = \\displaystyle\\frac{x}{3}\nSo\n\n\\cot \\theta = \\frac{\\text{adj}}{\\text{opp}} = \\frac{\\sqrt{9 -x^2}}{x}\n\nGiving us a final answer of\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx = \\frac{-\\sqrt{9-x^2}}{x} - \\arcsin\\left(\\frac{x}{3}\\right) + C"
+  },
+  {
+    "objectID": "qmd/integral/spec/complete.html",
+    "href": "qmd/integral/spec/complete.html",
+    "title": "Completing the Square",
+    "section": "",
+    "text": "Completing the square is a commonly used trick in algebra, and allows us to take an irreducable quadratic and change it into a squared term plus a constant. The motivating example for this section is\n\\int \\sqrt{x^2 + 4x + 5} \\, dx.\nLet’s see how completing the square helps us solve this integral.",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Completing the Square"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/decomp.html",
+    "href": "qmd/integral/gen/decomp.html",
+    "title": "Partial fraction decomposition",
+    "section": "",
+    "text": "Consider the integral shown below.\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}}\nOur current methods will not work to evaluate the integral. There is no simple way to apply a substitution or the tabular method. However, if we break up the fraction\n\\frac{{3x + 11}}{{{x^2} - x - 6}} = \\frac{4}{x - 3} - \\frac{1}{x + 2}\nThe solution becomes trivial\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}} = 4\\ln |x - 3| - \\ln |x + 2| + C.\nFinding ways to break up the fractions is known as partial fraction decomposition.",
+    "crumbs": [
+      "**General Methods**",
+      "Partial fraction decomposition"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/decomp.html#method",
+    "href": "qmd/integral/gen/decomp.html#method",
+    "title": "Partial fraction decomposition",
+    "section": "Method",
+    "text": "Method\nWhen given an integral in the form\n\n\\int \\frac{P(X)}{Q(X)} \\, dx\n\nWhere P(x) and Q(x) are polynomials such that the degree of Q(x) is higher than the degree of P(x). We can decompose the fraction based on the factors of Q(x). There are four cases for the factors of Q(x).\n\n\n\n\n\n\nDecomposition cases\n\n\n\n\n\nCase I: Distinct linear factors\nWhen Q(x) has distinct linear factors, i.e.\n\nQ(x) = (a_1 x + b_1)(a_2 x + b_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{B}{a_2x + b_2}\n\nCase 2: Repeated linear factors\nWhen Q(x) has repeated linear factors, i.e.\n\nQ(x) = (a x + b)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1}{ax + b} + \\frac{A_2}{(ax + b)^2} + \\cdots + \\frac{A_k}{(a x + b)^k}\n\nCase 3: Distinct quadratic factors\nWhen Q(x) has distinct quadratic factors, i.e.\n\nQ(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a_1 x^2 + b_1x + c_1} + \\frac{A_2x + B_2}{a_2 x^2 + b_2x + c_2}\n\nCase 4: Repeated quadratic factors\nWhen Q(x) has repeated quadratic factors, i.e.\n\nQ(x) = (a x^2 + bx + c)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a x^2 + bx + c} + \\cdots + \\frac{A_kx + B_k}{(a x^2 + bx + c)^k}\n\n\n\n\nNote that Q(x) may contain multiple cases to factor. For example\n\nQ(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2\n\nWill decompose into\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{Bx + C}{a_2 x^2 + b_2x + c_2} + \\frac{Dx + E}{(a_2 x^2 + b_2x + c_2)^2}\n\nNext we need a method for finding the value of the constants in the numerator.\n\n\n\n\n\n\nEvaluating constants\n\n\n\n\n\nConsider the integral from the beginning\n\n\\int \\frac{3x + 11}{x^2 - x - 6} \\,dx\n\nWe can now decompose the integrand to obtain\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A}{x - 3} + \\frac{B}{x + 2}\n\nThe problem is now finding values for the constants A,B which make the relation true. By cross multiplying the right side of the equation we get\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A(x + 2) + B(x - 3)}{(x - 3)(x + 2)}\n\nWhich simplifies to\n\n3x + 11 = A(x + 2) + B(x - 3).\n\nWe can then create a system of equations such that the above expression is always true. This method is long but will always work. The faster method (that isn’t always possible) is to find values of x such that the equation reduces. Using the faster method, we obtain\n\nx = 3 \\: : \\: 3(3) + 11 = A(3 + 2) + B(3 - 3) \\implies A = 4\\\\\nx = -2 \\: : \\: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \\implies B = -1\n\nWhich gives us our final expression\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{4}{x - 3} - \\frac{1}{x + 2}\n\nWhich as shown above, makes the integral trivial to solve.\n\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}} = 4\\ln |x - 3| - \\ln |x + 2| + C.",
+    "crumbs": [
+      "**General Methods**",
+      "Partial fraction decomposition"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/decomp.html#examples",
+    "href": "qmd/integral/gen/decomp.html#examples",
+    "title": "Partial fraction decomposition",
+    "section": "Examples",
+    "text": "Examples\n\n\n\n\n\n\nJoe Foster (Integration by parts - C3)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWe can break up the integral as it contains distinct quadratic factors.\n\n\\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} =  \\frac{Ax + B}{x^2 + 1} + \\frac{Cx + D}{x^2 + 2}\n\nCross multiplying \nx^3 + x^2 + 2x + 1 = (Ax + B)(x^2 + 2) + (Cx + D)(x^2 + 1)\n\nGives us the following system of equations\n\\begin{array}{ll}\nx^3  & = (A + C)x^3\\\\\nx^2 & = (B + D)x^2\\\\\n2x & = (2A + C)x \\\\\n1 & = (2B + D)\n\\end{array}\nSolving the system yields\n\\begin{array}{ll}\nA = 1  & B = 0\\\\\nC = 0 & D = 1\n\\end{array}\nThis solves our decomposition. We now have to integrate\n\n\\int \\frac{x}{x^2 + 1} + \\frac{1}{x^2 + 2} \\, dx\n\nThe first term can be solved by the substitution u = x^2, and the second term can be evaluated with an \\arctan x. This gives us\n\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx = \\frac{1}{2}\\ln |x^2 + 1| + \\frac{1}{\\sqrt{2}} \\arctan \\left( \\frac{x}{\\sqrt{2}} \\right) + C"
+  },
+  {
+    "objectID": "qmd/integral/explicit/fundamentals.html#problems",
+    "href": "qmd/integral/explicit/fundamentals.html#problems",
+    "title": "Fundamentals",
+    "section": "Problems",
+    "text": "Problems\nFor all problems, let F^\\prime(x) = f(x) and G^\\prime(x) = g(x),\n\nDefinition of an Integral\n\n\n\n\n\n\nProblem 1\n\n\n\nEvaluate the following integral\n\n\\int f(x) \\, dx\n\n\n\n\n\nIntegrals involving Linearity\n\n\n\n\n\n\nProblem 2\n\n\n\nEvaluate the following integral\n\n\\int f(x) + g(x) \\, dx\n\n\n\n\n\n\n\n\n\nProblem 3\n\n\n\nEvaluate the following integral\n\n\\int k f(x) \\, dx\n\n\n\n\n\n\n\n\n\nProblem 4\n\n\n\nEvaluate the following integral\n\n\\int -f(x) \\, dx\n\n\n\n\n\n\n\n\n\nProblem 5\n\n\n\nEvaluate the following integral\n\n\\int af(x) + bg(x) \\, dx",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Fundamentals"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/powerrule.html#problems",
+    "href": "qmd/integral/explicit/powerrule.html#problems",
+    "title": "Inverse power rule",
+    "section": "Problems",
+    "text": "Problems\nThese problems will only cover inverse power rule, and linearity.\n\nIntegrals involving Integer exponents\n\n\n\n\n\n\nProblem 6\n\n\n\nEvaluate the following integral\n\n\\int x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 7\n\n\n\nEvaluate the following integral\n\n\\int x^2 \\, dx\n\n\n\n\n\n\n\n\n\nProblem 8\n\n\n\nEvaluate the following integral\n\n\\int 2x^2 - 3x - 1 \\, dx\n\n\n\n\n\n\n\n\n\nProblem 9\n\n\n\nEvaluate the following integral\n\n\\int 2x(x^2 + 4)^2 \\, dx\n\n\n\n\n\n\n\n\n\nProblem 10\n\n\n\nEvaluate the following integral\n\n\\int \\frac{1}{x^2} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 11\n\n\n\nEvaluate the following integral\n\n\\int \\frac{2}{x^6} + \\frac{4}{x^{10}} - \\frac{8}{x^{12}} \\, dx\n\n\n\n\n\nIntegrals involving Fractional exponents\n\n\n\n\n\n\nProblem 12\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt{x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 13\n\n\n\nEvaluate the following integral\n\n\\int \\frac{1}{\\sqrt{x}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 14\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt[3]{x} + 2\\sqrt[5]{x^2}\\, dw\n\n\n\n\n\nSpecial problems\n\n\n\n\n\n\nProblem 15\n\n\n\nEvaluate the following integral\n\n\\int \\, dx\n\n\n\n\n\n\n\n\n\nProblem 16\n\n\n\nEvaluate the following integral\n\n\\int x^\\pi \\, dx\n\n\n\n\n\n\n\n\n\nProblem 17 - Pauls Online Notes (Calculus - 5.1.1)\n\n\n\nEvaluate the following integral\n\n\\int 6x^5\\, dx - 18x^2 + 7\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice the integral ends at the dx, meaning the solution is\n\n\\int 6x^5 - 18x^2 + 7 \\, dx = x^6 - 18x^2 + C\n\n\n\n\n\n\n\n\n\n\nProblem 18 - Pauls Online Notes (Calculus - 5.1.3)\n\n\n\nEvaluate the following integral\n\n\\int 12t^7 - t^2 - t + 3 \\, dt\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nClassic polynomial, the only difference is the use of t instead of x\n\n\\int 12t^7 - t^2 - t + 3 \\, dt = \\frac{3}{2}t^8 - \\frac{1}{3}t^3 - \\frac{1}{2}t^2 + 3t + C\n\n\n\n\n\n\n\n\n\n\nProblem 19 - Pauls Online Notes (Calculus - 5.2.6)\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\int w^\\frac{1}{3} + 10w^\\frac{3}{5} \\, dw\n\nAnd then apply inverse power rule\n\n\\int \\sqrt[3]{w} + 10\\sqrt[5]{w^3}\\, dw = \\frac{3}{4}w^\\frac{4}{3} + \\frac{25}{4}w^\\frac{8}{5} + C\n\n\n\n\n\n\n\n\n\n\nProblem 20 - Pauls Online Notes (Calculus - 5.2.9)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nConvert the radicals to fractional exponents\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = \\int \\frac{7}{3}y^{-6} + y^{-10} - 2y^{\\frac{4}{3}} \\, dy\n\nAnd then apply inverse power rule\n\n\\int \\frac{7}{3y^6} + \\frac{1}{y^{10}} - \\frac{2}{\\sqrt[3]{y^4}} \\, dy = -\\frac{7}{15}y^{-5} - \\frac{1}{9} y^{-9} + 6y^{-\\frac{1}{3}} + C",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Inverse power rule"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/logexp.html#problems",
+    "href": "qmd/integral/explicit/logexp.html#problems",
+    "title": "Logarithms and Exponents",
+    "section": "Problems",
+    "text": "Problems\n\nIntegrals involving Exponents of Eulers constant\n\n\n\n\n\n\nProblem 21\n\n\n\nEvaluate the following integral \n\\int e^x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 22\n\n\n\nEvaluate the following integral \n\\int 5e^{5x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 23\n\n\n\nEvaluate the following integral \n\\int e^{2x + 2} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 24\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{e^x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 25\n\n\n\nEvaluate the following integral \n\\int \\frac{e^{2x} + 4}{e^{2x}} \\, dx\n\n\n\n\n\nIntegrals involving Exponents of Arbitrary constants\n\n\n\n\n\n\nProblem 26\n\n\n\nEvaluate the following integral \n\\int a^x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 27\n\n\n\nEvaluate the following integral \n\\int a^{bx} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 28\n\n\n\nEvaluate the following integral \n\\int a^{2x - 2} \\, dx\n\n\n\n\n\nIntegrals involving 1/x\n\n\n\n\n\n\nProblem 29\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 30\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x + 5} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 31\n\n\n\nEvaluate the following integral \n\\int \\frac{x + 5}{x^2 + 10x + 25} \\, dx",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Logarithms and Exponents"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/explicit/trigfunc.html#problems",
+    "href": "qmd/integral/explicit/trigfunc.html#problems",
+    "title": "Trigonometric Functions",
+    "section": "Problems",
+    "text": "Problems\nNow we look at some practice problems to help us remember all of these functions.\n\nIntegrals resolving in Trigonometric Functions\n\n\n\n\n\n\nProblem 32\n\n\n\nEvaluate the following integral \n\\int \\sin x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 33\n\n\n\nEvaluate the following integral \n\\int \\cos x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 34\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{\\sin^2 x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 35\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{\\cos^2 x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 36\n\n\n\nEvaluate the following integral \n\\int \\frac{\\sin x}{\\cos^2 x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 37\n\n\n\nEvaluate the following integral \n\\int \\frac{\\cos x}{\\sin^2 x} \\, dx\n\n\n\n\n\nIntegrals resolving in Inverse Trigonometric Functions\n\n\n\n\n\n\nProblem 38\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{(x+1)^2 - 2x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 39\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{\\sqrt{(1 - x)(1 + x)}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 40\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x\\sqrt{4(x-1)(x+1)}} \\, dx\n\n\n\n\n\nIntegrals resolving in Hyperbolic Trigonometric Functions\n\n\n\n\n\n\nProblem 41\n\n\n\nEvaluate the following integral \n\\int \\cosh x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 42\n\n\n\nEvaluate the following integral \n\\int \\sinh x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 43\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{\\sinh^2 x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 44\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{\\cosh^2 x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 45\n\n\n\nEvaluate the following integral \n\\int \\frac{\\sinh}{\\cosh^2 x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 46\n\n\n\nEvaluate the following integral \n\\int \\frac{\\cosh}{\\sinh^2 x} \\, dx\n\n\n\n\n\nIntegrals resolving in Inverse Hyperbolic Trigonometric Functions\n\n\n\n\n\n\nProblem 47\n\n\n\nEvaluate the following integral \n\\int \\frac{\\sinh x \\,\\text{csch} \\,x}{1 - x^2} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 48\n\n\n\nEvaluate the following integral \n\\int \\frac{\\sqrt{x^2 + 1}}{x^2 + 1} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 49\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x\\sqrt{(1-x)(1+x)}} \\, dx",
+    "crumbs": [
+      "**Explicit Integrals**",
+      "Trigonometric Functions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/substitution.html#problems",
+    "href": "qmd/integral/gen/substitution.html#problems",
+    "title": "Substitution",
+    "section": "Problems",
+    "text": "Problems\nThis will be a large collection of problems, giving lots of examples for how we choose our substitutions to turn our integral back into an explicit form.\n\nIntegrals with Inverse power rule\n\n\n\n\n\n\nProblem 50\n\n\n\nEvaluate the following integral \n\\int (2x + 4)(x^2 + 4x + 3)^3 \\, dx\n\n\n\n\n\n\n\n\n\nProblem 51\n\n\n\nEvaluate the following integral \n\\int (2x+3)\\sqrt{x^2 + 3x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 52\n\n\n\nEvaluate the following integral \n\\int \\frac{3x^2}{(x^3 + 2)^{7/2}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 53\n\n\n\nEvaluate the following integral \n\\int \\frac{x}{\\sqrt{1-2x^2}} \\, dx\n\n\n\n\n\nIntegrals with Logarithms and Exponents\n\n\n\n\n\n\nProblem 54\n\n\n\nEvaluate the following integral \n\\int 2x \\cos (x^2) e^{\\sin (x^2)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 55\n\n\n\nEvaluate the following integral \n\\int \\frac{-3x^2}{e^{x^3 + 2}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 56\n\n\n\nEvaluate the following integral \n\\int e^x e^{e^x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 57\n\n\n\nEvaluate the following integral \n\\int \\frac{x}{x^2 + a} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 58\n\n\n\nEvaluate the following integral \n\\int \\frac{x^2}{x^3 + a} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 59\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x \\ln x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 60\n\n\n\nEvaluate the following integral \n\\int \\frac{e^x}{1 + e^x} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 61\n\n\n\nEvaluate the following integral \n\\int \\frac{\\sec^2 x}{1 + \\tan x} \\, dx\n\n\n\n\n\nIntegrals with Trigonometric Functions\n\n\n\n\n\n\nProblem 62\n\n\n\nEvaluate the following integral \n\\int x \\sin x^2 \\, dx\n\n\n\n\n\n\n\n\n\nProblem 63\n\n\n\nEvaluate the following integral \n\\int x \\cos (x^2 + 1) \\, dx\n\n\n\n\n\n\n\n\n\nProblem 64\n\n\n\nEvaluate the following integral \n\\int \\tan x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 65\n\n\n\nEvaluate the following integral \n\\int \\cot x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 66\n\n\n\nEvaluate the following integral \n\\int \\sec x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 67\n\n\n\nEvaluate the following integral \n\\int \\csc x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 68\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x^2 + a^2} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 69\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{\\sqrt{a^2 - x^2}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 70\n\n\n\nEvaluate the following integral \n\\int \\frac{1}{x\\sqrt{x^2 - a^2}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 71\n\n\n\nEvaluate the following integral \n\\int \\frac{\\arctan x}{x^2 + 1} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 72\n\n\n\nEvaluate the following integral \n\\int \\frac{\\arcsin x}{\\sqrt{1 - x^2}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 73\n\n\n\nEvaluate the following integral \n\\int \\frac{\\text{arcsec}\\, x}{x\\sqrt{x^2 - 1}} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 74\n\n\n\nEvaluate the following integral \n\\int \\tanh x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 75\n\n\n\nEvaluate the following integral \n\\int \\text{coth} \\, x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 76\n\n\n\nEvaluate the following integral \n\\int \\text{sech} \\, x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 77\n\n\n\nEvaluate the following integral \n\\int \\text{csch} \\, x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 78\n\n\n\nEvaluate the following integral \n\\int \\frac{e^x}{1 - e^{2x}} \\, dx",
+    "crumbs": [
+      "**General Methods**",
+      "Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/substitution.html#special-problems",
+    "href": "qmd/integral/gen/substitution.html#special-problems",
+    "title": "Substitution",
+    "section": "Special problems",
+    "text": "Special problems\n\n\n\n\n\n\nProblem 79 - Pauls Online Notes (Calculus - 5.3.1)\n\n\n\nEvaluate the following integral\n\n\\int   {{\\left( {8x - 12} \\right){{\\left( {4{x^2} - 12x} \\right)}^4}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = 4x^2 - 12x\n\nWe get \n\\int   {{\\left( {8x - 12} \\right){{\\left( {4{x^2} - 12x} \\right)}^4}\\,dx}} = \\frac{1}{5}(4x^2 - 12x)^5 + C\n\n\n\n\n\n\n\n\n\n\nProblem 80 - Pauls Online Notes (Calculus - 5.3.2)\n\n\n\nEvaluate the following integral\n\n\\int{{3{t^{ - 4}}{{\\left( {2 + 4{t^{ - 3}}} \\right)}^{ - 7}}\\,dt}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = 2 - 4t^{-3}\n\nWe get \n\\int{{3{t^{ - 4}}{{\\left( {2 + 4{t^{ - 3}}} \\right)}^{ - 7}}\\,dt}} = \\frac{1}{24}(2+4t^{-3})^{-6} + C\n\n\n\n\n\n\n\n\n\n\nProblem 81 - Pauls Online Notes (Calculus - 5.3.14)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nFirst notice how \\csc x \\cot x is the derivative of -\\csc x. This leads us to try some form of \\csc x for u. I use\n\nu = 2 - \\csc x\n\nLeading too \n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx = - \\int \\frac{1}{u} \\, du\n\nWhich is then\n\n\\int \\frac{\\csc x \\cot c}{2- \\csc x} \\, dx = \\ln |u| + C = \\ln |2 - \\csc x| + C\n\n\n\n\n\n\n\n\n\n\nProblem 82 - Pauls Online Notes (Calculus - 5.3.13)\n\n\n\nEvaluate the following integral\n\n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWhile the integral looks incredibly complex, if we substitute the term inside the radical (the usual choice) we can start to break it down.\n\nu = \\cos^2(2x) - 5\n\nThus \n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}} = -\\frac{5}{2} \\int \\sqrt{u} \\, du\n\nWhich leads too\n\n\\int{{10\\sin \\left( {2x} \\right)\\cos \\left( {2x} \\right)\\sqrt {{{\\cos }^2}\\left( {2x} \\right) - 5} \\,dx}} = -\\frac{5}{3}(\\cos^2(2x) - 5)^\\frac{3}{2} + C\n\n\n\n\n\n\n\n\n\n\nProblem 83 - Pauls Online Notes (Calculus - 5.4.6)\n\n\n\nEvaluate the following integral\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\, + 7{w^3} - 6\\,\\,\\sqrt[3]{w}\\,dw}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing linearity on the integral allows us to do different substitutions. Seeing as the last two terms can be integrated with the inverse power rule, we only need to a substitution on the first term. Luckily this is an easy case.\n\nu = 1 + e^{2-8w}\n\nGives\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\,dw} = -\\frac{5}{2}\\int \\sqrt{u}\\, du\n\nWhich is\n\n\\int{{20{{e}^{2 - 8w}}\\sqrt {1 + {{e}}^{2 - 8w}}} \\,dw} = -\\frac{5}{3}(1 + e^{2-8w})^\\frac{3}{2} + C\n\nThen solving the other terms gives us our solution.\n\n= -\\frac{5}{3}(1 + e^{2-8w})^\\frac{3}{2} + \\frac{7}{4}w^4 - \\frac{9}{2}w^\\frac{4}{3} + C\n\n\n\n\n\n\n\n\n\n\nProblem 84 - Pauls Online Notes (Calculus II - A7.1.18)\n\n\n\nEvaluate the following integral\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}}\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nUsing the substitution\n\nu = x^4 + 1\n\nWe get\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}} = \\frac{1}{4}\\int \\frac{u - 1}{\\sqrt{u}}\n\nWhich we can then apply linearity and inverse power rule to, giving us\n\n\\int{{\\frac{{{x^7}}}{{\\sqrt {{x^4} + 1} }}\\,dx}} = \\frac{1}{4}\\left( \\frac{2}{3}(x^4 + 1)^\\frac{3}{2} + 2(x^4 + 1)^\\frac{1}{2}\\right) + C",
+    "crumbs": [
+      "**General Methods**",
+      "Substitution"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/intpart.html#problems",
+    "href": "qmd/integral/gen/intpart.html#problems",
+    "title": "Integration by parts",
+    "section": "Problems",
+    "text": "Problems\nVarious examples of integrating by parts. A lot of seemingly common functions will not have elementary antiderivatives, but these won’t appear in the integration bee!\n\nIntegration by parts with Exponents and Logarithms\n\n\n\n\n\n\nProblem 85\n\n\n\nEvaluate the following integral\n\n\\int \\ln x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 86\n\n\n\nEvaluate the following integral\n\n\\int x \\ln x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 87\n\n\n\nEvaluate the following integral\n\n\\int x^2 \\ln x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 88\n\n\n\nEvaluate the following integral\n\n\\int x^a \\ln x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 89\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt{x} \\ln x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 90\n\n\n\nEvaluate the following integral\n\n\\int x e^x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 91\n\n\n\nEvaluate the following integral\n\n\\int x^2 e^x \\, dx\n\n\n\n\n\nIntegration by parts with Trigonometric Functions\n\n\n\n\n\n\nProblem 92\n\n\n\nEvaluate the following integral\n\n\\int x \\sin x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 93\n\n\n\nEvaluate the following integral\n\n\\int x \\cos x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 94\n\n\n\nEvaluate the following integral\n\n\\int x \\sec^2 x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 95\n\n\n\nEvaluate the following integral\n\n\\int \\arctan x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 96\n\n\n\nEvaluate the following integral\n\n\\int x \\arctan x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 97\n\n\n\nEvaluate the following integral\n\n\\int \\arcsin x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 98\n\n\n\nEvaluate the following integral\n\n\\int x \\arcsin x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 99\n\n\n\nEvaluate the following integral\n\n\\int e^x \\sin x \\, dx\n\n\n\n\n\n\n\n\n\nProblem 100\n\n\n\nEvaluate the following integral\n\n\\int e^x \\cos x \\, dx",
+    "crumbs": [
+      "**General Methods**",
+      "Integration by parts"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/gen/intpart.html#problem-867",
+    "href": "qmd/integral/gen/intpart.html#problem-867",
+    "title": "Integration by parts",
+    "section": "Problem 867",
+    "text": "Problem 867\nEvaluate the following integral\n\n\\int x^2 \\ln x \\, dx\n\n:::"
+  },
+  {
+    "objectID": "qmd/integral/gen/decomp.html#problems",
+    "href": "qmd/integral/gen/decomp.html#problems",
+    "title": "Partial fraction decomposition",
+    "section": "Problems",
+    "text": "Problems\nThese problems are very tedious, and I opted not to include too many as distinct linear factors are the most common use of partial fractions.\n\nIntegrals involving distinct linear factors\n\n\n\n\n\n\nProblem 101\n\n\n\nEvaluate the following integral\n\n\\int \\frac{1}{(x-1)(x-2)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 102\n\n\n\nEvaluate the following integral\n\n\\int \\frac{1}{(x+a)(x+b)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 103\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x-9}{(x+5)(x-2)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 104\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x+c}{(x+a)(x+b)} \\, dx\n\n\n\n\n\nIntegrals involving repeated linear factors\n\n\n\n\n\n\nProblem 105\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^2 - x + 1}{(x+1)^3} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 106\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x + 7}{x^2(x+2)} \\, dx\n\n\n\n\n\nIntegrals involving distinct quadratic factors\n\n\n\n\n\n\nProblem 107 - Joe Foster (Integration by parts - C3)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWe can break up the integral as it contains distinct quadratic factors.\n\n\\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} =  \\frac{Ax + B}{x^2 + 1} + \\frac{Cx + D}{x^2 + 2}\n\nCross multiplying \nx^3 + x^2 + 2x + 1 = (Ax + B)(x^2 + 2) + (Cx + D)(x^2 + 1)\n\nGives us the following system of equations\n\\begin{array}{ll}\nx^3  & = (A + C)x^3\\\\\nx^2 & = (B + D)x^2\\\\\n2x & = (2A + C)x \\\\\n1 & = (2B + D)\n\\end{array}\nSolving the system yields\n\\begin{array}{ll}\nA = 1  & B = 0\\\\\nC = 0 & D = 1\n\\end{array}\nThis solves our decomposition. We now have to integrate\n\n\\int \\frac{x}{x^2 + 1} + \\frac{1}{x^2 + 2} \\, dx\n\nThe first term can be solved by the substitution u = x^2, and the second term can be evaluated with an \\arctan x. This gives us\n\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx = \\frac{1}{2}\\ln |x^2 + 1| + \\frac{1}{\\sqrt{2}} \\arctan \\left( \\frac{x}{\\sqrt{2}} \\right) + C\n\n\n\n\n\n\nIntegrals involving repeated quadratic factors\n\n\n\n\n\n\nProblem 108\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^3 + 10x^2 + 3x + 36}{(x - 1)(x^2 + 4)^2} \\, dx",
+    "crumbs": [
+      "**General Methods**",
+      "Partial fraction decomposition"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/trigsub.html#problems",
+    "href": "qmd/integral/spec/trigsub.html#problems",
+    "title": "Trig substitutions",
+    "section": "Problems",
+    "text": "Problems\n\n\n\n\n\n\nProblem 113\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt{x^2 + 4}\\,dx\n\n\n\n\n\n\n\n\n\nProblem 114\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt{x^2 - 4}\\,dx\n\n\n\n\n\n\n\n\n\nProblem 115\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt{4 - x^2}\\,dx\n\n\n\n\n\n\n\n\n\nProblem 116 - Source unknown\n\n\n\nEvaluate the following integral\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nNotice that the radicle expression resembles the third row of our table. If we make the substitution\n\nx = 3\\sin \\theta\\\\\ndx = 3\\cos\\theta\\,d\\theta\n\nWe get\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx = \\int\\frac{3\\sqrt{1-\\sin^2\\theta}}{9\\sin^2\\theta}(3\\cos\\theta)\\,d\\theta = \\int\\frac{\\cos^2\\theta}{\\sin^2\\theta} d\\theta\n\nWhich evaulates to \n\\int\\frac{\\cos^2\\theta}{\\sin^2\\theta} d\\theta = -\\cot\\theta - \\theta + C\n\nThis however, is only half the problem. We still need to convert the equation back to its orginal variable. Once again, the method of drawing a triangle will help to simplify the final expression.\nNote that \\sin \\theta = \\displaystyle\\frac{\\text{opp}}{\\text{hyp}} = \\displaystyle\\frac{x}{3}\nSo\n\n\\cot \\theta = \\frac{\\text{adj}}{\\text{opp}} = \\frac{\\sqrt{9 -x^2}}{x}\n\nGiving us a final answer of\n\n\\int \\frac{\\sqrt{9 - x^2}}{x^2}\\,dx = \\frac{-\\sqrt{9-x^2}}{x} - \\arcsin\\left(\\frac{x}{3}\\right) + C",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Trig substitutions"
+    ]
+  },
+  {
+    "objectID": "qmd/integral/spec/complete.html#problems",
+    "href": "qmd/integral/spec/complete.html#problems",
+    "title": "Completing the Square",
+    "section": "Problems",
+    "text": "Problems\n\n\n\n\n\n\nProblem 117 - Pauls Online Notes\n\n\n\nEvaluate the following integral\n\n\\int \\sqrt{x^2 + 4x + 5} \\, dx",
+    "crumbs": [
+      "**Specialized Methods**",
+      "Completing the Square"
+    ]
   }
 ]

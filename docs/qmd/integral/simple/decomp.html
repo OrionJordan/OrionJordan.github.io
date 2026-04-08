@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/decomp.html">Partial fraction decomposition</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>Simple Techniques</strong></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/decomp.html">Partial fraction decomposition</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -167,7 +167,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration</span></a>
+ <span class="menu-text">Integration Bee</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -180,11 +180,8 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
+ <span class="menu-text">./qmd/integral/simple/basics.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link">
@@ -246,7 +243,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/decomp.html">Partial fraction decomposition</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>Simple Techniques</strong></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/decomp.html">Partial fraction decomposition</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Partial fraction decomposition</h1>
 </div>
@@ -277,7 +274,7 @@ window.Quarto = {
 <p><span class="math display">
 \int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
 </span></p>
-<p>Finding ways to break up the fractions is known as <span style="color: blue"><strong>partial fraction decomposition</strong></span>.</p>
+<p>Finding ways to break up the fractions is known as <span class="definition"><strong>partial fraction decomposition</strong></span>.</p>
 <section id="method" class="level2">
 <h2 class="anchored" data-anchor-id="method">Method</h2>
 <p>When given an integral in the form</p>
@@ -322,7 +319,7 @@ Q(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)
 </span></p>
 <p>We decompose into the following terms</p>
 <p><span class="math display">
-\frac{P(x)}{Q(x)} = \frac{A_1 + B_1}{a_1 x^2 + b_1x + c_1} + \frac{A_2 + B_2}{a_2 x^2 + b_2x + c_2}
+\frac{P(x)}{Q(x)} = \frac{A_1x + B_1}{a_1 x^2 + b_1x + c_1} + \frac{A_2x + B_2}{a_2 x^2 + b_2x + c_2}
 </span></p>
 <p><strong>Case 4: Repeated quadratic factors</strong></p>
 <p>When <span class="math inline">Q(x)</span> has repeated quadratic factors, i.e.</p>
@@ -336,7 +333,7 @@ Q(x) = (a x^2 + bx + c)^k
 </div>
 </div>
 </div>
-<p>Note that <span class="math inline">Q(x)</span> does not have one case of factors exculsivly. For example</p>
+<p>Note that <span class="math inline">Q(x)</span> may contain multiple cases to factor. For example</p>
 <p><span class="math display">
 Q(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2
 </span></p>

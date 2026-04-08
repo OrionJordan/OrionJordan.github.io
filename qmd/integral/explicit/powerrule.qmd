@@ -1,0 +1,324 @@
+---
+title: "Inverse power rule"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+We start with the first rule of integration, which allows us to start calculating explicit integrals.
+
+## Definition
+
+One of the most fundamental rules in differential calculus is the power rule,
+
+$$
+\frac{d}{dx} x^m = mx^{m-1} .
+$$
+
+Suspecting this will be a useful property, we can derive an expression for the inverse power rule from the definition of an integral.
+
+$$
+\int mx^{m-1} dx = x^m
+$$
+
+Applying linearity and the substitution $n = m-1$, we obtain
+
+$$
+\int x^{n} dx = \frac{x^{n+1}}{n+1}
+$$
+
+whenever $n \not = -1$. This is known as the inverse power rule, and allows us to integrate any regular polynomial.
+
+::: {.callout-note icon="false"}
+## Definition (Inverse power rule)
+
+For every $n \in \mathbb{R} \backslash \{-1\}$ 
+$$
+\int x^{n} dx = \frac{x^{n+1}}{n+1} + C.
+$$
+
+This is the [inverse power rule]{.definition}.
+:::
+
+Lets apply this rule to some polynomials.
+
+::: {.callout-warning icon="false" collapse="false"}
+## Example
+
+Find the solution to the following integral
+
+$$
+\int 2x^2 - 3x - 1 \, dx
+$$
+
+We first begin by applying linearity
+
+$$
+= 2 \int x^2 \,dx - 3\int x \, dx - \int 1x^0 \, dx
+$$
+
+Then inverse power rule
+
+$$
+= \frac{2x^3}{3} - \frac{3x^2}{2} - x + C
+$$
+:::
+
+This process can be done for any standard polynomial.
+
+::: {.callout-note icon="false"}
+## Theorem (Integration of a polynomial)
+
+Let $f(x)$ be a polynomial in the form
+
+$$
+f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + c
+$$
+
+Then
+
+$$
+\int f(x)\,dx = \frac{a_nx^{n+1}}{n+1} + \frac{a_{n-1}x^{n}}{n} +  \cdots + \frac{a_1x^2}{2} + cx + C
+$$
+:::
+
+But that's not all! The inverse power rule works for _all_ exponents (except $-1$) so we can apply this rule to roots and such.
+
+::: {.callout-warning icon="false" collapse="false"}
+## Example
+
+Find the solution to the following integral
+
+$$
+\int \frac{x}{\sqrt[3]{x}} \, dx
+$$
+
+Changing exponents allows us to get the following
+
+$$
+\int \frac{x}{\sqrt[3]{x}} \, dx = \int x^{2/3} \, dx
+$$
+
+Then inverse power rule
+
+$$
+= \frac{3x^{5/3}}{5} + C
+$$
+:::
+
+This also works for real exponents, but it's not very useful in practice.
+
+## Problems
+
+These problems will only cover inverse power rule, and linearity.
+
+#### Integrals involving Integer exponents
+
+::: {.callout-warning icon="false"}
+## Problem 6
+
+Evaluate the following integral
+
+$$
+\int x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 7
+
+Evaluate the following integral
+
+$$
+\int x^2 \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 8
+
+Evaluate the following integral
+
+$$
+\int 2x^2 - 3x - 1 \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 9
+
+Evaluate the following integral
+
+$$
+\int 2x(x^2 + 4)^2 \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 10
+
+Evaluate the following integral
+
+$$
+\int \frac{1}{x^2} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 11
+
+Evaluate the following integral
+
+$$
+\int \frac{2}{x^6} + \frac{4}{x^{10}} - \frac{8}{x^{12}} \, dx
+$$
+:::
+
+#### Integrals involving Fractional exponents
+
+::: {.callout-warning icon="false"}
+## Problem 12
+
+Evaluate the following integral
+
+$$
+\int \sqrt{x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 13
+
+Evaluate the following integral
+
+$$
+\int \frac{1}{\sqrt{x}} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 14
+
+Evaluate the following integral
+
+$$
+\int \sqrt[3]{x} + 2\sqrt[5]{x^2}\, dw
+$$
+:::
+
+#### Special problems 
+
+::: {.callout-warning icon="false"}
+## Problem 15
+
+Evaluate the following integral
+
+$$
+\int \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 16
+
+Evaluate the following integral
+
+$$
+\int x^\pi \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 17 - Pauls Online Notes (Calculus - 5.1.1)
+
+Evaluate the following integral
+
+$$
+\int 6x^5\, dx - 18x^2 + 7
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Notice the integral ends at the $dx$, meaning the solution is
+
+$$
+\int 6x^5 - 18x^2 + 7 \, dx = x^6 - 18x^2 + C
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 18 - Pauls Online Notes (Calculus - 5.1.3)
+
+Evaluate the following integral
+
+$$
+\int 12t^7 - t^2 - t + 3 \, dt
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Classic polynomial, the only difference is the use of $t$ instead of $x$
+
+$$
+\int 12t^7 - t^2 - t + 3 \, dt = \frac{3}{2}t^8 - \frac{1}{3}t^3 - \frac{1}{2}t^2 + 3t + C
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 19 - Pauls Online Notes (Calculus - 5.2.6)
+
+Evaluate the following integral
+
+$$
+\int \sqrt[3]{w} + 10\sqrt[5]{w^3}\, dw
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Convert the radicals to fractional exponents
+
+$$
+\int \sqrt[3]{w} + 10\sqrt[5]{w^3}\, dw = \int w^\frac{1}{3} + 10w^\frac{3}{5} \, dw
+$$
+
+And then apply inverse power rule
+
+$$
+\int \sqrt[3]{w} + 10\sqrt[5]{w^3}\, dw = \frac{3}{4}w^\frac{4}{3} + \frac{25}{4}w^\frac{8}{5} + C
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 20 - Pauls Online Notes (Calculus - 5.2.9)
+
+Evaluate the following integral
+
+$$
+\int \frac{7}{3y^6} + \frac{1}{y^{10}} - \frac{2}{\sqrt[3]{y^4}} \, dy
+$$
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Solution
+
+Convert the radicals to fractional exponents
+
+$$
+\int \frac{7}{3y^6} + \frac{1}{y^{10}} - \frac{2}{\sqrt[3]{y^4}} \, dy = \int \frac{7}{3}y^{-6} + y^{-10} - 2y^{\frac{4}{3}} \, dy
+$$
+
+And then apply inverse power rule
+
+$$
+\int \frac{7}{3y^6} + \frac{1}{y^{10}} - \frac{2}{\sqrt[3]{y^4}} \, dy = -\frac{7}{15}y^{-5} - \frac{1}{9} y^{-9} + 6y^{-\frac{1}{3}} + C 
+$$
+:::
+
+

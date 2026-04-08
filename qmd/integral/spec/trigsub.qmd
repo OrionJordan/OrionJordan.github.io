@@ -25,7 +25,7 @@ $$
 \int \frac{\sqrt{25x^2 - 4}}{x} \, dx = \sqrt{25x^2 - 4} + 2\arccos \left(\frac{2}{5x}\right) + C
 $$
 
-Solving these integrals relies on a method known as [**trigonometric substitutions**]{style="color: blue"}.
+Solving these integrals relies on a method known as [**trigonometric substitutions**]{.definition}.
 
 ## Method
 
@@ -97,6 +97,8 @@ Lets see how these identites allow us to reduce certain radicals.
 
 Lets examine the three cases where trig identities allow us to simplify a radical expression.
 
+----------
+
 **Case I:** $\sqrt{a - (bx + c)^2}$
 
 Notice how this case is a constant, subtracted by a squared variable term. This resembles our first expression, $1 - \sin^2x = \cos^2 x$. We want to get the expression in these terms so we can reduce the radicle. Notice by making the substitution
@@ -113,6 +115,8 @@ $$
 
 We have now elimated the variable from the radical.
 
+----------------
+
 **Case II:** $\sqrt{(bx + c)^2 + a}$
 
 This case resembles our identity $\tan^2x + 1 = \sec^2 x$. So lets try the substitution
@@ -128,6 +132,8 @@ $$
 $$
 
 We have now elimated the variable from the radical.
+
+-----------
 
 **Case III:** $\sqrt{(bx + c)^2 - a}$
 
@@ -160,10 +166,40 @@ For ease of use, the following table shows what substitution to make depending o
 \sqrt{(bx + c)^2 - a} \hspace{0.25in} & (bx + c) = \sqrt{a}\sec\theta
 \end{array}
 ```
-## Examples
+## Problems
 
 ::: {.callout-warning icon="false"}
-## Problem
+## Problem 113
+
+Evaluate the following integral
+
+$$
+\int \sqrt{x^2 + 4}\,dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 114
+
+Evaluate the following integral
+
+$$
+\int \sqrt{x^2 - 4}\,dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 115
+
+Evaluate the following integral
+
+$$
+\int \sqrt{4 - x^2}\,dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 116 - Source unknown
 
 Evaluate the following integral
 

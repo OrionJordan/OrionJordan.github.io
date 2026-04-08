@@ -1,0 +1,170 @@
+---
+title: "Logarithms and Exponents"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+Next we move onto logarithms and exponents.
+
+## Formulas
+
+It is well known that $e^x$ is it's own derivative, giving us the formula
+
+$$
+\int e^x \, dx = e^x + C.
+$$
+
+Using chain rule, we get some slightly modified formulas.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The following integrals hold
+$$
+\begin{align*}
+&\int e^x \, dx&&= e^x + C \\
+&\int ae^{ax} \,dx &&= e^{ax} + C\\
+&\int e^{ax + b} \,dx &&= \frac{1}{a}e^{ax + b} + C
+\end{align*}
+$$
+:::
+
+But these are just raising the constant $e$ to a power, what if we have some arbitrary constant $a$?
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The following integrals hold
+$$
+\begin{align*}
+&\int a^x \, dx&&= \frac{a^x}{\ln a} + C \\
+&\int ba^{bx} \,dx &&= \frac{a^{bx}}{\ln a} + C\\
+&\int a^{bx + c} \,dx &&= \frac{a^{bx+c}}{b\ln a} + C
+\end{align*}
+$$
+:::
+
+Next we look at logarithms. This is a real simple one
+
+::: {.callout-note icon="false"}
+## Theorem
+
+This integral holds
+$$
+\begin{align*}
+&\int \frac{1}{x} \, dx&&= \ln |x| + C \\
+&\int \frac{1}{x + a} \,dx &&= \ln |x| + C\\
+\end{align*}
+$$
+:::
+
+These absolute value bars are necessary since the natural logarithm function is only defined for positive numbers.
+
+## Problems
+
+#### Integrals involving Exponents of Eulers constant
+
+::: {.callout-warning icon="false"}
+## Problem 21
+
+Evaluate the following integral
+$$
+\int e^x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 22
+
+Evaluate the following integral
+$$
+\int 5e^{5x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 23
+
+Evaluate the following integral
+$$
+\int e^{2x + 2} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 24
+
+Evaluate the following integral
+$$
+\int \frac{1}{e^x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 25
+
+Evaluate the following integral
+$$
+\int \frac{e^{2x} + 4}{e^{2x}} \, dx
+$$
+:::
+
+#### Integrals involving Exponents of Arbitrary constants
+
+::: {.callout-warning icon="false"}
+## Problem 26
+
+Evaluate the following integral
+$$
+\int a^x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 27
+
+Evaluate the following integral
+$$
+\int a^{bx} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 28
+
+Evaluate the following integral
+$$
+\int a^{2x - 2} \, dx
+$$
+:::
+
+#### Integrals involving 1/x
+
+::: {.callout-warning icon="false"}
+## Problem 29
+
+Evaluate the following integral
+$$
+\int \frac{1}{x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 30
+
+Evaluate the following integral
+$$
+\int \frac{1}{x + 5} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 31
+
+Evaluate the following integral
+$$
+\int \frac{x + 5}{x^2 + 10x + 25} \, dx
+$$
+:::

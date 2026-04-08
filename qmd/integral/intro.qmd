@@ -1,12 +1,41 @@
 ---
-title: "Integration"
+title: "Integration Bee"
 format:
   html:
-    toc: true
+    toc: false
     html-math-method: katex
 ---
 
-This section of notes is all about integration. I am currently studying for the 2024 UNT Integration bee. On the left you'll see detailed strategies for solving different types of integrals.
+This is a series of notes and integrals in preparation for the 2026 UNT Integration Bee. The Integration Bee takes place on April 10th, in GAB 106 at 3pm!
 
-The scope of this section is limited to integrals whos contents may appear in the UNT integration bee. As such no methods for definite integrals will be shown.
+## Table of Contents
+
+- Explicit Integrals
+
+  - Fundamentals
+
+  - Inverse power rule
+
+  - Logarithms and Exponents
+
+  - Trigonometric Functions
+
+- General methods
+
+  - Substitution
+
+  - Integration by parts
+
+  - Partial fraction decomposition
+
+- Specialized methods
+
+  - Trigonometric Identities and powers
+
+  - Trigonometric Substitution
+
+  - Completing the square.
+
+  - Weirstrass Substitution
+
 

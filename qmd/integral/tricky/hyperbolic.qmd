@@ -1,8 +1,0 @@
----
-title: "Hyperbolic trigonometry"
-format:
-  html:
-    toc: true
-    html-math-method: katex
----
-

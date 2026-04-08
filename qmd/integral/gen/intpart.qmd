@@ -15,7 +15,7 @@ $$
 Attempting to use a substitution, such as $u = 6x$ gives us
 
 $$
-\int ue^u\,du
+\frac{1}{6}\int ue^u\,du
 $$
 
 which while technically simpler gets us nowhere. We need a new technique to be able to properly separate functions where substitution fails. This is where integration by parts comes in.
@@ -195,156 +195,185 @@ And we have our answer.
 
 Clearly the tabular method is a huge time saver for repeated integration by parts.
 
-## Examples
+## Problems
+
+Various examples of integrating by parts. A lot of seemingly common functions will not have elementary antiderivatives, but these won't appear in the integration bee!
+
+#### Integration by parts with Exponents and Logarithms
 
 ::: {.callout-warning icon="false"}
-## Problem
+## Problem 85 
 
 Evaluate the following integral
 
 $$
 \int \ln x \, dx
 $$
-:::
-
-::: {.callout-tip icon="false" collapse="true"}
-## Solution
-
-Solving this is a little counter intuitive seeing as it only has one term. If we let $1$ be the second term however, we can evaluate with the tabular method. We pretty cleary have the integrate $1$, as we can't integrate $\ln x$.
-
-```{=tex}
-\begin{array}{ll}
- & \hspace{0.25in} D \hspace{0.25in} & I\\
- + & \hspace{0.25in} \ln x \hspace{0.25in} & 1\\
- - & \hspace{0.25in} \frac{1}{x} \hspace{0.25in} & x
-\end{array}
-```
-
-Because the product of the second row is easy to integrate, we stop using the tabular method and compute.
-
-$$
-\int \ln x \, dx = x \ln x - \int 1 \, dx = x \ln x - x + C
-$$
-
-Which solves our integral.
 
 :::
 
 ::: {.callout-warning icon="false"}
-## Pauls Online Notes (Calculus II - 7.1.1)
+## Problem 86 
 
 Evaluate the following integral
 
 $$
-\int 4x \cos \left( {2 - 3x} \right)\,dx
+\int x \ln x \, dx
 $$
 :::
 
-::: {.callout-tip icon="false" collapse="true"}
-## Solution
+::: {.callout-warning icon="false"}
+## Problem 87
 
-We have two terms, $4x$ and $\cos (2-3x)$. Its clear that differentiaing $4x$ will give us $0$ quickly, so we begin with the tabular method.
-
-```{=tex}
-\begin{array}{ll}
- & \hspace{0.25in} D \hspace{0.25in} & I\\
- + & \hspace{0.25in} 4x \hspace{0.25in} & \cos (2-3x)\\
- - & \hspace{0.25in} 4 \hspace{0.25in} & -(1/3)\sin (2-3x)\\
- + & \hspace{0.25in} 0 \hspace{0.25in} & -(1/9)\cos (2-3x)\\
-\end{array}
-```
-
-We use the first stop, and get the following solution to the integral
+Evaluate the following integral
 
 $$
-\int 4x \cos \left( {2 - 3x} \right)\,dx = -\frac{4x}{3}\sin (2-3x) - \frac{4}{9} \cos (2-3x) + C
+\int x^2 \ln x \, dx
 $$
-
-Which solves our integral.
 
 :::
 
 ::: {.callout-warning icon="false"}
-## Pauls Online Notes (Calculus II - 7.1.5)
+## Problem 88
 
 Evaluate the following integral
 
 $$
-\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx
+\int x^a \ln x \, dx
 $$
-:::
-
-::: {.callout-tip icon="false" collapse="true"}
-## Solution
-
-Without any leads on which term to integrate, I choose to integrate $cos(\frac{1}{4}x)$ on a whim. You may integrate either term however, and the answer will be the same.
-
-```{=tex}
-\begin{array}{ll}
- & \hspace{0.25in} D \hspace{0.25in} & I\\
- + & \hspace{0.25in} e^{2x} \hspace{0.25in} & \cos ((1/4)x)\\
- - & \hspace{0.25in} 2e^{2x} \hspace{0.25in} & 4\sin ((1/4)x)\\
- + & \hspace{0.25in} 4e^{2x} \hspace{0.25in} & -16\cos ((1/4)x)\\
-\end{array}
-```
-
-Notice how the product of row three is a multiple of our initial integral. This is the third stop, so we evaluate our table to get.
-
-$$
-\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = 4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x) - 64\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx
-$$
-
-$$
-65 \int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = 4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x)
-$$
-
-$$
-\int{{e}^{2x}}\cos \left( {\frac{1}{4}x} \right)\,dx = \frac{4e^{2x}\sin(\frac{1}{4}x) + 32e^{2x}\cos(\frac{1}{4}x)}{65}
-$$
-
-Which solves our integral.
 
 :::
 
 ::: {.callout-warning icon="false"}
-## Pauls Online Notes (Calculus II - A7.1.12)
+## Problem 89
 
 Evaluate the following integral
 
 $$
-\int 8\arctan\left( 2x \right)\,dx
+\int \sqrt{x} \ln x \, dx
 $$
+
 :::
 
-::: {.callout-tip icon="false" collapse="true"}
-## Solution
+::: {.callout-warning icon="false"}
+## Problem 90
 
-Because integrating $\arctan$ is the question, we will derive it instead, and integrate the $8$.
-
-```{=tex}
-\begin{array}{ll}
- & \hspace{0.25in} D \hspace{0.25in} & I\\
- + & \hspace{0.25in} \arctan(2x) \hspace{0.25in} & 8\\
- - & \hspace{0.25in} 2/(1+4x^2) \hspace{0.25in} & 8x\\
-\end{array}
-```
-
-Using our third stop and integrating the second row, we get
+Evaluate the following integral
 
 $$
-\int 8\arctan\left(2x\right)\,dx = 8x\arctan(2x) - \int \frac{8x}{1+4x^2}
+\int x e^x \, dx
 $$
 
-Applying a substitution
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 91
+
+Evaluate the following integral
+
 $$
-u = 4x^2
+\int x^2 e^x \, dx
 $$
 
-We get
+:::
+
+#### Integration by parts with Trigonometric Functions
+
+::: {.callout-warning icon="false"}
+## Problem 92
+
+Evaluate the following integral
+
 $$
-\int 8\arctan\left(2x \right)\,dx = 8x\arctan(2x) - \ln |1+4x^2| + C
+\int x \sin x \, dx
 $$
 
-Solving our integral.
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 93
+
+Evaluate the following integral
+
+$$
+\int x \cos x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 94
+
+Evaluate the following integral
+
+$$
+\int x \sec^2 x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 95
+
+Evaluate the following integral
+
+$$
+\int \arctan x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 96
+
+Evaluate the following integral
+
+$$
+\int x \arctan x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 97
+
+Evaluate the following integral
+
+$$
+\int \arcsin x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 98
+
+Evaluate the following integral
+
+$$
+\int x \arcsin x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 99
+
+Evaluate the following integral
+
+$$
+\int e^x \sin x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 100
+
+Evaluate the following integral
+
+$$
+\int e^x \cos x \, dx
+$$
 
 :::

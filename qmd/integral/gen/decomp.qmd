@@ -24,7 +24,7 @@ $$
 \int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
 $$
 
-Finding ways to break up the fractions is known as [**partial fraction decomposition**]{style="color: blue"}. 
+Finding ways to break up the fractions is known as [**partial fraction decomposition**]{.definition}. 
 
 ## Method
 
@@ -78,7 +78,7 @@ $$
 We decompose into the following terms
 
 $$
-\frac{P(x)}{Q(x)} = \frac{A_1 + B_1}{a_1 x^2 + b_1x + c_1} + \frac{A_2 + B_2}{a_2 x^2 + b_2x + c_2} 
+\frac{P(x)}{Q(x)} = \frac{A_1x + B_1}{a_1 x^2 + b_1x + c_1} + \frac{A_2x + B_2}{a_2 x^2 + b_2x + c_2} 
 $$
 
 **Case 4: Repeated quadratic factors**
@@ -97,7 +97,7 @@ $$
 
 :::
 
-Note that $Q(x)$ does not have one case of factors exculsivly. For example
+Note that $Q(x)$ may contain multiple cases to factor. For example
 
 $$
 Q(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2
@@ -158,10 +158,85 @@ $$
 $$
 :::
 
-## Examples
+## Problems
+
+These problems are very tedious, and I opted not to include too many as distinct linear factors are the most common use of partial fractions.
+
+#### Integrals involving distinct linear factors
 
 ::: {.callout-warning icon="false"}
-## Joe Foster (Integration by parts - C3)
+## Problem 101
+
+Evaluate the following integral
+
+$$
+\int \frac{1}{(x-1)(x-2)} \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 102
+
+Evaluate the following integral
+
+$$
+\int \frac{1}{(x+a)(x+b)} \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 103
+
+Evaluate the following integral
+
+$$
+\int \frac{x-9}{(x+5)(x-2)} \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 104
+
+Evaluate the following integral
+
+$$
+\int \frac{x+c}{(x+a)(x+b)} \, dx
+$$
+
+:::
+
+#### Integrals involving repeated linear factors
+
+
+::: {.callout-warning icon="false"}
+## Problem 105
+
+Evaluate the following integral
+
+$$
+\int \frac{x^2 - x + 1}{(x+1)^3} \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 106
+
+Evaluate the following integral
+
+$$
+\int \frac{x + 7}{x^2(x+2)} \, dx
+$$
+
+:::
+
+#### Integrals involving distinct quadratic factors
+
+::: {.callout-warning icon="false"}
+## Problem 107 - Joe Foster (Integration by parts - C3)
 
 Evaluate the following integral
 
@@ -218,3 +293,15 @@ $$
 
 :::
 
+#### Integrals involving repeated quadratic factors
+
+::: {.callout-warning icon="false"}
+## Problem 108 
+
+Evaluate the following integral
+
+$$
+\int \frac{x^3 + 10x^2 + 3x + 36}{(x - 1)(x^2 + 4)^2} \, dx 
+$$
+
+:::

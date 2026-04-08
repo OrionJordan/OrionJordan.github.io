@@ -1,0 +1,348 @@
+---
+title: "Trigonometric Functions"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+Trigonometry is a huge part of the integration bee, and will repeatedly appear in a large portion of integrals. As such it is crucial to have a complete understanding of these functions and how they interact.
+
+## Trigonometric Functions
+
+There are six commonly used trigonometric functions, all of which can be expressed using only two, $\sin$ and $\cos$. They are defined as follows.
+
+::: {.callout-note icon="false"}
+## Definition 
+
+Let $\sin(x)$ and $\cos(x)$ be our starting functions. Then we define the following functions
+
+The [Tangent]{.definition} function defined
+
+$$
+\tan(x) = \frac{\sin(x)}{\cos(x)}
+$$
+
+The [Secant]{.definition} function defined
+
+$$
+\sec(x) = \frac{1}{\cos(x)}
+$$
+
+The [Cosecant]{.definition} function defined
+
+$$
+\csc(x) = \frac{1}{\sin(x)}
+$$
+
+and the [Cotangent]{.definition} function defined
+
+$$
+\cot(x) = \frac{1}{\tan(x)} = \frac{\cos(x)}{\sin(x)}
+$$
+
+:::
+
+And of course each trigonmetric function has a derivative, and a corresponding integral 
+
+::: {.callout-note icon="false"}
+## Definition 
+
+The derivatives of each trigonometric function are as follows.
+
+```{=tex}
+\begin{array}{ll}
+\sin^\prime(x) = \cos(x) & \cos^\prime(x) = -\sin(x)\\
+
+\tan^\prime(x) = \sec^2(x) \hspace{0.5in} & \cot^\prime(x) = -\csc^2(x)\\
+
+\sec^\prime(x) = \sec(x)\tan(x) \hspace{0.5in} & \csc^\prime(x) = -\csc(x)\cot(x)
+\end{array}
+```
+
+Which give us the following integrals
+
+```{=tex}
+\begin{array}{ll}
+\displaystyle\int{{\cos x\,dx}} = \sin x + C \hspace{0.5in} & \displaystyle\int{{\sin x\,dx}} =  - \cos x + C\\ 
+
+\displaystyle\int{{{{\sec }^2}x\,dx}} = \tan x + C \hspace{0.5in} & \displaystyle\int{{{{\csc }^2}x\,dx}} =  - \cot x + C\\ 
+
+\displaystyle\int{{\sec x\tan x\,dx}} = \sec x + C \hspace{0.5in} & \displaystyle\int{{\csc x\cot x\,dx}} =  - \csc x + C
+\end{array}
+```
+
+:::
+
+
+It is helpful (for me at least) to memorize the left column of the table, and then derive the right side by replacing each function with its 'complement', and then negating the result.
+
+## Inverse Trigonometric functions
+
+Each trig function has an inverse function, which may be helpful in our integrals. We traditionally only look at the inverses of $\sin$,$\tan$ and $\sec$.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+The following integrals evaluate to inverse trig functions,
+
+$$
+\int \frac{1}{1 + x^2} \, dx = \arctan(x) + C
+$$
+
+$$
+\int \frac{1}{\sqrt{1-x^2}}\,dx = \arcsin(x) + C
+$$
+
+$$
+\int \frac{1}{x\sqrt{x^2 - 1}}\,dx = \text{arcsec}(x) + C
+$$
+
+:::
+
+It is worth noting that the derivative of $\arccos$ is very similar to $\arcsin$
+$$
+\frac{d}{dx}\arccos(x) = -\frac{1}{\sqrt{1-x^2}}.
+$$
+
+So our second integral can also be solved
+
+$$
+\int \frac{1}{\sqrt{1-x^2}}\,dx = -\arccos(x) + C.
+$$
+
+This is because $\arcsin$ and $-\arccos$ differ only by a constant ($\frac{\pi}{2}$).
+
+## Hyperbolic Trigonometric functions
+
+For each trigonometric function, we can take it's hyperbolic counterpart.
+
+::: {.callout-note icon="false"}
+## Definition 
+
+The derivatives of each hyperbolic trigonometric function are as follows.
+
+```{=tex}
+\begin{array}{ll}
+\sinh^\prime(x) = \cosh(x) & \cosh^\prime(x) = \sinh(x)\\
+
+\tanh^\prime(x) = \text{sech}^2(x) \hspace{0.5in} & \text{coth}^\prime(x) = -\text{csch}^2(x)\\
+
+\text{sech}^\prime(x) = -\text{sech}(x)\tanh(x) \hspace{0.5in} & \text{csch}^\prime(x) = -\text{csch}(x)\coth(x)
+\end{array}
+```
+
+Which give us the following integrals
+
+```{=tex}
+\begin{array}{ll}
+\displaystyle\int{{\cosh x\,dx}} = \sinh x + C \hspace{0.5in} & \displaystyle\int{{\sinh x\,dx}} =  \cosh x + C\\ 
+
+\displaystyle\int{{{{\text{sech} }^2}x\,dx}} = \tanh x + C \hspace{0.5in} & \displaystyle\int{{{{\text{csch} }^2}x\,dx}} =  - \cot x + C\\ 
+
+\displaystyle\int{{\text{sech} x\tanh x\,dx}} = -\text{sech} x + C \hspace{0.5in} & \displaystyle\int{{\text{csch} x\,\text{coth}\, x\,dx}} =  - \text{csch} x + C
+\end{array}
+```
+
+:::
+
+Note that the derivatives of both $\sinh$ and $\cosh$ are positive, but the derivative of $\text{sech}$ is negative. Besides that, the hyperbolic functions have the same derivatives as regular trigonometric functions.
+
+## Inverse Hyperbolic Trigonometric functions
+
+But wait, theres more! Each hyperbolic trigonometric function has an inverse.
+
+::: {.callout-note icon="false"}
+## Theorem 
+
+The following integrals evaluate to inverse trig functions,
+
+$$
+\int \frac{1}{1 - x^2} \, dx = \text{arctanh}(x) + C
+$$
+
+$$
+\int \frac{1}{\sqrt{x^2 + 1}}\,dx = \text{arcsinh}(x) + C
+$$
+
+$$
+\int \frac{-1}{x\sqrt{1 - x^2}}\,dx = \text{arcsech}(x) + C
+$$
+
+:::
+
+Note how the $\text{arctanh}(x)$ and $\text{arcsinh}(x)$ functions are simply flipped signs of their non hyperbolic counterparts, and $\text{arcsech}(x)$ takes a negative from inside the root and 'moves it' to the numerator. 
+
+## Problems
+
+Now we look at some practice problems to help us remember all of these functions.
+
+#### Integrals resolving in Trigonometric Functions
+
+::: {.callout-warning icon="false"}
+## Problem 32
+
+Evaluate the following integral
+$$
+\int \sin x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 33
+
+Evaluate the following integral
+$$
+\int \cos x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 34
+
+Evaluate the following integral
+$$
+\int \frac{1}{\sin^2 x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 35
+
+Evaluate the following integral
+$$
+\int \frac{1}{\cos^2 x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 36
+
+Evaluate the following integral
+$$
+\int \frac{\sin x}{\cos^2 x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 37
+
+Evaluate the following integral
+$$
+\int \frac{\cos x}{\sin^2 x} \, dx
+$$
+:::
+
+#### Integrals resolving in Inverse Trigonometric Functions
+
+::: {.callout-warning icon="false"}
+## Problem 38
+
+Evaluate the following integral
+$$
+\int \frac{1}{(x+1)^2 - 2x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 39
+
+Evaluate the following integral
+$$
+\int \frac{1}{\sqrt{(1 - x)(1 + x)}} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 40
+
+Evaluate the following integral
+$$
+\int \frac{1}{x\sqrt{4(x-1)(x+1)}} \, dx
+$$
+:::
+
+#### Integrals resolving in Hyperbolic Trigonometric Functions
+
+::: {.callout-warning icon="false"}
+## Problem 41
+
+Evaluate the following integral
+$$
+\int \cosh x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 42
+
+Evaluate the following integral
+$$
+\int \sinh x \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 43
+
+Evaluate the following integral
+$$
+\int \frac{1}{\sinh^2 x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 44
+
+Evaluate the following integral
+$$
+\int \frac{1}{\cosh^2 x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 45
+
+Evaluate the following integral
+$$
+\int \frac{\sinh}{\cosh^2 x} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 46
+
+Evaluate the following integral
+$$
+\int \frac{\cosh}{\sinh^2 x} \, dx
+$$
+:::
+
+#### Integrals resolving in Inverse Hyperbolic Trigonometric Functions
+
+::: {.callout-warning icon="false"}
+## Problem 47
+
+Evaluate the following integral
+$$
+\int \frac{\sinh x \,\text{csch} \,x}{1 - x^2} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 48
+
+Evaluate the following integral
+$$
+\int \frac{\sqrt{x^2 + 1}}{x^2 + 1} \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 49
+
+Evaluate the following integral
+$$
+\int \frac{1}{x\sqrt{(1-x)(1+x)}} \, dx
+$$
+:::

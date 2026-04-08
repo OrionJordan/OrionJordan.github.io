@@ -1,0 +1,130 @@
+---
+title: "Fundamentals"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+This section introduces the concept of antidifferentiation and linearity. 
+
+## Definition
+
+Antiderivatives are the inverse of the differentiation. Given some function $f(x)$ where
+
+$$
+f^\prime(x) = g(x)
+$$
+
+the antiderivative of $g(x)$ is $f(x)$. In general, the antiderivative of a function $g(x)$ is a separate function $f(x)$ whose we must differentiate to obtain $g(x)$. This yields our definition.
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [antiderivative]{.definition} of a function $g(x)$ is some function $f(x)$ such that
+
+$$
+f^\prime(x) = g(x).
+$$
+
+This is notated with an integration sign. Given a function $g(x)$ we denote it's antiderivative with
+
+$$
+\int g(x) \, dx
+$$
+:::
+
+These antiderivatives are also called indefinite integrals, or just integrals for short. For any function $g(x)$, there exists an infinite set of antiderivatives $f(x)$ which only vary by some constant. Thus we write
+
+$$
+\int g(x) \, dx = f(x) + C
+$$
+
+where $f(x)$ is some antiderivative of $g(x)$ and $C$ is any real number. Antiderivatives do not always exists for any arbitrary function $g(x)$, and when they do exist, they may not be possible to express in elementary terms. 
+
+From this point on, we will refer almost exclusively to antiderivatives as integrals. We will call functions [**integrable**]{.definition} if their antiderivative exists. 
+
+## Linearity
+
+Integrals have a property called [**linearity**]{.definition}. This means they are closed under linear transformations of functions like addition and scaler multiplication. For example
+
+$$
+\int f(x) + g(x) \,dx = \int f(x) \,dx + \int g(x) \,dx.
+$$
+
+Or, given some constant $C$
+
+$$
+\int C f(x) \,dx = C \int f(x) \,dx.
+$$
+
+This is presented in the following theorem without proof.
+
+::: {.callout-note icon="false"}
+## Theorem
+
+For all integrable functions $f(x),g(x)$ and constants $\alpha,\beta \in \mathbb{R}$, the following holds
+
+$$
+\int \alpha f(x) + \beta g(x) \,dx = \alpha \int f(x) \,dx+ \beta \int g(x) \,dx
+$$
+:::
+
+
+## Problems
+
+For all problems, let $F^\prime(x) = f(x)$ and $G^\prime(x) = g(x)$,
+
+#### Definition of an Integral
+
+::: {.callout-warning icon="false"}
+## Problem 1
+
+Evaluate the following integral
+
+$$
+\int f(x) \, dx
+$$
+:::
+
+#### Integrals involving Linearity
+
+::: {.callout-warning icon="false"}
+## Problem 2
+
+Evaluate the following integral
+
+$$
+\int f(x) + g(x) \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 3
+
+Evaluate the following integral
+
+$$
+\int k f(x) \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 4
+
+Evaluate the following integral
+
+$$
+\int -f(x) \, dx
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 5
+
+Evaluate the following integral
+
+$$
+\int af(x) + bg(x) \, dx
+$$
+:::

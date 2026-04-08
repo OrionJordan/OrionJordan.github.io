@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../../">
 <link href="../../../qmd/integral/simple/intpart.html" rel="next">
-<link href="../../../qmd/integral/simple/basics.html" rel="prev">
+<link href="../../../qmd/integral/intro.html" rel="prev">
 <script src="../../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -152,7 +152,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/substitution.html">Substitution</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>Simple Techniques</strong></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/substitution.html">Substitution</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -167,7 +167,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration</span></a>
+ <span class="menu-text">Integration Bee</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -180,11 +180,8 @@ window.Quarto = {
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../../../qmd/integral/simple/basics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Basics</span></a>
-  </div>
-</li>
+ <span class="menu-text">./qmd/integral/simple/basics.qmd</span>
+  </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/simple/substitution.html" class="sidebar-item-text sidebar-link active">
@@ -245,7 +242,7 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/basics.html"><strong>Simple Techniques</strong></a></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/substitution.html">Substitution</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><strong>Simple Techniques</strong></li><li class="breadcrumb-item"><a href="../../../qmd/integral/simple/substitution.html">Substitution</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Substitution</h1>
 </div>
@@ -301,10 +298,24 @@ du = \sec^2x \,dx
 </span></p>
 </div>
 </div>
-<p>Substitution for integrals is often in the form</p>
+<p>Substitution can often be thought of as undoing chain rule, by substituting the interior function.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition (Substitution rule)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">substitution rule</span> gives</p>
 <p><span class="math display">
 \int f(g(x))g^\prime(x)\, dx = \int f(u)\, du, \text{where } u = g(x).
 </span></p>
+</div>
+</div>
+<p>The biggest problem is identitfying the function to substitute. There is no general way of identifying which function in the integrand needs to be substituted.</p>
 <section id="examples" class="level2">
 <h2 class="anchored" data-anchor-id="examples">Examples</h2>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
@@ -324,7 +335,7 @@ Pauls Online Notes (Calculus - 5.3.1)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -333,7 +344,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using the substitution</p>
 <p><span class="math display">
@@ -362,7 +373,7 @@ Pauls Online Notes (Calculus - 5.3.2)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -371,7 +382,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using the substitution</p>
 <p><span class="math display">
@@ -400,7 +411,7 @@ Pauls Online Notes (Calculus - 5.3.14)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -409,18 +420,18 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>First notice how <span class="math inline">\csc x \cot x</span> is clearly the derivative of <span class="math inline">-\csc x</span>. This leads us to try some form of <span class="math inline">\csc x</span> for <span class="math inline">u</span>. I use</p>
+<p>First notice how <span class="math inline">\csc x \cot x</span> is the derivative of <span class="math inline">-\csc x</span>. This leads us to try some form of <span class="math inline">\csc x</span> for <span class="math inline">u</span>. I use</p>
 <p><span class="math display">
-u = \csc x
+u = 2 - \csc x
 </span></p>
 <p>Leading too <span class="math display">
-\int \frac{\csc x \cot c}{2- \csc x} \, dx = - \int \frac{1}{2 - u} \, du
+\int \frac{\csc x \cot c}{2- \csc x} \, dx = - \int \frac{1}{u} \, du
 </span></p>
-<p>Which is clearly</p>
+<p>Which is then</p>
 <p><span class="math display">
-\int \frac{\csc x \cot c}{2- \csc x} \, dx = \ln |2 - u| + C = \ln |2 - \csc x| + C
+\int \frac{\csc x \cot c}{2- \csc x} \, dx = \ln |u| + C = \ln |2 - \csc x| + C
 </span></p>
 </div>
 </div>
@@ -442,7 +453,7 @@ Pauls Online Notes (Calculus - 5.3.13)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -451,7 +462,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>While the integral looks incredibly complex, if we substitute the term inside the radical (the usual choice) we can start to break it down.</p>
 <p><span class="math display">
@@ -484,7 +495,7 @@ Pauls Online Notes (Calculus - 5.3.15)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -493,7 +504,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>This does not follow our usual <span class="math inline">f(g(x))g^\prime(x)</span> example. For this case, we’ll try to convert into an identity we know. It is clear we can’t have <span class="math inline">y^2</span> be a term in <span class="math inline">u</span>, as this would only make the integral more complicated (as thers no <span class="math inline">y</span> to be consumed in the <span class="math inline">du</span>). The integrand sorta resembles the derivative of <span class="math inline">\arctan y</span>, so we can try to rewrite it</p>
 <p><span class="math display">
@@ -530,7 +541,7 @@ Problem - Arctan generalization
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -539,7 +550,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Like last time, we’ll factor out <span class="math inline">a^2</span> from the bottom and then use a substitution.</p>
 <p><span class="math display">
@@ -576,7 +587,7 @@ Pauls Online Notes (Calculus - 5.4.6)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -585,7 +596,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using linearity on the integral allows us to do different substitutions. Seeing as the last two terms can be integrated with the inverse power rule, we only need to a substitution on the first term. Luckily this is an easy case.</p>
 <p><span class="math display">
@@ -623,7 +634,7 @@ Pauls Online Notes (Calculus II - A7.1.18)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -632,7 +643,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using the substitution</p>
 <p><span class="math display">
@@ -1217,8 +1228,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../qmd/integral/simple/basics.html" class="pagination-link" aria-label="Basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Basics</span>
+      <a href="../../../qmd/integral/intro.html" class="pagination-link" aria-label="Integration Bee">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Integration Bee</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

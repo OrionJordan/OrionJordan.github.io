@@ -1,0 +1,94 @@
+---
+title: "Weirstrass Substitution"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+The Weirstrass substitution, also called the tangent half-angle substitution, is a method for converting integrals of trigonometric functions of $x$ to regular rational functions of $t$. We do this by making a substitution of $t = \tan(x/2)$. In general
+
+$$
+\int f(\sin x, \cos x) \, dx = \int f\left(\frac{2t}{1 + t^2},\frac{1-t^2}{1+t^2}\right)\frac{2}{1 + t^2} \, dt.
+$$
+
+## Substitution
+
+The substitution will be presented without proof, and functions as follows
+
+::: {.callout-note icon="false"}
+## Theorem
+
+Using the substitution $t = \tan(x/2)$ the following functions of $x$ can be expressed as ration functions of $t$
+
+$$
+\begin{align*}
+\sin x &= \frac{2t}{1 + t^2}\\
+\cos x &= \frac{1 - t^2}{1 + t^2}\\
+dx &= \frac{2}{1 + t^2} dt
+\end{align*}
+$$
+
+:::
+
+Note that the denominator in every case is $1 + t^2$.
+
+::: {.callout-warning icon="false"}
+## Example
+
+Given the following integral
+$$
+\int \csc x \, dx
+$$
+
+We use the Weirstrass substitution to obtain
+
+$$
+\sin x = \frac{2t}{1 + t^2} \qquad dx = \frac{2}{1 + t^2}dt
+$$
+
+and substitute it into our integral
+
+$$
+\int \csc x \, dx = \int \frac{1 + t^2}{2t} \frac{2}{1 + t^2} \, dt
+$$
+
+which becomes
+
+$$
+\int \csc x \, dx = \int \frac{1}{t} \, dt = \ln(t)
+$$
+
+yielding
+
+$$
+\int \csc x \, dx = \ln(\tan\frac{x}{2})
+$$
+
+:::
+
+## Problems
+
+::: {.callout-warning icon="false"}
+## Problem 118
+$$
+\int \sec x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 119
+$$
+\int \frac{1}{1 + \sin x + \cos x} \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 120
+$$
+\int \frac{1}{2 + \sin x} \, dx
+$$
+
+:::

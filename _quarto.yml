@@ -27,16 +27,23 @@ website:
     - title: "integral"
       contents:
       - "./qmd/integral/intro.qmd"
-      - section: "**Simple Techniques**"
+      - section: "**Explicit Integrals**"
         contents:
-        - "./qmd/integral/simple/basics.qmd"
-        - "./qmd/integral/simple/substitution.qmd"
-        - "./qmd/integral/simple/intpart.qmd"
-        - "./qmd/integral/simple/decomp.qmd"
-        - "./qmd/integral/simple/trigsub.qmd"
-      - section: "**Tricky Techniques**"
+        - "./qmd/integral/explicit/fundamentals.qmd"
+        - "./qmd/integral/explicit/logexp.qmd"
+        - "./qmd/integral/explicit/powerrule.qmd"
+        - "./qmd/integral/explicit/trigfunc.qmd"
+      - section: "**General Methods**"
         contents:
-        - "./qmd/integral/tricky/hyperbolic.qmd"
+        - "./qmd/integral/gen/substitution.qmd"
+        - "./qmd/integral/gen/intpart.qmd"
+        - "./qmd/integral/gen/decomp.qmd"
+      - section: "**Specialized Methods**"
+        contents:
+        - "./qmd/integral/spec/trigident.qmd"
+        - "./qmd/integral/spec/trigsub.qmd"
+        - "./qmd/integral/spec/complete.qmd"
+        - "./qmd/integral/spec/weirstrass.qmd"
 
     - title: "Logic"
       contents:

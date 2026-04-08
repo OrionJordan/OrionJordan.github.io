@@ -1,0 +1,190 @@
+---
+title: "Trigonometric Identities and Powers"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+We now examine various trigonometric identities that will help us in our quest to win the integration bee, and examine how to deal with powers of trigonometric functions.
+
+## Identities
+
+We start by looking at various forms of $1$.
+
+::: {.callout-note icon="false"}
+## Theorem (Pythagorean Identities)
+
+The following are true
+
+$$
+\begin{align*}
+\sin^2 x + \cos^2 x &= 1\\
+\sec^2 x - \tan^2 x &= 1\\
+\csc^2 x - \cot^2 x &= 1 
+\end{align*}
+$$
+
+:::
+
+Of course, these identities can be rearranged when needed, so we'll often use identities like $\tan^2 x - 1 = \sec^2 x$. Next we examine double angle identities.
+
+::: {.callout-note icon="false"}
+## Theorem (Double angle identities)
+
+The following double angle identities hold
+
+$$
+\begin{align*}
+\sin(2x) &= 2\sin x \cos x\\
+\cos(2x) &= 2\cos^2x - 1\\
+\cos(2x) &= 1 - 2\sin^2 x
+\end{align*}
+$$
+
+and can be rewritten
+
+$$
+\begin{align*}
+\sin x \cos x &= \frac{1}{2}\sin(2x)\\
+\cos^2x &= \frac{1}{2}(1 + \cos(2x))\\
+\sin^2x &= \frac{1}{2}(1 - \cos(2x))
+\end{align*}
+$$
+
+:::
+
+There also exist half-angle identities and formulas for products of angles. [TO-DO]
+
+## Integrals of powers of trigonometric functions
+
+The motivating example for this section is the integral
+
+$$
+\int \sin^5 x \, dx
+$$
+
+which, although it can be solved by integration by parts, is much simpler if we use the identity $\sin^2 = 1 - \cos^2$. 
+
+::: {.callout-warning icon="false" collapse="false"}
+## Example (Powers of sin)
+
+Given the following integral
+$$
+\int \sin^5 x \, dx
+$$
+
+We take out a $\sin x$ and use our identity to obtain
+
+$$
+\int \left(1-\cos^2 x\right)^2 \sin x \, dx
+$$
+
+Using $u = \cos x$ we obtain
+
+$$
+-\int \left(1-u^2 \right)^2 \, du
+$$
+
+whereby inverse power rule gets us
+
+$$
+= -\left(u - \frac{2}{3}u^3 + \frac{1}{5}u^5\right) + C
+$$
+
+and reversing the $u$-sub gives us
+
+$$
+= -\cos x + \frac{2}{3}\cos^3 x - \frac{1}{5}\cos^5 x + C
+$$
+
+:::
+
+This is the general method when we have an odd exponent on either $\sin$ or $\cos$. We factor out one exponent, use identities to transform all but our factored exponent into some other function, and then preform a $u$-sub.
+
+Lets see how this looks like with $\tan$ and $\sec$ functions!
+
+::: {.callout-warning icon="false" collapse="false"}
+## Example (Powers of sec)
+
+Given the following integral
+$$
+\int \sec^6 x \, dx
+$$
+
+We take out a $\sec^2 x$ and use our identity to obtain
+
+$$
+\int \left(\tan^2 x + 1\right)^2 \sec^2 x \, dx
+$$
+
+Using $u = \tan x$ we obtain
+
+$$
+\int \left(u^2 + 1 \right)^2 \, du
+$$
+
+whereby inverse power rule gets us
+
+$$
+= \left(\frac{1}{5}u^5\right + \frac{2}{3}u^3) + C
+$$
+
+and reversing the $u$-sub gives us
+
+$$
+= \frac{1}{5}\tan^5 x + \frac{2}{3}\tan^3 x + C
+$$
+:::
+
+For this example, it was necessary that $\sec$ had an even power so we could factor out a $\sec^2$ and convert the rest of our $\sec$ to $\tan$ functions.
+
+## Problems
+
+I am running out of time to prepare for the competition, so the problems listed may be simpler then what to expect for the integration bee.
+
+#### Integrals involving powers of trigonometric functions
+
+::: {.callout-warning icon="false"}
+## Problem 109 
+
+Evaluate the following integral
+
+$$
+\int \sec^9 x \tan^5 x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 110
+
+Evaluate the following integral
+
+$$
+\int \sec^3 x \tan^5 x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 111
+
+Evaluate the following integral
+
+$$
+\int \sec^4 x \tan^6 x \, dx
+$$
+
+:::
+
+::: {.callout-warning icon="false"}
+## Problem 112
+
+Evaluate the following integral
+
+$$
+\int \sin^8 x \cos^5 x \, dx
+$$
+
+:::

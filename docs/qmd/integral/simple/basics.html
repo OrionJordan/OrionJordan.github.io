@@ -119,7 +119,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-sidebar floating nav-fixed">
+<body class="nav-sidebar floating nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -167,7 +167,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../../qmd/integral/intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Integration</span></a>
+ <span class="menu-text">Integration Bee</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -233,29 +233,7 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#inverse-power-rule" id="toc-inverse-power-rule" class="nav-link active" data-scroll-target="#inverse-power-rule">Inverse power rule</a>
-  <ul class="collapse">
-  <li><a href="#edge-case" id="toc-edge-case" class="nav-link" data-scroll-target="#edge-case">Edge case</a></li>
-  </ul></li>
-  <li><a href="#common-identities" id="toc-common-identities" class="nav-link" data-scroll-target="#common-identities">Common identities</a>
-  <ul class="collapse">
-  <li><a href="#trig-identities" id="toc-trig-identities" class="nav-link" data-scroll-target="#trig-identities">Trig identities</a></li>
-  <li><a href="#inverse-trig-identities" id="toc-inverse-trig-identities" class="nav-link" data-scroll-target="#inverse-trig-identities">Inverse Trig identities</a></li>
-  <li><a href="#exponential-and-logarithmic-functions" id="toc-exponential-and-logarithmic-functions" class="nav-link" data-scroll-target="#exponential-and-logarithmic-functions">Exponential and logarithmic functions</a></li>
-  </ul></li>
-  <li><a href="#examples" id="toc-examples" class="nav-link" data-scroll-target="#examples">Examples</a>
-  <ul class="collapse">
-  <li><a href="#inverse-power-rule-1" id="toc-inverse-power-rule-1" class="nav-link" data-scroll-target="#inverse-power-rule-1">Inverse power rule</a></li>
-  <li><a href="#common-identites" id="toc-common-identites" class="nav-link" data-scroll-target="#common-identites">Common identites</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -278,14 +256,69 @@ window.Quarto = {
 </header>
 
 
-<p>Integration is the inverse of the differentiation. If <span class="math inline">f^\prime(x) = g(x)</span>, then</p>
+<p>This section introduces the concept of antidifferentiation, linearity, power rule and trigonometric identities.</p>
+<section id="definition" class="level2">
+<h2 class="anchored" data-anchor-id="definition">Definition</h2>
+<p>Antiderivatives are the inverse of the differentiation. Given some function <span class="math inline">f(x)</span> where</p>
 <p><span class="math display">
-\int g(x)\,dx = f(x) + C.
+f^\prime(x) = g(x)
 </span></p>
-<p>Integrals have a property called <span style="color: blue"><strong>linearity</strong></span>. This means they are closed under linear transformations of functions, as shown below.</p>
+<p>the antiderivative of <span class="math inline">g(x)</span> is <span class="math inline">f(x)</span>. In general, the antiderivative of a function <span class="math inline">g(x)</span> is a separate function <span class="math inline">f(x)</span> whose we must differentiate to obtain <span class="math inline">g(x)</span>. This yields our definition.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">antiderivative</span> of a function <span class="math inline">g(x)</span> is some function <span class="math inline">f(x)</span> such that</p>
+<p><span class="math display">
+f^\prime(x) = g(x).
+</span></p>
+<p>This is notated with an integration sign. Given a function <span class="math inline">g(x)</span> we denote it’s antiderivative with</p>
+<p><span class="math display">
+\int g(x) \, dx
+</span></p>
+</div>
+</div>
+<p>These antiderivatives are also called indefinite integrals, or just integrals for short. For any function <span class="math inline">g(x)</span>, there exists an infinite set of antiderivatives <span class="math inline">f(x)</span> which only vary by some constant. Thus we write</p>
+<p><span class="math display">
+\int g(x) \, dx = f(x) + C
+</span></p>
+<p>where <span class="math inline">f(x)</span> is some antiderivative of <span class="math inline">g(x)</span> and <span class="math inline">C</span> is any real number. Antiderivatives do not always exists for any arbitrary function <span class="math inline">g(x)</span>, and when they do exist, they may not be possible to express in elementary terms.</p>
+<p>From this point on, we will refer almost exclusively to antiderivatives as integrals. We will call functions <span class="definition"><strong>integrable</strong></span> if their antiderivative exists.</p>
+</section>
+<section id="linearity" class="level2">
+<h2 class="anchored" data-anchor-id="linearity">Linearity</h2>
+<p>Integrals have a property called <span class="definition"><strong>linearity</strong></span>. This means they are closed under linear transformations of functions like addition and scaler multiplication. For example</p>
+<p><span class="math display">
+\int f(x) + g(x) \,dx = \int f(x) \,dx + \int g(x) \,dx.
+</span></p>
+<p>Or, given some constant <span class="math inline">C</span></p>
+<p><span class="math display">
+\int C f(x) \,dx = C \int f(x) \,dx.
+</span></p>
+<p>This is presented in the following theorem without proof.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For all integrable functions <span class="math inline">f(x),g(x)</span> and constants <span class="math inline">\alpha,\beta \in \mathbb{R}</span>, the following holds</p>
 <p><span class="math display">
 \int \alpha f(x) + \beta g(x) \,dx = \alpha \int f(x) \,dx+ \beta \int g(x) \,dx
 </span></p>
+</div>
+</div>
+</section>
 <section id="inverse-power-rule" class="level2">
 <h2 class="anchored" data-anchor-id="inverse-power-rule">Inverse power rule</h2>
 <p>One of the basic rules of differentiation is that of power rule.</p>
@@ -301,7 +334,7 @@ window.Quarto = {
 \int x^{n} dx = \frac{x^{n+1}}{n+1}
 </span></p>
 <div class="callout callout-style-default callout-warning no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -310,7 +343,7 @@ Example
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Find the solution to the following integral</p>
 <p><span class="math display">
@@ -423,7 +456,7 @@ Pauls Online Notes (Calculus - 5.1.1)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -432,7 +465,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using the formula for evaluating polynomials</p>
 <p><span class="math display">
@@ -458,7 +491,7 @@ Pauls Online Notes (Calculus - 5.1.1)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -467,7 +500,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Notice the integral ends at the <span class="math inline">dx</span>, meaning the solution is</p>
 <p><span class="math display">
@@ -493,7 +526,7 @@ Pauls Online Notes (Calculus - 5.1.3)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -502,7 +535,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Classic polynomial, the only difference is the use of <span class="math inline">t</span> instead of <span class="math inline">x</span></p>
 <p><span class="math display">
@@ -528,7 +561,7 @@ Pauls Online Notes (Calculus - 5.2.6)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -537,7 +570,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Convert the radicals to fractional exponets</p>
 <p><span class="math display">
@@ -567,7 +600,7 @@ Pauls Online Notes (Calculus - 5.2.9)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -576,7 +609,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Convert the radicals to fractional exponents</p>
 <p><span class="math display">
@@ -610,7 +643,7 @@ Pauls Online Notes (Calculus - 5.2.14)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -619,7 +652,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Simply use linearity to break up the integral, and then apply identities</p>
 <p><span class="math display">
@@ -645,7 +678,7 @@ Pauls Online Notes (Calculus - 5.2.15)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -654,7 +687,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Simply use linearity to break up the integral, and then apply identities</p>
 <p><span class="math display">
@@ -680,7 +713,7 @@ Pauls Online Notes (Calculus - 5.2.16)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -689,7 +722,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Multiply out and simplify the equation. <span class="math display">
 \int 12 + \csc \theta \left( {\sin  \theta  + \csc  \theta } \right)\,d\theta = \int 12 + 1 + \csc^2 \theta \, d\theta
@@ -722,7 +755,7 @@ Pauls Online Notes (Calculus - 5.2.20)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -731,7 +764,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Using the inverse trig identities</p>
 <p><span class="math display">
@@ -1309,8 +1342,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../../qmd/integral/intro.html" class="pagination-link" aria-label="Integration">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Integration</span>
+      <a href="../../../qmd/integral/intro.html" class="pagination-link" aria-label="Integration Bee">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Integration Bee</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
