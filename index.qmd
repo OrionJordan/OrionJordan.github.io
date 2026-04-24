@@ -25,4 +25,4 @@ majoring in mathematics.
 
 ## Website
 
-This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject.
+This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject. Along with this some miscellaneous math projects, like my preparation for the integration bee, will be hosted here!

@@ -6,16 +6,19 @@ format:
     html-math-method: katex
 ---
 
-This section covers $ZFC$ set theory, and constructs the foundations of mathematics from $9$ axioms. Topics include basic properties of sets, functions and relations and ordinal and cardinal numbers.
+This section covers $ZFC$ set theory, and constructs the foundations of mathematics from $9$ axioms. 
+
+Topics include basic logic, properties of sets, functions and relations, and ordinal and cardinal numbers.
 
 ## Table of Contents
 
-- Introduction
-  - History
-  - First-order Logic
-  - Relationsip between FOL and ZFC
+- Logic
+  - Introduction                            X
+  - Syntax of First-order Logic             X
+  - Deductive System of First-order Logic   X
+  - Semantics and Models                             
 - Basic Axioms and Operations
-  - Primitive notions / Set containment
+  - Relationship between ZFC and FOL
   - Preview of Axioms               X
   - Axioms of Extension and Specification
   - Subsets

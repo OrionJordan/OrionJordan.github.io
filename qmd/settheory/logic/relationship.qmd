@@ -1,0 +1,28 @@
+---
+title: "Relationship between FOL and ZFC"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+Now that we have an idea of what first-order logic is, how can we use it to build set theory? We must extend our logic by adding the axioms of $ZFC$, and the special symbols use in those axioms. We call this extension a _theory_, and since we're working in first-order logic, we'll call it a first-order theory.
+
+::: {.callout-note icon="false"}
+## Definition
+
+A [first-order theory]{.definition} consist of 
+
+- A [signature]{.definition} specifying the non-logical symbols we'll use; and
+
+- A collection of sentences known as our [axioms]{.definition}
+:::
+
+## Signature and Axioms
+
+$ZFC$ has only one non-logical symbol in its signature, a binary predicate denoted $\in$. This symbol stands for set membership, and we read $a \in b$ as $a$ is a member in the set $b$. 
+
+The real substance in our theory comes from our axioms. While I have mentioned many times that $ZFC$ consist of $9$ axioms, this is not strictly true. Our theory contains a few axiom _schema_, which are an infinite list of axioms. These will be discussed more when they appear. Each of our axioms specify some way that our nonlogical symbol $\in$ functions. 
+
+And with that, we can finally begin to study the consequences of our axioms and set theory as a whole!
+

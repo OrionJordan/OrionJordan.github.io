@@ -23,33 +23,26 @@
     - text: Infinite Series
       href: ../realanal/infinite-series.qmd
 
-#- title: Topology
-#  subtitle: Study of Spaces and Metrics
-#  image: realanal
-#  links:
-#    - text: Introduction
+- title: Topology
+  subtitle: Study of Spaces and Metrics
+  image: realanal
+  links:
+    - text: Introduction
 
-#- title: Abstract Algebra
-#  subtitle: Study of Algebraic Structures
-#  image: abalg
-#  links:
-#    - text: Introduction
-#      href: ../abstract/intro.qmd
-#    - text: Prerequisites
-#      href: ../abstract/prereq/functions.qmd
-#    - text: Groups
-#      href: ../abstract/intro-to-groups/definitions.qmd
+- title: Abstract Algebra
+  subtitle: Study of Algebraic Structures
+  image: abalg
+  links:
+    - text: Introduction
+      href: ../abstract/intro.qmd
+    - text: Prerequisites
+      href: ../abstract/prereq/functions.qmd
+    - text: Groups
+      href: ../abstract/intro-to-groups/definitions.qmd
 
-#- title: Matrix Theory
-##  subtitle: Properties and Calculation of Matrices
-#  image: realanal
- # links:
-  #  - text: Introduction
-##
-
-#- title: Complex Analysis
-#  subtitle: Analysis of Complex Numbers
-#  image: testink
-#  links:
-#    - text: Introduction
-#      href: ../complex/intro.qmd
+- title: Complex Analysis
+  subtitle: Analysis of Complex Numbers
+  image: testink
+  links:
+    - text: Introduction
+      href: ../complex/intro.qmd

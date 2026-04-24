@@ -21,13 +21,13 @@ $$
 ::: {.callout-warning icon="false"}
 ## Example 
 
-Let $A$ and $B$ be sets such that
+Using an informal brace notation, let $A$ and $B$ be sets such that
 
 $$
 A = \{a,b,c\} \qquad \text{and} \qquad B = \{a,b,c,d\}.
 $$
 
-Then we have $A \subseteq$ since each element in $A$ is in $B$. However we do not have $B \subseteq A$ since $d \in B$ but $d \not \in A$.
+Then we have $A \subseteq B$ since each element in $A$ is in $B$. However we do not have $B \subseteq A$ since $d \in B$ but $d \not \in A$.
 :::
 
 ## Properties
@@ -35,34 +35,134 @@ Then we have $A \subseteq$ since each element in $A$ is in $B$. However we do no
 Now we can take a look at some properties of subsets.
 
 ::: {.callout-note icon="false"}
-## Theorem 3
+## Theorem (Subset-1)
 
 Let $A$ be a set. Then $A \subseteq A$.
 
 :::
 
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+It a logical tautology that 
+
+$$
+\forall x (x \in A \implies x \in A)
+$$
+
+thus by our definition of a subset, $A \subseteq A$.
+:::
+
 ::: {.callout-note icon="false"}
-## Theorem 4
+## Theorem (Subset-2)
 
 Let $A,B$ be sets. If $A \subseteq B$ and $B \subseteq A$, then $A = B$.
 
 :::
 
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By our hypothesis, we have 
+
+$$
+\forall x (x \in A \implies x \in B)
+$$
+
+and
+
+$$
+\forall x (x \in B \implies x \in A)
+$$
+
+Thus we have 
+
+$$
+\forall x (x \in B \iff x \in A)
+$$
+
+and by instantiating the Axiom of Extensionality we have
+
+$$
+A = B.
+$$
+
+:::
+
 ::: {.callout-note icon="false"}
-## Theorem 5
+## Theorem (Subset-3)
 
 Let $A$ be a set. If $A \subseteq \varnothing$ then $A = \varnothing$.
 
 :::
 
-::: {.callout-note icon="false"}
-## Theorem 6
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
 
-Let $A,B$ and $C$ be sets. If $A \subseteq B$ and $B \subseteq C$, then $A \subseteq C$.
+By hypothesis we have
+
+$$
+\forall x (x \in A \implies x \in \varnothing).
+$$
+
+By the definition of the empty set, we have
+
+$$
+\forall x (x \not \in \varnothing)
+$$
+
+thus 
+
+$$
+\forall x (x \not \in A)
+$$
+
+and so by the definition of the empty set
+
+$$
+A = \varnothing.
+$$
 
 :::
 
+::: {.callout-note icon="false"}
+## Theorem (Subset-4)
+
+Let $A,B$ and $C$ be sets. If ${A \subseteq B}$ and ${B \subseteq C}$, then ${A \subseteq C}$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By hypothesis we have
+
+$$
+\forall x (x \in A \implies x \in B)
+$$
+
+and
+
+$$
+\forall x (x \in B \implies x \in C).
+$$
+
+By modus ponens, we have
+
+$$
+\forall x (x \in A \implies x \in C)
+$$
+
+and by our definition of a subset
+
+$$
+A \subseteq C.
+$$
+:::
+
 ## Proper Subsets
+
+Occansionally we want to specify that we have a subset $A$ of $B$ such that $A \not = B$. This is where proper subsets come in.
 
 ::: {.callout-note icon="false"}
 ## Definition
@@ -74,30 +174,68 @@ A \subset B \iff A \subseteq B \land A \not = B.
 $$
 :::
 
+The notation for proper subsets differs from source to source. Some authors chose to use the less ambiguous $\subsetneq$ and use $\subset$ to refer to any subset. The notation used here is motivated by the $<,\leq$ relation.
+
 ::: {.callout-note icon="false"}
-## Theorem 7
+## Theorem (PSubset-1)
 
 Let $A$ be a set. Then $A \not \subset A$.
 
 :::
 
-::: {.callout-note icon="false"}
-## Theorem 8
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
 
-Let $A,B$ be sets. Then $A \subset B$ implies $B \not \subset A$. 
+We have by logic
+
+$$
+\forall A (A = A)
+$$
+
+Thus for all $A$, $A \not \subset A$.
+:::
+
+::: {.callout-note icon="false"}
+## Theorem (PSubset-2)
+
+Let $A,B$ be sets. Then ${A \subset B}$ implies ${B \not \subset A}$. 
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By hypothesis we have that $A \subseteq B$ and $A \not = B$. We need to show that either $B \subseteq A$ or $B \not= A$ do not hold. Since we have $B \not = A$ by our hypothesis, we must show $B \not \subseteq A$.
+
+We do this by contradiction. If $B \subseteq A$ then by Theorem (Subset-2) we would have $A = B$. This contradicts our hypothesis, therefore $B \not \subseteq A$ and thus $B \not \subset A$.
 
 :::
 
 ::: {.callout-note icon="false"}
-## Theorem 9
+## Theorem (PSubset-3)
 
-Let $A,B$ be sets. Then $A \subset B$ and $B \subset C$ implies $A \subset C$.
+Let $A,B$ be sets. Then ${A \subset B}$ and ${B \subset C}$ implies ${A \subset C}$.
+
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+By hypothesis we have $A \subseteq B$, $B \subseteq C$, $A \not = B$ and $B \not = C$.
+
+By Theorem (Subset-4) we have $A \subseteq C$ and by the transitivity of equality we have $A \not = C$. Thus $A \subset C$.
 
 :::
 
 ::: {.callout-note icon="false"}
-## Theorem 10
+## Theorem (PSubset-4)
 
-Let $A,B$ be sets. Then $A \subset B$ implies $A \subseteq B$.
+Let $A,B$ be sets. Then ${A \subset B}$ implies ${A \subseteq B}$.
 
+:::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof
+
+A simple one liner, by the definition of proper subset.
 :::

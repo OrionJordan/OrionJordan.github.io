@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Logic – OOMN</title>
+<title>Syntax of First-order Logic – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Logic</h1>
+<h1 class="title">Syntax of First-order Logic</h1>
 </div>
 
 
@@ -173,7 +173,7 @@ window.Quarto = {
 </header>
 
 
-<p>The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas.</p>
+<p>We first examine the language of first-order logic; which defines the list of symbols used in the system, and the rules for how we can combine them into formulas.</p>
 <section id="alphabet" class="level2">
 <h2 class="anchored" data-anchor-id="alphabet">Alphabet</h2>
 <p>We will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic</p>
@@ -185,7 +185,7 @@ window.Quarto = {
 <li><p><strong>Equality -</strong> The equal sign <span class="math inline">=</span>.</p></li>
 </ul>
 <p>Our connectives each have special meanings, <span class="math inline">\land</span> meaning ‘and’, <span class="math inline">\lor</span> meaning ‘or’, <span class="math inline">\implies</span> meaning ‘implies’, <span class="math inline">\iff</span> meaning ‘if and only if’ and <span class="math inline">\lnot</span> meaning ‘not’. We are also given two quantifiers to work with. <span class="math inline">\forall</span> meaning ‘for all’ or ‘for every’, and <span class="math inline">\exists</span> meaning ‘there exists’.</p>
-<p>We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see <span class="math inline">ZFC</span> uses a predicate <span class="math inline">\exists</span> in it’s axioms, so we need an arbitrary predicate in our list of symbols for <span class="math inline">ZFC</span> to use. To be safe we include an infinite list of predicate and function symbols.</p>
+<p>We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see <span class="math inline">ZFC</span> uses a predicate ‘<span class="math inline">\in</span>’ in it’s axioms, so we need an arbitrary predicate in our list of symbols for <span class="math inline">ZFC</span> to use. To be safe we include an infinite list of predicate and function symbols.</p>
 <ul>
 <li><p><strong>Predicates -</strong> An infinite set of predicates <span class="math inline">P_1,P_2,P_3,\dots,P_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
 <li><p><strong>Functions -</strong> An infinite set of functions <span class="math inline">f_1,f_2,f_3,\dots,f_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
@@ -261,19 +261,27 @@ Definition
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <span class="definition">subformula</span> of some formula <span class="math inline">\phi</span> is some consecutive sequence of symbols in <span class="math inline">\phi</span> which form a formula.</p>
+<p>A <span class="definition">bound</span> variable of some formula <span class="math inline">\phi</span> is a variable occurring in the scope of a quantifier.</p>
 </div>
 </div>
-<p>(not quite right)</p>
-<p>For example, the formula</p>
-<p><span class="math display">
-(\exists x P(x)) \land (\forall x P(x,y))
+<p>For example, in the formula <span class="math display">
+\exists x P(x,y)
 </span></p>
-<p>has as subformulas <span class="math inline">\exists x P(x)</span></p>
-</section>
-<section id="truth-and-connectives" class="level2">
-<h2 class="anchored" data-anchor-id="truth-and-connectives">Truth and Connectives</h2>
-<p>Now we’ll look at the actual meaning behind our connectives. A formula is either true or false. There is</p>
+<p>the variable <span class="math inline">x</span> is bound, since it occurs directly after the existential quantifier. The variable <span class="math inline">y</span> however is free, as it is not quantified over. This gives us our next definition.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">free</span> variable of some formula <span class="math inline">\phi</span> is a variable which is not bound.</p>
+</div>
+</div>
+<p>We now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the deductive system of first-order logic.</p>
 </section>
 <section id="sources" class="level2">
 <h2 class="anchored" data-anchor-id="sources">Sources</h2>

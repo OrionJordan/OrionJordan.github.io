@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Orion Jordan – OOMN</title>
+<title>Semantics of FOL – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,8 +70,51 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -80,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">OOMN</span>
     </a>
   </div>
@@ -91,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./qmd/content/index.html"> 
+    <a class="nav-link" href="../../../qmd/content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -108,48 +152,146 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles page-columns page-full">
-  <div class="about-entity">
-    <img src="orion.jpg" class="about-image
-  rounded " style="width: 20em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Orion Jordan</h1>
+<h1 class="title">Semantics of FOL</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/OrionJordan" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.youtube.com/channel/UC5EJ87vBGbDq5DnzUnRj1AA" class="about-link" rel="" target="">
-    <i class="bi bi-youtube"></i>
-     <span class="about-link-text">Youtube</span>
-  </a>
-  <a href="https://math.stackexchange.com/users/1063903/orion-jordan" class="about-link" rel="" target="">
-    <i class="bi bi-stack-overflow"></i>
-     <span class="about-link-text">Math Exchange</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents page-columns page-full"><main class="content page-columns page-full" id="quarto-document-content">
-<div class="column-page">
-<section id="bio" class="level2">
-<h2 data-anchor-id="bio">Bio</h2>
-<p>Undergraduate student at the University of North Texas, majoring in mathematics.</p>
+
+
+<p>The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas.</p>
+<section id="alphabet" class="level2">
+<h2 class="anchored" data-anchor-id="alphabet">Alphabet</h2>
+<p>We will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic</p>
+<ul>
+<li><p><strong>Connectives -</strong> <span class="math inline">\land, \lor, \implies, \iff, \lnot</span></p></li>
+<li><p><strong>Quantifiers -</strong> <span class="math inline">\forall, \exists</span></p></li>
+<li><p><strong>Variables -</strong> An infinite set of variables <span class="math inline">x_1,x_2,x_3,\dots,x_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
+<li><p><strong>Punctuation -</strong> Right <span class="math inline">)</span> and left <span class="math inline">(</span> parenthesis, commas, colons, bars <span class="math inline">\mid</span>, and any other similar symbol.</p></li>
+<li><p><strong>Equality -</strong> The equal sign <span class="math inline">=</span>.</p></li>
+</ul>
+<p>Our connectives each have special meanings, <span class="math inline">\land</span> meaning ‘and’, <span class="math inline">\lor</span> meaning ‘or’, <span class="math inline">\implies</span> meaning ‘implies’, <span class="math inline">\iff</span> meaning ‘if and only if’ and <span class="math inline">\lnot</span> meaning ‘not’. We are also given two quantifiers to work with. <span class="math inline">\forall</span> meaning ‘for all’ or ‘for every’, and <span class="math inline">\exists</span> meaning ‘there exists’.</p>
+<p>We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see <span class="math inline">ZFC</span> uses a predicate ‘<span class="math inline">\in</span>’ in it’s axioms, so we need an arbitrary predicate in our list of symbols for <span class="math inline">ZFC</span> to use. To be safe we include an infinite list of predicate and function symbols.</p>
+<ul>
+<li><p><strong>Predicates -</strong> An infinite set of predicates <span class="math inline">P_1,P_2,P_3,\dots,P_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
+<li><p><strong>Functions -</strong> An infinite set of functions <span class="math inline">f_1,f_2,f_3,\dots,f_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
+</ul>
+<p>Predicates and functions may take any number of variables as arguments, which may be notated in the obvious way <span class="math inline">P(x)</span> for a predicate taking one argument, <span class="math inline">P(x,y)</span> for two, etc. If the number of arguments is irrelevant however we simply write <span class="math inline">P</span>.</p>
+<p>While <span class="math inline">ZFC</span> doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many.</p>
 </section>
-<section id="website" class="level2">
-<h2 data-anchor-id="website">Website</h2>
-<p>This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject. Along with this some miscellaneous math projects, like my preparation for the integration bee, will be hosted here!</p>
+<section id="formulas" class="level2">
+<h2 class="anchored" data-anchor-id="formulas">Formulas</h2>
+<p>The syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like</p>
+<p><span class="math display">
+\forall \forall \exists ((\lnot\iff =x \exists)
+</span></p>
+<p>which are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">well-formed formula</span> usually abbreviated <em>wff</em> or just <em>formula</em>, is a string of characters formed by the following recursive rules:</p>
+<p>If <span class="math inline">x</span> and <span class="math inline">y</span> are variables, then</p>
+<ul>
+<li><span class="math inline">x = y</span></li>
+</ul>
+<p>is a formula. Given a predicate <span class="math inline">P</span> taking <span class="math inline">n</span> arguments, and <span class="math inline">n</span> variables <span class="math inline">x_1,x_2,\dots,x_n</span></p>
+<ul>
+<li><span class="math inline">P(x_1,x_2,\dots,x_n)</span></li>
+</ul>
+<p>Is a formula. Given a predicate <span class="math inline">P</span> and a variable <span class="math inline">x</span>, we can create the following formulas</p>
+<ul>
+<li><span class="math inline">\forall x P</span></li>
+<li><span class="math inline">\exists x P</span>.</li>
+<li><span class="math inline">\lnot P</span></li>
+</ul>
+<p>And finally given two formulas <span class="math inline">\phi</span> and <span class="math inline">\psi</span>, the following are formulas</p>
+<ul>
+<li><span class="math inline">\phi \land \psi</span></li>
+<li><span class="math inline">\phi \lor \psi</span></li>
+<li><span class="math inline">\phi \implies \psi</span></li>
+<li><span class="math inline">\phi \iff \psi</span></li>
+</ul>
+</div>
+</div>
+<p>Using these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in <em>bound</em> and <em>free</em> variables.</p>
+</section>
+<section id="bound-and-free-variables" class="level2">
+<h2 class="anchored" data-anchor-id="bound-and-free-variables">Bound and Free variables</h2>
+<p>Variables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus <em>bound</em> to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation</p>
+<p><span class="math display">
+\sum_{k=1}^{10} f(k,n).
+</span></p>
+<p>The variable <span class="math inline">k</span> is bound and acts as a placeholder for a value between <span class="math inline">1</span> and <span class="math inline">10</span>. The variable <span class="math inline">n</span> however is free, it is not quantified and the value of the expression depends on the value of <span class="math inline">n</span>. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence</p>
+<p><span class="math display">
+\text{Lisa found her book}.
+</span></p>
+<p>The pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence</p>
+<p><span class="math display">
+\text{Jane hurt herself}.
+</span></p>
+<p>In this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">bound</span> variable of some formula <span class="math inline">\phi</span> is a variable occurring in the scope of a quantifier.</p>
+</div>
+</div>
+<p>For example, in the formula <span class="math display">
+\exists x P(x,y)
+</span></p>
+<p>the variable <span class="math inline">x</span> is bound, since it occurs directly after the existential quantifier. The variable <span class="math inline">y</span> however is free, as it is not quantified over. This gives us our next definition.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">free</span> variable of some formula <span class="math inline">\phi</span> is a variable which is not bound.</p>
+</div>
+</div>
+<p>We now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the semantics of first-order logic.</p>
+</section>
+<section id="sources" class="level2">
+<h2 class="anchored" data-anchor-id="sources">Sources</h2>
+<p>https://en.wikipedia.org/wiki/Free_variables_and_bound_variables</p>
+<p>Kunen 1980</p>
 
 
 </section>
-</div>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -314,6 +456,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

@@ -1,0 +1,194 @@
+---
+title: "Deductive System"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+A deductive system allows us to transform one formula into another, using only the syntax we developed previously. It allows us to reason about formulas and create proofs of assertions. If our deductive system transforms some collection of formulas $\Gamma$ into some formula $\phi$ we write
+
+$$
+\Gamma \vdash \phi
+$$
+
+and say that $\Gamma$ _derives_ $\phi$ from either rules of inference or logical axioms. If $S$ is empty, then we write $\vdash \phi$ and say $\phi$ is _logically valid_. Intuitively, we think of $S$ as being our hypothesis, and $\phi$ being our conclusion. 
+
+The deductive system formulated here comes from [Stanford Classical Logic], and is a kind of sequent calculus using natural deduction. 
+
+## Rules of inference
+
+A rule of inference states that given some formula or collection of formulas, another formula can be derived as a conclusion. This is in contrast to logical axioms, which are assertions of the form $\vdash \phi$. 
+
+The deductive system described here is known as natural deduction, meaning it contains exclusively rules of inference based on the 'natural' way of reasoning. We begin with our first rule:
+
+::: {.callout-important icon="false"}
+## Rule of Assumption (As) 
+
+Let $\Gamma$ be some collection of sentences containing $\phi$. Then
+
+$$
+\Gamma \vdash \phi
+$$
+
+:::
+
+Thus every premise follows from itself, which seems fair enough. 
+
+### Connectives
+
+Next we introduce two rules for each coonnective, which will tell us how these symbols work. Our first rule will tell us how to introduce each symbol, and the next how to eliminate it.
+
+::: {.callout-important icon="false"}
+## And-Introduction ($\land$I) 
+
+If $\Gamma_1 \vdash \phi$ and $\Gamma_2 \vdash \psi$ then
+
+$$
+\Gamma_1 , \Gamma_2 \vdash \phi \land \psi
+$$
+
+:::
+
+::: {.callout-important icon="false"}
+## And-Elimination ($\land$E) 
+
+If $\Gamma \vdash \phi \land \psi$ then
+
+$$
+\Gamma \vdash \phi \quad \text{ and } \quad \Gamma \vdash \psi
+$$
+
+:::
+
+We take $\land$ to be the logical symbol meaning 'and'. If one has deduced the formula $\phi \land \psi$, then we have deduced $\phi$ and $\psi$. Conversely if we have $\phi$ and $\psi$, then we have $\phi \land \psi$.
+
+::: {.callout-important icon="false"}
+## Or-Introduction ($\lor$I) 
+
+If $\Gamma \vdash \phi$ and $\psi$ is a formula, then
+
+$$
+\Gamma  \vdash \phi \lor \psi
+$$
+
+Additionally if $\Gamma \vdash \psi$ and $\phi$ is a formula, then
+
+$$
+\Gamma  \vdash \phi \lor \psi
+$$
+
+:::
+
+::: {.callout-important icon="false"}
+## Or-Elimination ($\lor$E) 
+
+If $\Gamma_1 \vdash \phi \lor \psi$ and $\Gamma_2, \phi \vdash \theta$ and $\Gamma_3, \psi \vdash \theta$ then
+
+$$
+\Gamma_1,\Gamma_2,\Gamma_3 \vdash \theta
+$$
+
+:::
+
+We take $\land$ to be the logical symbol for 'or'. If we have either $\phi$ or $\psi$ as formulas, we have $\phi \lor \psi$. Or-elimination is more complicated. If we introduce a third formula $\theta$ such that $\phi$ and $\psi$ deduce $\theta$, then regardless of which of $\phi$ or $\psi$ are true, $\theta$ will be true regardless. Then we can eliminate the $\land$ conjugate.
+
+::: {.callout-important icon="false"}
+## Implies-Introduction ($\implies$I) 
+
+If $\Gamma, \phi \vdash \psi$ then
+$$
+\Gamma \vdash \phi \implies \psi
+$$
+
+:::
+
+::: {.callout-important icon="false"}
+## Modus ponens (MP)
+
+If $\Gamma_1 \vdash \phi \implies \psi$ and $\Gamma_2 \vdash \phi$ then
+$$
+\Gamma_1,\Gamma_2 \vdash \psi
+$$
+
+:::
+
+The $\implies$ conjugate corresponds to the english 'implication'. If we know $\phi \implies \psi$ and know $\phi$, then we can conclude $\psi$. The elimination rule is known as Modus ponens, and is a rule of inference known since antiquity.
+
+::: {.callout-important icon="false"}
+## Negation-introduction ($\lnot$I)
+
+If $\Gamma_1, \phi \vdash \psi$ and $\Gamma_2, \phi \vdash \lnot\psi$ then
+$$
+\Gamma_1,\Gamma_2 \vdash \lnot \phi
+$$
+
+:::
+
+Recall the $\lnot$ conjugate corresponds to the english 'negation'. If we have that $\phi$ implies both $\psi$ and $\lnot \psi$, then we would have a contradiction! Thus $\phi$ must be incorrect. This is the idea behind proofs by contradiction. We do not have a rule for negation elimination, but we do when dealing with pairs of negatives.
+
+::: {.callout-important icon="false"}
+## Double negation-elimination (DNE)
+
+If $\Gamma \vdash \lnot\lnot\phi$ then
+$$
+\Gamma \vdash \phi
+$$
+
+:::
+
+This is a standard law in classical logic, but is controversial among logicians and philosophers. Intuitionist logics do not admit this rule of inference, and constructive mathematics is (roughly) the study of mathematics without double negation elimination.
+
+### Quantifiers
+
+Next we examine rules about our quantifiers. Let $\theta$ be a formula, $v$ to be a variable and $t$ to be a term (variable or constant). 
+
+::: {.callout-important icon="false"}
+## Universal-introduction ($\forall$I)
+
+For any closed $t$, if $\Gamma \vdash \theta[v\vert t]$ then
+$$
+\Gamma \vdash \forall v \theta
+$$
+
+provided that $t$ is not in $v$ or $\theta$.
+:::
+
+Universal introduction corresponds to common inference in mathematics. If we start a proof with 'let $n$ be some natural number' and deduce some property of $n$ without assuming anything about $n$, then we have shown that property to be true of all natural numbers since our choice of $n$ was arbitrary.
+
+::: {.callout-important icon="false"}
+## Universal-elimination ($\forall$E)
+
+If $\Gamma \vdash \forall v \theta$ then
+$$
+\Gamma \vdash \theta[v\vert t]
+$$
+
+for any closed term $t$.
+:::
+
+Universal elimination, also known as universal instantiation or universal specification, states that is some property is true for all variables $v$, then it holds for some specific term $t$.
+
+::: {.callout-important icon="false"}
+## Exstitential-introduction ($\exists$I)
+
+For any closed $t$, if $\Gamma \vdash \theta[v\vert t]$ then
+$$
+\Gamma \vdash \exists v \theta(v)
+$$
+
+:::
+
+::: {.callout-important icon="false"}
+## Exstitential-elimination ($\exists$E)
+
+For any closed $t$, if $\Gamma \vdash \theta[v\vert t]$ then
+$$
+\Gamma \vdash \exists v \theta(v)
+$$
+
+:::
+
+## References
+
+Shapiro, Stewart and Teresa Kouri Kissel, "Classical Logic", The Stanford Encyclopedia of Philosophy (Fall 2025 Edition), Edward N. Zalta & Uri Nodelman (eds.), https://plato.stanford.edu/archives/fall2025/entries/logic-classical/

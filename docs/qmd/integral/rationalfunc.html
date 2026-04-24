@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Orion Jordan – OOMN</title>
+<title>Integrating Rational Functions – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,18 +70,61 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">OOMN</span>
     </a>
   </div>
@@ -91,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./qmd/content/index.html"> 
+    <a class="nav-link" href="../../qmd/content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -106,50 +150,361 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#history" id="toc-history" class="nav-link active" data-scroll-target="#history">History</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems">Problems</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<div class="quarto-about-trestles page-columns page-full">
-  <div class="about-entity">
-    <img src="orion.jpg" class="about-image
-  rounded " style="width: 20em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Orion Jordan</h1>
+<h1 class="title">Integrating Rational Functions</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/OrionJordan" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.youtube.com/channel/UC5EJ87vBGbDq5DnzUnRj1AA" class="about-link" rel="" target="">
-    <i class="bi bi-youtube"></i>
-     <span class="about-link-text">Youtube</span>
-  </a>
-  <a href="https://math.stackexchange.com/users/1063903/orion-jordan" class="about-link" rel="" target="">
-    <i class="bi bi-stack-overflow"></i>
-     <span class="about-link-text">Math Exchange</span>
-  </a>
-</div>
-  </div>
-  <div class="about-contents page-columns page-full"><main class="content page-columns page-full" id="quarto-document-content">
-<div class="column-page">
-<section id="bio" class="level2">
-<h2 data-anchor-id="bio">Bio</h2>
-<p>Undergraduate student at the University of North Texas, majoring in mathematics.</p>
+
+
+<p>We look at the first class of functions we hope to integrate, rational functions. Rational functions are functions in the form <span class="math inline">f(x) = P(x)/Q(x)</span> where <span class="math inline">P(x)</span> and <span class="math inline">Q(x)</span> are polynomials. By the end of the section, we hope to be able to find the solution to any integral in the form</p>
+<p><span class="math display">
+\int \frac{P(x)}{Q(x)} \,dx
+</span></p>
+<section id="history" class="level2">
+<h2 class="anchored" data-anchor-id="history">History</h2>
+<p>The problem of integrating these functions was attempted by both Newton and Leibniz, although no complete algorithm was found. In 1703, Johan Bernoulli published “Acta Eruditorum” which described the method of partial fractions, allowing us to factor a rational function into a finite summand of rational functions with denominators of either linear or quadratic factors. For example, given the integral</p>
+<p><span class="math display">
+\int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}}
+</span></p>
+<p>if we apply break up the fraction</p>
+<p><span class="math display">
+\frac{{3x + 11}}{{{x^2} - x - 6}} = \frac{4}{x - 3} - \frac{1}{x + 2}
+</span></p>
+<p>The solution becomes trivial</p>
+<p><span class="math display">
+\int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
+</span></p>
+<p>Finding ways to break up the fractions is known as <span class="definition"><strong>partial fraction decomposition</strong></span>.</p>
 </section>
-<section id="website" class="level2">
-<h2 data-anchor-id="website">Website</h2>
-<p>This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject. Along with this some miscellaneous math projects, like my preparation for the integration bee, will be hosted here!</p>
+<section id="method" class="level2">
+<h2 class="anchored" data-anchor-id="method">Method</h2>
+<p>When given an integral in the form</p>
+<p><span class="math display">
+\int \frac{P(X)}{Q(X)} \, dx
+</span></p>
+<p>Where <span class="math inline">P(x)</span> and <span class="math inline">Q(x)</span> are polynomials such that the degree of <span class="math inline">Q(x)</span> is higher than the degree of <span class="math inline">P(x)</span>. We can decompose the fraction based on the factors of <span class="math inline">Q(x)</span>. There are four cases for the factors of <span class="math inline">Q(x)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Decomposition cases
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p><strong>Case I: Distinct linear factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has distinct linear factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a_1 x + b_1)(a_2 x + b_2)
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A}{a_1x + b_1} + \frac{B}{a_2x + b_2}
+</span></p>
+<p><strong>Case 2: Repeated linear factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has repeated linear factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a x + b)^k
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A_1}{ax + b} + \frac{A_2}{(ax + b)^2} + \cdots + \frac{A_k}{(a x + b)^k}
+</span></p>
+<p><strong>Case 3: Distinct quadratic factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has distinct quadratic factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A_1x + B_1}{a_1 x^2 + b_1x + c_1} + \frac{A_2x + B_2}{a_2 x^2 + b_2x + c_2}
+</span></p>
+<p><strong>Case 4: Repeated quadratic factors</strong></p>
+<p>When <span class="math inline">Q(x)</span> has repeated quadratic factors, i.e.</p>
+<p><span class="math display">
+Q(x) = (a x^2 + bx + c)^k
+</span></p>
+<p>We decompose into the following terms</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A_1x + B_1}{a x^2 + bx + c} + \cdots + \frac{A_kx + B_k}{(a x^2 + bx + c)^k}
+</span></p>
+</div>
+</div>
+</div>
+<p>Note that <span class="math inline">Q(x)</span> may contain multiple cases to factor. For example</p>
+<p><span class="math display">
+Q(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2
+</span></p>
+<p>Will decompose into</p>
+<p><span class="math display">
+\frac{P(x)}{Q(x)} = \frac{A}{a_1x + b_1} + \frac{Bx + C}{a_2 x^2 + b_2x + c_2} + \frac{Dx + E}{(a_2 x^2 + b_2x + c_2)^2}
+</span></p>
+<p>Next we need a method for finding the value of the constants in the numerator.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Evaluating constants
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Consider the integral from the beginning</p>
+<p><span class="math display">
+\int \frac{3x + 11}{x^2 - x - 6} \,dx
+</span></p>
+<p>We can now decompose the integrand to obtain</p>
+<p><span class="math display">
+\frac{3x + 11}{x^2 - x - 6} = \frac{A}{x - 3} + \frac{B}{x + 2}
+</span></p>
+<p>The problem is now finding values for the constants <span class="math inline">A,B</span> which make the relation true. By cross multiplying the right side of the equation we get</p>
+<p><span class="math display">
+\frac{3x + 11}{x^2 - x - 6} = \frac{A(x + 2) + B(x - 3)}{(x - 3)(x + 2)}
+</span></p>
+<p>Which simplifies to</p>
+<p><span class="math display">
+3x + 11 = A(x + 2) + B(x - 3).
+</span></p>
+<p>We can then create a system of equations such that the above expression is always true. This method is long but will always work. The faster method (that isn’t always possible) is to find values of <span class="math inline">x</span> such that the equation reduces. Using the faster method, we obtain</p>
+<p><span class="math display">
+x = 3 \: : \: 3(3) + 11 = A(3 + 2) + B(3 - 3) \implies A = 4\\
+x = -2 \: : \: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \implies B = -1
+</span></p>
+<p>Which gives us our final expression</p>
+<p><span class="math display">
+\frac{3x + 11}{x^2 - x - 6} = \frac{4}{x - 3} - \frac{1}{x + 2}
+</span></p>
+<p>Which as shown above, makes the integral trivial to solve.</p>
+<p><span class="math display">
+\int{{\frac{{3x + 11}}{{{x^2} - x - 6}}\,dx}} = 4\ln |x - 3| - \ln |x + 2| + C.
+</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">Problems</h2>
+<p>These problems are very tedious, and I opted not to include too many as distinct linear factors are the most common use of partial fractions.</p>
+<section id="integrals-involving-distinct-linear-factors" class="level4">
+<h4 class="anchored" data-anchor-id="integrals-involving-distinct-linear-factors">Integrals involving distinct linear factors</h4>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 101
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{1}{(x-1)(x-2)} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 102
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{1}{(x+a)(x+b)} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 103
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x-9}{(x+5)(x-2)} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 104
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x+c}{(x+a)(x+b)} \, dx
+</span></p>
+</div>
+</div>
+</section>
+<section id="integrals-involving-repeated-linear-factors" class="level4">
+<h4 class="anchored" data-anchor-id="integrals-involving-repeated-linear-factors">Integrals involving repeated linear factors</h4>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 105
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x^2 - x + 1}{(x+1)^3} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 106
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x + 7}{x^2(x+2)} \, dx
+</span></p>
+</div>
+</div>
+</section>
+<section id="integrals-involving-distinct-quadratic-factors" class="level4">
+<h4 class="anchored" data-anchor-id="integrals-involving-distinct-quadratic-factors">Integrals involving distinct quadratic factors</h4>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 107 - Joe Foster (Integration by parts - C3)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \, dx
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We can break up the integral as it contains distinct quadratic factors.</p>
+<p><span class="math display">
+\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} =  \frac{Ax + B}{x^2 + 1} + \frac{Cx + D}{x^2 + 2}
+</span></p>
+<p>Cross multiplying <span class="math display">
+x^3 + x^2 + 2x + 1 = (Ax + B)(x^2 + 2) + (Cx + D)(x^2 + 1)
+</span></p>
+<p>Gives us the following system of equations</p>
+<span class="math display">\begin{array}{ll}
+x^3  &amp; = (A + C)x^3\\
+x^2 &amp; = (B + D)x^2\\
+2x &amp; = (2A + C)x \\
+1 &amp; = (2B + D)
+\end{array}</span>
+<p>Solving the system yields</p>
+<span class="math display">\begin{array}{ll}
+A = 1  &amp; B = 0\\
+C = 0 &amp; D = 1
+\end{array}</span>
+<p>This solves our decomposition. We now have to integrate</p>
+<p><span class="math display">
+\int \frac{x}{x^2 + 1} + \frac{1}{x^2 + 2} \, dx
+</span></p>
+<p>The first term can be solved by the substitution <span class="math inline">u = x^2</span>, and the second term can be evaluated with an <span class="math inline">\arctan x</span>. This gives us</p>
+<p><span class="math display">
+\int \frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \, dx = \frac{1}{2}\ln |x^2 + 1| + \frac{1}{\sqrt{2}} \arctan \left( \frac{x}{\sqrt{2}} \right) + C
+</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="integrals-involving-repeated-quadratic-factors" class="level4">
+<h4 class="anchored" data-anchor-id="integrals-involving-repeated-quadratic-factors">Integrals involving repeated quadratic factors</h4>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Problem 108
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Evaluate the following integral</p>
+<p><span class="math display">
+\int \frac{x^3 + 10x^2 + 3x + 36}{(x - 1)(x^2 + 4)^2} \, dx
+</span></p>
+</div>
+</div>
 
 
 </section>
-</div>
-</main></div>
-</div>
- <!-- /main -->
+</section>
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -314,6 +669,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

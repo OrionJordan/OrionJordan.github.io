@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Orion Jordan",
     "section": "",
-    "text": "Undergraduate student at the University of North Texas, majoring in mathematics.\n\n\n\nThis is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject."
+    "text": "Undergraduate student at the University of North Texas, majoring in mathematics.\n\n\n\nThis is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject. Along with this some miscellaneous math projects, like my preparation for the integration bee, will be hosted here!"
   },
   {
     "objectID": "index.html#todo",
@@ -2122,7 +2122,7 @@
     "href": "index.html#website",
     "title": "Orion Jordan",
     "section": "",
-    "text": "This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject."
+    "text": "This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject. Along with this some miscellaneous math projects, like my preparation for the integration bee, will be hosted here!"
   },
   {
     "objectID": "qmd/realanal/constuction/motivation.html",
@@ -2533,14 +2533,14 @@
     "href": "qmd/settheory/intro.html",
     "title": "Set Theory",
     "section": "",
-    "text": "This section covers ZFC set theory, and constructs the foundations of mathematics from 9 axioms. Topics include basic properties of sets, functions and relations and ordinal and cardinal numbers."
+    "text": "This section covers ZFC set theory, and constructs the foundations of mathematics from 9 axioms.\nTopics include basic logic, properties of sets, functions and relations, and ordinal and cardinal numbers."
   },
   {
     "objectID": "qmd/settheory/intro.html#table-of-contents",
     "href": "qmd/settheory/intro.html#table-of-contents",
     "title": "Set Theory",
     "section": "Table of Contents",
-    "text": "Table of Contents\n\nIntroduction\n\nHistory\nFirst-order Logic\nRelationsip between FOL and ZFC\n\nBasic Axioms and Operations\n\nPrimitive notions / Set containment\nPreview of Axioms X\nAxioms of Extension and Specification\nSubsets\nIntersections and Differences X\nAxiom of Pairing X\nAxiom of Union X\nAxiom of Powerset X\nCartesian Sets X\nAxiom of Regularity X\n\nRelations and Functions\nOrdinal Numbers\nCardinal Numbers\n\nEquinumerosity X\nEquinumerosity Arithmetic X\nEquinumerosity Ordering\n\nFinite Sets"
+    "text": "Table of Contents\n\nLogic\n\nIntroduction\nSyntax of First-order Logic\nDeductive System of First-order Logic\nSemantics and Models\n\nBasic Axioms and Operations\n\nRelationship between ZFC and FOL\nPreview of Axioms X\nAxioms of Extension and Specification\nSubsets\nIntersections and Differences X\nAxiom of Pairing X\nAxiom of Union X\nAxiom of Powerset X\nCartesian Sets X\nAxiom of Regularity X\n\nRelations and Functions\nOrdinal Numbers\nCardinal Numbers\n\nEquinumerosity X\nEquinumerosity Arithmetic X\nEquinumerosity Ordering\n\nFinite Sets"
   },
   {
     "objectID": "qmd/realanal/topology/density.html#properties",
@@ -3196,9 +3196,9 @@
   {
     "objectID": "qmd/settheory/logic/logic.html",
     "href": "qmd/settheory/logic/logic.html",
-    "title": "Logic",
+    "title": "Introduction",
     "section": "",
-    "text": "First-order logic is the standard system and language used in mathematics. Logic provides the tools we need to define, as best we can, what a proposition is, what truth is, and how to quantify expressions. Logic, and moreover mathematical logic, are fields of study in their own right far too large to be described fully in this section. Instead, we will be examining the minimum amount of logic needed to provide as a framework on which to build ZFC set theory on top of.\n(TO-DO)\nRewrite to be less bad. Talk about lack of definitions for string and stuff. Philosophicle mumbo jumbo.\nMaybe add ZFC and FOL before intro to logic, talk about math being built on philosophy, a language, then truth. Talk about meta theories."
+    "text": "Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.\nZermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.\nIn this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as ZFC, and has become the standard axiomatization for mathematics. Before we look at the axioms of ZFC or their consequences we must first examine axiomatic systems as a whole, and the logical foundations needed to state our axioms."
   },
   {
     "objectID": "qmd/settheory/logic/logic.html#first-order-theories",
@@ -3238,9 +3238,9 @@
   {
     "objectID": "qmd/settheory/logic/intro.html",
     "href": "qmd/settheory/logic/intro.html",
-    "title": "Set Theory",
+    "title": "Introduction",
     "section": "",
-    "text": "This section covers ZFC set theory, and constructs the foundations of mathematics from 9 axioms. Topics include basic properties of sets, functions and relations and ordinal and cardinal numbers."
+    "text": "Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.\nZermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.\nIn this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as ZFC, and has become the standard axiomatization for mathematics. Before we look at the axioms of ZFC or their consequences we must first examine the logical foundations needed to state our axioms."
   },
   {
     "objectID": "qmd/settheory/logic/intro.html#table-of-contents",
@@ -3252,9 +3252,9 @@
   {
     "objectID": "qmd/settheory/logic/intro.html#references",
     "href": "qmd/settheory/logic/intro.html#references",
-    "title": "Set Theory",
+    "title": "Introduction",
     "section": "References",
-    "text": "References\nNaive Set Theory - Paul Hermas - 1960"
+    "text": "References\n[Kunen 1980] [Open Logic Project]"
   },
   {
     "objectID": "qmd/settheory/logic/logic.html#symbols",
@@ -3282,14 +3282,14 @@
     "href": "qmd/settheory/axioms/subsets.html#properties",
     "title": "Subsets",
     "section": "Properties",
-    "text": "Properties\nNow we can take a look at some properties of subsets.\n\n\n\n\n\n\nTheorem 3\n\n\n\nLet A be a set. Then A \\subseteq A.\n\n\n\n\n\n\n\n\nTheorem 4\n\n\n\nLet A,B be sets. If A \\subseteq B and B \\subseteq A, then A = B.\n\n\n\n\n\n\n\n\nTheorem 5\n\n\n\nLet A be a set. If A \\subseteq \\varnothing then A = \\varnothing.\n\n\n\n\n\n\n\n\nTheorem 6\n\n\n\nLet A,B and C be sets. If A \\subseteq B and B \\subseteq C, then A \\subseteq C."
+    "text": "Properties\nNow we can take a look at some properties of subsets.\n\n\n\n\n\n\nTheorem (Subset-1)\n\n\n\nLet A be a set. Then A \\subseteq A.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nIt a logical tautology that\n\n\\forall x (x \\in A \\implies x \\in A)\n\nthus by our definition of a subset, A \\subseteq A.\n\n\n\n\n\n\n\n\n\nTheorem (Subset-2)\n\n\n\nLet A,B be sets. If A \\subseteq B and B \\subseteq A, then A = B.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy our hypothesis, we have\n\n\\forall x (x \\in A \\implies x \\in B)\n\nand\n\n\\forall x (x \\in B \\implies x \\in A)\n\nThus we have\n\n\\forall x (x \\in B \\iff x \\in A)\n\nand by instantiating the Axiom of Extensionality we have\n\nA = B.\n\n\n\n\n\n\n\n\n\n\nTheorem (Subset-3)\n\n\n\nLet A be a set. If A \\subseteq \\varnothing then A = \\varnothing.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have\n\n\\forall x (x \\in A \\implies x \\in \\varnothing).\n\nBy the definition of the empty set, we have\n\n\\forall x (x \\not \\in \\varnothing)\n\nthus\n\n\\forall x (x \\not \\in A)\n\nand so by the definition of the empty set\n\nA = \\varnothing.\n\n\n\n\n\n\n\n\n\n\nTheorem (Subset-4)\n\n\n\nLet A,B and C be sets. If {A \\subseteq B} and {B \\subseteq C}, then {A \\subseteq C}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have\n\n\\forall x (x \\in A \\implies x \\in B)\n\nand\n\n\\forall x (x \\in B \\implies x \\in C).\n\nBy modus ponens, we have\n\n\\forall x (x \\in A \\implies x \\in C)\n\nand by our definition of a subset\n\nA \\subseteq C."
   },
   {
     "objectID": "qmd/settheory/axioms/subsets.html#proper-subsets",
     "href": "qmd/settheory/axioms/subsets.html#proper-subsets",
     "title": "Subsets",
     "section": "Proper Subsets",
-    "text": "Proper Subsets\n\n\n\n\n\n\nDefinition\n\n\n\nA proper subset A of a set B is some set such that A \\subseteq B and A \\not = B. Formally\n\nA \\subset B \\iff A \\subseteq B \\land A \\not = B.\n\n\n\n\n\n\n\n\n\nTheorem 7\n\n\n\nLet A be a set. Then A \\not \\subset A.\n\n\n\n\n\n\n\n\nTheorem 8\n\n\n\nLet A,B be sets. Then A \\subset B implies B \\not \\subset A.\n\n\n\n\n\n\n\n\nTheorem 9\n\n\n\nLet A,B be sets. Then A \\subset B and B \\subset C implies A \\subset C.\n\n\n\n\n\n\n\n\nTheorem 10\n\n\n\nLet A,B be sets. Then A \\subset B implies A \\subseteq B."
+    "text": "Proper Subsets\nOccansionally we want to specify that we have a subset A of B such that A \\not = B. This is where proper subsets come in.\n\n\n\n\n\n\nDefinition\n\n\n\nA proper subset A of a set B is some set such that A \\subseteq B and A \\not = B. Formally\n\nA \\subset B \\iff A \\subseteq B \\land A \\not = B.\n\n\n\nThe notation for proper subsets differs from source to source. Some authors chose to use the less ambiguous \\subsetneq and use \\subset to refer to any subset. The notation used here is motivated by the &lt;,\\leq relation.\n\n\n\n\n\n\nTheorem (PSubset-1)\n\n\n\nLet A be a set. Then A \\not \\subset A.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nWe have by logic\n\n\\forall A (A = A)\n\nThus for all A, A \\not \\subset A.\n\n\n\n\n\n\n\n\n\nTheorem (PSubset-2)\n\n\n\nLet A,B be sets. Then {A \\subset B} implies {B \\not \\subset A}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have that A \\subseteq B and A \\not = B. We need to show that either B \\subseteq A or B \\not= A do not hold. Since we have B \\not = A by our hypothesis, we must show B \\not \\subseteq A.\nWe do this by contradiction. If B \\subseteq A then by Theorem (Subset-2) we would have A = B. This contradicts our hypothesis, therefore B \\not \\subseteq A and thus B \\not \\subset A.\n\n\n\n\n\n\n\n\n\nTheorem (PSubset-3)\n\n\n\nLet A,B be sets. Then {A \\subset B} and {B \\subset C} implies {A \\subset C}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have A \\subseteq B, B \\subseteq C, A \\not = B and B \\not = C.\nBy Theorem (Subset-4) we have A \\subseteq C and by the transitivity of equality we have A \\not = C. Thus A \\subset C.\n\n\n\n\n\n\n\n\n\nTheorem (PSubset-4)\n\n\n\nLet A,B be sets. Then {A \\subset B} implies {A \\subseteq B}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nA simple one liner, by the definition of proper subset."
   },
   {
     "objectID": "qmd/settheory/logic/logic.html#introduction",
@@ -3315,30 +3315,30 @@
   {
     "objectID": "qmd/settheory/logic/syntax.html",
     "href": "qmd/settheory/logic/syntax.html",
-    "title": "Logic",
+    "title": "Syntax of First-order Logic",
     "section": "",
-    "text": "The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas."
+    "text": "We first examine the language of first-order logic; which defines the list of symbols used in the system, and the rules for how we can combine them into formulas."
   },
   {
     "objectID": "qmd/settheory/logic/syntax.html#alphabet",
     "href": "qmd/settheory/logic/syntax.html#alphabet",
-    "title": "Logic",
+    "title": "Syntax of First-order Logic",
     "section": "Alphabet",
-    "text": "Alphabet\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate \\exists in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many."
+    "text": "Alphabet\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate ‘\\in’ in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many."
   },
   {
     "objectID": "qmd/settheory/logic/syntax.html#formulas",
     "href": "qmd/settheory/logic/syntax.html#formulas",
-    "title": "Logic",
+    "title": "Syntax of First-order Logic",
     "section": "Formulas",
     "text": "Formulas\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas \\phi and \\psi, the following are formulas\n\n\\phi \\land \\psi\n\\phi \\lor \\psi\n\\phi \\implies \\psi\n\\phi \\iff \\psi\n\n\n\nUsing these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in bound and free variables."
   },
   {
     "objectID": "qmd/settheory/logic/syntax.html#bound-and-free-variables",
     "href": "qmd/settheory/logic/syntax.html#bound-and-free-variables",
-    "title": "Logic",
+    "title": "Syntax of First-order Logic",
     "section": "Bound and Free variables",
-    "text": "Bound and Free variables\nVariables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus bound to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation\n\n\\sum_{k=1}^{10} f(k,n).\n\nThe variable k is bound and acts as a placeholder for a value between 1 and 10. The variable n however is free, it is not quantified and the value of the expression depends on the value of n. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence\n\n\\text{Lisa found her book}.\n\nThe pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence\n\n\\text{Jane hurt herself}.\n\nIn this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.\n\n\n\n\n\n\nDefinition\n\n\n\nA subformula of some formula \\phi is some consecutive sequence of symbols in \\phi which form a formula.\n\n\n(not quite right)\nFor example, the formula\n\n(\\exists x P(x)) \\land (\\forall x P(x,y))\n\nhas as subformulas \\exists x P(x)"
+    "text": "Bound and Free variables\nVariables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus bound to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation\n\n\\sum_{k=1}^{10} f(k,n).\n\nThe variable k is bound and acts as a placeholder for a value between 1 and 10. The variable n however is free, it is not quantified and the value of the expression depends on the value of n. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence\n\n\\text{Lisa found her book}.\n\nThe pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence\n\n\\text{Jane hurt herself}.\n\nIn this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.\n\n\n\n\n\n\nDefinition\n\n\n\nA bound variable of some formula \\phi is a variable occurring in the scope of a quantifier.\n\n\nFor example, in the formula \n\\exists x P(x,y)\n\nthe variable x is bound, since it occurs directly after the existential quantifier. The variable y however is free, as it is not quantified over. This gives us our next definition.\n\n\n\n\n\n\nDefinition\n\n\n\nA free variable of some formula \\phi is a variable which is not bound.\n\n\nWe now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the deductive system of first-order logic."
   },
   {
     "objectID": "qmd/settheory/logic/syntax.html#truth-and-connectives",
@@ -3350,7 +3350,7 @@
   {
     "objectID": "qmd/settheory/logic/syntax.html#sources",
     "href": "qmd/settheory/logic/syntax.html#sources",
-    "title": "Logic",
+    "title": "Syntax of First-order Logic",
     "section": "Sources",
     "text": "Sources\nhttps://en.wikipedia.org/wiki/Free_variables_and_bound_variables\nKunen 1980"
   },
@@ -3467,7 +3467,7 @@
     "href": "qmd/integral/intro.html#table-of-contents",
     "title": "Integration Bee",
     "section": "Table of Contents",
-    "text": "Table of Contents\n\nExplicit Integrals\n\nFundamentals\nInverse power rule\nLogarithms and Exponents\nTrigonometric Functions\n\nGeneral methods\n\nSubstitution\nIntegration by parts\nPartial fraction decomposition\n\nSpecialized methods\n\nTrigonometric Identities and powers\nTrigonometric Substitution\nCompleting the square.\nWeirstrass Substitution",
+    "text": "Table of Contents\n\nExplicit Integrals\n\nFundamentals\nInverse power rule\nLogarithms and Exponents\nTrigonometric Functions\n\nGeneral methods\n\nSubstitution\nIntegration by parts\nPartial fraction decomposition\n\nSpecialized methods\n\nTrigonometric Identities and powers\nTrigonometric Substitution\nCompleting the square.\nWeirstrass Substitution\n\nBy hand\n\nMethods",
     "crumbs": [
       "Integration Bee"
     ]
@@ -4401,5 +4401,138 @@
       "**Specialized Methods**",
       "Completing the Square"
     ]
+  },
+  {
+    "objectID": "qmd/to-do.html",
+    "href": "qmd/to-do.html",
+    "title": "TO-DO",
+    "section": "",
+    "text": "Elementary Antiderivatives\nList integration bee practice, further research into elementary functions, theorems, Rische algorithm, all questions about elementary antiderivatives.\nSet Theory\nFinish Suppes\nReal Analysis\nInclude more content, fix content to align directly from Set Theory"
+  },
+  {
+    "objectID": "qmd/settheory/logic/semantics.html",
+    "href": "qmd/settheory/logic/semantics.html",
+    "title": "Semantics of FOL",
+    "section": "",
+    "text": "The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas."
+  },
+  {
+    "objectID": "qmd/settheory/logic/semantics.html#alphabet",
+    "href": "qmd/settheory/logic/semantics.html#alphabet",
+    "title": "Semantics of FOL",
+    "section": "Alphabet",
+    "text": "Alphabet\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate ‘\\in’ in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many."
+  },
+  {
+    "objectID": "qmd/settheory/logic/semantics.html#formulas",
+    "href": "qmd/settheory/logic/semantics.html#formulas",
+    "title": "Semantics of FOL",
+    "section": "Formulas",
+    "text": "Formulas\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas \\phi and \\psi, the following are formulas\n\n\\phi \\land \\psi\n\\phi \\lor \\psi\n\\phi \\implies \\psi\n\\phi \\iff \\psi\n\n\n\nUsing these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in bound and free variables."
+  },
+  {
+    "objectID": "qmd/settheory/logic/semantics.html#bound-and-free-variables",
+    "href": "qmd/settheory/logic/semantics.html#bound-and-free-variables",
+    "title": "Semantics of FOL",
+    "section": "Bound and Free variables",
+    "text": "Bound and Free variables\nVariables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus bound to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation\n\n\\sum_{k=1}^{10} f(k,n).\n\nThe variable k is bound and acts as a placeholder for a value between 1 and 10. The variable n however is free, it is not quantified and the value of the expression depends on the value of n. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence\n\n\\text{Lisa found her book}.\n\nThe pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence\n\n\\text{Jane hurt herself}.\n\nIn this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.\n\n\n\n\n\n\nDefinition\n\n\n\nA bound variable of some formula \\phi is a variable occurring in the scope of a quantifier.\n\n\nFor example, in the formula \n\\exists x P(x,y)\n\nthe variable x is bound, since it occurs directly after the existential quantifier. The variable y however is free, as it is not quantified over. This gives us our next definition.\n\n\n\n\n\n\nDefinition\n\n\n\nA free variable of some formula \\phi is a variable which is not bound.\n\n\nWe now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the semantics of first-order logic."
+  },
+  {
+    "objectID": "qmd/settheory/logic/semantics.html#sources",
+    "href": "qmd/settheory/logic/semantics.html#sources",
+    "title": "Semantics of FOL",
+    "section": "Sources",
+    "text": "Sources\nhttps://en.wikipedia.org/wiki/Free_variables_and_bound_variables\nKunen 1980"
+  },
+  {
+    "objectID": "qmd/settheory/logic/logic.html#formal-systems",
+    "href": "qmd/settheory/logic/logic.html#formal-systems",
+    "title": "Introduction",
+    "section": "Formal systems",
+    "text": "Formal systems"
+  },
+  {
+    "objectID": "qmd/integral/rationalfunc.html",
+    "href": "qmd/integral/rationalfunc.html",
+    "title": "Integrating Rational Functions",
+    "section": "",
+    "text": "We look at the first class of functions we hope to integrate, rational functions. Rational functions are functions in the form f(x) = P(x)/Q(x) where P(x) and Q(x) are polynomials. By the end of the section, we hope to be able to find the solution to any integral in the form\n\\int \\frac{P(x)}{Q(x)} \\,dx"
+  },
+  {
+    "objectID": "qmd/integral/rationalfunc.html#history",
+    "href": "qmd/integral/rationalfunc.html#history",
+    "title": "Integrating Rational Functions",
+    "section": "History",
+    "text": "History\nThe problem of integrating these functions was attempted by both Newton and Leibniz, although no complete algorithm was found. In 1703, Johan Bernoulli published “Acta Eruditorum” which described the method of partial fractions, allowing us to factor a rational function into a finite summand of rational functions with denominators of either linear or quadratic factors. For example, given the integral\n\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}}\n\nif we apply break up the fraction\n\n\\frac{{3x + 11}}{{{x^2} - x - 6}} = \\frac{4}{x - 3} - \\frac{1}{x + 2}\n\nThe solution becomes trivial\n\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}} = 4\\ln |x - 3| - \\ln |x + 2| + C.\n\nFinding ways to break up the fractions is known as partial fraction decomposition."
+  },
+  {
+    "objectID": "qmd/integral/rationalfunc.html#method",
+    "href": "qmd/integral/rationalfunc.html#method",
+    "title": "Integrating Rational Functions",
+    "section": "Method",
+    "text": "Method\nWhen given an integral in the form\n\n\\int \\frac{P(X)}{Q(X)} \\, dx\n\nWhere P(x) and Q(x) are polynomials such that the degree of Q(x) is higher than the degree of P(x). We can decompose the fraction based on the factors of Q(x). There are four cases for the factors of Q(x).\n\n\n\n\n\n\nDecomposition cases\n\n\n\n\n\nCase I: Distinct linear factors\nWhen Q(x) has distinct linear factors, i.e.\n\nQ(x) = (a_1 x + b_1)(a_2 x + b_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{B}{a_2x + b_2}\n\nCase 2: Repeated linear factors\nWhen Q(x) has repeated linear factors, i.e.\n\nQ(x) = (a x + b)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1}{ax + b} + \\frac{A_2}{(ax + b)^2} + \\cdots + \\frac{A_k}{(a x + b)^k}\n\nCase 3: Distinct quadratic factors\nWhen Q(x) has distinct quadratic factors, i.e.\n\nQ(x) = (a_1 x^2 + b_1x + c_1)(a_2 x^2 + b_2x + c_2)\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a_1 x^2 + b_1x + c_1} + \\frac{A_2x + B_2}{a_2 x^2 + b_2x + c_2}\n\nCase 4: Repeated quadratic factors\nWhen Q(x) has repeated quadratic factors, i.e.\n\nQ(x) = (a x^2 + bx + c)^k\n\nWe decompose into the following terms\n\n\\frac{P(x)}{Q(x)} = \\frac{A_1x + B_1}{a x^2 + bx + c} + \\cdots + \\frac{A_kx + B_k}{(a x^2 + bx + c)^k}\n\n\n\n\nNote that Q(x) may contain multiple cases to factor. For example\n\nQ(x) = (a_1x+b_1)(a_2x^2 + b_2x + c_2)^2\n\nWill decompose into\n\n\\frac{P(x)}{Q(x)} = \\frac{A}{a_1x + b_1} + \\frac{Bx + C}{a_2 x^2 + b_2x + c_2} + \\frac{Dx + E}{(a_2 x^2 + b_2x + c_2)^2}\n\nNext we need a method for finding the value of the constants in the numerator.\n\n\n\n\n\n\nEvaluating constants\n\n\n\n\n\nConsider the integral from the beginning\n\n\\int \\frac{3x + 11}{x^2 - x - 6} \\,dx\n\nWe can now decompose the integrand to obtain\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A}{x - 3} + \\frac{B}{x + 2}\n\nThe problem is now finding values for the constants A,B which make the relation true. By cross multiplying the right side of the equation we get\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{A(x + 2) + B(x - 3)}{(x - 3)(x + 2)}\n\nWhich simplifies to\n\n3x + 11 = A(x + 2) + B(x - 3).\n\nWe can then create a system of equations such that the above expression is always true. This method is long but will always work. The faster method (that isn’t always possible) is to find values of x such that the equation reduces. Using the faster method, we obtain\n\nx = 3 \\: : \\: 3(3) + 11 = A(3 + 2) + B(3 - 3) \\implies A = 4\\\\\nx = -2 \\: : \\: 3(-2) + 11 = A(-2 + 2) + B(-2 - 3) \\implies B = -1\n\nWhich gives us our final expression\n\n\\frac{3x + 11}{x^2 - x - 6} = \\frac{4}{x - 3} - \\frac{1}{x + 2}\n\nWhich as shown above, makes the integral trivial to solve.\n\n\\int{{\\frac{{3x + 11}}{{{x^2} - x - 6}}\\,dx}} = 4\\ln |x - 3| - \\ln |x + 2| + C."
+  },
+  {
+    "objectID": "qmd/integral/rationalfunc.html#problems",
+    "href": "qmd/integral/rationalfunc.html#problems",
+    "title": "Integrating Rational Functions",
+    "section": "Problems",
+    "text": "Problems\nThese problems are very tedious, and I opted not to include too many as distinct linear factors are the most common use of partial fractions.\n\nIntegrals involving distinct linear factors\n\n\n\n\n\n\nProblem 101\n\n\n\nEvaluate the following integral\n\n\\int \\frac{1}{(x-1)(x-2)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 102\n\n\n\nEvaluate the following integral\n\n\\int \\frac{1}{(x+a)(x+b)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 103\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x-9}{(x+5)(x-2)} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 104\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x+c}{(x+a)(x+b)} \\, dx\n\n\n\n\n\nIntegrals involving repeated linear factors\n\n\n\n\n\n\nProblem 105\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^2 - x + 1}{(x+1)^3} \\, dx\n\n\n\n\n\n\n\n\n\nProblem 106\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x + 7}{x^2(x+2)} \\, dx\n\n\n\n\n\nIntegrals involving distinct quadratic factors\n\n\n\n\n\n\nProblem 107 - Joe Foster (Integration by parts - C3)\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\nWe can break up the integral as it contains distinct quadratic factors.\n\n\\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} =  \\frac{Ax + B}{x^2 + 1} + \\frac{Cx + D}{x^2 + 2}\n\nCross multiplying \nx^3 + x^2 + 2x + 1 = (Ax + B)(x^2 + 2) + (Cx + D)(x^2 + 1)\n\nGives us the following system of equations\n\\begin{array}{ll}\nx^3  & = (A + C)x^3\\\\\nx^2 & = (B + D)x^2\\\\\n2x & = (2A + C)x \\\\\n1 & = (2B + D)\n\\end{array}\nSolving the system yields\n\\begin{array}{ll}\nA = 1  & B = 0\\\\\nC = 0 & D = 1\n\\end{array}\nThis solves our decomposition. We now have to integrate\n\n\\int \\frac{x}{x^2 + 1} + \\frac{1}{x^2 + 2} \\, dx\n\nThe first term can be solved by the substitution u = x^2, and the second term can be evaluated with an \\arctan x. This gives us\n\n\\int \\frac{x^3 + x^2 + 2x + 1}{(x^2 + 1)(x^2 + 2)} \\, dx = \\frac{1}{2}\\ln |x^2 + 1| + \\frac{1}{\\sqrt{2}} \\arctan \\left( \\frac{x}{\\sqrt{2}} \\right) + C\n\n\n\n\n\n\nIntegrals involving repeated quadratic factors\n\n\n\n\n\n\nProblem 108\n\n\n\nEvaluate the following integral\n\n\\int \\frac{x^3 + 10x^2 + 3x + 36}{(x - 1)(x^2 + 4)^2} \\, dx"
+  },
+  {
+    "objectID": "qmd/settheory/logic/intro.html#first-order-logic",
+    "href": "qmd/settheory/logic/intro.html#first-order-logic",
+    "title": "Introduction",
+    "section": "First order logic",
+    "text": "First order logic\nLogic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as\n\n\\text{For all $x$ \\quad or \\quad There exists $x$}.\n\nFirst-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.\nUsing the language and deductive system of First-order logic, we will assert nine axioms which together are known as ZFC and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way."
+  },
+  {
+    "objectID": "qmd/settheory/logic/intro.html#the-axioms",
+    "href": "qmd/settheory/logic/intro.html#the-axioms",
+    "title": "Introduction",
+    "section": "The axioms",
+    "text": "The axioms\nUsing the language and deductive system of First-order logic, we assert nine statements which together are known as ZFC"
+  },
+  {
+    "objectID": "qmd/settheory/logic/deductive.html",
+    "href": "qmd/settheory/logic/deductive.html",
+    "title": "Deductive System",
+    "section": "",
+    "text": "A deductive system allows us to transform one formula into another, using only the syntax we developed previously. It allows us to reason about formulas and create proofs of assertions. If our deductive system transforms some collection of formulas \\Gamma into some formula \\phi we write\n\\Gamma \\vdash \\phi\nand say that \\Gamma derives \\phi from either rules of inference or logical axioms. If S is empty, then we write \\vdash \\phi and say \\phi is logically valid. Intuitively, we think of S as being our hypothesis, and \\phi being our conclusion.\nThe deductive system formulated here comes from [Stanford Classical Logic], and is a kind of sequent calculus using natural deduction."
+  },
+  {
+    "objectID": "qmd/settheory/logic/deductive.html#rules-of-inference",
+    "href": "qmd/settheory/logic/deductive.html#rules-of-inference",
+    "title": "Deductive System",
+    "section": "Rules of inference",
+    "text": "Rules of inference\nA rule of inference states that given some formula or collection of formulas, another formula can be derived as a conclusion. This is in contrast to logical axioms, which are assertions of the form \\vdash \\phi.\nThe deductive system described here is known as natural deduction, meaning it contains exclusively rules of inference based on the ‘natural’ way of reasoning. We begin with our first rule:\n\n\n\n\n\n\nRule of Assumption (As)\n\n\n\nLet \\Gamma be some collection of sentences containing \\phi. Then\n\n\\Gamma \\vdash \\phi\n\n\n\nThus every premise follows from itself, which seems fair enough.\n\nConnectives\nNext we introduce two rules for each coonnective, which will tell us how these symbols work. Our first rule will tell us how to introduce each symbol, and the next how to eliminate it.\n\n\n\n\n\n\nAnd-Introduction (\\landI)\n\n\n\nIf \\Gamma_1 \\vdash \\phi and \\Gamma_2 \\vdash \\psi then\n\n\\Gamma_1 , \\Gamma_2 \\vdash \\phi \\land \\psi\n\n\n\n\n\n\n\n\n\nAnd-Elimination (\\landE)\n\n\n\nIf \\Gamma \\vdash \\phi \\land \\psi then\n\n\\Gamma \\vdash \\phi \\quad \\text{ and } \\quad \\Gamma \\vdash \\psi\n\n\n\nWe take \\land to be the logical symbol meaning ‘and’. If one has deduced the formula \\phi \\land \\psi, then we have deduced \\phi and \\psi. Conversely if we have \\phi and \\psi, then we have \\phi \\land \\psi.\n\n\n\n\n\n\nOr-Introduction (\\lorI)\n\n\n\nIf \\Gamma \\vdash \\phi and \\psi is a formula, then\n\n\\Gamma  \\vdash \\phi \\lor \\psi\n\nAdditionally if \\Gamma \\vdash \\psi and \\phi is a formula, then\n\n\\Gamma  \\vdash \\phi \\lor \\psi\n\n\n\n\n\n\n\n\n\nOr-Elimination (\\lorE)\n\n\n\nIf \\Gamma_1 \\vdash \\phi \\lor \\psi and \\Gamma_2, \\phi \\vdash \\theta and \\Gamma_3, \\psi \\vdash \\theta then\n\n\\Gamma_1,\\Gamma_2,\\Gamma_3 \\vdash \\theta\n\n\n\nWe take \\land to be the logical symbol for ‘or’. If we have either \\phi or \\psi as formulas, we have \\phi \\lor \\psi. Or-elimination is more complicated. If we introduce a third formula \\theta such that \\phi and \\psi deduce \\theta, then regardless of which of \\phi or \\psi are true, \\theta will be true regardless. Then we can eliminate the \\land conjugate.\n\n\n\n\n\n\nImplies-Introduction (\\impliesI)\n\n\n\nIf \\Gamma, \\phi \\vdash \\psi then \n\\Gamma \\vdash \\phi \\implies \\psi\n\n\n\n\n\n\n\n\n\nModus ponens (MP)\n\n\n\nIf \\Gamma_1 \\vdash \\phi \\implies \\psi and \\Gamma_2 \\vdash \\phi then \n\\Gamma_1,\\Gamma_2 \\vdash \\psi\n\n\n\nThe \\implies conjugate corresponds to the english ‘implication’. If we know \\phi \\implies \\psi and know \\phi, then we can conclude \\psi. The elimination rule is known as Modus ponens, and is a rule of inference known since antiquity.\n\n\n\n\n\n\nNegation-introduction (\\lnotI)\n\n\n\nIf \\Gamma_1, \\phi \\vdash \\psi and \\Gamma_2, \\phi \\vdash \\lnot\\psi then \n\\Gamma_1,\\Gamma_2 \\vdash \\lnot \\phi\n\n\n\nRecall the \\lnot conjugate corresponds to the english ‘negation’. If we have that \\phi implies both \\psi and \\lnot \\psi, then we would have a contradiction! Thus \\phi must be incorrect. This is the idea behind proofs by contradiction. We do not have a rule for negation elimination, but we do when dealing with pairs of negatives.\n\n\n\n\n\n\nDouble negation-elimination (DNE)\n\n\n\nIf \\Gamma \\vdash \\lnot\\lnot\\phi then \n\\Gamma \\vdash \\phi\n\n\n\nThis is a standard law in classical logic, but is controversial among logicians and philosophers. Intuitionist logics do not admit this rule of inference, and constructive mathematics is (roughly) the study of mathematics without double negation elimination.\n\n\nQuantifiers\nNext we examine rules about our quantifiers. Let \\theta be a formula, v to be a variable and t to be a term (variable or constant).\n\n\n\n\n\n\nUniversal-introduction (\\forallI)\n\n\n\nFor any closed t, if \\Gamma \\vdash \\theta[v\\vert t] then \n\\Gamma \\vdash \\forall v \\theta\n\nprovided that t is not in v or \\theta.\n\n\nUniversal introduction corresponds to common inference in mathematics. If we start a proof with ‘let n be some natural number’ and deduce some property of n without assuming anything about n, then we have shown that property to be true of all natural numbers since our choice of n was arbitrary.\n\n\n\n\n\n\nUniversal-elimination (\\forallE)\n\n\n\nIf \\Gamma \\vdash \\forall v \\theta then \n\\Gamma \\vdash \\theta[v\\vert t]\n\nfor any closed term t.\n\n\nUniversal elimination, also known as universal instantiation or universal specification, states that is some property is true for all variables v, then it holds for some specific term t.\n\n\n\n\n\n\nExstitential-introduction (\\existsI)\n\n\n\nFor any closed t, if \\Gamma \\vdash \\theta[v\\vert t] then \n\\Gamma \\vdash \\exists v \\theta(v)\n\n\n\n\n\n\n\n\n\nExstitential-elimination (\\existsE)\n\n\n\nFor any closed t, if \\Gamma \\vdash \\theta[v\\vert t] then \n\\Gamma \\vdash \\exists v \\theta(v)"
+  },
+  {
+    "objectID": "qmd/settheory/logic/deductive.html#logical-axioms",
+    "href": "qmd/settheory/logic/deductive.html#logical-axioms",
+    "title": "Deductive System",
+    "section": "Logical Axioms",
+    "text": "Logical Axioms"
+  },
+  {
+    "objectID": "qmd/settheory/logic/deductive.html#references",
+    "href": "qmd/settheory/logic/deductive.html#references",
+    "title": "Deductive System",
+    "section": "References",
+    "text": "References\nShapiro, Stewart and Teresa Kouri Kissel, “Classical Logic”, The Stanford Encyclopedia of Philosophy (Fall 2025 Edition), Edward N. Zalta & Uri Nodelman (eds.), https://plato.stanford.edu/archives/fall2025/entries/logic-classical/"
+  },
+  {
+    "objectID": "qmd/settheory/logic/relationship.html",
+    "href": "qmd/settheory/logic/relationship.html",
+    "title": "Relationship between FOL and ZFC",
+    "section": "",
+    "text": "Now that we have an idea of what first-order logic is, how can we use it to build set theory? We must extend our logic by adding the axioms of ZFC, and the special symbols use in those axioms. We call this extension a theory, and since we’re working in first-order logic, we’ll call it a first-order theory."
+  },
+  {
+    "objectID": "qmd/settheory/logic/relationship.html#signature-and-axioms",
+    "href": "qmd/settheory/logic/relationship.html#signature-and-axioms",
+    "title": "Relationship between FOL and ZFC",
+    "section": "Signature and Axioms",
+    "text": "Signature and Axioms\nZFC has only one non-logical symbol in its signature, a binary predicate denoted \\in. This symbol stands for set membership, and we read a \\in b as a is a member in the set b.\nThe real substance in our theory comes from our axioms. While I have mentioned many times that ZFC consist of 9 axioms, this is not strictly true. Our theory contains a few axiom schema, which are an infinite list of axioms. These will be discussed more when they appear. Each of our axioms specify some way that our nonlogical symbol \\in functions.\nAnd with that, we can finally begin to study the consequences of our axioms and set theory as a whole!"
   }
 ]

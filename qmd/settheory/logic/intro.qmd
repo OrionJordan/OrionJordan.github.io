@@ -1,38 +1,30 @@
 ---
-title: "Set Theory"
+title: "Introduction"
 format:
   html:
     toc: false
     html-math-method: katex
 ---
 
-This section covers $ZFC$ set theory, and constructs the foundations of mathematics from $9$ axioms. Topics include basic properties of sets, functions and relations and ordinal and cardinal numbers.
+Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.
 
-## Table of Contents
+Zermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.
 
-- Logic
-  - History
-  - Logic / Language
-- Basic Axioms and Operations
-  - Primitive notions / Set containment
-  - Preview of Axioms               X
-  - Axioms of Extension and Specification
-  - Subsets
-  - Intersections and Differences   X
-  - Axiom of Pairing                X
-  - Axiom of Union                  X
-  - Axiom of Powerset               X
-  - Cartesian Sets                  X
-  - Axiom of Regularity             X
-- Relations and Functions
-- Ordinal Numbers
-- Cardinal Numbers
-  - Equinumerosity                  X
-  - Equinumerosity Arithmetic       X
-  - Equinumerosity Ordering         
-  - Finite Sets       
+In this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as $ZFC$, and has become the standard axiomatization for mathematics. Before we look at the axioms of $ZFC$ or their consequences we must first examine the logical foundations needed to state our axioms.
 
+## First order logic
+
+Logic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as
+
+$$
+\text{For all $x$ \quad or \quad There exists $x$}. 
+$$
+
+First-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.
+
+Using the language and deductive system of First-order logic, we will assert nine axioms which together are known as **ZFC** and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way.
 
 ## References
 
-Naive Set Theory - Paul Hermas - 1960
+[Kunen 1980]
+[Open Logic Project]

@@ -1,14 +1,10 @@
 ---
-title: "Axioms of Extension and Specification"
+title: "Axiom of Extension"
 format:
   html:
     toc: true
     html-math-method: katex
 ---
-
-Now that we have a serviceable understanding of the system of logic used in ZFC, we can start introducing axioms and seeing what stems from them.
-
-## Axioms
 
 Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is put into first order logic with the axiom of extensionality.
 

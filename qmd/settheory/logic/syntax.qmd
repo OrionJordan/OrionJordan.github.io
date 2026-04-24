@@ -1,12 +1,12 @@
 ---
-title: "Logic"
+title: "Syntax of First-order Logic"
 format:
   html:
     toc: false
     html-math-method: katex
 ---
 
-The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas.
+We first examine the language of first-order logic; which defines the list of symbols used in the system, and the rules for how we can combine them into formulas.
 
 ## Alphabet
 
@@ -24,7 +24,7 @@ We will start with a list of logical symbols, sometimes referred to as the alpha
 
 Our connectives each have special meanings, $\land$ meaning 'and', $\lor$ meaning 'or', $\implies$ meaning 'implies', $\iff$ meaning 'if and only if' and $\lnot$ meaning 'not'. We are also given two quantifiers to work with. $\forall$ meaning 'for all' or 'for every', and $\exists$ meaning 'there exists'. 
 
-We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see $ZFC$ uses a predicate $\exists$ in it's axioms, so we need an arbitrary predicate in our list of symbols for $ZFC$ to use. To be safe we include an infinite list of predicate and function symbols.
+We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see $ZFC$ uses a predicate '$\in$' in it's axioms, so we need an arbitrary predicate in our list of symbols for $ZFC$ to use. To be safe we include an infinite list of predicate and function symbols.
 
 -   **Predicates -** An infinite set of predicates $P_1,P_2,P_3,\dots,P_n$. Although other letters in the alphabhet, both capital and lowercase may be used.
 
@@ -98,22 +98,23 @@ In this sentence, 'herself' is a bound variable, as it must refer to Jane. Now t
 ::: {.callout-note icon="false"}
 ## Definition 
 
-A [subformula]{.definition} of some formula $\phi$ is some consecutive sequence of symbols in $\phi$ which form a formula.
+A [bound]{.definition} variable of some formula $\phi$ is a variable occurring in the scope of a quantifier.
 :::
 
-(not quite right)
-
-For example, the formula
-
+For example, in the formula
 $$
-(\exists x P(x)) \land (\forall x P(x,y))
+\exists x P(x,y)
 $$
 
-has as subformulas $\exists x P(x)$ 
+the variable $x$ is bound, since it occurs directly after the existential quantifier. The variable $y$ however is free, as it is not quantified over. This gives us our next definition.
 
-## Truth and Connectives
+::: {.callout-note icon="false"}
+## Definition 
 
-Now we'll look at the actual meaning behind our connectives. A formula is either true or false. There is 
+A [free]{.definition} variable of some formula $\phi$ is a variable which is not bound.
+:::
+
+We now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the deductive system of first-order logic.
 
 ## Sources
 

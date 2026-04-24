@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://orionjordan.github.io/index.html</loc>
-    <lastmod>2025-11-19T20:56:32.948Z</lastmod>
+    <lastmod>2026-04-14T16:41:24.340Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/content/index.html</loc>
-    <lastmod>2026-02-09T20:25:35.236Z</lastmod>
+    <lastmod>2026-04-14T16:41:18.801Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/intro.html</loc>
@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/sequences/convergence.html</loc>
-    <lastmod>2025-05-06T01:53:35.966Z</lastmod>
+    <lastmod>2026-04-19T17:23:53.170Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/realanal/topology/open.html</loc>
@@ -102,7 +102,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/to-do.html</loc>
-    <lastmod>2025-10-02T21:13:55.272Z</lastmod>
+    <lastmod>2026-04-13T20:37:25.071Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/matrix/unitfour.html</loc>
@@ -430,7 +430,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/intro.html</loc>
-    <lastmod>2026-03-30T18:50:56.357Z</lastmod>
+    <lastmod>2026-04-21T22:48:12.665Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/naive/axioms/equinum.html</loc>
@@ -542,7 +542,7 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/axioms/subsets.html</loc>
-    <lastmod>2026-03-25T21:13:52.604Z</lastmod>
+    <lastmod>2026-04-24T20:43:24.577Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/axioms/unions.html</loc>
@@ -554,19 +554,19 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/logic/logic.html</loc>
-    <lastmod>2026-03-28T18:15:54.269Z</lastmod>
+    <lastmod>2026-04-18T18:38:00.234Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/logic/intro.html</loc>
-    <lastmod>2026-03-25T19:11:01.103Z</lastmod>
+    <lastmod>2026-04-21T22:47:51.185Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/settheory/logic/syntax.html</loc>
-    <lastmod>2026-03-30T18:48:23.747Z</lastmod>
+    <lastmod>2026-04-21T22:55:28.045Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/integral/intro.html</loc>
-    <lastmod>2026-04-08T01:58:23.894Z</lastmod>
+    <lastmod>2026-04-21T22:04:11.549Z</lastmod>
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/numanal/formalsystem.html</loc>
@@ -674,6 +674,22 @@
   </url>
   <url>
     <loc>https://orionjordan.github.io/qmd/integral/gen/decomp.html</loc>
-    <lastmod>2026-04-08T01:30:46.526Z</lastmod>
+    <lastmod>2026-04-18T18:54:26.673Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/logic/semantics.html</loc>
+    <lastmod>2026-04-14T23:32:35.318Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/integral/rationalfunc.html</loc>
+    <lastmod>2026-04-21T22:04:08.509Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/logic/deductive.html</loc>
+    <lastmod>2026-04-24T17:24:32.157Z</lastmod>
+  </url>
+  <url>
+    <loc>https://orionjordan.github.io/qmd/settheory/logic/relationship.html</loc>
+    <lastmod>2026-04-24T19:17:07.279Z</lastmod>
   </url>
 </urlset>

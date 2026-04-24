@@ -1,0 +1,51 @@
+---
+title: "Axiom of Extension"
+format:
+  html:
+    toc: true
+    html-math-method: katex
+---
+
+Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is put into first order logic with the axiom of extensionality.
+
+::: {.callout-important icon="false"}
+## Axiom of Extensionality
+
+Two sets are equivalent if they have the same elements
+
+$$
+\forall A \forall B [\forall x(x \in A \iff x \in B) \implies A = B]
+$$
+:::
+
+This is a pretty natural axiom, and is used all of the time to prove the uniqueness of a set. The next axiom is going to allow us to create sets at all.
+
+::: {.callout-important icon="false"}
+## Axiom of Specificication
+
+:::
+
+::: {.callout-note icon="false"}
+## Definition
+
+The [empty set]{.definition} denoted $\varnothing$ is the set containing no elements. Formally
+
+$$
+\varnothing = A \iff \forall x (x \not \in A).
+$$
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The empty set exists.
+
+:::
+
+::: {.callout-note icon="false"}
+## Theorem
+
+The empty set is unique.
+
+:::

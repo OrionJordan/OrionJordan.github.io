@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Logic – OOMN</title>
+<title>Introduction – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -156,7 +156,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Logic</h1>
+<h1 class="title">Introduction</h1>
 </div>
 
 
@@ -173,80 +173,11 @@ window.Quarto = {
 </header>
 
 
-<p>First-order logic is the standard system and language used in mathematics. Logic provides the tools we need to define, as best we can, what a proposition is, what truth is, and how to quantify expressions. Logic, and moreover mathematical logic, are fields of study in their own right far too large to be described fully in this section. Instead, we will be examining the minimum amount of logic needed to provide as a framework on which to build <span class="math inline">ZFC</span> set theory on top of.</p>
-<p>(TO-DO)</p>
-<p>Rewrite to be less bad. Talk about lack of definitions for string and stuff. Philosophicle mumbo jumbo.</p>
-<p>Maybe add ZFC and FOL before intro to logic, talk about math being built on philosophy, a language, then truth. Talk about meta theories.</p>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Propositional logic deals with propositions, statements that can be true or false, and relations between propositions. First-order logic is an extension of propositional logic introducing predicates and quantifiers. Predicates allow us to represent a property of an object and quantifiers allow us to reason about the properties of all variables in our domain.</p>
-<p>First-order logic can be broken down into two parts. The syntax determines which symbols and formulas we can form, and the semantics determines the meaning of those formulas and how truth can be assigned.</p>
-</section>
-<section id="syntax" class="level2">
-<h2 class="anchored" data-anchor-id="syntax">Syntax</h2>
-<p>We will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic</p>
-<ul>
-<li><p><strong>Connectives -</strong> <span class="math inline">\land, \lor, \implies, \iff, \lnot</span></p></li>
-<li><p><strong>Quantifiers -</strong> <span class="math inline">\forall, \exists</span></p></li>
-<li><p><strong>Variables -</strong> An infinite set of variables <span class="math inline">x_1,x_2,x_3,\dots,x_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
-<li><p><strong>Punctuation -</strong> Right <span class="math inline">)</span> and left <span class="math inline">(</span> parenthesis, commas, colons, bars <span class="math inline">\mid</span>, and any other similar symbol.</p></li>
-<li><p><strong>Equality -</strong> The equal sign <span class="math inline">=</span>.</p></li>
-</ul>
-<p>Our connectives each have special meanings, <span class="math inline">\land</span> meaning ‘and’, <span class="math inline">\lor</span> meaning ‘or’, <span class="math inline">\implies</span> meaning ‘implies’, <span class="math inline">\iff</span> meaning ‘if and only if’ and <span class="math inline">\lnot</span> meaning ‘not’. We are also given two quantifiers to work with. <span class="math inline">\forall</span> meaning ‘for all’ or ‘for every’, and <span class="math inline">\exists</span> meaning ‘there exists’.</p>
-<p>We also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see <span class="math inline">ZFC</span> uses a predicate <span class="math inline">\exists</span> in it’s axioms, so we need an arbitrary predicate in our list of symbols for <span class="math inline">ZFC</span> to use. To be safe we include an infinite list of predicate and function symbols.</p>
-<ul>
-<li><p><strong>Predicates -</strong> An infinite set of predicates <span class="math inline">P_1,P_2,P_3,\dots,P_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
-<li><p><strong>Functions -</strong> An infinite set of functions <span class="math inline">f_1,f_2,f_3,\dots,f_n</span>. Although other letters in the alphabhet, both capital and lowercase may be used.</p></li>
-</ul>
-<p>Predicates and functions may take any number of variables as arguments, which may be notated in the obvious way <span class="math inline">P(x)</span> for a predicate taking one argument, <span class="math inline">P(x,y)</span> for two, etc. If the number of arguments is irrelevant however we simply write <span class="math inline">P</span>.</p>
-<p>While <span class="math inline">ZFC</span> doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many.</p>
-<p>The syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like</p>
-<p><span class="math display">
-\forall \forall \exists ((\lnot\iff =x \exists)
-</span></p>
-<p>which are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Definition
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>A <span class="definition">well-formed formula</span> usually abbreviated <em>wff</em> or just <em>formula</em>, is a string of characters formed by the following recursive rules:</p>
-<p>If <span class="math inline">x</span> and <span class="math inline">y</span> are variables, then</p>
-<ul>
-<li><span class="math inline">x = y</span></li>
-</ul>
-<p>is a formula. Given a predicate <span class="math inline">P</span> taking <span class="math inline">n</span> arguments, and <span class="math inline">n</span> variables <span class="math inline">x_1,x_2,\dots,x_n</span></p>
-<ul>
-<li><span class="math inline">P(x_1,x_2,\dots,x_n)</span></li>
-</ul>
-<p>Is a formula. Given a predicate <span class="math inline">P</span> and a variable <span class="math inline">x</span>, we can create the following formulas</p>
-<ul>
-<li><span class="math inline">\forall x P</span></li>
-<li><span class="math inline">\exists x P</span>.</li>
-<li><span class="math inline">\lnot P</span></li>
-</ul>
-<p>And finally given two formulas <span class="math inline">P</span> and <span class="math inline">Q</span>, the following are formulas</p>
-<ul>
-<li><span class="math inline">P \land Q</span></li>
-<li><span class="math inline">P \lor Q</span></li>
-<li><span class="math inline">P \implies Q</span></li>
-<li><span class="math inline">P \iff Q</span></li>
-</ul>
-</div>
-</div>
-<p>Using these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in <em>bound</em> and <em>free</em> variables.</p>
-</section>
-<section id="bound-and-free-variables" class="level2">
-<h2 class="anchored" data-anchor-id="bound-and-free-variables">Bound and Free variables</h2>
-</section>
-<section id="truth-and-connectives" class="level2">
-<h2 class="anchored" data-anchor-id="truth-and-connectives">Truth and Connectives</h2>
-<p>Now we’ll look at the actual meaning behind our connectives. A formula is either true or false. There is</p>
+<p>Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.</p>
+<p>Zermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.</p>
+<p>In this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as <span class="math inline">ZFC</span>, and has become the standard axiomatization for mathematics. Before we look at the axioms of <span class="math inline">ZFC</span> or their consequences we must first examine axiomatic systems as a whole, and the logical foundations needed to state our axioms.</p>
+<section id="formal-systems" class="level2">
+<h2 class="anchored" data-anchor-id="formal-systems">Formal systems</h2>
 
 
 </section>

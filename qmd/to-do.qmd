@@ -1,6 +1,19 @@
 ---
-title: "Standard layout"
+title: "TO-DO"
 execute:
   echo: false
 ---
+
+Elementary Antiderivatives
+
+List integration bee practice, further research into elementary functions, theorems, Rische algorithm, all questions about elementary antiderivatives.
+
+Set Theory
+
+Finish Suppes
+
+Real Analysis
+
+Include more content, fix content to align directly from Set Theory
+
 

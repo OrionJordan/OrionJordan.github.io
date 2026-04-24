@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Orion Jordan – OOMN</title>
+<title>Deductive System – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,23 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-476b99dba8a4930fe321bec8c158eb21.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../../site_libs/bootstrap/bootstrap-dark-af951625eb032cc487479743b5733ea3.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,8 +70,51 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
-<link rel="stylesheet" href="styles.css">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
 <body class="nav-fixed fullcontent">
@@ -80,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">OOMN</span>
     </a>
   </div>
@@ -91,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./qmd/content/index.html"> 
+    <a class="nav-link" href="../../../qmd/content/index.html"> 
 <span class="menu-text">Content</span></a>
   </li>  
 </ul>
@@ -108,48 +152,268 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<div class="quarto-about-trestles page-columns page-full">
-  <div class="about-entity">
-    <img src="orion.jpg" class="about-image
-  rounded " style="width: 20em;">
+<main class="content" id="quarto-document-content">
+
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Orion Jordan</h1>
+<h1 class="title">Deductive System</h1>
 </div>
+
+
+
 <div class="quarto-title-meta">
+
+    
+  
+    
   </div>
+  
+
+
 </header>
-    <div class="about-links">
-  <a href="https://github.com/OrionJordan" class="about-link" rel="" target="">
-    <i class="bi bi-github"></i>
-     <span class="about-link-text">Github</span>
-  </a>
-  <a href="https://www.youtube.com/channel/UC5EJ87vBGbDq5DnzUnRj1AA" class="about-link" rel="" target="">
-    <i class="bi bi-youtube"></i>
-     <span class="about-link-text">Youtube</span>
-  </a>
-  <a href="https://math.stackexchange.com/users/1063903/orion-jordan" class="about-link" rel="" target="">
-    <i class="bi bi-stack-overflow"></i>
-     <span class="about-link-text">Math Exchange</span>
-  </a>
+
+
+<p>A deductive system allows us to transform one formula into another, using only the syntax we developed previously. It allows us to reason about formulas and create proofs of assertions. If our deductive system transforms some collection of formulas <span class="math inline">\Gamma</span> into some formula <span class="math inline">\phi</span> we write</p>
+<p><span class="math display">
+\Gamma \vdash \phi
+</span></p>
+<p>and say that <span class="math inline">\Gamma</span> <em>derives</em> <span class="math inline">\phi</span> from either rules of inference or logical axioms. If <span class="math inline">S</span> is empty, then we write <span class="math inline">\vdash \phi</span> and say <span class="math inline">\phi</span> is <em>logically valid</em>. Intuitively, we think of <span class="math inline">S</span> as being our hypothesis, and <span class="math inline">\phi</span> being our conclusion.</p>
+<p>The deductive system formulated here comes from [Stanford Classical Logic], and is a kind of sequent calculus using natural deduction.</p>
+<section id="rules-of-inference" class="level2">
+<h2 class="anchored" data-anchor-id="rules-of-inference">Rules of inference</h2>
+<p>A rule of inference states that given some formula or collection of formulas, another formula can be derived as a conclusion. This is in contrast to logical axioms, which are assertions of the form <span class="math inline">\vdash \phi</span>.</p>
+<p>The deductive system described here is known as natural deduction, meaning it contains exclusively rules of inference based on the ‘natural’ way of reasoning. We begin with our first rule:</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
 </div>
-  </div>
-  <div class="about-contents page-columns page-full"><main class="content page-columns page-full" id="quarto-document-content">
-<div class="column-page">
-<section id="bio" class="level2">
-<h2 data-anchor-id="bio">Bio</h2>
-<p>Undergraduate student at the University of North Texas, majoring in mathematics.</p>
+<div class="callout-title-container flex-fill">
+Rule of Assumption (As)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\Gamma</span> be some collection of sentences containing <span class="math inline">\phi</span>. Then</p>
+<p><span class="math display">
+\Gamma \vdash \phi
+</span></p>
+</div>
+</div>
+<p>Thus every premise follows from itself, which seems fair enough.</p>
+<section id="connectives" class="level3">
+<h3 class="anchored" data-anchor-id="connectives">Connectives</h3>
+<p>Next we introduce two rules for each coonnective, which will tell us how these symbols work. Our first rule will tell us how to introduce each symbol, and the next how to eliminate it.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And-Introduction (<span class="math inline">\land</span>I)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma_1 \vdash \phi</span> and <span class="math inline">\Gamma_2 \vdash \psi</span> then</p>
+<p><span class="math display">
+\Gamma_1 , \Gamma_2 \vdash \phi \land \psi
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+And-Elimination (<span class="math inline">\land</span>E)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma \vdash \phi \land \psi</span> then</p>
+<p><span class="math display">
+\Gamma \vdash \phi \quad \text{ and } \quad \Gamma \vdash \psi
+</span></p>
+</div>
+</div>
+<p>We take <span class="math inline">\land</span> to be the logical symbol meaning ‘and’. If one has deduced the formula <span class="math inline">\phi \land \psi</span>, then we have deduced <span class="math inline">\phi</span> and <span class="math inline">\psi</span>. Conversely if we have <span class="math inline">\phi</span> and <span class="math inline">\psi</span>, then we have <span class="math inline">\phi \land \psi</span>.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or-Introduction (<span class="math inline">\lor</span>I)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma \vdash \phi</span> and <span class="math inline">\psi</span> is a formula, then</p>
+<p><span class="math display">
+\Gamma  \vdash \phi \lor \psi
+</span></p>
+<p>Additionally if <span class="math inline">\Gamma \vdash \psi</span> and <span class="math inline">\phi</span> is a formula, then</p>
+<p><span class="math display">
+\Gamma  \vdash \phi \lor \psi
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Or-Elimination (<span class="math inline">\lor</span>E)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma_1 \vdash \phi \lor \psi</span> and <span class="math inline">\Gamma_2, \phi \vdash \theta</span> and <span class="math inline">\Gamma_3, \psi \vdash \theta</span> then</p>
+<p><span class="math display">
+\Gamma_1,\Gamma_2,\Gamma_3 \vdash \theta
+</span></p>
+</div>
+</div>
+<p>We take <span class="math inline">\land</span> to be the logical symbol for ‘or’. If we have either <span class="math inline">\phi</span> or <span class="math inline">\psi</span> as formulas, we have <span class="math inline">\phi \lor \psi</span>. Or-elimination is more complicated. If we introduce a third formula <span class="math inline">\theta</span> such that <span class="math inline">\phi</span> and <span class="math inline">\psi</span> deduce <span class="math inline">\theta</span>, then regardless of which of <span class="math inline">\phi</span> or <span class="math inline">\psi</span> are true, <span class="math inline">\theta</span> will be true regardless. Then we can eliminate the <span class="math inline">\land</span> conjugate.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Implies-Introduction (<span class="math inline">\implies</span>I)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma, \phi \vdash \psi</span> then <span class="math display">
+\Gamma \vdash \phi \implies \psi
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Modus ponens (MP)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma_1 \vdash \phi \implies \psi</span> and <span class="math inline">\Gamma_2 \vdash \phi</span> then <span class="math display">
+\Gamma_1,\Gamma_2 \vdash \psi
+</span></p>
+</div>
+</div>
+<p>The <span class="math inline">\implies</span> conjugate corresponds to the english ‘implication’. If we know <span class="math inline">\phi \implies \psi</span> and know <span class="math inline">\phi</span>, then we can conclude <span class="math inline">\psi</span>. The elimination rule is known as Modus ponens, and is a rule of inference known since antiquity.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Negation-introduction (<span class="math inline">\lnot</span>I)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma_1, \phi \vdash \psi</span> and <span class="math inline">\Gamma_2, \phi \vdash \lnot\psi</span> then <span class="math display">
+\Gamma_1,\Gamma_2 \vdash \lnot \phi
+</span></p>
+</div>
+</div>
+<p>Recall the <span class="math inline">\lnot</span> conjugate corresponds to the english ‘negation’. If we have that <span class="math inline">\phi</span> implies both <span class="math inline">\psi</span> and <span class="math inline">\lnot \psi</span>, then we would have a contradiction! Thus <span class="math inline">\phi</span> must be incorrect. This is the idea behind proofs by contradiction. We do not have a rule for negation elimination, but we do when dealing with pairs of negatives.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Double negation-elimination (DNE)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma \vdash \lnot\lnot\phi</span> then <span class="math display">
+\Gamma \vdash \phi
+</span></p>
+</div>
+</div>
+<p>This is a standard law in classical logic, but is controversial among logicians and philosophers. Intuitionist logics do not admit this rule of inference, and constructive mathematics is (roughly) the study of mathematics without double negation elimination.</p>
 </section>
-<section id="website" class="level2">
-<h2 data-anchor-id="website">Website</h2>
-<p>This is my attempt at a good looking website giving math notes in a format that resembles formal mathematics. The goal is to have each section start with a list of axioms, and build them into some subject. Along with this some miscellaneous math projects, like my preparation for the integration bee, will be hosted here!</p>
+<section id="quantifiers" class="level3">
+<h3 class="anchored" data-anchor-id="quantifiers">Quantifiers</h3>
+<p>Next we examine rules about our quantifiers. Let <span class="math inline">\theta</span> be a formula, <span class="math inline">v</span> to be a variable and <span class="math inline">t</span> to be a term (variable or constant).</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Universal-introduction (<span class="math inline">\forall</span>I)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any closed <span class="math inline">t</span>, if <span class="math inline">\Gamma \vdash \theta[v\vert t]</span> then <span class="math display">
+\Gamma \vdash \forall v \theta
+</span></p>
+<p>provided that <span class="math inline">t</span> is not in <span class="math inline">v</span> or <span class="math inline">\theta</span>.</p>
+</div>
+</div>
+<p>Universal introduction corresponds to common inference in mathematics. If we start a proof with ‘let <span class="math inline">n</span> be some natural number’ and deduce some property of <span class="math inline">n</span> without assuming anything about <span class="math inline">n</span>, then we have shown that property to be true of all natural numbers since our choice of <span class="math inline">n</span> was arbitrary.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Universal-elimination (<span class="math inline">\forall</span>E)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\Gamma \vdash \forall v \theta</span> then <span class="math display">
+\Gamma \vdash \theta[v\vert t]
+</span></p>
+<p>for any closed term <span class="math inline">t</span>.</p>
+</div>
+</div>
+<p>Universal elimination, also known as universal instantiation or universal specification, states that is some property is true for all variables <span class="math inline">v</span>, then it holds for some specific term <span class="math inline">t</span>.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exstitential-introduction (<span class="math inline">\exists</span>I)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any closed <span class="math inline">t</span>, if <span class="math inline">\Gamma \vdash \theta[v\vert t]</span> then <span class="math display">
+\Gamma \vdash \exists v \theta(v)
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exstitential-elimination (<span class="math inline">\exists</span>E)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For any closed <span class="math inline">t</span>, if <span class="math inline">\Gamma \vdash \theta[v\vert t]</span> then <span class="math display">
+\Gamma \vdash \exists v \theta(v)
+</span></p>
+</div>
+</div>
+</section>
+</section>
+<section id="references" class="level2">
+<h2 class="anchored" data-anchor-id="references">References</h2>
+<p>Shapiro, Stewart and Teresa Kouri Kissel, “Classical Logic”, The Stanford Encyclopedia of Philosophy (Fall 2025 Edition), Edward N. Zalta &amp; Uri Nodelman (eds.), https://plato.stanford.edu/archives/fall2025/entries/logic-classical/</p>
 
 
 </section>
-</div>
-</main></div>
-</div>
- <!-- /main -->
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -314,6 +578,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

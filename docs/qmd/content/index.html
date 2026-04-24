@@ -97,6 +97,34 @@ ul.task-list li input[type="checkbox"] {
       window['quarto-listing-loaded']();
     }
   })
+  
+
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-misc .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-title','listing-subtitle','listing-image','listing-links',{ data: ['index'] },{ data: ['categories'] }],
+      
+      searchColumns: ["listing-title","listing-subtitle","listing-image","listing-links"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-misc'] = new List('listing-misc', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
   </script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
@@ -226,6 +254,78 @@ window.Quarto = {
 <li><a href="../../qmd/realanal/differentiation.html">Differentiation</a></li>
 <li><a href="../../qmd/realanal/integration.html">Integration</a></li>
 <li><a href="../../qmd/realanal/infinite-series.html">Infinite Series</a></li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="realanal">
+<section id="topology" class="level4 card-title">
+<h4 data-anchor-id="topology">Topology</h4>
+<section id="study-of-spaces-and-metrics" class="level6 card-subtitle">
+<h6 data-anchor-id="study-of-spaces-and-metrics">Study of Spaces and Metrics</h6>
+</section>
+</section>
+</div>
+<ul>
+<li><a href="">Introduction</a></li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="abalg">
+<section id="abstract-algebra" class="level4 card-title">
+<h4 data-anchor-id="abstract-algebra">Abstract Algebra</h4>
+<section id="study-of-algebraic-structures" class="level6 card-subtitle">
+<h6 data-anchor-id="study-of-algebraic-structures">Study of Algebraic Structures</h6>
+</section>
+</section>
+</div>
+<ul>
+<li><a href="../../qmd/abstract/intro.html">Introduction</a></li>
+<li><a href="../abstract/prereq/functions.qmd">Prerequisites</a></li>
+<li><a href="../abstract/intro-to-groups/definitions.qmd">Groups</a></li>
+</ul>
+</div>
+</div>
+<div class="card">
+<div class="card-body">
+<div class="testink">
+<section id="complex-analysis" class="level4 card-title">
+<h4 data-anchor-id="complex-analysis">Complex Analysis</h4>
+<section id="analysis-of-complex-numbers" class="level6 card-subtitle">
+<h6 data-anchor-id="analysis-of-complex-numbers">Analysis of Complex Numbers</h6>
+</section>
+</section>
+</div>
+<ul>
+<li><a href="../../qmd/complex/intro.html">Introduction</a></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">
+No matching items
+</div>
+</div>
+</section>
+<section id="miscellaneous" class="level2">
+<h2 data-anchor-id="miscellaneous">Miscellaneous</h2>
+<div id="listing-misc" class="quarto-listing quarto-listing-container-custom">
+<div class="link-cards">
+<div class="card">
+<div class="card-body">
+<div class="realanal">
+<section id="symbolic-integration" class="level4 card-title">
+<h4 data-anchor-id="symbolic-integration">Symbolic Integration</h4>
+<section id="computing-antiderivatives" class="level6 card-subtitle">
+<h6 data-anchor-id="computing-antiderivatives">Computing antiderivatives</h6>
+</section>
+</section>
+</div>
+<ul>
+<li><a href="../../qmd/integral/intro.html">Introduction</a></li>
 </ul>
 </div>
 </div>

@@ -1,0 +1,7 @@
+- title: Symbolic Integration
+  subtitle: Computing antiderivatives
+  image: realanal
+  links:
+    - text: Introduction
+      href: ../integral/intro.qmd
+
