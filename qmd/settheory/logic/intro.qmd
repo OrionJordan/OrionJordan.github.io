@@ -1,16 +1,12 @@
 ---
-title: "Introduction"
+title: "Philosophy"
 format:
   html:
     toc: false
     html-math-method: katex
 ---
 
-Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.
-
-Zermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.
-
-In this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as $ZFC$, and has become the standard axiomatization for mathematics. Before we look at the axioms of $ZFC$ or their consequences we must first examine the logical foundations needed to state our axioms.
+ Before we look at the axioms of $ZFC$ or their consequences we must first examine the logical foundations needed to state our axioms.
 
 ## First order logic
 

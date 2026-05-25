@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Philosophy – OOMN</title>
+<title>Conways Construction – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,13 +150,22 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#properties" id="toc-properties" class="nav-link active" data-scroll-target="#properties">Properties</a></li>
+  <li><a href="#proper-subsets" id="toc-proper-subsets" class="nav-link" data-scroll-target="#proper-subsets">Proper Subsets</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Philosophy</h1>
+<h1 class="title">Conways Construction</h1>
 </div>
 
 
@@ -173,19 +182,347 @@ window.Quarto = {
 </header>
 
 
-<p>Before we look at the axioms of <span class="math inline">ZFC</span> or their consequences we must first examine the logical foundations needed to state our axioms.</p>
-<section id="first-order-logic" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-logic">First order logic</h2>
-<p>Logic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">surreal number</span> is an ordered pair <span class="math inline">(L,R)</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using an informal brace notation, let <span class="math inline">A</span> and <span class="math inline">B</span> be sets such that</p>
 <p><span class="math display">
-\text{For all $x$ \quad or \quad There exists $x$}.
+A = \{a,b,c\} \qquad \text{and} \qquad B = \{a,b,c,d\}.
 </span></p>
-<p>First-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.</p>
-<p>Using the language and deductive system of First-order logic, we will assert nine axioms which together are known as <strong>ZFC</strong> and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way.</p>
+<p>Then we have <span class="math inline">A \subseteq B</span> since each element in <span class="math inline">A</span> is in <span class="math inline">B</span>. However we do not have <span class="math inline">B \subseteq A</span> since <span class="math inline">d \in B</span> but <span class="math inline">d \not \in A</span>.</p>
+</div>
+</div>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>Now we can take a look at some properties of subsets.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Subset-1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">A \subseteq A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It a logical tautology that</p>
+<p><span class="math display">
+\forall x (x \in A \implies x \in A)
+</span></p>
+<p>thus by our definition of a subset, <span class="math inline">A \subseteq A</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Subset-2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. If <span class="math inline">A \subseteq B</span> and <span class="math inline">B \subseteq A</span>, then <span class="math inline">A = B</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By our hypothesis, we have</p>
+<p><span class="math display">
+\forall x (x \in A \implies x \in B)
+</span></p>
+<p>and</p>
+<p><span class="math display">
+\forall x (x \in B \implies x \in A)
+</span></p>
+<p>Thus we have</p>
+<p><span class="math display">
+\forall x (x \in B \iff x \in A)
+</span></p>
+<p>and by instantiating the Axiom of Extensionality we have</p>
+<p><span class="math display">
+A = B.
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Subset-3)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. If <span class="math inline">A \subseteq \varnothing</span> then <span class="math inline">A = \varnothing</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By hypothesis we have</p>
+<p><span class="math display">
+\forall x (x \in A \implies x \in \varnothing).
+</span></p>
+<p>By the definition of the empty set, we have</p>
+<p><span class="math display">
+\forall x (x \not \in \varnothing)
+</span></p>
+<p>thus</p>
+<p><span class="math display">
+\forall x (x \not \in A)
+</span></p>
+<p>and so by the definition of the empty set</p>
+<p><span class="math display">
+A = \varnothing.
+</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Subset-4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> and <span class="math inline">C</span> be sets. If <span class="math inline">{A \subseteq B}</span> and <span class="math inline">{B \subseteq C}</span>, then <span class="math inline">{A \subseteq C}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By hypothesis we have</p>
+<p><span class="math display">
+\forall x (x \in A \implies x \in B)
+</span></p>
+<p>and</p>
+<p><span class="math display">
+\forall x (x \in B \implies x \in C).
+</span></p>
+<p>By modus ponens, we have</p>
+<p><span class="math display">
+\forall x (x \in A \implies x \in C)
+</span></p>
+<p>and by our definition of a subset</p>
+<p><span class="math display">
+A \subseteq C.
+</span></p>
+</div>
+</div>
+</div>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[Kunen 1980] [Open Logic Project]</p>
+<section id="proper-subsets" class="level2">
+<h2 class="anchored" data-anchor-id="proper-subsets">Proper Subsets</h2>
+<p>Occansionally we want to specify that we have a subset <span class="math inline">A</span> of <span class="math inline">B</span> such that <span class="math inline">A \not = B</span>. This is where proper subsets come in.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A <span class="definition">proper subset</span> <span class="math inline">A</span> of a set <span class="math inline">B</span> is some set such that <span class="math inline">A \subseteq B</span> and <span class="math inline">A \not = B</span>. Formally</p>
+<p><span class="math display">
+A \subset B \iff A \subseteq B \land A \not = B.
+</span></p>
+</div>
+</div>
+<p>The notation for proper subsets differs from source to source. Some authors chose to use the less ambiguous <span class="math inline">\subsetneq</span> and use <span class="math inline">\subset</span> to refer to any subset. The notation used here is motivated by the <span class="math inline">&lt;,\leq</span> relation.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (PSubset-1)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A</span> be a set. Then <span class="math inline">A \not \subset A</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We have by logic</p>
+<p><span class="math display">
+\forall A (A = A)
+</span></p>
+<p>Thus for all <span class="math inline">A</span>, <span class="math inline">A \not \subset A</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (PSubset-2)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">{A \subset B}</span> implies <span class="math inline">{B \not \subset A}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By hypothesis we have that <span class="math inline">A \subseteq B</span> and <span class="math inline">A \not = B</span>. We need to show that either <span class="math inline">B \subseteq A</span> or <span class="math inline">B \not= A</span> do not hold. Since we have <span class="math inline">B \not = A</span> by our hypothesis, we must show <span class="math inline">B \not \subseteq A</span>.</p>
+<p>We do this by contradiction. If <span class="math inline">B \subseteq A</span> then by Theorem (Subset-2) we would have <span class="math inline">A = B</span>. This contradicts our hypothesis, therefore <span class="math inline">B \not \subseteq A</span> and thus <span class="math inline">B \not \subset A</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (PSubset-3)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">{A \subset B}</span> and <span class="math inline">{B \subset C}</span> implies <span class="math inline">{A \subset C}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By hypothesis we have <span class="math inline">A \subseteq B</span>, <span class="math inline">B \subseteq C</span>, <span class="math inline">A \not = B</span> and <span class="math inline">B \not = C</span>.</p>
+<p>By Theorem (Subset-4) we have <span class="math inline">A \subseteq C</span> and by the transitivity of equality we have <span class="math inline">A \not = C</span>. Thus <span class="math inline">A \subset C</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (PSubset-4)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> be sets. Then <span class="math inline">{A \subset B}</span> implies <span class="math inline">{A \subseteq B}</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>A simple one liner, by the definition of proper subset.</p>
+</div>
+</div>
+</div>
 
 
 </section>

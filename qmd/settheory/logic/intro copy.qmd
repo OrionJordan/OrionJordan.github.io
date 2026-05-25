@@ -1,0 +1,18 @@
+---
+title: "Introduction"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+Before we can study set theory, we must take a step back and examine the foundations of mathematics. 
+
+When attempting to learn math from the beginning, there is always the question of where to start. Many books about set theory assume knowledge of logic, or sometimes include a minimal section on logic. If one tries to learn logic first to have a better understanding, they often find the logic books start off with a short section on set theory! So where do we begin? There are numerous different approaches, here we develop in the following order;
+
+- Philosophy
+- Metalanguage/Metatheories                     
+- First-order logic
+- ZFC Set Theory
+
+From ZFC, most all of mathematics can be developed! We will begin our look at the foundations by examining philosophy.

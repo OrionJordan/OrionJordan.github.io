@@ -1,51 +1,49 @@
 ---
-title: "Axiom of Extension"
+title: "Axiom Schema of Specification"
 format:
   html:
     toc: true
     html-math-method: katex
 ---
 
-Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is put into first order logic with the axiom of extensionality.
+We move onto our next axiom, known as either the axiom of specification, separation, or comprehension. The axiom states that given some set $A$, there exists some $B$ such that for all $x \in A$, $x \in B$ if and only if $\phi(x)$ holds. Our choice of formula $\phi$ is arbitrary, but first order logic does not allow us to quantify over formulas. Thus we instead have an infinite _schema_ of axioms, one for each formula.
 
 ::: {.callout-important icon="false"}
-## Axiom of Extensionality
+## Axiom schema of Specification
 
-Two sets are equivalent if they have the same elements
+For every formula $\phi$ (where $B$ is not free in $\phi$), we have an axiom stating: 
+
+For some set $A$, there exists a set $B$ such that for all $x \in A$, $x \in B$ if and only if $\phi(x,t_1,\dots,t_n)$ holds.
+$$
+\forall t_1 \dots \forall t_n \forall A \exists B \forall x(x \in B \iff (x \in A \land \phi(x,t_1,\dots,t_n)))
+$$
+:::
+
+::: {.callout-warning icon="false"}
+## Example 
+
+Using our informal notation of sets, let
 
 $$
-\forall A \forall B [\forall x(x \in A \iff x \in B) \implies A = B]
-$$
-:::
-
-This is a pretty natural axiom, and is used all of the time to prove the uniqueness of a set. The next axiom is going to allow us to create sets at all.
-
-::: {.callout-important icon="false"}
-## Axiom of Specificication
-
-:::
-
-::: {.callout-note icon="false"}
-## Definition
-
-The [empty set]{.definition} denoted $\varnothing$ is the set containing no elements. Formally
-
-$$
-\varnothing = A \iff \forall x (x \not \in A).
+A = \{1,2,3,4,5,6,7,8,9\}
 $$
 
+and let $\phi$ be the informal formula 'is a square number'. Say we knew $A$ was a set, but weren't sure if some smaller fragments of $A$ were sets. By applying the Axiom of Specification onto $A$ with $\phi$ as our formula, we get the result that $B = \{1,4,9\}$ is a set. If instead we let $\phi$ be the informal formula 'is less than 4', the Axiom of Specification would tell us $B = \{1,2,3\}$ is a set.
 :::
 
-::: {.callout-note icon="false"}
-## Theorem
+The axiom of specification tells us that any subset (which we will formally define later) of $A$ which can be defined by a formula is a set. We commonly use specification to show that a set exists, by establishing a larger set and then a formula to specify only the elements we want in our desired set.
 
-The empty set exists.
+## Restrictions on Specification
 
-:::
+The requirement that our desired set $B$ must be a subset of $A$ is to avoid Russels' paradox, and the problems with unrestricted comprehension discussed previously. Unfortunately this means that the axioms of Specification cannot be used to create _larger_ sets. Whereas with unrestricted comprehension we could create the union of sets $A \cup B$, specification only allows us to create restricted smaller sets.
 
-::: {.callout-note icon="false"}
-## Theorem
+We must also notice that we can only prove the existence of some set $B$ if there exists a formula $\phi$ such that each member of $B$ satisfies $\phi$. However we will later see that given some infinite sets, it is impossible to construct a formula such that each element of the set satisfies the formula; thus the axiom of specification cannot be used to prove the existence of those sets.
 
-The empty set is unique.
+And the final restriction on specification is that although $\phi$ can have any number of free variables $t$, $B$ must not be free in our formula $\phi$. This is to prevent circularity, else we could take $\phi$ to be $x \not \in B$ and any set $A$ to obtain the axiom
 
-:::
+$$
+\exists B \forall x(x \in B \iff (x \in A \land x \not \in B)).
+$$
+
+This creates a paradox, as $x \in B$ if and only if $x \not \in B$. For this reason $B$ must not appear free in our formula $\phi$. We now start to develop some set theory using only the axioms of extension and specification!
+

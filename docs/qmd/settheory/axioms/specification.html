@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Philosophy – OOMN</title>
+<title>Axiom Schema of Specification – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,13 +150,21 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#restrictions-on-specification" id="toc-restrictions-on-specification" class="nav-link active" data-scroll-target="#restrictions-on-specification">Restrictions on Specification</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Philosophy</h1>
+<h1 class="title">Axiom Schema of Specification</h1>
 </div>
 
 
@@ -173,19 +181,50 @@ window.Quarto = {
 </header>
 
 
-<p>Before we look at the axioms of <span class="math inline">ZFC</span> or their consequences we must first examine the logical foundations needed to state our axioms.</p>
-<section id="first-order-logic" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-logic">First order logic</h2>
-<p>Logic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as</p>
-<p><span class="math display">
-\text{For all $x$ \quad or \quad There exists $x$}.
+<p>We move onto our next axiom, known as either the axiom of specification, separation, or comprehension. The axiom states that given some set <span class="math inline">A</span>, there exists some <span class="math inline">B</span> such that for all <span class="math inline">x \in A</span>, <span class="math inline">x \in B</span> if and only if <span class="math inline">\phi(x)</span> holds. Our choice of formula <span class="math inline">\phi</span> is arbitrary, but first order logic does not allow us to quantify over formulas. Thus we instead have an infinite <em>schema</em> of axioms, one for each formula.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Axiom schema of Specification
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For every formula <span class="math inline">\phi</span> (where <span class="math inline">B</span> is not free in <span class="math inline">\phi</span>), we have an axiom stating:</p>
+<p>For some set <span class="math inline">A</span>, there exists a set <span class="math inline">B</span> such that for all <span class="math inline">x \in A</span>, <span class="math inline">x \in B</span> if and only if <span class="math inline">\phi(x,t_1,\dots,t_n)</span> holds. <span class="math display">
+\forall t_1 \dots \forall t_n \forall A \exists B \forall x(x \in B \iff (x \in A \land \phi(x,t_1,\dots,t_n)))
 </span></p>
-<p>First-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.</p>
-<p>Using the language and deductive system of First-order logic, we will assert nine axioms which together are known as <strong>ZFC</strong> and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[Kunen 1980] [Open Logic Project]</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Using our informal notation of sets, let</p>
+<p><span class="math display">
+A = \{1,2,3,4,5,6,7,8,9\}
+</span></p>
+<p>and let <span class="math inline">\phi</span> be the informal formula ‘is a square number’. Say we knew <span class="math inline">A</span> was a set, but weren’t sure if some smaller fragments of <span class="math inline">A</span> were sets. By applying the Axiom of Specification onto <span class="math inline">A</span> with <span class="math inline">\phi</span> as our formula, we get the result that <span class="math inline">B = \{1,4,9\}</span> is a set. If instead we let <span class="math inline">\phi</span> be the informal formula ‘is less than 4’, the Axiom of Specification would tell us <span class="math inline">B = \{1,2,3\}</span> is a set.</p>
+</div>
+</div>
+<p>The axiom of specification tells us that any subset (which we will formally define later) of <span class="math inline">A</span> which can be defined by a formula is a set. We commonly use specification to show that a set exists, by establishing a larger set and then a formula to specify only the elements we want in our desired set.</p>
+<section id="restrictions-on-specification" class="level2">
+<h2 class="anchored" data-anchor-id="restrictions-on-specification">Restrictions on Specification</h2>
+<p>The requirement that our desired set <span class="math inline">B</span> must be a subset of <span class="math inline">A</span> is to avoid Russels’ paradox, and the problems with unrestricted comprehension discussed previously. Unfortunately this means that the axioms of Specification cannot be used to create <em>larger</em> sets. Whereas with unrestricted comprehension we could create the union of sets <span class="math inline">A \cup B</span>, specification only allows us to create restricted smaller sets.</p>
+<p>We must also notice that we can only prove the existence of some set <span class="math inline">B</span> if there exists a formula <span class="math inline">\phi</span> such that each member of <span class="math inline">B</span> satisfies <span class="math inline">\phi</span>. However we will later see that given some infinite sets, it is impossible to construct a formula such that each element of the set satisfies the formula; thus the axiom of specification cannot be used to prove the existence of those sets.</p>
+<p>And the final restriction on specification is that although <span class="math inline">\phi</span> can have any number of free variables <span class="math inline">t</span>, <span class="math inline">B</span> must not be free in our formula <span class="math inline">\phi</span>. This is to prevent circularity, else we could take <span class="math inline">\phi</span> to be <span class="math inline">x \not \in B</span> and any set <span class="math inline">A</span> to obtain the axiom</p>
+<p><span class="math display">
+\exists B \forall x(x \in B \iff (x \in A \land x \not \in B)).
+</span></p>
+<p>This creates a paradox, as <span class="math inline">x \in B</span> if and only if <span class="math inline">x \not \in B</span>. For this reason <span class="math inline">B</span> must not appear free in our formula <span class="math inline">\phi</span>. We now start to develop some set theory using only the axioms of extension and specification!</p>
 
 
 </section>

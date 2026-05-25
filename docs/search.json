@@ -1002,7 +1002,7 @@
     "href": "qmd/layout.html#callouts",
     "title": "Standard layout",
     "section": "Callouts",
-    "text": "Callouts\nCallouts are used to section parts of the content together.\n\n\n\n\n\n\nDefinition\n\n\n\nDefinitions use .callout-note and explain a mathematical concept or term to be referenced. The definition callout should not be used for notation, but may include notation of the concept. The key term being discussed will be highlighted by applying {.definition} to the key term.\nThe key term will appear bold, and be colored blue in light mode, and cyan in dark mode."
+    "text": "Callouts\nCallouts are used to section parts of the content together.\n\n\n\n\n\n\nDefinition\n\n\n\nDefinitions use .callout-note and explain a mathematical concept or term.\nThe term being discussed will be highlighted by applying {.definition} to the key term.\nThe key term will appear bold, and be colored blue in light mode, and cyan in dark mode."
   },
   {
     "objectID": "qmd/layout.html#tikz",
@@ -2533,14 +2533,14 @@
     "href": "qmd/settheory/intro.html",
     "title": "Set Theory",
     "section": "",
-    "text": "This section covers ZFC set theory, and constructs the foundations of mathematics from 9 axioms.\nTopics include basic logic, properties of sets, functions and relations, and ordinal and cardinal numbers."
+    "text": "Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.\nZermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.\nIn this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as ZFC, and has become the standard axiomatization for mathematics. Topics include properties of sets, functions and relations, and ordinal and cardinal numbers."
   },
   {
     "objectID": "qmd/settheory/intro.html#table-of-contents",
     "href": "qmd/settheory/intro.html#table-of-contents",
     "title": "Set Theory",
     "section": "Table of Contents",
-    "text": "Table of Contents\n\nLogic\n\nIntroduction\nSyntax of First-order Logic\nDeductive System of First-order Logic\nSemantics and Models\n\nBasic Axioms and Operations\n\nRelationship between ZFC and FOL\nPreview of Axioms X\nAxioms of Extension and Specification\nSubsets\nIntersections and Differences X\nAxiom of Pairing X\nAxiom of Union X\nAxiom of Powerset X\nCartesian Sets X\nAxiom of Regularity X\n\nRelations and Functions\nOrdinal Numbers\nCardinal Numbers\n\nEquinumerosity X\nEquinumerosity Arithmetic X\nEquinumerosity Ordering\n\nFinite Sets"
+    "text": "Table of Contents\n\nFoundations\n\nIntroduction X\nPhilosophy and Metatheory\nBaby set theory X\nSyntax of First-order Logic X\nDeductive System of First-order Logic X\nSemantics and Models\n\n\n[Move above to ‘Foundation’]\n\nBasic Axioms and Operations\n\nRelationship between ZFC and FOL\nPreview of Axioms X\nAxiom of Extension X\nAxiom schema of Specification X\nThe Empty Set\n\nSubsets\nIntersections and Differences X\nAxiom of Pairing X\nAxiom of Union X\nAxiom of Powerset X\nCartesian Sets X\nAxiom of Regularity X\n\nRelations and Functions\nOrdinal Numbers\nCardinal Numbers\n\nEquinumerosity X\nEquinumerosity Arithmetic X\nEquinumerosity Ordering\n\nFinite Sets"
   },
   {
     "objectID": "qmd/realanal/topology/density.html#properties",
@@ -3238,9 +3238,9 @@
   {
     "objectID": "qmd/settheory/logic/intro.html",
     "href": "qmd/settheory/logic/intro.html",
-    "title": "Introduction",
+    "title": "Philosophy",
     "section": "",
-    "text": "Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.\nZermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.\nIn this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as ZFC, and has become the standard axiomatization for mathematics. Before we look at the axioms of ZFC or their consequences we must first examine the logical foundations needed to state our axioms."
+    "text": "Before we look at the axioms of ZFC or their consequences we must first examine the logical foundations needed to state our axioms."
   },
   {
     "objectID": "qmd/settheory/logic/intro.html#table-of-contents",
@@ -3252,7 +3252,7 @@
   {
     "objectID": "qmd/settheory/logic/intro.html#references",
     "href": "qmd/settheory/logic/intro.html#references",
-    "title": "Introduction",
+    "title": "Philosophy",
     "section": "References",
     "text": "References\n[Kunen 1980] [Open Logic Project]"
   },
@@ -4482,7 +4482,7 @@
   {
     "objectID": "qmd/settheory/logic/intro.html#first-order-logic",
     "href": "qmd/settheory/logic/intro.html#first-order-logic",
-    "title": "Introduction",
+    "title": "Philosophy",
     "section": "First order logic",
     "text": "First order logic\nLogic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as\n\n\\text{For all $x$ \\quad or \\quad There exists $x$}.\n\nFirst-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.\nUsing the language and deductive system of First-order logic, we will assert nine axioms which together are known as ZFC and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way."
   },
@@ -4534,5 +4534,271 @@
     "title": "Relationship between FOL and ZFC",
     "section": "Signature and Axioms",
     "text": "Signature and Axioms\nZFC has only one non-logical symbol in its signature, a binary predicate denoted \\in. This symbol stands for set membership, and we read a \\in b as a is a member in the set b.\nThe real substance in our theory comes from our axioms. While I have mentioned many times that ZFC consist of 9 axioms, this is not strictly true. Our theory contains a few axiom schema, which are an infinite list of axioms. These will be discussed more when they appear. Each of our axioms specify some way that our nonlogical symbol \\in functions.\nAnd with that, we can finally begin to study the consequences of our axioms and set theory as a whole!"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/extension.html",
+    "href": "qmd/settheory/axioms/extension.html",
+    "title": "Axiom of Extension",
+    "section": "",
+    "text": "Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is stated formally in first order logic with the axiom of extensionality.\n\n\n\n\n\n\nAxiom of Extensionality\n\n\n\nTwo sets are equivalent if they have the same elements\n\n\\forall A \\forall B (\\forall x(x \\in A \\iff x \\in B) \\implies A = B)\n\n\n\nThis is a very natural axiom. We don’t need extensionality to show that a set is equal to itself, as ‘A = A’ is a logical axiom. We do however need extensionality anytime we wish to prove that two sets A and B are equivalent.\nWhat may be interesting is that the converse of the axiom of extensionality can be proved with just first-order logic.\n\n\n\n\n\n\nTheorem (Converse of Extensionality)\n\n\n\nLet A,B and x be sets. Then if A = B, x \\in A if and only if x \\in B.\n\n\\forall A \\forall B (A = B \\implies \\forall x(x \\in A \\iff x \\in B))\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nLet \\phi be the formula \\forall x (x \\in A \\iff  x \\in A) where A is a free variables. We can substitute some occurrences of A with B to obtain \\phi^\\prime = \\forall x (x \\in A \\iff x \\in B). Then by the substitution property of equality\n\n\\forall A \\forall B (A = B \\implies (\\phi \\implies \\phi^\\prime))\n\nSince \\phi is always true, modus ponenes gives us\n\n\\forall A \\forall B (A = B \\implies \\forall x (x \\in A \\iff x \\in B))\n\nAnd thus we have our proof.\n\n[Math SE]\n\n\n\nIntuitively, if A = B then all properties of A are also properties of B, so this is perhaps not that illuminating. However it does put into perspective that set membership is the only property defining a set. There isn’t a lot more we can do with extensionality, but we can introduce some new notation.\n\n\n\n\n\n\nDefinition\n\n\n\nTwo sets are inequal if they are not equal, notated \nA \\not = B \\iff \\lnot(A = B)\n\n\n\nWe were very careful when defining ZFC as a theory to include as few symbols as possible, so how is it now that we are defining new symbols in our theory; is this justified‽ We circumvent this problem for now by letting A \\not = B simply be an abbreviation for the formula \\lnot(A = B) in our formal language. More information on the justification of these definitions is given in [Definitions]. We will now move onto our next axiom, the axiom schema of specification!"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification.html",
+    "href": "qmd/settheory/axioms/specification.html",
+    "title": "Axiom Schema of Specification",
+    "section": "",
+    "text": "We move onto our next axiom, known as either the axiom of specification, separation, or comprehension. The axiom states that given some set A, there exists some B such that for all x \\in A, x \\in B if and only if \\phi(x) holds. Our choice of formula \\phi is arbitrary, but first order logic does not allow us to quantify over formulas. Thus we instead have an infinite schema of axioms, one for each formula.\nThe axiom of specification tells us that any subset (which we will formally define later) of A which can be defined by a formula is a set. We commonly use specification to show that a set exists, by establishing a larger set and then a formula to specify only the elements we want in our desired set."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/intro copy.html",
+    "href": "qmd/settheory/foundations/intro copy.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "When attempting to learn math from the beginning, there is always the question of where to start. Many books about set theory assume knowledge of logic, or sometimes include a short section painting a very generalized and incomplete survey of the subject. If one tries to learn logic instead to remedy this, they often find the logic books start off with a short section on set theory! So where do we begin?"
+  },
+  {
+    "objectID": "qmd/settheory/foundations/relationship.html",
+    "href": "qmd/settheory/foundations/relationship.html",
+    "title": "Relationship between FOL and ZFC",
+    "section": "",
+    "text": "Now that we have an idea of what first-order logic is, how can we use it to build set theory? We must extend our logic by adding the axioms of ZFC, and the special symbols use in those axioms. We call this extension a theory, and since we’re working in first-order logic, we’ll call it a first-order theory."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/relationship.html#signature-and-axioms",
+    "href": "qmd/settheory/foundations/relationship.html#signature-and-axioms",
+    "title": "Relationship between FOL and ZFC",
+    "section": "Signature and Axioms",
+    "text": "Signature and Axioms\nZFC has only one non-logical symbol in its signature, a binary predicate denoted \\in. This symbol stands for set membership, and we read a \\in b as a is a member in the set b.\nThe real substance in our theory comes from our axioms. While I have mentioned many times that ZFC consist of 9 axioms, this is not strictly true. Our theory contains a few axiom schema, which are an infinite list of axioms. These will be discussed more when they appear. Each of our axioms specify some way that our nonlogical symbol \\in functions.\nAnd with that, we can finally begin to study the consequences of our axioms and set theory as a whole!"
+  },
+  {
+    "objectID": "qmd/settheory/foundations/deductive.html",
+    "href": "qmd/settheory/foundations/deductive.html",
+    "title": "Deductive System",
+    "section": "",
+    "text": "A deductive system allows us to transform one formula into another, using only the syntax we developed previously. It allows us to reason about formulas and create proofs of assertions. If our deductive system transforms some collection of formulas \\Gamma into some formula \\phi we write\n\\Gamma \\vdash \\phi\nand say that \\Gamma derives \\phi from either rules of inference or logical axioms. If S is empty, then we write \\vdash \\phi and say \\phi is logically valid. Intuitively, we think of S as being our hypothesis, and \\phi being our conclusion.\nThe deductive system formulated here comes from [Stanford Classical Logic], and is a kind of sequent calculus using natural deduction."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/deductive.html#rules-of-inference",
+    "href": "qmd/settheory/foundations/deductive.html#rules-of-inference",
+    "title": "Deductive System",
+    "section": "Rules of inference",
+    "text": "Rules of inference\nA rule of inference states that given some formula or collection of formulas, another formula can be derived as a conclusion. This is in contrast to logical axioms, which are assertions of the form \\vdash \\phi.\nThe deductive system described here is known as natural deduction, meaning it contains exclusively rules of inference based on the ‘natural’ way of reasoning. We begin with our first rule:\n\n\n\n\n\n\nRule of Assumption (As)\n\n\n\nLet \\Gamma be some collection of sentences containing \\phi. Then\n\n\\Gamma \\vdash \\phi\n\n\n\nThus every premise follows from itself, which seems fair enough.\n\nConnectives\nNext we introduce two rules for each coonnective, which will tell us how these symbols work. Our first rule will tell us how to introduce each symbol, and the next how to eliminate it.\n\n\n\n\n\n\nAnd-Introduction (\\landI)\n\n\n\nIf \\Gamma_1 \\vdash \\phi and \\Gamma_2 \\vdash \\psi then\n\n\\Gamma_1 , \\Gamma_2 \\vdash \\phi \\land \\psi\n\n\n\n\n\n\n\n\n\nAnd-Elimination (\\landE)\n\n\n\nIf \\Gamma \\vdash \\phi \\land \\psi then\n\n\\Gamma \\vdash \\phi \\quad \\text{ and } \\quad \\Gamma \\vdash \\psi\n\n\n\nWe take \\land to be the logical symbol meaning ‘and’. If one has deduced the formula \\phi \\land \\psi, then we have deduced \\phi and \\psi. Conversely if we have \\phi and \\psi, then we have \\phi \\land \\psi.\n\n\n\n\n\n\nOr-Introduction (\\lorI)\n\n\n\nIf \\Gamma \\vdash \\phi and \\psi is a formula, then\n\n\\Gamma  \\vdash \\phi \\lor \\psi\n\nAdditionally if \\Gamma \\vdash \\psi and \\phi is a formula, then\n\n\\Gamma  \\vdash \\phi \\lor \\psi\n\n\n\n\n\n\n\n\n\nOr-Elimination (\\lorE)\n\n\n\nIf \\Gamma_1 \\vdash \\phi \\lor \\psi and \\Gamma_2, \\phi \\vdash \\theta and \\Gamma_3, \\psi \\vdash \\theta then\n\n\\Gamma_1,\\Gamma_2,\\Gamma_3 \\vdash \\theta\n\n\n\nWe take \\land to be the logical symbol for ‘or’. If we have either \\phi or \\psi as formulas, we have \\phi \\lor \\psi. Or-elimination is more complicated. If we introduce a third formula \\theta such that \\phi and \\psi deduce \\theta, then regardless of which of \\phi or \\psi are true, \\theta will be true regardless. Then we can eliminate the \\land conjugate.\n\n\n\n\n\n\nImplies-Introduction (\\impliesI)\n\n\n\nIf \\Gamma, \\phi \\vdash \\psi then \n\\Gamma \\vdash \\phi \\implies \\psi\n\n\n\n\n\n\n\n\n\nModus ponens (MP)\n\n\n\nIf \\Gamma_1 \\vdash \\phi \\implies \\psi and \\Gamma_2 \\vdash \\phi then \n\\Gamma_1,\\Gamma_2 \\vdash \\psi\n\n\n\nThe \\implies conjugate corresponds to the english ‘implication’. If we know \\phi \\implies \\psi and know \\phi, then we can conclude \\psi. The elimination rule is known as Modus ponens, and is a rule of inference known since antiquity.\n\n\n\n\n\n\nNegation-introduction (\\lnotI)\n\n\n\nIf \\Gamma_1, \\phi \\vdash \\psi and \\Gamma_2, \\phi \\vdash \\lnot\\psi then \n\\Gamma_1,\\Gamma_2 \\vdash \\lnot \\phi\n\n\n\nRecall the \\lnot conjugate corresponds to the english ‘negation’. If we have that \\phi implies both \\psi and \\lnot \\psi, then we would have a contradiction! Thus \\phi must be incorrect. This is the idea behind proofs by contradiction. We do not have a rule for negation elimination, but we do when dealing with pairs of negatives.\n\n\n\n\n\n\nDouble negation-elimination (DNE)\n\n\n\nIf \\Gamma \\vdash \\lnot\\lnot\\phi then \n\\Gamma \\vdash \\phi\n\n\n\nThis is a standard law in classical logic, but is controversial among logicians and philosophers. Intuitionist logics do not admit this rule of inference, and constructive mathematics is (roughly) the study of mathematics without double negation elimination.\n\n\nQuantifiers\nNext we examine rules about our quantifiers. Let \\theta be a formula, v to be a variable and t to be a term (variable or constant).\n\n\n\n\n\n\nUniversal-introduction (\\forallI)\n\n\n\nFor any closed t, if \\Gamma \\vdash \\theta[v\\vert t] then \n\\Gamma \\vdash \\forall v \\theta\n\nprovided that t is not in v or \\theta.\n\n\nUniversal introduction corresponds to common inference in mathematics. If we start a proof with ‘let n be some natural number’ and deduce some property of n without assuming anything about n, then we have shown that property to be true of all natural numbers since our choice of n was arbitrary.\n\n\n\n\n\n\nUniversal-elimination (\\forallE)\n\n\n\nIf \\Gamma \\vdash \\forall v \\theta then \n\\Gamma \\vdash \\theta[v\\vert t]\n\nfor any closed term t.\n\n\nUniversal elimination, also known as universal instantiation or universal specification, states that is some property is true for all variables v, then it holds for some specific term t.\n\n\n\n\n\n\nExstitential-introduction (\\existsI)\n\n\n\nFor any closed t, if \\Gamma \\vdash \\theta[v\\vert t] then \n\\Gamma \\vdash \\exists v \\theta(v)\n\n\n\n\n\n\n\n\n\nExstitential-elimination (\\existsE)\n\n\n\nFor any closed t, if \\Gamma \\vdash \\theta[v\\vert t] then \n\\Gamma \\vdash \\exists v \\theta(v)"
+  },
+  {
+    "objectID": "qmd/settheory/foundations/deductive.html#references",
+    "href": "qmd/settheory/foundations/deductive.html#references",
+    "title": "Deductive System",
+    "section": "References",
+    "text": "References\nShapiro, Stewart and Teresa Kouri Kissel, “Classical Logic”, The Stanford Encyclopedia of Philosophy (Fall 2025 Edition), Edward N. Zalta & Uri Nodelman (eds.), https://plato.stanford.edu/archives/fall2025/entries/logic-classical/"
+  },
+  {
+    "objectID": "qmd/settheory/foundations/semantics.html",
+    "href": "qmd/settheory/foundations/semantics.html",
+    "title": "Semantics of FOL",
+    "section": "",
+    "text": "The first part of first-order logic is the syntax, which defines the list of symbols used in the system, and the rules for how we can combine them into formulas."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/semantics.html#alphabet",
+    "href": "qmd/settheory/foundations/semantics.html#alphabet",
+    "title": "Semantics of FOL",
+    "section": "Alphabet",
+    "text": "Alphabet\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate ‘\\in’ in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/semantics.html#formulas",
+    "href": "qmd/settheory/foundations/semantics.html#formulas",
+    "title": "Semantics of FOL",
+    "section": "Formulas",
+    "text": "Formulas\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas \\phi and \\psi, the following are formulas\n\n\\phi \\land \\psi\n\\phi \\lor \\psi\n\\phi \\implies \\psi\n\\phi \\iff \\psi\n\n\n\nUsing these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in bound and free variables."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/semantics.html#bound-and-free-variables",
+    "href": "qmd/settheory/foundations/semantics.html#bound-and-free-variables",
+    "title": "Semantics of FOL",
+    "section": "Bound and Free variables",
+    "text": "Bound and Free variables\nVariables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus bound to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation\n\n\\sum_{k=1}^{10} f(k,n).\n\nThe variable k is bound and acts as a placeholder for a value between 1 and 10. The variable n however is free, it is not quantified and the value of the expression depends on the value of n. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence\n\n\\text{Lisa found her book}.\n\nThe pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence\n\n\\text{Jane hurt herself}.\n\nIn this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.\n\n\n\n\n\n\nDefinition\n\n\n\nA bound variable of some formula \\phi is a variable occurring in the scope of a quantifier.\n\n\nFor example, in the formula \n\\exists x P(x,y)\n\nthe variable x is bound, since it occurs directly after the existential quantifier. The variable y however is free, as it is not quantified over. This gives us our next definition.\n\n\n\n\n\n\nDefinition\n\n\n\nA free variable of some formula \\phi is a variable which is not bound.\n\n\nWe now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the semantics of first-order logic."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/semantics.html#sources",
+    "href": "qmd/settheory/foundations/semantics.html#sources",
+    "title": "Semantics of FOL",
+    "section": "Sources",
+    "text": "Sources\nhttps://en.wikipedia.org/wiki/Free_variables_and_bound_variables\nKunen 1980"
+  },
+  {
+    "objectID": "qmd/settheory/foundations/syntax.html",
+    "href": "qmd/settheory/foundations/syntax.html",
+    "title": "Syntax of First-order Logic",
+    "section": "",
+    "text": "We first examine the language of first-order logic; which defines the list of symbols used in the system, and the rules for how we can combine them into formulas."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/syntax.html#alphabet",
+    "href": "qmd/settheory/foundations/syntax.html#alphabet",
+    "title": "Syntax of First-order Logic",
+    "section": "Alphabet",
+    "text": "Alphabet\nWe will start with a list of logical symbols, sometimes referred to as the alphabet of first-order logic\n\nConnectives - \\land, \\lor, \\implies, \\iff, \\lnot\nQuantifiers - \\forall, \\exists\nVariables - An infinite set of variables x_1,x_2,x_3,\\dots,x_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nPunctuation - Right ) and left ( parenthesis, commas, colons, bars \\mid, and any other similar symbol.\nEquality - The equal sign =.\n\nOur connectives each have special meanings, \\land meaning ‘and’, \\lor meaning ‘or’, \\implies meaning ‘implies’, \\iff meaning ‘if and only if’ and \\lnot meaning ‘not’. We are also given two quantifiers to work with. \\forall meaning ‘for all’ or ‘for every’, and \\exists meaning ‘there exists’.\nWe also have some non-logical symbols called predicates (which are essentially relations) and functions. These have no meaning by themselves, but serve as a placeholder to be used by theories built on first-order logic. For example, we will soon see ZFC uses a predicate ‘\\in’ in it’s axioms, so we need an arbitrary predicate in our list of symbols for ZFC to use. To be safe we include an infinite list of predicate and function symbols.\n\nPredicates - An infinite set of predicates P_1,P_2,P_3,\\dots,P_n. Although other letters in the alphabhet, both capital and lowercase may be used.\nFunctions - An infinite set of functions f_1,f_2,f_3,\\dots,f_n. Although other letters in the alphabhet, both capital and lowercase may be used.\n\nPredicates and functions may take any number of variables as arguments, which may be notated in the obvious way P(x) for a predicate taking one argument, P(x,y) for two, etc. If the number of arguments is irrelevant however we simply write P.\nWhile ZFC doesn’t use any functions in its axioms and only uses one predicate, some alternate theories built on first-order logic use many."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/syntax.html#formulas",
+    "href": "qmd/settheory/foundations/syntax.html#formulas",
+    "title": "Syntax of First-order Logic",
+    "section": "Formulas",
+    "text": "Formulas\nThe syntax covers more than just the symbols used, it also shows us how to construct meaningful formulas from them. If we were to just string these symbols together randomly we could create abominations like\n\n\\forall \\forall \\exists ((\\lnot\\iff =x \\exists)\n\nwhich are clearly nonsensical. In order to prevent these strings from occurring in our study, we’ll define which strings are valid and call them formulas.\n\n\n\n\n\n\nDefinition\n\n\n\nA well-formed formula usually abbreviated wff or just formula, is a string of characters formed by the following recursive rules:\nIf x and y are variables, then\n\nx = y\n\nis a formula. Given a predicate P taking n arguments, and n variables x_1,x_2,\\dots,x_n\n\nP(x_1,x_2,\\dots,x_n)\n\nIs a formula. Given a predicate P and a variable x, we can create the following formulas\n\n\\forall x P\n\\exists x P.\n\\lnot P\n\nAnd finally given two formulas \\phi and \\psi, the following are formulas\n\n\\phi \\land \\psi\n\\phi \\lor \\psi\n\\phi \\implies \\psi\n\\phi \\iff \\psi\n\n\n\nUsing these rules we avoid having nonsensical formulas like the one shown above. There are various formal rules for where to put parenthesis, but I think our intuition will suffice for the purposes of this introduction. Before we move onto semantics, the final thing we need to cover is the difference in bound and free variables."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/syntax.html#bound-and-free-variables",
+    "href": "qmd/settheory/foundations/syntax.html#bound-and-free-variables",
+    "title": "Syntax of First-order Logic",
+    "section": "Bound and Free variables",
+    "text": "Bound and Free variables\nVariables can be categorized as either free or bound, depending on where they appear in a formula. A bound variable is a variable that is quantified, and is thus bound to some collection of values. A free variable is a variable that has not been quantified, and whose value may change the meaning of the formula. Take for example the following equation\n\n\\sum_{k=1}^{10} f(k,n).\n\nThe variable k is bound and acts as a placeholder for a value between 1 and 10. The variable n however is free, it is not quantified and the value of the expression depends on the value of n. Free and bound variables occur in natural language as well, which I think could provide a better example. Take the sentence\n\n\\text{Lisa found her book}.\n\nThe pronoun ‘her’ is an example of a free variable! The word could refer to Lisa, or to some other unspecified woman. Reflexive pronouns like ‘herself’ and ‘himself’ are examples of bound variables, take the sentence\n\n\\text{Jane hurt herself}.\n\nIn this sentence, ‘herself’ is a bound variable, as it must refer to Jane. Now that we have an idea of the difference in free and bound variables, let’s look at how to define them.\n\n\n\n\n\n\nDefinition\n\n\n\nA bound variable of some formula \\phi is a variable occurring in the scope of a quantifier.\n\n\nFor example, in the formula \n\\exists x P(x,y)\n\nthe variable x is bound, since it occurs directly after the existential quantifier. The variable y however is free, as it is not quantified over. This gives us our next definition.\n\n\n\n\n\n\nDefinition\n\n\n\nA free variable of some formula \\phi is a variable which is not bound.\n\n\nWe now know what symbols are used in our language, how we can combine them into formulas, and the differences between bound and free variables. We now move onto the deductive system of first-order logic."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/syntax.html#sources",
+    "href": "qmd/settheory/foundations/syntax.html#sources",
+    "title": "Syntax of First-order Logic",
+    "section": "Sources",
+    "text": "Sources\nhttps://en.wikipedia.org/wiki/Free_variables_and_bound_variables\nKunen 1980"
+  },
+  {
+    "objectID": "qmd/settheory/foundations/intro.html",
+    "href": "qmd/settheory/foundations/intro.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.\nZermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.\nIn this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as ZFC, and has become the standard axiomatization for mathematics. Before we look at the axioms of ZFC or their consequences we must first examine the logical foundations needed to state our axioms."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/intro.html#first-order-logic",
+    "href": "qmd/settheory/foundations/intro.html#first-order-logic",
+    "title": "Introduction",
+    "section": "First order logic",
+    "text": "First order logic\nLogic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as\n\n\\text{For all $x$ \\quad or \\quad There exists $x$}.\n\nFirst-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.\nUsing the language and deductive system of First-order logic, we will assert nine axioms which together are known as ZFC and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way."
+  },
+  {
+    "objectID": "qmd/settheory/foundations/intro.html#references",
+    "href": "qmd/settheory/foundations/intro.html#references",
+    "title": "Introduction",
+    "section": "References",
+    "text": "References\n[Kunen 1980] [Open Logic Project]"
+  },
+  {
+    "objectID": "qmd/settheory/logic/intro copy.html",
+    "href": "qmd/settheory/logic/intro copy.html",
+    "title": "Introduction",
+    "section": "",
+    "text": "Before we can study set theory, we must take a step back and examine the foundations of mathematics.\nWhen attempting to learn math from the beginning, there is always the question of where to start. Many books about set theory assume knowledge of logic, or sometimes include a minimal section on logic. If one tries to learn logic first to have a better understanding, they often find the logic books start off with a short section on set theory! So where do we begin? There are numerous different approaches, here we develop in the following order;\n\nPhilosophy\nMetalanguage/Metatheories\n\nFirst-order logic\nZFC Set Theory\n\nFrom ZFC, most all of mathematics can be developed! We will begin our look at the foundations by examining philosophy."
+  },
+  {
+    "objectID": "qmd/surreal/intro.html",
+    "href": "qmd/surreal/intro.html",
+    "title": "Surreal Analysis",
+    "section": "",
+    "text": "Surreal numbers can be thought of as an extension of the real numbers, including infinite and infinitesimal quantities."
+  },
+  {
+    "objectID": "qmd/surreal/intro.html#table-of-contents",
+    "href": "qmd/surreal/intro.html#table-of-contents",
+    "title": "Surreal Analysis",
+    "section": "Table of Contents",
+    "text": "Table of Contents\n\nConstruction\n\nConways Construction"
+  },
+  {
+    "objectID": "qmd/surreal/intro.html#references",
+    "href": "qmd/surreal/intro.html#references",
+    "title": "Surreal Analysis",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "qmd/surreal/construction/subsets.html",
+    "href": "qmd/surreal/construction/subsets.html",
+    "title": "Conways Construction",
+    "section": "",
+    "text": "Definition\n\n\n\nA surreal number is an ordered pair (L,R)"
+  },
+  {
+    "objectID": "qmd/surreal/construction/subsets.html#properties",
+    "href": "qmd/surreal/construction/subsets.html#properties",
+    "title": "Conways Construction",
+    "section": "Properties",
+    "text": "Properties\nNow we can take a look at some properties of subsets.\n\n\n\n\n\n\nTheorem (Subset-1)\n\n\n\nLet A be a set. Then A \\subseteq A.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nIt a logical tautology that\n\n\\forall x (x \\in A \\implies x \\in A)\n\nthus by our definition of a subset, A \\subseteq A.\n\n\n\n\n\n\n\n\n\nTheorem (Subset-2)\n\n\n\nLet A,B be sets. If A \\subseteq B and B \\subseteq A, then A = B.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy our hypothesis, we have\n\n\\forall x (x \\in A \\implies x \\in B)\n\nand\n\n\\forall x (x \\in B \\implies x \\in A)\n\nThus we have\n\n\\forall x (x \\in B \\iff x \\in A)\n\nand by instantiating the Axiom of Extensionality we have\n\nA = B.\n\n\n\n\n\n\n\n\n\n\nTheorem (Subset-3)\n\n\n\nLet A be a set. If A \\subseteq \\varnothing then A = \\varnothing.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have\n\n\\forall x (x \\in A \\implies x \\in \\varnothing).\n\nBy the definition of the empty set, we have\n\n\\forall x (x \\not \\in \\varnothing)\n\nthus\n\n\\forall x (x \\not \\in A)\n\nand so by the definition of the empty set\n\nA = \\varnothing.\n\n\n\n\n\n\n\n\n\n\nTheorem (Subset-4)\n\n\n\nLet A,B and C be sets. If {A \\subseteq B} and {B \\subseteq C}, then {A \\subseteq C}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have\n\n\\forall x (x \\in A \\implies x \\in B)\n\nand\n\n\\forall x (x \\in B \\implies x \\in C).\n\nBy modus ponens, we have\n\n\\forall x (x \\in A \\implies x \\in C)\n\nand by our definition of a subset\n\nA \\subseteq C."
+  },
+  {
+    "objectID": "qmd/surreal/construction/subsets.html#proper-subsets",
+    "href": "qmd/surreal/construction/subsets.html#proper-subsets",
+    "title": "Conways Construction",
+    "section": "Proper Subsets",
+    "text": "Proper Subsets\nOccansionally we want to specify that we have a subset A of B such that A \\not = B. This is where proper subsets come in.\n\n\n\n\n\n\nDefinition\n\n\n\nA proper subset A of a set B is some set such that A \\subseteq B and A \\not = B. Formally\n\nA \\subset B \\iff A \\subseteq B \\land A \\not = B.\n\n\n\nThe notation for proper subsets differs from source to source. Some authors chose to use the less ambiguous \\subsetneq and use \\subset to refer to any subset. The notation used here is motivated by the &lt;,\\leq relation.\n\n\n\n\n\n\nTheorem (PSubset-1)\n\n\n\nLet A be a set. Then A \\not \\subset A.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nWe have by logic\n\n\\forall A (A = A)\n\nThus for all A, A \\not \\subset A.\n\n\n\n\n\n\n\n\n\nTheorem (PSubset-2)\n\n\n\nLet A,B be sets. Then {A \\subset B} implies {B \\not \\subset A}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have that A \\subseteq B and A \\not = B. We need to show that either B \\subseteq A or B \\not= A do not hold. Since we have B \\not = A by our hypothesis, we must show B \\not \\subseteq A.\nWe do this by contradiction. If B \\subseteq A then by Theorem (Subset-2) we would have A = B. This contradicts our hypothesis, therefore B \\not \\subseteq A and thus B \\not \\subset A.\n\n\n\n\n\n\n\n\n\nTheorem (PSubset-3)\n\n\n\nLet A,B be sets. Then {A \\subset B} and {B \\subset C} implies {A \\subset C}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nBy hypothesis we have A \\subseteq B, B \\subseteq C, A \\not = B and B \\not = C.\nBy Theorem (Subset-4) we have A \\subseteq C and by the transitivity of equality we have A \\not = C. Thus A \\subset C.\n\n\n\n\n\n\n\n\n\nTheorem (PSubset-4)\n\n\n\nLet A,B be sets. Then {A \\subset B} implies {A \\subseteq B}.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nA simple one liner, by the definition of proper subset."
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification.html#unrestricted-comprehension",
+    "href": "qmd/settheory/axioms/specification.html#unrestricted-comprehension",
+    "title": "Axiom Schema of Specification",
+    "section": "Unrestricted Comprehension",
+    "text": "Unrestricted Comprehension"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification.html#restrictions-on-specification",
+    "href": "qmd/settheory/axioms/specification.html#restrictions-on-specification",
+    "title": "Axiom Schema of Specification",
+    "section": "Restrictions on Specification",
+    "text": "Restrictions on Specification\nThe requirement that our desired set B must be a subset of A is to avoid Russels’ paradox, and the problems with unrestricted comprehension discussed previously. Unfortunately this means that the axioms of Specification cannot be used to create larger sets. Whereas with unrestricted comprehension we could create the union of sets A \\cup B, specification only allows us to create restricted smaller sets.\nWe must also notice that we can only prove the existence of some set B if there exists a formula \\phi such that each member of B satisfies \\phi. However we will later see that given some infinite sets, it is impossible to construct a formula such that each element of the set satisfies the formula; thus the axiom of specification cannot be used to prove the existence of those sets.\nAnd the final restriction on specification is that although \\phi can have any number of free variables t, B must not be free in our formula \\phi. This is to prevent circularity, else we could take \\phi to be x \\not \\in B and any set A to obtain the axiom\n\n\\exists B \\forall x(x \\in B \\iff (x \\in A \\land x \\not \\in B)).\n\nThis creates a paradox, as x \\in B if and only if x \\not \\in B. For this reason B must not appear free in our formula \\phi. We now start to develop some set theory using only the axioms of extension and specification!"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification copy.html",
+    "href": "qmd/settheory/axioms/specification copy.html",
+    "title": "The Empty Set",
+    "section": "",
+    "text": "With the axioms of extension and specification, we can begin to construct some basic set theory!"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification copy.html#footnotes",
+    "href": "qmd/settheory/axioms/specification copy.html#footnotes",
+    "title": "The Empty Set",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe following paragraphs follow closely from the answer given by Andrés Caicedo on this [MathExchange] form.↩︎\nEnderton, Kunen, Weese & Just↩︎"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification copy.html#existence-of-the-empty-set",
+    "href": "qmd/settheory/axioms/specification copy.html#existence-of-the-empty-set",
+    "title": "The Empty Set",
+    "section": "Existence of the Empty Set",
+    "text": "Existence of the Empty Set\nWe have mentioned some axioms, but have yet to show explicitly that any set at all exists. We wish to fix that here by constructing the empty set. This is usually accomplished in one of three ways1.\nThe first approach is to introduce an empty set axiom. Very often in books on set theory2 the existence of the empty set is given as an axiom with the note that said axiom is redundant, and used for emphasis.\nThe next two methods both make use of the axiom of specification. Let us assume for sake of argument that their exists some set A. Then by applying specification to A with the formula x \\not = x, we obtain\n\n\\exists B\\forall x(x \\in B \\iff (x \\in A \\land x \\not = x)).\n\nSince x \\not = x is clearly false for all x, we have that the set B contains no elements. Thus we have that the existence of any set at all implies the existence of the empty set. The only remaining difficulty is proving that some set exists.\nThe second approach uses the axiom of infinity. Since the axiom of infinity asserts that there does exist a set (which is infinite) we can apply specification to obtain the empty set. This method feels very excessive as a means of postulating that some set exists, as we do so by asserting that their exist infinitely many. Additionally, this poses a problem in presentations like ours which add axioms as they become needed, as we wish to delay the introduction of the axiom of infinity until we examine infinite sets. This leads us to the third approach.\nThe final way to construct the empty set, and the one taken on this website, is to simply take as a logical axiom that our domain of discourse is not empty, that is \\exists x (x = x). Recall the proof given earlier. There are many different formalizations of first order logic, so when working in a logic that allows empty domains of discourse one must necessarily use a different approach.\nWe may now begin to develop some properties of the empty set!"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/specification copy.html#properties",
+    "href": "qmd/settheory/axioms/specification copy.html#properties",
+    "title": "The Empty Set",
+    "section": "Properties",
+    "text": "Properties"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/emptyset.html",
+    "href": "qmd/settheory/axioms/emptyset.html",
+    "title": "The Empty Set",
+    "section": "",
+    "text": "With the axioms of extension and specification, we can begin to construct some basic set theory!"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/emptyset.html#existence-of-the-empty-set",
+    "href": "qmd/settheory/axioms/emptyset.html#existence-of-the-empty-set",
+    "title": "The Empty Set",
+    "section": "Existence of the Empty Set",
+    "text": "Existence of the Empty Set\nWe have mentioned some axioms, but have yet to show explicitly that any set at all exists. We wish to fix that here by constructing the empty set.\nThis is usually accomplished in one of three ways1.\nThe first approach is to introduce an empty set axiom. Very often in books on set theory2 the existence of the empty set is given as an axiom with the note that said axiom is redundant, and used for emphasis.\nThe next two methods both make use of the axiom of specification. Let us assume for sake of argument that their exists some set A. Then by applying specification to A with the formula x \\not = x, we obtain\n\n\\exists B\\forall x(x \\in B \\iff (x \\in A \\land x \\not = x)).\n\nSince x \\not = x is clearly false for all x, we have that the set B contains no elements. Thus we have that the existence of any set at all implies the existence of the empty set. The only remaining difficulty is proving that some set exists.\nThe second approach uses the axiom of infinity. Since the axiom of infinity asserts that there does exist a set (which is infinite) we can apply specification to obtain the empty set. This method feels very excessive as a means of postulating that some set exists, as we do so by asserting that their exist infinitely many. Additionally, this poses a problem in presentations like ours which add axioms as they become needed, as we wish to delay the introduction of the axiom of infinity until we examine infinite sets. This leads us to the third approach.\nThe final way to construct the empty set, and the one taken on this website, is to simply take as a logical axiom that our domain of discourse is not empty, that is \\exists x (x = x). Recall the proof given earlier. There are many different formalizations of first order logic, so when working in a logic that allows empty domains of discourse one must necessarily use a different approach.\nWe now move on to the proof that the empty set exists, taking the third approach described above. We must first define the empty set.\n\n\n\n\n\n\nDefinition\n\n\n\nThe empty set is the set containing no elements, and denoted by \\varnothing. Formally it is the set such that for any A,\n\n\\varnothing = \\{x \\in A \\mid x \\not = x\\}.\n\n\n\nNow we can show the empty set exists!\n\n\n\n\n\n\nTheorem (Existence of an Empty Set)\n\n\n\nThe empty set exists.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nWe will use the technique discussed above. Since we have chosen a logic such that our domain of discourse is not empty, there exists some set A. Then by applying the axiom of specification on A with the formula x \\not = x we get\n\nB = \\{x \\in A \\mid x \\not= x\\}.\n\nBy our definition, we call notate the set B as \\varnothing, and thus \\varnothing exists. As noted above, if you are uncomfortable with using the non-empty domain of discourse, simply choose A to be the infinite set guaranteed to exist by the axiom of infinity."
+  },
+  {
+    "objectID": "qmd/settheory/axioms/emptyset.html#footnotes",
+    "href": "qmd/settheory/axioms/emptyset.html#footnotes",
+    "title": "The Empty Set",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nThe following paragraphs follow closely from the answer given by Andrés Caicedo on this MathExchange form.↩︎\nEnderton, Kunen, Weese & Just↩︎\nSince x is free, we must say it’s universal closure \\forall x (x \\not\\in \\varnothing) is true.↩︎"
+  },
+  {
+    "objectID": "qmd/settheory/axioms/emptyset.html#properties",
+    "href": "qmd/settheory/axioms/emptyset.html#properties",
+    "title": "The Empty Set",
+    "section": "Properties",
+    "text": "Properties\nWe must first state a few properties before we can prove the empty set is unique.\n\n\n\n\n\n\nTheorem\n\n\n\nThe empty set contains no elements, that is for all x\n\nx \\not \\in \\varnothing\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nUnpacking set builder notation we have that\n\nx \\in \\varnothing \\iff x \\in A \\land x \\not = x.\n\nSince x \\not = x is always false and x was arbitrary we have\n\n\\forall x, x \\not \\in \\varnothing.\n\n\n\n\nNow we can prove theres only one empty set.\n\n\n\n\n\n\nTheorem (Uniqueness of the Empty Set)\n\n\n\nThe empty set is unique.\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\nWe know now that the empty set exists, specifying it from our given set A. However if we substitute A for a different set, will we obtain the same set? Perhaps there are an infinite amount of empty sets \\varnothing_A, \\varnothing_B, \\varnothing_C and so on depending on which set we specify from? In order to prove that all of these sets are equivalent, we use the axiom of extension.\nSuppose that we have two sets A and B and using the axiom of specification constructed two empty sets\n\n\\varnothing_A = \\{x \\in A \\mid x \\not= x\\} \\text{ and } \\varnothing_B = \\{x \\in B \\mid x \\not= x\\}.\n\nBoth of these sets are empty sets according to our definition. By our previous theorem we have x \\not \\in \\varnothing_A and x \\not \\in \\varnothing_B. We can now provide a proof \\varnothing_A and \\varnothing_B are equivalent using logic.\nWe have \nx \\not \\in \\varnothing_A \\land x \\not \\in \\varnothing_B.\n\nSince both formulas are always true3, we may write \nx \\not \\in \\varnothing_A \\iff x \\not \\in \\varnothing_B\n\nand thus by negation\n\nx \\in \\varnothing_A \\iff x \\in \\varnothing_B.\n\nSince x was arbitrary we have \n\\forall x (x \\in \\varnothing_A \\iff x \\in \\varnothing_B).\n\nFinally, applying the axiom of extension we have\n\n\\forall x (x \\in \\varnothing_A \\iff x \\in \\varnothing_B) \\implies \\varnothing_A = \\varnothing_B.\n\nThus our two empty sets were actually the same set! And therefore the empty set is unique!"
   }
 ]

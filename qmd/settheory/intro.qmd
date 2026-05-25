@@ -6,23 +6,35 @@ format:
     html-math-method: katex
 ---
 
-This section covers $ZFC$ set theory, and constructs the foundations of mathematics from $9$ axioms. 
+Since the late 19th century mathematics as a subject has shifted into an axiomatic discipline. We lay out a number of axioms, which are statements we choose to be true, and build theorems using only deductions form those statements.
 
-Topics include basic logic, properties of sets, functions and relations, and ordinal and cardinal numbers.
+Zermelo-Frankel set theory is one such collection of axioms which has been so successful that the results from nearly all fields of mathematics, from algebra to analysis to geometry, can be formulated using only the axioms it provides.
+
+In this section of the website we cover Zermelo-Frankel set theory, developed by Ernst Zermelo and Abraham Fraenkel in the early 20th century, with the added axiom of choice. This system is known as $ZFC$, and has become the standard axiomatization for mathematics. Topics include properties of sets, functions and relations, and ordinal and cardinal numbers.
 
 ## Table of Contents
 
-- Logic
+- Foundations
   - Introduction                            X
+  - Philosophy and Metatheory
+  - Baby set theory                         X
   - Syntax of First-order Logic             X
   - Deductive System of First-order Logic   X
-  - Semantics and Models                             
+  - Semantics and Models   
+
+[Move above to 'Foundation']
+
 - Basic Axioms and Operations
   - Relationship between ZFC and FOL
   - Preview of Axioms               X
-  - Axioms of Extension and Specification
-  - Subsets
-  - Intersections and Differences   X
+
+  - Axiom of Extension              X
+  - Set Operations
+  - Subsets       
+
+  - Axiom schema of Specification   X
+  - The Empty Set                    X
+
   - Axiom of Pairing                X
   - Axiom of Union                  X
   - Axiom of Powerset               X

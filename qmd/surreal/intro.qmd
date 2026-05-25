@@ -1,0 +1,18 @@
+---
+title: "Surreal Analysis"
+format:
+  html:
+    toc: false
+    html-math-method: katex
+---
+
+Surreal numbers can be thought of as an extension of the real numbers, including infinite and infinitesimal quantities.
+
+## Table of Contents
+
+- Construction
+  - Conways Construction
+
+
+## References
+

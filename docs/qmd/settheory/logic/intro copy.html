@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Philosophy – OOMN</title>
+<title>Introduction – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,49 +70,6 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/bitmaks/cm-web-fonts@latest/fonts.css">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../../../styles.css">
 </head>
@@ -156,7 +113,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Philosophy</h1>
+<h1 class="title">Introduction</h1>
 </div>
 
 
@@ -173,22 +130,18 @@ window.Quarto = {
 </header>
 
 
-<p>Before we look at the axioms of <span class="math inline">ZFC</span> or their consequences we must first examine the logical foundations needed to state our axioms.</p>
-<section id="first-order-logic" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-logic">First order logic</h2>
-<p>Logic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as</p>
-<p><span class="math display">
-\text{For all $x$ \quad or \quad There exists $x$}.
-</span></p>
-<p>First-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.</p>
-<p>Using the language and deductive system of First-order logic, we will assert nine axioms which together are known as <strong>ZFC</strong> and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[Kunen 1980] [Open Logic Project]</p>
+<p>Before we can study set theory, we must take a step back and examine the foundations of mathematics.</p>
+<p>When attempting to learn math from the beginning, there is always the question of where to start. Many books about set theory assume knowledge of logic, or sometimes include a minimal section on logic. If one tries to learn logic first to have a better understanding, they often find the logic books start off with a short section on set theory! So where do we begin? There are numerous different approaches, here we develop in the following order;</p>
+<ul>
+<li>Philosophy</li>
+<li>Metalanguage/Metatheories<br>
+</li>
+<li>First-order logic</li>
+<li>ZFC Set Theory</li>
+</ul>
+<p>From ZFC, most all of mathematics can be developed! We will begin our look at the foundations by examining philosophy.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

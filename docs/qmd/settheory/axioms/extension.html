@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Philosophy – OOMN</title>
+<title>Axiom of Extension – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,13 +150,15 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Philosophy</h1>
+<h1 class="title">Axiom of Extension</h1>
 </div>
 
 
@@ -173,22 +175,86 @@ window.Quarto = {
 </header>
 
 
-<p>Before we look at the axioms of <span class="math inline">ZFC</span> or their consequences we must first examine the logical foundations needed to state our axioms.</p>
-<section id="first-order-logic" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-logic">First order logic</h2>
-<p>Logic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as</p>
+<p>Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is stated formally in first order logic with the axiom of extensionality.</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Axiom of Extensionality
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two sets are equivalent if they have the same elements</p>
 <p><span class="math display">
-\text{For all $x$ \quad or \quad There exists $x$}.
+\forall A \forall B (\forall x(x \in A \iff x \in B) \implies A = B)
 </span></p>
-<p>First-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.</p>
-<p>Using the language and deductive system of First-order logic, we will assert nine axioms which together are known as <strong>ZFC</strong> and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way.</p>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[Kunen 1980] [Open Logic Project]</p>
+</div>
+</div>
+<p>This is a very natural axiom. We don’t need extensionality to show that a set is equal to itself, as ‘<span class="math inline">A = A</span>’ is a logical axiom. We do however need extensionality anytime we wish to prove that two sets <span class="math inline">A</span> and <span class="math inline">B</span> are equivalent.</p>
+<p>What may be interesting is that the converse of the axiom of extensionality can be proved with just first-order logic.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Converse of Extensionality)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">A,B</span> and <span class="math inline">x</span> be sets. Then if <span class="math inline">A = B</span>, <span class="math inline">x \in A</span> if and only if <span class="math inline">x \in B</span>.</p>
+<p><span class="math display">
+\forall A \forall B (A = B \implies \forall x(x \in A \iff x \in B))
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\phi</span> be the formula <span class="math inline">\forall x (x \in A \iff  x \in A)</span> where <span class="math inline">A</span> is a free variables. We can substitute some occurrences of <span class="math inline">A</span> with <span class="math inline">B</span> to obtain <span class="math inline">\phi^\prime = \forall x (x \in A \iff x \in B)</span>. Then by the substitution property of equality</p>
+<p><span class="math display">
+\forall A \forall B (A = B \implies (\phi \implies \phi^\prime))
+</span></p>
+<p>Since <span class="math inline">\phi</span> is always true, modus ponenes gives us</p>
+<p><span class="math display">
+\forall A \forall B (A = B \implies \forall x (x \in A \iff x \in B))
+</span></p>
+<p>And thus we have our proof.</p>
+<hr>
+<p>[<a href="https://math.stackexchange.com/questions/2619540/the-converse-of-the-axiom-of-extensionality">Math SE</a>]</p>
+</div>
+</div>
+</div>
+<p>Intuitively, if <span class="math inline">A = B</span> then all properties of <span class="math inline">A</span> are also properties of <span class="math inline">B</span>, so this is perhaps not that illuminating. However it does put into perspective that set membership is the <em>only</em> property defining a set. There isn’t a lot more we can do with extensionality, but we can introduce some new notation.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Two sets are <span class="definition">inequal</span> if they are not equal, notated <span class="math display">
+A \not = B \iff \lnot(A = B)
+</span></p>
+</div>
+</div>
+<p>We were very careful when defining <span class="math inline">ZFC</span> as a theory to include as few symbols as possible, so how is it now that we are defining new symbols in our theory; is this justified‽ We circumvent this problem for now by letting <span class="math inline">A \not = B</span> simply be an abbreviation for the formula <span class="math inline">\lnot(A = B)</span> in our formal language. More information on the justification of these definitions is given in [Definitions]. We will now move onto our next axiom, the axiom schema of specification!</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

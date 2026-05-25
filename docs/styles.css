@@ -102,3 +102,58 @@ body
   .katex {
     font-size: 14pt; /* Adjust the font size of math */
   }
+
+
+/*-- Callouts -------------------------------------------------------------*/
+/* From https://github.com/cambiotraining/quarto-course-template/
+
+/* Fix for nested callouts padding bug */
+.callout.callout-titled .callout-body > :last-child:not(.sourceCode),
+.callout.callout-titled .callout-body > div > :last-child:not(.sourceCode) {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* Padding for callout within a callout */
+.callout.callout-style-default .callout-body {
+  padding-bottom: 0.5rem;
+}
+
+/* Exercise callout */
+div.callout-exercise.callout {
+  border-left-color: $callout-color-note;
+}
+div.callout-exercise.callout-style-default > .callout-header {
+  background-color: #f9f9f8;
+}
+.callout-exercise > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f303";
+  margin-right: 10px;
+}
+
+/* Answer callout */
+.callout-answer > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f002 ";
+  margin-right: 10px;
+}
+div.callout-answer.callout {
+  border-left-color: $callout-color-tip;
+}
+div.callout-answer.callout-style-default > .callout-header {
+  background-color: #eaf3f3;
+}
+
+/* Hint callout */
+.callout-hint > .callout-header::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f12e ";
+  margin-right: 10px;
+}
+div.callout-hint.callout {
+  border-left-color: #6c757d;
+}
+div.callout-hint.callout-style-default > .callout-header {
+  background-color: #f9f9f8;
+}

@@ -22,7 +22,9 @@ Callouts are used to section parts of the content together.
 ::: {.callout-note icon="false"}
 ## Definition
 
-Definitions use ``.callout-note`` and explain a mathematical concept or term to be referenced. The definition callout should not be used for notation, but may include notation of the concept. The key term being discussed will be [highlighted]{.definition} by applying `{.definition}` to the key term. 
+Definitions use ``.callout-note`` and explain a mathematical concept or term. 
+
+The term being discussed will be [highlighted]{.definition} by applying `{.definition}` to the key term. 
 
 The key term will appear bold, and be colored `blue` in light mode, and `cyan` in dark mode.
 :::
@@ -35,16 +37,3 @@ TO-DO: Add light mode support (Wait for 1.5-1.6?)
 
 -----------
 
-Real analysis exam 2
-
-If $f^\prime$ is bounded on $(a,b)$, prove $f$ is uniformly continuous on $(a,b)$.
-
-Show that any function with finite disconiutities is integerable.
-
-Show that if $f$ is integerable $1/f$ is integerable
-
-Taylor series nonsense
-
-
-
-Novemebr 17

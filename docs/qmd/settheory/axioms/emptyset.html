@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Philosophy – OOMN</title>
+<title>The Empty Set – OOMN</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -150,13 +150,22 @@ window.Quarto = {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#existence-of-the-empty-set" id="toc-existence-of-the-empty-set" class="nav-link active" data-scroll-target="#existence-of-the-empty-set">Existence of the Empty Set</a></li>
+  <li><a href="#properties" id="toc-properties" class="nav-link" data-scroll-target="#properties">Properties</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Philosophy</h1>
+<h1 class="title">The Empty Set</h1>
 </div>
 
 
@@ -173,24 +182,179 @@ window.Quarto = {
 </header>
 
 
-<p>Before we look at the axioms of <span class="math inline">ZFC</span> or their consequences we must first examine the logical foundations needed to state our axioms.</p>
-<section id="first-order-logic" class="level2">
-<h2 class="anchored" data-anchor-id="first-order-logic">First order logic</h2>
-<p>Logic is the study of reason, and tells us how we can deduce one statement from another. First-order logic (FOL) is a kind of logic which allows us to quantify variables, meaning we can use expressions such as</p>
+<p>With the axioms of extension and specification, we can begin to construct some basic set theory!</p>
+<section id="existence-of-the-empty-set" class="level2">
+<h2 class="anchored" data-anchor-id="existence-of-the-empty-set">Existence of the Empty Set</h2>
+<p>We have mentioned some axioms, but have yet to show explicitly that any set at all exists. We wish to fix that here by constructing the empty set.</p>
+<p>This is usually accomplished in one of three ways<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
+<p>The first approach is to introduce an empty set axiom. Very often in books on set theory<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> the existence of the empty set is given as an axiom with the note that said axiom is redundant, and used <em>for emphasis</em>.</p>
+<p>The next two methods both make use of the axiom of specification. Let us assume for sake of argument that their exists some set <span class="math inline">A</span>. Then by applying specification to <span class="math inline">A</span> with the formula <span class="math inline">x \not = x</span>, we obtain</p>
 <p><span class="math display">
-\text{For all $x$ \quad or \quad There exists $x$}.
+\exists B\forall x(x \in B \iff (x \in A \land x \not = x)).
 </span></p>
-<p>First-order logic is often described as a formal system, meaning it describes a formal language and a deductive system. The formal language tells us what symbols our system uses and how they may be connected, while the deductive system allows us to create new sentences from old ones. First-order logic can be formulated in many ways, with slightly different symbols or rules depending on the authors personal philosophy or preference.</p>
-<p>Using the language and deductive system of First-order logic, we will assert nine axioms which together are known as <strong>ZFC</strong> and examine how they allows us to build set theory. The remainder of this chapter will be building first-order logic, albeit in a simplified way.</p>
+<p>Since <span class="math inline">x \not = x</span> is clearly false for all <span class="math inline">x</span>, we have that the set <span class="math inline">B</span> contains no elements. Thus we have that the existence of any set at all implies the existence of the empty set. The only remaining difficulty is proving that some set exists.</p>
+<p>The second approach uses the axiom of infinity. Since the axiom of infinity asserts that there does exist a set (which is infinite) we can apply specification to obtain the empty set. This method feels very excessive as a means of postulating that some set exists, as we do so by asserting that their exist infinitely many. Additionally, this poses a problem in presentations like ours which add axioms as they become needed, as we wish to delay the introduction of the axiom of infinity until we examine infinite sets. This leads us to the third approach.</p>
+<p>The final way to construct the empty set, and the one taken on this website, is to simply take as a logical axiom that our domain of discourse is not empty, that is <span class="math inline">\exists x (x = x)</span>. Recall the proof given earlier. There are many different formalizations of first order logic, so when working in a logic that allows empty domains of discourse one must necessarily use a different approach.</p>
+<p>We now move on to the proof that the empty set exists, taking the third approach described above. We must first define the empty set.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <span class="definition">empty set</span> is the set containing no elements, and denoted by <span class="math inline">\varnothing</span>. Formally it is the set such that for any <span class="math inline">A</span>,</p>
+<p><span class="math display">
+\varnothing = \{x \in A \mid x \not = x\}.
+</span></p>
+</div>
+</div>
+<p>Now we can show the empty set exists!</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Existence of an Empty Set)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The empty set exists.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We will use the technique discussed above. Since we have chosen a logic such that our domain of discourse is not empty, there exists some set <span class="math inline">A</span>. Then by applying the axiom of specification on <span class="math inline">A</span> with the formula <span class="math inline">x \not = x</span> we get</p>
+<p><span class="math display">
+B = \{x \in A \mid x \not= x\}.
+</span></p>
+<p>By our definition, we call notate the set <span class="math inline">B</span> as <span class="math inline">\varnothing</span>, and thus <span class="math inline">\varnothing</span> exists. As noted above, if you are uncomfortable with using the non-empty domain of discourse, simply choose <span class="math inline">A</span> to be the infinite set guaranteed to exist by the axiom of infinity.</p>
+</div>
+</div>
+</div>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<p>[Kunen 1980] [Open Logic Project]</p>
+<section id="properties" class="level2">
+<h2 class="anchored" data-anchor-id="properties">Properties</h2>
+<p>We must first state a few properties before we can prove the empty set is unique.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The empty set contains no elements, that is for all <span class="math inline">x</span></p>
+<p><span class="math display">
+x \not \in \varnothing
+</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Unpacking set builder notation we have that</p>
+<p><span class="math display">
+x \in \varnothing \iff x \in A \land x \not = x.
+</span></p>
+<p>Since <span class="math inline">x \not = x</span> is always false and <span class="math inline">x</span> was arbitrary we have</p>
+<p><span class="math display">
+\forall x, x \not \in \varnothing.
+</span></p>
+</div>
+</div>
+</div>
+<p>Now we can prove theres only one empty set.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Theorem (Uniqueness of the Empty Set)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The empty set is unique.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We know now that the empty set exists, specifying it from our given set <span class="math inline">A</span>. However if we substitute <span class="math inline">A</span> for a different set, will we obtain the same set? Perhaps there are an infinite amount of empty sets <span class="math inline">\varnothing_A</span>, <span class="math inline">\varnothing_B</span>, <span class="math inline">\varnothing_C</span> and so on depending on which set we specify from? In order to prove that all of these sets are equivalent, we use the axiom of extension.</p>
+<p>Suppose that we have two sets <span class="math inline">A</span> and <span class="math inline">B</span> and using the axiom of specification constructed two empty sets</p>
+<p><span class="math display">
+\varnothing_A = \{x \in A \mid x \not= x\} \text{ and } \varnothing_B = \{x \in B \mid x \not= x\}.
+</span></p>
+<p>Both of these sets are empty sets according to our definition. By our previous theorem we have <span class="math inline">x \not \in \varnothing_A</span> and <span class="math inline">x \not \in \varnothing_B</span>. We can now provide a proof <span class="math inline">\varnothing_A</span> and <span class="math inline">\varnothing_B</span> are equivalent using logic.</p>
+<p>We have <span class="math display">
+x \not \in \varnothing_A \land x \not \in \varnothing_B.
+</span></p>
+<p>Since both formulas are always true<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>, we may write <span class="math display">
+x \not \in \varnothing_A \iff x \not \in \varnothing_B
+</span></p>
+<p>and thus by negation</p>
+<p><span class="math display">
+x \in \varnothing_A \iff x \in \varnothing_B.
+</span></p>
+<p>Since <span class="math inline">x</span> was arbitrary we have <span class="math display">
+\forall x (x \in \varnothing_A \iff x \in \varnothing_B).
+</span></p>
+<p>Finally, applying the axiom of extension we have</p>
+<p><span class="math display">
+\forall x (x \in \varnothing_A \iff x \in \varnothing_B) \implies \varnothing_A = \varnothing_B.
+</span></p>
+<p>Thus our two empty sets were actually the same set! And therefore the empty set is unique!</p>
+</div>
+</div>
+</div>
 
 
 </section>
 
-</main> <!-- /main -->
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>The following paragraphs follow closely from the answer given by Andrés Caicedo on this <a href="https://math.stackexchange.com/questions/278863/the-existence-of-the-empty-set-is-an-axiom-of-zfc-or-not">MathExchange</a> form.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>Enderton, Kunen, Weese &amp; Just<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>Since <span class="math inline">x</span> is free, we must say it’s universal closure <span class="math inline">\forall x (x \not\in \varnothing)</span> is true.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

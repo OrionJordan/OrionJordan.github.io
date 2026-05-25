@@ -6,7 +6,7 @@ format:
     html-math-method: katex
 ---
 
-Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is put into first order logic with the axiom of extensionality.
+Our first axiom is going to define the most fundamental relationship between sets, equality. We say that a set is purely defined by the elements it contains, so two sets containing the same elements are the same set. This is stated formally in first order logic with the axiom of extensionality.
 
 ::: {.callout-important icon="false"}
 ## Axiom of Extensionality
@@ -14,38 +14,57 @@ Our first axiom is going to define the most fundamental relationship between set
 Two sets are equivalent if they have the same elements
 
 $$
-\forall A \forall B [\forall x(x \in A \iff x \in B) \implies A = B]
+\forall A \forall B (\forall x(x \in A \iff x \in B) \implies A = B)
 $$
 :::
 
-This is a pretty natural axiom, and is used all of the time to prove the uniqueness of a set. The next axiom is going to allow us to create sets at all.
+This is a very natural axiom. We don't need extensionality to show that a set is equal to itself, as '$A = A$' is a logical axiom. We do however need extensionality anytime we wish to prove that two sets $A$ and $B$ are equivalent. 
 
-::: {.callout-important icon="false"}
-## Axiom of Specificication
+What may be interesting is that the converse of the axiom of extensionality can be proved with just first-order logic.
+
+::: {.callout-note icon="false"}
+## Theorem (Converse of Extensionality)
+
+Let $A,B$ and $x$ be sets. Then if $A = B$, $x \in A$ if and only if $x \in B$.
+
+$$
+\forall A \forall B (A = B \implies \forall x(x \in A \iff x \in B))
+$$
 
 :::
+
+::: {.callout-tip icon="false" collapse="true"}
+## Proof 
+
+Let $\phi$ be the formula $\forall x (x \in A \iff  x \in A)$ where $A$ is a free variables. We can substitute some occurrences of $A$ with $B$ to obtain $\phi^\prime = \forall x (x \in A \iff x \in B)$. Then by the substitution property of equality
+
+$$
+\forall A \forall B (A = B \implies (\phi \implies \phi^\prime))
+$$
+
+Since $\phi$ is always true, modus ponenes gives us
+
+$$
+\forall A \forall B (A = B \implies \forall x (x \in A \iff x \in B))
+$$
+
+And thus we have our proof.
+
+------
+
+[[Math SE](https://math.stackexchange.com/questions/2619540/the-converse-of-the-axiom-of-extensionality)]
+
+:::
+
+Intuitively, if $A = B$ then all properties of $A$ are also properties of $B$, so this is perhaps not that illuminating. However it does put into perspective that set membership is the _only_ property defining a set. There isn't a lot more we can do with extensionality, but we can introduce some new notation.
 
 ::: {.callout-note icon="false"}
 ## Definition
 
-The [empty set]{.definition} denoted $\varnothing$ is the set containing no elements. Formally
-
+Two sets are [inequal]{.definition} if they are not equal, notated
 $$
-\varnothing = A \iff \forall x (x \not \in A).
+A \not = B \iff \lnot(A = B)
 $$
-
 :::
 
-::: {.callout-note icon="false"}
-## Theorem
-
-The empty set exists.
-
-:::
-
-::: {.callout-note icon="false"}
-## Theorem
-
-The empty set is unique.
-
-:::
+We were very careful when defining $ZFC$ as a theory to include as few symbols as possible, so how is it now that we are defining new symbols in our theory; is this justified‽ We circumvent this problem for now by letting $A \not = B$ simply be an abbreviation for the formula $\lnot(A = B)$ in our formal language. More information on the justification of these definitions is given in [Definitions]. We will now move onto our next axiom, the axiom schema of specification!
